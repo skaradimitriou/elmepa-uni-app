@@ -42,6 +42,7 @@
             <!--- ROW 1 -->
             <!--- Col 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/anakoinoseis"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -50,6 +51,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -73,15 +76,14 @@
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <!--- col 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/to_tmima"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -90,6 +92,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -106,22 +110,21 @@
                         android:src="@drawable/elmepa_logo" />
 
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ανακοινώσεις"
+                        android:text="Το Τμήμα"
                         android:layout_marginTop="5dp"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <!--- col 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/students"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -130,6 +133,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -146,22 +151,21 @@
                         android:src="@drawable/elmepa_logo" />
 
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ανακοινώσεις"
+                        android:text="Φοιτητές"
                         android:layout_marginTop="5dp"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <!--- col 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/professors"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -170,6 +174,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -186,22 +192,21 @@
                         android:src="@drawable/elmepa_logo" />
 
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ανακοινώσεις"
+                        android:text="Προσωπικό"
                         android:layout_marginTop="5dp"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <!--- col 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/placeholder"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -210,6 +215,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -228,20 +235,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ανακοινώσεις"
+                        android:text="Placeholder"
                         android:layout_marginTop="5dp"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <!--- col 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/contact"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -250,6 +256,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -268,13 +276,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ανακοινώσεις"
+                        android:text="Επικοινωνία"
                         android:layout_marginTop="5dp"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
