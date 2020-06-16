@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Announcements">
 
+    <WebView
+        android:id="@+id/web_announcements"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
