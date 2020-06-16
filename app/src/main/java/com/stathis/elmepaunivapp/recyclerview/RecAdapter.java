@@ -9,16 +9,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.models.ProfessorModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RecAdapter extends RecyclerView.Adapter<RecViewHolder> {
 
-    private List<String> arrayData = new ArrayList<String>();
+    private List<ProfessorModel> arrayData = new ArrayList<ProfessorModel>();
 
     //constructor of what I want to show to the user
-    public RecAdapter(List<String> array) {
+    public RecAdapter(List<ProfessorModel> array) {
         arrayData = array;
     }
 
