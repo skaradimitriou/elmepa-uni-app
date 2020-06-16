@@ -7,6 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.BaseAdapter;
 
+import com.stathis.elmepaunivapp.recyclerview.RecAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Professors extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -20,6 +25,16 @@ public class Professors extends AppCompatActivity {
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+
+        List<String> array = new ArrayList<>();
+        array.add("V");
+        array.add("A");
+        array.add("S");
+        array.add("T");
+        array.add("I");
+        array.add("S");
+
         recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(new RecAdapter(array));
     }
 }
