@@ -32,10 +32,23 @@ public class Professors extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
 
         List<ProfessorModel> professors = new ArrayList<>();
-        professors.add(new ProfessorModel("Christos Lemonakis","test@gmail.com"));
-        professors.add(new ProfessorModel("Christos Lemonakis1","test1@gmail.com"));
-        professors.add(new ProfessorModel("Christos Lemonakis2","test2@gmail.com"));
-        professors.add(new ProfessorModel("Christos Lemonakis3","test3@gmail.com"));
+        professors.add(new ProfessorModel("Στέλιος Παπαδάκης","spap@hmu.gr"));
+        professors.add(new ProfessorModel("Κώστας Παναγιωτάκης","cpanag@hmu.gr"));
+        professors.add(new ProfessorModel("Γιώργος Μαστοράκης","gmastorakis@hmu.gr"));
+        professors.add(new ProfessorModel("Γιάννης Κοπανάκης","kopanakis@hmu.gr"));
+        professors.add(new ProfessorModel("Γιάννης Δημοτίκαλης","jdim@hmu.gr"));
+        professors.add(new ProfessorModel("Χρήστος Λεμονάκης","lemonakis@hmu.gr"));
+        professors.add(new ProfessorModel("Μάνος Περακάκης","mperakakis@hmu.gr"));
+        professors.add(new ProfessorModel("Αικατερινίδης Ιωάννης","aikaterinidis@gmail.com"));
+        professors.add(new ProfessorModel("Αστρουλάκης Νικόλαος","n.astroulakis@gmail.com"));
+        professors.add(new ProfessorModel("Βάρδας Ιωάννης","vardasg@hmu.gr"));
+        professors.add(new ProfessorModel("Βασιλειάδης Γεώργιος","gvasil@hmu.gr, giorgos.vasiliadis@gmail.com"));
+        professors.add(new ProfessorModel("Κοκκινάκης Εμμανουήλ","manoskokkinakis@yahoo.gr"));
+        professors.add(new ProfessorModel("Κόττη Εύη","kottievi@hmu.gr"));
+        professors.add(new ProfessorModel("Μαρκάκη Μαρία","mmarkaki@hmu.gr"));
+        professors.add(new ProfessorModel("Μεραμβελιωτάκης Γεώργιος","gmeramv@hmu.gr"));
+        professors.add(new ProfessorModel("Μπάλλας Παναγιώτης","ballas@hmu.gr"));
+        professors.add(new ProfessorModel("Σκουλουδάκης Εμμανουήλ","Εskououdakis@hmu.gr, eskouloudakis@hotmail.com "));
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(new RecAdapter(professors));
