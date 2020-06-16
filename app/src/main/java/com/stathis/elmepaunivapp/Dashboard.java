@@ -2,6 +2,7 @@ package com.stathis.elmepaunivapp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
-    private MaterialCardView updates,department,students,professors,placeholder,contact;
+    private CardView updates,department,students,professors,placeholder,contact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +46,29 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         //cases bellow
         switch(v.getId()){
             case R.id.anakoinoseis:
-
+                i = new Intent(Dashboard.this,Announcements.class);
+                startActivity(i);
+                break;
             case R.id.to_tmima:
-
+                i=new Intent(Dashboard.this, Department.class);
+                startActivity(i);
+                break;
             case R.id.students:
-
+                i=new Intent(Dashboard.this, Students.class);
+                startActivity(i);
+                break;
             case R.id.professors:
-
+                i=new Intent(Dashboard.this, Professors.class);
+                startActivity(i);
+                break;
             case R.id.placeholder:
-
+                i=new Intent(Dashboard.this, PlaceholderClass.class);
+                startActivity(i);
+                break;
             case R.id.contact:
-
+                i=new Intent(Dashboard.this, Contact.class);
+                startActivity(i);
+                break;
         }
     }
 }
