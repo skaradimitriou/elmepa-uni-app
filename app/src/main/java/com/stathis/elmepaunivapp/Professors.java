@@ -54,23 +54,22 @@ public class Professors extends AppCompatActivity {
         //Search in recview
         search = findViewById(R.id.search_action);
         search.addTextChangedListener(new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        }
+            }
 
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-        }
+            }
 
-        @Override
-        public void afterTextChanged(Editable s) {
-            filter(s.toString());
-        }
-    });
-
-//        List<ProfessorModel> professors = new ArrayList<>();
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+        //creates a list of professors
         createProfessorList();
 
         //sorting professor list ascending
@@ -80,11 +79,10 @@ public class Professors extends AppCompatActivity {
                 return o1.getFullName().compareTo(o2.getFullName());
             }
         });
-
+        //creates recview & adapters
         recyclerView = findViewById(R.id.recyclerView);
         adapter = new RecAdapter(professors);
         recyclerView.setAdapter(adapter);
-
 
         //bottom nav
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -153,4 +151,8 @@ public class Professors extends AppCompatActivity {
         professors.add(new ProfessorModel("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr"));
     }
 
+    @Override
+    public void onBackPressed() {
+        //does nothing onBackPressed
+    }
 }
