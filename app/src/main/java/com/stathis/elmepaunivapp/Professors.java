@@ -39,7 +39,6 @@ public class Professors extends AppCompatActivity {
     private RecAdapter adapter;
     private RecyclerView recyclerView;
     private EditText search;
-    private String search_q;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,18 +128,18 @@ public class Professors extends AppCompatActivity {
         professors.add(new ProfessorModel("Αικατερινίδης Ιωάννης", "aikaterinidis@gmail.com"));
         professors.add(new ProfessorModel("Αστρουλάκης Νικόλαος", "n.astroulakis@gmail.com"));
         professors.add(new ProfessorModel("Βάρδας Ιωάννης", "vardasg@hmu.gr"));
-        professors.add(new ProfessorModel("Βασιλειάδης Γεώργιος", "gvasil@hmu.gr, giorgos.vasiliadis@gmail.com"));
+        professors.add(new ProfessorModel("Βασιλειάδης Γεώργιος", "gvasil@hmu.gr"));
         professors.add(new ProfessorModel("Κοκκινάκης Εμμανουήλ", "manoskokkinakis@yahoo.gr"));
         professors.add(new ProfessorModel("Κόττη Εύη", "kottievi@hmu.gr"));
         professors.add(new ProfessorModel("Μαρκάκη Μαρία", "mmarkaki@hmu.gr"));
         professors.add(new ProfessorModel("Μεραμβελιωτάκης Γεώργιος", "gmeramv@hmu.gr"));
         professors.add(new ProfessorModel("Μπάλλας Παναγιώτης", "ballas@hmu.gr"));
-        professors.add(new ProfessorModel("Σκουλουδάκης Εμμανουήλ", "Εskououdakis@hmu.gr, eskouloudakis@hotmail.com"));
+        professors.add(new ProfessorModel("Σκουλουδάκης Εμμανουήλ", "Εskououdakis@hmu.gr"));
         professors.add(new ProfessorModel("Σχοινιωτάκης Νικόλαος", "freemarkos@yahoo.gr"));
         professors.add(new ProfessorModel("Τριχάς Νικόλαος", "ntrihas@hmu.gr"));
         professors.add(new ProfessorModel("Τσιλιμπώκος Κωνσταντίνος", "kostsil@hotmail.com"));
         professors.add(new ProfessorModel("Φανουργιάκης Ιωάννης", "jfanourgiakis@yahoo.com"));
-        professors.add(new ProfessorModel("Φαφαλιός Παύλος", "fafalios@ics.forth.gr, fafalios.pavlos@gmail.com"));
+        professors.add(new ProfessorModel("Φαφαλιός Παύλος", "fafalios@ics.forth.gr"));
         professors.add(new ProfessorModel("Αρακαδάκης Α. Γεώργιος", "arakadakisjr@hmu.gr"));
         professors.add(new ProfessorModel("Καμπέλη Κωνσταντίνα", "nantia.kampeli@gmail.com"));
         professors.add(new ProfessorModel("Καπανταϊδάκης Ιωάννης", "jkapad@csd.uoc.gr"));

@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/professor_img"
         android:layout_height="60dp"
-        android:src="@drawable/ic_home_black_24dp"/>
+        android:src="@drawable/ic_person_black_24dp"/>
 
     <TextView
         android:id="@+id/professor_name"
@@ -28,7 +28,7 @@
 
     <TextView
         android:id="@+id/professor_email"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="@id/professor_name"
