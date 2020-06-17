@@ -7,14 +7,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.BaseAdapter;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.recyclerview.RecAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Professors extends AppCompatActivity {
@@ -32,23 +42,44 @@ public class Professors extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
 
         List<ProfessorModel> professors = new ArrayList<>();
-        professors.add(new ProfessorModel("Στέλιος Παπαδάκης","spap@hmu.gr"));
-        professors.add(new ProfessorModel("Κώστας Παναγιωτάκης","cpanag@hmu.gr"));
-        professors.add(new ProfessorModel("Γιώργος Μαστοράκης","gmastorakis@hmu.gr"));
-        professors.add(new ProfessorModel("Γιάννης Κοπανάκης","kopanakis@hmu.gr"));
-        professors.add(new ProfessorModel("Γιάννης Δημοτίκαλης","jdim@hmu.gr"));
-        professors.add(new ProfessorModel("Χρήστος Λεμονάκης","lemonakis@hmu.gr"));
-        professors.add(new ProfessorModel("Μάνος Περακάκης","mperakakis@hmu.gr"));
-        professors.add(new ProfessorModel("Αικατερινίδης Ιωάννης","aikaterinidis@gmail.com"));
-        professors.add(new ProfessorModel("Αστρουλάκης Νικόλαος","n.astroulakis@gmail.com"));
-        professors.add(new ProfessorModel("Βάρδας Ιωάννης","vardasg@hmu.gr"));
-        professors.add(new ProfessorModel("Βασιλειάδης Γεώργιος","gvasil@hmu.gr, giorgos.vasiliadis@gmail.com"));
-        professors.add(new ProfessorModel("Κοκκινάκης Εμμανουήλ","manoskokkinakis@yahoo.gr"));
-        professors.add(new ProfessorModel("Κόττη Εύη","kottievi@hmu.gr"));
-        professors.add(new ProfessorModel("Μαρκάκη Μαρία","mmarkaki@hmu.gr"));
-        professors.add(new ProfessorModel("Μεραμβελιωτάκης Γεώργιος","gmeramv@hmu.gr"));
-        professors.add(new ProfessorModel("Μπάλλας Παναγιώτης","ballas@hmu.gr"));
-        professors.add(new ProfessorModel("Σκουλουδάκης Εμμανουήλ","Εskououdakis@hmu.gr, eskouloudakis@hotmail.com "));
+        professors.add(new ProfessorModel("Παπαδάκης Στέλιος", "spap@hmu.gr"));
+        professors.add(new ProfessorModel("Παναγιωτάκης Κώστας", "cpanag@hmu.gr"));
+        professors.add(new ProfessorModel("Μαστοράκης Γιώργος", "gmastorakis@hmu.gr"));
+        professors.add(new ProfessorModel("Κοπανάκης Γιάννης", "kopanakis@hmu.gr"));
+        professors.add(new ProfessorModel("Δημοτίκαλης Γιάννης", "jdim@hmu.gr"));
+        professors.add(new ProfessorModel("Λεμονάκης Χρήστος", "lemonakis@hmu.gr"));
+        professors.add(new ProfessorModel("Περακάκης Μάνος", "mperakakis@hmu.gr"));
+        professors.add(new ProfessorModel("Αικατερινίδης Ιωάννης", "aikaterinidis@gmail.com"));
+        professors.add(new ProfessorModel("Αστρουλάκης Νικόλαος", "n.astroulakis@gmail.com"));
+        professors.add(new ProfessorModel("Βάρδας Ιωάννης", "vardasg@hmu.gr"));
+        professors.add(new ProfessorModel("Βασιλειάδης Γεώργιος", "gvasil@hmu.gr, giorgos.vasiliadis@gmail.com"));
+        professors.add(new ProfessorModel("Κοκκινάκης Εμμανουήλ", "manoskokkinakis@yahoo.gr"));
+        professors.add(new ProfessorModel("Κόττη Εύη", "kottievi@hmu.gr"));
+        professors.add(new ProfessorModel("Μαρκάκη Μαρία", "mmarkaki@hmu.gr"));
+        professors.add(new ProfessorModel("Μεραμβελιωτάκης Γεώργιος", "gmeramv@hmu.gr"));
+        professors.add(new ProfessorModel("Μπάλλας Παναγιώτης", "ballas@hmu.gr"));
+        professors.add(new ProfessorModel("Σκουλουδάκης Εμμανουήλ", "Εskououdakis@hmu.gr, eskouloudakis@hotmail.com"));
+        professors.add(new ProfessorModel("Σχοινιωτάκης Νικόλαος", "freemarkos@yahoo.gr"));
+        professors.add(new ProfessorModel("Τριχάς Νικόλαος", "ntrihas@hmu.gr"));
+        professors.add(new ProfessorModel("Τσιλιμπώκος Κωνσταντίνος", "kostsil@hotmail.com"));
+        professors.add(new ProfessorModel("Φανουργιάκης Ιωάννης", "jfanourgiakis@yahoo.com"));
+        professors.add(new ProfessorModel("Φαφαλιός Παύλος", "fafalios@ics.forth.gr, fafalios.pavlos@gmail.com"));
+        professors.add(new ProfessorModel("Αρακαδάκης Α. Γεώργιος", "arakadakisjr@hmu.gr"));
+        professors.add(new ProfessorModel("Καμπέλη Κωνσταντίνα", "nantia.kampeli@gmail.com"));
+        professors.add(new ProfessorModel("Καπανταϊδάκης Ιωάννης", "jkapad@csd.uoc.gr"));
+        professors.add(new ProfessorModel("Μπατζανακάκη Ελένη", "eleni@candiafinance.gr"));
+        professors.add(new ProfessorModel("Περονικολής Μιχαήλ", "m.peronikolis@yahoo.com"));
+        professors.add(new ProfessorModel("Πετράκης Νικόλαος", "nickpetran@yahoo.gr"));
+        professors.add(new ProfessorModel("Σφακιανάκης Θεόδωρος", "tmsfakia@hmu.gr"));
+        professors.add(new ProfessorModel("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr"));
+
+        //sorting professor list ascending
+        Collections.sort(professors, new Comparator<ProfessorModel>() {
+            @Override
+            public int compare(ProfessorModel o1, ProfessorModel o2) {
+                return o1.getFullName().compareTo(o2.getFullName());
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(new RecAdapter(professors));
@@ -62,9 +93,9 @@ public class Professors extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Intent i;
-                switch(item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(Professors.this,Dashboard.class);
+                        i = new Intent(Professors.this, Dashboard.class);
                         startActivity(i);
                         return true;
                     case R.id.nav_one:
@@ -75,4 +106,6 @@ public class Professors extends AppCompatActivity {
             }
         });
     }
+
+
 }
