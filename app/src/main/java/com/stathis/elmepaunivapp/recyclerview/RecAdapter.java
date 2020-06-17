@@ -16,6 +16,7 @@ import java.util.List;
 
 public class RecAdapter extends RecyclerView.Adapter<RecViewHolder> {
 
+
     private List<ProfessorModel> arrayData = new ArrayList<ProfessorModel>();
 
     //constructor of what I want to show to the user
@@ -40,5 +41,10 @@ public class RecAdapter extends RecyclerView.Adapter<RecViewHolder> {
     @Override
     public int getItemCount() {
         return arrayData.size(); //how many items are in the list
+    }
+
+    public void filterList(ArrayList<ProfessorModel> filteredList) {
+        arrayData = filteredList;
+        notifyDataSetChanged();
     }
 }

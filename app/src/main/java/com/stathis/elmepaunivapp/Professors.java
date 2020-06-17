@@ -7,9 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.SearchView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,7 +35,11 @@ import java.util.List;
 
 public class Professors extends AppCompatActivity {
 
+    private ArrayList<ProfessorModel> professors;
+    private RecAdapter adapter;
     private RecyclerView recyclerView;
+    private EditText search;
+    private String search_q;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +51,76 @@ public class Professors extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        List<ProfessorModel> professors = new ArrayList<>();
+        //Search in recview
+        search = findViewById(R.id.search_action);
+        search.addTextChangedListener(new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            filter(s.toString());
+        }
+    });
+
+//        List<ProfessorModel> professors = new ArrayList<>();
+        createProfessorList();
+
+        //sorting professor list ascending
+        Collections.sort(professors, new Comparator<ProfessorModel>() {
+            @Override
+            public int compare(ProfessorModel o1, ProfessorModel o2) {
+                return o1.getFullName().compareTo(o2.getFullName());
+            }
+        });
+
+        recyclerView = findViewById(R.id.recyclerView);
+        adapter = new RecAdapter(professors);
+        recyclerView.setAdapter(adapter);
+
+
+        //bottom nav
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+
+        //listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent i;
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        i = new Intent(Professors.this, Dashboard.class);
+                        startActivity(i);
+                        return true;
+                    case R.id.nav_one:
+                    case R.id.nav_two:
+                    case R.id.nav_three:
+                }
+                return false;
+            }
+        });
+    }
+
+    private void filter(String text){
+        ArrayList<ProfessorModel> filteredList = new ArrayList<>();
+        for (ProfessorModel item : professors) {
+            if (item.getFullName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+        adapter.filterList(filteredList);
+    }
+
+    private void createProfessorList(){
+        professors = new ArrayList<>();
         professors.add(new ProfessorModel("Παπαδάκης Στέλιος", "spap@hmu.gr"));
         professors.add(new ProfessorModel("Παναγιωτάκης Κώστας", "cpanag@hmu.gr"));
         professors.add(new ProfessorModel("Μαστοράκης Γιώργος", "gmastorakis@hmu.gr"));
@@ -72,40 +151,6 @@ public class Professors extends AppCompatActivity {
         professors.add(new ProfessorModel("Πετράκης Νικόλαος", "nickpetran@yahoo.gr"));
         professors.add(new ProfessorModel("Σφακιανάκης Θεόδωρος", "tmsfakia@hmu.gr"));
         professors.add(new ProfessorModel("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr"));
-
-        //sorting professor list ascending
-        Collections.sort(professors, new Comparator<ProfessorModel>() {
-            @Override
-            public int compare(ProfessorModel o1, ProfessorModel o2) {
-                return o1.getFullName().compareTo(o2.getFullName());
-            }
-        });
-
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new RecAdapter(professors));
-
-        //bottom nav
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
-
-        //listener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent i;
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        i = new Intent(Professors.this, Dashboard.class);
-                        startActivity(i);
-                        return true;
-                    case R.id.nav_one:
-                    case R.id.nav_two:
-                    case R.id.nav_three:
-                }
-                return false;
-            }
-        });
     }
-
 
 }
