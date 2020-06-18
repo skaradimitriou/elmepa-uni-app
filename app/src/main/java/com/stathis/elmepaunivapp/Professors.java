@@ -150,8 +150,4 @@ public class Professors extends AppCompatActivity {
         professors.add(new ProfessorModel("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr"));
     }
 
-    @Override
-    public void onBackPressed() {
-        //does nothing onBackPressed
-    }
 }
