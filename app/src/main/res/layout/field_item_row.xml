@@ -16,9 +16,10 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/fields_img"
             android:layout_width="wrap_content"
             android:layout_height="140dp"
-            android:src="@drawable/data"/>
+            tools:src="@drawable/data"/>
 
         <TextView
             android:textAlignment="center"
