@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 import static android.Manifest.permission.CALL_PHONE;
 
 public class Department extends AppCompatActivity {
