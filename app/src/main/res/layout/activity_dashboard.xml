@@ -1,20 +1,52 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="false">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/elmepa_bg_img"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@drawable/agios_nikolaos"
-            android:scaleType="fitXY"/>
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/elmepa_bg_img"
+                android:tint="#6F000000"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/agios_nikolaos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/elmepa_main_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="ΕΛ.ΜΕ.ΠΑ"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Τμήμα Διοικητικής Επιστήμης \n &amp; Τεχνολογίας (Άγ. Νικόλαος)"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/elmepa_main_txt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -26,7 +58,7 @@
                 android:id="@+id/elmepa_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/elmepa_logo"/>
+                android:src="@drawable/elmepa_logo" />
 
         </RelativeLayout>
 
@@ -50,9 +82,9 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -71,10 +103,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ανακοινώσεις"
-                        android:layout_marginTop="5dp"
-                        android:textAlignment="center"
                         android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Ανακοινώσεις"
+                        android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -91,9 +123,9 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -112,10 +144,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Το Τμήμα"
-                        android:layout_marginTop="5dp"
-                        android:textAlignment="center"
                         android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Το Τμήμα"
+                        android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -132,9 +164,9 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -153,10 +185,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Φοιτητές"
-                        android:layout_marginTop="5dp"
-                        android:textAlignment="center"
                         android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Φοιτητές"
+                        android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -173,9 +205,9 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -194,10 +226,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Προσωπικό"
-                        android:layout_marginTop="5dp"
-                        android:textAlignment="center"
                         android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Προσωπικό"
+                        android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -214,9 +246,9 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -235,10 +267,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Placeholder"
-                        android:layout_marginTop="5dp"
-                        android:textAlignment="center"
                         android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Placeholder"
+                        android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -255,9 +287,9 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -276,10 +308,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Επικοινωνία"
-                        android:layout_marginTop="5dp"
-                        android:textAlignment="center"
                         android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Επικοινωνία"
+                        android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
