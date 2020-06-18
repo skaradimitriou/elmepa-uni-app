@@ -20,6 +20,7 @@ import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
+import com.stathis.elmepaunivapp.recyclerview.ProgrammesAdapter;
 import com.stathis.elmepaunivapp.recyclerview.RecAdapter;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class Department extends AppCompatActivity {
     private FloatingActionButton call, mail;
     private RecyclerView fields_recView;
     private FieldsAdapter fieldsAdapter;
+    private ProgrammesAdapter programmesAdapter;
     private RecyclerView programmes_recView;
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
     private ArrayList<Programmes> programmes;
@@ -56,6 +58,9 @@ public class Department extends AppCompatActivity {
         fields_recView = findViewById(R.id.fieldsOfStudy_recView);
         fieldsAdapter = new FieldsAdapter(fieldsOfStudy);
         fields_recView.setAdapter(fieldsAdapter);
+        programmes_recView = findViewById(R.id.programmes_recView);
+        programmesAdapter = new ProgrammesAdapter(programmes);
+        programmes_recView.setAdapter(programmesAdapter);
 
         //Fab btns
         call.setOnClickListener(new View.OnClickListener() {

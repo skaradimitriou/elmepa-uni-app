@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.models.ProfessorModel;
 
 import java.util.List;
 
@@ -37,6 +36,6 @@ public class FieldsAdapter extends RecyclerView.Adapter<FieldsViewHolder> {
 
     @Override
     public int getItemCount() {
-        return fieldsOfStudies.size(); //how many items are in the list
+        return fieldsOfStudies.size();
     }
 }
