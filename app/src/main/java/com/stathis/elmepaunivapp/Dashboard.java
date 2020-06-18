@@ -12,7 +12,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView updates,department,students,professors,placeholder,contact;
+    private CardView updates,department,students,professors;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +28,12 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         department = findViewById(R.id.to_tmima);
         students = findViewById(R.id.students);
         professors = findViewById(R.id.professors);
-        placeholder = findViewById(R.id.placeholder);
-        contact = findViewById(R.id.contact);
 
         //listeners
         updates.setOnClickListener(this);
         department.setOnClickListener(this);
         students.setOnClickListener(this);
         professors.setOnClickListener(this);
-        placeholder.setOnClickListener(this);
-        contact.setOnClickListener(this);
     }
 
     @Override
@@ -59,14 +55,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                 break;
             case R.id.professors:
                 i=new Intent(Dashboard.this, Professors.class);
-                startActivity(i);
-                break;
-            case R.id.placeholder:
-                i=new Intent(Dashboard.this, PlaceholderClass.class);
-                startActivity(i);
-                break;
-            case R.id.contact:
-                i=new Intent(Dashboard.this, Contact.class);
                 startActivity(i);
                 break;
         }
