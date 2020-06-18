@@ -5,9 +5,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -16,6 +16,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.models.ProfessorModel;
+import com.stathis.elmepaunivapp.models.Programmes;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,9 @@ public class Department extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
+    private RecyclerView fields_recView;
+    private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
+    private ArrayList<Programmes> programmes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,7 @@ public class Department extends AppCompatActivity {
 
         call = findViewById(R.id.fab_call);
         mail = findViewById(R.id.fab_mail);
+        fields_recView = findViewById(R.id.fieldsOfStudy_recView);
 
         call.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,5 +82,6 @@ public class Department extends AppCompatActivity {
             startActivity(callIntent);
         }
     }
+
 
 }

@@ -1,11 +1,11 @@
 package com.stathis.elmepaunivapp.models;
 
-public class DeptFieldsOfStudy {
+public class Programmes {
 
     String name;
     String description;
 
-    public DeptFieldsOfStudy(String name, String description) {
+    public Programmes(String name, String description) {
         this.name = name;
         this.description = description;
     }
@@ -28,7 +28,7 @@ public class DeptFieldsOfStudy {
 
     @Override
     public String toString() {
-        return "DeptFieldsOfStudy{" +
+        return "Programmes{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';

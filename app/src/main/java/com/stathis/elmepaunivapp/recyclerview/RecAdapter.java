@@ -16,7 +16,6 @@ import java.util.List;
 
 public class RecAdapter extends RecyclerView.Adapter<RecViewHolder> {
 
-
     private List<ProfessorModel> arrayData = new ArrayList<ProfessorModel>();
 
     //constructor of what I want to show to the user
