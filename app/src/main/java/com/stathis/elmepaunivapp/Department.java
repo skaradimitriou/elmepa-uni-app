@@ -19,6 +19,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
+import com.stathis.elmepaunivapp.recyclerview.RecAdapter;
 
 import java.util.ArrayList;
 
@@ -29,6 +31,8 @@ public class Department extends AppCompatActivity {
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
     private RecyclerView fields_recView;
+    private FieldsAdapter fieldsAdapter;
+    private RecyclerView programmes_recView;
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
     private ArrayList<Programmes> programmes;
 
@@ -47,8 +51,13 @@ public class Department extends AppCompatActivity {
 
         call = findViewById(R.id.fab_call);
         mail = findViewById(R.id.fab_mail);
-        fields_recView = findViewById(R.id.fieldsOfStudy_recView);
 
+        //rec Views & adapters
+        fields_recView = findViewById(R.id.fieldsOfStudy_recView);
+        fieldsAdapter = new FieldsAdapter(fieldsOfStudy);
+        fields_recView.setAdapter(fieldsAdapter);
+
+        //Fab btns
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
