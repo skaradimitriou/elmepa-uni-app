@@ -1,5 +1,6 @@
 package com.stathis.elmepaunivapp.recyclerview;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 
 import java.util.List;
 
-public class FieldsAdapter extends RecyclerView.Adapter<FieldsViewHolder> {
+public class FieldsAdapter extends RecyclerView.Adapter<FieldsViewHolder>{
 
     private List<DeptFieldsOfStudy> fieldsOfStudies;
 
@@ -38,4 +39,6 @@ public class FieldsAdapter extends RecyclerView.Adapter<FieldsViewHolder> {
     public int getItemCount() {
         return fieldsOfStudies.size();
     }
+
+
 }
