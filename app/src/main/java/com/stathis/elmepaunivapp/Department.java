@@ -66,14 +66,11 @@ public class Department extends AppCompatActivity {
             public void onItemClick(DeptFieldsOfStudy item) {
                 switch(item.getName()){
                     case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
-                        Toast.makeText(Department.this, "1", Toast.LENGTH_SHORT).show();
-                        break;
+                        //
                     case "Διοίκηση Επιχειρήσεων & Οργανισμών":
-                        Toast.makeText(Department.this, "2", Toast.LENGTH_SHORT).show();
-                        break;
+                        //
                     case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
-                        Toast.makeText(Department.this, "3", Toast.LENGTH_SHORT).show();
-                        break;
+                        //
                 };
             }
 
