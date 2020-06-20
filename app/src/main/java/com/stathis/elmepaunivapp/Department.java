@@ -102,14 +102,16 @@ public class Department extends AppCompatActivity {
             public void onProgrammesClick(Programmes programmes) {
                 switch (programmes.getName()){
                     case "Προπτυχιακές Σπουδές":
-                        Toast.makeText(Department.this, "4", Toast.LENGTH_SHORT).show();
+                        Intent undergraduates = new Intent(Department.this,UndergraduateProg.class);
+                        startActivity(undergraduates);
                         break;
                     case "Μεταπτυχιακά Προγράμματα":
-                        Toast.makeText(Department.this, "5", Toast.LENGTH_SHORT).show();
+                        Intent postgraduates = new Intent(Department.this,PostgraduateProg.class);
+                        startActivity(postgraduates);
                         break;
                     case "Εκπόνηση Διδακτορικού":
-                        Toast.makeText(Department.this, "6", Toast.LENGTH_SHORT).show();
-                        break;
+                        Intent phd = new Intent(Department.this,PhdProg.class);
+                        startActivity(phd);
                 }
             }
         });

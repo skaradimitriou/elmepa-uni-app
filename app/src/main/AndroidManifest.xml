@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.stathis.elmepaunivapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlaceholderClass"></activity>
+        <activity android:name=".PhdProg"></activity>
+        <activity android:name=".UndergraduateProg" />
+        <activity android:name=".PostgraduateProg" />
+        <activity android:name=".PlaceholderClass" />
         <activity android:name=".Professors" />
         <activity android:name=".Students" />
         <activity android:name=".Contact" />
