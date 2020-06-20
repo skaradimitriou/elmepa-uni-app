@@ -119,13 +119,13 @@ public class Department extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callAtSecretary();
+                callAtSecretaryOffice();
             }
         });
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                sendAnEmailToSecretaryOffice();
             }
         });
     }
@@ -134,14 +134,14 @@ public class Department extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CALL) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                callAtSecretary();
+                callAtSecretaryOffice();
             } else {
                 Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    private void callAtSecretary() {
+    private void callAtSecretaryOffice() {
         if (ContextCompat.checkSelfPermission(Department.this,
                 Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Department.this, new String[]{CALL_PHONE}, REQUEST_CALL);
@@ -150,6 +150,17 @@ public class Department extends AppCompatActivity {
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse(phone));
             startActivity(callIntent);
+        }
+    }
+
+    private void sendAnEmailToSecretaryOffice(){
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"kalarhaki@hmu.gr"});
+        try {
+            startActivity(Intent.createChooser(i, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(Department.this, "There are no email clients installed.",Toast.LENGTH_SHORT).show();
         }
     }
 
