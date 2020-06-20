@@ -122,16 +122,19 @@ public class Students extends AppCompatActivity {
                     case R.id.nav_home:
                         i = new Intent(Students.this, Dashboard.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
                         return true;
                     case R.id.nav_uni:
                         i = new Intent(Students.this, Department.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
                         i = new Intent(Students.this, Professors.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         break;
                 }
                 return false;

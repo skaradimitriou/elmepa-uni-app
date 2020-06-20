@@ -45,14 +45,17 @@ public class Announcements extends AppCompatActivity {
                     case R.id.nav_students:
                         i = new Intent(Announcements.this, Students.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
                         i = new Intent(Announcements.this, Department.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
                         i = new Intent(Announcements.this, Professors.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         break;
                 }
                 return false;
