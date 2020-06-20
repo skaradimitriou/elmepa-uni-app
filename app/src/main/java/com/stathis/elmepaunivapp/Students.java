@@ -52,36 +52,32 @@ public class Students extends AppCompatActivity {
         useful_links_recView = findViewById(R.id.useful_links_recView);
         fieldsAdapter = new FieldsAdapter(fieldsOfStudy, new ItemClickListener() {
             @Override
-            public void onClick(View v) {
-            }
-
+            public void onClick(View v) {}
             //do nothing
             @Override
             public void onItemClick(DeptFieldsOfStudy item) {
-                //do nothing
+                switch (item.getName()){
+                    case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
+                        // do something
+                    case "Διοίκηση Επιχειρήσεων & Οργανισμών":
+                        // do something
+                    case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
+                        // do something
+                }
             }
 
             @Override
-            public void onProgrammesClick(Programmes programmes) {
-                //do nothing
-            }
-
+            public void onProgrammesClick(Programmes programmes) {}
             @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                //do nothing
-            }
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {}
         });
 
         usefulLinksAdapter = new UsefulLinksAdapter(usefulLinks, new ItemClickListener() {
             @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-                //do nothing
-            }
+            public void onItemClick(DeptFieldsOfStudy item) {}
 
             @Override
-            public void onProgrammesClick(Programmes programmes) {
-                //do nothing
-            }
+            public void onProgrammesClick(Programmes programmes) {}
 
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
@@ -135,9 +131,7 @@ public class Students extends AppCompatActivity {
             }
 
             @Override
-            public void onClick(View v) {
-                //do nothing
-            }
+            public void onClick(View v) {}
         });
         useful_links_recView.setAdapter(usefulLinksAdapter);
         fields_recView.setAdapter(fieldsAdapter);
