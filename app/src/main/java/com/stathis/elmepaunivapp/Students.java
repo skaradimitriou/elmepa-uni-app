@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.models.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
 import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
 
@@ -22,6 +23,7 @@ public class Students extends AppCompatActivity {
     private RecyclerView fields_recView;
     private FieldsAdapter fieldsAdapter;
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
+    private ArrayList<UsefulLinks> usefulLinks;
     private Button btn;
     private CardView schedule;
 
@@ -73,7 +75,6 @@ public class Students extends AppCompatActivity {
                 //click action
             }
         });
-
     }
 
     private void createLists() {
@@ -81,5 +82,16 @@ public class Students extends AppCompatActivity {
         fieldsOfStudy.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", R.drawable.data));
         fieldsOfStudy.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", R.drawable.business));
         fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
+
+        usefulLinks = new ArrayList<>();
+        usefulLinks.add(new UsefulLinks("Εικονική Περιήγηση",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("",R.drawable.data));
     }
 }

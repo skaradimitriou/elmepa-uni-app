@@ -3,12 +3,12 @@ package com.stathis.elmepaunivapp.models;
 public class UsefulLinks {
 
     private String name;
-    private String description;
+    private String url;
     private int ImageResource;
 
-    public UsefulLinks(String name, String description, int imageResource) {
+    public UsefulLinks(String name, String url, int imageResource) {
         this.name = name;
-        this.description = description;
+        this.url = url;
         ImageResource = imageResource;
     }
 
@@ -20,12 +20,12 @@ public class UsefulLinks {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getUrl() {
+        return url;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public int getImageResource() {
@@ -40,7 +40,7 @@ public class UsefulLinks {
     public String toString() {
         return "UsefulLinks{" +
                 "name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                ", url='" + url + '\'' +
                 ", ImageResource=" + ImageResource +
                 '}';
     }
