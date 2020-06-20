@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -65,22 +66,53 @@ public class Department extends AppCompatActivity {
             public void onItemClick(DeptFieldsOfStudy item) {
                 switch(item.getName()){
                     case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
-                        //
+                        Toast.makeText(Department.this, "1", Toast.LENGTH_SHORT).show();
                         break;
                     case "Διοίκηση Επιχειρήσεων & Οργανισμών":
-                        //
+                        Toast.makeText(Department.this, "2", Toast.LENGTH_SHORT).show();
                         break;
                     case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
-                        //
+                        Toast.makeText(Department.this, "3", Toast.LENGTH_SHORT).show();
                         break;
                 };
+            }
+
+            @Override
+            public void onProgrammesClick(Programmes programmes) {
+                // do nothing
             }
 
 
         });
         fields_recView.setAdapter(fieldsAdapter);
         programmes_recView = findViewById(R.id.programmes_recView);
-        programmesAdapter = new ProgrammesAdapter(programmes);
+        programmesAdapter = new ProgrammesAdapter(programmes, new ItemClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //do nothing
+            }
+
+            @Override
+            public void onItemClick(DeptFieldsOfStudy item) {
+                //do nothing
+            }
+
+            @Override
+            public void onProgrammesClick(Programmes programmes) {
+                switch (programmes.getName()){
+                    case "Προπτυχιακές Σπουδές":
+                        Toast.makeText(Department.this, "4", Toast.LENGTH_SHORT).show();
+                        break;
+                    case "Μεταπτυχιακά Προγράμματα":
+                        Toast.makeText(Department.this, "5", Toast.LENGTH_SHORT).show();
+                        break;
+                    case "Εκπόνηση Διδακτορικού":
+                        Toast.makeText(Department.this, "6", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
         programmes_recView.setAdapter(programmesAdapter);
 
         //Fab Buttons
@@ -132,6 +164,5 @@ public class Department extends AppCompatActivity {
         programmes.add(new Programmes("Μεταπτυχιακά Προγράμματα", "ΔΙΑΡΚΕΙΑΣ 2 ΕΤΩΝ",R.drawable.postgrad));
         programmes.add(new Programmes("Εκπόνηση Διδακτορικού", "ΕΛΑΧΙΣΤΗΣ ΔΙΑΡΚΕΙΑΣ 3 ΕΤΩΝ",R.drawable.phd));
     }
-
 
 }
