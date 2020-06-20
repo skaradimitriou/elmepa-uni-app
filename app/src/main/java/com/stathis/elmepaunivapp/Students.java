@@ -1,15 +1,19 @@
 package com.stathis.elmepaunivapp;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.models.UsefulLinks;
@@ -91,7 +95,6 @@ public class Students extends AppCompatActivity {
         useful_links_recView.setAdapter(usefulLinksAdapter);
         fields_recView.setAdapter(fieldsAdapter);
 
-
         schedule = findViewById(R.id.schedule_cardview);
         schedule.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +108,33 @@ public class Students extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //click action
+            }
+        });
+
+        //bottom navigation & listener
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.nav_students);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent i;
+                switch(item.getItemId()){
+                    case R.id.nav_home:
+                        i = new Intent(Students.this, Dashboard.class);
+                        startActivity(i);
+                        break;
+                    case R.id.nav_students:
+                        return true;
+                    case R.id.nav_uni:
+                        i = new Intent(Students.this, Department.class);
+                        startActivity(i);
+                        break;
+                    case R.id.nav_search:
+                        i = new Intent(Students.this, Professors.class);
+                        startActivity(i);
+                        break;
+                }
+                return false;
             }
         });
     }

@@ -13,9 +13,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
@@ -136,6 +138,32 @@ public class Department extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendAnEmailToSecretaryOffice();
+            }
+        });
+        //bottom navigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.nav_uni);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent i;
+                switch(item.getItemId()){
+                    case R.id.nav_home:
+                        i = new Intent(Department.this, Dashboard.class);
+                        startActivity(i);
+                        break;
+                    case R.id.nav_students:
+                        i = new Intent(Department.this, Students.class);
+                        startActivity(i);
+                        break;
+                    case R.id.nav_uni:
+                        return true;
+                    case R.id.nav_search:
+                        i = new Intent(Department.this, Professors.class);
+                        startActivity(i);
+                        break;
+                }
+                return false;
             }
         });
     }

@@ -41,21 +41,22 @@ public class Announcements extends AppCompatActivity {
                 Intent i;
                 switch(item.getItemId()){
                     case R.id.nav_home:
-                        i = new Intent(Announcements.this, Dashboard.class);
-                        startActivity(i);
                         return true;
                     case R.id.nav_students:
-                        //
+                        i = new Intent(Announcements.this, Students.class);
+                        startActivity(i);
+                        break;
                     case R.id.nav_uni:
                         i = new Intent(Announcements.this, Department.class);
                         startActivity(i);
+                        break;
                     case R.id.nav_search:
                         i = new Intent(Announcements.this, Professors.class);
                         startActivity(i);
+                        break;
                 }
                 return false;
             }
         });
-
     }
 }

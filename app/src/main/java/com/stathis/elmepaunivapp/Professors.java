@@ -83,27 +83,28 @@ public class Professors extends AppCompatActivity {
         adapter = new RecAdapter(professors);
         recyclerView.setAdapter(adapter);
 
-        //bottom nav
+        //bottom navigation & listener
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_search);
-
-        //listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Intent i;
-                switch (item.getItemId()) {
+                switch(item.getItemId()){
                     case R.id.nav_home:
                         i = new Intent(Professors.this, Dashboard.class);
                         startActivity(i);
+                        break;
                     case R.id.nav_students:
-                        //
+                        i = new Intent(Professors.this, Students.class);
+                        startActivity(i);
+                        break;
                     case R.id.nav_uni:
                         i = new Intent(Professors.this, Department.class);
                         startActivity(i);
                         break;
                     case R.id.nav_search:
-                        break;
+                        return true;
                 }
                 return false;
             }
