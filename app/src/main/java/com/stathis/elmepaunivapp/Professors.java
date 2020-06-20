@@ -85,7 +85,7 @@ public class Professors extends AppCompatActivity {
 
         //bottom nav
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+        bottomNavigationView.setSelectedItemId(R.id.nav_search);
 
         //listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -96,10 +96,14 @@ public class Professors extends AppCompatActivity {
                     case R.id.nav_home:
                         i = new Intent(Professors.this, Dashboard.class);
                         startActivity(i);
-                        return true;
-                    case R.id.nav_one:
-                    case R.id.nav_two:
-                    case R.id.nav_three:
+                    case R.id.nav_students:
+                        //
+                    case R.id.nav_uni:
+                        i = new Intent(Professors.this, Department.class);
+                        startActivity(i);
+                        break;
+                    case R.id.nav_search:
+                        break;
                 }
                 return false;
             }

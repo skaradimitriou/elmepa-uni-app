@@ -6,17 +6,17 @@
         android:title="Home"
         android:icon="@drawable/ic_home_black_24dp"/>
     <item
-        android:id="@+id/nav_one"
-        android:title="One"
-        android:icon="@drawable/ic_home_black_24dp"/>
+        android:id="@+id/nav_students"
+        android:title="Students"
+        android:icon="@drawable/ic_person_pin_black_24dp"/>
     <item
-        android:id="@+id/nav_two"
-        android:title="Two"
-        android:icon="@drawable/ic_home_black_24dp"/>
+        android:id="@+id/nav_uni"
+        android:title="University"
+        android:icon="@drawable/ic_uni_black_24dp"/>
 
     <item
-        android:id="@+id/nav_three"
-        android:title="Three"
-        android:icon="@drawable/ic_home_black_24dp"/>
+        android:id="@+id/nav_search"
+        android:title="Search"
+        android:icon="@drawable/ic_search_black_24dp"/>
 
 </menu>

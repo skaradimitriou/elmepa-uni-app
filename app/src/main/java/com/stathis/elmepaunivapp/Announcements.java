@@ -11,6 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.models.ProfessorModel;
 
 public class Announcements extends AppCompatActivity {
 
@@ -40,12 +41,17 @@ public class Announcements extends AppCompatActivity {
                 Intent i;
                 switch(item.getItemId()){
                     case R.id.nav_home:
-                        i = new Intent(Announcements.this,Dashboard.class);
+                        i = new Intent(Announcements.this, Dashboard.class);
                         startActivity(i);
                         return true;
-                    case R.id.nav_one:
-                    case R.id.nav_two:
-                    case R.id.nav_three:
+                    case R.id.nav_students:
+                        //
+                    case R.id.nav_uni:
+                        i = new Intent(Announcements.this, Department.class);
+                        startActivity(i);
+                    case R.id.nav_search:
+                        i = new Intent(Announcements.this, Professors.class);
+                        startActivity(i);
                 }
                 return false;
             }
