@@ -149,17 +149,17 @@ public class Students extends AppCompatActivity {
         fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
 
         usefulLinks = new ArrayList<>();
-        usefulLinks.add(new UsefulLinks("Εικονική Περιήγηση","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Σελίδα Φοιτητών","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Δήμος Αγ.Νικολάου","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Προτεινόμενα Εστιατόρια","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Εύδοξος","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Edu E-mail Φοιτητή","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Events Τμήματος","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Κ.Τ.Ε.Λ","",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Movie SCoRe","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα","",R.drawable.student_card));
+        usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών","",R.drawable.students));
+        usefulLinks.add(new UsefulLinks("Σελίδα Φοιτητών","",R.drawable.fb));
+        usefulLinks.add(new UsefulLinks("e-Class","",R.drawable.eclass));
+        usefulLinks.add(new UsefulLinks("Δήμος Αγ.Νικολάου","",R.drawable.dimos));
+        usefulLinks.add(new UsefulLinks("Προτεινόμενα Εστιατόρια","",R.drawable.tripadvisor));
+        usefulLinks.add(new UsefulLinks("Εύδοξος","",R.drawable.eudoxus));
+        usefulLinks.add(new UsefulLinks("Edu E-mail Φοιτητή","",R.drawable.webmail));
+        usefulLinks.add(new UsefulLinks("Events Τμήματος","",R.drawable.events));
+        usefulLinks.add(new UsefulLinks("Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου","",R.drawable.ktel));
+        usefulLinks.add(new UsefulLinks("Εφαρμογή Movie SCoRe","",R.drawable.movies));
 
     }
 }

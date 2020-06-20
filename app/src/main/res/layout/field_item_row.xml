@@ -8,7 +8,7 @@
     android:clickable="true"
     android:focusable="true"
     android:layout_marginRight="10dp"
-    app:cardCornerRadius="2dp"
+    app:cardCornerRadius="15dp"
     app:cardElevation="3dp">
 
     <LinearLayout
