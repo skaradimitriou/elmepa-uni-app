@@ -146,7 +146,7 @@ public class Students extends AppCompatActivity {
         schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //click action
+                openSchedule();
             }
         });
 
@@ -154,7 +154,7 @@ public class Students extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //click action
+                openSchedule();
             }
         });
 
@@ -207,6 +207,11 @@ public class Students extends AppCompatActivity {
         usefulLinks.add(new UsefulLinks("Events Τμήματος","https://mst.hmu.gr/news_gr/",R.drawable.events));
         usefulLinks.add(new UsefulLinks("Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου","https://www.ktelherlas.gr/",R.drawable.ktel));
         usefulLinks.add(new UsefulLinks("Εφαρμογή Movie SCoRe","https://mst.hmu.gr/",R.drawable.movies));
+    }
 
+    private void openSchedule(){
+        String scheduleUrl = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
+        Intent schedule = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl));
+        startActivity(schedule);
     }
 }
