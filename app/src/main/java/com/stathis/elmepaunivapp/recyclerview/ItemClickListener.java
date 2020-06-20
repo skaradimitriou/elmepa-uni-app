@@ -1,10 +1,12 @@
 package com.stathis.elmepaunivapp.recyclerview;
 
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.models.ProfessorModel;
-import com.stathis.elmepaunivapp.models.Programmes;
 
-public interface ItemClickListener{
-    public void onItemClick(Object item);
+import android.view.View;
+
+import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+
+public interface ItemClickListener extends View.OnClickListener {
+
+    public void onItemClick(DeptFieldsOfStudy item);
 
 }

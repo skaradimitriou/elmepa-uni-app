@@ -5,6 +5,8 @@
     android:layout_height="230dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="10dp"
+    android:clickable="true"
+    android:focusable="true"
     android:layout_marginRight="10dp"
     app:cardCornerRadius="2dp"
     app:cardElevation="3dp">

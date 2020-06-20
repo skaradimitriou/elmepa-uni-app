@@ -16,17 +16,19 @@ import java.util.List;
 public class FieldsAdapter extends RecyclerView.Adapter<FieldsViewHolder>{
 
     private List<DeptFieldsOfStudy> fieldsOfStudies;
+    private ItemClickListener callback;
 
     //constructor of what I want to show to the user
-    public FieldsAdapter(List<DeptFieldsOfStudy> fields) {
+    public FieldsAdapter(List<DeptFieldsOfStudy> fields, ItemClickListener listener) {
         fieldsOfStudies = fields;
+        callback = listener;
     }
 
     @NonNull
     @Override
     public FieldsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.field_item_row, parent, false);
-        return new FieldsViewHolder(view);
+        return new FieldsViewHolder(view, callback);
     }
 
     @Override
@@ -39,6 +41,7 @@ public class FieldsAdapter extends RecyclerView.Adapter<FieldsViewHolder>{
     public int getItemCount() {
         return fieldsOfStudies.size();
     }
+
 
 
 }

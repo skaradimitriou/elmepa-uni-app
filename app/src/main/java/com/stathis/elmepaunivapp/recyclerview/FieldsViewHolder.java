@@ -13,16 +13,28 @@ import com.stathis.elmepaunivapp.models.ProfessorModel;
 
 public class FieldsViewHolder extends RecyclerView.ViewHolder {
 
+    private ItemClickListener ItemClickListener;
     private TextView name;
     private ImageView imageView;
+    private Object data;
 
-    public FieldsViewHolder(@NonNull View itemView) {
+    public FieldsViewHolder(@NonNull View itemView, ItemClickListener itemClickListener) {
         super(itemView);
         name = itemView.findViewById(R.id.fields_holder_txt);
         imageView = itemView.findViewById(R.id.fields_img);
+
+        ItemClickListener = itemClickListener;
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ItemClickListener.onItemClick((DeptFieldsOfStudy) data);
+            }
+        });
+
     }
 
     public void present(DeptFieldsOfStudy data) {
+        this.data = data;
         name.setText(data.getName());
         imageView.setImageResource(data.getImageResource());
     }

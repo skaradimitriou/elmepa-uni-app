@@ -20,6 +20,7 @@ import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
+import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
 import com.stathis.elmepaunivapp.recyclerview.ProgrammesAdapter;
 import com.stathis.elmepaunivapp.recyclerview.RecAdapter;
 
@@ -56,13 +57,33 @@ public class Department extends AppCompatActivity {
 
         //rec Views & adapters
         fields_recView = findViewById(R.id.fieldsOfStudy_recView);
-        fieldsAdapter = new FieldsAdapter(fieldsOfStudy);
+        fieldsAdapter = new FieldsAdapter(fieldsOfStudy, new ItemClickListener() {
+            @Override
+            public void onClick(View v) {}
+
+            @Override
+            public void onItemClick(DeptFieldsOfStudy item) {
+                switch(item.getName()){
+                    case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
+                        //
+                        break;
+                    case "Διοίκηση Επιχειρήσεων & Οργανισμών":
+                        //
+                        break;
+                    case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
+                        //
+                        break;
+                };
+            }
+
+
+        });
         fields_recView.setAdapter(fieldsAdapter);
         programmes_recView = findViewById(R.id.programmes_recView);
         programmesAdapter = new ProgrammesAdapter(programmes);
         programmes_recView.setAdapter(programmesAdapter);
 
-        //Fab btns
+        //Fab Buttons
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
