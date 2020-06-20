@@ -71,6 +71,7 @@
             </RelativeLayout>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/schedule_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginLeft="15dp"
@@ -112,6 +113,7 @@
                             android:text="Κάνε tap για να δεις\nτο ωρολόγιο πρόγραμμα"/>
 
                         <Button
+                            android:id="@+id/schedule_card_btn"
                             android:layout_width="match_parent"
                             android:layout_marginRight="15dp"
                             android:background="#e02b20"
