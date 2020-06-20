@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,6 +23,9 @@ public class Announcements extends AppCompatActivity {
         //load webview with school web content
         WebView webview = findViewById(R.id.web_announcements);
         webview.loadUrl("https://mst.hmu.gr/news_gr/");
+        //enabling js files
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.stathis.elmepaunivapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class PhdProg extends AppCompatActivity {
@@ -16,5 +17,8 @@ public class PhdProg extends AppCompatActivity {
         //load webview with school web content
         WebView webview = findViewById(R.id.phd_Program);
         webview.loadUrl(url);
+        //enabling js files
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
     }
 }
