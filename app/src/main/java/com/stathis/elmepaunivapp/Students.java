@@ -7,6 +7,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -84,7 +85,53 @@ public class Students extends AppCompatActivity {
 
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                Toast.makeText(Students.this, "You did it!", Toast.LENGTH_SHORT).show();
+                Intent card,edu,fb,eclass,municipality,tripadvisor,eudoxus,webmail,events,buses,app;
+                switch (usefulLinks.getName()){
+                    case "Ακαδημαική Ταυτότητα":
+                        card = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(card);
+                        break;
+                    case "Σύστημα Φοιτητών":
+                        edu = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(edu);
+                        break;
+                    case "Σελίδα Φοιτητών":
+                        fb = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(fb);
+                        break;
+                    case "e-Class":
+                        eclass = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(eclass);
+                        break;
+                    case "Δήμος Αγ.Νικολάου":
+                        municipality = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(municipality);
+                        break;
+                    case "Προτεινόμενα Εστιατόρια":
+                        tripadvisor = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(tripadvisor);
+                        break;
+                    case "Εύδοξος":
+                        eudoxus = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(eudoxus);
+                        break;
+                    case "Edu E-mail Φοιτητή":
+                        webmail = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(webmail);
+                        break;
+                    case "Events Τμήματος":
+                        events = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(events);
+                        break;
+                    case "Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου":
+                        buses = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(buses);
+                        break;
+                    case "Εφαρμογή Movie SCoRe":
+                        app = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
+                        startActivity(app);
+                        break;
+                }
             }
 
             @Override
@@ -149,17 +196,17 @@ public class Students extends AppCompatActivity {
         fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
 
         usefulLinks = new ArrayList<>();
-        usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα","",R.drawable.student_card));
-        usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών","",R.drawable.students));
-        usefulLinks.add(new UsefulLinks("Σελίδα Φοιτητών","",R.drawable.fb));
-        usefulLinks.add(new UsefulLinks("e-Class","",R.drawable.eclass));
-        usefulLinks.add(new UsefulLinks("Δήμος Αγ.Νικολάου","",R.drawable.dimos));
-        usefulLinks.add(new UsefulLinks("Προτεινόμενα Εστιατόρια","",R.drawable.tripadvisor));
-        usefulLinks.add(new UsefulLinks("Εύδοξος","",R.drawable.eudoxus));
-        usefulLinks.add(new UsefulLinks("Edu E-mail Φοιτητή","",R.drawable.webmail));
-        usefulLinks.add(new UsefulLinks("Events Τμήματος","",R.drawable.events));
-        usefulLinks.add(new UsefulLinks("Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου","",R.drawable.ktel));
-        usefulLinks.add(new UsefulLinks("Εφαρμογή Movie SCoRe","",R.drawable.movies));
+        usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα","https://submit-academicid.minedu.gov.gr/",R.drawable.student_card));
+        usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών","https://student.hmu.gr/",R.drawable.students));
+        usefulLinks.add(new UsefulLinks("Σελίδα Φοιτητών","https://www.facebook.com/groups/213104128868246/",R.drawable.fb));
+        usefulLinks.add(new UsefulLinks("e-Class","https://eclass.hmu.gr/",R.drawable.eclass));
+        usefulLinks.add(new UsefulLinks("Δήμος Αγ.Νικολάου","https://www.dimosagn.gr/",R.drawable.dimos));
+        usefulLinks.add(new UsefulLinks("Προτεινόμενα Εστιατόρια","https://www.tripadvisor.com.gr/",R.drawable.tripadvisor));
+        usefulLinks.add(new UsefulLinks("Εύδοξος","https://eudoxus.gr/",R.drawable.eudoxus));
+        usefulLinks.add(new UsefulLinks("Edu E-mail Φοιτητή","http://webmail.edu.hmu.gr/",R.drawable.webmail));
+        usefulLinks.add(new UsefulLinks("Events Τμήματος","https://mst.hmu.gr/news_gr/",R.drawable.events));
+        usefulLinks.add(new UsefulLinks("Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου","https://www.ktelherlas.gr/",R.drawable.ktel));
+        usefulLinks.add(new UsefulLinks("Εφαρμογή Movie SCoRe","https://mst.hmu.gr/",R.drawable.movies));
 
     }
 }
