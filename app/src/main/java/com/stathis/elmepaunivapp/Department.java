@@ -20,6 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.models.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
 import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
 import com.stathis.elmepaunivapp.recyclerview.ProgrammesAdapter;
@@ -76,7 +77,12 @@ public class Department extends AppCompatActivity {
 
             @Override
             public void onProgrammesClick(Programmes programmes) {
-                // do nothing
+                //do nothing
+            }
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+                //do nothing
             }
 
 
@@ -110,6 +116,11 @@ public class Department extends AppCompatActivity {
                         Intent phd = new Intent(Department.this,PhdProg.class);
                         startActivity(phd);
                 }
+            }
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+                //do nothing
             }
         });
         programmes_recView.setAdapter(programmesAdapter);

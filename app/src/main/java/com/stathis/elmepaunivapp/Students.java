@@ -15,13 +15,15 @@ import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.models.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
 import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
+import com.stathis.elmepaunivapp.recyclerview.UsefulLinksAdapter;
 
 import java.util.ArrayList;
 
 public class Students extends AppCompatActivity {
 
-    private RecyclerView fields_recView;
+    private RecyclerView fields_recView, useful_links_recView;
     private FieldsAdapter fieldsAdapter;
+    private UsefulLinksAdapter usefulLinksAdapter;
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
     private ArrayList<UsefulLinks> usefulLinks;
     private Button btn;
@@ -42,6 +44,7 @@ public class Students extends AppCompatActivity {
 
         //rec Views & adapters
         fields_recView = findViewById(R.id.diff_directions);
+        useful_links_recView = findViewById(R.id.useful_links_recView);
         fieldsAdapter = new FieldsAdapter(fieldsOfStudy, new ItemClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +60,37 @@ public class Students extends AppCompatActivity {
             public void onProgrammesClick(Programmes programmes) {
                 //do nothing
             }
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+                //do nothing
+            }
         });
+
+        usefulLinksAdapter = new UsefulLinksAdapter(usefulLinks, new ItemClickListener() {
+            @Override
+            public void onItemClick(DeptFieldsOfStudy item) {
+                //do nothing
+            }
+
+            @Override
+            public void onProgrammesClick(Programmes programmes) {
+                //do nothing
+            }
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+                Toast.makeText(Students.this, "You did it!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onClick(View v) {
+                //do nothing
+            }
+        });
+        useful_links_recView.setAdapter(usefulLinksAdapter);
         fields_recView.setAdapter(fieldsAdapter);
+
 
         schedule = findViewById(R.id.schedule_cardview);
         schedule.setOnClickListener(new View.OnClickListener() {
@@ -84,14 +116,17 @@ public class Students extends AppCompatActivity {
         fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
 
         usefulLinks = new ArrayList<>();
-        usefulLinks.add(new UsefulLinks("Εικονική Περιήγηση",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("",R.drawable.data));
-        usefulLinks.add(new UsefulLinks("",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Εικονική Περιήγηση","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Σελίδα Φοιτητών","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Δήμος Αγ.Νικολάου","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Προτεινόμενα Εστιατόρια","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Εύδοξος","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Edu E-mail Φοιτητή","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Events Τμήματος","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Κ.Τ.Ε.Λ","",R.drawable.data));
+        usefulLinks.add(new UsefulLinks("Movie SCoRe","",R.drawable.data));
+
     }
 }

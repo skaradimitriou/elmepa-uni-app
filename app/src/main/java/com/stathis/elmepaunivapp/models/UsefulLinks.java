@@ -36,12 +36,4 @@ public class UsefulLinks {
         ImageResource = imageResource;
     }
 
-    @Override
-    public String toString() {
-        return "UsefulLinks{" +
-                "name='" + name + '\'' +
-                ", url='" + url + '\'' +
-                ", ImageResource=" + ImageResource +
-                '}';
-    }
 }
