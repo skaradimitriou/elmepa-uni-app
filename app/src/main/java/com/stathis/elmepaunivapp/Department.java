@@ -40,6 +40,8 @@ public class Department extends AppCompatActivity {
     private RecyclerView programmes_recView;
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
     private ArrayList<Programmes> programmes;
+    private ArrayList<Programmes> deptPerks;
+    private ArrayList<Programmes> socialChannels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -209,6 +211,10 @@ public class Department extends AppCompatActivity {
         programmes.add(new Programmes("Προπτυχιακές Σπουδές", "ΔΙΑΡΚΕΙΑΣ 4 ΕΤΩΝ",R.drawable.ungrad));
         programmes.add(new Programmes("Μεταπτυχιακά Προγράμματα", "ΔΙΑΡΚΕΙΑΣ 2 ΕΤΩΝ",R.drawable.postgrad));
         programmes.add(new Programmes("Εκπόνηση Διδακτορικού", "ΕΛΑΧΙΣΤΗΣ ΔΙΑΡΚΕΙΑΣ 3 ΕΤΩΝ",R.drawable.phd));
+
+        deptPerks = new ArrayList<>();
+        socialChannels = new ArrayList<>();
+
     }
 
 }
