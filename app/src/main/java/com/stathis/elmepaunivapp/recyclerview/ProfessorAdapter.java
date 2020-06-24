@@ -28,7 +28,7 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorViewHolder> 
     @Override
     public ProfessorViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //creating the view inside the rec adapter
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.holder_item_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.professor_item_row, parent, false);
         return new ProfessorViewHolder(view, listener);
     }
 
