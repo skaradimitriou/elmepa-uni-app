@@ -145,9 +145,9 @@ public class Professors extends AppCompatActivity {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(Professors.this);
         builder.setTitle("Νέο e-mail");
         if (professorModel.getGender().equals("male")) {
-            builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. " + professorModel.getFullName() + ";");
+            builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. " + professorModel.getVocative() + ";");
         } else if (professorModel.getGender().equals("female")) {
-            builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ. " + professorModel.getFullName() + ";");
+            builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ. " + professorModel.getVocative() + ";");
         }
 
         builder.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
@@ -159,7 +159,7 @@ public class Professors extends AppCompatActivity {
         builder.setNegativeButton("Άκυρο", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //
+                dialog.dismiss();
             }
         });
         builder.show();
@@ -178,36 +178,36 @@ public class Professors extends AppCompatActivity {
 
     private void createProfessorList() {
         professors = new ArrayList<>();
-        professors.add(new ProfessorModel("Παπαδάκης Στέλιος", "spap@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Παναγιωτάκης Κώστας", "cpanag@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Μαστοράκης Γιώργος", "gmastorakis@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Κοπανάκης Γιάννης", "kopanakis@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Δημοτίκαλης Γιάννης", "jdim@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Λεμονάκης Χρήστος", "lemonakis@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Περακάκης Μάνος", "mperakakis@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Αικατερινίδης Ιωάννης", "aikaterinidis@gmail.com", "male"));
-        professors.add(new ProfessorModel("Αστρουλάκης Νικόλαος", "n.astroulakis@gmail.com", "male"));
-        professors.add(new ProfessorModel("Βάρδας Ιωάννης", "vardasg@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Βασιλειάδης Γεώργιος", "gvasil@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Κοκκινάκης Εμμανουήλ", "manoskokkinakis@yahoo.gr", "male"));
-        professors.add(new ProfessorModel("Κόττη Εύη", "kottievi@hmu.gr", "female"));
-        professors.add(new ProfessorModel("Μαρκάκη Μαρία", "mmarkaki@hmu.gr", "female"));
-        professors.add(new ProfessorModel("Μεραμβελιωτάκης Γεώργιος", "gmeramv@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Μπάλλας Παναγιώτης", "ballas@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Σκουλουδάκης Εμμανουήλ", "Εskououdakis@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Σχοινιωτάκης Νικόλαος", "freemarkos@yahoo.gr", "male"));
-        professors.add(new ProfessorModel("Τριχάς Νικόλαος", "ntrihas@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Τσιλιμπώκος Κωνσταντίνος", "kostsil@hotmail.com", "male"));
-        professors.add(new ProfessorModel("Φανουργιάκης Ιωάννης", "jfanourgiakis@yahoo.com", "male"));
-        professors.add(new ProfessorModel("Φαφαλιός Παύλος", "fafalios@ics.forth.gr", "male"));
-        professors.add(new ProfessorModel("Αρακαδάκης Α. Γεώργιος", "arakadakisjr@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Καμπέλη Κωνσταντίνα", "nantia.kampeli@gmail.com", "female"));
-        professors.add(new ProfessorModel("Καπανταϊδάκης Ιωάννης", "jkapad@csd.uoc.gr", "male"));
-        professors.add(new ProfessorModel("Μπατζανακάκη Ελένη", "eleni@candiafinance.gr", "female"));
-        professors.add(new ProfessorModel("Περονικολής Μιχαήλ", "m.peronikolis@yahoo.com", "male"));
-        professors.add(new ProfessorModel("Πετράκης Νικόλαος", "nickpetran@yahoo.gr", "male"));
-        professors.add(new ProfessorModel("Σφακιανάκης Θεόδωρος", "tmsfakia@hmu.gr", "male"));
-        professors.add(new ProfessorModel("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr", "female"));
+        professors.add(new ProfessorModel("Παπαδάκης Στέλιος", "spap@hmu.gr", "male","Παπαδάκη Στέλιο"));
+        professors.add(new ProfessorModel("Παναγιωτάκης Κώστας", "cpanag@hmu.gr", "male","Παναγιωτάκη Κώστα"));
+        professors.add(new ProfessorModel("Μαστοράκης Γιώργος", "gmastorakis@hmu.gr", "male","Μαστοράκη Γιώργο"));
+        professors.add(new ProfessorModel("Κοπανάκης Γιάννης", "kopanakis@hmu.gr", "male","Κοπανάκη Γιάννη"));
+        professors.add(new ProfessorModel("Δημοτίκαλης Γιάννης", "jdim@hmu.gr", "male","Δημοτίκαλη Γιάννη"));
+        professors.add(new ProfessorModel("Λεμονάκης Χρήστος", "lemonakis@hmu.gr", "male","Λεμονάκη Χρήστο"));
+        professors.add(new ProfessorModel("Περακάκης Μάνος", "mperakakis@hmu.gr", "male","Περακάκη Μάνο"));
+        professors.add(new ProfessorModel("Αικατερινίδης Ιωάννης", "aikaterinidis@gmail.com", "male","Αικατερινίδη Ιωάννη"));
+        professors.add(new ProfessorModel("Αστρουλάκης Νικόλαος", "n.astroulakis@gmail.com", "male","Αστρουλάκη Νικόλαο"));
+        professors.add(new ProfessorModel("Βάρδας Ιωάννης", "vardasg@hmu.gr", "male","Βάρδα Ιωάννη"));
+        professors.add(new ProfessorModel("Βασιλειάδης Γεώργιος", "gvasil@hmu.gr", "male","Βασιλειάδη Γεώργιο"));
+        professors.add(new ProfessorModel("Κοκκινάκης Εμμανουήλ", "manoskokkinakis@yahoo.gr", "male","Κοκκινάκη Εμμανουήλ"));
+        professors.add(new ProfessorModel("Κόττη Εύη", "kottievi@hmu.gr", "female","Κόττη Εύη"));
+        professors.add(new ProfessorModel("Μαρκάκη Μαρία", "mmarkaki@hmu.gr", "female","Μαρκάκη Μαρία"));
+        professors.add(new ProfessorModel("Μεραμβελιωτάκης Γεώργιος", "gmeramv@hmu.gr", "male","Μεραμβελιωτάκη Γεώργιο"));
+        professors.add(new ProfessorModel("Μπάλλας Παναγιώτης", "ballas@hmu.gr", "male","Μπάλλα Παναγιώτη"));
+        professors.add(new ProfessorModel("Σκουλουδάκης Εμμανουήλ", "Εskououdakis@hmu.gr", "male","Σκουλουδάκη Εμμανουήλ"));
+        professors.add(new ProfessorModel("Σχοινιωτάκης Νικόλαος", "freemarkos@yahoo.gr", "male","Σχοινιωτάκη Νικόλαο"));
+        professors.add(new ProfessorModel("Τριχάς Νικόλαος", "ntrihas@hmu.gr", "male","Τριχά Νικόλαο"));
+        professors.add(new ProfessorModel("Τσιλιμπώκος Κωνσταντίνος", "kostsil@hotmail.com", "male","Τσιλιμπώκο Κωνσταντίνο"));
+        professors.add(new ProfessorModel("Φανουργιάκης Ιωάννης", "jfanourgiakis@yahoo.com", "male","Φανουργιάκη Ιωάννη"));
+        professors.add(new ProfessorModel("Φαφαλιός Παύλος", "fafalios@ics.forth.gr", "male","Φαφαλιό Παύλο"));
+        professors.add(new ProfessorModel("Αρακαδάκης Α. Γεώργιος", "arakadakisjr@hmu.gr", "male","Αρακαδάκη Α. Γεώργιο"));
+        professors.add(new ProfessorModel("Καμπέλη Κωνσταντίνα", "nantia.kampeli@gmail.com", "female","Καμπέλη Κωνσταντίνα"));
+        professors.add(new ProfessorModel("Καπανταϊδάκης Ιωάννης", "jkapad@csd.uoc.gr", "male","Καπανταϊδάκη Ιωάννη"));
+        professors.add(new ProfessorModel("Μπατζανακάκη Ελένη", "eleni@candiafinance.gr", "female","Μπατζανακάκη Ελένη"));
+        professors.add(new ProfessorModel("Περονικολής Μιχαήλ", "m.peronikolis@yahoo.com", "male","Περονικολή Μιχαήλ"));
+        professors.add(new ProfessorModel("Πετράκης Νικόλαος", "nickpetran@yahoo.gr", "male","Πετράκη Νικόλαο"));
+        professors.add(new ProfessorModel("Σφακιανάκης Θεόδωρος", "tmsfakia@hmu.gr", "male","Σφακιανάκη Θεόδωρο"));
+        professors.add(new ProfessorModel("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr", "female","Ταβλαδάκη Δέσποινα"));
     }
 
 }

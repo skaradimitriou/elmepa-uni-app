@@ -2,14 +2,16 @@ package com.stathis.elmepaunivapp.models;
 
 public class ProfessorModel {
 
-    String fullName;
-    String email;
-    String gender;
+    private String fullName;
+    private String email;
+    private String gender;
+    private String vocative;
 
-    public ProfessorModel(String fullName, String email, String gender) {
+    public ProfessorModel(String fullName, String email, String gender, String vocative) {
         this.fullName = fullName;
         this.email = email;
         this.gender = gender;
+        this.vocative = vocative; //vocative case of a professor
     }
 
     public String getFullName() {
@@ -36,13 +38,21 @@ public class ProfessorModel {
         this.gender = gender;
     }
 
+    public String getVocative() {
+        return vocative;
+    }
+
+    public void setVocative(String vocative) {
+        this.vocative = vocative;
+    }
+
     @Override
     public String toString() {
         return "ProfessorModel{" +
                 "fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
+                ", vocative='" + vocative + '\'' +
                 '}';
     }
-
 }
