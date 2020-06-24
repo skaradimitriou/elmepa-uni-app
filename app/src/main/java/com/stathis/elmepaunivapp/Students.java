@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.models.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
@@ -68,6 +69,10 @@ public class Students extends AppCompatActivity {
 
             @Override
             public void onProgrammesClick(Programmes programmes) {}
+
+            @Override
+            public void onProfessorClick(ProfessorModel professorModel) {}
+
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {}
         });
@@ -78,6 +83,9 @@ public class Students extends AppCompatActivity {
 
             @Override
             public void onProgrammesClick(Programmes programmes) {}
+
+            @Override
+            public void onProfessorClick(ProfessorModel professorModel) {}
 
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {

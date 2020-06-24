@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
-import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -26,7 +25,6 @@ import com.stathis.elmepaunivapp.models.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
 import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
 import com.stathis.elmepaunivapp.recyclerview.ProgrammesAdapter;
-import com.stathis.elmepaunivapp.recyclerview.RecAdapter;
 
 import java.util.ArrayList;
 
@@ -78,14 +76,13 @@ public class Department extends AppCompatActivity {
             }
 
             @Override
-            public void onProgrammesClick(Programmes programmes) {
-                //do nothing
-            }
+            public void onProgrammesClick(Programmes programmes) {}
 
             @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                //do nothing
-            }
+            public void onProfessorClick(ProfessorModel professorModel) {}
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {}
 
 
         });
@@ -94,14 +91,10 @@ public class Department extends AppCompatActivity {
         programmesAdapter = new ProgrammesAdapter(programmes, new ItemClickListener() {
 
             @Override
-            public void onClick(View v) {
-                //do nothing
-            }
+            public void onClick(View v) {}
 
             @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-                //do nothing
-            }
+            public void onItemClick(DeptFieldsOfStudy item) {}
 
             @Override
             public void onProgrammesClick(Programmes programmes) {
@@ -121,9 +114,10 @@ public class Department extends AppCompatActivity {
             }
 
             @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                //do nothing
-            }
+            public void onProfessorClick(ProfessorModel professorModel) {}
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {}
         });
         programmes_recView.setAdapter(programmesAdapter);
 

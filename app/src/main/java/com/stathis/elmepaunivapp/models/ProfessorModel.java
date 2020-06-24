@@ -4,10 +4,12 @@ public class ProfessorModel {
 
     String fullName;
     String email;
+    String gender;
 
-    public ProfessorModel(String fullName, String email) {
+    public ProfessorModel(String fullName, String email, String gender) {
         this.fullName = fullName;
         this.email = email;
+        this.gender = gender;
     }
 
     public String getFullName() {
@@ -26,11 +28,21 @@ public class ProfessorModel {
         this.email = email;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "ProfessorModel{" +
                 "fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
+                ", gender='" + gender + '\'' +
                 '}';
     }
+
 }

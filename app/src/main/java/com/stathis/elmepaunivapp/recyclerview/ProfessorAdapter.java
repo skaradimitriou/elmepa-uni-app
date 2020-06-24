@@ -3,7 +3,6 @@ package com.stathis.elmepaunivapp.recyclerview;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,25 +13,27 @@ import com.stathis.elmepaunivapp.models.ProfessorModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecAdapter extends RecyclerView.Adapter<RecViewHolder> {
+public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorViewHolder> {
 
     private List<ProfessorModel> arrayData = new ArrayList<ProfessorModel>();
+    private ItemClickListener listener;
 
     //constructor of what I want to show to the user
-    public RecAdapter(List<ProfessorModel> array) {
+    public ProfessorAdapter(List<ProfessorModel> array, ItemClickListener listener) {
         arrayData = array;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
-    public RecViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProfessorViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //creating the view inside the rec adapter
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.holder_item_row, parent, false);
-        return new RecViewHolder(view);
+        return new ProfessorViewHolder(view, listener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProfessorViewHolder holder, int position) {
         //we want to show the data to the users
         holder.present(arrayData.get(position));
     }
