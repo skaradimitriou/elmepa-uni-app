@@ -3,6 +3,7 @@ package com.stathis.elmepaunivapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,6 +45,7 @@ public class Department extends AppCompatActivity {
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
     private SocialChannelAdapter socialChannelAdapter;
     private ArrayList<Programmes> programmes;
+    private CardView map;
     private ArrayList<DeptPerks> deptPerks;
     private ArrayList<SocialChannels> socialChannels;
 
@@ -62,6 +64,7 @@ public class Department extends AppCompatActivity {
 
         call = findViewById(R.id.fab_call);
         mail = findViewById(R.id.fab_mail);
+        map = findViewById(R.id.dept_map_cardView);
 
         //rec Views & adapters
         fields_recView = findViewById(R.id.fieldsOfStudy_recView);
@@ -164,14 +167,32 @@ public class Department extends AppCompatActivity {
 
             @Override
             public void onSocialItemClick(SocialChannels socialChannels) {
-                Intent i;
                 switch (socialChannels.getImg()) {
                     case R.drawable.youtube:
-                        Toast.makeText(Department.this, "Hello " + socialChannels.getName(), Toast.LENGTH_SHORT).show();
+                        String youtubeUrl, LinkedInUrl, ResearchGateUrl;
+                        youtubeUrl = socialChannels.getUrl();
+                            try {
+                                //goes to channel in youtube app
+                                String inAppUrl = "vnd.youtube.com/channel/"+ youtubeUrl;
+                                Intent Youtube = new Intent(Intent.ACTION_VIEW, Uri.parse(inAppUrl));
+                                startActivity(Youtube);
+                            } catch (Exception e){
+                                //goes to channel in web view (opens browser)
+                                String WebUrl = "https://www.youtube.com/channel/"+ youtubeUrl;
+                                Intent Youtube = new Intent(Intent.ACTION_VIEW, Uri.parse(WebUrl));
+                                startActivity(Youtube);
+                            }
+                        break;
                     case R.drawable.linkedin:
-                        Toast.makeText(Department.this, "Hello " + socialChannels.getName(), Toast.LENGTH_SHORT).show();
+                        LinkedInUrl = socialChannels.getUrl();
+                        Intent Linkedin = new Intent(Intent.ACTION_VIEW, Uri.parse(LinkedInUrl));
+                        startActivity(Linkedin);
+                        break;
                     case R.drawable.researchgate:
-                        Toast.makeText(Department.this, "Hello " + socialChannels.getName(), Toast.LENGTH_SHORT).show();
+                        ResearchGateUrl = socialChannels.getUrl();
+                        Intent rg = new Intent(Intent.ACTION_VIEW, Uri.parse(ResearchGateUrl));
+                        startActivity(rg);
+                        break;
                 }
             }
 
@@ -272,9 +293,9 @@ public class Department extends AppCompatActivity {
 
         deptPerks = new ArrayList<>();
         socialChannels = new ArrayList<>();
-        socialChannels.add(new SocialChannels("Youtube", "https://www.youtube.com/channel/UCapUQKQVrP2p4_ijj_OxvNg", R.drawable.youtube));
-        socialChannels.add(new SocialChannels("LinkedIn", "www.google.com", R.drawable.linkedin));
-        socialChannels.add(new SocialChannels("Research\nGate", "www.google.com", R.drawable.researchgate));
+        socialChannels.add(new SocialChannels("Youtube", "UCapUQKQVrP2p4_ijj_OxvNg", R.drawable.youtube));
+        socialChannels.add(new SocialChannels("LinkedIn", "https://www.linkedin.com/groups/13536369/", R.drawable.linkedin));
+        socialChannels.add(new SocialChannels("Research\nGate", "https://www.researchgate.net/institution/Hellenic_Mediterranean_University/department/Department_of_Management_Science_and_Technology_Agios_Nikolaos", R.drawable.researchgate));
     }
 
 }
