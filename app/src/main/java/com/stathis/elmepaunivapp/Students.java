@@ -18,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.models.SocialChannels;
 import com.stathis.elmepaunivapp.models.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
 import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
@@ -75,6 +76,9 @@ public class Students extends AppCompatActivity {
 
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {}
+
+            @Override
+            public void onSocialItemClick(SocialChannels socialChannels) {}
         });
 
         usefulLinksAdapter = new UsefulLinksAdapter(usefulLinks, new ItemClickListener() {
@@ -137,6 +141,9 @@ public class Students extends AppCompatActivity {
                         break;
                 }
             }
+
+            @Override
+            public void onSocialItemClick(SocialChannels socialChannels) {}
 
             @Override
             public void onClick(View v) {}

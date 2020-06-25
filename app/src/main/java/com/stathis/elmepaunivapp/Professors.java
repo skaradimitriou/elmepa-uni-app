@@ -21,6 +21,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.models.SocialChannels;
 import com.stathis.elmepaunivapp.models.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
 import com.stathis.elmepaunivapp.recyclerview.ProfessorAdapter;
@@ -93,6 +94,9 @@ public class Professors extends AppCompatActivity {
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
             }
+
+            @Override
+            public void onSocialItemClick(SocialChannels socialChannels) {}
 
             @Override
             public void onClick(View v) {

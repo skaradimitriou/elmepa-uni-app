@@ -15,16 +15,18 @@ import java.util.List;
 public class SocialChannelAdapter extends RecyclerView.Adapter<SocialChannelsViewHolder> {
 
     private List<SocialChannels> socialChannels;
+    private ItemClickListener itemClickListener;
 
-    public SocialChannelAdapter(List<SocialChannels> socialChannels) {
+    public SocialChannelAdapter(List<SocialChannels> socialChannels, ItemClickListener listener) {
         this.socialChannels = socialChannels;
+        itemClickListener = listener;
     }
 
     @NonNull
     @Override
     public SocialChannelsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.social_item_row, parent, false);
-        return new SocialChannelsViewHolder(view);
+        return new SocialChannelsViewHolder(view,itemClickListener);
     }
 
     @Override

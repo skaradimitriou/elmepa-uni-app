@@ -67,68 +67,118 @@ public class Department extends AppCompatActivity {
         fields_recView = findViewById(R.id.fieldsOfStudy_recView);
         fieldsAdapter = new FieldsAdapter(fieldsOfStudy, new ItemClickListener() {
             @Override
-            public void onClick(View v) {}
+            public void onClick(View v) {
+            }
 
             @Override
             public void onItemClick(DeptFieldsOfStudy item) {
-                switch(item.getName()){
+                switch (item.getName()) {
                     case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
                         //
                     case "Διοίκηση Επιχειρήσεων & Οργανισμών":
                         //
                     case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
                         //
-                };
+                }
+                ;
             }
 
             @Override
-            public void onProgrammesClick(Programmes programmes) {}
+            public void onProgrammesClick(Programmes programmes) {
+            }
 
             @Override
-            public void onProfessorClick(ProfessorModel professorModel) {}
+            public void onProfessorClick(ProfessorModel professorModel) {
+            }
 
             @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {}
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+            }
 
+            @Override
+            public void onSocialItemClick(SocialChannels socialChannels) {
 
+            }
         });
+        //fields adapter
         fields_recView.setAdapter(fieldsAdapter);
         programmes_recView = findViewById(R.id.programmes_recView);
         programmesAdapter = new ProgrammesAdapter(programmes, new ItemClickListener() {
 
             @Override
-            public void onClick(View v) {}
+            public void onClick(View v) {
+            }
 
             @Override
-            public void onItemClick(DeptFieldsOfStudy item) {}
+            public void onItemClick(DeptFieldsOfStudy item) {
+            }
 
             @Override
             public void onProgrammesClick(Programmes programmes) {
-                switch (programmes.getName()){
+                switch (programmes.getName()) {
                     case "Προπτυχιακές Σπουδές":
-                        Intent undergraduates = new Intent(Department.this,UndergraduateProg.class);
+                        Intent undergraduates = new Intent(Department.this, UndergraduateProg.class);
                         startActivity(undergraduates);
                         break;
                     case "Μεταπτυχιακά Προγράμματα":
-                        Intent postgraduates = new Intent(Department.this,PostgraduateProg.class);
+                        Intent postgraduates = new Intent(Department.this, PostgraduateProg.class);
                         startActivity(postgraduates);
                         break;
                     case "Εκπόνηση Διδακτορικού":
-                        Intent phd = new Intent(Department.this,PhdProg.class);
+                        Intent phd = new Intent(Department.this, PhdProg.class);
                         startActivity(phd);
                 }
             }
 
             @Override
-            public void onProfessorClick(ProfessorModel professorModel) {}
+            public void onProfessorClick(ProfessorModel professorModel) {
+            }
 
             @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {}
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+            }
+
+            @Override
+            public void onSocialItemClick(SocialChannels socialChannels) {
+            }
         });
         programmes_recView.setAdapter(programmesAdapter);
-
+        //social adapter
         social_recView = findViewById(R.id.social_recView);
-        socialChannelAdapter = new SocialChannelAdapter(socialChannels);
+        socialChannelAdapter = new SocialChannelAdapter(socialChannels, new ItemClickListener() {
+            @Override
+            public void onItemClick(DeptFieldsOfStudy item) {
+            }
+
+            @Override
+            public void onProgrammesClick(Programmes programmes) {
+            }
+
+            @Override
+            public void onProfessorClick(ProfessorModel professorModel) {
+            }
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+            }
+
+            @Override
+            public void onSocialItemClick(SocialChannels socialChannels) {
+                Intent i;
+                switch (socialChannels.getImg()) {
+                    case R.drawable.youtube:
+                        Toast.makeText(Department.this, "Hello " + socialChannels.getName(), Toast.LENGTH_SHORT).show();
+                    case R.drawable.linkedin:
+                        Toast.makeText(Department.this, "Hello " + socialChannels.getName(), Toast.LENGTH_SHORT).show();
+                    case R.drawable.researchgate:
+                        Toast.makeText(Department.this, "Hello " + socialChannels.getName(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onClick(View v) {
+            }
+        });
         social_recView.setAdapter(socialChannelAdapter);
 
         //Fab Buttons
@@ -151,7 +201,7 @@ public class Department extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Intent i;
-                switch(item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.nav_home:
                         i = new Intent(Department.this, Dashboard.class);
                         startActivity(i);
@@ -198,33 +248,33 @@ public class Department extends AppCompatActivity {
         }
     }
 
-    private void sendAnEmailToSecretaryOffice(){
+    private void sendAnEmailToSecretaryOffice() {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"kalarhaki@hmu.gr"});
+        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"kalarhaki@hmu.gr"});
         try {
             startActivity(Intent.createChooser(i, "Send mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(Department.this, "There are no email clients installed.",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Department.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void createLists(){
+    private void createLists() {
         fieldsOfStudy = new ArrayList<>();
         fieldsOfStudy.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", R.drawable.data));
         fieldsOfStudy.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", R.drawable.business));
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία",R.drawable. digitalmkt));
+        fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
 
         programmes = new ArrayList<>();
-        programmes.add(new Programmes("Προπτυχιακές Σπουδές", "ΔΙΑΡΚΕΙΑΣ 4 ΕΤΩΝ",R.drawable.ungrad));
-        programmes.add(new Programmes("Μεταπτυχιακά Προγράμματα", "ΔΙΑΡΚΕΙΑΣ 2 ΕΤΩΝ",R.drawable.postgrad));
-        programmes.add(new Programmes("Εκπόνηση Διδακτορικού", "ΕΛΑΧΙΣΤΗΣ ΔΙΑΡΚΕΙΑΣ 3 ΕΤΩΝ",R.drawable.phd));
+        programmes.add(new Programmes("Προπτυχιακές Σπουδές", "ΔΙΑΡΚΕΙΑΣ 4 ΕΤΩΝ", R.drawable.ungrad));
+        programmes.add(new Programmes("Μεταπτυχιακά Προγράμματα", "ΔΙΑΡΚΕΙΑΣ 2 ΕΤΩΝ", R.drawable.postgrad));
+        programmes.add(new Programmes("Εκπόνηση Διδακτορικού", "ΕΛΑΧΙΣΤΗΣ ΔΙΑΡΚΕΙΑΣ 3 ΕΤΩΝ", R.drawable.phd));
 
         deptPerks = new ArrayList<>();
         socialChannels = new ArrayList<>();
-        socialChannels.add(new SocialChannels("Youtube","www.google.com",R.drawable.students));
-        socialChannels.add(new SocialChannels("LinkedIn","www.google.com",R.drawable.students));
-        socialChannels.add(new SocialChannels("Research Gate","www.google.com",R.drawable.students));
+        socialChannels.add(new SocialChannels("Youtube", "https://www.youtube.com/channel/UCapUQKQVrP2p4_ijj_OxvNg", R.drawable.youtube));
+        socialChannels.add(new SocialChannels("LinkedIn", "www.google.com", R.drawable.linkedin));
+        socialChannels.add(new SocialChannels("Research\nGate", "www.google.com", R.drawable.researchgate));
     }
 
 }
