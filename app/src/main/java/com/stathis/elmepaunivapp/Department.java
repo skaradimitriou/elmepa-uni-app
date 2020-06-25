@@ -19,12 +19,16 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.models.DeptPerks;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.models.SocialChannels;
 import com.stathis.elmepaunivapp.models.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
 import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
 import com.stathis.elmepaunivapp.recyclerview.ProgrammesAdapter;
+import com.stathis.elmepaunivapp.recyclerview.SocialChannelAdapter;
+import com.stathis.elmepaunivapp.recyclerview.SocialChannelsViewHolder;
 
 import java.util.ArrayList;
 
@@ -34,14 +38,14 @@ public class Department extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
-    private RecyclerView fields_recView;
+    private RecyclerView fields_recView, programmes_recView, social_recView;
     private FieldsAdapter fieldsAdapter;
     private ProgrammesAdapter programmesAdapter;
-    private RecyclerView programmes_recView;
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
+    private SocialChannelAdapter socialChannelAdapter;
     private ArrayList<Programmes> programmes;
-    private ArrayList<Programmes> deptPerks;
-    private ArrayList<Programmes> socialChannels;
+    private ArrayList<DeptPerks> deptPerks;
+    private ArrayList<SocialChannels> socialChannels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +126,10 @@ public class Department extends AppCompatActivity {
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {}
         });
         programmes_recView.setAdapter(programmesAdapter);
+
+        social_recView = findViewById(R.id.social_recView);
+        socialChannelAdapter = new SocialChannelAdapter(socialChannels);
+        social_recView.setAdapter(socialChannelAdapter);
 
         //Fab Buttons
         call.setOnClickListener(new View.OnClickListener() {
@@ -214,7 +222,9 @@ public class Department extends AppCompatActivity {
 
         deptPerks = new ArrayList<>();
         socialChannels = new ArrayList<>();
-
+        socialChannels.add(new SocialChannels("Youtube","www.google.com",R.drawable.students));
+        socialChannels.add(new SocialChannels("LinkedIn","www.google.com",R.drawable.students));
+        socialChannels.add(new SocialChannels("Research Gate","www.google.com",R.drawable.students));
     }
 
 }
