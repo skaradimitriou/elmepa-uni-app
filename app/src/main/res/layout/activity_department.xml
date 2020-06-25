@@ -108,25 +108,7 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/dept_map_cardView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="15dp"
-                android:layout_marginRight="15dp"
-                android:background="#00ff00">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
+            
 
             <TextView
                 android:id="@+id/Social_headTxt"

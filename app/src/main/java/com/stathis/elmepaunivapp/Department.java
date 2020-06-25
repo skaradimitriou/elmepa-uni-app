@@ -35,7 +35,7 @@ import java.util.ArrayList;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class Department extends AppCompatActivity {
+public class Department extends AppCompatActivity  {
 
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
@@ -45,7 +45,6 @@ public class Department extends AppCompatActivity {
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudy;
     private SocialChannelAdapter socialChannelAdapter;
     private ArrayList<Programmes> programmes;
-    private CardView map;
     private ArrayList<DeptPerks> deptPerks;
     private ArrayList<SocialChannels> socialChannels;
 
@@ -64,7 +63,6 @@ public class Department extends AppCompatActivity {
 
         call = findViewById(R.id.fab_call);
         mail = findViewById(R.id.fab_mail);
-        map = findViewById(R.id.dept_map_cardView);
 
         //rec Views & adapters
         fields_recView = findViewById(R.id.fieldsOfStudy_recView);
