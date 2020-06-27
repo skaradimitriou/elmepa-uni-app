@@ -27,6 +27,7 @@ import com.stathis.elmepaunivapp.recyclerview.LatestNewsAdapter;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -56,6 +57,9 @@ public class Announcements extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
+
+        Content content = new Content();
+        content.execute();
 
         //Announcements recView
         ann_recView = findViewById(R.id.latestNews_recView);
@@ -103,39 +107,35 @@ public class Announcements extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             try {
                 String url = "https://mst.hmu.gr/";
-
                 Document doc = Jsoup.connect(url).get();
 
-                Elements data = doc.select(" string ");
-                int size = data.size();
+                Element data = doc.select("article").first();
+
                 Log.d("doc", "doc: " + doc);
                 Log.d("data", "data: " + data);
-                Log.d("size", "" + size);
+                int size = data.childNodeSize();
+                Log.d("size", "size: " + size);
                 for (int i = 0; i < size; i++) {
-
-                    String title = data.select("h4.entry-title")
-                            .select("span")
-                            .eq(i)
-                            .text();
-
-                    String openUrl = data.select("h4.et_pb_image_container")
-                            .select("a")
-                            .eq(i)
-                            .attr("href");
-
-                    String imgUrl = data.select("class.et_pb_image_container")
+                    String imgUrl = data.select("a.entry-featured-image-url")
                             .select("img")
                             .eq(i)
                             .attr("src");
 
-                    latestNews.add(new Announcement(title, openUrl, imgUrl));
+                    String title = data.select("h4.entry-title")
+                            .select("h4")
+                            .eq(i)
+                            .text();
+
+                    String detailUrl = data.select("h4.entry-title")
+                            .select("a")
+                            .eq(i)
+                            .attr("href");
+                    latestNews.add(new Announcement(title, detailUrl, imgUrl));
                     Log.d("items", "img: " + imgUrl + " . title: " + title);
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             return null;
         }
     }
