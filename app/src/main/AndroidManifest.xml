@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".PhdProg"></activity>
+        <activity android:name=".AnnouncementMoreInfo"></activity>
+        <activity android:name=".PhdProg" />
         <activity android:name=".UndergraduateProg" />
         <activity android:name=".PostgraduateProg" />
         <activity android:name=".PlaceholderClass" />

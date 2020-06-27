@@ -11,9 +11,9 @@ import com.stathis.elmepaunivapp.models.UsefulLinks;
 
 public interface ItemClickListener extends View.OnClickListener {
 
-    public void onItemClick(DeptFieldsOfStudy item);
-    public void onProgrammesClick(Programmes programmes);
-    public void onProfessorClick(ProfessorModel professorModel);
-    public void onUsefulLinksClick(UsefulLinks usefulLinks);
+    void onItemClick(DeptFieldsOfStudy item);
+    void onProgrammesClick(Programmes programmes);
+    void onProfessorClick(ProfessorModel professorModel);
+    void onUsefulLinksClick(UsefulLinks usefulLinks);
     void onSocialItemClick(SocialChannels socialChannels);
 }

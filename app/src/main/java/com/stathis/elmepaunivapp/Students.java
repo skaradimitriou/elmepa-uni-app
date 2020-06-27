@@ -211,7 +211,7 @@ public class Students extends AppCompatActivity {
         fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
 
         usefulLinks = new ArrayList<>();
-        usefulLinks.add(new UsefulLinks("Ηλεκτρονική Γραμματεία","https://submit-academicid.minedu.gov.gr/",R.drawable.student_card));
+        usefulLinks.add(new UsefulLinks("Ηλεκτρονική Γραμματεία","https://submit-academicid.minedu.gov.gr/",R.drawable.secretariat));
         usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα","https://submit-academicid.minedu.gov.gr/",R.drawable.student_card));
         usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών","https://student.hmu.gr/",R.drawable.students));
         usefulLinks.add(new UsefulLinks("Σελίδα Φοιτητών","https://www.facebook.com/groups/213104128868246/",R.drawable.fb));

@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.models.Announcement;
 import com.stathis.elmepaunivapp.models.ProfessorModel;
 import com.stathis.elmepaunivapp.recyclerview.LatestNewsAdapter;
+import com.stathis.elmepaunivapp.recyclerview.NewsClickListener;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -43,12 +45,6 @@ public class Announcements extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_announcements);
-//        //load webview with school web content
-//        WebView webview = findViewById(R.id.web_announcements);
-//        webview.loadUrl("https://mst.hmu.gr/news_gr/");
-//        //enabling js files
-//        WebSettings webSettings = webview.getSettings();
-//        webSettings.setJavaScriptEnabled(true);
     }
 
     @Override
@@ -62,7 +58,20 @@ public class Announcements extends AppCompatActivity {
 
         //Announcements recView & Adapters
         ann_recView = findViewById(R.id.latestNews_recView);
-        ann_adapter = new LatestNewsAdapter(announcements);
+        ann_adapter = new LatestNewsAdapter(announcements, new NewsClickListener() {
+            @Override
+            public void onNewsClick(Announcement announcement) {
+                Intent learnMore = new Intent(Announcements.this, AnnouncementMoreInfo.class);
+                learnMore.putExtra("AnnouncementUrl", announcement.getOpenUrl());
+                startActivity(learnMore);
+                overridePendingTransition(0, 0);
+            }
+
+            @Override
+            public void onClick(View v) {
+                //do nothing
+            }
+        });
         ann_recView.setAdapter(ann_adapter);
 
         //listener

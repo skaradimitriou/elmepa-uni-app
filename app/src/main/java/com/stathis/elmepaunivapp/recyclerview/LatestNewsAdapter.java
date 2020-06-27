@@ -16,16 +16,18 @@ import java.util.List;
 public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsViewHolder> {
 
     private ArrayList<Announcement> latestNews;
+    private NewsClickListener listener;
 
-    public LatestNewsAdapter(ArrayList<Announcement> latestNews) {
+    public LatestNewsAdapter(ArrayList<Announcement> latestNews, NewsClickListener listener) {
         this.latestNews = latestNews;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public LatestNewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.announcement_item_row, parent, false);
-        return new LatestNewsViewHolder(view);
+        return new LatestNewsViewHolder(view,listener);
     }
 
     @Override

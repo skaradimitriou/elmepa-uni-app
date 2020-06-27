@@ -108,15 +108,6 @@
       android:pathData="M239.55,146.41l1.25,-11.8L238,133l0.32,-3 6.58,3.79 -1.58,14.82Z"
       android:fillColor="#f54247"/>
   <path
-      android:pathData="M213.86,82.54l22.48,172.02l-37.19,-21.47l-22.49,-172.03l37.2,21.48z"
-      android:fillColor="#4f502d"/>
-  <path
-      android:pathData="M87.16,136.68l4.14,31.73 37.21,21.46L106.18,19.11c-5.77,-0.52 -10.45,5.19 -11.2,14.66l-0.69,8.87Z"
-      android:fillColor="#4f502d"/>
-  <path
-      android:pathData="M255.93,107.39l21.51,164.54 0.76,0.43 9.55,-125.78c0.89,-11 -4.15,-23.22 -11.24,-27.31Z"
-      android:fillColor="#4f502d"/>
-  <path
       android:pathData="M89.56,162.88l184.14,107 0.15,-1.94L91,161.68 101.15,27a5.63,5.63 0,0 0,-1.57 3.34Z"
       android:fillColor="#484949"/>
   <path
