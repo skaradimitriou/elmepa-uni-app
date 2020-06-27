@@ -37,8 +37,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
     //search
     implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+
+    // jsoup HTML parser library @ https://jsoup.org/
+    implementation 'org.jsoup:jsoup:1.10.3'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     //Volley
     implementation 'com.android.volley:volley:1.1.1'
