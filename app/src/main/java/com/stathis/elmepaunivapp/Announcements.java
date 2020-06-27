@@ -36,9 +36,9 @@ import java.util.ArrayList;
 public class Announcements extends AppCompatActivity {
 
     private WebView webview;
-    private RecyclerView ann_recView;
+    private RecyclerView ann_recView,events_recView;
     private LatestNewsAdapter ann_adapter;
-    private ArrayList<Announcement> latestNews = new ArrayList<>();
+    private ArrayList<Announcement> announcements = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class Announcements extends AppCompatActivity {
 
         //Announcements recView
         ann_recView = findViewById(R.id.latestNews_recView);
-        ann_adapter = new LatestNewsAdapter(latestNews);
+        ann_adapter = new LatestNewsAdapter(announcements);
         ann_recView.setAdapter(ann_adapter);
 
         //listener
@@ -106,15 +106,13 @@ public class Announcements extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             try {
-                String url = "https://mst.hmu.gr/";
+                String url = "https://mst.hmu.gr";
                 Document doc = Jsoup.connect(url).get();
-
-                Element data = doc.select("article").first();
-
+                Elements data = doc.select("article.category-news");
+                int size = data.size();
                 Log.d("doc", "doc: " + doc);
                 Log.d("data", "data: " + data);
-                int size = data.childNodeSize();
-                Log.d("size", "size: " + size);
+                //displays top 3 announcements
                 for (int i = 0; i < size; i++) {
                     String imgUrl = data.select("a.entry-featured-image-url")
                             .select("img")
@@ -130,13 +128,15 @@ public class Announcements extends AppCompatActivity {
                             .select("a")
                             .eq(i)
                             .attr("href");
-                    latestNews.add(new Announcement(title, detailUrl, imgUrl));
+                    announcements.add(new Announcement(title, detailUrl, imgUrl));
                     Log.d("items", "img: " + imgUrl + " . title: " + title);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
+
+
         }
     }
 
