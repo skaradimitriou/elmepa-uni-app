@@ -37,6 +37,12 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
+
+    @Override
     public void onClick(View v) {
         Intent i;
         //cases bellow

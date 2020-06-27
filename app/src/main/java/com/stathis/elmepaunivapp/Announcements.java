@@ -94,6 +94,12 @@ public class Announcements extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
+
     private class Content extends AsyncTask<Void, Void, Void> {
 
         @Override

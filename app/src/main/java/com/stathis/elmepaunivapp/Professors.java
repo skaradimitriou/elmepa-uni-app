@@ -135,6 +135,12 @@ public class Professors extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
+
     private void filter(String text) {
         ArrayList<ProfessorModel> filteredList = new ArrayList<>();
         for (ProfessorModel item : professors) {
