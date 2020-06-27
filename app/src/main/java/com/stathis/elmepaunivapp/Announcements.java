@@ -35,8 +35,7 @@ import java.util.ArrayList;
 
 public class Announcements extends AppCompatActivity {
 
-    private WebView webview;
-    private RecyclerView ann_recView,events_recView;
+    private RecyclerView ann_recView;
     private LatestNewsAdapter ann_adapter;
     private ArrayList<Announcement> announcements = new ArrayList<>();
 
@@ -61,7 +60,7 @@ public class Announcements extends AppCompatActivity {
         Content content = new Content();
         content.execute();
 
-        //Announcements recView
+        //Announcements recView & Adapters
         ann_recView = findViewById(R.id.latestNews_recView);
         ann_adapter = new LatestNewsAdapter(announcements);
         ann_recView.setAdapter(ann_adapter);
@@ -108,12 +107,11 @@ public class Announcements extends AppCompatActivity {
             try {
                 String url = "https://mst.hmu.gr";
                 Document doc = Jsoup.connect(url).get();
-                Elements data = doc.select("article.category-news");
+                Elements data = doc.select("article");
                 int size = data.size();
                 Log.d("doc", "doc: " + doc);
                 Log.d("data", "data: " + data);
-                //displays top 3 announcements
-                for (int i = 0; i < size; i++) {
+                for (int i = 0; i < size - 1; i++) {
                     String imgUrl = data.select("a.entry-featured-image-url")
                             .select("img")
                             .eq(i)
@@ -135,8 +133,6 @@ public class Announcements extends AppCompatActivity {
                 e.printStackTrace();
             }
             return null;
-
-
         }
     }
 
