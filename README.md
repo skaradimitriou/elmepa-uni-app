@@ -4,7 +4,7 @@ This app was developed for ELMEPA University (Agios Nikolaos) in Crete, so users
 
 ## Users
 
-a. Students of the department
+a. Students of the department <br/>
 b. People who want to learn more about the department.
 
 ### Theme 
