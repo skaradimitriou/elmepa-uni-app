@@ -1,10 +1,11 @@
 # Elmepa University App
 
-Lorem ipsum sit dolor amet.
+This app was developed for ELMEPA University (Agios Nikolaos) in Crete, so users can learn more about the department of Management Science & Technology.
 
 ## Users
 
-Lorem ipsum sit dolor amet.
+a. Students of the department
+b. People who want to learn more about the department.
 
 ### Theme 
 
