@@ -12,5 +12,5 @@ Material Design - https://material.io/
 
 ### Libraries
 
-Picasso - https://square.github.io/picasso/
+Picasso - https://square.github.io/picasso/ <br/>
 JSOUP - https://jsoup.org/
