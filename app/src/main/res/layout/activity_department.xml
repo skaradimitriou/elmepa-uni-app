@@ -153,6 +153,25 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <TextView
+                android:id="@+id/dep_headTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="Μέλη Δ.Ε.Π"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/depMembers_recView"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/research_cardview"
                 android:layout_width="match_parent"
@@ -221,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                android:text="Βρείτε μας online"
+                android:text="Βρείτε μας"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
