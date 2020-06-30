@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -47,6 +48,7 @@ public class Department extends AppCompatActivity  {
     private ArrayList<Programmes> programmes;
     private ArrayList<DeptPerks> deptPerks;
     private ArrayList<SocialChannels> socialChannels;
+    private CardView virtual_tour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,7 @@ public class Department extends AppCompatActivity  {
 
         call = findViewById(R.id.fab_call);
         mail = findViewById(R.id.fab_mail);
+        virtual_tour = findViewById(R.id.virtual_tour);
 
         //rec Views & adapters
         fields_recView = findViewById(R.id.fieldsOfStudy_recView);
@@ -199,6 +202,17 @@ public class Department extends AppCompatActivity  {
             }
         });
         social_recView.setAdapter(socialChannelAdapter);
+
+        //virtual tour
+        virtual_tour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String openUrl = "https://mst.hmu.gr/hmutour/";
+                Intent VirtualTour = new Intent(Department.this, VirtualTour.class);
+                VirtualTour.putExtra("VirtualTourUrl",openUrl);
+                startActivity(VirtualTour);
+            }
+        });
 
         //Fab Buttons
         call.setOnClickListener(new View.OnClickListener() {

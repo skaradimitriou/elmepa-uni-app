@@ -34,7 +34,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
                 android:gravity="center"
-                android:text="ΕΛΜΕΠΑ"
+                android:text="Νέα &amp; Ανακοινώσεις"
                 android:textColor="#fff"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -65,31 +65,19 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/announcement_heading"
-            android:gravity="center"
-            android:text="Νέα &amp; Ανακοινώσεις"
-            android:layout_marginTop="10dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/latestNews_recView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="52dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/announcement_heading"
-            app:layout_constraintStart_toStartOf="@id/announcement_heading"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
     </LinearLayout>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"

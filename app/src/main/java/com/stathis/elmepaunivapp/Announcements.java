@@ -120,7 +120,7 @@ public class Announcements extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             try {
-                String url = "https://mst.hmu.gr";
+                String url = "https://mst.hmu.gr/";
                 Document doc = Jsoup.connect(url).get();
                 Elements data = doc.select("article");
                 int size = data.size();
@@ -144,6 +144,7 @@ public class Announcements extends AppCompatActivity {
                     announcements.add(new Announcement(title, detailUrl, imgUrl));
                     Log.d("items", "img: " + imgUrl + " . title: " + title);
                 }
+                announcements.add(new Announcement("Δείτε όλες τις ανακοινώσεις του Τμήματος", "https://mst.hmu.gr/news_gr/","https://mst.hmu.gr/wp-content/uploads/2020/06/student-using-laptop-library_74855-2539-400x250.jpg"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

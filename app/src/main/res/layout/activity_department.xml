@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f5f5f5"
     tools:context=".Department">
 
     <ScrollView
@@ -108,6 +109,112 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/virtual_tour"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#00ff00">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/virtual_tour"
+                        android:scaleType="fitXY"
+                        android:tint="#6F000000"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/research_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#00ff00">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/research"
+                            android:layout_width="130dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/research_img" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Έρευνα στο Τμήμα"/>
+
+                        <Button
+                            android:id="@+id/research_card_btn"
+                            android:layout_width="match_parent"
+                            app:cornerRadius="15dp"
+                            android:layout_marginRight="15dp"
+                            android:background="#e02b20"
+                            android:textColor="#fff"
+                            android:layout_marginBottom="10dp"
+                            android:textAllCaps="false"
+                            android:layout_height="wrap_content"
+                            android:text="Μάθε περισσότερα"/>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
             <TextView
                 android:id="@+id/Social_headTxt"
                 android:layout_width="wrap_content"
@@ -121,7 +228,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/social_recView"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
