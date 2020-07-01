@@ -90,7 +90,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             case R.id.to_tmima:
                 i=new Intent(Dashboard.this, Department.class);
                 startActivity(i);
-                overridePendingTransition(0, 0);
                 break;
             case R.id.students:
                 i=new Intent(Dashboard.this, Students.class);

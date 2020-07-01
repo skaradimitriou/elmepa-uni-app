@@ -15,12 +15,22 @@ public class DepMembersViewHolder extends RecyclerView.ViewHolder {
 
     private TextView name;
     private ImageView Img;
+    private OnItemClickListener onItemClickListener;
     private Object data;
 
-    public DepMembersViewHolder(@NonNull View itemView) {
+    public DepMembersViewHolder(@NonNull View itemView, OnItemClickListener listener) {
         super(itemView);
         name = itemView.findViewById(R.id.dep_name);
         Img = itemView.findViewById(R.id.dep_img);
+        onItemClickListener = listener;
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onDepProfessorClick((DepMembers) data);
+            }
+        });
+
     }
 
     public void present(DepMembers data) {

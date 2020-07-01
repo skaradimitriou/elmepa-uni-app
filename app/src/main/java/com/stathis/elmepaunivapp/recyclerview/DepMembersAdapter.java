@@ -15,16 +15,18 @@ import java.util.List;
 public class DepMembersAdapter extends RecyclerView.Adapter<DepMembersViewHolder> {
 
     private List<DepMembers> depMembers;
+    private OnItemClickListener onItemClickListener;
 
-    public DepMembersAdapter(List<com.stathis.elmepaunivapp.models.DepMembers> depMembers) {
+    public DepMembersAdapter(List<com.stathis.elmepaunivapp.models.DepMembers> depMembers, OnItemClickListener listener) {
         this.depMembers = depMembers;
+        onItemClickListener = listener;
     }
 
     @NonNull
     @Override
     public DepMembersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dep_members_item_row, parent, false);
-        return new DepMembersViewHolder(view);
+        return new DepMembersViewHolder(view,onItemClickListener);
     }
 
     @Override
