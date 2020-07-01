@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,7 +39,7 @@ import java.util.ArrayList;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class Department extends AppCompatActivity  {
+public class Department extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
@@ -62,24 +63,32 @@ public class Department extends AppCompatActivity  {
 
         //fields of Study fragment
         FragmentTransaction fieldsOfStudy = getSupportFragmentManager().beginTransaction();
-        fieldsOfStudy.add(R.id.fieldsOfStudy_frag,new FieldsOfStudyFragment(), "FieldsOfStudyFragment");
+        fieldsOfStudy.add(R.id.fieldsOfStudy_frag, new FieldsOfStudyFragment(), "FieldsOfStudyFragment");
         fieldsOfStudy.commit();
 
         //Programmes fragment
         FragmentTransaction programmes = getSupportFragmentManager().beginTransaction();
-        programmes.add(R.id.programmes_frag,new ProgrammesFragment(), "ProgrammesFragment");
+        programmes.add(R.id.programmes_frag, new ProgrammesFragment(), "ProgrammesFragment");
         programmes.commit();
 
         //dep members fragment
         FragmentTransaction depMembersFragment = getSupportFragmentManager().beginTransaction();
-        depMembersFragment.add(R.id.depMembers_frag,new DepMembersFragment(), "TestFragment");
+        depMembersFragment.add(R.id.depMembers_frag, new DepMembersFragment(), "TestFragment");
         depMembersFragment.commit();
 
         //dep members fragment
         FragmentTransaction findUsFragment = getSupportFragmentManager().beginTransaction();
-        findUsFragment.add(R.id.social_frag,new FindUsFragment(), "FindUsFragment");
+        findUsFragment.add(R.id.social_frag, new FindUsFragment(), "FindUsFragment");
         findUsFragment.commit();
 
+        //research btn
+        researchInDept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent research = new Intent(Department.this, ResearchInDept.class);
+                startActivity(research);
+            }
+        });
 
         //virtual tour
         virtual_tour.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +96,7 @@ public class Department extends AppCompatActivity  {
             public void onClick(View v) {
                 String openUrl = "https://mst.hmu.gr/hmutour/";
                 Intent VirtualTour = new Intent(Department.this, VirtualTour.class);
-                VirtualTour.putExtra("VirtualTourUrl",openUrl);
+                VirtualTour.putExtra("VirtualTourUrl", openUrl);
                 startActivity(VirtualTour);
             }
         });

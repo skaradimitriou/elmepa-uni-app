@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -19,10 +20,10 @@
 
     <TextView
         android:id="@+id/dep_name"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:gravity="center"
         android:layout_height="wrap_content"
-        tools:text="Γιάννης Δημοτίκαλης"
+        tools:text="Κωστας Παναγιωτακης"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/dep_img"
         app:layout_constraintLeft_toLeftOf="parent"/>

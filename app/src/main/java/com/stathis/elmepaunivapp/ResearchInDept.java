@@ -18,6 +18,5 @@ public class ResearchInDept extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
 
 
-
     }
 }
