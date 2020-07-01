@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResearchInDept"></activity>
+        <activity android:name=".ResearchLearnMore"></activity>
+        <activity android:name=".ResearchInDept" />
         <activity android:name=".ProfessorProfile" />
         <activity android:name=".VirtualTour" />
         <activity android:name=".AnnouncementMoreInfo" />

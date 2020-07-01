@@ -2,10 +2,30 @@ package com.stathis.elmepaunivapp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.models.ProfessorModel;
+import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.models.SocialChannels;
+import com.stathis.elmepaunivapp.models.UsefulLinks;
+import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
+import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
+import com.stathis.elmepaunivapp.recyclerview.UsefulLinksAdapter;
+
+import java.util.ArrayList;
 
 public class ResearchInDept extends AppCompatActivity {
+
+    private RecyclerView researchItems, research_labs;
+    private UsefulLinksAdapter researchAdapter, researchLabsAdapter;
+    private ArrayList<UsefulLinks> researchItemList = new ArrayList<>();
+    private ArrayList<UsefulLinks> researchLabList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +37,128 @@ public class ResearchInDept extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        createLists();
 
+        researchItems = findViewById(R.id.research_InDept_recView);
+        researchAdapter = new UsefulLinksAdapter(researchItemList, new ItemClickListener() {
+            @Override
+            public void onItemClick(DeptFieldsOfStudy item) {
+
+            }
+
+            @Override
+            public void onProgrammesClick(Programmes programmes) {
+
+            }
+
+            @Override
+            public void onProfessorClick(ProfessorModel professorModel) {
+
+            }
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+                switch(usefulLinks.getName()){
+                    case "Ινστιτούτο Οικονομικής Ανάλυσης":
+                        Intent learnMore = new Intent (ResearchInDept.this,ResearchLearnMore.class);
+                        learnMore.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        startActivity(learnMore);
+                        overridePendingTransition(0, 0);
+                        break;
+                    case "Ερευνητικά Επιτεύγματα":
+                        Intent achievements = new Intent (ResearchInDept.this,ResearchLearnMore.class);
+                        achievements.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        startActivity(achievements);
+                        overridePendingTransition(0, 0);
+                        break;
+                    case "Δημοσιεύσεις":
+                        Intent papers = new Intent (ResearchInDept.this,ResearchLearnMore.class);
+                        papers.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        startActivity(papers);
+                        overridePendingTransition(0, 0);
+                        break;
+                    case "Στατιστικά Στοιχεία":
+                        Intent statistics = new Intent (ResearchInDept.this,ResearchLearnMore.class);
+                        statistics.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        startActivity(statistics);
+                        overridePendingTransition(0, 0);
+                        break;
+                }
+            }
+
+            @Override
+            public void onSocialItemClick(SocialChannels socialChannels) {
+
+            }
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        researchItems.setAdapter(researchAdapter);
+        research_labs = findViewById(R.id.research_Labs_recView);
+        researchLabsAdapter = new UsefulLinksAdapter(researchLabList, new ItemClickListener() {
+            @Override
+            public void onItemClick(DeptFieldsOfStudy item) {
+
+            }
+
+            @Override
+            public void onProgrammesClick(Programmes programmes) {
+
+            }
+
+            @Override
+            public void onProfessorClick(ProfessorModel professorModel) {
+
+            }
+
+            @Override
+            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+                switch(usefulLinks.getName()){
+                    case "Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων":
+                        Intent firstLab = new Intent (ResearchInDept.this,ResearchLearnMore.class);
+                        firstLab.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        startActivity(firstLab);
+                        overridePendingTransition(0, 0);
+                        break;
+                    case "Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης":
+                        Intent SecondLab = new Intent (ResearchInDept.this,ResearchLearnMore.class);
+                        SecondLab.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        startActivity(SecondLab);
+                        overridePendingTransition(0, 0);
+                        break;
+                    case "Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας":
+                        Intent ThirdLab = new Intent (ResearchInDept.this,ResearchLearnMore.class);
+                        ThirdLab.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        startActivity(ThirdLab);
+                        overridePendingTransition(0, 0);
+                        break;
+                }
+            }
+
+            @Override
+            public void onSocialItemClick(SocialChannels socialChannels) {
+
+            }
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        research_labs.setAdapter(researchLabsAdapter);
+    }
+
+    private void createLists(){
+        researchItemList.add(new UsefulLinks("Ινστιτούτο Οικονομικής Ανάλυσης","https://mst.hmu.gr/ereuna/institoyto-oikonomikhs-analyshs-epicheirhmatikothtas-kai-toyrismoy/",R.drawable.institute));
+        researchItemList.add(new UsefulLinks("Ερευνητικά Επιτεύγματα","https://mst.hmu.gr/ereuna/ereynhtika-epiteygmata/",R.drawable.achievements));
+        researchItemList.add(new UsefulLinks("Δημοσιεύσεις","https://mst.hmu.gr/ereuna/dhmosieyseis/",R.drawable.papers));
+        researchItemList.add(new UsefulLinks("Στατιστικά Στοιχεία","https://mst.hmu.gr/ereuna/statistika-stoicheia/",R.drawable.analytics));
+
+        researchLabList.add(new UsefulLinks("Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων","https://mst.hmu.gr/ereuna/adeds/",R.drawable.lab));
+        researchLabList.add(new UsefulLinks("Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης","https://mst.hmu.gr/ereuna/datalab/",R.drawable.lab));
+        researchLabList.add(new UsefulLinks("Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας","https://www.e-bilab.gr/",R.drawable.lab));
     }
 }

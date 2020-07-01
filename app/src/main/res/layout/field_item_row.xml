@@ -13,19 +13,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="10dp"
         android:orientation="vertical"
         android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/fields_img"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="140dp"
             tools:src="@drawable/data"/>
 
         <TextView
             android:textAlignment="center"
             android:id="@+id/fields_holder_txt"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
