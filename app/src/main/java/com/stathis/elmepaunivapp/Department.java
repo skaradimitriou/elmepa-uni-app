@@ -22,20 +22,6 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.models.DepMembers;
-import com.stathis.elmepaunivapp.models.ProfessorModel;
-import com.stathis.elmepaunivapp.models.Programmes;
-import com.stathis.elmepaunivapp.models.SocialChannels;
-import com.stathis.elmepaunivapp.models.UsefulLinks;
-import com.stathis.elmepaunivapp.recyclerview.DepMembersAdapter;
-import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
-import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
-import com.stathis.elmepaunivapp.recyclerview.OnItemClickListener;
-import com.stathis.elmepaunivapp.recyclerview.ProgrammesAdapter;
-import com.stathis.elmepaunivapp.recyclerview.SocialChannelAdapter;
-
-import java.util.ArrayList;
 
 import static android.Manifest.permission.CALL_PHONE;
 

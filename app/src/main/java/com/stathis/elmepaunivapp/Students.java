@@ -61,11 +61,20 @@ public class Students extends AppCompatActivity {
             public void onItemClick(DeptFieldsOfStudy item) {
                 switch (item.getName()){
                     case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
-                        // do something
+                        Intent goToDataSyllabus = new Intent(Students.this,Syllabus.class);
+                        goToDataSyllabus.putExtra("DIRECTION",item.getName());
+                        startActivity(goToDataSyllabus);
+                        break;
                     case "Διοίκηση Επιχειρήσεων & Οργανισμών":
-                        // do something
+                        Intent goToBASyllabus = new Intent(Students.this,Syllabus.class);
+                        goToBASyllabus.putExtra("DIRECTION",item.getName());
+                        startActivity(goToBASyllabus);
+                        break;
                     case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
-                        // do something
+                        Intent goToMKTSyllabus = new Intent(Students.this,Syllabus.class);
+                        goToMKTSyllabus.putExtra("DIRECTION",item.getName());
+                        startActivity(goToMKTSyllabus);
+                        break;
                 }
             }
 
