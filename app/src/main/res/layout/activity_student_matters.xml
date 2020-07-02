@@ -7,7 +7,7 @@
     tools:context=".AnnouncementMoreInfo">
 
     <WebView
-        android:id="@+id/web_profileProf"
+        android:id="@+id/web_student_matters"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
