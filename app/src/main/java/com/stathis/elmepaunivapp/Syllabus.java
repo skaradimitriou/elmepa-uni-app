@@ -44,6 +44,11 @@ public class Syllabus extends AppCompatActivity {
                 MktSyllabus.commit();
                 break;
         }
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
     }
 }

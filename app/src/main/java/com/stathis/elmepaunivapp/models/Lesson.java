@@ -5,11 +5,13 @@ public class Lesson {
     private String name;
     private String mandatory;
     private String description;
+    private String direction;
 
-    public Lesson(String name, String mandatory, String description) {
+    public Lesson(String name, String mandatory, String description, String direction) {
         this.name = name;
         this.mandatory = mandatory;
         this.description = description;
+        this.direction = direction;
     }
 
     public String getName() {
@@ -36,12 +38,11 @@ public class Lesson {
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "Lesson{" +
-                "name='" + name + '\'' +
-                ", mandatory='" + mandatory + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 }

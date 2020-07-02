@@ -1,5 +1,6 @@
 package com.stathis.elmepaunivapp.recyclerview;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
@@ -36,6 +37,14 @@ public class LessonsViewHolder extends RecyclerView.ViewHolder {
         lesson_name.setText(data.getName());
         mandatoryField.setText(data.getMandatory());
         description.setText(data.getDescription());
+
+        if (data.getDirection().equals("data")){
+            lesson_name.setBackgroundColor(Color.parseColor("#2a8c3f"));
+        } else if(data.getDirection().equals("mkt")){
+            lesson_name.setBackgroundColor(Color.parseColor("#417ba3"));
+        } else if (data.getDirection().equals("ba")) {
+            lesson_name.setBackgroundColor(Color.parseColor("#f07721"));
+        }
     }
 
 }
