@@ -14,11 +14,13 @@ import android.widget.Toast;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
     private CardView updates,department,students,professors;
     private ImageView about;
+    private FloatingActionButton chatbot_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +37,21 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         students = findViewById(R.id.students);
         professors = findViewById(R.id.professors);
         about = findViewById(R.id.about);
+        chatbot_btn = findViewById(R.id.fab_chatbot);
 
         //listeners
         updates.setOnClickListener(this);
         department.setOnClickListener(this);
         students.setOnClickListener(this);
         professors.setOnClickListener(this);
+        chatbot_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ChatBot = new Intent (Dashboard.this,ChatBotActivity.class);
+                startActivity(ChatBot);
+                overridePendingTransition(0, 0);
+            }
+        });
 
         //about the app
         about.setOnClickListener(new View.OnClickListener() {

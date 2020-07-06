@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StudentMatters"></activity>
+        <activity android:name=".ChatBotActivity"></activity>
+        <activity android:name=".StudentMatters" />
         <activity android:name=".Syllabus" />
         <activity android:name=".ResearchLearnMore" />
         <activity android:name=".ResearchInDept" />
