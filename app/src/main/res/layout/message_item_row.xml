@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
     android:layout_marginTop="7dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -11,7 +12,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/dimotikalis"
+        android:src="@drawable/student"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +49,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_img">
 
@@ -57,7 +57,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/perakakis"
+            android:src="@drawable/chatbot"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="Μέλη Δ.Ε.Π"
+            android:text="Μέλη Δ.Ε.Π."
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"

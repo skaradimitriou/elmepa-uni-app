@@ -265,10 +265,10 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="30dp"
-        android:backgroundTint="#00a9ec"
+        android:backgroundTint="#296f89"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/chatbot"
+        android:src="@drawable/chatbot_big"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

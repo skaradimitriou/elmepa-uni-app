@@ -1,5 +1,6 @@
 package com.stathis.elmepaunivapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +47,23 @@ public class FieldsOfStudyFragment extends Fragment {
         fieldsAdapter = new FieldsAdapter(fieldsOfStudyList, new ItemClickListener() {
             @Override
             public void onItemClick(DeptFieldsOfStudy item) {
-
+                switch (item.getName()) {
+                    case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
+                        Intent goToDataSyllabus = new Intent(getActivity(), Syllabus.class);
+                        goToDataSyllabus.putExtra("DIRECTION", item.getName());
+                        startActivity(goToDataSyllabus);
+                        break;
+                    case "Διοίκηση Επιχειρήσεων & Οργανισμών":
+                        Intent goToBASyllabus = new Intent(getActivity(), Syllabus.class);
+                        goToBASyllabus.putExtra("DIRECTION", item.getName());
+                        startActivity(goToBASyllabus);
+                        break;
+                    case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
+                        Intent goToMKTSyllabus = new Intent(getActivity(), Syllabus.class);
+                        goToMKTSyllabus.putExtra("DIRECTION", item.getName());
+                        startActivity(goToMKTSyllabus);
+                        break;
+                }
             }
 
             @Override

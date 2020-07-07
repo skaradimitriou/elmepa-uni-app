@@ -81,7 +81,9 @@ public class Announcements extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        return true;
+                        i = new Intent(Announcements.this, Dashboard.class);
+                        startActivity(i);
+                        overridePendingTransition(0, 0);
                     case R.id.nav_students:
                         i = new Intent(Announcements.this, Students.class);
                         startActivity(i);
@@ -120,7 +122,7 @@ public class Announcements extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             try {
-                String url = "https://mst.hmu.gr/";
+                String url = "https://mst.hmu.gr/news_gr/";
                 Document doc = Jsoup.connect(url).get();
                 Elements data = doc.select("article");
                 int size = data.size();
@@ -132,12 +134,12 @@ public class Announcements extends AppCompatActivity {
                             .eq(i)
                             .attr("src");
 
-                    String title = data.select("h4.entry-title")
-                            .select("h4")
+                    String title = data.select("h2.entry-title")
+                            .select("h2")
                             .eq(i)
                             .text();
 
-                    String detailUrl = data.select("h4.entry-title")
+                    String detailUrl = data.select("h2.entry-title")
                             .select("a")
                             .eq(i)
                             .attr("href");

@@ -14,14 +14,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ChatBotViewHolder extends RecyclerView.ViewHolder {
 
     private TextView question, answer;
-    private CircleImageView user_img, bot_img;
     private ChatBotListener chatBotListener;
     private Object data;
 
     public ChatBotViewHolder(@NonNull View itemView, final ChatBotListener chatBotListener) {
         super(itemView);
-        user_img = itemView.findViewById(R.id.user_img);
-        bot_img = itemView.findViewById(R.id.bot_img);
         question = itemView.findViewById(R.id.user_msg_txt);
         answer = itemView.findViewById(R.id.bot_reply_txt);
         this.chatBotListener = chatBotListener;
@@ -35,7 +32,6 @@ public class ChatBotViewHolder extends RecyclerView.ViewHolder {
 
     public void present(Message data) {
         this.data = data;
-        user_img.setImageResource(R.drawable.dimotikalis);
         question.setText(data.getQuestion());
         answer.setText(data.getAnswer());
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f1f1f1"
+    android:background="#f0f0f0"
     android:clickable="true"
     android:focusableInTouchMode="true"
     tools:context=".ChatBotActivity">
@@ -20,6 +20,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/chatbot"/>
             <TextView
                 android:id="@+id/header"
                 android:layout_width="wrap_content"
@@ -37,7 +44,7 @@
                 android:layout_margin="10dp"
                 android:padding="10dp"
                 android:background="#fff"
-                android:text="Το ChatBot υποστηρίζει τις ακόλουθες ερωτήσεις: \n Τηλέφωνο Γραμματείας, Πρόγραμμα Σπουδών, Πρόγραμμα, Email Γραμματείας" />
+                android:text="Το ChatBot υποστηρίζει τις ακόλουθες ερωτήσεις: \n Τηλέφωνο Γραμματείας, Πρόγραμμα Σπουδών, Πρόγραμμα, Email Γραμματείας, Καθηγητές, Εικονική Περιήγηση, Ανακοινώσεις" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/user_messagesRecView"
@@ -62,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:background="#fff"
-        android:hint="Πώς μπορώ να βοηθήσω;..."
+        android:hint="Πώς μπορώ να σε βοηθήσω;"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:paddingLeft="10dp"
