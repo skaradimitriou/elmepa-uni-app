@@ -218,6 +218,10 @@ public class Professors extends AppCompatActivity {
         professors.add(new ProfessorModel("Πετράκης Νικόλαος", "nickpetran@yahoo.gr", "male","Πετράκη Νικόλαο"));
         professors.add(new ProfessorModel("Σφακιανάκης Θεόδωρος", "tmsfakia@hmu.gr", "male","Σφακιανάκη Θεόδωρο"));
         professors.add(new ProfessorModel("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr", "female","Ταβλαδάκη Δέσποινα"));
+        professors.add(new ProfessorModel("Καλαρχάκη Αικατερίνη", "kalarhaki@hmu.gr", "female","Καλαρχάκη Αικατερίνη"));
+        professors.add(new ProfessorModel("Καροφύλλου Ειρήνη", "karofillou@hmu.gr", "female","Καροφύλλου Ειρήνη"));
+        professors.add(new ProfessorModel("Παρθύμου Γεωργία", "gparth@hmu.gr", "female","Καροφύλλου Ειρήνη"));
+        professors.add(new ProfessorModel("Ματζαράκης Γεώργιος", "matzarakis@hmu.gr", "female","Καροφύλλου Ειρήνη"));
     }
 
 }
