@@ -61,28 +61,28 @@ public class ResearchInDept extends AppCompatActivity {
 
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                switch(usefulLinks.getName()){
+                switch (usefulLinks.getName()) {
                     case "Ινστιτούτο Οικονομικής Ανάλυσης":
-                        Intent learnMore = new Intent (ResearchInDept.this,ResearchLearnMore.class);
-                        learnMore.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        Intent learnMore = new Intent(ResearchInDept.this, ResearchLearnMore.class);
+                        learnMore.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
                         startActivity(learnMore);
                         overridePendingTransition(0, 0);
                         break;
                     case "Ερευνητικά Επιτεύγματα":
-                        Intent achievements = new Intent (ResearchInDept.this,ResearchLearnMore.class);
-                        achievements.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        Intent achievements = new Intent(ResearchInDept.this, ResearchLearnMore.class);
+                        achievements.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
                         startActivity(achievements);
                         overridePendingTransition(0, 0);
                         break;
                     case "Δημοσιεύσεις":
-                        Intent papers = new Intent (ResearchInDept.this,ResearchLearnMore.class);
-                        papers.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        Intent papers = new Intent(ResearchInDept.this, ResearchLearnMore.class);
+                        papers.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
                         startActivity(papers);
                         overridePendingTransition(0, 0);
                         break;
                     case "Στατιστικά Στοιχεία":
-                        Intent statistics = new Intent (ResearchInDept.this,ResearchLearnMore.class);
-                        statistics.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        Intent statistics = new Intent(ResearchInDept.this, ResearchLearnMore.class);
+                        statistics.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
                         startActivity(statistics);
                         overridePendingTransition(0, 0);
                         break;
@@ -119,22 +119,22 @@ public class ResearchInDept extends AppCompatActivity {
 
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                switch(usefulLinks.getName()){
+                switch (usefulLinks.getName()) {
                     case "Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων":
-                        Intent firstLab = new Intent (ResearchInDept.this,ResearchLearnMore.class);
-                        firstLab.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        Intent firstLab = new Intent(ResearchInDept.this, ResearchLearnMore.class);
+                        firstLab.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
                         startActivity(firstLab);
                         overridePendingTransition(0, 0);
                         break;
                     case "Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης":
-                        Intent SecondLab = new Intent (ResearchInDept.this,ResearchLearnMore.class);
-                        SecondLab.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        Intent SecondLab = new Intent(ResearchInDept.this, ResearchLearnMore.class);
+                        SecondLab.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
                         startActivity(SecondLab);
                         overridePendingTransition(0, 0);
                         break;
                     case "Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας":
-                        Intent ThirdLab = new Intent (ResearchInDept.this,ResearchLearnMore.class);
-                        ThirdLab.putExtra("LEARN_MORE_URL",usefulLinks.getUrl());
+                        Intent ThirdLab = new Intent(ResearchInDept.this, ResearchLearnMore.class);
+                        ThirdLab.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
                         startActivity(ThirdLab);
                         overridePendingTransition(0, 0);
                         break;
@@ -184,14 +184,14 @@ public class ResearchInDept extends AppCompatActivity {
         });
     }
 
-    private void createLists(){
-        researchItemList.add(new UsefulLinks("Ινστιτούτο Οικονομικής Ανάλυσης","https://mst.hmu.gr/ereuna/institoyto-oikonomikhs-analyshs-epicheirhmatikothtas-kai-toyrismoy/",R.drawable.institute));
-        researchItemList.add(new UsefulLinks("Ερευνητικά Επιτεύγματα","https://mst.hmu.gr/ereuna/ereynhtika-epiteygmata/",R.drawable.achievements));
-        researchItemList.add(new UsefulLinks("Δημοσιεύσεις","https://mst.hmu.gr/ereuna/dhmosieyseis/",R.drawable.papers));
-        researchItemList.add(new UsefulLinks("Στατιστικά Στοιχεία","https://mst.hmu.gr/ereuna/statistika-stoicheia/",R.drawable.analytics));
+    private void createLists() {
+        researchItemList.add(new UsefulLinks("Ινστιτούτο Οικονομικής Ανάλυσης", "https://mst.hmu.gr/ereuna/institoyto-oikonomikhs-analyshs-epicheirhmatikothtas-kai-toyrismoy/", R.drawable.institute));
+        researchItemList.add(new UsefulLinks("Ερευνητικά Επιτεύγματα", "https://mst.hmu.gr/ereuna/ereynhtika-epiteygmata/", R.drawable.achievements));
+        researchItemList.add(new UsefulLinks("Δημοσιεύσεις", "https://mst.hmu.gr/ereuna/dhmosieyseis/", R.drawable.papers));
+        researchItemList.add(new UsefulLinks("Στατιστικά Στοιχεία", "https://mst.hmu.gr/ereuna/statistika-stoicheia/", R.drawable.analytics));
 
-        researchLabList.add(new UsefulLinks("Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων","https://mst.hmu.gr/ereuna/adeds/",R.drawable.lab));
-        researchLabList.add(new UsefulLinks("Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης","https://mst.hmu.gr/ereuna/datalab/",R.drawable.lab));
-        researchLabList.add(new UsefulLinks("Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας","https://www.e-bilab.gr/",R.drawable.lab));
+        researchLabList.add(new UsefulLinks("Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων", "https://mst.hmu.gr/ereuna/adeds/", R.drawable.lab));
+        researchLabList.add(new UsefulLinks("Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης", "https://mst.hmu.gr/ereuna/datalab/", R.drawable.lab));
+        researchLabList.add(new UsefulLinks("Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας", "https://www.e-bilab.gr/", R.drawable.lab));
     }
 }

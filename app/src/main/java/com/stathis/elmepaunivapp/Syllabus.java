@@ -27,7 +27,7 @@ public class Syllabus extends AppCompatActivity {
         Intent getDirection = getIntent();
         String name = getDirection.getStringExtra("DIRECTION");
 
-        switch(name){
+        switch (name) {
             case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
                 FragmentTransaction DataSyllabus = getSupportFragmentManager().beginTransaction();
                 DataSyllabus.add(R.id.semester_lessons, new Data_Fragment(), "SemesterFrag");

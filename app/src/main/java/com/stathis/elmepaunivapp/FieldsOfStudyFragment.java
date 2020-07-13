@@ -35,7 +35,7 @@ public class FieldsOfStudyFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fields_of_study,container, false);
+        return inflater.inflate(R.layout.fragment_fields_of_study, container, false);
     }
 
     @Override
@@ -94,7 +94,7 @@ public class FieldsOfStudyFragment extends Fragment {
         fieldsOfStudy.setAdapter(fieldsAdapter);
     }
 
-    private void createTheList(){
+    private void createTheList() {
         fieldsOfStudyList.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", R.drawable.data));
         fieldsOfStudyList.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", R.drawable.business));
         fieldsOfStudyList.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));

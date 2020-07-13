@@ -36,7 +36,7 @@ public class FindUsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_find_us,container, false);
+        return inflater.inflate(R.layout.fragment_find_us, container, false);
     }
 
     @Override
@@ -85,12 +85,12 @@ public class FindUsFragment extends Fragment {
                         youtubeUrl = socialChannels.getUrl();
                         try {
                             //goes to channel in youtube app
-                            String inAppUrl = "vnd.youtube.com/channel/"+ youtubeUrl;
+                            String inAppUrl = "vnd.youtube.com/channel/" + youtubeUrl;
                             Intent Youtube = new Intent(Intent.ACTION_VIEW, Uri.parse(inAppUrl));
                             startActivity(Youtube);
-                        } catch (Exception e){
+                        } catch (Exception e) {
                             //goes to channel in web view (opens browser)
-                            String WebUrl = "https://www.youtube.com/channel/"+ youtubeUrl;
+                            String WebUrl = "https://www.youtube.com/channel/" + youtubeUrl;
                             Intent Youtube = new Intent(Intent.ACTION_VIEW, Uri.parse(WebUrl));
                             startActivity(Youtube);
                         }
@@ -111,7 +111,7 @@ public class FindUsFragment extends Fragment {
         findUs.setAdapter(socialChannelAdapter);
     }
 
-    private void createTheList(){
+    private void createTheList() {
         socialChannels.add(new SocialChannels("Χάρτης", "https://www.google.gr/maps/place/Hellenic+Mediterσ46953,25.6549865,17z/data=!3m1!4b1!4m5!3m4!1s0x149a7fea00679c2f:0x8038b06fd113f3fb!8m2!3d35.1946909!4d25.6571752", R.drawable.map));
         socialChannels.add(new SocialChannels("Youtube", "UCapUQKQVrP2p4_ijj_OxvNg", R.drawable.youtube));
         socialChannels.add(new SocialChannels("LinkedIn", "https://www.linkedin.com/groups/13536369/", R.drawable.linkedin));

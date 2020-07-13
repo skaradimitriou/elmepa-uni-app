@@ -175,23 +175,23 @@ public class Students extends AppCompatActivity {
         sMattersAdapter = new FieldsAdapter(studentsMatters, new ItemClickListener() {
             @Override
             public void onItemClick(DeptFieldsOfStudy item) {
-                switch (item.getName()){
+                switch (item.getName()) {
                     case "Ακαδημαϊκό Ημερολόγιο":
                         String AcadUrl = "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/";
                         Intent acadIntent = new Intent(Students.this, StudentMatters.class);
-                        acadIntent.putExtra("StudentMattersUrl",AcadUrl);
+                        acadIntent.putExtra("StudentMattersUrl", AcadUrl);
                         startActivity(acadIntent);
                         break;
                     case "Σύμβουλος Καθηγητής":
                         String mentorUrl = "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/";
                         Intent mentors = new Intent(Students.this, StudentMatters.class);
-                        mentors.putExtra("StudentMattersUrl",mentorUrl);
+                        mentors.putExtra("StudentMattersUrl", mentorUrl);
                         startActivity(mentors);
                         break;
                     case "Πρόγραμμα Erasmus+":
                         String ErasmusUrl = "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/";
                         Intent erasmus = new Intent(Students.this, StudentMatters.class);
-                        erasmus.putExtra("StudentMattersUrl",ErasmusUrl);
+                        erasmus.putExtra("StudentMattersUrl", ErasmusUrl);
                         startActivity(erasmus);
                         break;
                 }
@@ -300,7 +300,7 @@ public class Students extends AppCompatActivity {
         usefulLinks.add(new UsefulLinks("Edu E-mail Φοιτητή", "http://webmail.edu.hmu.gr/", R.drawable.webmail));
         usefulLinks.add(new UsefulLinks("Events Τμήματος", "https://mst.hmu.gr/news_gr/", R.drawable.events));
         usefulLinks.add(new UsefulLinks("Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου", "https://www.ktelherlas.gr/", R.drawable.ktel));
-        usefulLinks.add(new UsefulLinks("Εφαρμογή Movie SCoRe", "https://mst.hmu.gr/", R.drawable.movies));
+        usefulLinks.add(new UsefulLinks("Εφαρμογή Εξάπλωσης Covid-19", "https://mst.hmu.gr/1473-2/", R.drawable.app));
     }
 
     private void openSchedule() {

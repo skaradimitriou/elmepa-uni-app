@@ -107,38 +107,38 @@ public class ChatBotActivity extends AppCompatActivity {
             @Override
             public void onChatReply(Message message) {
 
-                    switch (message.getQuestion().toUpperCase()) {
-                        case "ΠΡΟΓΡΑΜΜΑ ΣΠΟΥΔΩΝ":
-                            Intent syllabus = new Intent(ChatBotActivity.this, Students.class);
-                            startActivity(syllabus);
-                            break;
-                        case "ΠΡΟΓΡΑΜΜΑ ΜΑΘΗΜΑΤΩΝ":
-                            String scheduleUrl = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
-                            Intent schedule = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl));
-                            startActivity(schedule);
-                            break;
-                        case "ΤΗΛΕΦΩΝΟ ΓΡΑΜΜΑΤΕΙΑΣ":
-                            callAtSecretaryOffice();
-                            break;
-                        case "EMAIL ΓΡΑΜΜΑΤΕΙΑΣ":
-                            sendAnEmailToSecretaryOffice();
-                            break;
-                        case "ΚΑΘΗΓΗΤΕΣ":
-                            Intent professors =new Intent(ChatBotActivity.this, Professors.class);
-                            startActivity(professors);
-                            break;
-                        case "ΕΙΚΟΝΙΚΗ ΠΕΡΙΗΓΗΣΗ":
-                            String openUrl = "https://mst.hmu.gr/hmutour/";
-                            Intent VirtualTour = new Intent(ChatBotActivity.this, VirtualTour.class);
-                            VirtualTour.putExtra("VirtualTourUrl", openUrl);
-                            startActivity(VirtualTour);
-                            break;
-                        case "ΑΝΑΚΟΙΝΩΣΕΙΣ":
-                            Intent announcements =new Intent(ChatBotActivity.this, Announcements.class);
-                            startActivity(announcements);
-                            break;
-                    }
+                switch (message.getQuestion().toUpperCase()) {
+                    case "ΠΡΟΓΡΑΜΜΑ ΣΠΟΥΔΩΝ":
+                        Intent syllabus = new Intent(ChatBotActivity.this, Students.class);
+                        startActivity(syllabus);
+                        break;
+                    case "ΠΡΟΓΡΑΜΜΑ ΜΑΘΗΜΑΤΩΝ":
+                        String scheduleUrl = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
+                        Intent schedule = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl));
+                        startActivity(schedule);
+                        break;
+                    case "ΤΗΛΕΦΩΝΟ ΓΡΑΜΜΑΤΕΙΑΣ":
+                        callAtSecretaryOffice();
+                        break;
+                    case "EMAIL ΓΡΑΜΜΑΤΕΙΑΣ":
+                        sendAnEmailToSecretaryOffice();
+                        break;
+                    case "ΚΑΘΗΓΗΤΕΣ":
+                        Intent professors = new Intent(ChatBotActivity.this, Professors.class);
+                        startActivity(professors);
+                        break;
+                    case "ΕΙΚΟΝΙΚΗ ΠΕΡΙΗΓΗΣΗ":
+                        String openUrl = "https://mst.hmu.gr/hmutour/";
+                        Intent VirtualTour = new Intent(ChatBotActivity.this, VirtualTour.class);
+                        VirtualTour.putExtra("VirtualTourUrl", openUrl);
+                        startActivity(VirtualTour);
+                        break;
+                    case "ΑΝΑΚΟΙΝΩΣΕΙΣ":
+                        Intent announcements = new Intent(ChatBotActivity.this, Announcements.class);
+                        startActivity(announcements);
+                        break;
                 }
+            }
 
             @Override
             public void onClick(View v) {

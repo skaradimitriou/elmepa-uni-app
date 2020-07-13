@@ -18,7 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView updates,department,students,professors;
+    private CardView updates, department, students, professors;
     private ImageView about;
     private FloatingActionButton chatbot_btn;
 
@@ -47,7 +47,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         chatbot_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ChatBot = new Intent (Dashboard.this,ChatBotActivity.class);
+                Intent ChatBot = new Intent(Dashboard.this, ChatBotActivity.class);
                 startActivity(ChatBot);
                 overridePendingTransition(0, 0);
             }
@@ -92,23 +92,23 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         Intent i;
         //cases bellow
-        switch(v.getId()){
+        switch (v.getId()) {
             case R.id.anakoinoseis:
-                i = new Intent(Dashboard.this,Announcements.class);
+                i = new Intent(Dashboard.this, Announcements.class);
                 startActivity(i);
                 overridePendingTransition(0, 0);
                 break;
             case R.id.to_tmima:
-                i=new Intent(Dashboard.this, Department.class);
+                i = new Intent(Dashboard.this, Department.class);
                 startActivity(i);
                 break;
             case R.id.students:
-                i=new Intent(Dashboard.this, Students.class);
+                i = new Intent(Dashboard.this, Students.class);
                 startActivity(i);
                 overridePendingTransition(0, 0);
                 break;
             case R.id.professors:
-                i=new Intent(Dashboard.this, Professors.class);
+                i = new Intent(Dashboard.this, Professors.class);
                 startActivity(i);
                 overridePendingTransition(0, 0);
                 break;
