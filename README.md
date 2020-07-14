@@ -1,7 +1,6 @@
 # Elmepa University App
 
-## App Presentation
-Youtube: https://youtu.be/FQGB7BWJGSI
+App presentation: https://youtu.be/FQGB7BWJGSI
 
 ## Main Goal
 
