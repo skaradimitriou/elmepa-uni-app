@@ -37,7 +37,7 @@ public class ChatBotActivity extends AppCompatActivity {
     private RecyclerView userMessagesRecView;
     private ChatBotAdapter chatBotAdapter;
     private TextInputEditText user_text_field;
-    String response, responseUppercase, answer;
+    String response, responseLowercase, answer;
     private ArrayList<Message> messagesList = new ArrayList<>();
     private static final int REQUEST_CALL = 1;
 
@@ -57,37 +57,76 @@ public class ChatBotActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     response = user_text_field.getText().toString();
-                    responseUppercase = response.toUpperCase();
-                    Log.d("TEST", responseUppercase);
+                    responseLowercase = response.toLowerCase();
+                    Log.d("TEST", responseLowercase);
                     user_text_field.getText().clear();
                     hideKeyboard(v);
                     Log.d("RESPONSE", response);
-                    switch (responseUppercase) {
-                        case "ΓΕΙΑ":
+                    switch (responseLowercase) {
+                        case "γεια":
                             answer = "Γεία σου και εσένα!";
                             break;
-                        case "ΕΥΧΑΡΙΣΤΩ":
+                        case "γειά":
+                            answer = "Γεία σου και εσένα!";
+                            break;
+                        case "ευχαριστώ":
                             answer = "Παρακαλώ!";
                             break;
-                        case "ΠΡΟΓΡΑΜΜΑ ΣΠΟΥΔΩΝ":
+                        case "ευχαριστω":
+                            answer = "Παρακαλώ!";
+                            break;
+                        case "προγραμμα σπουδων":
                             answer = "Κάνε tap για να δείς \n το πρόγραμμα σπουδών!";
                             break;
-                        case "ΠΡΟΓΡΑΜΜΑ ΜΑΘΗΜΑΤΩΝ":
+                        case "πρόγραμμα σπουδών":
+                            answer = "Κάνε tap για να δείς \n το πρόγραμμα σπουδών!";
+                            break;
+                        case "ωρολογιο προγραμμα":
                             answer = "Κάνε tap για να δείς το \n πρόγραμμα των μαθημάτων!";
                             break;
-                        case "ΤΗΛΕΦΩΝΟ ΓΡΑΜΜΑΤΕΙΑΣ":
+                        case "ωρολόγιο πρόγραμμα":
+                            answer = "Κάνε tap για να δείς το \n πρόγραμμα των μαθημάτων!";
+                            break;
+                        case "τηλέφωνο γραμματείας":
                             answer = "Κάνε tap για να καλέσω \n την Γραμματεία του Τμήματος!";
                             break;
-                        case "EMAIL ΓΡΑΜΜΑΤΕΙΑΣ":
+                        case "τηλεφωνο γραμματειας":
+                            answer = "Κάνε tap για να καλέσω \n την Γραμματεία του Τμήματος!";
+                            break;
+                        case "τηλεφωνο γραμματειασ":
+                            answer = "Κάνε tap για να καλέσω \n την Γραμματεία του Τμήματος!";
+                            break;
+                        case "email γραμματειας":
                             answer = "Κάνε tap για να στείλεις \n e-mail στην Γραμματεία!";
                             break;
-                        case "ΚΑΘΗΓΗΤΕΣ":
+                        case "email γραμματείας":
+                            answer = "Κάνε tap για να στείλεις \n e-mail στην Γραμματεία!";
+                            break;
+                        case "email γραμματειασ":
+                            answer = "Κάνε tap για να στείλεις \n e-mail στην Γραμματεία!";
+                            break;
+                        case "καθηγητές":
                             answer = "Κάνε tap για να αναζητήσεις \n έναν καθηγητή του Τμήματος!";
                             break;
-                        case "ΕΙΚΟΝΙΚΗ ΠΕΡΙΗΓΗΣΗ":
+                        case "προσωπικό":
+                            answer = "Κάνε tap για να αναζητήσεις \n έναν καθηγητή του Τμήματος!";
+                            break;
+                        case "καθηγητες":
+                            answer = "Κάνε tap για να αναζητήσεις \n έναν καθηγητή του Τμήματος!";
+                            break;
+                        case "προσωπικο":
+                            answer = "Κάνε tap για να αναζητήσεις \n έναν καθηγητή του Τμήματος!";
+                            break;
+                        case "εικονική περιήγηση":
                             answer = "Κάνε tap για να δείς \n την εικονική περιήγηση!";
                             break;
-                        case "ΑΝΑΚΟΙΝΩΣΕΙΣ":
+                        case "εικονικη περιηγηση":
+                            answer = "Κάνε tap για να δείς \n την εικονική περιήγηση!";
+                            break;
+                        case "ανακοινώσεις":
+                            answer = "Κάνε tap για να δεις \n τις τελευταίες ανακοινώσεις!";
+                            break;
+                        case "ανακοινωσεις":
                             answer = "Κάνε tap για να δεις \n τις τελευταίες ανακοινώσεις!";
                             break;
                         default:
@@ -106,36 +145,75 @@ public class ChatBotActivity extends AppCompatActivity {
         chatBotAdapter = new ChatBotAdapter(messagesList, new ChatBotListener() {
             @Override
             public void onChatReply(Message message) {
-
-                switch (message.getQuestion().toUpperCase()) {
-                    case "ΠΡΟΓΡΑΜΜΑ ΣΠΟΥΔΩΝ":
-                        Intent syllabus = new Intent(ChatBotActivity.this, Students.class);
-                        startActivity(syllabus);
+                Intent i;
+                switch (message.getQuestion().toLowerCase()) {
+                    case "προγραμμα σπουδων":
+                        i = new Intent(ChatBotActivity.this, Students.class);
+                        startActivity(i);
                         break;
-                    case "ΠΡΟΓΡΑΜΜΑ ΜΑΘΗΜΑΤΩΝ":
+                    case "πρόγραμμα σπουδών":
+                        i = new Intent(ChatBotActivity.this, Students.class);
+                        startActivity(i);
+                        break;
+                    case "ωρολογιο προγραμμα":
                         String scheduleUrl = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
-                        Intent schedule = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl));
-                        startActivity(schedule);
+                        i = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl));
+                        startActivity(i);
                         break;
-                    case "ΤΗΛΕΦΩΝΟ ΓΡΑΜΜΑΤΕΙΑΣ":
+                    case "ωρολόγιο πρόγραμμα":
+                        String scheduleUri = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
+                        i = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUri));
+                        startActivity(i);
+                        break;
+                    case "τηλέφωνο γραμματείας":
                         callAtSecretaryOffice();
                         break;
-                    case "EMAIL ΓΡΑΜΜΑΤΕΙΑΣ":
+                    case "τηλεφωνο γραμματειας":
+                        callAtSecretaryOffice();
+                        break;
+                    case "τηλέφωνο γραμματειασ":
+                        callAtSecretaryOffice();
+                        break;
+                    case "email γραμματείας":
                         sendAnEmailToSecretaryOffice();
                         break;
-                    case "ΚΑΘΗΓΗΤΕΣ":
-                        Intent professors = new Intent(ChatBotActivity.this, Professors.class);
-                        startActivity(professors);
+                    case "email γραμματειας":
+                        sendAnEmailToSecretaryOffice();
                         break;
-                    case "ΕΙΚΟΝΙΚΗ ΠΕΡΙΗΓΗΣΗ":
+                    case "email γραμματειασ":
+                        sendAnEmailToSecretaryOffice();
+                        break;
+                    case "καθηγητές":
+                        i = new Intent(ChatBotActivity.this, Professors.class);
+                        startActivity(i);
+                        break;
+                    case "καθηγητες":
+                        i = new Intent(ChatBotActivity.this, Professors.class);
+                        startActivity(i);
+                        break;
+                    case "εικονική περιήγηση":
                         String openUrl = "https://mst.hmu.gr/hmutour/";
                         Intent VirtualTour = new Intent(ChatBotActivity.this, VirtualTour.class);
                         VirtualTour.putExtra("VirtualTourUrl", openUrl);
                         startActivity(VirtualTour);
                         break;
-                    case "ΑΝΑΚΟΙΝΩΣΕΙΣ":
-                        Intent announcements = new Intent(ChatBotActivity.this, Announcements.class);
-                        startActivity(announcements);
+                    case "εικονικη περιηγηση":
+                        String openUri = "https://mst.hmu.gr/hmutour/";
+                        Intent VirtualTourOne = new Intent(ChatBotActivity.this, VirtualTour.class);
+                        VirtualTourOne.putExtra("VirtualTourUrl", openUri);
+                        startActivity(VirtualTourOne);
+                        break;
+                    case "ανακοινώσεις":
+                        i = new Intent(ChatBotActivity.this, Announcements.class);
+                        startActivity(i);
+                        break;
+                    case "ανακοινωσεις":
+                        i = new Intent(ChatBotActivity.this, Announcements.class);
+                        startActivity(i);
+                        break;
+                    case "ανακοινωσεισ":
+                        i = new Intent(ChatBotActivity.this, Announcements.class);
+                        startActivity(i);
                         break;
                 }
             }
