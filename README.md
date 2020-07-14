@@ -1,9 +1,9 @@
 # Elmepa University App
 
-##App Presentation
+## App Presentation
 Youtube: https://youtu.be/FQGB7BWJGSI
 
-##Main Goal
+## Main Goal
 
 This app was developed for ELMEPA University (Agios Nikolaos) in Crete, so users can gain:<br/>
 a) useful student information about the department of Management Science & Technology <br/>
