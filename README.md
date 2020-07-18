@@ -1,8 +1,7 @@
 # Elmepa University App
 
 App presentation: https://youtu.be/FQGB7BWJGSI <br/>
-Google Play: https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp <br/>
-This site was built using [GitHub Pages](https://pages.github.com/).
+This app is live at [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp).
 
 ## Main Goal
 
