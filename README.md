@@ -1,6 +1,6 @@
 # Elmepa University App
 You can watch the app presentation on [Youtube](https://youtu.be/FQGB7BWJGSI). <br/>
-This app is live at [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp).
+This app is live at [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp)
 
 ## Main Goal
 
@@ -16,9 +16,9 @@ b. People who want to learn more about the department.
 
 ### Theme 
 
-Material Design - https://material.io/
+[Material Design](https://material.io/)
 
 ### Libraries
 
-Picasso - https://square.github.io/picasso/ <br/>
-JSOUP - https://jsoup.org/
+[Picasso](https://square.github.io/picasso/) <br/>
+[JSOUP](https://jsoup.org/)
