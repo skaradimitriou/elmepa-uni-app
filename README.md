@@ -1,6 +1,6 @@
 # Elmepa University App
 
-App presentation: https://youtu.be/FQGB7BWJGSI
+App presentation: https://youtu.be/FQGB7BWJGSI <br/>
 Google Play: https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp
 
 ## Main Goal
