@@ -14,6 +14,13 @@ c) get new announcements of the department
 a. Students of the department <br/>
 b. People who want to learn more about the department.
 
+### Programming Language 
+
+[Java]
+
+## Architecture
+Model - View - ViewModel (MVVM)    /* In Progress */
+
 ### Theme 
 
 [Material Design](https://material.io/)
@@ -22,3 +29,4 @@ b. People who want to learn more about the department.
 
 [Picasso](https://square.github.io/picasso/) <br/>
 [JSOUP](https://jsoup.org/)
+[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database    /* Will be added soon */
