@@ -19,7 +19,7 @@ b. People who want to learn more about the department.
 [Java]
 
 ## Architecture
-Model - View - ViewModel (MVVM)    /* In Progress */
+Model - View - ViewModel (MVVM)    /* In Progress 🔜 */
 
 ### Theme 
 
@@ -27,6 +27,6 @@ Model - View - ViewModel (MVVM)    /* In Progress */
 
 ### Libraries
 
-[Picasso](https://square.github.io/picasso/) <br/>
+[Picasso](https://square.github.io/picasso/) <br/> 
 [JSOUP](https://jsoup.org/) <br/>
-[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database    /* Will be added soon */
+[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database    /* Will be added soon 🔜 */
