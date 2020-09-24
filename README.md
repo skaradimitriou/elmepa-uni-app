@@ -28,5 +28,5 @@ Model - View - ViewModel (MVVM)    /* In Progress */
 ### Libraries
 
 [Picasso](https://square.github.io/picasso/) <br/>
-[JSOUP](https://jsoup.org/)
+[JSOUP](https://jsoup.org/) <br/>
 [Room](https://developer.android.com/topic/libraries/architecture/room) Local Database    /* Will be added soon */
