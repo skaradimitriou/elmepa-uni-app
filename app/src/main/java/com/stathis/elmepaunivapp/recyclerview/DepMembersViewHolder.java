@@ -8,8 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.listeners.OnItemClickListener;
 import com.stathis.elmepaunivapp.models.DepMembers;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 
 public class DepMembersViewHolder extends RecyclerView.ViewHolder {
 

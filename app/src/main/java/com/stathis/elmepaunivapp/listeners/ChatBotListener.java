@@ -1,8 +1,8 @@
-package com.stathis.elmepaunivapp.recyclerview;
+package com.stathis.elmepaunivapp.listeners;
 
 import android.view.View;
 
-import com.stathis.elmepaunivapp.models.Message;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 
 public interface ChatBotListener extends View.OnClickListener {
 

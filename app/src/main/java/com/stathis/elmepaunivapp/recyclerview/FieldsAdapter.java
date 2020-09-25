@@ -1,6 +1,5 @@
 package com.stathis.elmepaunivapp.recyclerview;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 
 import java.util.List;

@@ -11,6 +11,10 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
+import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ui.students.Students;
 
 public class ResearchLearnMore extends AppCompatActivity {
 

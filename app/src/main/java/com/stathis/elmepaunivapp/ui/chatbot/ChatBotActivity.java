@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.chatbot;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,9 +24,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.stathis.elmepaunivapp.models.Message;
+import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.VirtualTour;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 import com.stathis.elmepaunivapp.recyclerview.ChatBotAdapter;
-import com.stathis.elmepaunivapp.recyclerview.ChatBotListener;
+import com.stathis.elmepaunivapp.listeners.ChatBotListener;
+import com.stathis.elmepaunivapp.ui.announcements.Announcements;
+import com.stathis.elmepaunivapp.ui.students.Students;
 
 import java.util.ArrayList;
 
@@ -193,7 +198,7 @@ public class ChatBotActivity extends AppCompatActivity {
                         break;
                     case "εικονική περιήγηση":
                         String openUrl = "https://mst.hmu.gr/hmutour/";
-                        Intent VirtualTour = new Intent(ChatBotActivity.this, VirtualTour.class);
+                        Intent VirtualTour = new Intent(ChatBotActivity.this, com.stathis.elmepaunivapp.VirtualTour.class);
                         VirtualTour.putExtra("VirtualTourUrl", openUrl);
                         startActivity(VirtualTour);
                         break;

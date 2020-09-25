@@ -8,10 +8,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.Announcement;
+import com.stathis.elmepaunivapp.listeners.NewsClickListener;
+import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsViewHolder> {
 

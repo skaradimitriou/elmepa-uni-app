@@ -2,11 +2,9 @@ package com.stathis.elmepaunivapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.models.DepMembers;
 import com.stathis.elmepaunivapp.recyclerview.DepMembersAdapter;
-import com.stathis.elmepaunivapp.recyclerview.OnItemClickListener;
+import com.stathis.elmepaunivapp.listeners.OnItemClickListener;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,8 @@
-package com.stathis.elmepaunivapp.recyclerview;
+package com.stathis.elmepaunivapp.listeners;
 
 import android.view.View;
 
-import com.stathis.elmepaunivapp.models.Announcement;
+import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 
 public interface NewsClickListener extends View.OnClickListener {
 

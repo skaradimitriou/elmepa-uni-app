@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.syllabus;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.SyllabusFragments.BA_Fragment;
 import com.stathis.elmepaunivapp.SyllabusFragments.Data_Fragment;
 import com.stathis.elmepaunivapp.SyllabusFragments.MKT_Fragment;

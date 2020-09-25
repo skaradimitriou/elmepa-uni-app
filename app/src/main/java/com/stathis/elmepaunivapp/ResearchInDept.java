@@ -9,17 +9,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.models.ProfessorModel;
+import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.models.SocialChannels;
-import com.stathis.elmepaunivapp.models.UsefulLinks;
-import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
-import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
+import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.recyclerview.UsefulLinksAdapter;
+import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
+import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ui.students.Students;
 
 import java.util.ArrayList;
 

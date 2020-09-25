@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.models.Programmes;
 
 public class ProgrammesViewHolder extends RecyclerView.ViewHolder {
@@ -16,7 +16,7 @@ public class ProgrammesViewHolder extends RecyclerView.ViewHolder {
     private TextView name;
     private TextView description;
     private ImageView imageView;
-    private ItemClickListener ItemClickListener;
+    private com.stathis.elmepaunivapp.listeners.ItemClickListener ItemClickListener;
     private Object data;
 
     public ProgrammesViewHolder(@NonNull View itemView, ItemClickListener itemClickListener) {

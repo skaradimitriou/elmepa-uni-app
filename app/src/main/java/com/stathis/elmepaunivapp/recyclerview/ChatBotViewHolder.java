@@ -7,9 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.Message;
-
-import de.hdodenhof.circleimageview.CircleImageView;
+import com.stathis.elmepaunivapp.listeners.ChatBotListener;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 
 public class ChatBotViewHolder extends RecyclerView.ViewHolder {
 

@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.dashboard;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +10,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.ui.announcements.Announcements;
+import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity;
+import com.stathis.elmepaunivapp.ui.students.Students;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 

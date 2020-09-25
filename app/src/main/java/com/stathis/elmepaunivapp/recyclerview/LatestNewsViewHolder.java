@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.Announcement;
+import com.stathis.elmepaunivapp.listeners.NewsClickListener;
+import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 
 public class LatestNewsViewHolder extends RecyclerView.ViewHolder {
 

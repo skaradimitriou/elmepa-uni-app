@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChatBotActivity"></activity>
+        <activity android:name=".ui.chatbot.ChatBotActivity"></activity>
         <activity android:name=".StudentMatters" />
-        <activity android:name=".Syllabus" />
+        <activity android:name=".ui.syllabus.Syllabus" />
         <activity android:name=".ResearchLearnMore" />
         <activity android:name=".ResearchInDept" />
         <activity android:name=".ProfessorProfile" />
@@ -24,11 +24,11 @@
         <activity android:name=".UndergraduateProg" />
         <activity android:name=".PostgraduateProg" />
         <activity android:name=".PlaceholderClass" />
-        <activity android:name=".Professors" />
-        <activity android:name=".Students" />
-        <activity android:name=".Department" />
-        <activity android:name=".Announcements" />
-        <activity android:name=".Dashboard">
+        <activity android:name=".ui.professors.Professors" />
+        <activity android:name=".ui.students.Students" />
+        <activity android:name=".ui.department.Department" />
+        <activity android:name=".ui.announcements.Announcements" />
+        <activity android:name=".ui.dashboard.Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

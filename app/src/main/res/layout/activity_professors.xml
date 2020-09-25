@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".Professors">
+    tools:context=".ui.professors.Professors">
 
     <EditText
         android:drawableLeft="@drawable/ic_search_black_24dp"

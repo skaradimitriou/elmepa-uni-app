@@ -8,11 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.UsefulLinks;
+import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 
 public class UsefulLinksViewHolder extends RecyclerView.ViewHolder {
 
-    private ItemClickListener ItemClickListener;
+    private com.stathis.elmepaunivapp.listeners.ItemClickListener ItemClickListener;
     private TextView name;
     private ImageView imageView;
     private Object data;

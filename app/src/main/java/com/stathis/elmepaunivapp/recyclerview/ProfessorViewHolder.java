@@ -8,11 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.ProfessorModel;
+import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 
 public class ProfessorViewHolder extends RecyclerView.ViewHolder {
 
-    private ItemClickListener ItemClickListener;
+    private com.stathis.elmepaunivapp.listeners.ItemClickListener ItemClickListener;
     private TextView fullName;
     private TextView email;
     private ImageView img;

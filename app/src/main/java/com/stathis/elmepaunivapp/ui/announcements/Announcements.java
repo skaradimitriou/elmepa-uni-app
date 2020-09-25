@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.announcements;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,25 +11,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.stathis.elmepaunivapp.models.Announcement;
-import com.stathis.elmepaunivapp.models.ProfessorModel;
+import com.stathis.elmepaunivapp.AnnouncementMoreInfo;
+import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
+import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 import com.stathis.elmepaunivapp.recyclerview.LatestNewsAdapter;
-import com.stathis.elmepaunivapp.recyclerview.NewsClickListener;
+import com.stathis.elmepaunivapp.listeners.NewsClickListener;
+import com.stathis.elmepaunivapp.ui.students.Students;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;

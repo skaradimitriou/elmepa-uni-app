@@ -7,7 +7,7 @@
     android:background="#f0f0f0"
     android:clickable="true"
     android:focusableInTouchMode="true"
-    tools:context=".ChatBotActivity">
+    tools:context=".ui.chatbot.ChatBotActivity">
 
     <ScrollView
         android:layout_width="match_parent"

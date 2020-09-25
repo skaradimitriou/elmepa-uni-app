@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.students;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,17 +12,21 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.button.MaterialButton;
+import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
+import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.StudentMatters;
+import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.models.ProfessorModel;
+import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.models.SocialChannels;
-import com.stathis.elmepaunivapp.models.UsefulLinks;
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
-import com.stathis.elmepaunivapp.recyclerview.ItemClickListener;
+import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.recyclerview.UsefulLinksAdapter;
 
 import java.util.ArrayList;

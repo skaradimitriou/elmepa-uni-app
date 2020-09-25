@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.models;
+package com.stathis.elmepaunivapp.ui.chatbot.model;
 
 public class Message {
 

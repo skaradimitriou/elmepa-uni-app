@@ -3,24 +3,18 @@ package com.stathis.elmepaunivapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import de.hdodenhof.circleimageview.CircleImageView;
+import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
+import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ui.students.Students;
 
 public class ProfessorProfile extends AppCompatActivity {
 

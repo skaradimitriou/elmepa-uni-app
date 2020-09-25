@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.department;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Intent;
@@ -22,6 +20,15 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.stathis.elmepaunivapp.DepMembersFragment;
+import com.stathis.elmepaunivapp.FieldsOfStudyFragment;
+import com.stathis.elmepaunivapp.FindUsFragment;
+import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ProgrammesFragment;
+import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.ResearchInDept;
+import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
+import com.stathis.elmepaunivapp.ui.students.Students;
 
 import static android.Manifest.permission.CALL_PHONE;
 
@@ -81,7 +88,7 @@ public class Department extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String openUrl = "https://mst.hmu.gr/hmutour/";
-                Intent VirtualTour = new Intent(Department.this, VirtualTour.class);
+                Intent VirtualTour = new Intent(Department.this, com.stathis.elmepaunivapp.VirtualTour.class);
                 VirtualTour.putExtra("VirtualTourUrl", openUrl);
                 startActivity(VirtualTour);
             }

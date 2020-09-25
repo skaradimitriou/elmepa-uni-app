@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.recyclerview;
+package com.stathis.elmepaunivapp.listeners;
 
 import android.view.View;
 
