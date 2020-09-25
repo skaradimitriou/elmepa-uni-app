@@ -9,27 +9,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.listeners.ProfessorClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 
 public class ProfessorViewHolder extends RecyclerView.ViewHolder {
 
-    private com.stathis.elmepaunivapp.listeners.ItemClickListener ItemClickListener;
+    private ProfessorClickListener ProfessorClickListener;
     private TextView fullName;
     private TextView email;
     private ImageView img;
     private Object data;
 
-    public ProfessorViewHolder(@NonNull View itemView, final ItemClickListener itemClickListener) {
+    public ProfessorViewHolder(@NonNull View itemView, final ProfessorClickListener professorClickListener) {
         super(itemView);
         fullName = itemView.findViewById(R.id.professor_name);
         email = itemView.findViewById(R.id.professor_email);
         img = itemView.findViewById(R.id.professor_img);
 
-        ItemClickListener = itemClickListener;
+        ProfessorClickListener = professorClickListener;
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ItemClickListener.onProfessorClick((ProfessorModel) data);
+                ProfessorClickListener.onProfessorClick((ProfessorModel) data);
             }
         });
     }

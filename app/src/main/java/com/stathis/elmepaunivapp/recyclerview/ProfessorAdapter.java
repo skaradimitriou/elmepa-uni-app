@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.listeners.ProfessorClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 
 import java.util.ArrayList;
@@ -17,10 +18,10 @@ import java.util.List;
 public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorViewHolder> {
 
     private List<ProfessorModel> arrayData = new ArrayList<ProfessorModel>();
-    private ItemClickListener listener;
+    private ProfessorClickListener listener;
 
     //constructor of what I want to show to the user
-    public ProfessorAdapter(List<ProfessorModel> array, ItemClickListener listener) {
+    public ProfessorAdapter(List<ProfessorModel> array, ProfessorClickListener listener) {
         arrayData = array;
         this.listener = listener;
     }

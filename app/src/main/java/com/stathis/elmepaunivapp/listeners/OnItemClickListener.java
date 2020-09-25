@@ -7,5 +7,4 @@ import com.stathis.elmepaunivapp.models.DepMembers;
 public interface OnItemClickListener extends View.OnClickListener {
 
     void onDepProfessorClick(DepMembers item);
-
 }
