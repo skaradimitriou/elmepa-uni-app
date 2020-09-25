@@ -16,10 +16,10 @@ b. People who want to learn more about the department.
 
 ### Programming Language 
 
-[Java]
+Java
 
 ## Architecture
-Model - View - ViewModel (MVVM)    /* In Progress 🔜 */
+Model - View - ViewModel (MVVM)    /* Refactor In Progress 🔜 */
 
 ### Theme 
 
@@ -29,4 +29,4 @@ Model - View - ViewModel (MVVM)    /* In Progress 🔜 */
 
 [Picasso](https://square.github.io/picasso/) <br/> 
 [JSOUP](https://jsoup.org/) <br/>
-[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database    /* Will be added soon 🔜 */
+[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database    /* Refactor In Progress 🔜 */
