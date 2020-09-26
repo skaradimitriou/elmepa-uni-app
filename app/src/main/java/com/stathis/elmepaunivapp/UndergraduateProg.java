@@ -16,7 +16,7 @@ public class UndergraduateProg extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_undergraduate_prog);
         //load webview with school web content
-        WebView webview = findViewById(R.id.undergraduateProgram);
+        webview = findViewById(R.id.undergraduateProgram);
         webview.loadUrl(url);
         //enabling js files
         WebSettings webSettings = webview.getSettings();

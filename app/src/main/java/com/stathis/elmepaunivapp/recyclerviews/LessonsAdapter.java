@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.recyclerview;
+package com.stathis.elmepaunivapp.recyclerviews;
 
 import android.view.LayoutInflater;
 import android.view.View;

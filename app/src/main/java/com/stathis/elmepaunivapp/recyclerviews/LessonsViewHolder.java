@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.recyclerview;
+package com.stathis.elmepaunivapp.recyclerviews;
 
 import android.graphics.Color;
 import android.view.View;

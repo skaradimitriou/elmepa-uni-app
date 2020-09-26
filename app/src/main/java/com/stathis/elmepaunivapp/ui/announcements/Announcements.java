@@ -19,7 +19,7 @@ import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
-import com.stathis.elmepaunivapp.recyclerview.LatestNewsAdapter;
+import com.stathis.elmepaunivapp.recyclerviews.LatestNewsAdapter;
 import com.stathis.elmepaunivapp.listeners.NewsClickListener;
 import com.stathis.elmepaunivapp.ui.students.Students;
 

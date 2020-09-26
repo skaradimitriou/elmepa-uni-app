@@ -28,7 +28,7 @@ import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.VirtualTour;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
-import com.stathis.elmepaunivapp.recyclerview.ChatBotAdapter;
+import com.stathis.elmepaunivapp.recyclerviews.ChatBotAdapter;
 import com.stathis.elmepaunivapp.listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.ui.announcements.Announcements;
 import com.stathis.elmepaunivapp.ui.students.Students;

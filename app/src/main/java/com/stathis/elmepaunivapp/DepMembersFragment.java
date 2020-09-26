@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.models.DepMembers;
-import com.stathis.elmepaunivapp.recyclerview.DepMembersAdapter;
+import com.stathis.elmepaunivapp.recyclerviews.DepMembersAdapter;
 import com.stathis.elmepaunivapp.listeners.OnItemClickListener;
 
 import java.util.ArrayList;

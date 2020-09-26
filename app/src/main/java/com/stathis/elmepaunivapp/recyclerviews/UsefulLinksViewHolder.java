@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.recyclerview;
+package com.stathis.elmepaunivapp.recyclerviews;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -9,32 +9,33 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
-import com.stathis.elmepaunivapp.models.SocialChannels;
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 
-public class SocialChannelsViewHolder extends RecyclerView.ViewHolder {
+public class UsefulLinksViewHolder extends RecyclerView.ViewHolder {
 
     private com.stathis.elmepaunivapp.listeners.ItemClickListener ItemClickListener;
     private TextView name;
     private ImageView imageView;
     private Object data;
 
-    public SocialChannelsViewHolder(@NonNull final View itemView, ItemClickListener listener) {
+    public UsefulLinksViewHolder(@NonNull View itemView, final ItemClickListener itemClickListener) {
         super(itemView);
-        name = itemView.findViewById(R.id.social_txt);
-        imageView = itemView.findViewById(R.id.social_circle_img);
-        ItemClickListener = listener;
+
+        imageView = itemView.findViewById(R.id.links_img);
+        name = itemView.findViewById(R.id.links_holder_txt);
+
+        ItemClickListener = itemClickListener;
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ItemClickListener.onSocialItemClick((SocialChannels) data);
+                ItemClickListener.onUsefulLinksClick((UsefulLinks) data);
             }
         });
     }
 
-    public void present(SocialChannels data) {
+    public void present(UsefulLinks data) {
         this.data = data;
         name.setText(data.getName());
-        imageView.setImageResource(data.getImg());
+        imageView.setImageResource(data.getImageResource());
     }
-
 }

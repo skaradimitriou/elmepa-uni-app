@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,13 +19,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ProfessorClickListener;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
-import com.stathis.elmepaunivapp.models.Programmes;
-import com.stathis.elmepaunivapp.models.SocialChannels;
-import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
-import com.stathis.elmepaunivapp.recyclerview.ProfessorAdapter;
+import com.stathis.elmepaunivapp.ui.professors.recyclerview.ProfessorAdapter;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.students.Students;
@@ -69,31 +63,25 @@ public class Professors extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                filter(s.toString());
-            }
-        });
-        //creates a list of professors
-        professorsViewModel.createProfessorList();
-
-        //sorting professor list ascending
-        Collections.sort(professorsViewModel.createProfessorList(), new Comparator<ProfessorModel>() {
-            @Override
-            public int compare(ProfessorModel o1, ProfessorModel o2) {
-                return o1.getFullName().compareTo(o2.getFullName());
+                // TODO("Implement search filtering in ListAdapter")
             }
         });
 
-        //creates recview & adapters
+        //  <----- Professors Recycler View setup start ------->
+
         recyclerView = findViewById(R.id.recyclerView);
-        adapter = new ProfessorAdapter(professorsViewModel.createProfessorList(), new ProfessorClickListener() {
+        adapter = new ProfessorAdapter(new ProfessorClickListener() {
             @Override
             public void onProfessorClick(ProfessorModel professorModel) {
                 showDialogue(professorModel);
             }
         });
+        adapter.submitList(professorsViewModel.createProfessorList());
         recyclerView.setAdapter(adapter);
 
-        //bottom navigation & listener
+        //  <----- Professors Recycler View setup end ------->
+        //  <----- Bottom Navigation & Listener start ------->
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_search);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -122,22 +110,13 @@ public class Professors extends AppCompatActivity {
                 return false;
             }
         });
+        //  <----- Bottom Navigation & Listener end ------->
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
-    }
-
-    private void filter(String text) {
-        ArrayList<ProfessorModel> filteredList = new ArrayList<>();
-        for (ProfessorModel item : professorsViewModel.createProfessorList()) {
-            if (item.getFullName().toLowerCase().contains(text.toLowerCase())) {
-                filteredList.add(item);
-            }
-        }
-        adapter.filterList(filteredList);
     }
 
     private void showDialogue(final ProfessorModel professorModel) {

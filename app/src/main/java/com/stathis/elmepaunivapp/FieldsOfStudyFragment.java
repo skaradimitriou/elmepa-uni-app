@@ -16,7 +16,7 @@ import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.models.SocialChannels;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
-import com.stathis.elmepaunivapp.recyclerview.FieldsAdapter;
+import com.stathis.elmepaunivapp.recyclerviews.FieldsAdapter;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
 

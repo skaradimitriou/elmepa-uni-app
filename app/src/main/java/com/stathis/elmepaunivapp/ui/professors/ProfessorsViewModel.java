@@ -47,6 +47,15 @@ public class ProfessorsViewModel extends ViewModel {
         professors.add(new ProfessorModel("Καροφύλλου Ειρήνη", "karofillou@hmu.gr", "female", "Καροφύλλου Ειρήνη"));
         professors.add(new ProfessorModel("Παρθύμου Γεωργία", "gparth@hmu.gr", "female", "Καροφύλλου Ειρήνη"));
         professors.add(new ProfessorModel("Ματζαράκης Γεώργιος", "matzarakis@hmu.gr", "female", "Καροφύλλου Ειρήνη"));
+
+        //sorting professor list ascending
+        Collections.sort(professors, new Comparator<ProfessorModel>() {
+            @Override
+            public int compare(ProfessorModel o1, ProfessorModel o2) {
+                return o1.getFullName().compareTo(o2.getFullName());
+            }
+        });
+
         return professors;
     }
 }

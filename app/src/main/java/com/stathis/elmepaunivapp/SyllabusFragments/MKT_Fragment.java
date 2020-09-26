@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.models.Lesson;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
-import com.stathis.elmepaunivapp.recyclerview.LessonsAdapter;
+import com.stathis.elmepaunivapp.recyclerviews.LessonsAdapter;
 
 import java.util.ArrayList;
 
