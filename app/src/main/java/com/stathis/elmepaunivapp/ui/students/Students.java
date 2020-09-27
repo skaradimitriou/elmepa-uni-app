@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -14,11 +15,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.StudentMatters;
+import com.stathis.elmepaunivapp.toDELETE.StudentMatters;
 import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
@@ -26,7 +28,7 @@ import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.models.SocialChannels;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerviews.FieldsAdapter;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 
 import java.util.ArrayList;
@@ -36,83 +38,49 @@ public class Students extends AppCompatActivity {
     private RecyclerView fields_recView, useful_links_recView, sMatters_recView;
     private FieldsAdapter fieldsAdapter, sMattersAdapter;
     private UsefulLinksAdapter usefulLinksAdapter;
-    private ArrayList<DeptFieldsOfStudy> fieldsOfStudy, studentsMatters;
-    private ArrayList<UsefulLinks> usefulLinks;
     private Button btn;
     private CardView schedule;
+    private StudentsViewModel studentsViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students);
+        studentsViewModel = new ViewModelProvider(this).get(StudentsViewModel.class);
     }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        //createLists
-        createLists();
-
         //rec Views & adapters
         fields_recView = findViewById(R.id.diff_directions);
         useful_links_recView = findViewById(R.id.useful_links_recView);
-        fieldsAdapter = new FieldsAdapter(fieldsOfStudy, new ItemClickListener() {
+        fieldsAdapter = new FieldsAdapter(new FieldsOfStudyListener() {
             @Override
-            public void onClick(View v) {
-            }
-
-            //do nothing
-            @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-                switch (item.getName()) {
+            public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
+                switch (fieldsOfStudy.getName()) {
                     case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
                         Intent goToDataSyllabus = new Intent(Students.this, Syllabus.class);
-                        goToDataSyllabus.putExtra("DIRECTION", item.getName());
+                        goToDataSyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToDataSyllabus);
                         break;
                     case "Διοίκηση Επιχειρήσεων & Οργανισμών":
                         Intent goToBASyllabus = new Intent(Students.this, Syllabus.class);
-                        goToBASyllabus.putExtra("DIRECTION", item.getName());
+                        goToBASyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToBASyllabus);
                         break;
                     case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
                         Intent goToMKTSyllabus = new Intent(Students.this, Syllabus.class);
-                        goToMKTSyllabus.putExtra("DIRECTION", item.getName());
+                        goToMKTSyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToMKTSyllabus);
                         break;
                 }
             }
-
-            @Override
-            public void onProgrammesClick(Programmes programmes) {
-            }
-
-            @Override
-            public void onProfessorClick(ProfessorModel professorModel) {
-            }
-
-            @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-            }
-
-            @Override
-            public void onSocialItemClick(SocialChannels socialChannels) {
-            }
         });
-        usefulLinksAdapter = new UsefulLinksAdapter(usefulLinks, new ItemClickListener() {
-            @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-            }
+        fieldsAdapter.submitList(studentsViewModel.getFieldsOfStudy());
 
-            @Override
-            public void onProgrammesClick(Programmes programmes) {
-            }
-
-            @Override
-            public void onProfessorClick(ProfessorModel professorModel) {
-            }
-
+        usefulLinksAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
                 Intent card, edu, fb, eclass, municipality, tripadvisor, eudoxus, webmail, events, buses, app;
@@ -164,22 +132,16 @@ public class Students extends AppCompatActivity {
                 }
             }
 
-            @Override
-            public void onSocialItemClick(SocialChannels socialChannels) {
-            }
-
-            @Override
-            public void onClick(View v) {
-            }
         });
+        usefulLinksAdapter.submitList(studentsViewModel.getUsefulLinks());
         useful_links_recView.setAdapter(usefulLinksAdapter);
         fields_recView.setAdapter(fieldsAdapter);
 
         sMatters_recView = findViewById(R.id.sMatters_recView);
-        sMattersAdapter = new FieldsAdapter(studentsMatters, new ItemClickListener() {
+        sMattersAdapter = new FieldsAdapter(new FieldsOfStudyListener() {
             @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-                switch (item.getName()) {
+            public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
+                switch (fieldsOfStudy.getName()) {
                     case "Ακαδημαϊκό Ημερολόγιο":
                         String AcadUrl = "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/";
                         Intent acadIntent = new Intent(Students.this, StudentMatters.class);
@@ -200,33 +162,9 @@ public class Students extends AppCompatActivity {
                         break;
                 }
             }
-
-            @Override
-            public void onProgrammesClick(Programmes programmes) {
-
-            }
-
-            @Override
-            public void onProfessorClick(ProfessorModel professorModel) {
-
-            }
-
-            @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-
-            }
-
-            @Override
-            public void onSocialItemClick(SocialChannels socialChannels) {
-
-            }
-
-            @Override
-            public void onClick(View v) {
-
-            }
         });
         sMatters_recView.setAdapter(sMattersAdapter);
+        sMattersAdapter.submitList(studentsViewModel.getStudentMatters());
 
         schedule = findViewById(R.id.schedule_cardview);
         schedule.setOnClickListener(new View.OnClickListener() {
@@ -253,20 +191,17 @@ public class Students extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(Students.this, Dashboard.class);
-                        startActivity(i);
+                        startActivity(new Intent(Students.this, Dashboard.class));
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
                         return true;
                     case R.id.nav_uni:
-                        i = new Intent(Students.this, Department.class);
-                        startActivity(i);
+                        startActivity(new Intent(Students.this, Department.class));
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
-                        i = new Intent(Students.this, Professors.class);
-                        startActivity(i);
+                        startActivity(new Intent(Students.this, Professors.class));
                         overridePendingTransition(0, 0);
                         break;
                 }
@@ -279,32 +214,6 @@ public class Students extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
-    }
-
-    private void createLists() {
-        fieldsOfStudy = new ArrayList<>();
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", R.drawable.data));
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", R.drawable.business));
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
-
-        studentsMatters = new ArrayList<>();
-        studentsMatters.add(new DeptFieldsOfStudy("Ακαδημαϊκό Ημερολόγιο", R.drawable.acadschedule));
-        studentsMatters.add(new DeptFieldsOfStudy("Σύμβουλος Καθηγητής", R.drawable.mentor));
-        studentsMatters.add(new DeptFieldsOfStudy("Πρόγραμμα Erasmus+", R.drawable.erasmus));
-
-        usefulLinks = new ArrayList<>();
-        usefulLinks.add(new UsefulLinks("Ηλεκτρονική Γραμματεία", "https://submit-academicid.minedu.gov.gr/", R.drawable.secretariat));
-        usefulLinks.add(new UsefulLinks("Ακαδημαική Ταυτότητα", "https://submit-academicid.minedu.gov.gr/", R.drawable.student_card));
-        usefulLinks.add(new UsefulLinks("Σύστημα Φοιτητών", "https://student.hmu.gr/", R.drawable.students));
-        usefulLinks.add(new UsefulLinks("Σελίδα Φοιτητών", "https://www.facebook.com/groups/213104128868246/", R.drawable.fb));
-        usefulLinks.add(new UsefulLinks("e-Class", "https://eclass.hmu.gr/", R.drawable.eclass));
-        usefulLinks.add(new UsefulLinks("Δήμος Αγ.Νικολάου", "https://www.dimosagn.gr/", R.drawable.dimos));
-        usefulLinks.add(new UsefulLinks("Προτεινόμενα Εστιατόρια", "https://www.tripadvisor.com.gr/", R.drawable.tripadvisor));
-        usefulLinks.add(new UsefulLinks("Εύδοξος", "https://eudoxus.gr/", R.drawable.eudoxus));
-        usefulLinks.add(new UsefulLinks("Edu E-mail Φοιτητή", "http://webmail.edu.hmu.gr/", R.drawable.webmail));
-        usefulLinks.add(new UsefulLinks("Events Τμήματος", "https://mst.hmu.gr/news_gr/", R.drawable.events));
-        usefulLinks.add(new UsefulLinks("Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου", "https://www.ktelherlas.gr/", R.drawable.ktel));
-        usefulLinks.add(new UsefulLinks("Εφαρμογή Εξάπλωσης Covid-19", "https://mst.hmu.gr/1473-2/", R.drawable.app));
     }
 
     private void openSchedule() {

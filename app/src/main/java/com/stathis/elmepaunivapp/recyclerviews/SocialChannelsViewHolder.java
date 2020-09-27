@@ -8,25 +8,25 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.listeners.SocialClickListener;
 import com.stathis.elmepaunivapp.models.SocialChannels;
 
 public class SocialChannelsViewHolder extends RecyclerView.ViewHolder {
 
-    private com.stathis.elmepaunivapp.listeners.ItemClickListener ItemClickListener;
+    private SocialClickListener callback;
     private TextView name;
     private ImageView imageView;
     private Object data;
 
-    public SocialChannelsViewHolder(@NonNull final View itemView, ItemClickListener listener) {
+    public SocialChannelsViewHolder(@NonNull final View itemView, SocialClickListener listener) {
         super(itemView);
         name = itemView.findViewById(R.id.social_txt);
         imageView = itemView.findViewById(R.id.social_circle_img);
-        ItemClickListener = listener;
+        this.callback = listener;
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ItemClickListener.onSocialItemClick((SocialChannels) data);
+                callback.onSocialItemClick((SocialChannels) data);
             }
         });
     }
@@ -36,5 +36,4 @@ public class SocialChannelsViewHolder extends RecyclerView.ViewHolder {
         name.setText(data.getName());
         imageView.setImageResource(data.getImg());
     }
-
 }

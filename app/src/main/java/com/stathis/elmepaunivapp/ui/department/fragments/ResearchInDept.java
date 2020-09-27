@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.department.fragments;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,12 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.toDELETE.ResearchLearnMore;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.models.SocialChannels;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
@@ -44,22 +46,7 @@ public class ResearchInDept extends AppCompatActivity {
         createLists();
 
         researchItems = findViewById(R.id.research_InDept_recView);
-        researchAdapter = new UsefulLinksAdapter(researchItemList, new ItemClickListener() {
-            @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-
-            }
-
-            @Override
-            public void onProgrammesClick(Programmes programmes) {
-
-            }
-
-            @Override
-            public void onProfessorClick(ProfessorModel professorModel) {
-
-            }
-
+        researchAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
                 switch (usefulLinks.getName()) {
@@ -89,35 +76,12 @@ public class ResearchInDept extends AppCompatActivity {
                         break;
                 }
             }
-
-            @Override
-            public void onSocialItemClick(SocialChannels socialChannels) {
-
-            }
-
-            @Override
-            public void onClick(View v) {
-
-            }
         });
+        researchAdapter.submitList(researchItemList);
         researchItems.setAdapter(researchAdapter);
+
         research_labs = findViewById(R.id.research_Labs_recView);
-        researchLabsAdapter = new UsefulLinksAdapter(researchLabList, new ItemClickListener() {
-            @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-
-            }
-
-            @Override
-            public void onProgrammesClick(Programmes programmes) {
-
-            }
-
-            @Override
-            public void onProfessorClick(ProfessorModel professorModel) {
-
-            }
-
+        researchLabsAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
                 switch (usefulLinks.getName()) {
@@ -141,17 +105,8 @@ public class ResearchInDept extends AppCompatActivity {
                         break;
                 }
             }
-
-            @Override
-            public void onSocialItemClick(SocialChannels socialChannels) {
-
-            }
-
-            @Override
-            public void onClick(View v) {
-
-            }
         });
+        researchLabsAdapter.submitList(researchLabList);
         research_labs.setAdapter(researchLabsAdapter);
 
         //bottom navigation

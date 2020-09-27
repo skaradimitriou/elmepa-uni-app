@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.toDELETE;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,27 +11,28 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.ui.students.Students;
 
-public class VirtualTour extends AppCompatActivity {
+public class AnnouncementMoreInfo extends AppCompatActivity {
 
     private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_virtual_tour);
+        setContentView(R.layout.activity_announcement_more_info);
     }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        url = getIntent().getStringExtra("VirtualTourUrl");
+        url = getIntent().getStringExtra("AnnouncementUrl");
         //load webview with school web content
-        WebView webview = findViewById(R.id.virtual_tour_webview);
+        WebView webview = findViewById(R.id.web_announcement);
         webview.loadUrl(url);
         //enabling js files
         WebSettings webSettings = webview.getSettings();
@@ -47,22 +48,22 @@ public class VirtualTour extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(VirtualTour.this, Dashboard.class);
+                        i = new Intent(AnnouncementMoreInfo.this, Dashboard.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
-                        i = new Intent(VirtualTour.this, Students.class);
+                        i = new Intent(AnnouncementMoreInfo.this, Students.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
-                        i = new Intent(VirtualTour.this, Department.class);
+                        i = new Intent(AnnouncementMoreInfo.this, Department.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
-                        i = new Intent(VirtualTour.this, Professors.class);
+                        i = new Intent(AnnouncementMoreInfo.this, Professors.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
@@ -77,6 +78,4 @@ public class VirtualTour extends AppCompatActivity {
         super.onPause();
         overridePendingTransition(0, 0);
     }
-
-
 }

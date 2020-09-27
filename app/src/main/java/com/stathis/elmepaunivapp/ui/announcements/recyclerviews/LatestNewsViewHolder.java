@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.recyclerviews;
+package com.stathis.elmepaunivapp.ui.announcements.recyclerviews;
 
 import android.view.View;
 import android.widget.ImageView;

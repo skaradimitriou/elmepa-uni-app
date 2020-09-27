@@ -21,7 +21,6 @@ public class ProfessorAdapter extends ListAdapter<ProfessorModel,ProfessorViewHo
     private List<ProfessorModel> arrayData = new ArrayList<>();
     private ProfessorClickListener listener;
 
-    //constructor of what I want to show to the user
     public ProfessorAdapter(ProfessorClickListener listener) {
         super(new DiffItemCallbackClass<ProfessorModel>());
         this.listener = listener;
@@ -36,7 +35,6 @@ public class ProfessorAdapter extends ListAdapter<ProfessorModel,ProfessorViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ProfessorViewHolder holder, int position) {
-        //we want to show the data to the users
         holder.present(getItem(position));
     }
 }

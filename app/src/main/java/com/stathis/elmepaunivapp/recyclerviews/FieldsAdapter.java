@@ -5,23 +5,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ListAdapter;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
+import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 
 import java.util.List;
 
-public class FieldsAdapter extends RecyclerView.Adapter<FieldsViewHolder>{
+public class FieldsAdapter extends ListAdapter<DeptFieldsOfStudy, FieldsViewHolder> {
 
     private List<DeptFieldsOfStudy> fieldsOfStudies;
-    private ItemClickListener callback;
+    private FieldsOfStudyListener callback;
 
     //constructor of what I want to show to the user
-    public FieldsAdapter(List<DeptFieldsOfStudy> fields, ItemClickListener listener) {
-        fieldsOfStudies = fields;
-        callback = listener;
+    public FieldsAdapter(FieldsOfStudyListener callback) {
+        super(new DiffItemCallbackClass<DeptFieldsOfStudy>());
+        this.callback = callback;
     }
 
     @NonNull
@@ -34,14 +35,6 @@ public class FieldsAdapter extends RecyclerView.Adapter<FieldsViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull FieldsViewHolder holder, int position) {
         //we want to show the data to the users
-        holder.present(fieldsOfStudies.get(position));
+        holder.present(getItem(position));
     }
-
-    @Override
-    public int getItemCount() {
-        return fieldsOfStudies.size();
-    }
-
-
-
 }

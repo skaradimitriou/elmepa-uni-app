@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.students.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,24 +9,22 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
-import com.stathis.elmepaunivapp.models.Programmes;
-import com.stathis.elmepaunivapp.models.SocialChannels;
-import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
+import com.stathis.elmepaunivapp.ui.department.DepartmentViewModel;
 import com.stathis.elmepaunivapp.recyclerviews.FieldsAdapter;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
-
-import java.util.ArrayList;
 
 public class FieldsOfStudyFragment extends Fragment {
 
     private RecyclerView fieldsOfStudy;
     private FieldsAdapter fieldsAdapter;
-    private ArrayList<DeptFieldsOfStudy> fieldsOfStudyList = new ArrayList<>();
+//    private ArrayList<DeptFieldsOfStudy> fieldsOfStudyList = new ArrayList<>();
+    private DepartmentViewModel viewModel;
 
     public FieldsOfStudyFragment() {
         //required empty constructor
@@ -35,6 +33,8 @@ public class FieldsOfStudyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Initializing my viewModel
+        viewModel = new ViewModelProvider(this).get(DepartmentViewModel.class);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fields_of_study, container, false);
     }
@@ -42,62 +42,37 @@ public class FieldsOfStudyFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        createTheList();
 
         fieldsOfStudy = view.findViewById(R.id.fieldsOfStudy_recView);
-        fieldsAdapter = new FieldsAdapter(fieldsOfStudyList, new ItemClickListener() {
+        fieldsAdapter = new FieldsAdapter(new FieldsOfStudyListener() {
             @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-                switch (item.getName()) {
+            public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
+                switch (fieldsOfStudy.getName()) {
                     case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
                         Intent goToDataSyllabus = new Intent(getActivity(), Syllabus.class);
-                        goToDataSyllabus.putExtra("DIRECTION", item.getName());
+                        goToDataSyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToDataSyllabus);
                         break;
                     case "Διοίκηση Επιχειρήσεων & Οργανισμών":
                         Intent goToBASyllabus = new Intent(getActivity(), Syllabus.class);
-                        goToBASyllabus.putExtra("DIRECTION", item.getName());
+                        goToBASyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToBASyllabus);
                         break;
                     case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
                         Intent goToMKTSyllabus = new Intent(getActivity(), Syllabus.class);
-                        goToMKTSyllabus.putExtra("DIRECTION", item.getName());
+                        goToMKTSyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToMKTSyllabus);
                         break;
                 }
             }
-
-            @Override
-            public void onProgrammesClick(Programmes programmes) {
-
-            }
-
-            @Override
-            public void onProfessorClick(ProfessorModel professorModel) {
-
-            }
-
-            @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-
-            }
-
-            @Override
-            public void onSocialItemClick(SocialChannels socialChannels) {
-
-            }
-
-            @Override
-            public void onClick(View v) {
-
-            }
         });
         fieldsOfStudy.setAdapter(fieldsAdapter);
+        fieldsAdapter.submitList(viewModel.getFieldsOfStudyList());
     }
 
-    private void createTheList() {
-        fieldsOfStudyList.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", R.drawable.data));
-        fieldsOfStudyList.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", R.drawable.business));
-        fieldsOfStudyList.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
-    }
+//    private void createTheList() {
+//        fieldsOfStudyList.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", R.drawable.data));
+//        fieldsOfStudyList.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", R.drawable.business));
+//        fieldsOfStudyList.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
+//    }
 }

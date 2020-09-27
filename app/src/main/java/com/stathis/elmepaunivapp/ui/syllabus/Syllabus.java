@@ -6,12 +6,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.SyllabusFragments.BA_Fragment;
-import com.stathis.elmepaunivapp.SyllabusFragments.Data_Fragment;
-import com.stathis.elmepaunivapp.SyllabusFragments.MKT_Fragment;
+import com.stathis.elmepaunivapp.ui.syllabus.SyllabusFragments.BA_Fragment;
+import com.stathis.elmepaunivapp.ui.syllabus.SyllabusFragments.Data_Fragment;
+import com.stathis.elmepaunivapp.ui.syllabus.SyllabusFragments.MKT_Fragment;
 
 public class Syllabus extends AppCompatActivity {
 

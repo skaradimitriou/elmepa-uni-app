@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.SyllabusFragments;
+package com.stathis.elmepaunivapp.ui.syllabus.SyllabusFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

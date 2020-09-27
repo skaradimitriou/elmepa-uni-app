@@ -20,13 +20,13 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.stathis.elmepaunivapp.DepMembersFragment;
-import com.stathis.elmepaunivapp.FieldsOfStudyFragment;
-import com.stathis.elmepaunivapp.FindUsFragment;
+import com.stathis.elmepaunivapp.ui.department.fragments.DepMembersFragment;
+import com.stathis.elmepaunivapp.ui.students.fragments.FieldsOfStudyFragment;
+import com.stathis.elmepaunivapp.ui.department.fragments.FindUsFragment;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
-import com.stathis.elmepaunivapp.ProgrammesFragment;
+import com.stathis.elmepaunivapp.ui.department.fragments.ProgrammesFragment;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ResearchInDept;
+import com.stathis.elmepaunivapp.ui.department.fragments.ResearchInDept;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.students.Students;
 
@@ -78,8 +78,7 @@ public class Department extends AppCompatActivity {
         researchInDept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent research = new Intent(Department.this, ResearchInDept.class);
-                startActivity(research);
+                startActivity(new Intent(Department.this, ResearchInDept.class));
             }
         });
 
@@ -88,7 +87,7 @@ public class Department extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String openUrl = "https://mst.hmu.gr/hmutour/";
-                Intent VirtualTour = new Intent(Department.this, com.stathis.elmepaunivapp.VirtualTour.class);
+                Intent VirtualTour = new Intent(Department.this, com.stathis.elmepaunivapp.toDELETE.VirtualTour.class);
                 VirtualTour.putExtra("VirtualTourUrl", openUrl);
                 startActivity(VirtualTour);
             }

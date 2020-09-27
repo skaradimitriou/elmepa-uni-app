@@ -1,27 +1,28 @@
-package com.stathis.elmepaunivapp.recyclerviews;
+package com.stathis.elmepaunivapp.ui.announcements.recyclerviews;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ListAdapter;
 
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.NewsClickListener;
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 
-import java.util.ArrayList;
+public class LatestNewsAdapter extends ListAdapter<Announcement,LatestNewsViewHolder> {
 
-public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsViewHolder> {
-
-    private ArrayList<Announcement> latestNews;
+    private final int ANNOUNCEMENT = 1;
+    private final int EMPTY = 2;
     private NewsClickListener listener;
 
-    public LatestNewsAdapter(ArrayList<Announcement> latestNews, NewsClickListener listener) {
-        this.latestNews = latestNews;
+    public LatestNewsAdapter(NewsClickListener listener) {
+        super(new DiffItemCallbackClass<Announcement>());
         this.listener = listener;
     }
+
 
     @NonNull
     @Override
@@ -32,11 +33,6 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull LatestNewsViewHolder holder, int position) {
-        holder.present(latestNews.get(position));
-    }
-
-    @Override
-    public int getItemCount() {
-        return latestNews.size();
+        holder.present(getItem(position));
     }
 }

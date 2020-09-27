@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.toDELETE;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,16 +6,19 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-public class PhdProg extends AppCompatActivity {
+import com.stathis.elmepaunivapp.R;
 
-    private String url = "https://mst.hmu.gr/metaptyxiako/didaktorikes-spoydes/";
+public class UndergraduateProg extends AppCompatActivity {
+
+    private WebView webview;
+    private String url = "https://mst.hmu.gr/tmima/ypopshphioi-phoithtes/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phd_prog);
+        setContentView(R.layout.activity_undergraduate_prog);
         //load webview with school web content
-        WebView webview = findViewById(R.id.phd_Program);
+        webview = findViewById(R.id.undergraduateProgram);
         webview.loadUrl(url);
         //enabling js files
         WebSettings webSettings = webview.getSettings();

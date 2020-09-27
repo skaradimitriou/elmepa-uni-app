@@ -5,21 +5,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ListAdapter;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
+import com.stathis.elmepaunivapp.listeners.ProgrammesClickListener;
 import com.stathis.elmepaunivapp.models.Programmes;
 
-import java.util.List;
+public class ProgrammesAdapter extends ListAdapter<Programmes, ProgrammesViewHolder> {
 
-public class ProgrammesAdapter extends RecyclerView.Adapter<ProgrammesViewHolder> {
+    //    private List<Programmes> programmes;
+    private ProgrammesClickListener listener;
 
-    private List<Programmes> programmes;
-    private ItemClickListener listener;
-
-    public ProgrammesAdapter(List<Programmes> programmes, ItemClickListener listener) {
-        this.programmes = programmes;
+    public ProgrammesAdapter(ProgrammesClickListener listener) {
+        super(new DiffItemCallbackClass<Programmes>());
         this.listener = listener;
     }
 
@@ -27,16 +26,11 @@ public class ProgrammesAdapter extends RecyclerView.Adapter<ProgrammesViewHolder
     @Override
     public ProgrammesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.programmes_item_row, parent, false);
-        return new ProgrammesViewHolder(view,listener);
+        return new ProgrammesViewHolder(view, listener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ProgrammesViewHolder holder, int position) {
-        holder.present(programmes.get(position));
-    }
-
-    @Override
-    public int getItemCount() {
-       return programmes.size();
+        holder.present(getItem(position));
     }
 }

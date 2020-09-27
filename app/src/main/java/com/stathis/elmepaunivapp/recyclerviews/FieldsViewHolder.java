@@ -8,26 +8,26 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 
 public class FieldsViewHolder extends RecyclerView.ViewHolder {
 
-    private com.stathis.elmepaunivapp.listeners.ItemClickListener ItemClickListener;
+    private FieldsOfStudyListener listener;
     private TextView name;
     private ImageView imageView;
     private Object data;
 
-    public FieldsViewHolder(@NonNull View itemView, ItemClickListener itemClickListener) {
+    public FieldsViewHolder(@NonNull View itemView, FieldsOfStudyListener itemClickListener) {
         super(itemView);
         name = itemView.findViewById(R.id.fields_holder_txt);
         imageView = itemView.findViewById(R.id.fields_img);
 
-        ItemClickListener = itemClickListener;
+        listener = itemClickListener;
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ItemClickListener.onItemClick((DeptFieldsOfStudy) data);
+                listener.onFieldOfStudyClick((DeptFieldsOfStudy) data);
             }
         });
 

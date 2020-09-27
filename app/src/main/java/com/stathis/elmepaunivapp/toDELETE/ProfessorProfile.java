@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.toDELETE;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,27 +11,31 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.ui.students.Students;
 
-public class ResearchLearnMore extends AppCompatActivity {
+public class ProfessorProfile extends AppCompatActivity {
 
-    private String url;
+    private WebView webView;
+    String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_research_learn_more);
+        setContentView(R.layout.activity_professor_profile);
     }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        url = getIntent().getStringExtra("LEARN_MORE_URL");
+
+        Intent getProfData = getIntent();
+        String url = getProfData.getStringExtra("PROFESSORS_URL");
         //load webview with school web content
-        WebView webview = findViewById(R.id.web_learnMore);
+        WebView webview = findViewById(R.id.web_profileProf);
         webview.loadUrl(url);
         //enabling js files
         WebSettings webSettings = webview.getSettings();
@@ -47,22 +51,22 @@ public class ResearchLearnMore extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(ResearchLearnMore.this, Dashboard.class);
+                        i = new Intent(ProfessorProfile.this, Dashboard.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
-                        i = new Intent(ResearchLearnMore.this, Students.class);
+                        i = new Intent(ProfessorProfile.this, Students.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
-                        i = new Intent(ResearchLearnMore.this, Department.class);
+                        i = new Intent(ProfessorProfile.this, Department.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
-                        i = new Intent(ResearchLearnMore.this, Professors.class);
+                        i = new Intent(ProfessorProfile.this, Professors.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;

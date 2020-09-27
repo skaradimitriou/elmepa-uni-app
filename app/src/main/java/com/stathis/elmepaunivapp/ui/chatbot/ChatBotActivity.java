@@ -26,7 +26,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.VirtualTour;
+import com.stathis.elmepaunivapp.toDELETE.VirtualTour;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 import com.stathis.elmepaunivapp.recyclerviews.ChatBotAdapter;
 import com.stathis.elmepaunivapp.listeners.ChatBotListener;
@@ -150,25 +150,20 @@ public class ChatBotActivity extends AppCompatActivity {
         chatBotAdapter = new ChatBotAdapter(messagesList, new ChatBotListener() {
             @Override
             public void onChatReply(Message message) {
-                Intent i;
                 switch (message.getQuestion().toLowerCase()) {
                     case "προγραμμα σπουδων":
-                        i = new Intent(ChatBotActivity.this, Students.class);
-                        startActivity(i);
+                        startActivity(new Intent(ChatBotActivity.this, Students.class));
                         break;
                     case "πρόγραμμα σπουδών":
-                        i = new Intent(ChatBotActivity.this, Students.class);
-                        startActivity(i);
+                        startActivity(new Intent(ChatBotActivity.this, Students.class));
                         break;
                     case "ωρολογιο προγραμμα":
                         String scheduleUrl = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
-                        i = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl));
-                        startActivity(i);
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl)));
                         break;
                     case "ωρολόγιο πρόγραμμα":
                         String scheduleUri = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
-                        i = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUri));
-                        startActivity(i);
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUri)));
                         break;
                     case "τηλέφωνο γραμματείας":
                         callAtSecretaryOffice();
@@ -189,16 +184,14 @@ public class ChatBotActivity extends AppCompatActivity {
                         sendAnEmailToSecretaryOffice();
                         break;
                     case "καθηγητές":
-                        i = new Intent(ChatBotActivity.this, Professors.class);
-                        startActivity(i);
+                        startActivity(new Intent(ChatBotActivity.this, Professors.class));
                         break;
                     case "καθηγητες":
-                        i = new Intent(ChatBotActivity.this, Professors.class);
-                        startActivity(i);
+                        startActivity(new Intent(ChatBotActivity.this, Professors.class));
                         break;
                     case "εικονική περιήγηση":
                         String openUrl = "https://mst.hmu.gr/hmutour/";
-                        Intent VirtualTour = new Intent(ChatBotActivity.this, com.stathis.elmepaunivapp.VirtualTour.class);
+                        Intent VirtualTour = new Intent(ChatBotActivity.this, com.stathis.elmepaunivapp.toDELETE.VirtualTour.class);
                         VirtualTour.putExtra("VirtualTourUrl", openUrl);
                         startActivity(VirtualTour);
                         break;
@@ -209,16 +202,13 @@ public class ChatBotActivity extends AppCompatActivity {
                         startActivity(VirtualTourOne);
                         break;
                     case "ανακοινώσεις":
-                        i = new Intent(ChatBotActivity.this, Announcements.class);
-                        startActivity(i);
+                        startActivity(new Intent(ChatBotActivity.this, Announcements.class));
                         break;
                     case "ανακοινωσεις":
-                        i = new Intent(ChatBotActivity.this, Announcements.class);
-                        startActivity(i);
+                        startActivity(new Intent(ChatBotActivity.this, Announcements.class));
                         break;
                     case "ανακοινωσεισ":
-                        i = new Intent(ChatBotActivity.this, Announcements.class);
-                        startActivity(i);
+                        startActivity(new Intent(ChatBotActivity.this, Announcements.class));
                         break;
                 }
             }

@@ -1,8 +1,10 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.toDELETE;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.stathis.elmepaunivapp.R;
 
 public class PlaceholderClass extends AppCompatActivity {
 

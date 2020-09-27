@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.department.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,23 +10,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
-import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.listeners.SocialClickListener;
+import com.stathis.elmepaunivapp.ui.department.DepartmentViewModel;
 import com.stathis.elmepaunivapp.models.SocialChannels;
-import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.SocialChannelAdapter;
-
-import java.util.ArrayList;
 
 public class FindUsFragment extends Fragment {
 
     private RecyclerView findUs;
     private SocialChannelAdapter socialChannelAdapter;
-    private ArrayList<SocialChannels> socialChannels = new ArrayList<>();
+    private DepartmentViewModel departmentViewModel;
 
     public FindUsFragment() {
         //required empty constructor
@@ -35,6 +32,7 @@ public class FindUsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        departmentViewModel = new ViewModelProvider(this).get(DepartmentViewModel.class);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_find_us, container, false);
     }
@@ -43,35 +41,8 @@ public class FindUsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        createTheList();
-
         findUs = view.findViewById(R.id.social_recView);
-        socialChannelAdapter = new SocialChannelAdapter(socialChannels, new ItemClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-
-            @Override
-            public void onItemClick(DeptFieldsOfStudy item) {
-
-            }
-
-            @Override
-            public void onProgrammesClick(Programmes programmes) {
-
-            }
-
-            @Override
-            public void onProfessorClick(ProfessorModel professorModel) {
-
-            }
-
-            @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-
-            }
-
+        socialChannelAdapter = new SocialChannelAdapter(new SocialClickListener() {
             @Override
             public void onSocialItemClick(SocialChannels socialChannels) {
                 switch (socialChannels.getImg()) {
@@ -108,13 +79,7 @@ public class FindUsFragment extends Fragment {
                 }
             }
         });
+        socialChannelAdapter.submitList(departmentViewModel.getSocialList());
         findUs.setAdapter(socialChannelAdapter);
-    }
-
-    private void createTheList() {
-        socialChannels.add(new SocialChannels("Χάρτης", "https://www.google.gr/maps/place/Hellenic+Mediterσ46953,25.6549865,17z/data=!3m1!4b1!4m5!3m4!1s0x149a7fea00679c2f:0x8038b06fd113f3fb!8m2!3d35.1946909!4d25.6571752", R.drawable.map));
-        socialChannels.add(new SocialChannels("Youtube", "UCapUQKQVrP2p4_ijj_OxvNg", R.drawable.youtube));
-        socialChannels.add(new SocialChannels("LinkedIn", "https://www.linkedin.com/groups/13536369/", R.drawable.linkedin));
-        socialChannels.add(new SocialChannels("Research\nGate", "https://www.researchgate.net/institution/Hellenic_Mediterranean_University/department/Department_of_Management_Science_and_Technology_Agios_Nikolaos", R.drawable.researchgate));
     }
 }

@@ -3,6 +3,7 @@ package com.stathis.elmepaunivapp.ui.dashboard;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -25,11 +26,14 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     private CardView updates, department, students, professors;
     private ImageView about;
     private FloatingActionButton chatbot_btn;
+    private DashboardViewModel dashboardViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        // <!---- Initializing the ViewModel for this activity ----->
+        dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
     }
 
     @Override
@@ -48,31 +52,19 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         department.setOnClickListener(this);
         students.setOnClickListener(this);
         professors.setOnClickListener(this);
-        chatbot_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent ChatBot = new Intent(Dashboard.this, ChatBotActivity.class);
-                startActivity(ChatBot);
-                overridePendingTransition(0, 0);
-            }
-        });
+        chatbot_btn.setOnClickListener(this);
 
         //about the app
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(Dashboard.this);
-                builder.setTitle("Σχετικά με την εφαρμογή");
-                builder.setMessage("Η εφαρμογή αυτή αναπτύχθηκε το 2020 από τον απόφοιτο του Τμήματος \n" +
-                        "Στάθη  Καραδημητρίου με την επίβλεψη του Κώστα Παναγιωτάκη, Αναπληρωτή Καθηγητή και Προέδρου του Τμήματος\n" +
-                        "με σκοπό την εξυπηρέτηση των μελών του Τμήματος και την προώθηση του τμήματος σε υποψήφιους φοιτητές. \n" +
-                        "Αποτελεί την επόμενη έκδοση της εφαρμογής κινητών που είχε αναπτυχθεί στα πλαίσια της πτυχιακής εργασίας \n" +
-                        "των φοιτητών του τμήματος Πελοπίδα Κεφαλιανού και Μαρίας Λαγουδάκη το 2017.");
+                builder.setTitle(dashboardViewModel.getTitle());
+                builder.setMessage(dashboardViewModel.getAboutText());
                 builder.setPositiveButton("Μάθε Περισσότερα", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent learnMore = new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"));
-                        startActivity(learnMore);
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/")));
                     }
                 });
                 builder.setNegativeButton("Ακυρο", new DialogInterface.OnClickListener() {
@@ -94,26 +86,27 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        Intent i;
         //cases bellow
         switch (v.getId()) {
             case R.id.anakoinoseis:
-                i = new Intent(Dashboard.this, Announcements.class);
-                startActivity(i);
+                // <!--- check for internet connection and then proceed to announcements --->
+                // TODO("Implement internet connection check first")
+                startActivity(new Intent(Dashboard.this, Announcements.class));
                 overridePendingTransition(0, 0);
                 break;
             case R.id.to_tmima:
-                i = new Intent(Dashboard.this, Department.class);
-                startActivity(i);
+                startActivity(new Intent(Dashboard.this, Department.class));
                 break;
             case R.id.students:
-                i = new Intent(Dashboard.this, Students.class);
-                startActivity(i);
+                startActivity(new Intent(Dashboard.this, Students.class));
                 overridePendingTransition(0, 0);
                 break;
             case R.id.professors:
-                i = new Intent(Dashboard.this, Professors.class);
-                startActivity(i);
+                startActivity(new Intent(Dashboard.this, Professors.class));
+                overridePendingTransition(0, 0);
+                break;
+            case R.id.fab_chatbot:
+                startActivity(new Intent(Dashboard.this, ChatBotActivity.class));
                 overridePendingTransition(0, 0);
                 break;
         }

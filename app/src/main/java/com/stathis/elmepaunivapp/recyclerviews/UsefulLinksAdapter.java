@@ -5,21 +5,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
+import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 
 import java.util.List;
 
-public class UsefulLinksAdapter extends RecyclerView.Adapter<UsefulLinksViewHolder> {
+public class UsefulLinksAdapter extends ListAdapter<UsefulLinks,UsefulLinksViewHolder> {
 
-    private List<UsefulLinks> usefulLinks;
-    private ItemClickListener listener;
+//    private List<UsefulLinks> usefulLinks;
+    private UsefulLinkClickListener listener;
 
-    public UsefulLinksAdapter(List<UsefulLinks> usefulLinks, ItemClickListener listener) {
-        this.usefulLinks = usefulLinks;
+    public UsefulLinksAdapter(UsefulLinkClickListener listener) {
+        super(new DiffItemCallbackClass<UsefulLinks>());
         this.listener = listener;
     }
 
@@ -32,11 +35,6 @@ public class UsefulLinksAdapter extends RecyclerView.Adapter<UsefulLinksViewHold
 
     @Override
     public void onBindViewHolder(@NonNull UsefulLinksViewHolder holder, int position) {
-        holder.present(usefulLinks.get(position));
-    }
-
-    @Override
-    public int getItemCount() {
-        return usefulLinks.size();
+        holder.present(getItem(position));
     }
 }

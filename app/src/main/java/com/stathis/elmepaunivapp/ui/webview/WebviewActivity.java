@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp;
+package com.stathis.elmepaunivapp.ui.webview;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,34 +11,37 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.ui.students.Students;
 
-public class ProfessorProfile extends AppCompatActivity {
+public class WebviewActivity extends AppCompatActivity {
 
-    private WebView webView;
-    String url;
+    private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_professor_profile);
+        setContentView(R.layout.activity_webview);
     }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+        //passing the url data from previous activities as "URL"
+        url = getIntent().getStringExtra("URL");
 
-        Intent getProfData = getIntent();
-        String url = getProfData.getStringExtra("PROFESSORS_URL");
         //load webview with school web content
-        WebView webview = findViewById(R.id.web_profileProf);
+        WebView webview = findViewById(R.id.phd_Program);
         webview.loadUrl(url);
-        //enabling js files
+
+        //enabling web js files
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+        //TODO("Implement screen if no internet connection")
 
         //bottom navigation bar
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -50,22 +53,22 @@ public class ProfessorProfile extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(ProfessorProfile.this, Dashboard.class);
+                        i = new Intent(WebviewActivity.this, Dashboard.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
-                        i = new Intent(ProfessorProfile.this, Students.class);
+                        i = new Intent(WebviewActivity.this, Students.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
-                        i = new Intent(ProfessorProfile.this, Department.class);
+                        i = new Intent(WebviewActivity.this, Department.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
-                        i = new Intent(ProfessorProfile.this, Professors.class);
+                        i = new Intent(WebviewActivity.this, Professors.class);
                         startActivity(i);
                         overridePendingTransition(0, 0);
                         break;
@@ -78,6 +81,5 @@ public class ProfessorProfile extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        overridePendingTransition(0, 0);
     }
 }
