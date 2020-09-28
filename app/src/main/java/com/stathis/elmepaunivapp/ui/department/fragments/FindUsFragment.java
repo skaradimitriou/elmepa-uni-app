@@ -17,7 +17,7 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.SocialClickListener;
 import com.stathis.elmepaunivapp.ui.department.DepartmentViewModel;
 import com.stathis.elmepaunivapp.models.SocialChannels;
-import com.stathis.elmepaunivapp.recyclerviews.SocialChannelAdapter;
+import com.stathis.elmepaunivapp.ui.department.recyclerviews.SocialChannelAdapter;
 
 public class FindUsFragment extends Fragment {
 

@@ -23,12 +23,10 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
-import com.stathis.elmepaunivapp.recyclerviews.FieldsAdapter;
+import com.stathis.elmepaunivapp.ui.department.recyclerviews.FieldsAdapter;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
-
-import java.util.ArrayList;
 
 public class Students extends AppCompatActivity {
 

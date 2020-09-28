@@ -16,8 +16,7 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ProgrammesClickListener;
 import com.stathis.elmepaunivapp.ui.department.DepartmentViewModel;
 import com.stathis.elmepaunivapp.models.Programmes;
-import com.stathis.elmepaunivapp.recyclerviews.ProgrammesAdapter;
-import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.department.recyclerviews.ProgrammesAdapter;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 public class ProgrammesFragment extends Fragment {

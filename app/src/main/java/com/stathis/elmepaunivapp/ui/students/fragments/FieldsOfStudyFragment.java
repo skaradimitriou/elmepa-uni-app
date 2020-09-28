@@ -16,7 +16,7 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.ui.department.DepartmentViewModel;
-import com.stathis.elmepaunivapp.recyclerviews.FieldsAdapter;
+import com.stathis.elmepaunivapp.ui.department.recyclerviews.FieldsAdapter;
 import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
 
 public class FieldsOfStudyFragment extends Fragment {

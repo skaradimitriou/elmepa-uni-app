@@ -18,7 +18,6 @@ import java.util.List;
 
 public class UsefulLinksAdapter extends ListAdapter<UsefulLinks,UsefulLinksViewHolder> {
 
-//    private List<UsefulLinks> usefulLinks;
     private UsefulLinkClickListener listener;
 
     public UsefulLinksAdapter(UsefulLinkClickListener listener) {
