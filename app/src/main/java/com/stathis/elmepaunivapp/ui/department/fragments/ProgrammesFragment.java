@@ -14,12 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ProgrammesClickListener;
-import com.stathis.elmepaunivapp.toDELETE.PhdProg;
-import com.stathis.elmepaunivapp.toDELETE.PostgraduateProg;
-import com.stathis.elmepaunivapp.toDELETE.UndergraduateProg;
 import com.stathis.elmepaunivapp.ui.department.DepartmentViewModel;
 import com.stathis.elmepaunivapp.models.Programmes;
 import com.stathis.elmepaunivapp.recyclerviews.ProgrammesAdapter;
+import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 public class ProgrammesFragment extends Fragment {
 
@@ -49,13 +48,23 @@ public class ProgrammesFragment extends Fragment {
             public void onProgrammesClick(Programmes programmes) {
                 switch (programmes.getName()) {
                     case "Προπτυχιακές Σπουδές":
-                        startActivity(new Intent(getActivity(), UndergraduateProg.class));
+                        String undergraduateUrl = "https://mst.hmu.gr/tmima/ypopshphioi-phoithtes/";
+                        Intent undergraduates = new Intent(getActivity(), WebviewActivity.class);
+                        undergraduates.putExtra("URL", undergraduateUrl);
+                        startActivity(undergraduates);
                         break;
                     case "Μεταπτυχιακά Προγράμματα":
-                        startActivity(new Intent(getActivity(), PostgraduateProg.class));
+                        String postgraduatesUrl = "https://mst.hmu.gr/metaptyxiako/metaptychiako-programma/";
+                        Intent postgraduates = new Intent(getActivity(), WebviewActivity.class);
+                        postgraduates.putExtra("URL", postgraduatesUrl);
+                        startActivity(postgraduates);
                         break;
                     case "Εκπόνηση Διδακτορικού":
-                        startActivity(new Intent(getActivity(), PhdProg.class));
+                        String phdUrl = "https://mst.hmu.gr/metaptyxiako/didaktorikes-spoydes/";
+                        Intent phd = new Intent(getActivity(), WebviewActivity.class);
+                        phd.putExtra("URL", phdUrl);
+                        startActivity(phd);
+                        break;
                 }
             }
         });

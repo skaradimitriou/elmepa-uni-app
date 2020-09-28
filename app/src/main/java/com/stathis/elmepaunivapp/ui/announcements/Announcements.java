@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.stathis.elmepaunivapp.toDELETE.AnnouncementMoreInfo;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
@@ -22,6 +21,7 @@ import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 import com.stathis.elmepaunivapp.ui.announcements.recyclerviews.LatestNewsAdapter;
 import com.stathis.elmepaunivapp.listeners.NewsClickListener;
 import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -104,8 +104,8 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
 
     @Override
     public void onNewsClick(Announcement announcement) {
-        Intent learnMore = new Intent(Announcements.this, AnnouncementMoreInfo.class);
-        learnMore.putExtra("AnnouncementUrl", announcement.getOpenUrl());
+        Intent learnMore = new Intent(Announcements.this, WebviewActivity.class);
+        learnMore.putExtra("URL", announcement.getOpenUrl());
         startActivity(learnMore);
         overridePendingTransition(0, 0);
     }
@@ -154,6 +154,3 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
     }
 
 }
-
-
-

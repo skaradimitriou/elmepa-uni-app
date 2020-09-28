@@ -16,8 +16,8 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.models.DepMembers;
 import com.stathis.elmepaunivapp.ui.department.recyclerviews.DepMembersAdapter;
 import com.stathis.elmepaunivapp.listeners.DepMembersClickListener;
-import com.stathis.elmepaunivapp.toDELETE.ProfessorProfile;
 import com.stathis.elmepaunivapp.ui.department.DepartmentViewModel;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 public class DepMembersFragment extends Fragment {
 
@@ -45,9 +45,9 @@ public class DepMembersFragment extends Fragment {
         depMembersAdapter = new DepMembersAdapter(new DepMembersClickListener() {
             @Override
             public void onDepProfessorClick(DepMembers item) {
-                Intent passProfData = new Intent(getActivity(), ProfessorProfile.class);
+                Intent passProfData = new Intent(getActivity(), WebviewActivity.class);
                 String url = "https://mst.hmu.gr/prosopiko/melh-dep/";
-                passProfData.putExtra("PROFESSORS_URL", url);
+                passProfData.putExtra("URL", url);
                 startActivity(passProfData);
             }
         });

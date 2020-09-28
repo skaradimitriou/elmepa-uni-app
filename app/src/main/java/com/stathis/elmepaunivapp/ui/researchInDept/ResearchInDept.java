@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.department.fragments;
+package com.stathis.elmepaunivapp.ui.researchInDept;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,21 +8,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.toDELETE.ResearchLearnMore;
-import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
-import com.stathis.elmepaunivapp.models.Programmes;
-import com.stathis.elmepaunivapp.models.SocialChannels;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import java.util.ArrayList;
 
@@ -49,32 +44,10 @@ public class ResearchInDept extends AppCompatActivity {
         researchAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                switch (usefulLinks.getName()) {
-                    case "Ινστιτούτο Οικονομικής Ανάλυσης":
-                        Intent learnMore = new Intent(ResearchInDept.this, ResearchLearnMore.class);
-                        learnMore.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
-                        startActivity(learnMore);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case "Ερευνητικά Επιτεύγματα":
-                        Intent achievements = new Intent(ResearchInDept.this, ResearchLearnMore.class);
-                        achievements.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
-                        startActivity(achievements);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case "Δημοσιεύσεις":
-                        Intent papers = new Intent(ResearchInDept.this, ResearchLearnMore.class);
-                        papers.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
-                        startActivity(papers);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case "Στατιστικά Στοιχεία":
-                        Intent statistics = new Intent(ResearchInDept.this, ResearchLearnMore.class);
-                        statistics.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
-                        startActivity(statistics);
-                        overridePendingTransition(0, 0);
-                        break;
-                }
+                Intent learnMore = new Intent(ResearchInDept.this, WebviewActivity.class);
+                learnMore.putExtra("URL", usefulLinks.getUrl());
+                startActivity(learnMore);
+                overridePendingTransition(0, 0);
             }
         });
         researchAdapter.submitList(researchItemList);
@@ -84,26 +57,10 @@ public class ResearchInDept extends AppCompatActivity {
         researchLabsAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                switch (usefulLinks.getName()) {
-                    case "Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων":
-                        Intent firstLab = new Intent(ResearchInDept.this, ResearchLearnMore.class);
-                        firstLab.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
-                        startActivity(firstLab);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case "Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης":
-                        Intent SecondLab = new Intent(ResearchInDept.this, ResearchLearnMore.class);
-                        SecondLab.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
-                        startActivity(SecondLab);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case "Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας":
-                        Intent ThirdLab = new Intent(ResearchInDept.this, ResearchLearnMore.class);
-                        ThirdLab.putExtra("LEARN_MORE_URL", usefulLinks.getUrl());
-                        startActivity(ThirdLab);
-                        overridePendingTransition(0, 0);
-                        break;
-                }
+                Intent firstLab = new Intent(ResearchInDept.this, WebviewActivity.class);
+                firstLab.putExtra("URL", usefulLinks.getUrl());
+                startActivity(firstLab);
+                overridePendingTransition(0, 0);
             }
         });
         researchLabsAdapter.submitList(researchLabList);

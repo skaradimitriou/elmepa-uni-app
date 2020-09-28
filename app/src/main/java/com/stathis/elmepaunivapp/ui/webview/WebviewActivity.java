@@ -34,7 +34,7 @@ public class WebviewActivity extends AppCompatActivity {
         url = getIntent().getStringExtra("URL");
 
         //load webview with school web content
-        WebView webview = findViewById(R.id.phd_Program);
+        WebView webview = findViewById(R.id.webview);
         webview.loadUrl(url);
 
         //enabling web js files

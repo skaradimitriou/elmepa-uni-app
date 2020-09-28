@@ -54,6 +54,8 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         professors.setOnClickListener(this);
         chatbot_btn.setOnClickListener(this);
 
+        // TODO("Put options in gridview instead of static")
+
         //about the app
         about.setOnClickListener(new View.OnClickListener() {
             @Override

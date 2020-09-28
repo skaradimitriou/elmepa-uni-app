@@ -26,9 +26,10 @@ import com.stathis.elmepaunivapp.ui.department.fragments.FindUsFragment;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.ui.department.fragments.ProgrammesFragment;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.department.fragments.ResearchInDept;
+import com.stathis.elmepaunivapp.ui.researchInDept.ResearchInDept;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import static android.Manifest.permission.CALL_PHONE;
 
@@ -87,8 +88,8 @@ public class Department extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String openUrl = "https://mst.hmu.gr/hmutour/";
-                Intent VirtualTour = new Intent(Department.this, com.stathis.elmepaunivapp.toDELETE.VirtualTour.class);
-                VirtualTour.putExtra("VirtualTourUrl", openUrl);
+                Intent VirtualTour = new Intent(Department.this, WebviewActivity.class);
+                VirtualTour.putExtra("URL", openUrl);
                 startActivity(VirtualTour);
             }
         });

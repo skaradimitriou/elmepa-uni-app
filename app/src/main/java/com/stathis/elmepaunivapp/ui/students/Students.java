@@ -20,16 +20,13 @@ import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.toDELETE.StudentMatters;
 import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
-import com.stathis.elmepaunivapp.models.Programmes;
-import com.stathis.elmepaunivapp.models.SocialChannels;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.recyclerviews.FieldsAdapter;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import java.util.ArrayList;
 
@@ -144,20 +141,20 @@ public class Students extends AppCompatActivity {
                 switch (fieldsOfStudy.getName()) {
                     case "Ακαδημαϊκό Ημερολόγιο":
                         String AcadUrl = "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/";
-                        Intent acadIntent = new Intent(Students.this, StudentMatters.class);
-                        acadIntent.putExtra("StudentMattersUrl", AcadUrl);
+                        Intent acadIntent = new Intent(Students.this, WebviewActivity.class);
+                        acadIntent.putExtra("URL", AcadUrl);
                         startActivity(acadIntent);
                         break;
                     case "Σύμβουλος Καθηγητής":
                         String mentorUrl = "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/";
-                        Intent mentors = new Intent(Students.this, StudentMatters.class);
-                        mentors.putExtra("StudentMattersUrl", mentorUrl);
+                        Intent mentors = new Intent(Students.this, WebviewActivity.class);
+                        mentors.putExtra("URL", mentorUrl);
                         startActivity(mentors);
                         break;
                     case "Πρόγραμμα Erasmus+":
                         String ErasmusUrl = "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/";
-                        Intent erasmus = new Intent(Students.this, StudentMatters.class);
-                        erasmus.putExtra("StudentMattersUrl", ErasmusUrl);
+                        Intent erasmus = new Intent(Students.this, WebviewActivity.class);
+                        erasmus.putExtra("URL", ErasmusUrl);
                         startActivity(erasmus);
                         break;
                 }

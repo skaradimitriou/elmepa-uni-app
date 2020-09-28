@@ -69,10 +69,4 @@ public class FieldsOfStudyFragment extends Fragment {
         fieldsOfStudy.setAdapter(fieldsAdapter);
         fieldsAdapter.submitList(viewModel.getFieldsOfStudyList());
     }
-
-//    private void createTheList() {
-//        fieldsOfStudyList.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", R.drawable.data));
-//        fieldsOfStudyList.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", R.drawable.business));
-//        fieldsOfStudyList.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
-//    }
 }
