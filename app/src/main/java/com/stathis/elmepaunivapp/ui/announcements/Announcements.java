@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -21,11 +23,18 @@ import com.stathis.elmepaunivapp.ui.announcements.recyclerviews.LatestNewsAdapte
 import com.stathis.elmepaunivapp.listeners.NewsClickListener;
 import com.stathis.elmepaunivapp.ui.students.Students;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Announcements extends AppCompatActivity implements NewsClickListener {
 
     private RecyclerView ann_recView;
     private LatestNewsAdapter ann_adapter;
-    //    private ArrayList<Announcement> announcements = new ArrayList<>();
+    private ArrayList<Announcement> announcements = new ArrayList<>();
     private AnnouncementsViewModel announcementsViewModel;
 
     @Override
@@ -42,23 +51,16 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
-//        Content content = new Content();
-//        content.execute();
+
+        // TODO(" Implement empty view if someone has no internet connection")
+        Content content = new Content();
+        content.execute();
 
         // <!---- Announcements recycler view & adapter start ---->
         ann_recView = findViewById(R.id.latestNews_recView);
-//        ann_adapter = new LatestNewsAdapter(announcements, new NewsClickListener() {
-//            @Override
-//            public void onNewsClick(Announcement announcement) {
-//                Intent learnMore = new Intent(Announcements.this, AnnouncementMoreInfo.class);
-//                learnMore.putExtra("AnnouncementUrl", announcement.getOpenUrl());
-//                startActivity(learnMore);
-//                overridePendingTransition(0, 0);
-//            }
-
         ann_adapter = new LatestNewsAdapter(this);
+        ann_adapter.submitList(announcements);
         ann_recView.setAdapter(ann_adapter);
-        ann_adapter.submitList(announcementsViewModel.getAnnouncements());
 
         // <!---- Announcements recycler view & adapter end ---->
 
@@ -108,48 +110,48 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
         overridePendingTransition(0, 0);
     }
 
-//    private class Content extends AsyncTask<Void, Void, Void> {
-//
-//        @Override
-//        protected void onPostExecute(Void aVoid) {
-//            super.onPostExecute(aVoid);
-//            ann_adapter.notifyDataSetChanged();
-//        }
-//
-//        @Override
-//        protected Void doInBackground(Void... voids) {
-//            try {
-//                String url = "https://mst.hmu.gr/news_gr/";
-//                Document doc = Jsoup.connect(url).get();
-//                Elements data = doc.select("article");
-//                int size = data.size();
-//                Log.d("doc", "doc: " + doc);
-//                Log.d("data", "data: " + data);
-//                for (int i = 0; i < size - 1; i++) {
-//                    String imgUrl = data.select("a.entry-featured-image-url")
-//                            .select("img")
-//                            .eq(i)
-//                            .attr("src");
-//
-//                    String title = data.select("h2.entry-title")
-//                            .select("h2")
-//                            .eq(i)
-//                            .text();
-//
-//                    String detailUrl = data.select("h2.entry-title")
-//                            .select("a")
-//                            .eq(i)
-//                            .attr("href");
-//                    announcements.add(new Announcement(title, detailUrl, imgUrl));
-//                    Log.d("items", "img: " + imgUrl + " . title: " + title);
-//                }
-//                announcements.add(new Announcement("Δείτε όλες τις ανακοινώσεις του Τμήματος", "https://mst.hmu.gr/news_gr/", "https://mst.hmu.gr/wp-content/uploads/2020/06/student-using-laptop-library_74855-2539-400x250.jpg"));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return null;
-//        }
-//    }
+    private class Content extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            ann_adapter.notifyDataSetChanged();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                String url = "https://mst.hmu.gr/news_gr/";
+                Document doc = Jsoup.connect(url).get();
+                Elements data = doc.select("article");
+                int size = data.size();
+                Log.d("doc", "doc: " + doc);
+                Log.d("data", "data: " + data);
+                for (int i = 0; i < size - 1; i++) {
+                    String imgUrl = data.select("a.entry-featured-image-url")
+                            .select("img")
+                            .eq(i)
+                            .attr("src");
+
+                    String title = data.select("h2.entry-title")
+                            .select("h2")
+                            .eq(i)
+                            .text();
+
+                    String detailUrl = data.select("h2.entry-title")
+                            .select("a")
+                            .eq(i)
+                            .attr("href");
+                    announcements.add(new Announcement(title, detailUrl, imgUrl));
+                    Log.d("items", "img: " + imgUrl + " . title: " + title);
+                }
+                announcements.add(new Announcement("Δείτε όλες τις ανακοινώσεις του Τμήματος", "https://mst.hmu.gr/news_gr/", "https://mst.hmu.gr/wp-content/uploads/2020/06/student-using-laptop-library_74855-2539-400x250.jpg"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
 
 }
 
