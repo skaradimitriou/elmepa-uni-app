@@ -1,9 +1,20 @@
 package com.stathis.elmepaunivapp.ui.announcements.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "Announcements")
 public class Announcement {
 
+    @PrimaryKey(autoGenerate = false)
+    @ColumnInfo(name = "name")
     private String Name;
+
+    @ColumnInfo(name = "openUrl")
     private String OpenUrl;
+
+    @ColumnInfo(name = "imgResource")
     private String ImageResource;
 
     public Announcement(String name, String openUrl, String imageResource) {
