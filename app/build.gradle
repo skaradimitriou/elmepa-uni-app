@@ -65,4 +65,7 @@ dependencies {
 
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+
+    //swipe to refresh layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }

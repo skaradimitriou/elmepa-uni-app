@@ -3,11 +3,13 @@ package com.stathis.elmepaunivapp.database;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -17,10 +19,10 @@ public interface AnnouncementsDao {
     public List<Announcement> getAll();
 
     @Insert
-    void insert(Announcement announcement);
+    void insert(ArrayList<Announcement> announcement);
 
     @Update
-    void update(Announcement announcement);
+    void update(ArrayList<Announcement> announcement);
 
     @Delete
     void delete(Announcement announcement);

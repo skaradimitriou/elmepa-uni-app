@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.database.AnnouncementsDao;
+import com.stathis.elmepaunivapp.database.AnnouncementsDatabase;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
@@ -29,9 +31,12 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Announcements extends AppCompatActivity implements NewsClickListener {
 
+    private AnnouncementsDatabase announcementsDatabase;
+    private AnnouncementsDao announcementsDao;
     private RecyclerView ann_recView;
     private LatestNewsAdapter ann_adapter;
     private ArrayList<Announcement> announcements = new ArrayList<>();
@@ -43,6 +48,7 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
         setContentView(R.layout.activity_announcements);
         //initializing viewmodel for this activity
         announcementsViewModel = new ViewModelProvider(this).get(AnnouncementsViewModel.class);
+        announcementsDatabase = AnnouncementsDatabase.getInstance(this);
     }
 
     @Override
@@ -59,7 +65,7 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
         // <!---- Announcements recycler view & adapter start ---->
         ann_recView = findViewById(R.id.latestNews_recView);
         ann_adapter = new LatestNewsAdapter(this);
-        ann_adapter.submitList(announcements);
+        ann_adapter.submitList(announcementsDatabase.getAnnouncementDao().getAll());
         ann_recView.setAdapter(ann_adapter);
 
         // <!---- Announcements recycler view & adapter end ---->
@@ -110,11 +116,20 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
         overridePendingTransition(0, 0);
     }
 
+    public boolean dbIsEmpty() {
+        List<Announcement> announcements = announcementsDatabase.getAnnouncementDao().getAll();
+        if (announcements.size() < 1) {
+            return true;
+        }
+        return false;
+    }
+
     private class Content extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            ann_adapter.submitList(announcementsDatabase.getAnnouncementDao().getAll());
             ann_adapter.notifyDataSetChanged();
         }
 
@@ -146,11 +161,17 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
                     Log.d("items", "img: " + imgUrl + " . title: " + title);
                 }
                 announcements.add(new Announcement("Δείτε όλες τις ανακοινώσεις του Τμήματος", "https://mst.hmu.gr/news_gr/", "https://mst.hmu.gr/wp-content/uploads/2020/06/student-using-laptop-library_74855-2539-400x250.jpg"));
+
+                if (dbIsEmpty()) {
+                    announcementsDatabase.getAnnouncementDao().insert(announcements);
+                } else {
+                    announcementsDatabase.getAnnouncementDao().update(announcements);
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
         }
     }
-
 }
