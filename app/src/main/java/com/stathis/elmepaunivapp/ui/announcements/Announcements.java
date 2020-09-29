@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -36,11 +37,12 @@ import java.util.List;
 public class Announcements extends AppCompatActivity implements NewsClickListener {
 
     private AnnouncementsDatabase announcementsDatabase;
-    private AnnouncementsDao announcementsDao;
+    private SwipeRefreshLayout swipe_refresh_layout;
     private RecyclerView ann_recView;
     private LatestNewsAdapter ann_adapter;
     private ArrayList<Announcement> announcements = new ArrayList<>();
     private AnnouncementsViewModel announcementsViewModel;
+    private Content content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +61,7 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
 
 
         // TODO(" Implement empty view if someone has no internet connection")
-        Content content = new Content();
+        content = new Content();
         content.execute();
 
         // <!---- Announcements recycler view & adapter start ---->
@@ -69,6 +71,16 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
         ann_recView.setAdapter(ann_adapter);
 
         // <!---- Announcements recycler view & adapter end ---->
+
+        swipe_refresh_layout = findViewById(R.id.swipe_refresh_layout);
+        swipe_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                content = new Content();
+                content.execute();
+                swipe_refresh_layout.setRefreshing(false);
+            }
+        });
 
         // <!---- Bottom Navigation Listener start ---->
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -161,6 +173,9 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
                     Log.d("items", "img: " + imgUrl + " . title: " + title);
                 }
                 announcements.add(new Announcement("Δείτε όλες τις ανακοινώσεις του Τμήματος", "https://mst.hmu.gr/news_gr/", "https://mst.hmu.gr/wp-content/uploads/2020/06/student-using-laptop-library_74855-2539-400x250.jpg"));
+
+                /* checks if announcements db size is less than 0 (empty) and either inserts or updates the data
+                then passes the data into the ListAdapter   */
 
                 if (dbIsEmpty()) {
                     announcementsDatabase.getAnnouncementDao().insert(announcements);
