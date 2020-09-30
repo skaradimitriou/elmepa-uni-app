@@ -1,6 +1,8 @@
 package com.stathis.elmepaunivapp.ui.chatbot.model;
 
-public class Message {
+import com.stathis.elmepaunivapp.abstraction.LocalModel;
+
+public class Message implements LocalModel {
 
     String question;
     String answer;

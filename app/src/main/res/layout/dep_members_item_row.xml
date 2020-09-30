@@ -8,7 +8,6 @@
     android:layout_marginRight="7dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/dep_img"
         android:layout_width="70dp"
