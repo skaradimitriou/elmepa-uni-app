@@ -18,59 +18,17 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/elmepa_bg_img"
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/agios_nikolaos"
-                    android:tint="#6F000000"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <TextView
-                    android:id="@+id/elmepa_main_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="25dp"
-                    android:gravity="center"
-                    android:text="ΕΛΜΕΠΑ"
-                    android:textColor="#fff"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="Τμήμα Διοικητικής Επιστήμης \n και Τεχνολογίας (Άγιος Νικόλαος)"
-                    android:textColor="#fff"
-                    android:textSize="18sp"
-                    app:layout_constraintTop_toBottomOf="@+id/elmepa_main_txt" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <RelativeLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-50dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/elmepa_logo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/elmepa_logo" />
-
-            </RelativeLayout>
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/research_title"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"

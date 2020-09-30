@@ -11,6 +11,18 @@
     <!-- Announcement Activity -->
     <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
 
+    <!-- Professors Activity -->
+    <string name="professors_search_txt">Αναζήτησε ένα καθηγητή</string>
+
+    <!-- Department Activity -->
+
+
+    <!-- Students Activity -->
+    <string name="students_title">Φοιτητές</string>
+
+    <!-- Research in Dept Activity -->
+    <string name="research_title">Έρευνα</string>
+
     <!-- Chatbot Activity -->
     <string name="elmepaChatBotHeader">ΕΛΜΕΠΑ Chatbot</string>
     <string name="chatBotDescription">Το ChatBot υποστηρίζει τις ακόλουθες ερωτήσεις: Τηλέφωνο Γραμματείας, Πρόγραμμα Σπουδών, Ωρολόγιο Πρόγραμμα, Email Γραμματείας, Καθηγητές, Εικονική Περιήγηση, Ανακοινώσεις</string>
