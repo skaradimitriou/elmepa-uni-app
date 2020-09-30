@@ -3,4 +3,17 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Dashboard Activity -->
+    <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
+    <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \n και Τεχνολογίας (Άγιος Νικόλαος)</string>
+
+    <!-- Announcement Activity -->
+    <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
+
+    <!-- Chatbot Activity -->
+    <string name="elmepaChatBotHeader">ΕΛΜΕΠΑ Chatbot</string>
+    <string name="chatBotDescription">Το ChatBot υποστηρίζει τις ακόλουθες ερωτήσεις: Τηλέφωνο Γραμματείας, Πρόγραμμα Σπουδών, Ωρολόγιο Πρόγραμμα, Email Γραμματείας, Καθηγητές, Εικονική Περιήγηση, Ανακοινώσεις</string>
+    <string name="chatBotMessageTxt">Πώς μπορώ να σε βοηθήσω;</string>
+
 </resources>

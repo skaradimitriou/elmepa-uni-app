@@ -2,10 +2,17 @@ package com.stathis.elmepaunivapp.ui.dashboard;
 
 import androidx.lifecycle.ViewModel;
 
+import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class DashboardViewModel extends ViewModel {
 
     private String title;
     private String aboutText;
+    private ArrayList<DashboardOption> dashboardOptions;
 
     String getTitle() {
         title = "Σχετικά με την εφαρμογή";
@@ -19,5 +26,14 @@ public class DashboardViewModel extends ViewModel {
                 "Αποτελεί την επόμενη έκδοση της εφαρμογής κινητών που είχε αναπτυχθεί στα πλαίσια της πτυχιακής εργασίας \n" +
                 "των φοιτητών του τμήματος Πελοπίδα Κεφαλιανού και Μαρίας Λαγουδάκη το 2017.";
         return aboutText;
+    }
+
+    List<DashboardOption> getDashboardOptions(){
+        dashboardOptions = new ArrayList<DashboardOption>();
+        dashboardOptions.add(new DashboardOption("Ανακοινώσεις", R.drawable.ic_announcement));
+        dashboardOptions.add(new DashboardOption("Το Τμήμα", R.drawable.ic_books));
+        dashboardOptions.add(new DashboardOption("Φοιτητές", R.drawable.ic_student));
+        dashboardOptions.add(new DashboardOption("Προσωπικό", R.drawable.ic_teacher));
+        return dashboardOptions;
     }
 }

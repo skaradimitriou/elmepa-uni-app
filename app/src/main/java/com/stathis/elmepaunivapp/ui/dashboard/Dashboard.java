@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,6 +15,9 @@ import android.widget.ImageView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.stathis.elmepaunivapp.listeners.DashboardOptionListener;
+import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
+import com.stathis.elmepaunivapp.ui.dashboard.recyclerview.DashboardAdapter;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.R;
@@ -21,9 +25,10 @@ import com.stathis.elmepaunivapp.ui.announcements.Announcements;
 import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity;
 import com.stathis.elmepaunivapp.ui.students.Students;
 
-public class Dashboard extends AppCompatActivity implements View.OnClickListener {
+public class Dashboard extends AppCompatActivity implements View.OnClickListener,DashboardOptionListener {
 
-    private CardView updates, department, students, professors;
+    private RecyclerView dashboardOptions;
+    private DashboardAdapter dashboardAdapter;
     private ImageView about;
     private FloatingActionButton chatbot_btn;
     private DashboardViewModel dashboardViewModel;
@@ -40,23 +45,17 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        updates = findViewById(R.id.anakoinoseis);
-        department = findViewById(R.id.to_tmima);
-        students = findViewById(R.id.students);
-        professors = findViewById(R.id.professors);
-        about = findViewById(R.id.about);
         chatbot_btn = findViewById(R.id.fab_chatbot);
 
-        //listeners
-        updates.setOnClickListener(this);
-        department.setOnClickListener(this);
-        students.setOnClickListener(this);
-        professors.setOnClickListener(this);
-        chatbot_btn.setOnClickListener(this);
+        dashboardOptions = findViewById(R.id.dashboard_options_recview);
+        dashboardAdapter = new DashboardAdapter(this);
+        dashboardAdapter.submitList(dashboardViewModel.getDashboardOptions());
+        dashboardOptions.setAdapter(dashboardAdapter);
 
         // TODO("Put options in gridview instead of static")
 
         //about the app
+        about = findViewById(R.id.about);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,25 +89,31 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         //cases bellow
         switch (v.getId()) {
-            case R.id.anakoinoseis:
+            case R.id.fab_chatbot:
+                startActivity(new Intent(Dashboard.this, ChatBotActivity.class));
+                overridePendingTransition(0, 0);
+                break;
+        }
+    }
+
+    @Override
+    public void onDashboardOptionsClickListener(DashboardOption dashboardOption) {
+        switch(dashboardOption.getDrawable()){
+            case R.drawable.ic_announcement:
                 // <!--- check for internet connection and then proceed to announcements --->
                 // TODO("Implement internet connection check first")
                 startActivity(new Intent(Dashboard.this, Announcements.class));
                 overridePendingTransition(0, 0);
                 break;
-            case R.id.to_tmima:
+            case R.drawable.ic_books:
                 startActivity(new Intent(Dashboard.this, Department.class));
                 break;
-            case R.id.students:
+            case R.drawable.ic_student:
                 startActivity(new Intent(Dashboard.this, Students.class));
                 overridePendingTransition(0, 0);
                 break;
-            case R.id.professors:
+            case R.drawable.ic_teacher:
                 startActivity(new Intent(Dashboard.this, Professors.class));
-                overridePendingTransition(0, 0);
-                break;
-            case R.id.fab_chatbot:
-                startActivity(new Intent(Dashboard.this, ChatBotActivity.class));
                 overridePendingTransition(0, 0);
                 break;
         }

@@ -27,13 +27,14 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:src="@drawable/chatbot"/>
+
             <TextView
                 android:id="@+id/header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="ΕΛΜΕΠΑ Chatbot"
+                android:text="@string/elmepaChatBotHeader"
                 android:textColor="#000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -44,7 +45,7 @@
                 android:layout_margin="10dp"
                 android:padding="10dp"
                 android:background="#fff"
-                android:text="Το ChatBot υποστηρίζει τις ακόλουθες ερωτήσεις: \n Τηλέφωνο Γραμματείας, Πρόγραμμα Σπουδών, Ωρολόγιο Πρόγραμμα, Email Γραμματείας, Καθηγητές, Εικονική Περιήγηση, Ανακοινώσεις" />
+                android:text="@string/chatBotDescription" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/user_messagesRecView"
@@ -69,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:background="#fff"
-        android:hint="Πώς μπορώ να σε βοηθήσω;"
+        android:hint="@string/chatBotMessageTxt"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:paddingLeft="10dp"
