@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,6 +25,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
@@ -43,7 +47,7 @@ public class ChatBotActivity extends AppCompatActivity {
     private ChatBotAdapter chatBotAdapter;
     private TextInputEditText user_text_field;
     String response, responseLowercase, answer;
-    private ArrayList<Message> messagesList = new ArrayList<>();
+    private ArrayList<Object> messagesList = new ArrayList<>();
     private static final int REQUEST_CALL = 1;
 
     @Override
@@ -138,7 +142,8 @@ public class ChatBotActivity extends AppCompatActivity {
                             answer = "Δεν γνωρίζω την απάντηση ακόμα";
                             break;
                     }
-                    messagesList.add(new Message(response, answer));
+                    messagesList.add(new Question(response));
+                    messagesList.add(new Answer(answer));
                     chatBotAdapter.notifyDataSetChanged();
                     return true;
                 }
@@ -147,77 +152,18 @@ public class ChatBotActivity extends AppCompatActivity {
         });
 
         userMessagesRecView = findViewById(R.id.user_messagesRecView);
-        chatBotAdapter = new ChatBotAdapter(messagesList, new ChatBotListener() {
+        chatBotAdapter = new ChatBotAdapter(new ItemClickListener() {
             @Override
-            public void onChatReply(Message message) {
-                switch (message.getQuestion().toLowerCase()) {
-                    case "προγραμμα σπουδων":
-                        startActivity(new Intent(ChatBotActivity.this, Students.class));
-                        break;
-                    case "πρόγραμμα σπουδών":
-                        startActivity(new Intent(ChatBotActivity.this, Students.class));
-                        break;
-                    case "ωρολογιο προγραμμα":
-                        String scheduleUrl = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl)));
-                        break;
-                    case "ωρολόγιο πρόγραμμα":
-                        String scheduleUri = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUri)));
-                        break;
-                    case "τηλέφωνο γραμματείας":
-                        callAtSecretaryOffice();
-                        break;
-                    case "τηλεφωνο γραμματειας":
-                        callAtSecretaryOffice();
-                        break;
-                    case "τηλέφωνο γραμματειασ":
-                        callAtSecretaryOffice();
-                        break;
-                    case "email γραμματείας":
-                        sendAnEmailToSecretaryOffice();
-                        break;
-                    case "email γραμματειας":
-                        sendAnEmailToSecretaryOffice();
-                        break;
-                    case "email γραμματειασ":
-                        sendAnEmailToSecretaryOffice();
-                        break;
-                    case "καθηγητές":
-                        startActivity(new Intent(ChatBotActivity.this, Professors.class));
-                        break;
-                    case "καθηγητες":
-                        startActivity(new Intent(ChatBotActivity.this, Professors.class));
-                        break;
-                    case "εικονική περιήγηση":
-                        String openUrl = "https://mst.hmu.gr/hmutour/";
-                        Intent VirtualTour = new Intent(ChatBotActivity.this, WebviewActivity.class);
-                        VirtualTour.putExtra("VirtualTourUrl", openUrl);
-                        startActivity(VirtualTour);
-                        break;
-                    case "εικονικη περιηγηση":
-                        String openUri = "https://mst.hmu.gr/hmutour/";
-                        Intent VirtualTourOne = new Intent(ChatBotActivity.this, WebviewActivity.class);
-                        VirtualTourOne.putExtra("VirtualTourUrl", openUri);
-                        startActivity(VirtualTourOne);
-                        break;
-                    case "ανακοινώσεις":
-                        startActivity(new Intent(ChatBotActivity.this, Announcements.class));
-                        break;
-                    case "ανακοινωσεις":
-                        startActivity(new Intent(ChatBotActivity.this, Announcements.class));
-                        break;
-                    case "ανακοινωσεισ":
-                        startActivity(new Intent(ChatBotActivity.this, Announcements.class));
-                        break;
-                }
+            public void onMessageClick(Object message) {
+                //
             }
 
             @Override
-            public void onClick(View v) {
-                //do nothing
+            public void onAnswerClick(Answer answer) {
+//
             }
         });
+        chatBotAdapter.submitList(messagesList);
         userMessagesRecView.setAdapter(chatBotAdapter);
     }
 

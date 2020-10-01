@@ -77,6 +77,13 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                 builder.show();
             }
         });
+
+        chatbot_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, ChatBotActivity.class));
+            }
+        });
     }
 
     @Override
