@@ -14,7 +14,7 @@ import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 public class AnswerViewHolder extends AbstractViewHolder {
 
     private TextView answer;
-    private Object data;
+    private Answer data;
     private ItemClickListener itemClickListener;
 
     public AnswerViewHolder(@NonNull View itemView, ItemClickListener listener) {
@@ -32,7 +32,7 @@ public class AnswerViewHolder extends AbstractViewHolder {
     @Override
     public void present(Object data) {
         if (data instanceof Answer){
-            this.data = data;
+            this.data = (Answer) data;
             answer.setText(((Answer) data).getText());
         }
     }

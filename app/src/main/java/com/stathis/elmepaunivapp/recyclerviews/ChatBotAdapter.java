@@ -25,7 +25,7 @@ public class ChatBotAdapter extends ListAdapter<Object, AbstractViewHolder> {
 
     private ItemClickListener itemClickListener;
 
-    public ChatBotAdapter(@NonNull ItemClickListener diffCallback) {
+    public ChatBotAdapter(@NonNull ItemClickListener itemClickListener) {
         super(new DiffItemCallbackClass<Object>());
     }
 

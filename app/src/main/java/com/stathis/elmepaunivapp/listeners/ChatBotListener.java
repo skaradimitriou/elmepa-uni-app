@@ -2,9 +2,10 @@ package com.stathis.elmepaunivapp.listeners;
 
 import android.view.View;
 
+import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 
-public interface ChatBotListener extends View.OnClickListener {
+public interface ChatBotListener {
 
-    void onChatReply(Message message);
+    void goToSyllabus(Answer answer);
 }
