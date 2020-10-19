@@ -50,36 +50,22 @@ public class WebviewActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(WebviewActivity.this, Dashboard.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(WebviewActivity.this, Dashboard.class));
                         break;
                     case R.id.nav_students:
-                        i = new Intent(WebviewActivity.this, Students.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(WebviewActivity.this, Students.class));
                         break;
                     case R.id.nav_uni:
-                        i = new Intent(WebviewActivity.this, Department.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(WebviewActivity.this, Department.class));
                         break;
                     case R.id.nav_search:
-                        i = new Intent(WebviewActivity.this, Professors.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(WebviewActivity.this, Professors.class));
                         break;
                 }
                 return false;
             }
         });
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
     }
 }

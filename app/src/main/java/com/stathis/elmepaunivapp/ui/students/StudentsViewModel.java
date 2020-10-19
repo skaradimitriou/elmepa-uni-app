@@ -15,17 +15,17 @@ public class StudentsViewModel extends ViewModel {
 
     public ArrayList<DeptFieldsOfStudy> getFieldsOfStudy() {
         fieldsOfStudy = new ArrayList<>();
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", R.drawable.data));
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", R.drawable.business));
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", R.drawable.digitalmkt));
+        fieldsOfStudy.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής","ΠΛΗΡΟΦΟΡΙΚΗ", R.drawable.data));
+        fieldsOfStudy.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών","ΔΙΟΙΚΗΣΗ", R.drawable.business));
+        fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία","ΜΑΡΚΕΤΙΝΓΚ", R.drawable.digitalmkt));
         return fieldsOfStudy;
     }
 
     public ArrayList<DeptFieldsOfStudy> getStudentMatters() {
         studentsMatters = new ArrayList<>();
-        studentsMatters.add(new DeptFieldsOfStudy("Ακαδημαϊκό Ημερολόγιο", R.drawable.acadschedule));
-        studentsMatters.add(new DeptFieldsOfStudy("Σύμβουλος Καθηγητής", R.drawable.mentor));
-        studentsMatters.add(new DeptFieldsOfStudy("Πρόγραμμα Erasmus+", R.drawable.erasmus));
+        studentsMatters.add(new DeptFieldsOfStudy("Ακαδημαϊκό Ημερολόγιο","", R.drawable.acadschedule));
+        studentsMatters.add(new DeptFieldsOfStudy("Σύμβουλος Καθηγητής","", R.drawable.mentor));
+        studentsMatters.add(new DeptFieldsOfStudy("Πρόγραμμα Erasmus+","", R.drawable.erasmus));
         return studentsMatters;
     }
 

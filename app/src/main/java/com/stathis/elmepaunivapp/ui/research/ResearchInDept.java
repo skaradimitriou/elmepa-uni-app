@@ -21,7 +21,7 @@ import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import java.util.ArrayList;
 
-public class ResearchInDept extends AppCompatActivity {
+public class ResearchInDept extends AppCompatActivity implements UsefulLinkClickListener {
 
     private RecyclerView researchItems, research_labs;
     private UsefulLinksAdapter researchAdapter, researchLabsAdapter;
@@ -41,28 +41,13 @@ public class ResearchInDept extends AppCompatActivity {
         createLists();
 
         researchItems = findViewById(R.id.research_InDept_recView);
-        researchAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
-            @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                Intent learnMore = new Intent(ResearchInDept.this, WebviewActivity.class);
-                learnMore.putExtra("URL", usefulLinks.getUrl());
-                startActivity(learnMore);
-                overridePendingTransition(0, 0);
-            }
-        });
+        researchAdapter = new UsefulLinksAdapter(this);
         researchAdapter.submitList(researchItemList);
         researchItems.setAdapter(researchAdapter);
 
         research_labs = findViewById(R.id.research_Labs_recView);
-        researchLabsAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
-            @Override
-            public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                Intent firstLab = new Intent(ResearchInDept.this, WebviewActivity.class);
-                firstLab.putExtra("URL", usefulLinks.getUrl());
-                startActivity(firstLab);
-                overridePendingTransition(0, 0);
-            }
-        });
+        researchLabsAdapter = new UsefulLinksAdapter(this);
+
         researchLabsAdapter.submitList(researchLabList);
         research_labs.setAdapter(researchLabsAdapter);
 
@@ -75,21 +60,15 @@ public class ResearchInDept extends AppCompatActivity {
                 Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(ResearchInDept.this, Dashboard.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(ResearchInDept.this, Dashboard.class));
                         break;
                     case R.id.nav_students:
-                        i = new Intent(ResearchInDept.this, Students.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(ResearchInDept.this, Students.class));
                         break;
                     case R.id.nav_uni:
                         return true;
                     case R.id.nav_search:
-                        i = new Intent(ResearchInDept.this, Professors.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(ResearchInDept.this, Professors.class));
                         break;
                 }
                 return false;
@@ -106,5 +85,10 @@ public class ResearchInDept extends AppCompatActivity {
         researchLabList.add(new UsefulLinks("Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων", "https://mst.hmu.gr/ereuna/adeds/", R.drawable.lab));
         researchLabList.add(new UsefulLinks("Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης", "https://mst.hmu.gr/ereuna/datalab/", R.drawable.lab));
         researchLabList.add(new UsefulLinks("Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας", "https://www.e-bilab.gr/", R.drawable.lab));
+    }
+
+    @Override
+    public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+        startActivity(new Intent(ResearchInDept.this, WebviewActivity.class).putExtra("URL", usefulLinks.getUrl()));
     }
 }

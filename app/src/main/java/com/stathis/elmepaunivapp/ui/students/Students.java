@@ -28,7 +28,7 @@ import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class Students extends AppCompatActivity {
+public class Students extends AppCompatActivity implements FieldsOfStudyListener {
 
     private RecyclerView fields_recView, useful_links_recView, sMatters_recView;
     private FieldsAdapter fieldsAdapter, sMattersAdapter;
@@ -48,55 +48,30 @@ public class Students extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        //rec Views & adapters
         fields_recView = findViewById(R.id.diff_directions);
         useful_links_recView = findViewById(R.id.useful_links_recView);
+        sMatters_recView = findViewById(R.id.sMatters_recView);
+
         fieldsAdapter = new FieldsAdapter(new FieldsOfStudyListener() {
             @Override
             public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
-                switch (fieldsOfStudy.getName()) {
-                    case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
-                        startActivity(new Intent(Students.this, Syllabus.class).putExtra("DIRECTION", fieldsOfStudy.getName()));
-                        break;
-                    case "Διοίκηση Επιχειρήσεων & Οργανισμών":
-                        startActivity(new Intent(Students.this, Syllabus.class).putExtra("DIRECTION", fieldsOfStudy.getName()));
-                        break;
-                    case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
-                        startActivity(new Intent(Students.this, Syllabus.class).putExtra("DIRECTION", fieldsOfStudy.getName()));
-                        break;
-                }
+                startActivity(new Intent(Students.this, Syllabus.class).putExtra("DIRECTION", fieldsOfStudy.getDirection()));
             }
         });
         fieldsAdapter.submitList(studentsViewModel.getFieldsOfStudy());
+        fields_recView.setAdapter(fieldsAdapter);
 
         usefulLinksAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl())));
             }
-
         });
+
         usefulLinksAdapter.submitList(studentsViewModel.getUsefulLinks());
         useful_links_recView.setAdapter(usefulLinksAdapter);
-        fields_recView.setAdapter(fieldsAdapter);
 
-        sMatters_recView = findViewById(R.id.sMatters_recView);
-        sMattersAdapter = new FieldsAdapter(new FieldsOfStudyListener() {
-            @Override
-            public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
-                switch (fieldsOfStudy.getName()) {
-                    case "Ακαδημαϊκό Ημερολόγιο":
-                        startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/"));
-                        break;
-                    case "Σύμβουλος Καθηγητής":
-                        startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/"));
-                        break;
-                    case "Πρόγραμμα Erasmus+":
-                        startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/"));
-                        break;
-                }
-            }
-        });
+        sMattersAdapter = new FieldsAdapter(this);
         sMatters_recView.setAdapter(sMattersAdapter);
         sMattersAdapter.submitList(studentsViewModel.getStudentMatters());
 
@@ -125,17 +100,14 @@ public class Students extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         startActivity(new Intent(Students.this, Dashboard.class));
-                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
                         return true;
                     case R.id.nav_uni:
                         startActivity(new Intent(Students.this, Department.class));
-                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
                         startActivity(new Intent(Students.this, Professors.class));
-                        overridePendingTransition(0, 0);
                         break;
                 }
                 return false;
@@ -151,5 +123,20 @@ public class Students extends AppCompatActivity {
 
     private void openSchedule() {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/")));
+    }
+
+    @Override
+    public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
+        switch (fieldsOfStudy.getName()) {
+            case "Ακαδημαϊκό Ημερολόγιο":
+                startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/"));
+                break;
+            case "Σύμβουλος Καθηγητής":
+                startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/"));
+                break;
+            case "Πρόγραμμα Erasmus+":
+                startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/"));
+                break;
+        }
     }
 }

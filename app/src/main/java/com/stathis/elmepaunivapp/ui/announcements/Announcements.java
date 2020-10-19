@@ -88,25 +88,20 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(Announcements.this, Dashboard.class));
-                        overridePendingTransition(0, 0);
+                        return true;
                     case R.id.nav_students:
                         startActivity(new Intent(Announcements.this, Students.class));
-                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
                         startActivity(new Intent(Announcements.this, Department.class));
-                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
                         startActivity(new Intent(Announcements.this, Professors.class));
-                        overridePendingTransition(0, 0);
                         break;
                 }
                 return false;
             }
         });
-        // <!---- Bottom Navigation Listener end ---->
     }
 
     @Override

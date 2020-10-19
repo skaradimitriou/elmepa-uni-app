@@ -14,6 +14,8 @@ import com.stathis.elmepaunivapp.ui.syllabus.SyllabusFragments.MKT_Fragment;
 
 public class Syllabus extends AppCompatActivity {
 
+    private String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,30 +27,24 @@ public class Syllabus extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
 
         Intent getDirection = getIntent();
-        String name = getDirection.getStringExtra("DIRECTION");
+        name = getDirection.getStringExtra("DIRECTION");
 
         switch (name) {
-            case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
+            case "ΠΛΗΡΟΦΟΡΙΚΗ":
                 FragmentTransaction DataSyllabus = getSupportFragmentManager().beginTransaction();
                 DataSyllabus.add(R.id.semester_lessons, new Data_Fragment(), "SemesterFrag");
                 DataSyllabus.commit();
                 break;
-            case "Διοίκηση Επιχειρήσεων & Οργανισμών":
+            case "ΔΙΟΙΚΗΣΗ":
                 FragmentTransaction BaSyllabus = getSupportFragmentManager().beginTransaction();
                 BaSyllabus.add(R.id.semester_lessons, new BA_Fragment(), "BA_Fragment");
                 BaSyllabus.commit();
                 break;
-            case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
+            case "ΜΑΡΚΕΤΙΝΓΚ":
                 FragmentTransaction MktSyllabus = getSupportFragmentManager().beginTransaction();
                 MktSyllabus.add(R.id.semester_lessons, new MKT_Fragment(), "MKT_Fragment");
                 MktSyllabus.commit();
                 break;
         }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        overridePendingTransition(0, 0);
     }
 }

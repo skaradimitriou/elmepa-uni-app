@@ -3,10 +3,12 @@ package com.stathis.elmepaunivapp.models;
 public class DeptFieldsOfStudy {
 
     private String name;
+    private String direction;
     private int ImageResource;
 
-    public DeptFieldsOfStudy(String name, int imageResource) {
+    public DeptFieldsOfStudy(String name, String direction, int imageResource) {
         this.name = name;
+        this.direction = direction;
         ImageResource = imageResource;
     }
 
@@ -16,6 +18,14 @@ public class DeptFieldsOfStudy {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 
     public int getImageResource() {
@@ -30,6 +40,7 @@ public class DeptFieldsOfStudy {
     public String toString() {
         return "DeptFieldsOfStudy{" +
                 "name='" + name + '\'' +
+                ", direction='" + direction + '\'' +
                 ", ImageResource=" + ImageResource +
                 '}';
     }
