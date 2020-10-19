@@ -87,10 +87,9 @@ public class Department extends AppCompatActivity {
         virtual_tour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String openUrl = "https://mst.hmu.gr/hmutour/";
-                Intent VirtualTour = new Intent(Department.this, WebviewActivity.class);
-                VirtualTour.putExtra("URL", openUrl);
-                startActivity(VirtualTour);
+                startActivity(new Intent(Department.this, WebviewActivity.class).putExtra(
+                        "URL", "https://mst.hmu.gr/hmutour/"
+                ));
             }
         });
 
@@ -113,23 +112,19 @@ public class Department extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(Department.this, Dashboard.class);
-                        startActivity(i);
+                        startActivity(new Intent(Department.this, Dashboard.class));
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
-                        i = new Intent(Department.this, Students.class);
-                        startActivity(i);
+                        startActivity(new Intent(Department.this, Students.class));
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
                         return true;
                     case R.id.nav_search:
-                        i = new Intent(Department.this, Professors.class);
-                        startActivity(i);
+                        startActivity(new Intent(Department.this, Professors.class));
                         overridePendingTransition(0, 0);
                         break;
                 }
@@ -160,10 +155,7 @@ public class Department extends AppCompatActivity {
                 Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Department.this, new String[]{CALL_PHONE}, REQUEST_CALL);
         } else {
-            String phone = "tel:2841091103";
-            Intent callIntent = new Intent(Intent.ACTION_CALL);
-            callIntent.setData(Uri.parse(phone));
-            startActivity(callIntent);
+            startActivity(new Intent(Intent.ACTION_CALL).setData(Uri.parse("tel:2841091103")));
         }
     }
 

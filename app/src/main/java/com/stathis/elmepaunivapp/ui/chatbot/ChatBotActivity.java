@@ -43,7 +43,7 @@ public class ChatBotActivity extends AppCompatActivity{
     private RecyclerView userMessagesRecView;
     private ChatBotAdapter chatBotAdapter;
     private TextInputEditText user_text_field;
-    String response;
+    private String response;
     private ArrayList<Object> messagesList = new ArrayList<>();
     private static final int REQUEST_CALL = 1;
     private ChatbotViewModel viewModel;
@@ -131,20 +131,7 @@ public class ChatBotActivity extends AppCompatActivity{
                 Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(ChatBotActivity.this, new String[]{CALL_PHONE}, REQUEST_CALL);
         } else {
-            String phone = "tel:2841091103";
-            Intent callIntent = new Intent(Intent.ACTION_CALL);
-            callIntent.setData(Uri.parse(phone));
-            startActivity(callIntent);
+            startActivity(new Intent(Intent.ACTION_CALL).setData(Uri.parse("tel:2841091103")));
         }
     }
-
-//    @Override
-//    public void onMessageClick(Question question) {
-//        Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
-//    }
-//
-//    @Override
-//    public void onAnswerClick(Answer answer) {
-//        Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
-//    }
 }

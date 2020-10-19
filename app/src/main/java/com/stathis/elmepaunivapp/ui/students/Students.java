@@ -56,19 +56,13 @@ public class Students extends AppCompatActivity {
             public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
                 switch (fieldsOfStudy.getName()) {
                     case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
-                        Intent goToDataSyllabus = new Intent(Students.this, Syllabus.class);
-                        goToDataSyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
-                        startActivity(goToDataSyllabus);
+                        startActivity(new Intent(Students.this, Syllabus.class).putExtra("DIRECTION", fieldsOfStudy.getName()));
                         break;
                     case "Διοίκηση Επιχειρήσεων & Οργανισμών":
-                        Intent goToBASyllabus = new Intent(Students.this, Syllabus.class);
-                        goToBASyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
-                        startActivity(goToBASyllabus);
+                        startActivity(new Intent(Students.this, Syllabus.class).putExtra("DIRECTION", fieldsOfStudy.getName()));
                         break;
                     case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
-                        Intent goToMKTSyllabus = new Intent(Students.this, Syllabus.class);
-                        goToMKTSyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
-                        startActivity(goToMKTSyllabus);
+                        startActivity(new Intent(Students.this, Syllabus.class).putExtra("DIRECTION", fieldsOfStudy.getName()));
                         break;
                 }
             }
@@ -92,22 +86,13 @@ public class Students extends AppCompatActivity {
             public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
                 switch (fieldsOfStudy.getName()) {
                     case "Ακαδημαϊκό Ημερολόγιο":
-                        String AcadUrl = "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/";
-                        Intent acadIntent = new Intent(Students.this, WebviewActivity.class);
-                        acadIntent.putExtra("URL", AcadUrl);
-                        startActivity(acadIntent);
+                        startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/"));
                         break;
                     case "Σύμβουλος Καθηγητής":
-                        String mentorUrl = "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/";
-                        Intent mentors = new Intent(Students.this, WebviewActivity.class);
-                        mentors.putExtra("URL", mentorUrl);
-                        startActivity(mentors);
+                        startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/"));
                         break;
                     case "Πρόγραμμα Erasmus+":
-                        String ErasmusUrl = "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/";
-                        Intent erasmus = new Intent(Students.this, WebviewActivity.class);
-                        erasmus.putExtra("URL", ErasmusUrl);
-                        startActivity(erasmus);
+                        startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/"));
                         break;
                 }
             }
@@ -165,8 +150,6 @@ public class Students extends AppCompatActivity {
     }
 
     private void openSchedule() {
-        String scheduleUrl = "https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/";
-        Intent schedule = new Intent(Intent.ACTION_VIEW, Uri.parse(scheduleUrl));
-        startActivity(schedule);
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/")));
     }
 }

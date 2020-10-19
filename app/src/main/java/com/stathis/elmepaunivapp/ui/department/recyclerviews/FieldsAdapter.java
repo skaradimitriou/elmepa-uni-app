@@ -30,7 +30,6 @@ public class FieldsAdapter extends ListAdapter<DeptFieldsOfStudy, FieldsViewHold
 
     @Override
     public void onBindViewHolder(@NonNull FieldsViewHolder holder, int position) {
-        //we want to show the data to the users
         holder.present(getItem(position));
     }
 }
