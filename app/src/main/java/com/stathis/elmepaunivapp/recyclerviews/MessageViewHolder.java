@@ -22,13 +22,14 @@ public class MessageViewHolder extends AbstractViewHolder {
     public MessageViewHolder(@NonNull View itemView, ItemClickListener listener) {
         super(itemView);
         question = itemView.findViewById(R.id.user_msg_txt);
-        itemClickListener = listener;
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                itemClickListener.onMessageClick((Question) data);
-            }
-        });
+        setListener(listener);
+//        itemClickListener = listener;
+//        itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                itemClickListener.onMessageClick((Question) data);
+//            }
+//        });
     }
 
     public void present(Question data){

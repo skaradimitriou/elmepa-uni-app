@@ -36,4 +36,6 @@ public class DashboardViewModel extends ViewModel {
         dashboardOptions.add(new DashboardOption("Προσωπικό", R.drawable.ic_teacher));
         return dashboardOptions;
     }
+
+
 }

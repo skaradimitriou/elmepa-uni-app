@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.ProfessorClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 import com.stathis.elmepaunivapp.ui.professors.recyclerview.ProfessorAdapter;
@@ -63,7 +64,7 @@ public class Professors extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                // TODO("Implement search filtering in ListAdapter")
+               //
             }
         });
 

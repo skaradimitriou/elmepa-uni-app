@@ -3,6 +3,8 @@ package com.stathis.elmepaunivapp.abstraction;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 
+import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
+
 public class DiffItemCallbackClass<T extends Object> extends DiffUtil.ItemCallback<T> {
 
     @Override
@@ -12,6 +14,6 @@ public class DiffItemCallbackClass<T extends Object> extends DiffUtil.ItemCallba
 
     @Override
     public boolean areContentsTheSame(@NonNull T oldItem, @NonNull T newItem) {
-        return false;
+        return true;
     }
 }

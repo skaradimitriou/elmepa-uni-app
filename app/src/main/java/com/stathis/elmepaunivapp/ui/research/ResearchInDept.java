@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.researchInDept;
+package com.stathis.elmepaunivapp.ui.research;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

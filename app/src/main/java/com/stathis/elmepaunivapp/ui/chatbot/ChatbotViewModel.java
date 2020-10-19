@@ -7,7 +7,7 @@ import com.stathis.elmepaunivapp.recyclerviews.ChatBotAdapter;
 
 public class ChatbotViewModel extends ViewModel {
 
-    String  answer;
+    String  answer,reply;
     ChatBotAdapter chatBotAdapter;
     ChatBotListener chatBotListener;
 
@@ -86,14 +86,13 @@ public class ChatbotViewModel extends ViewModel {
         return answer;
     }
 
-    String getIntent(String answer){
-        switch(answer){
-            case "Κάνε tap για να δεις \\n τις τελευταίες ανακοινώσεις!":
-                return "ANNOUNCEMENTS";
-            case "Κάνε tap για να δείς \n την εικονική περιήγηση!" :
-                return "VIRTUAL_TOUR";
-        }
-        return answer;
-    }
+//    String getIntent(String answer){
+//        switch(answer){
+//            case "Κάνε tap για να δεις \\n τις τελευταίες ανακοινώσεις!":
+//                return "ANNOUNCEMENTS";
+//            case "Κάνε tap για να δείς \n την εικονική περιήγηση!" :
+//                return "VIRTUAL_TOUR";
+//        }
+//    }
 
 }

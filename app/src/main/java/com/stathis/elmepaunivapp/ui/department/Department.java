@@ -26,7 +26,7 @@ import com.stathis.elmepaunivapp.ui.department.fragments.FindUsFragment;
 import com.stathis.elmepaunivapp.ui.professors.Professors;
 import com.stathis.elmepaunivapp.ui.department.fragments.ProgrammesFragment;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.researchInDept.ResearchInDept;
+import com.stathis.elmepaunivapp.ui.research.ResearchInDept;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.students.Students;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;

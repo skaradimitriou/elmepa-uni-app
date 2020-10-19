@@ -6,19 +6,14 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.ProfessorClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ProfessorAdapter extends ListAdapter<ProfessorModel,ProfessorViewHolder> {
 
-    private List<ProfessorModel> arrayData = new ArrayList<>();
     private ProfessorClickListener listener;
 
     public ProfessorAdapter(ProfessorClickListener listener) {

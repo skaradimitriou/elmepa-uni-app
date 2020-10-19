@@ -29,6 +29,7 @@ import com.stathis.elmepaunivapp.listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.announcements.Announcements;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.recyclerviews.ChatBotAdapter;
@@ -37,7 +38,7 @@ import java.util.ArrayList;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class ChatBotActivity extends AppCompatActivity implements ItemClickListener{
+public class ChatBotActivity extends AppCompatActivity{
 
     private RecyclerView userMessagesRecView;
     private ChatBotAdapter chatBotAdapter;
@@ -77,7 +78,17 @@ public class ChatBotActivity extends AppCompatActivity implements ItemClickListe
         });
 
         userMessagesRecView = findViewById(R.id.user_messagesRecView);
-        chatBotAdapter = new ChatBotAdapter(this);
+        chatBotAdapter = new ChatBotAdapter(new ItemClickListener() {
+            @Override
+            public void onMessageClick(Question question) {
+                Log.d("q",question.toString());
+            }
+
+            @Override
+            public void onAnswerClick(Answer answer) {
+                Log.d("q",answer.toString());
+            }
+        });
         userMessagesRecView.setAdapter(chatBotAdapter);
         chatBotAdapter.submitList(messagesList);
     }
@@ -127,16 +138,13 @@ public class ChatBotActivity extends AppCompatActivity implements ItemClickListe
         }
     }
 
-    @Override
-    public void onMessageClick(Object message) {
-        //
-    }
-
-    @Override
-    public void onAnswerClick(Answer answer) {
-        switch(viewModel.getIntent(answer.getText())){
-            case "ANNOUNCEMENTS" :
-                startActivity(new Intent(ChatBotActivity.this, Announcements.class));
-        }
-    }
+//    @Override
+//    public void onMessageClick(Question question) {
+//        Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+//    }
+//
+//    @Override
+//    public void onAnswerClick(Answer answer) {
+//        Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+//    }
 }

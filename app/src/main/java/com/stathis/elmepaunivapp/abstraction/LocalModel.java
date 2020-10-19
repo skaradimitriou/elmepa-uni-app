@@ -1,4 +1,6 @@
 package com.stathis.elmepaunivapp.abstraction;
 
-public interface LocalModel {
+abstract public class LocalModel {
+
+    public abstract boolean equalsContent(LocalModel obj);
 }

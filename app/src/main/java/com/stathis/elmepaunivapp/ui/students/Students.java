@@ -78,53 +78,7 @@ public class Students extends AppCompatActivity {
         usefulLinksAdapter = new UsefulLinksAdapter(new UsefulLinkClickListener() {
             @Override
             public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-                Intent card, edu, fb, eclass, municipality, tripadvisor, eudoxus, webmail, events, buses, app;
-                switch (usefulLinks.getName()) {
-                    case "Ακαδημαική Ταυτότητα":
-                        card = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(card);
-                        break;
-                    case "Σύστημα Φοιτητών":
-                        edu = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(edu);
-                        break;
-                    case "Σελίδα Φοιτητών":
-                        fb = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(fb);
-                        break;
-                    case "e-Class":
-                        eclass = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(eclass);
-                        break;
-                    case "Δήμος Αγ.Νικολάου":
-                        municipality = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(municipality);
-                        break;
-                    case "Προτεινόμενα Εστιατόρια":
-                        tripadvisor = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(tripadvisor);
-                        break;
-                    case "Εύδοξος":
-                        eudoxus = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(eudoxus);
-                        break;
-                    case "Edu E-mail Φοιτητή":
-                        webmail = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(webmail);
-                        break;
-                    case "Events Τμήματος":
-                        events = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(events);
-                        break;
-                    case "Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου":
-                        buses = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(buses);
-                        break;
-                    case "Εφαρμογή Movie SCoRe":
-                        app = new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl()));
-                        startActivity(app);
-                        break;
-                }
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(usefulLinks.getUrl())));
             }
 
         });
@@ -183,7 +137,6 @@ public class Students extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         startActivity(new Intent(Students.this, Dashboard.class));

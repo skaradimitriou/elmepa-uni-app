@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 
 public abstract class AbstractViewHolder<T extends Object> extends RecyclerView.ViewHolder {
 
     @Nullable
-    protected ItemClickListener listener;
+    public ItemClickListener listener;
     T data;
-    Answer dataTwo;
+    Object dataTwo;
 
     public AbstractViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -23,8 +24,8 @@ public abstract class AbstractViewHolder<T extends Object> extends RecyclerView.
             @Override
             public void onClick(View v) {
                 if (listener != null && data != null) {
-                    listener.onMessageClick(data);
-                    listener.onAnswerClick(dataTwo);
+                    listener.onMessageClick((Question) data);
+                    listener.onAnswerClick((Answer) dataTwo);
                 }
             }
         });

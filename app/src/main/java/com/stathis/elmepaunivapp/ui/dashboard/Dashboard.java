@@ -52,8 +52,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         dashboardAdapter.submitList(dashboardViewModel.getDashboardOptions());
         dashboardOptions.setAdapter(dashboardAdapter);
 
-        // TODO("Put options in gridview instead of static")
-
         //about the app
         about = findViewById(R.id.about);
         about.setOnClickListener(new View.OnClickListener() {

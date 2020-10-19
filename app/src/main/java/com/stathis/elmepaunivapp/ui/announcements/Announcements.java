@@ -86,25 +86,20 @@ public class Announcements extends AppCompatActivity implements NewsClickListene
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent i;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        i = new Intent(Announcements.this, Dashboard.class);
-                        startActivity(i);
+                        startActivity(new Intent(Announcements.this, Dashboard.class));
                         overridePendingTransition(0, 0);
                     case R.id.nav_students:
-                        i = new Intent(Announcements.this, Students.class);
-                        startActivity(i);
+                        startActivity(new Intent(Announcements.this, Students.class));
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
-                        i = new Intent(Announcements.this, Department.class);
-                        startActivity(i);
+                        startActivity(new Intent(Announcements.this, Department.class));
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_search:
-                        i = new Intent(Announcements.this, Professors.class);
-                        startActivity(i);
+                        startActivity(new Intent(Announcements.this, Professors.class));
                         overridePendingTransition(0, 0);
                         break;
                 }
