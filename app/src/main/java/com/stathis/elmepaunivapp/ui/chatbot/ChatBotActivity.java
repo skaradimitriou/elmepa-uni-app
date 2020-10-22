@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -29,16 +30,18 @@ import com.stathis.elmepaunivapp.listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.announcements.Announcements;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
-import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.recyclerviews.ChatBotAdapter;
+import com.stathis.elmepaunivapp.ui.chatbot.recyclerview.ChatBotAdapter;
+import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import java.util.ArrayList;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class ChatBotActivity extends AppCompatActivity implements ItemClickListener,ChatBotListener{
+public class ChatBotActivity extends AppCompatActivity implements ItemClickListener, ChatBotListener {
 
     private RecyclerView userMessagesRecView;
     private ChatBotAdapter chatBotAdapter;
@@ -72,8 +75,15 @@ public class ChatBotActivity extends AppCompatActivity implements ItemClickListe
                     user_text_field.getText().clear();
                     hideKeyboard(v);
                     messagesList.add(new Question(response));
-                    messagesList.add(new Answer(viewModel.getChatbotAnswer(response)));
-                    chatBotAdapter.notifyDataSetChanged();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            messagesList.add(new Answer(viewModel.getChatAnswer(response)));
+                            chatBotAdapter.notifyDataSetChanged();
+                        }
+                    }, 1200);
+
                     return true;
                 }
                 return false;
@@ -135,31 +145,38 @@ public class ChatBotActivity extends AppCompatActivity implements ItemClickListe
 
     @Override
     public void goToSyllabus(Answer answer) {
-        Log.d("RESPONSE", answer.toString());
+
     }
 
     @Override
     public void doNothing(Answer answer) {
-        Log.d("RESPONSE", answer.toString());
+        //
     }
 
     @Override
     public void openSchedule(Answer answer) {
-        Log.d("RESPONSE", answer.toString());
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/")));
     }
 
     @Override
     public void callSecretary(Answer answer) {
-        Log.d("RESPONSE", answer.toString());
+        callAtSecretaryOffice();
     }
 
     @Override
     public void emailToSecretary(Answer answer) {
-
+        sendAnEmailToSecretaryOffice();
     }
 
     @Override
     public void virtualTour(Answer answer) {
+        startActivity(new Intent(this, WebviewActivity.class).putExtra(
+                "URL", "https://mst.hmu.gr/hmutour/"
+        ));
+    }
 
+    @Override
+    public void openAnnouncements(Answer answer) {
+        startActivity(new Intent(this, Announcements.class));
     }
 }
