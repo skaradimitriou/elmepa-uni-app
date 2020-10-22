@@ -5,52 +5,43 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
-import com.stathis.elmepaunivapp.listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
-import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class ChatBotAdapter extends ListAdapter<Object, AbstractViewHolder> {
+public class ChatBotAdapter extends ListAdapter<Object, RecyclerView.ViewHolder> {
 
     private ItemClickListener itemClickListener;
 
     public ChatBotAdapter(@NonNull ItemClickListener itemClickListener) {
         super(new DiffItemCallbackClass<Object>());
+        this.itemClickListener = itemClickListener;
     }
 
 
-    @NonNull
     @Override
-    public AbstractViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
         if (viewType == R.layout.holder_question_item) {
-            return new MessageViewHolder(view, itemClickListener);
-        }else if (viewType == R.layout.holder_answer_item){
-            return new AnswerViewHolder(view,itemClickListener);
+            return new MessageViewHolder(view);
+        } else if (viewType == R.layout.holder_answer_item){
+            return new AnswerViewHolder(view, itemClickListener);
         } else {
             return null;
         }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AbstractViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (getItem(position) instanceof Question) {
-            holder.present(getItem(position));
+            ((MessageViewHolder) holder).present((Question) getItem(position));
         } else if (getItem(position) instanceof Answer) {
-            holder.present(getItem(position));
-        } else {
-            //
+            ((AnswerViewHolder) holder).present((Answer) getItem(position));
         }
     }
 

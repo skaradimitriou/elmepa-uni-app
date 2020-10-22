@@ -7,12 +7,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
-import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 
-public class AnswerViewHolder extends AbstractViewHolder {
+public class AnswerViewHolder extends RecyclerView.ViewHolder {
 
     private TextView answer;
     private Object data;
@@ -21,13 +19,17 @@ public class AnswerViewHolder extends AbstractViewHolder {
     public AnswerViewHolder(@NonNull View itemView, ItemClickListener listener) {
         super(itemView);
         answer = itemView.findViewById(R.id.bot_reply_txt);
+        itemClickListener = listener;
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClickListener.onAnswerClick((Answer) data);
+            }
+        });
     }
 
-    @Override
-    public void present(Object data) {
-        setData(data);
-        if (data instanceof Answer){
-            answer.setText(((Answer) data).getText());
-        }
+    public void present(Answer data) {
+        this.data = data;
+        answer.setText(data.getText());
     }
 }

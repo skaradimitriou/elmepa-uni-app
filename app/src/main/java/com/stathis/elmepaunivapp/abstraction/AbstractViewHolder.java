@@ -24,7 +24,7 @@ public abstract class AbstractViewHolder<T extends Object> extends RecyclerView.
             @Override
             public void onClick(View v) {
                 if (listener != null && data != null) {
-                    listener.onMessageClick((Question) data);
+//                    listener.onMessageClick((Question) data);
                     listener.onAnswerClick((Answer) dataTwo);
                 }
             }

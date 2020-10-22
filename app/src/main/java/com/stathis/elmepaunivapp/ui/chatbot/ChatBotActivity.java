@@ -38,7 +38,7 @@ import java.util.ArrayList;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class ChatBotActivity extends AppCompatActivity{
+public class ChatBotActivity extends AppCompatActivity implements ItemClickListener,ChatBotListener{
 
     private RecyclerView userMessagesRecView;
     private ChatBotAdapter chatBotAdapter;
@@ -60,6 +60,9 @@ public class ChatBotActivity extends AppCompatActivity{
         super.onPostCreate(savedInstanceState);
 
         user_text_field = findViewById(R.id.ask_questions);
+        userMessagesRecView = findViewById(R.id.user_messagesRecView);
+
+        //getting messages from users
         user_text_field.setOnEditorActionListener(new TextInputEditText.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -77,18 +80,8 @@ public class ChatBotActivity extends AppCompatActivity{
             }
         });
 
-        userMessagesRecView = findViewById(R.id.user_messagesRecView);
-        chatBotAdapter = new ChatBotAdapter(new ItemClickListener() {
-            @Override
-            public void onMessageClick(Question question) {
-                Log.d("q",question.toString());
-            }
-
-            @Override
-            public void onAnswerClick(Answer answer) {
-                Log.d("q",answer.toString());
-            }
-        });
+        viewModel.setUpListener(this);
+        chatBotAdapter = new ChatBotAdapter(this);
         userMessagesRecView.setAdapter(chatBotAdapter);
         chatBotAdapter.submitList(messagesList);
     }
@@ -133,5 +126,40 @@ public class ChatBotActivity extends AppCompatActivity{
         } else {
             startActivity(new Intent(Intent.ACTION_CALL).setData(Uri.parse("tel:2841091103")));
         }
+    }
+
+    @Override
+    public void onAnswerClick(Answer answer) {
+        viewModel.whichIntent(answer);
+    }
+
+    @Override
+    public void goToSyllabus(Answer answer) {
+        Log.d("RESPONSE", answer.toString());
+    }
+
+    @Override
+    public void doNothing(Answer answer) {
+        Log.d("RESPONSE", answer.toString());
+    }
+
+    @Override
+    public void openSchedule(Answer answer) {
+        Log.d("RESPONSE", answer.toString());
+    }
+
+    @Override
+    public void callSecretary(Answer answer) {
+        Log.d("RESPONSE", answer.toString());
+    }
+
+    @Override
+    public void emailToSecretary(Answer answer) {
+
+    }
+
+    @Override
+    public void virtualTour(Answer answer) {
+
     }
 }

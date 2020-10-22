@@ -13,35 +13,19 @@ import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 
-public class MessageViewHolder extends AbstractViewHolder {
+public class MessageViewHolder extends RecyclerView.ViewHolder {
 
     private TextView question;
     private ItemClickListener itemClickListener;
     private Object data;
 
-    public MessageViewHolder(@NonNull View itemView, ItemClickListener listener) {
+    public MessageViewHolder(@NonNull View itemView) {
         super(itemView);
         question = itemView.findViewById(R.id.user_msg_txt);
-        setListener(listener);
-//        itemClickListener = listener;
-//        itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                itemClickListener.onMessageClick((Question) data);
-//            }
-//        });
     }
 
     public void present(Question data){
         this.data = data;
         question.setText(data.getText());
-    }
-
-    @Override
-    public void present(Object data) {
-        if(data instanceof Question){
-            this.data = data;
-            question.setText(((Question) data).getText());
-        }
     }
 }

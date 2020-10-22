@@ -4,12 +4,17 @@ import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.recyclerviews.ChatBotAdapter;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 
 public class ChatbotViewModel extends ViewModel {
 
     String  answer,reply;
     ChatBotAdapter chatBotAdapter;
     ChatBotListener chatBotListener;
+
+    void setUpListener(ChatBotListener chatBotListener){
+        this.chatBotListener = chatBotListener;
+    }
 
     String getChatbotAnswer(String response){
         switch (response) {
@@ -86,13 +91,36 @@ public class ChatbotViewModel extends ViewModel {
         return answer;
     }
 
-//    String getIntent(String answer){
-//        switch(answer){
-//            case "Κάνε tap για να δεις \\n τις τελευταίες ανακοινώσεις!":
-//                return "ANNOUNCEMENTS";
-//            case "Κάνε tap για να δείς \n την εικονική περιήγηση!" :
-//                return "VIRTUAL_TOUR";
-//        }
-//    }
+    void whichIntent(Answer answer){
+        switch(answer.getText()){
+            case "Δεν γνωρίζω την απάντηση ακόμα": {
+                chatBotListener.doNothing(answer);
+                break;
+            }
+            case "Κάνε tap για να δείς το πρόγραμμα σπουδών!": {
+                chatBotListener.goToSyllabus(answer);
+                break;
+            }
+            case "Κάνε tap για να δείς το πρόγραμμα των μαθημάτων!": {
+                chatBotListener.openSchedule(answer);
+                break;
+            }
+
+            case "Κάνε tap για να καλέσω την Γραμματεία του Τμήματος!": {
+                chatBotListener.callSecretary(answer);
+                break;
+            }
+
+            case "Κάνε tap για να στείλεις e-mail στην Γραμματεία!": {
+                chatBotListener.emailToSecretary(answer);
+                break;
+            }
+
+            case "Κάνε tap για να δείς την εικονική περιήγηση!": {
+                chatBotListener.virtualTour(answer);
+                break;
+            }
+        }
+    }
 
 }
