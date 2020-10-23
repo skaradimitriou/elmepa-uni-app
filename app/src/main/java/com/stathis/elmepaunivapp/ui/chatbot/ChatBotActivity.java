@@ -41,13 +41,11 @@ import java.util.ArrayList;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class ChatBotActivity extends AppCompatActivity implements ItemClickListener, ChatBotListener {
+public class ChatBotActivity extends AppCompatActivity implements ChatBotListener {
 
     private RecyclerView userMessagesRecView;
-    private ChatBotAdapter chatBotAdapter;
     private TextInputEditText user_text_field;
     private String response;
-    private ArrayList<Object> messagesList = new ArrayList<>();
     private static final int REQUEST_CALL = 1;
     private ChatbotViewModel viewModel;
 
@@ -74,16 +72,8 @@ public class ChatBotActivity extends AppCompatActivity implements ItemClickListe
                     Log.d("RESPONSE", response);
                     user_text_field.getText().clear();
                     hideKeyboard(v);
-                    messagesList.add(new Question(response));
 
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            messagesList.add(new Answer(viewModel.getChatAnswer(response)));
-                            chatBotAdapter.notifyDataSetChanged();
-                        }
-                    }, 1200);
-
+                    viewModel.getResponse(response);
                     return true;
                 }
                 return false;
@@ -91,9 +81,7 @@ public class ChatBotActivity extends AppCompatActivity implements ItemClickListe
         });
 
         viewModel.setUpListener(this);
-        chatBotAdapter = new ChatBotAdapter(this);
-        userMessagesRecView.setAdapter(chatBotAdapter);
-        chatBotAdapter.submitList(messagesList);
+        userMessagesRecView.setAdapter(viewModel.chatBotAdapter);
     }
 
     @Override
@@ -136,11 +124,6 @@ public class ChatBotActivity extends AppCompatActivity implements ItemClickListe
         } else {
             startActivity(new Intent(Intent.ACTION_CALL).setData(Uri.parse("tel:2841091103")));
         }
-    }
-
-    @Override
-    public void onAnswerClick(Answer answer) {
-        viewModel.whichIntent(answer);
     }
 
     @Override

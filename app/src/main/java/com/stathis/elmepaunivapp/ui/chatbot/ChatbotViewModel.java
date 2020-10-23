@@ -1,19 +1,39 @@
 package com.stathis.elmepaunivapp.ui.chatbot;
 
+import android.os.Handler;
+
 import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.listeners.ChatBotListener;
+import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 import com.stathis.elmepaunivapp.ui.chatbot.recyclerview.ChatBotAdapter;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 
-public class ChatbotViewModel extends ViewModel {
+import java.util.ArrayList;
 
-    String answer, reply;
-    ChatBotAdapter chatBotAdapter;
+public class ChatbotViewModel extends ViewModel implements ItemClickListener {
+
+    String answer;
+    ChatBotAdapter chatBotAdapter = new ChatBotAdapter(this);
     ChatBotListener chatBotListener;
+    private ArrayList<Object> messagesList = new ArrayList<>();
 
     void setUpListener(ChatBotListener chatBotListener) {
         this.chatBotListener = chatBotListener;
+    }
+
+    void getResponse(final String response){
+        messagesList.add(new Question(response));
+        chatBotAdapter.submitList(messagesList);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                messagesList.add(new Answer(getChatAnswer(response)));
+                chatBotAdapter.notifyDataSetChanged();
+            }
+        }, 1200);
     }
 
     String getChatAnswer(String response) {
@@ -80,4 +100,8 @@ public class ChatbotViewModel extends ViewModel {
         }
     }
 
+    @Override
+    public void onAnswerClick(Answer answer) {
+        whichIntent(answer);
+    }
 }
