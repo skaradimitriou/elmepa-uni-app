@@ -1,18 +1,37 @@
 package com.stathis.elmepaunivapp.ui.dashboard;
 
+import android.content.Intent;
+
 import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.listeners.DashboardOptionListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.DashboardActivityClickListener;
+import com.stathis.elmepaunivapp.ui.announcements.Announcements;
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
+import com.stathis.elmepaunivapp.ui.dashboard.recyclerview.DashboardAdapter;
+import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
+import com.stathis.elmepaunivapp.ui.students.Students;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboardViewModel extends ViewModel {
+public class DashboardViewModel extends ViewModel implements DashboardOptionListener {
 
     private String title;
     private String aboutText;
     private ArrayList<DashboardOption> dashboardOptions;
+    DashboardAdapter dashboardAdapter = new DashboardAdapter(this);
+    private DashboardActivityClickListener listener;
+
+    void initListener(DashboardActivityClickListener listener) {
+        this.listener = listener;
+    }
+
+    void displayData(){
+        dashboardAdapter.submitList(getDashboardOptions());
+    }
 
     String getTitle() {
         title = "Σχετικά με την εφαρμογή";
@@ -28,8 +47,8 @@ public class DashboardViewModel extends ViewModel {
         return aboutText;
     }
 
-    List<DashboardOption> getDashboardOptions(){
-        dashboardOptions = new ArrayList<DashboardOption>();
+    List<DashboardOption> getDashboardOptions() {
+        dashboardOptions = new ArrayList<>();
         dashboardOptions.add(new DashboardOption("Ανακοινώσεις", R.drawable.ic_announcement));
         dashboardOptions.add(new DashboardOption("Το Τμήμα", R.drawable.ic_books));
         dashboardOptions.add(new DashboardOption("Φοιτητές", R.drawable.ic_student));
@@ -38,4 +57,21 @@ public class DashboardViewModel extends ViewModel {
     }
 
 
+    @Override
+    public void onDashboardOptionsClickListener(DashboardOption dashboardOption) {
+        switch(dashboardOption.getDrawable()){
+            case R.drawable.ic_announcement:
+                listener.goToAnnouncementScreen(dashboardOption);
+                break;
+            case R.drawable.ic_books:
+                listener.goToDepartmentScreen(dashboardOption);
+                break;
+            case R.drawable.ic_student:
+                listener.goToStudentsScreen(dashboardOption);
+                break;
+            case R.drawable.ic_teacher:
+               listener.goToProfessorScreen(dashboardOption);
+                break;
+        }
+    }
 }
