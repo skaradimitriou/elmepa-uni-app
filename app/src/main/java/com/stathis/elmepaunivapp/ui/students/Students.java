@@ -18,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
-import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
@@ -107,7 +107,7 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
                         startActivity(new Intent(Students.this, Department.class));
                         break;
                     case R.id.nav_search:
-                        startActivity(new Intent(Students.this, Professors.class));
+                        startActivity(new Intent(Students.this, ProfessorsActivity.class));
                         break;
                 }
                 return false;

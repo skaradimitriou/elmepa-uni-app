@@ -14,15 +14,12 @@ import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 
 public class LatestNewsAdapter extends ListAdapter<Announcement,LatestNewsViewHolder> {
 
-    private final int ANNOUNCEMENT = 1;
-    private final int EMPTY = 2;
     private NewsClickListener listener;
 
     public LatestNewsAdapter(NewsClickListener listener) {
         super(new DiffItemCallbackClass<Announcement>());
         this.listener = listener;
     }
-
 
     @NonNull
     @Override

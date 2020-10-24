@@ -15,7 +15,7 @@ import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
-import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.ui.students.Students;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
@@ -68,7 +68,7 @@ public class ResearchInDept extends AppCompatActivity implements UsefulLinkClick
                     case R.id.nav_uni:
                         return true;
                     case R.id.nav_search:
-                        startActivity(new Intent(ResearchInDept.this, Professors.class));
+                        startActivity(new Intent(ResearchInDept.this, ProfessorsActivity.class));
                         break;
                 }
                 return false;

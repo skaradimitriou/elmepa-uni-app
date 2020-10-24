@@ -2,7 +2,6 @@ package com.stathis.elmepaunivapp.ui.dashboard;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +18,7 @@ import com.stathis.elmepaunivapp.listeners.DashboardOptionListener;
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
 import com.stathis.elmepaunivapp.ui.dashboard.recyclerview.DashboardAdapter;
 import com.stathis.elmepaunivapp.ui.department.Department;
-import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.announcements.Announcements;
 import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity;
@@ -87,7 +86,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                 startActivity(new Intent(Dashboard.this, Students.class));
                 break;
             case R.drawable.ic_teacher:
-                startActivity(new Intent(Dashboard.this, Professors.class));
+                startActivity(new Intent(Dashboard.this, ProfessorsActivity.class));
                 break;
         }
     }

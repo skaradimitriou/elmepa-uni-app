@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".ui.professors.Professors">
+    tools:context=".ui.professors.ProfessorsActivity">
 
     <EditText
         android:id="@+id/search_action"

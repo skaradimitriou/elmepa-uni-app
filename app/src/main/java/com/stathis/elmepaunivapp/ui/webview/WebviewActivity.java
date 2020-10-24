@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.department.Department;
-import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.ui.students.Students;
 
 public class WebviewActivity extends AppCompatActivity {
@@ -61,7 +61,7 @@ public class WebviewActivity extends AppCompatActivity {
                         startActivity(new Intent(WebviewActivity.this, Department.class));
                         break;
                     case R.id.nav_search:
-                        startActivity(new Intent(WebviewActivity.this, Professors.class));
+                        startActivity(new Intent(WebviewActivity.this, ProfessorsActivity.class));
                         break;
                 }
                 return false;

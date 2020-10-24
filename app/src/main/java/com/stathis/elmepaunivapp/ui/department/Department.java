@@ -23,7 +23,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.stathis.elmepaunivapp.ui.department.fragments.DepMembersFragment;
 import com.stathis.elmepaunivapp.ui.students.fragments.FieldsOfStudyFragment;
 import com.stathis.elmepaunivapp.ui.department.fragments.FindUsFragment;
-import com.stathis.elmepaunivapp.ui.professors.Professors;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.ui.department.fragments.ProgrammesFragment;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.research.ResearchInDept;
@@ -124,7 +124,7 @@ public class Department extends AppCompatActivity {
                     case R.id.nav_uni:
                         return true;
                     case R.id.nav_search:
-                        startActivity(new Intent(Department.this, Professors.class));
+                        startActivity(new Intent(Department.this, ProfessorsActivity.class));
                         overridePendingTransition(0, 0);
                         break;
                 }

@@ -1,16 +1,42 @@
 package com.stathis.elmepaunivapp.ui.professors;
 
+import android.app.Application;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.ViewModel;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.stathis.elmepaunivapp.listeners.ProfessorActivityClickListener;
+import com.stathis.elmepaunivapp.listeners.ProfessorClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
+import com.stathis.elmepaunivapp.ui.professors.recyclerview.ProfessorAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class ProfessorsViewModel extends ViewModel {
+public class ProfessorsViewModel extends AndroidViewModel implements ProfessorClickListener {
 
     private ArrayList<ProfessorModel> professors = new ArrayList<>();
+    ProfessorAdapter adapter = new ProfessorAdapter(this);
+    private ProfessorActivityClickListener listener;
+
+
+    public ProfessorsViewModel(@NonNull Application application) {
+        super(application);
+    }
+
+    void setupListener(ProfessorActivityClickListener listener){
+        this.listener = listener;
+    }
+
+    void showProfessors() {
+        adapter.submitList(createProfessorList());
+    }
 
     ArrayList<ProfessorModel> createProfessorList() {
         professors.add(new ProfessorModel("Παπαδάκης Στέλιος", "spap@hmu.gr", "male", "Παπαδάκη Στέλιο"));
@@ -57,5 +83,15 @@ public class ProfessorsViewModel extends ViewModel {
         });
 
         return professors;
+    }
+
+    private void showDialogue(final ProfessorModel professorModel) {
+        listener.showDialog(professorModel);
+    }
+
+
+    @Override
+    public void onProfessorClick(ProfessorModel professorModel) {
+        showDialogue(professorModel);
     }
 }

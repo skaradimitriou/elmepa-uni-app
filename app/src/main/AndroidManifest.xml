@@ -12,11 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.webview.WebviewActivity"></activity>
+        <activity android:name=".ui.webview.WebviewActivity"/>
         <activity android:name=".ui.chatbot.ChatBotActivity" />
         <activity android:name=".ui.syllabus.Syllabus" />
         <activity android:name=".ui.research.ResearchInDept" />
-        <activity android:name=".ui.professors.Professors" />
+        <activity android:name=".ui.professors.ProfessorsActivity" />
         <activity android:name=".ui.students.Students" />
         <activity android:name=".ui.department.Department" />
         <activity android:name=".ui.announcements.Announcements" />
