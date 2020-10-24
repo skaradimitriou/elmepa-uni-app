@@ -15,7 +15,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 
-import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -26,18 +25,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.stathis.elmepaunivapp.listeners.ChatBotListener;
-import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.ui.announcements.Announcements;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
-import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.chatbot.recyclerview.ChatBotAdapter;
-import com.stathis.elmepaunivapp.ui.department.Department;
-import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
-
-import java.util.ArrayList;
 
 import static android.Manifest.permission.CALL_PHONE;
 

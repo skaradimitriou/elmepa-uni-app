@@ -4,7 +4,7 @@ import android.os.Handler;
 
 import androidx.lifecycle.ViewModel;
 
-import com.stathis.elmepaunivapp.listeners.ChatBotListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.chatbot.model.ChatbotHeader;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question;

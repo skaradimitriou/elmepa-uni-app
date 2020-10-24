@@ -7,10 +7,9 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.database.AnnouncementsDatabase;
-import com.stathis.elmepaunivapp.listeners.AnnouncementClickListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.AnnouncementClickListener;
 import com.stathis.elmepaunivapp.listeners.NewsClickListener;
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 import com.stathis.elmepaunivapp.ui.announcements.recyclerviews.LatestNewsAdapter;

@@ -1,16 +1,11 @@
 package com.stathis.elmepaunivapp.ui.professors;
 
 import android.app.Application;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.ViewModel;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.stathis.elmepaunivapp.listeners.ProfessorActivityClickListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.ProfessorActivityClickListener;
 import com.stathis.elmepaunivapp.listeners.ProfessorClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 import com.stathis.elmepaunivapp.ui.professors.recyclerview.ProfessorAdapter;

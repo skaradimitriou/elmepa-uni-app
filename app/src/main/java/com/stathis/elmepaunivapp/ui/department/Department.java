@@ -26,7 +26,7 @@ import com.stathis.elmepaunivapp.ui.department.fragments.FindUsFragment;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.ui.department.fragments.ProgrammesFragment;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.research.ResearchInDept;
+import com.stathis.elmepaunivapp.ui.research.ResearchActivity;
 import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
 import com.stathis.elmepaunivapp.ui.students.Students;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
@@ -79,7 +79,7 @@ public class Department extends AppCompatActivity {
         researchInDept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Department.this, ResearchInDept.class));
+                startActivity(new Intent(Department.this, ResearchActivity.class));
             }
         });
 

@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.stathis.elmepaunivapp.listeners.AnnouncementClickListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.AnnouncementClickListener;
 import com.stathis.elmepaunivapp.ui.department.Department;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;

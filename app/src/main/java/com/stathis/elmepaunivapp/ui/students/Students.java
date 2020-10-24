@@ -28,7 +28,7 @@ import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class Students extends AppCompatActivity implements FieldsOfStudyListener {
+public class Students extends AppCompatActivity implements FieldsOfStudyListener,View.OnClickListener {
 
     private RecyclerView fields_recView, useful_links_recView, sMatters_recView;
     private FieldsAdapter fieldsAdapter, sMattersAdapter;
@@ -76,20 +76,9 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
         sMattersAdapter.submitList(studentsViewModel.getStudentMatters());
 
         schedule = findViewById(R.id.schedule_cardview);
-        schedule.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSchedule();
-            }
-        });
-
         btn = findViewById(R.id.schedule_card_btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSchedule();
-            }
-        });
+        schedule.setOnClickListener(this);
+        btn.setOnClickListener(this);
 
         //bottom navigation & listener
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -115,12 +104,6 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
         });
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        overridePendingTransition(0, 0);
-    }
-
     private void openSchedule() {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/")));
     }
@@ -138,5 +121,10 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
                 startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/"));
                 break;
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        openSchedule();
     }
 }
