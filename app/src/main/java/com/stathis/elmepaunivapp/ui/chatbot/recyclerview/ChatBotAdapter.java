@@ -12,6 +12,7 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
+import com.stathis.elmepaunivapp.ui.chatbot.model.ChatbotHeader;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 
 public class ChatBotAdapter extends ListAdapter<Object, RecyclerView.ViewHolder> {
@@ -31,6 +32,8 @@ public class ChatBotAdapter extends ListAdapter<Object, RecyclerView.ViewHolder>
             return new MessageViewHolder(view);
         } else if (viewType == R.layout.holder_answer_item){
             return new AnswerViewHolder(view, itemClickListener);
+        } else if (viewType == R.layout.holder_chatbot_header){
+            return new ChatbotHeaderViewHolder(view);
         } else {
             return null;
         }
@@ -42,6 +45,8 @@ public class ChatBotAdapter extends ListAdapter<Object, RecyclerView.ViewHolder>
             ((MessageViewHolder) holder).present((Question) getItem(position));
         } else if (getItem(position) instanceof Answer) {
             ((AnswerViewHolder) holder).present((Answer) getItem(position));
+        } else if (getItem(position) instanceof ChatbotHeader) {
+            ((ChatbotHeaderViewHolder) holder).present((ChatbotHeader) getItem(position));
         }
     }
 
@@ -51,6 +56,8 @@ public class ChatBotAdapter extends ListAdapter<Object, RecyclerView.ViewHolder>
             return R.layout.holder_question_item;
         } else if (getItem(position) instanceof Answer) {
             return R.layout.holder_answer_item;
+        } else if (getItem(position) instanceof ChatbotHeader) {
+            return R.layout.holder_chatbot_header;
         } else {
             return 3;
         }

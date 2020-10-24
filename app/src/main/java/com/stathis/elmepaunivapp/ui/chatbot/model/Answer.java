@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.ui.chatbot.model;
 
-public class Answer extends Object{
+public class Answer extends Object {
 
     private String text;
 

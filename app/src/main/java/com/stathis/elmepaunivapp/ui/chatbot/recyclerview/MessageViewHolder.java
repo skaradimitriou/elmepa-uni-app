@@ -7,10 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
-import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
-import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 
 public class MessageViewHolder extends RecyclerView.ViewHolder {

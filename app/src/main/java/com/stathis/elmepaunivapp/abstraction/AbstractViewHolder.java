@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
-import com.stathis.elmepaunivapp.ui.chatbot.model.Message;
-import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 
 public abstract class AbstractViewHolder<T extends Object> extends RecyclerView.ViewHolder {
 

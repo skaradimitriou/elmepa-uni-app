@@ -6,11 +6,13 @@ import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.listeners.ItemClickListener;
+import com.stathis.elmepaunivapp.ui.chatbot.model.ChatbotHeader;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question;
 import com.stathis.elmepaunivapp.ui.chatbot.recyclerview.ChatBotAdapter;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 
 import java.util.ArrayList;
+
 
 public class ChatbotViewModel extends ViewModel implements ItemClickListener {
 
@@ -23,9 +25,13 @@ public class ChatbotViewModel extends ViewModel implements ItemClickListener {
         this.chatBotListener = chatBotListener;
     }
 
-    void getResponse(final String response){
-        messagesList.add(new Question(response));
+    void initAdapter(){
+        messagesList.add(new ChatbotHeader());
         chatBotAdapter.submitList(messagesList);
+    }
+
+    void getResponse(final String response) {
+        messagesList.add(new Question(response));
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -45,7 +51,7 @@ public class ChatbotViewModel extends ViewModel implements ItemClickListener {
             answer = "Κάνε tap για να καλέσω την Γραμματεία του Τμήματος!";
         } else if (response.contains("email") || response.contains("e-mail")) {
             answer = "Κάνε tap για να στείλεις e-mail στην Γραμματεία!";
-        } else if (response.contains("καθηγητ") || response.contains("καθηγητές") || response.contains("προσωπικό") ) {
+        } else if (response.contains("καθηγητ") || response.contains("καθηγητές") || response.contains("προσωπικό")) {
             answer = "Κάνε tap για να αναζητήσεις έναν καθηγητή του Τμήματος!";
         } else if (response.contains("ανακοινώσεις") || response.contains("ανακοιν") || response.contains("ανακοινωση") || response.contains("ανακοίνωση")) {
             answer = "Κάνε tap για να δεις τις ανακοινώσεις του Τμήματος!";
@@ -53,7 +59,7 @@ public class ChatbotViewModel extends ViewModel implements ItemClickListener {
             answer = "Κάνε tap για να δείς την εικονική περιήγηση!";
         } else if (response.contains("γεια") || (response.contains("γειά"))) {
             answer = "Γεία σου και εσένα!";
-        } else if (response.contains("ευχαριστώ") || response.contains("ευχαριστω"))  {
+        } else if (response.contains("ευχαριστώ") || response.contains("ευχαριστω")) {
             answer = "Παρακαλώ!";
         } else {
             answer = "Δεν γνωρίζω την απάντηση ακόμα";
@@ -69,7 +75,7 @@ public class ChatbotViewModel extends ViewModel implements ItemClickListener {
                 break;
             }
 
-            case "Κάνε tap για να δεις τις ανακοινώσεις του Τμήματος!" : {
+            case "Κάνε tap για να δεις τις ανακοινώσεις του Τμήματος!": {
                 chatBotListener.openAnnouncements(answer);
                 break;
             }
@@ -104,4 +110,5 @@ public class ChatbotViewModel extends ViewModel implements ItemClickListener {
     public void onAnswerClick(Answer answer) {
         whichIntent(answer);
     }
+
 }

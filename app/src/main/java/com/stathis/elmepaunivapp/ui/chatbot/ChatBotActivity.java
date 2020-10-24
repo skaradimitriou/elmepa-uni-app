@@ -74,20 +74,30 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
                     hideKeyboard(v);
 
                     viewModel.getResponse(response);
+
+                    //this line of code scrolls to the last item of the list that is passed to the adapter
+                    // it creates an illusion of the chat interactiveness
+                    if (viewModel.chatBotAdapter.getCurrentList().size() > 1) {
+                        userMessagesRecView.smoothScrollToPosition(userMessagesRecView.getBottom());
+                        viewModel.chatBotAdapter.notifyDataSetChanged();
+                    }
+
                     return true;
                 }
                 return false;
             }
         });
 
-        viewModel.setUpListener(this);
         userMessagesRecView.setAdapter(viewModel.chatBotAdapter);
+        viewModel.setUpListener(this);
+        viewModel.initAdapter();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
+
     }
 
     public void hideKeyboard(View view) {
@@ -96,11 +106,8 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
     }
 
     private void sendAnEmailToSecretaryOffice() {
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"kalarhaki@hmu.gr"});
         try {
-            startActivity(Intent.createChooser(i, "Send mail..."));
+            startActivity(Intent.createChooser(new Intent(Intent.ACTION_SEND).setType("message/rfc822").putExtra(Intent.EXTRA_EMAIL, new String[]{"kalarhaki@hmu.gr"}), "Send mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(ChatBotActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }
