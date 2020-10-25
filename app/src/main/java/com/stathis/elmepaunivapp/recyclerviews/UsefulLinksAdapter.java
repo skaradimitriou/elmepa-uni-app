@@ -5,16 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
-
-import java.util.List;
 
 public class UsefulLinksAdapter extends ListAdapter<UsefulLinks,UsefulLinksViewHolder> {
 

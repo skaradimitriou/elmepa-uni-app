@@ -19,7 +19,7 @@ import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 public class ResearchActivity extends AppCompatActivity implements ResearchActivityClickListener {
 
-    private RecyclerView researchItems, research_labs;
+    private RecyclerView researchRecycler;
     private ResearchViewModel viewModel;
 
     @Override
@@ -33,11 +33,8 @@ public class ResearchActivity extends AppCompatActivity implements ResearchActiv
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        researchItems = findViewById(R.id.research_InDept_recView);
-        research_labs = findViewById(R.id.research_Labs_recView);
-
-        researchItems.setAdapter(viewModel.researchAdapter);
-        research_labs.setAdapter(viewModel.researchLabsAdapter);
+        researchRecycler = findViewById(R.id.research_activity_recycler);
+        researchRecycler.setAdapter(viewModel.researchFinalAdapter);
 
         viewModel.initListener(this);
         viewModel.createLists();
