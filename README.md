@@ -31,4 +31,4 @@ Model - View - ViewModel (MVVM)    /* Refactor In Progress 🔜 */
 
 [Picasso](https://square.github.io/picasso/) <br/> 
 [JSOUP](https://jsoup.org/) <br/>
-[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database    /* Refactor In Progress 🔜 */
+[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database
