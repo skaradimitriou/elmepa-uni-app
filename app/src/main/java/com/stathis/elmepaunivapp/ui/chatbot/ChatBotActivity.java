@@ -26,7 +26,7 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ChatBotListener;
-import com.stathis.elmepaunivapp.ui.announcements.Announcements;
+import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
@@ -159,6 +159,6 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
 
     @Override
     public void openAnnouncements(Answer answer) {
-        startActivity(new Intent(this, Announcements.class));
+        startActivity(new Intent(this, AnnouncementActivity.class));
     }
 }

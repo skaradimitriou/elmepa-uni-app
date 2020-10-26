@@ -16,11 +16,11 @@ import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
-import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
-import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
+import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.ui.department.recyclerviews.FieldsAdapter;
@@ -28,7 +28,7 @@ import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class Students extends AppCompatActivity implements FieldsOfStudyListener,View.OnClickListener {
+public class StudentsActivity extends AppCompatActivity implements FieldsOfStudyListener,View.OnClickListener {
 
     private RecyclerView fields_recView, useful_links_recView, sMatters_recView;
     private FieldsAdapter fieldsAdapter, sMattersAdapter;
@@ -48,6 +48,11 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        schedule = findViewById(R.id.schedule_cardview);
+        btn = findViewById(R.id.schedule_card_btn);
+        schedule.setOnClickListener(this);
+        btn.setOnClickListener(this);
+
         fields_recView = findViewById(R.id.diff_directions);
         useful_links_recView = findViewById(R.id.useful_links_recView);
         sMatters_recView = findViewById(R.id.sMatters_recView);
@@ -55,7 +60,7 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
         fieldsAdapter = new FieldsAdapter(new FieldsOfStudyListener() {
             @Override
             public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
-                startActivity(new Intent(Students.this, Syllabus.class).putExtra("DIRECTION", fieldsOfStudy.getDirection()));
+                startActivity(new Intent(StudentsActivity.this, SyllabusActivity.class).putExtra("DIRECTION", fieldsOfStudy.getDirection()));
             }
         });
         fieldsAdapter.submitList(studentsViewModel.getFieldsOfStudy());
@@ -75,11 +80,6 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
         sMatters_recView.setAdapter(sMattersAdapter);
         sMattersAdapter.submitList(studentsViewModel.getStudentMatters());
 
-        schedule = findViewById(R.id.schedule_cardview);
-        btn = findViewById(R.id.schedule_card_btn);
-        schedule.setOnClickListener(this);
-        btn.setOnClickListener(this);
-
         //bottom navigation & listener
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_students);
@@ -88,15 +88,15 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(Students.this, Dashboard.class));
+                        startActivity(new Intent(StudentsActivity.this, DashboardActivity.class));
                         break;
                     case R.id.nav_students:
                         return true;
                     case R.id.nav_uni:
-                        startActivity(new Intent(Students.this, Department.class));
+                        startActivity(new Intent(StudentsActivity.this, DepartmentActivity.class));
                         break;
                     case R.id.nav_search:
-                        startActivity(new Intent(Students.this, ProfessorsActivity.class));
+                        startActivity(new Intent(StudentsActivity.this, ProfessorsActivity.class));
                         break;
                 }
                 return false;
@@ -112,13 +112,13 @@ public class Students extends AppCompatActivity implements FieldsOfStudyListener
     public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
         switch (fieldsOfStudy.getName()) {
             case "Ακαδημαϊκό Ημερολόγιο":
-                startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/"));
+                startActivity(new Intent(StudentsActivity.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/"));
                 break;
             case "Σύμβουλος Καθηγητής":
-                startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/"));
+                startActivity(new Intent(StudentsActivity.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/"));
                 break;
             case "Πρόγραμμα Erasmus+":
-                startActivity(new Intent(Students.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/"));
+                startActivity(new Intent(StudentsActivity.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/"));
                 break;
         }
     }

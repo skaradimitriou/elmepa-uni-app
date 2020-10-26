@@ -12,10 +12,10 @@ import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
-import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
-import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 
 public class WebviewActivity extends AppCompatActivity {
 
@@ -52,13 +52,13 @@ public class WebviewActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(WebviewActivity.this, Dashboard.class));
+                        startActivity(new Intent(WebviewActivity.this, DashboardActivity.class));
                         break;
                     case R.id.nav_students:
-                        startActivity(new Intent(WebviewActivity.this, Students.class));
+                        startActivity(new Intent(WebviewActivity.this, StudentsActivity.class));
                         break;
                     case R.id.nav_uni:
-                        startActivity(new Intent(WebviewActivity.this, Department.class));
+                        startActivity(new Intent(WebviewActivity.this, DepartmentActivity.class));
                         break;
                     case R.id.nav_search:
                         startActivity(new Intent(WebviewActivity.this, ProfessorsActivity.class));

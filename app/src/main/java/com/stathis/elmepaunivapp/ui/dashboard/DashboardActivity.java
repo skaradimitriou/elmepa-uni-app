@@ -16,14 +16,14 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.DashboardActivityClickListener;
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
-import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.announcements.Announcements;
+import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity;
 import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity;
-import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 
-public class Dashboard extends AppCompatActivity implements View.OnClickListener, DashboardActivityClickListener {
+public class DashboardActivity extends AppCompatActivity implements View.OnClickListener, DashboardActivityClickListener {
 
     private RecyclerView dashboardOptions;
     private ImageView about;
@@ -57,7 +57,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.fab_chatbot:
-                startActivity(new Intent(Dashboard.this, ChatBotActivity.class));
+                startActivity(new Intent(DashboardActivity.this, ChatBotActivity.class));
                 break;
             case R.id.about:
                 showDialog();
@@ -66,7 +66,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     }
 
     private void showDialog() {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(Dashboard.this);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(DashboardActivity.this);
         builder.setTitle(viewModel.getTitle());
         builder.setMessage(viewModel.getAboutText());
         builder.setPositiveButton("Μάθε Περισσότερα", new DialogInterface.OnClickListener() {
@@ -86,21 +86,21 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void goToAnnouncementScreen(DashboardOption dashboardOption) {
-        startActivity(new Intent(Dashboard.this, Announcements.class));
+        startActivity(new Intent(DashboardActivity.this, AnnouncementActivity.class));
     }
 
     @Override
     public void goToDepartmentScreen(DashboardOption dashboardOption) {
-        startActivity(new Intent(Dashboard.this, Department.class));
+        startActivity(new Intent(DashboardActivity.this, DepartmentActivity.class));
     }
 
     @Override
     public void goToProfessorScreen(DashboardOption dashboardOption) {
-        startActivity(new Intent(Dashboard.this, ProfessorsActivity.class));
+        startActivity(new Intent(DashboardActivity.this, ProfessorsActivity.class));
     }
 
     @Override
     public void goToStudentsScreen(DashboardOption dashboardOption) {
-        startActivity(new Intent(Dashboard.this, Students.class));
+        startActivity(new Intent(DashboardActivity.this, StudentsActivity.class));
     }
 }

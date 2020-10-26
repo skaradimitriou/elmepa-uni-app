@@ -12,9 +12,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ResearchActivityClickListener;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
-import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
-import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 public class ResearchActivity extends AppCompatActivity implements ResearchActivityClickListener {
@@ -48,10 +48,10 @@ public class ResearchActivity extends AppCompatActivity implements ResearchActiv
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(ResearchActivity.this, Dashboard.class));
+                        startActivity(new Intent(ResearchActivity.this, DashboardActivity.class));
                         break;
                     case R.id.nav_students:
-                        startActivity(new Intent(ResearchActivity.this, Students.class));
+                        startActivity(new Intent(ResearchActivity.this, StudentsActivity.class));
                         break;
                     case R.id.nav_uni:
                         return true;

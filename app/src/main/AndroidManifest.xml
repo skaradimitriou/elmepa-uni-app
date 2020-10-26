@@ -14,13 +14,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.webview.WebviewActivity"/>
         <activity android:name=".ui.chatbot.ChatBotActivity" />
-        <activity android:name=".ui.syllabus.Syllabus" />
+        <activity android:name=".ui.syllabus.SyllabusActivity" />
         <activity android:name=".ui.research.ResearchActivity" />
         <activity android:name=".ui.professors.ProfessorsActivity" />
-        <activity android:name=".ui.students.Students" />
-        <activity android:name=".ui.department.Department" />
-        <activity android:name=".ui.announcements.Announcements" />
-        <activity android:name=".ui.dashboard.Dashboard">
+        <activity android:name=".ui.students.StudentsActivity" />
+        <activity android:name=".ui.department.DepartmentActivity" />
+        <activity android:name=".ui.announcements.AnnouncementActivity" />
+        <activity android:name=".ui.dashboard.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

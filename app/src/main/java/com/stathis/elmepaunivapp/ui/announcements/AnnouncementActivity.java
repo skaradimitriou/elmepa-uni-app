@@ -13,14 +13,14 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.AnnouncementClickListener;
-import com.stathis.elmepaunivapp.ui.department.Department;
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
-import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class Announcements extends AppCompatActivity implements AnnouncementClickListener {
+public class AnnouncementActivity extends AppCompatActivity implements AnnouncementClickListener {
 
     private SwipeRefreshLayout swipe_refresh_layout;
     private RecyclerView announcementsRecycler;
@@ -69,13 +69,13 @@ public class Announcements extends AppCompatActivity implements AnnouncementClic
                     case R.id.nav_home:
                         return true;
                     case R.id.nav_students:
-                        startActivity(new Intent(Announcements.this, Students.class));
+                        startActivity(new Intent(AnnouncementActivity.this, StudentsActivity.class));
                         break;
                     case R.id.nav_uni:
-                        startActivity(new Intent(Announcements.this, Department.class));
+                        startActivity(new Intent(AnnouncementActivity.this, DepartmentActivity.class));
                         break;
                     case R.id.nav_search:
-                        startActivity(new Intent(Announcements.this, ProfessorsActivity.class));
+                        startActivity(new Intent(AnnouncementActivity.this, ProfessorsActivity.class));
                         break;
                 }
                 return false;
@@ -91,6 +91,6 @@ public class Announcements extends AppCompatActivity implements AnnouncementClic
 
     @Override
     public void goToAnnouncement(Announcement announcement) {
-        startActivity(new Intent(Announcements.this, WebviewActivity.class).putExtra("URL", announcement.getOpenUrl()));
+        startActivity(new Intent(AnnouncementActivity.this, WebviewActivity.class).putExtra("URL", announcement.getOpenUrl()));
     }
 }

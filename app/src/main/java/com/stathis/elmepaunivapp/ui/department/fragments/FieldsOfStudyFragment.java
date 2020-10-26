@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.students.fragments;
+package com.stathis.elmepaunivapp.ui.department.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,13 +17,12 @@ import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.ui.department.DepartmentViewModel;
 import com.stathis.elmepaunivapp.ui.department.recyclerviews.FieldsAdapter;
-import com.stathis.elmepaunivapp.ui.syllabus.Syllabus;
+import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
 
 public class FieldsOfStudyFragment extends Fragment {
 
     private RecyclerView fieldsOfStudy;
     private FieldsAdapter fieldsAdapter;
-//    private ArrayList<DeptFieldsOfStudy> fieldsOfStudyList = new ArrayList<>();
     private DepartmentViewModel viewModel;
 
     public FieldsOfStudyFragment() {
@@ -49,17 +48,17 @@ public class FieldsOfStudyFragment extends Fragment {
             public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
                 switch (fieldsOfStudy.getName()) {
                     case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής":
-                        Intent goToDataSyllabus = new Intent(getActivity(), Syllabus.class);
+                        Intent goToDataSyllabus = new Intent(getActivity(), SyllabusActivity.class);
                         goToDataSyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToDataSyllabus);
                         break;
                     case "Διοίκηση Επιχειρήσεων & Οργανισμών":
-                        Intent goToBASyllabus = new Intent(getActivity(), Syllabus.class);
+                        Intent goToBASyllabus = new Intent(getActivity(), SyllabusActivity.class);
                         goToBASyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToBASyllabus);
                         break;
                     case "Ψηφιακό Μάρκετινγκ και Επικοινωνία":
-                        Intent goToMKTSyllabus = new Intent(getActivity(), Syllabus.class);
+                        Intent goToMKTSyllabus = new Intent(getActivity(), SyllabusActivity.class);
                         goToMKTSyllabus.putExtra("DIRECTION", fieldsOfStudy.getName());
                         startActivity(goToMKTSyllabus);
                         break;

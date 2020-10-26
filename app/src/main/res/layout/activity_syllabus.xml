@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.syllabus.Syllabus">
+    tools:context=".ui.syllabus.SyllabusActivity">
 
-    <FrameLayout
-        android:id="@+id/semester_lessons"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/syllabus_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f3f3f3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:orientation="vertical"
+        tools:listitem="@layout/holder_semester_item_row"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

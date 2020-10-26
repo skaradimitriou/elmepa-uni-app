@@ -21,19 +21,19 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.stathis.elmepaunivapp.ui.department.fragments.DepMembersFragment;
-import com.stathis.elmepaunivapp.ui.students.fragments.FieldsOfStudyFragment;
+import com.stathis.elmepaunivapp.ui.department.fragments.FieldsOfStudyFragment;
 import com.stathis.elmepaunivapp.ui.department.fragments.FindUsFragment;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.ui.department.fragments.ProgrammesFragment;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity;
-import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
-import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class Department extends AppCompatActivity {
+public class DepartmentActivity extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
@@ -79,7 +79,7 @@ public class Department extends AppCompatActivity {
         researchInDept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Department.this, ResearchActivity.class));
+                startActivity(new Intent(DepartmentActivity.this, ResearchActivity.class));
             }
         });
 
@@ -87,7 +87,7 @@ public class Department extends AppCompatActivity {
         virtual_tour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Department.this, WebviewActivity.class).putExtra(
+                startActivity(new Intent(DepartmentActivity.this, WebviewActivity.class).putExtra(
                         "URL", "https://mst.hmu.gr/hmutour/"
                 ));
             }
@@ -114,17 +114,17 @@ public class Department extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(Department.this, Dashboard.class));
+                        startActivity(new Intent(DepartmentActivity.this, DashboardActivity.class));
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
-                        startActivity(new Intent(Department.this, Students.class));
+                        startActivity(new Intent(DepartmentActivity.this, StudentsActivity.class));
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
                         return true;
                     case R.id.nav_search:
-                        startActivity(new Intent(Department.this, ProfessorsActivity.class));
+                        startActivity(new Intent(DepartmentActivity.this, ProfessorsActivity.class));
                         overridePendingTransition(0, 0);
                         break;
                 }
@@ -151,9 +151,9 @@ public class Department extends AppCompatActivity {
     }
 
     private void callAtSecretaryOffice() {
-        if (ContextCompat.checkSelfPermission(Department.this,
+        if (ContextCompat.checkSelfPermission(DepartmentActivity.this,
                 Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(Department.this, new String[]{CALL_PHONE}, REQUEST_CALL);
+            ActivityCompat.requestPermissions(DepartmentActivity.this, new String[]{CALL_PHONE}, REQUEST_CALL);
         } else {
             startActivity(new Intent(Intent.ACTION_CALL).setData(Uri.parse("tel:2841091103")));
         }
@@ -166,7 +166,7 @@ public class Department extends AppCompatActivity {
         try {
             startActivity(Intent.createChooser(i, "Send mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(Department.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DepartmentActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }
     }
 }

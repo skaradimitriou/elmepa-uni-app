@@ -1,18 +1,12 @@
 package com.stathis.elmepaunivapp.ui.dashboard;
 
-import android.content.Intent;
-
 import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.DashboardOptionListener;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.DashboardActivityClickListener;
-import com.stathis.elmepaunivapp.ui.announcements.Announcements;
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
 import com.stathis.elmepaunivapp.ui.dashboard.recyclerview.DashboardAdapter;
-import com.stathis.elmepaunivapp.ui.department.Department;
-import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
-import com.stathis.elmepaunivapp.ui.students.Students;
 
 import java.util.ArrayList;
 import java.util.List;

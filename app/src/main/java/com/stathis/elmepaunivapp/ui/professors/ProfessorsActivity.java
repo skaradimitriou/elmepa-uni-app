@@ -20,9 +20,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ProfessorActivityClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
-import com.stathis.elmepaunivapp.ui.dashboard.Dashboard;
-import com.stathis.elmepaunivapp.ui.department.Department;
-import com.stathis.elmepaunivapp.ui.students.Students;
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 
 public class ProfessorsActivity extends AppCompatActivity implements ProfessorActivityClickListener {
 
@@ -74,13 +74,13 @@ public class ProfessorsActivity extends AppCompatActivity implements ProfessorAc
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(ProfessorsActivity.this, Dashboard.class));
+                        startActivity(new Intent(ProfessorsActivity.this, DashboardActivity.class));
                         break;
                     case R.id.nav_students:
-                        startActivity(new Intent(ProfessorsActivity.this, Students.class));
+                        startActivity(new Intent(ProfessorsActivity.this, StudentsActivity.class));
                         break;
                     case R.id.nav_uni:
-                        startActivity(new Intent(ProfessorsActivity.this, Department.class));
+                        startActivity(new Intent(ProfessorsActivity.this, DepartmentActivity.class));
                         break;
                     case R.id.nav_search:
                         return true;

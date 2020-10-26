@@ -8,7 +8,6 @@ import androidx.lifecycle.AndroidViewModel;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ResearchActivityClickListener;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
-import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.research.model.ResearchItem;
 import com.stathis.elmepaunivapp.ui.research.recycler.ResearchAdapter;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
