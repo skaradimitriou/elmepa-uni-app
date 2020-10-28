@@ -1,12 +1,14 @@
-package com.stathis.elmepaunivapp.models;
+package com.stathis.elmepaunivapp.ui.department.model;
 
-public class DepMembers {
+public class SocialChannels extends Object {
 
     private String name;
+    private String url;
     private Integer img;
 
-    public DepMembers(String name, Integer img) {
+    public SocialChannels(String name, String url, Integer img) {
         this.name = name;
+        this.url = url;
         this.img = img;
     }
 
@@ -16,6 +18,14 @@ public class DepMembers {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Integer getImg() {

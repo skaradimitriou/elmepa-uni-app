@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.DashboardOptionListener;
-import com.stathis.elmepaunivapp.listeners.DepMembersClickListener;
-import com.stathis.elmepaunivapp.models.DepMembers;
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
 
 public class DashboardViewHolder extends RecyclerView.ViewHolder {

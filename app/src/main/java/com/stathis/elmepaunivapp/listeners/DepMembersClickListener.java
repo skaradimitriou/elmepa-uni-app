@@ -1,8 +1,6 @@
 package com.stathis.elmepaunivapp.listeners;
 
-import android.view.View;
-
-import com.stathis.elmepaunivapp.models.DepMembers;
+import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
 
 public interface DepMembersClickListener {
 

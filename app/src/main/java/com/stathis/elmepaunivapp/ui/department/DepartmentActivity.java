@@ -3,47 +3,52 @@ package com.stathis.elmepaunivapp.ui.department;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.stathis.elmepaunivapp.ui.department.fragments.DepMembersFragment;
-import com.stathis.elmepaunivapp.ui.department.fragments.FieldsOfStudyFragment;
-import com.stathis.elmepaunivapp.ui.department.fragments.FindUsFragment;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.DepartmentActivityListener;
+import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
+import com.stathis.elmepaunivapp.ui.department.model.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.ui.department.model.Programmes;
+import com.stathis.elmepaunivapp.ui.department.model.Research;
+import com.stathis.elmepaunivapp.ui.department.model.SocialChannels;
+import com.stathis.elmepaunivapp.ui.department.model.VirtualTour;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
-import com.stathis.elmepaunivapp.ui.department.fragments.ProgrammesFragment;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.research.ResearchActivity;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
+import com.stathis.elmepaunivapp.ui.research.ResearchActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
+import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class DepartmentActivity extends AppCompatActivity implements View.OnClickListener {
+public class DepartmentActivity extends AppCompatActivity implements View.OnClickListener, DepartmentActivityListener {
 
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
-    private CardView virtual_tour;
-    private Button researchInDept;
+    private RecyclerView recyclerView;
+    private DepartmentViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_department);
+        viewModel = new ViewModelProvider(this).get(DepartmentViewModel.class);
     }
 
     @Override
@@ -52,33 +57,12 @@ public class DepartmentActivity extends AppCompatActivity implements View.OnClic
 
         call = findViewById(R.id.fab_call);
         mail = findViewById(R.id.fab_mail);
-        virtual_tour = findViewById(R.id.virtual_tour);
-        researchInDept = findViewById(R.id.research_card_btn);
-
-        researchInDept.setOnClickListener(this);
-        virtual_tour.setOnClickListener(this);
         call.setOnClickListener(this);
         mail.setOnClickListener(this);
 
-        //fields of Study fragment
-        FragmentTransaction fieldsOfStudy = getSupportFragmentManager().beginTransaction();
-        fieldsOfStudy.add(R.id.fieldsOfStudy_frag, new FieldsOfStudyFragment(), "FieldsOfStudyFragment");
-        fieldsOfStudy.commit();
-
-        //Programmes fragment
-        FragmentTransaction programmes = getSupportFragmentManager().beginTransaction();
-        programmes.add(R.id.programmes_frag, new ProgrammesFragment(), "ProgrammesFragment");
-        programmes.commit();
-
-        //dep members fragment
-        FragmentTransaction depMembersFragment = getSupportFragmentManager().beginTransaction();
-        depMembersFragment.add(R.id.depMembers_frag, new DepMembersFragment(), "TestFragment");
-        depMembersFragment.commit();
-
-        //dep members fragment
-        FragmentTransaction findUsFragment = getSupportFragmentManager().beginTransaction();
-        findUsFragment.add(R.id.social_frag, new FindUsFragment(), "FindUsFragment");
-        findUsFragment.commit();
+        recyclerView = findViewById(R.id.department_recycler);
+        recyclerView.setAdapter(viewModel.adapter);
+        viewModel.initAdapter(this);
 
         //bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -138,16 +122,6 @@ public class DepartmentActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.research_card_btn: {
-                startActivity(new Intent(DepartmentActivity.this, ResearchActivity.class));
-                break;
-            }
-            case R.id.virtual_tour: {
-                startActivity(new Intent(DepartmentActivity.this, WebviewActivity.class).putExtra(
-                        "URL", "https://mst.hmu.gr/hmutour/"
-                ));
-                break;
-            }
             case R.id.fab_mail: {
                 sendAnEmailToSecretaryOffice();
                 break;
@@ -157,5 +131,45 @@ public class DepartmentActivity extends AppCompatActivity implements View.OnClic
                 break;
             }
         }
+    }
+
+    @Override
+    public void goToSyllabus(DeptFieldsOfStudy data) {
+        startActivity(new Intent(this, SyllabusActivity.class));
+    }
+
+    @Override
+    public void openProgrammes(Programmes data) {
+        startActivity(new Intent(this, WebviewActivity.class).putExtra("URL", data.getUrl()));
+    }
+
+    @Override
+    public void openDepMembers(DepMembers data) {
+        startActivity(new Intent(this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/prosopiko/melh-dep/"));
+    }
+
+    @Override
+    public void openSocial(SocialChannels data) {
+        if (data.getImg() == R.drawable.youtube) {
+            try {
+                //goes to channel in youtube app
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube.com/channel/" + data.getUrl())));
+            } catch (Exception e) {
+                //goes to channel in web view (opens browser)
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/" + data.getUrl())));
+            }
+        } else {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(data.getUrl())));
+        }
+    }
+
+    @Override
+    public void goToVirtualTour(VirtualTour data) {
+        startActivity(new Intent(this,WebviewActivity.class).putExtra("URL","https://mst.hmu.gr/hmutour/"));
+    }
+
+    @Override
+    public void goToResearch(Research data) {
+        startActivity(new Intent(this, ResearchActivity.class));
     }
 }

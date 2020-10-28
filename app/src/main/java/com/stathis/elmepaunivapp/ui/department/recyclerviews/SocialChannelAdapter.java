@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.SocialClickListener;
-import com.stathis.elmepaunivapp.models.SocialChannels;
+import com.stathis.elmepaunivapp.ui.department.model.SocialChannels;
 
 public class SocialChannelAdapter extends ListAdapter<SocialChannels, SocialChannelsViewHolder> {
 

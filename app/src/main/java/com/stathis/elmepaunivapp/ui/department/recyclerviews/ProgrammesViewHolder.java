@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ProgrammesClickListener;
-import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.ui.department.model.Programmes;
 
 public class ProgrammesViewHolder extends RecyclerView.ViewHolder {
 

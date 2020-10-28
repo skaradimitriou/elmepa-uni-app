@@ -7,21 +7,15 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
-import com.stathis.elmepaunivapp.listeners.ScheduleClickListener;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.StudentsActivityListener;
-import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
 import com.stathis.elmepaunivapp.ui.students.model.Schedule;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
@@ -45,7 +39,6 @@ public class StudentsActivity extends AppCompatActivity implements StudentsActiv
 
         recyclerView = findViewById(R.id.students_activity_recycler);
         recyclerView.setAdapter(viewModel.adapter);
-
         viewModel.createList(this);
 
         //bottom navigation & listener

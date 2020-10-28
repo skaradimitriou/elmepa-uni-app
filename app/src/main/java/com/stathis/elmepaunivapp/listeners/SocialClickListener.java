@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.listeners;
 
-import com.stathis.elmepaunivapp.models.SocialChannels;
+import com.stathis.elmepaunivapp.ui.department.model.SocialChannels;
 
 public interface SocialClickListener {
 

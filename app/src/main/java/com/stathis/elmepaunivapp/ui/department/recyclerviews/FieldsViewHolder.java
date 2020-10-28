@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.ui.department.model.DeptFieldsOfStudy;
 
 public class FieldsViewHolder extends RecyclerView.ViewHolder {
 

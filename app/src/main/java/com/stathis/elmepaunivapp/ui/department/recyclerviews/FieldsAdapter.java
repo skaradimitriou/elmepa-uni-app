@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.ui.department.model.DeptFieldsOfStudy;
 
 public class FieldsAdapter extends ListAdapter<DeptFieldsOfStudy, FieldsViewHolder> {
 

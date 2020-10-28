@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.DepMembersClickListener;
-import com.stathis.elmepaunivapp.models.DepMembers;
+import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
 
 public class DepMembersViewHolder extends RecyclerView.ViewHolder {
 

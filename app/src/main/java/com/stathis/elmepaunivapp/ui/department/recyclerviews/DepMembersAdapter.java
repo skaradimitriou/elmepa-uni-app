@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.DepMembersClickListener;
-import com.stathis.elmepaunivapp.models.DepMembers;
+import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
 
 public class DepMembersAdapter extends ListAdapter<DepMembers,DepMembersViewHolder> {
 

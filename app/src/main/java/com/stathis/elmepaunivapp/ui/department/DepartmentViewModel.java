@@ -1,21 +1,60 @@
 package com.stathis.elmepaunivapp.ui.department;
 
+import android.util.Log;
+
 import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.DepMembers;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
-import com.stathis.elmepaunivapp.models.Programmes;
-import com.stathis.elmepaunivapp.models.SocialChannels;
+import com.stathis.elmepaunivapp.listeners.DepMembersClickListener;
+import com.stathis.elmepaunivapp.listeners.DepartmentCardClickListener;
+import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
+import com.stathis.elmepaunivapp.listeners.ProgrammesClickListener;
+import com.stathis.elmepaunivapp.listeners.SocialClickListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.DepartmentActivityListener;
+import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
+import com.stathis.elmepaunivapp.ui.department.model.DepMembersParent;
+import com.stathis.elmepaunivapp.ui.department.model.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.ui.department.model.Programmes;
+import com.stathis.elmepaunivapp.ui.department.model.ProgrammesParent;
+import com.stathis.elmepaunivapp.ui.department.model.Research;
+import com.stathis.elmepaunivapp.ui.department.model.SocialChannels;
+import com.stathis.elmepaunivapp.ui.department.model.FieldsOfStudyParent;
+import com.stathis.elmepaunivapp.ui.department.model.SocialChannelsParent;
+import com.stathis.elmepaunivapp.ui.department.model.VirtualTour;
+import com.stathis.elmepaunivapp.ui.department.recyclerviews.DepartmentAdapter;
 
 import java.util.ArrayList;
 
-public class DepartmentViewModel extends ViewModel {
+public class DepartmentViewModel extends ViewModel implements FieldsOfStudyListener,
+        SocialClickListener, DepMembersClickListener, ProgrammesClickListener, DepartmentCardClickListener {
 
     private ArrayList<DeptFieldsOfStudy> fieldsOfStudyList = new ArrayList<>();
     private ArrayList<DepMembers> depMembersList = new ArrayList<>();
     private ArrayList<Programmes> programmes = new ArrayList<>();
     private ArrayList<SocialChannels> socialChannels = new ArrayList<>();
+    DepartmentAdapter adapter = new DepartmentAdapter(this, this, this, this,this);
+    private ArrayList<Object> list = new ArrayList<>();
+    private DepartmentActivityListener listener;
+
+    void initAdapter(DepartmentActivityListener listener) {
+        this.listener = listener;
+
+        adapter.submitList(list);
+
+        getFieldsOfStudyList();
+        getDepMembersList();
+        getProgrammesList();
+        getSocialList();
+
+        list.add(new FieldsOfStudyParent("Γνωστικά Αντικείμενα", fieldsOfStudyList));
+        list.add(new ProgrammesParent("Προγράμματα", programmes));
+        list.add(new VirtualTour(""));
+        list.add(new Research(""));
+        list.add(new DepMembersParent("Μέλη Δ.Ε.Π.", depMembersList));
+        list.add(new SocialChannelsParent("Βρείτε μας Online", socialChannels));
+
+        adapter.notifyDataSetChanged();
+    }
 
     public ArrayList<DepMembers> getDepMembersList() {
         depMembersList.add(new DepMembers("Στέλιος Παπαδάκης", R.drawable.papadakis));
@@ -29,9 +68,9 @@ public class DepartmentViewModel extends ViewModel {
     }
 
     public ArrayList<DeptFieldsOfStudy> getFieldsOfStudyList() {
-        fieldsOfStudyList.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής","", R.drawable.data));
-        fieldsOfStudyList.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών","", R.drawable.business));
-        fieldsOfStudyList.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία","", R.drawable.digitalmkt));
+        fieldsOfStudyList.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής", "", R.drawable.data));
+        fieldsOfStudyList.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών", "", R.drawable.business));
+        fieldsOfStudyList.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία", "", R.drawable.digitalmkt));
         return fieldsOfStudyList;
     }
 
@@ -44,9 +83,39 @@ public class DepartmentViewModel extends ViewModel {
     }
 
     public ArrayList<Programmes> getProgrammesList() {
-        programmes.add(new Programmes("Προπτυχιακές Σπουδές", "ΔΙΑΡΚΕΙΑΣ 4 ΕΤΩΝ", R.drawable.ungrad));
-        programmes.add(new Programmes("Μεταπτυχιακά Προγράμματα", "ΔΙΑΡΚΕΙΑΣ 2 ΕΤΩΝ", R.drawable.postgrad));
-        programmes.add(new Programmes("Εκπόνηση Διδακτορικού", "ΕΛΑΧΙΣΤΗΣ ΔΙΑΡΚΕΙΑΣ 3 ΕΤΩΝ", R.drawable.phd));
+        programmes.add(new Programmes("Προπτυχιακές Σπουδές", "ΔΙΑΡΚΕΙΑΣ 4 ΕΤΩΝ", R.drawable.ungrad, "https://mst.hmu.gr/tmima/ypopshphioi-phoithtes/"));
+        programmes.add(new Programmes("Μεταπτυχιακά Προγράμματα", "ΔΙΑΡΚΕΙΑΣ 2 ΕΤΩΝ", R.drawable.postgrad, "https://mst.hmu.gr/metaptyxiako/metaptychiako-programma/"));
+        programmes.add(new Programmes("Εκπόνηση Διδακτορικού", "ΕΛΑΧΙΣΤΗΣ ΔΙΑΡΚΕΙΑΣ 3 ΕΤΩΝ", R.drawable.phd, "https://mst.hmu.gr/metaptyxiako/didaktorikes-spoydes/"));
         return programmes;
+    }
+
+    @Override
+    public void onDepProfessorClick(DepMembers item) {
+        listener.openDepMembers(item);
+    }
+
+    @Override
+    public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
+        listener.goToSyllabus(fieldsOfStudy);
+    }
+
+    @Override
+    public void onSocialItemClick(SocialChannels socialChannels) {
+        listener.openSocial(socialChannels);
+    }
+
+    @Override
+    public void onProgrammesClick(Programmes programmes) {
+        listener.openProgrammes(programmes);
+    }
+
+    @Override
+    public void onVirtualTourClick(VirtualTour data) {
+        listener.goToVirtualTour(data);
+    }
+
+    @Override
+    public void onResearchClick(Research data) {
+        listener.goToResearch(data);
     }
 }

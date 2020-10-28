@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.ProgrammesClickListener;
-import com.stathis.elmepaunivapp.models.Programmes;
+import com.stathis.elmepaunivapp.ui.department.model.Programmes;
 
 public class ProgrammesAdapter extends ListAdapter<Programmes, ProgrammesViewHolder> {
 

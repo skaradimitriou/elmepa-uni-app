@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ScheduleClickListener;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
-import com.stathis.elmepaunivapp.listeners.activity_listeners.StudentsActivityListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.students.model.Schedule;
 import com.stathis.elmepaunivapp.ui.students.model.StudentItem;

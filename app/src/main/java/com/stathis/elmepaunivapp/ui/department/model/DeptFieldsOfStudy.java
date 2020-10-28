@@ -1,14 +1,14 @@
-package com.stathis.elmepaunivapp.models;
+package com.stathis.elmepaunivapp.ui.department.model;
 
-public class Programmes {
+public class DeptFieldsOfStudy extends Object {
 
     private String name;
-    private String description;
+    private String direction;
     private int ImageResource;
 
-    public Programmes(String name, String description, int imageResource) {
+    public DeptFieldsOfStudy(String name, String direction, int imageResource) {
         this.name = name;
-        this.description = description;
+        this.direction = direction;
         ImageResource = imageResource;
     }
 
@@ -20,12 +20,12 @@ public class Programmes {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDirection() {
+        return direction;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 
     public int getImageResource() {
@@ -38,9 +38,9 @@ public class Programmes {
 
     @Override
     public String toString() {
-        return "Programmes{" +
+        return "DeptFieldsOfStudy{" +
                 "name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                ", direction='" + direction + '\'' +
                 ", ImageResource=" + ImageResource +
                 '}';
     }
