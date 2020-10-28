@@ -1,7 +1,5 @@
 package com.stathis.elmepaunivapp.ui.professors.model;
 
-import com.stathis.elmepaunivapp.abstraction.LocalModel;
-
 public class ProfessorModel {
 
     private String fullName;

@@ -20,7 +20,6 @@ public class ResearchViewHolder extends RecyclerView.ViewHolder implements Usefu
     private Object data;
     private UsefulLinksAdapter researchAdapter;
     private UsefulLinkClickListener listener;
-    private ResearchActivityClickListener researchListener;
 
     public ResearchViewHolder(@NonNull View itemView,UsefulLinkClickListener listener) {
         super(itemView);

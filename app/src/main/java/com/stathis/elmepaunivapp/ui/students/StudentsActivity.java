@@ -5,21 +5,29 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
+import com.stathis.elmepaunivapp.listeners.ScheduleClickListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.StudentsActivityListener;
+import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.ui.students.model.Schedule;
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
+import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class StudentsActivity extends AppCompatActivity implements FieldsOfStudyListener,View.OnClickListener {
+public class StudentsActivity extends AppCompatActivity implements StudentsActivityListener {
 
     private RecyclerView recyclerView;
     private StudentsViewModel viewModel;
@@ -38,7 +46,7 @@ public class StudentsActivity extends AppCompatActivity implements FieldsOfStudy
         recyclerView = findViewById(R.id.students_activity_recycler);
         recyclerView.setAdapter(viewModel.adapter);
 
-        viewModel.createList();
+        viewModel.createList(this);
 
         //bottom navigation & listener
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -64,27 +72,18 @@ public class StudentsActivity extends AppCompatActivity implements FieldsOfStudy
         });
     }
 
-    private void openSchedule() {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/")));
+    @Override
+    public void openStudentsSchedule(Schedule schedule) {
+        startActivity(new Intent(this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/"));
     }
 
     @Override
-    public void onFieldOfStudyClick(DeptFieldsOfStudy fieldsOfStudy) {
-        switch (fieldsOfStudy.getName()) {
-            case "Ακαδημαϊκό Ημερολόγιο":
-                startActivity(new Intent(StudentsActivity.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/"));
-                break;
-            case "Σύμβουλος Καθηγητής":
-                startActivity(new Intent(StudentsActivity.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/"));
-                break;
-            case "Πρόγραμμα Erasmus+":
-                startActivity(new Intent(StudentsActivity.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/"));
-                break;
-        }
+    public void itemClicked(UsefulLinks usefulLinks) {
+        startActivity(new Intent(this, WebviewActivity.class).putExtra("URL", usefulLinks.getUrl()));
     }
 
     @Override
-    public void onClick(View v) {
-        openSchedule();
+    public void goToSyllabus(UsefulLinks usefulLinks) {
+        startActivity(new Intent(this, SyllabusActivity.class));
     }
 }

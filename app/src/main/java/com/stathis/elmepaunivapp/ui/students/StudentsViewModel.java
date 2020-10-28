@@ -3,7 +3,9 @@ package com.stathis.elmepaunivapp.ui.students;
 import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.listeners.ScheduleClickListener;
+import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.StudentsActivityListener;
 import com.stathis.elmepaunivapp.ui.students.model.Schedule;
 import com.stathis.elmepaunivapp.ui.students.model.StudentItem;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
@@ -11,13 +13,15 @@ import com.stathis.elmepaunivapp.ui.students.recycler.StudentsAdapter;
 
 import java.util.ArrayList;
 
-public class StudentsViewModel extends ViewModel {
+public class StudentsViewModel extends ViewModel implements UsefulLinkClickListener, ScheduleClickListener {
 
     private ArrayList<UsefulLinks> usefulLinks, studentsMatters,fieldsOfStudy = new ArrayList<>();
     private ArrayList<Object> studentItems = new ArrayList<>();
-    StudentsAdapter adapter = new StudentsAdapter();
+    StudentsAdapter adapter = new StudentsAdapter(this,this);
+    private StudentsActivityListener listener;
 
-    void createList(){
+    void createList(StudentsActivityListener listener){
+        this.listener = listener;
         adapter.submitList(studentItems);
         getUsefulLinks();
         getStudentMatters();
@@ -64,4 +68,18 @@ public class StudentsViewModel extends ViewModel {
         return usefulLinks;
     }
 
+    @Override
+    public void onUsefulLinksClick(UsefulLinks usefulLinks) {
+        if(usefulLinks.getName().equals("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής") || usefulLinks.getName().equals("Διοίκηση Επιχειρήσεων & Οργανισμών") || usefulLinks.getName().equals("Ψηφιακό Μάρκετινγκ και Επικοινωνία")){
+            listener.goToSyllabus(usefulLinks);
+        }
+        else {
+            listener.itemClicked(usefulLinks);
+        }
+    }
+
+    @Override
+    public void scheduleClicked(Schedule schedule) {
+        listener.openStudentsSchedule(schedule);
+    }
 }

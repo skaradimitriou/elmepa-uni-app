@@ -8,7 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.listeners.ScheduleClickListener;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.StudentsActivityListener;
 import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.students.model.Schedule;
 import com.stathis.elmepaunivapp.ui.students.model.StudentItem;
@@ -19,26 +21,36 @@ public class StudentsViewHolder extends RecyclerView.ViewHolder implements Usefu
     private RecyclerView recyclerView;
     private UsefulLinksAdapter adapter;
     private TextView textView;
+    private UsefulLinkClickListener listener;
+    private ScheduleClickListener scheduleListener;
 
-    public StudentsViewHolder(@NonNull View itemView) {
+    public StudentsViewHolder(@NonNull View itemView, UsefulLinkClickListener listener,ScheduleClickListener scheduleListener) {
         super(itemView);
+        this.listener = listener;
+        this.scheduleListener = scheduleListener;
+
         textView = itemView.findViewById(R.id.research_item_header);
         recyclerView = itemView.findViewById(R.id.research_recycler);
     }
 
-    void present(Object object){
-        if (object instanceof StudentItem){
+    void present(final Object object) {
+        if (object instanceof StudentItem) {
             textView.setText(((StudentItem) object).getHeaderTxt());
             adapter = new UsefulLinksAdapter(this);
             recyclerView.setAdapter(adapter);
             adapter.submitList(((StudentItem) object).getList());
-        } else if (object instanceof Schedule){
-            //inflates schedule
+        } else if (object instanceof Schedule) {
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    scheduleListener.scheduleClicked((Schedule) object);
+                }
+            });
         }
     }
 
     @Override
     public void onUsefulLinksClick(UsefulLinks usefulLinks) {
-
+        listener.onUsefulLinksClick(usefulLinks);
     }
 }
