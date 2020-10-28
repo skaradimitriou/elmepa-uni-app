@@ -21,7 +21,7 @@ b. People who want to learn more about the department.
 Java
 
 ## Architecture
-Model - View - ViewModel (MVVM)    /* Refactor In Progress 🔜 */
+Model - View - ViewModel (MVVM)
 
 ### Theme 
 
