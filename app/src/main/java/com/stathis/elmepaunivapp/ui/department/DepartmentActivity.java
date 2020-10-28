@@ -33,7 +33,7 @@ import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class DepartmentActivity extends AppCompatActivity {
+public class DepartmentActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
@@ -55,6 +55,11 @@ public class DepartmentActivity extends AppCompatActivity {
         virtual_tour = findViewById(R.id.virtual_tour);
         researchInDept = findViewById(R.id.research_card_btn);
 
+        researchInDept.setOnClickListener(this);
+        virtual_tour.setOnClickListener(this);
+        call.setOnClickListener(this);
+        mail.setOnClickListener(this);
+
         //fields of Study fragment
         FragmentTransaction fieldsOfStudy = getSupportFragmentManager().beginTransaction();
         fieldsOfStudy.add(R.id.fieldsOfStudy_frag, new FieldsOfStudyFragment(), "FieldsOfStudyFragment");
@@ -75,37 +80,6 @@ public class DepartmentActivity extends AppCompatActivity {
         findUsFragment.add(R.id.social_frag, new FindUsFragment(), "FindUsFragment");
         findUsFragment.commit();
 
-        //research btn
-        researchInDept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DepartmentActivity.this, ResearchActivity.class));
-            }
-        });
-
-        //virtual tour
-        virtual_tour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DepartmentActivity.this, WebviewActivity.class).putExtra(
-                        "URL", "https://mst.hmu.gr/hmutour/"
-                ));
-            }
-        });
-
-        //Fab Buttons
-        call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                callAtSecretaryOffice();
-            }
-        });
-        mail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendAnEmailToSecretaryOffice();
-            }
-        });
         //bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_uni);
@@ -115,28 +89,19 @@ public class DepartmentActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         startActivity(new Intent(DepartmentActivity.this, DashboardActivity.class));
-                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_students:
                         startActivity(new Intent(DepartmentActivity.this, StudentsActivity.class));
-                        overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_uni:
                         return true;
                     case R.id.nav_search:
                         startActivity(new Intent(DepartmentActivity.this, ProfessorsActivity.class));
-                        overridePendingTransition(0, 0);
                         break;
                 }
                 return false;
             }
         });
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        overridePendingTransition(0, 0);
     }
 
     @Override
@@ -167,6 +132,30 @@ public class DepartmentActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(i, "Send mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(DepartmentActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.research_card_btn: {
+                startActivity(new Intent(DepartmentActivity.this, ResearchActivity.class));
+                break;
+            }
+            case R.id.virtual_tour: {
+                startActivity(new Intent(DepartmentActivity.this, WebviewActivity.class).putExtra(
+                        "URL", "https://mst.hmu.gr/hmutour/"
+                ));
+                break;
+            }
+            case R.id.fab_mail: {
+                sendAnEmailToSecretaryOffice();
+                break;
+            }
+            case R.id.fab_call: {
+                callAtSecretaryOffice();
+                break;
+            }
         }
     }
 }

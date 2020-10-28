@@ -31,7 +31,6 @@ public class AnnouncementActivity extends AppCompatActivity implements Announcem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_announcements);
-        //initializing viewmodel for this activity
         viewModel = new ViewModelProvider(this).get(AnnouncementsViewModel.class);
         viewModel.setupDatabase(this);
     }

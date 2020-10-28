@@ -9,20 +9,24 @@ import androidx.recyclerview.widget.ListAdapter;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
+import com.stathis.elmepaunivapp.listeners.activity_listeners.SyllabusActivityListener;
 import com.stathis.elmepaunivapp.ui.research.recycler.ResearchViewHolder;
 import com.stathis.elmepaunivapp.ui.syllabus.model.Semester;
 
 public class SemesterAdapter extends ListAdapter<Semester, SemesterViewHolder> {
 
-    public SemesterAdapter() {
+    private SyllabusActivityListener listener;
+
+    public SemesterAdapter(SyllabusActivityListener listener) {
         super(new DiffItemCallbackClass<Semester>());
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public SemesterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new SemesterViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.holder_semester_item_row, parent, false));
+                .inflate(R.layout.holder_semester_item_row, parent, false),listener);
     }
 
     @Override

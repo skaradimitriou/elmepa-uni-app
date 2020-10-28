@@ -1,6 +1,8 @@
 package com.stathis.elmepaunivapp.ui.syllabus.model;
 
-import com.stathis.elmepaunivapp.abstraction.LocalModel;
+import com.stathis.elmepaunivapp.models.Lesson;
+
+import java.util.ArrayList;
 
 public class Semester extends Object {
 

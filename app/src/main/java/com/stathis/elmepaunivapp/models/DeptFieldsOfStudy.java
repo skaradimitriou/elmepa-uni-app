@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.models;
 
-public class DeptFieldsOfStudy {
+public class DeptFieldsOfStudy extends Object {
 
     private String name;
     private String direction;

@@ -4,28 +4,46 @@ import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.models.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.ui.students.model.Schedule;
+import com.stathis.elmepaunivapp.ui.students.model.StudentItem;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
+import com.stathis.elmepaunivapp.ui.students.recycler.StudentsAdapter;
 
 import java.util.ArrayList;
 
 public class StudentsViewModel extends ViewModel {
 
-    private ArrayList<DeptFieldsOfStudy> fieldsOfStudy, studentsMatters;
-    private ArrayList<UsefulLinks> usefulLinks;
+    private ArrayList<UsefulLinks> usefulLinks, studentsMatters,fieldsOfStudy = new ArrayList<>();
+    private ArrayList<Object> studentItems = new ArrayList<>();
+    StudentsAdapter adapter = new StudentsAdapter();
 
-    public ArrayList<DeptFieldsOfStudy> getFieldsOfStudy() {
+    void createList(){
+        adapter.submitList(studentItems);
+        getUsefulLinks();
+        getStudentMatters();
+        getFieldsOfStudy();
+
+        studentItems.add(new Schedule("",""));
+        studentItems.add(new StudentItem("Πρόγραμμα Σπουδών",fieldsOfStudy));
+        studentItems.add(new StudentItem("Σπουδαστικά θέματα",studentsMatters));
+        studentItems.add(new StudentItem("Χρήσιμοι Σύνδεσμοι",usefulLinks));
+        adapter.notifyDataSetChanged();
+
+    }
+
+    public ArrayList<UsefulLinks> getFieldsOfStudy() {
         fieldsOfStudy = new ArrayList<>();
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής","ΠΛΗΡΟΦΟΡΙΚΗ", R.drawable.data));
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Διοίκηση Επιχειρήσεων & Οργανισμών","ΔΙΟΙΚΗΣΗ", R.drawable.business));
-        fieldsOfStudy.add(new DeptFieldsOfStudy("Ψηφιακό Μάρκετινγκ και Επικοινωνία","ΜΑΡΚΕΤΙΝΓΚ", R.drawable.digitalmkt));
+        fieldsOfStudy.add(new UsefulLinks("Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής","", R.drawable.data));
+        fieldsOfStudy.add(new UsefulLinks("Διοίκηση Επιχειρήσεων & Οργανισμών","", R.drawable.business));
+        fieldsOfStudy.add(new UsefulLinks("Ψηφιακό Μάρκετινγκ και Επικοινωνία","", R.drawable.digitalmkt));
         return fieldsOfStudy;
     }
 
-    public ArrayList<DeptFieldsOfStudy> getStudentMatters() {
+    public ArrayList<UsefulLinks> getStudentMatters() {
         studentsMatters = new ArrayList<>();
-        studentsMatters.add(new DeptFieldsOfStudy("Ακαδημαϊκό Ημερολόγιο","", R.drawable.acadschedule));
-        studentsMatters.add(new DeptFieldsOfStudy("Σύμβουλος Καθηγητής","", R.drawable.mentor));
-        studentsMatters.add(new DeptFieldsOfStudy("Πρόγραμμα Erasmus+","", R.drawable.erasmus));
+        studentsMatters.add(new UsefulLinks("Ακαδημαϊκό Ημερολόγιο","https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/", R.drawable.acadschedule));
+        studentsMatters.add(new UsefulLinks("Σύμβουλος Καθηγητής","https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/", R.drawable.mentor));
+        studentsMatters.add(new UsefulLinks("Πρόγραμμα Erasmus+","https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/", R.drawable.erasmus));
         return studentsMatters;
     }
 

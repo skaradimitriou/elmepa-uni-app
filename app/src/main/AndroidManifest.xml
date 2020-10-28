@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.webview.WebviewActivity"/>
+        <activity android:name=".ui.syllabus_lessons.SyllabusLessonsActivity"></activity>
+        <activity android:name=".ui.webview.WebviewActivity" />
         <activity android:name=".ui.chatbot.ChatBotActivity" />
         <activity android:name=".ui.syllabus.SyllabusActivity" />
         <activity android:name=".ui.research.ResearchActivity" />
