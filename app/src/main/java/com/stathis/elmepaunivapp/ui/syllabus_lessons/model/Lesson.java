@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.models;
+package com.stathis.elmepaunivapp.ui.syllabus_lessons.model;
 
 public class Lesson {
 

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
-import com.stathis.elmepaunivapp.models.Lesson;
+import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
 
 import java.util.List;
 

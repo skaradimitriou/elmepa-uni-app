@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            tools:src="#88888888" />
+            android:src="#88888888" />
 
         <TextView
             android:id="@+id/ann_txt"

@@ -32,4 +32,9 @@ public class LatestNewsAdapter extends ListAdapter<Announcement,LatestNewsViewHo
     public void onBindViewHolder(@NonNull LatestNewsViewHolder holder, int position) {
         holder.present(getItem(position));
     }
+
+    @Override
+    public int getItemCount() {
+        return 15;
+    }
 }

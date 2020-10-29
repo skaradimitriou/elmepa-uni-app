@@ -22,6 +22,7 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity;
 import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener, DashboardActivityClickListener {
 
@@ -72,7 +73,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         builder.setPositiveButton("Μάθε Περισσότερα", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/")));
+                startActivity(new Intent(DashboardActivity.this, WebviewActivity.class)
+                        .putExtra("URL", "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"));
             }
         });
         builder.setNegativeButton("Ακυρο", new DialogInterface.OnClickListener() {

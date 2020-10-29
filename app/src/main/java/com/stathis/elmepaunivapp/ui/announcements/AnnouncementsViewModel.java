@@ -72,7 +72,7 @@ public class AnnouncementsViewModel extends AndroidViewModel implements NewsClic
                 int size = data.size();
                 Log.d("doc", "doc: " + doc);
                 Log.d("data", "data: " + data);
-                for (int i = 0; i < size - 1; i++) {
+                for (int i = 0; i < size; i++) {
                     String imgUrl = data.select("a.entry-featured-image-url")
                             .select("img")
                             .eq(i)
@@ -90,7 +90,6 @@ public class AnnouncementsViewModel extends AndroidViewModel implements NewsClic
                     announcements.add(new Announcement(title, detailUrl, imgUrl));
                     Log.d("items", "img: " + imgUrl + " . title: " + title);
                 }
-                announcements.add(new Announcement("Δείτε όλες τις ανακοινώσεις του Τμήματος", "https://mst.hmu.gr/news_gr/", "https://mst.hmu.gr/wp-content/uploads/2020/06/student-using-laptop-library_74855-2539-400x250.jpg"));
 
                 /* checks if announcements db size is less than 0 (empty) and either inserts or updates the data
                 then passes the data into the ListAdapter   */
