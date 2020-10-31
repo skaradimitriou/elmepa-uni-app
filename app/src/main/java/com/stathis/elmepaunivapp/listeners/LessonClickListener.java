@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
 
-public interface LessonClickListener extends View.OnClickListener {
+public interface LessonClickListener {
 
     void onLessonClick(Lesson lesson);
 }

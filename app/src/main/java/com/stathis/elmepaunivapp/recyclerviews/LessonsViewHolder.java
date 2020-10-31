@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ms.square.android.expandabletextview.ExpandableTextView;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
@@ -17,7 +18,7 @@ public class LessonsViewHolder extends RecyclerView.ViewHolder {
     private LessonClickListener lessonClickListener;
     private Object data;
 
-    public LessonsViewHolder(@NonNull View itemView, LessonClickListener lessonsListener) {
+    public LessonsViewHolder(@NonNull final View itemView, LessonClickListener lessonsListener) {
         super(itemView);
 
         lesson_name = itemView.findViewById(R.id.lesson_name);
@@ -46,6 +47,7 @@ public class LessonsViewHolder extends RecyclerView.ViewHolder {
         } else if (data.getDirection().equals("ba")) {
             lesson_name.setBackgroundColor(Color.parseColor("#f07721"));
         }
+
     }
 
 }

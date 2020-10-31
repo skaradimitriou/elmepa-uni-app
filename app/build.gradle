@@ -68,4 +68,10 @@ dependencies {
 
     //swipe to refresh layout
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //Expandable TextView
+    implementation 'com.ms-square:expandableTextView:0.1.4'
 }

@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.syllabus_lessons.SyllabusLessonsActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/syllabus_lessons_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,21 +5,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
 
 import java.util.List;
 
-public class LessonsAdapter extends RecyclerView.Adapter<LessonsViewHolder> {
+public class LessonsAdapter extends ListAdapter<Lesson,LessonsViewHolder> {
 
-    private List<Lesson> lessonList;
     private LessonClickListener listener;
 
-    public LessonsAdapter(List<Lesson> lessonList, LessonClickListener listener) {
-        this.lessonList = lessonList;
+    public LessonsAdapter(LessonClickListener listener) {
+        super(new DiffItemCallbackClass<Lesson>());
         this.listener = listener;
     }
 
@@ -32,12 +34,7 @@ public class LessonsAdapter extends RecyclerView.Adapter<LessonsViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull LessonsViewHolder holder, int position) {
-        holder.present(lessonList.get(position));
-    }
-
-    @Override
-    public int getItemCount() {
-        return lessonList.size();
+        holder.present(getItem(position));
     }
 
 }
