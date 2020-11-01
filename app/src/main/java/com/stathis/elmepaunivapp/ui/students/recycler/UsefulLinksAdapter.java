@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.recyclerviews;
+package com.stathis.elmepaunivapp.ui.students.recycler;
 
 import android.view.LayoutInflater;
 import android.view.View;

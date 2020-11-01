@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.recyclerviews;
+package com.stathis.elmepaunivapp.ui.students.recycler;
 
 import android.view.View;
 import android.widget.ImageView;

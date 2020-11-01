@@ -1,7 +1,6 @@
 package com.stathis.elmepaunivapp.ui.syllabus_lessons;
 
 import android.util.Log;
-import android.view.View;
 
 import androidx.lifecycle.ViewModel;
 
@@ -9,7 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
-import com.stathis.elmepaunivapp.recyclerviews.LessonsAdapter;
+import com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler.LessonsAdapter;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
 
 import java.util.ArrayList;

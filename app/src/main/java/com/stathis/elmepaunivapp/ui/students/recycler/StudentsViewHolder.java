@@ -1,6 +1,5 @@
 package com.stathis.elmepaunivapp.ui.students.recycler;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.ScheduleClickListener;
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener;
-import com.stathis.elmepaunivapp.recyclerviews.UsefulLinksAdapter;
 import com.stathis.elmepaunivapp.ui.students.model.Schedule;
 import com.stathis.elmepaunivapp.ui.students.model.StudentItem;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;

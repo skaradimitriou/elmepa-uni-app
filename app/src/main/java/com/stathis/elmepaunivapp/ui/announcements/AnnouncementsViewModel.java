@@ -72,7 +72,7 @@ public class AnnouncementsViewModel extends AndroidViewModel implements NewsClic
                 int size = data.size();
                 Log.d("doc", "doc: " + doc);
                 Log.d("data", "data: " + data);
-                for (int i = 0; i < size; i++) {
+                for (int i = 0; i < size - 1; i++) {
                     String imgUrl = data.select("a.entry-featured-image-url")
                             .select("img")
                             .eq(i)

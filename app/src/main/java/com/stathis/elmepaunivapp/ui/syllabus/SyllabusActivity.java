@@ -59,6 +59,7 @@ public class SyllabusActivity extends AppCompatActivity implements SyllabusActiv
                         break;
                     }
                 }
+                
             }
 
             @Override

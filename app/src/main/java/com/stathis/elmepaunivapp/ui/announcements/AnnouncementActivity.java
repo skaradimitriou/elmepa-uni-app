@@ -26,7 +26,6 @@ public class AnnouncementActivity extends AppCompatActivity implements Announcem
     private RecyclerView announcementsRecycler;
     private AnnouncementsViewModel viewModel;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.recyclerviews;
+package com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler;
 
 import android.graphics.Color;
 import android.view.View;

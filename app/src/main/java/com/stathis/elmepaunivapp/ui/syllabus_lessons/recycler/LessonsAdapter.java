@@ -1,20 +1,16 @@
-package com.stathis.elmepaunivapp.recyclerviews;
+package com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
-
-import java.util.List;
 
 public class LessonsAdapter extends ListAdapter<Lesson,LessonsViewHolder> {
 
