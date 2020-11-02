@@ -1,19 +1,24 @@
 package com.stathis.elmepaunivapp.ui.dashboard;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+
 import androidx.lifecycle.ViewModel;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.DashboardOptionListener;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.DashboardActivityClickListener;
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
 import com.stathis.elmepaunivapp.ui.dashboard.recyclerview.DashboardAdapter;
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DashboardViewModel extends ViewModel implements DashboardOptionListener {
 
-    private String title;
     private String aboutText;
     private ArrayList<DashboardOption> dashboardOptions;
     DashboardAdapter dashboardAdapter = new DashboardAdapter(this);
@@ -27,12 +32,7 @@ public class DashboardViewModel extends ViewModel implements DashboardOptionList
         dashboardAdapter.submitList(getDashboardOptions());
     }
 
-    String getTitle() {
-        title = "Σχετικά με την εφαρμογή";
-        return title;
-    }
-
-    String getAboutText() {
+    private String getAboutText() {
         aboutText = "Η εφαρμογή αυτή αναπτύχθηκε το 2020 από τον απόφοιτο του Τμήματος \n" +
                 "Στάθη  Καραδημητρίου με την επίβλεψη του Κώστα Παναγιωτάκη, Αναπληρωτή Καθηγητή και Προέδρου του Τμήματος\n" +
                 "με σκοπό την εξυπηρέτηση των μελών του Τμήματος και την προώθηση του τμήματος σε υποψήφιους φοιτητές. \n" +
@@ -50,6 +50,27 @@ public class DashboardViewModel extends ViewModel implements DashboardOptionList
         return dashboardOptions;
     }
 
+    public void showDialog(Context context) {
+        getAboutText();
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setTitle("Σχετικά με την εφαρμογή");
+        builder.setMessage(aboutText);
+        builder.setPositiveButton("Μάθε Περισσότερα", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+//                startActivity(new Intent(DashboardActivity.this, WebviewActivity.class)
+//                        .putExtra("URL", "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"));
+            }
+        });
+        builder.setNegativeButton("Ακυρο", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
 
     @Override
     public void onDashboardOptionsClickListener(DashboardOption dashboardOption) {

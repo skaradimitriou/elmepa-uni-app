@@ -61,31 +61,11 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(new Intent(DashboardActivity.this, ChatBotActivity.class));
                 break;
             case R.id.about:
-                showDialog();
+                viewModel.showDialog(this);
                 break;
         }
     }
-
-    private void showDialog() {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(DashboardActivity.this);
-        builder.setTitle(viewModel.getTitle());
-        builder.setMessage(viewModel.getAboutText());
-        builder.setPositiveButton("Μάθε Περισσότερα", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(DashboardActivity.this, WebviewActivity.class)
-                        .putExtra("URL", "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"));
-            }
-        });
-        builder.setNegativeButton("Ακυρο", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
-    }
-
+    
     @Override
     public void goToAnnouncementScreen(DashboardOption dashboardOption) {
         startActivity(new Intent(DashboardActivity.this, AnnouncementActivity.class));
