@@ -40,10 +40,7 @@ public class AnnouncementActivity extends AppCompatActivity implements Announcem
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
-
-        // TODO(" Implement empty view if someone has no internet connection")
         viewModel.getAnnouncements();
-
         // <!---- Announcements recycler view & adapter start ---->
         announcementsRecycler = findViewById(R.id.latestNews_recView);
         viewModel.setUpListener(this);

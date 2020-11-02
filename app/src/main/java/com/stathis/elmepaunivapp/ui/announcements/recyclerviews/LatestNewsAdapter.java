@@ -12,7 +12,7 @@ import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.NewsClickListener;
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 
-public class LatestNewsAdapter extends ListAdapter<Announcement,LatestNewsViewHolder> {
+public class LatestNewsAdapter extends ListAdapter<Announcement, LatestNewsViewHolder> {
 
     private NewsClickListener listener;
 
@@ -25,16 +25,11 @@ public class LatestNewsAdapter extends ListAdapter<Announcement,LatestNewsViewHo
     @Override
     public LatestNewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.announcement_item_row, parent, false);
-        return new LatestNewsViewHolder(view,listener);
+        return new LatestNewsViewHolder(view, listener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull LatestNewsViewHolder holder, int position) {
         holder.present(getItem(position));
-    }
-
-    @Override
-    public int getItemCount() {
-        return 15;
     }
 }

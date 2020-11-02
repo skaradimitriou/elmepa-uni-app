@@ -34,8 +34,10 @@ public class LatestNewsViewHolder extends RecyclerView.ViewHolder {
 
     public void present(Announcement data) {
         this.data = data;
-        name.setText(data.getName());
-        Picasso.get().load(data.getImageResource()).into(imageView);
+        if(data != null){
+            name.setText(data.getName());
+            Picasso.get().load(data.getImageResource()).into(imageView);
+        }
     }
 
 

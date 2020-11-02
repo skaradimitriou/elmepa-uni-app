@@ -1,12 +1,10 @@
 package com.stathis.elmepaunivapp.ui.announcements;
 
-import android.app.Application;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.ViewModel;
 
 import com.stathis.elmepaunivapp.database.AnnouncementsDatabase;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.AnnouncementClickListener;
@@ -22,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnnouncementsViewModel extends AndroidViewModel implements NewsClickListener {
+public class AnnouncementsViewModel extends ViewModel implements NewsClickListener {
 
     AnnouncementsDatabase announcementsDatabase;
     LatestNewsAdapter adapter = new LatestNewsAdapter(this);
@@ -30,19 +28,15 @@ public class AnnouncementsViewModel extends AndroidViewModel implements NewsClic
     Content content;
     private AnnouncementClickListener announcementClickListener;
 
-    public AnnouncementsViewModel(@NonNull Application application) {
-        super(application);
-    }
-
-    void setUpListener(AnnouncementClickListener announcementClickListener){
+    void setUpListener(AnnouncementClickListener announcementClickListener) {
         this.announcementClickListener = announcementClickListener;
     }
 
-    void setupDatabase(Context context){
+    void setupDatabase(Context context) {
         announcementsDatabase = AnnouncementsDatabase.getInstance(context);
     }
 
-    void getAnnouncements(){
+    void getAnnouncements() {
         adapter.submitList(announcementsDatabase.getAnnouncementDao().getAll());
 
         content = new Content();
@@ -54,11 +48,20 @@ public class AnnouncementsViewModel extends AndroidViewModel implements NewsClic
         announcementClickListener.goToAnnouncement(announcement);
     }
 
+    public boolean dbIsEmpty() {
+        List<Announcement> announcements = announcementsDatabase.getAnnouncementDao().getAll();
+        if (announcements.size() < 1) {
+            return true;
+        }
+        return false;
+    }
+
     private class Content extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+
             adapter.submitList(announcementsDatabase.getAnnouncementDao().getAll());
             adapter.notifyDataSetChanged();
         }
@@ -72,7 +75,7 @@ public class AnnouncementsViewModel extends AndroidViewModel implements NewsClic
                 int size = data.size();
                 Log.d("doc", "doc: " + doc);
                 Log.d("data", "data: " + data);
-                for (int i = 0; i < size - 1; i++) {
+                for (int i = 0; i < 13; i++) {
                     String imgUrl = data.select("a.entry-featured-image-url")
                             .select("img")
                             .eq(i)
@@ -106,13 +109,4 @@ public class AnnouncementsViewModel extends AndroidViewModel implements NewsClic
             return null;
         }
     }
-
-    public boolean dbIsEmpty() {
-        List<Announcement> announcements = announcementsDatabase.getAnnouncementDao().getAll();
-        if (announcements.size() < 1) {
-            return true;
-        }
-        return false;
-    }
-
 }
