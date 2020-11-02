@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Object sizes -->
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_7">7dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_25">25dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_45">45dp</dimen>
+    <dimen name="margin_52">52dp</dimen>
+    <dimen name="margin_54">54dp</dimen>
+    <dimen name="margin_55">55dp</dimen>
+    <dimen name="margin_100">100dp</dimen>
+    <dimen name="margin_160">160dp</dimen>
+
+    <!-- Height sizes -->
+    <dimen name="height_35">35dp</dimen>
+    <dimen name="height_70">70dp</dimen>
+    <dimen name="height_80">80dp</dimen>
+    <dimen name="height_110">110dp</dimen>
+    <dimen name="height_120">120dp</dimen>
+    <dimen name="height_130">130dp</dimen>
+    <dimen name="height_140">140dp</dimen>
+    <dimen name="height_200">200dp</dimen>
+    <dimen name="height_210">210dp</dimen>
+    <dimen name="height_230">230dp</dimen>
+    <dimen name="height_250">250dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+
+
+</resources>

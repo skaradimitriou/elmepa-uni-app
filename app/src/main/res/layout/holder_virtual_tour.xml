@@ -2,11 +2,11 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
-    android:layout_marginLeft="15dp"
-    android:layout_marginTop="15dp"
-    android:layout_marginRight="15dp"
-    app:cardCornerRadius="15dp">
+    android:layout_height="@dimen/height_130"
+    android:layout_marginStart="@dimen/margin_15"
+    android:layout_marginTop="@dimen/margin_15"
+    android:layout_marginEnd="@dimen/margin_15"
+    app:cardCornerRadius="@dimen/margin_15">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,8 +25,8 @@
             android:gravity="center"
             android:text="@string/virtual_tour_txt"
             android:textAllCaps="false"
-            android:textColor="#fff"
-            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_18"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

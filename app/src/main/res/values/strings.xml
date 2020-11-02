@@ -53,4 +53,7 @@
     <!-- Social Item -->
     <string name="social_txt">YouTube</string>
 
+    <!-- Research Item -->
+    <string name="research_item_txt">Έρευνα στο Τμήμα</string>
+
 </resources>

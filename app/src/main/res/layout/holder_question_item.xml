@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="15dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_marginBottom="15dp">
 
     <TextView
         android:id="@+id/user_msg_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:paddingTop="15dp"
-        android:paddingStart="20dp"
-        android:paddingBottom="15dp"
-        android:paddingEnd="20dp"
-        android:backgroundTint="#3d3f43"
+        android:layout_marginStart="@dimen/margin_8"
         android:background="@drawable/round_corners_bubble"
-        android:textColor="#fff"
+        android:backgroundTint="@color/dark_grey"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="15dp"
+        android:textColor="@color/white"
         android:textSize="13sp"
-        tools:text="@string/answer_txt"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/answer_txt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

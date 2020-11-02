@@ -4,33 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ebebeb"
+    android:background="@color/grey_bg"
     tools:context=".ui.syllabus.SyllabusActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00787c"
-        app:tabTextColor="#fff"
-        app:tabIndicatorColor="#000000"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:tabIndicatorColor="@color/white"
+        app:tabTextColor="@color/white">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:text="@string/syllabus_tab_one"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/syllabus_tab_one" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:text="@string/syllabus_tab_two"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/syllabus_tab_two" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:text="@string/syllabus_tab_three"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/syllabus_tab_three" />
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -38,12 +38,12 @@
         android:id="@+id/syllabus_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_52"
         android:orientation="vertical"
-        android:layout_marginTop="52dp"
-        tools:listitem="@layout/holder_semester_item_row"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        tools:listitem="@layout/holder_semester_item_row" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

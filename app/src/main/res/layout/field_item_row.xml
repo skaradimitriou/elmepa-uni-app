@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="130dp"
-    android:layout_height="230dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="10dp"
+    android:layout_width="@dimen/height_130"
+    android:layout_height="@dimen/height_230"
+    android:layout_margin="@dimen/margin_10"
     android:clickable="true"
     android:focusable="true"
-    android:layout_marginRight="10dp"
-    app:cardCornerRadius="15dp"
-    app:cardElevation="3dp">
+    app:cardCornerRadius="@dimen/margin_15"
+    app:cardElevation="@dimen/margin_3">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
         android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/fields_img"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            tools:src="@drawable/data"/>
+            android:layout_height="@dimen/height_140"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/data" />
 
         <TextView
-            android:textAlignment="center"
             android:id="@+id/fields_holder_txt"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_7"
+            android:layout_marginRight="@dimen/margin_7"
+            android:textAlignment="center"
             android:textStyle="bold"
-            tools:text="@string/announcement_title"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fields_img"
+            tools:text="@string/announcement_title" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

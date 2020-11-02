@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        android:padding="10dp"
+        android:padding="@dimen/margin_10"
         android:text="@string/announcement_header"
-        android:textColor="#fff"
-        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_20"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,19 +23,19 @@
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="@dimen/margin_45"
+        android:layout_marginBottom="@dimen/margin_52"
         app:layout_constraintTop_toBottomOf="@+id/elmepa_main_txt">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/latestNews_recView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="52dp"
-            tools:itemCount="3"
-            tools:listitem="@layout/announcement_item_row"
+            android:layout_marginBottom="@dimen/margin_52"
             android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"  />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/announcement_item_row" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

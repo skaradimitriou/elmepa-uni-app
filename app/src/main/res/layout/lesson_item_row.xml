@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_10"
     android:background="#fff"
-    app:cardCornerRadius="5dp"
-    android:layout_margin="10dp">
+    app:cardCornerRadius="@dimen/margin_5">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,42 +16,42 @@
             android:id="@+id/lesson_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="7dp"
-            android:paddingTop="10dp"
-            android:paddingRight="7dp"
-            android:background="#f07721"
-            android:textColor="#fff"
-            android:paddingBottom="10dp"
+            android:paddingStart="@dimen/margin_7"
+            android:paddingTop="@dimen/margin_10"
+            android:paddingEnd="@dimen/margin_7"
+            android:paddingBottom="@dimen/margin_10"
             android:textAlignment="center"
-            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16"
             android:textStyle="bold"
-            tools:text="@string/announcement_title"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            tools:background="@color/orange"
+            tools:text="@string/announcement_title" />
 
         <TextView
             android:id="@+id/mandatory_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:textSize="14sp"
-            tools:text="@string/announcement_title"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:textSize="@dimen/text_16"
+            app:layout_constraintStart_toStartOf="@id/lesson_name"
             app:layout_constraintTop_toBottomOf="@+id/lesson_name"
-            app:layout_constraintStart_toStartOf="@id/lesson_name"/>
+            tools:text="@string/announcement_title" />
 
         <TextView
             android:id="@+id/lesson_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="10dp"
-            android:textSize="12sp"
-            tools:text="@string/announcement_title"
-            app:layout_constraintTop_toBottomOf="@id/mandatory_txt"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:textSize="@dimen/text_16"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/mandatory_txt"/>
+            app:layout_constraintStart_toStartOf="@id/mandatory_txt"
+            app:layout_constraintTop_toBottomOf="@id/mandatory_txt"
+            tools:text="@string/announcement_title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
