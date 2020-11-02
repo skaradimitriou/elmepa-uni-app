@@ -47,19 +47,20 @@
                     android:textSize="16sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Κάνε tap για να δεις\nτο ωρολόγιο πρόγραμμα"/>
+                    android:text="@string/student_schedule"/>
 
-                <Button
+                <TextView
                     android:id="@+id/schedule_card_btn"
                     android:layout_width="match_parent"
                     app:cornerRadius="15dp"
                     android:layout_marginRight="15dp"
                     android:background="#e02b20"
                     android:textColor="#fff"
+                    android:padding="15dp"
                     android:layout_marginBottom="10dp"
                     android:textAllCaps="false"
                     android:layout_height="wrap_content"
-                    android:text="Ωρολόγιο Πρόγραμμα"/>
+                    android:text="@string/student_schedule_btn"/>
 
 
             </LinearLayout>

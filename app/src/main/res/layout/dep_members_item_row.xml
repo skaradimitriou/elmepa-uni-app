@@ -22,7 +22,7 @@
         android:layout_width="110dp"
         android:gravity="center"
         android:layout_height="wrap_content"
-        tools:text="Κωστας Παναγιωτακης"
+        tools:text="@string/dep_member_txt"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/dep_img"
         app:layout_constraintLeft_toLeftOf="parent"/>

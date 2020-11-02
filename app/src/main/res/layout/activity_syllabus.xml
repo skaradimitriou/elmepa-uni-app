@@ -19,17 +19,17 @@
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:text="Επιστήμη των Δεδομένων &amp; Τεχνολογίες Πληροφορικής"
+            android:text="@string/syllabus_tab_one"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:text="Διοίκηση Επιχειρήσεων &amp; Οργανισμών"
+            android:text="@string/syllabus_tab_two"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:text="Ψηφιακό Μάρκετινγκ &amp; Επικοινωνία"
+            android:text="@string/syllabus_tab_three"
             android:layout_height="wrap_content"/>
 
     </com.google.android.material.tabs.TabLayout>

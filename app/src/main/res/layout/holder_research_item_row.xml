@@ -13,7 +13,7 @@
         android:layout_marginTop="15dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:text="Έρευνα στο Τμήμα"
+        tools:text="@string/research_recycler_title"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

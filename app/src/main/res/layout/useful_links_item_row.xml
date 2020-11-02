@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            tools:text="This is my cool text it is really cool"/>
+            tools:text="@string/announcement_title"/>
 
     </LinearLayout>
 

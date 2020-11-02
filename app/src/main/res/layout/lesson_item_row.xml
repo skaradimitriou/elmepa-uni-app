@@ -25,7 +25,7 @@
             android:textAlignment="center"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="This is my cool text it is really cool"
+            tools:text="@string/announcement_title"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -36,7 +36,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:textSize="14sp"
-            tools:text="This is my cool text it is really cool"
+            tools:text="@string/announcement_title"
             app:layout_constraintTop_toBottomOf="@+id/lesson_name"
             app:layout_constraintStart_toStartOf="@id/lesson_name"/>
 
@@ -48,7 +48,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
             android:textSize="12sp"
-            tools:text="This is my cool text it is really cool"
+            tools:text="@string/announcement_title"
             app:layout_constraintTop_toBottomOf="@id/mandatory_txt"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/mandatory_txt"/>

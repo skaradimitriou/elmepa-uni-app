@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας"
+            android:text="@string/virtual_tour_txt"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="18sp"

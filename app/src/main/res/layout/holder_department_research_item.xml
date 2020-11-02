@@ -33,13 +33,14 @@
             app:layout_constraintStart_toEndOf="@+id/holder_research_img"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <TextView
             android:id="@+id/research_card_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="#e02b20"
-            android:text="Μάθε περισσότερα"
+            android:padding="15dp"
+            android:text="@string/dept_button_txt"
             android:textAllCaps="false"
             android:textColor="#fff"
             app:cornerRadius="15dp"

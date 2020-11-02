@@ -7,22 +7,50 @@
 
     <!-- Announcement Activity -->
     <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
+    <string name="announcement_title">This is an announcement title</string>
 
     <!-- Professors Activity -->
     <string name="professors_search_txt">Αναζήτησε έναν καθηγητή</string>
 
     <!-- Department Activity -->
-
+    <string name="dept_button_txt">Μάθε περισσότερα</string>
 
     <!-- Students Activity -->
     <string name="students_title">Φοιτητές</string>
+    <string name="student_schedule">Κάνε tap για να δεις\nτο ωρολόγιο πρόγραμμα</string>
+    <string name="student_schedule_btn">Μάθε Περισσότερα</string>
 
     <!-- Research in Dept Activity -->
     <string name="research_title">Έρευνα</string>
+    <string name="research_recycler_title">Έρευνα στο Τμήμα</string>
 
     <!-- Chatbot Activity -->
     <string name="elmepaChatBotHeader">ΕΛΜΕΠΑ Chatbot</string>
     <string name="chatBotDescription">Το ChatBot υποστηρίζει τις ακόλουθες ερωτήσεις: Τηλέφωνο Γραμματείας, Πρόγραμμα Σπουδών, Ωρολόγιο Πρόγραμμα, Email Γραμματείας, Καθηγητές, Εικονική Περιήγηση, Ανακοινώσεις</string>
     <string name="chatBotMessageTxt">Πώς μπορώ να σε βοηθήσω;</string>
+    <string name="answer_txt">Πώς μπορώ να σε βοηθήσω;</string>
+
+    <!-- Syllabus Activity -->
+    <string name="syllabus_tab_one">Επιστήμη των Δεδομένων &amp; Τεχνολογίες Πληροφορικής</string>
+    <string name="syllabus_tab_two">Διοίκηση Επιχειρήσεων &amp; Οργανισμών</string>
+    <string name="syllabus_tab_three">Ψηφιακό Μάρκετινγκ &amp; Επικοινωνία</string>
+    <string name="semester_title">Εξάμηνο Α\'</string>
+
+    <!-- Virtual Tour Activity -->
+    <string name="virtual_tour_txt">Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας</string>
+
+
+    <!-- No Internet Activity -->
+    <string name="no_internet">NO INTERNET</string>
+
+    <!-- Dep Member Item -->
+    <string name="dep_member_txt">Κωστας Παναγιωτακης</string>
+
+    <!-- Professor Item -->
+    <string name="professor_txt">Κωστας Παναγιωτακης</string>
+    <string name="professor_mail">cpanag@domain.com</string>
+
+    <!-- Social Item -->
+    <string name="social_txt">YouTube</string>
 
 </resources>

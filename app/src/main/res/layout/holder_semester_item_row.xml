@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:padding="20dp"
             android:textSize="18sp"
-            tools:text="@string/hello_blank_fragment"
+            tools:text="@string/semester_title"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 

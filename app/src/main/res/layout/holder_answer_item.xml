@@ -19,7 +19,7 @@
         android:background="@drawable/round_corners_bubble"
         android:textColor="#fff"
         android:textSize="13sp"
-        tools:text="Professor Name"
+        tools:text="@string/answer_txt"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

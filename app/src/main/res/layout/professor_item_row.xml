@@ -30,7 +30,7 @@
                 android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/ic_person_black_24dp" />
+                tools:src="@drawable/male_professor" />
 
         </LinearLayout>
 
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="18dp"
-                android:text="Professor Name"
+                android:text="@string/professor_txt"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/professor_img"
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Professor Email"
+                android:text="@string/professor_mail"
                 android:textSize="16sp" />
 
 
