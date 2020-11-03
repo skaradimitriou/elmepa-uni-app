@@ -12,9 +12,12 @@ import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.ProfessorClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 
+import java.util.ArrayList;
+
 public class ProfessorAdapter extends ListAdapter<ProfessorModel,ProfessorViewHolder> {
 
     private ProfessorClickListener listener;
+    private ArrayList<ProfessorModel> filteredList = new ArrayList<>();
 
     public ProfessorAdapter(ProfessorClickListener listener) {
         super(new DiffItemCallbackClass<ProfessorModel>());

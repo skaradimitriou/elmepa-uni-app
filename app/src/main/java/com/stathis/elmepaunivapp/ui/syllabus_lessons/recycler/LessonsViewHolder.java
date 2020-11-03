@@ -7,7 +7,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ms.square.android.expandabletextview.ExpandableTextView;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;

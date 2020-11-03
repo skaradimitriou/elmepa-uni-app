@@ -33,6 +33,17 @@ public class ProfessorsViewModel extends AndroidViewModel implements ProfessorCl
         adapter.submitList(createProfessorList());
     }
 
+    public void filter(String text) {
+        ArrayList<ProfessorModel> filteredList = new ArrayList<>();
+        for (ProfessorModel item : professors) {
+            if (item.getFullName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+        adapter.submitList(filteredList);
+        adapter.notifyDataSetChanged();
+    }
+
     ArrayList<ProfessorModel> createProfessorList() {
         professors.add(new ProfessorModel("Παπαδάκης Στέλιος", "spap@hmu.gr", "male", "Παπαδάκη Στέλιο"));
         professors.add(new ProfessorModel("Παναγιωτάκης Κώστας", "cpanag@hmu.gr", "male", "Παναγιωτάκη Κώστα"));
@@ -66,8 +77,10 @@ public class ProfessorsViewModel extends AndroidViewModel implements ProfessorCl
         professors.add(new ProfessorModel("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr", "female", "Ταβλαδάκη Δέσποινα"));
         professors.add(new ProfessorModel("Καλαρχάκη Αικατερίνη", "kalarhaki@hmu.gr", "female", "Καλαρχάκη Αικατερίνη"));
         professors.add(new ProfessorModel("Καροφύλλου Ειρήνη", "karofillou@hmu.gr", "female", "Καροφύλλου Ειρήνη"));
-        professors.add(new ProfessorModel("Παρθύμου Γεωργία", "gparth@hmu.gr", "female", "Καροφύλλου Ειρήνη"));
-        professors.add(new ProfessorModel("Ματζαράκης Γεώργιος", "matzarakis@hmu.gr", "female", "Καροφύλλου Ειρήνη"));
+        professors.add(new ProfessorModel("Παρθύμου Γεωργία", "gparth@hmu.gr", "female", "Παρθύμου Γεωργία"));
+        professors.add(new ProfessorModel("Ματζαράκης Γεώργιος", "matzarakis@hmu.gr", "female", "Ματζαράκη Γεώργιο"));
+        professors.add(new ProfessorModel("Καλαμπόκη Εύα - Μαρία", "matzarakis@hmu.gr", "female", "Καλαμπόκη Εύα - Μαρία"));
+        professors.add(new ProfessorModel("Μαρκάκη Σμαράγδα", "sm.markaki@hmu.gr", "female", "Μαρκάκη Σμαράγδα"));
 
         //sorting professor list ascending
         Collections.sort(professors, new Comparator<ProfessorModel>() {

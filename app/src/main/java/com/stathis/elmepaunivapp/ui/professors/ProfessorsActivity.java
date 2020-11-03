@@ -56,7 +56,7 @@ public class ProfessorsActivity extends AppCompatActivity implements ProfessorAc
 
             @Override
             public void afterTextChanged(Editable s) {
-                //
+                viewModel.filter(s.toString());
             }
         });
 

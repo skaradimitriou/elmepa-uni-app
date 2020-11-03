@@ -14,6 +14,7 @@ import com.stathis.elmepaunivapp.listeners.activity_listeners.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
 import com.stathis.elmepaunivapp.ui.department.model.DepMembersParent;
 import com.stathis.elmepaunivapp.ui.department.model.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.ui.department.model.EmptyModel;
 import com.stathis.elmepaunivapp.ui.department.model.Programmes;
 import com.stathis.elmepaunivapp.ui.department.model.ProgrammesParent;
 import com.stathis.elmepaunivapp.ui.department.model.Research;
@@ -52,6 +53,7 @@ public class DepartmentViewModel extends ViewModel implements FieldsOfStudyListe
         list.add(new Research(""));
         list.add(new DepMembersParent("Μέλη Δ.Ε.Π.", depMembersList));
         list.add(new SocialChannelsParent("Βρείτε μας Online", socialChannels));
+        list.add(new EmptyModel());
 
         adapter.notifyDataSetChanged();
     }

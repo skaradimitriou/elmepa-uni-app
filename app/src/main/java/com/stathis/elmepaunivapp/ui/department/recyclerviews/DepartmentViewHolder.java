@@ -16,6 +16,7 @@ import com.stathis.elmepaunivapp.listeners.activity_listeners.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
 import com.stathis.elmepaunivapp.ui.department.model.DepMembersParent;
 import com.stathis.elmepaunivapp.ui.department.model.DeptFieldsOfStudy;
+import com.stathis.elmepaunivapp.ui.department.model.EmptyModel;
 import com.stathis.elmepaunivapp.ui.department.model.FieldsOfStudyParent;
 import com.stathis.elmepaunivapp.ui.department.model.Programmes;
 import com.stathis.elmepaunivapp.ui.department.model.ProgrammesParent;
@@ -89,6 +90,8 @@ public class DepartmentViewHolder extends RecyclerView.ViewHolder implements Fie
                     departmentCardClickListener.onResearchClick((Research) object);
                 }
             });
+        } else if (object instanceof EmptyModel){
+
         }
     }
 
