@@ -65,7 +65,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
-    
+
     @Override
     public void goToAnnouncementScreen(DashboardOption dashboardOption) {
         startActivity(new Intent(DashboardActivity.this, AnnouncementActivity.class));
@@ -84,5 +84,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void goToStudentsScreen(DashboardOption dashboardOption) {
         startActivity(new Intent(DashboardActivity.this, StudentsActivity.class));
+    }
+
+    @Override
+    public void learnMore() {
+        startActivity(new Intent(DashboardActivity.this, WebviewActivity.class).putExtra("URL", "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"));
     }
 }

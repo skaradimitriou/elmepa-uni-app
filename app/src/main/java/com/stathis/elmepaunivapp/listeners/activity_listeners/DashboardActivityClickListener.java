@@ -8,4 +8,5 @@ public interface DashboardActivityClickListener {
     void goToDepartmentScreen(DashboardOption dashboardOption);
     void goToProfessorScreen(DashboardOption dashboardOption);
     void goToStudentsScreen(DashboardOption dashboardOption);
+    void learnMore();
 }

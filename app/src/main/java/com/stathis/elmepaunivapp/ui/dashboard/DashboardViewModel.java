@@ -59,8 +59,7 @@ public class DashboardViewModel extends ViewModel implements DashboardOptionList
         builder.setPositiveButton("Μάθε Περισσότερα", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-//                startActivity(new Intent(DashboardActivity.this, WebviewActivity.class)
-//                        .putExtra("URL", "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"));
+                listener.learnMore();
             }
         });
         builder.setNegativeButton("Ακυρο", new DialogInterface.OnClickListener() {
