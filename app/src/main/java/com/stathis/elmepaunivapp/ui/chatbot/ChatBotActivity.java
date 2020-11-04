@@ -29,6 +29,7 @@ import com.stathis.elmepaunivapp.listeners.activity_listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import static android.Manifest.permission.CALL_PHONE;
@@ -127,7 +128,7 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
 
     @Override
     public void goToSyllabus(Answer answer) {
-
+        startActivity(new Intent(this, SyllabusActivity.class));
     }
 
     @Override
