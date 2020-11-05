@@ -162,4 +162,12 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
     public void openAnnouncements(Answer answer) {
         startActivity(new Intent(this, AnnouncementActivity.class));
     }
+
+    @Override
+    public void chatbotReplied() {
+        //this line of code scrolls to the last item of the list that is passed to the adapter
+        // it creates an illusion of the chat interactiveness
+        userMessagesRecView.smoothScrollToPosition(userMessagesRecView.getBottom());
+        viewModel.chatBotAdapter.notifyDataSetChanged();
+    }
 }

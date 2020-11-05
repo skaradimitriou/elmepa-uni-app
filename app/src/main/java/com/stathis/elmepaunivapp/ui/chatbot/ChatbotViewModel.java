@@ -38,6 +38,7 @@ public class ChatbotViewModel extends ViewModel implements ItemClickListener {
             public void run() {
                 messagesList.add(new Answer(getChatAnswer(response)));
                 chatBotAdapter.notifyDataSetChanged();
+                chatBotListener.chatbotReplied();
             }
         }, 1200);
     }

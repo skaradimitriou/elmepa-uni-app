@@ -39,14 +39,17 @@ public class LessonsViewHolder extends RecyclerView.ViewHolder {
         mandatoryField.setText(data.getMandatory());
         description.setText(data.getDescription());
 
-        if (data.getDirection().equals("data")){
-            lesson_name.setBackgroundColor(Color.parseColor("#2a8c3f"));
-        } else if(data.getDirection().equals("mkt")){
-            lesson_name.setBackgroundColor(Color.parseColor("#417ba3"));
-        } else if (data.getDirection().equals("ba")) {
-            lesson_name.setBackgroundColor(Color.parseColor("#f07721"));
+        switch (data.getDirection()) {
+            case "data":
+                lesson_name.setBackgroundColor(itemView.getResources().getColor(R.color.lesson_green));
+                break;
+            case "mkt":
+                lesson_name.setBackgroundColor(itemView.getResources().getColor(R.color.lesson_blue));
+                break;
+            case "ba":
+                lesson_name.setBackgroundColor(itemView.getResources().getColor(R.color.dark_orange));
+                break;
         }
-
     }
 
 }

@@ -49,7 +49,7 @@
             android:layout_marginBottom="@dimen/margin_10"
             android:textSize="@dimen/text_16"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/lesson_name"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mandatory_txt"
             tools:text="@string/announcement_title" />
 

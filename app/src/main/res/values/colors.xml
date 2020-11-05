@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#417ba3</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
@@ -14,5 +14,7 @@
     <color name="orange">#f15c22</color>
     <color name="dark_orange">#e02b20</color>
     <color name="light_blue">#3d8bcb</color>
+    <color name="lesson_blue">#417ba3</color>
+    <color name="lesson_green">#2a8c3f</color>
 
 </resources>

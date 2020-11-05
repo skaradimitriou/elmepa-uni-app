@@ -11,4 +11,5 @@ public interface ChatBotListener {
     void emailToSecretary(Answer answer);
     void virtualTour(Answer answer);
     void openAnnouncements(Answer answer);
+    void chatbotReplied();
 }
