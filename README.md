@@ -1,5 +1,7 @@
 # Elmepa University App
 
+![ELMEPA University App](https://user-images.githubusercontent.com/64270931/98210296-03195e80-1f49-11eb-8711-6a58adc6f7a2.jpg)
+
 You can watch the app presentation on [Youtube](https://youtu.be/FQGB7BWJGSI). <br/>
 This app is live at [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp) <br/>
 🧍 Users: 125
