@@ -135,7 +135,20 @@ public class DepartmentActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void goToSyllabus(DeptFieldsOfStudy data) {
-        startActivity(new Intent(this, SyllabusActivity.class));
+        switch(data.getName()){
+            case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής" : {
+                startActivity(new Intent(this, SyllabusActivity.class).putExtra("userTabChoice", 0));
+                break;
+            }
+            case "Διοίκηση Επιχειρήσεων & Οργανισμών" : {
+                startActivity(new Intent(this, SyllabusActivity.class).putExtra("userTabChoice",1));
+                break;
+            }
+            case "Ψηφιακό Μάρκετινγκ και Επικοινωνία" : {
+                startActivity(new Intent(this, SyllabusActivity.class).putExtra("userTabChoice",2));
+                break;
+            }
+        }
     }
 
     @Override

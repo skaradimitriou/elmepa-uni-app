@@ -18,6 +18,7 @@ import com.stathis.elmepaunivapp.ui.syllabus.model.Semester;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.SyllabusLessonsActivity;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class SyllabusActivity extends AppCompatActivity implements SyllabusActivityListener {
 
@@ -35,6 +36,8 @@ public class SyllabusActivity extends AppCompatActivity implements SyllabusActiv
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+
+        int userChoice = getIntent().getIntExtra("userTabChoice",0);
 
         viewModel.initListener(this);
         recyclerView = findViewById(R.id.syllabus_recycler);
@@ -72,6 +75,8 @@ public class SyllabusActivity extends AppCompatActivity implements SyllabusActiv
 
             }
         });
+
+        tabLayout.getTabAt(userChoice).select();
 
         viewModel.getDataList();
     }

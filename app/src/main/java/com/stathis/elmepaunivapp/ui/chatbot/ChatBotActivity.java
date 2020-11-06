@@ -86,13 +86,6 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
         viewModel.initAdapter();
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        overridePendingTransition(0, 0);
-
-    }
-
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
@@ -138,7 +131,7 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
 
     @Override
     public void openSchedule(Answer answer) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/proptyxiako/%cf%89%cf%81%ce%bf%ce%bb%cf%8c%ce%b3%ce%b9%ce%bf-%cf%80%cf%81%cf%8c%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1-%ce%bc%ce%b1%ce%b8%ce%b7%ce%bc%ce%ac%cf%84%cf%89%ce%bd/")));
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/")));
     }
 
     @Override

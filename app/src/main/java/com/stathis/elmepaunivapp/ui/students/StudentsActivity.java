@@ -77,6 +77,19 @@ public class StudentsActivity extends AppCompatActivity implements StudentsActiv
 
     @Override
     public void goToSyllabus(UsefulLinks usefulLinks) {
-        startActivity(new Intent(this, SyllabusActivity.class));
+        switch(usefulLinks.getName()){
+            case "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής" : {
+                startActivity(new Intent(this, SyllabusActivity.class).putExtra("userTabChoice", 0));
+                break;
+            }
+            case "Διοίκηση Επιχειρήσεων & Οργανισμών" : {
+                startActivity(new Intent(this, SyllabusActivity.class).putExtra("userTabChoice",1));
+                break;
+            }
+            case "Ψηφιακό Μάρκετινγκ και Επικοινωνία" : {
+                startActivity(new Intent(this, SyllabusActivity.class).putExtra("userTabChoice",2));
+                break;
+            }
+        }
     }
 }
