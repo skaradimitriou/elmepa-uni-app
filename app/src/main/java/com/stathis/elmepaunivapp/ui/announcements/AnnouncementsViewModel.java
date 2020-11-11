@@ -62,7 +62,7 @@ public class AnnouncementsViewModel extends ViewModel implements NewsClickListen
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            adapter.submitList(announcementsDatabase.getAnnouncementDao().getAll());
+            adapter.submitList(announcements);
             adapter.notifyDataSetChanged();
         }
 
