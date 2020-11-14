@@ -8,18 +8,20 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
+import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler.LessonsAdapter;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
 
 import java.util.ArrayList;
 
-public class SyllabusLessonsViewModel extends ViewModel implements LessonClickListener {
+public class SyllabusLessonsViewModel extends ViewModel {
 
-    ArrayList<Lesson> lessons = new ArrayList<>();
-    LessonsAdapter adapter = new LessonsAdapter(this);
+    ArrayList<Object> lessons = new ArrayList<>();
+    LessonsAdapter adapter = new LessonsAdapter();
 
     public void showLessons(){
         adapter.submitList(lessons);
+        adapter.notifyDataSetChanged();
     }
 
     public void jsonToLesson(String jsonString){
@@ -34,8 +36,10 @@ public class SyllabusLessonsViewModel extends ViewModel implements LessonClickLi
         Log.d("ARRAY",lessons.toString());
     }
 
-    @Override
-    public void onLessonClick(Lesson lesson) {
-        Log.d("hello",lesson.toString());
+    public void addTitle(String title){
+        LessonHeader header = new LessonHeader(title);
+        if(title != null || title.isEmpty()) {
+            lessons.add(header);
+        }
     }
 }

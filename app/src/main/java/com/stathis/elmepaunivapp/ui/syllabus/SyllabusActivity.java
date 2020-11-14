@@ -37,7 +37,7 @@ public class SyllabusActivity extends AppCompatActivity implements SyllabusActiv
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        int userChoice = getIntent().getIntExtra("userTabChoice",0);
+        int userChoice = getIntent().getIntExtra("userTabChoice", 0);
 
         viewModel.initListener(this);
         recyclerView = findViewById(R.id.syllabus_recycler);
@@ -47,17 +47,19 @@ public class SyllabusActivity extends AppCompatActivity implements SyllabusActiv
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                switch(tab.getPosition()){
+                switch (tab.getPosition()) {
                     case 0: {
-                        viewModel.getDataList();
+                        viewModel.getDataList(getApplicationContext());
                         viewModel.adapter.notifyDataSetChanged();
                         break;
-                    } case 1 : {
-                        viewModel.getBusinessAdministrationList();
+                    }
+                    case 1: {
+                        viewModel.getBusinessAdministrationList(getApplicationContext());
                         viewModel.adapter.notifyDataSetChanged();
                         break;
-                    } case 2 : {
-                        viewModel.getMarketingList();
+                    }
+                    case 2: {
+                        viewModel.getMarketingList(getApplicationContext());
                         viewModel.adapter.notifyDataSetChanged();
                         break;
                     }
@@ -78,13 +80,15 @@ public class SyllabusActivity extends AppCompatActivity implements SyllabusActiv
 
         tabLayout.getTabAt(userChoice).select();
 
-        viewModel.getDataList();
+        viewModel.getDataList(getApplicationContext());
     }
 
     @Override
     public void showLessons(Semester data) {
         String jsonArray = new Gson().toJson(data.getLessons());
-        Log.d("JSON_ARRAY",jsonArray);
-        startActivity(new Intent(this, SyllabusLessonsActivity.class).putExtra("ARRAY",jsonArray));
+        Log.d("JSON_ARRAY", jsonArray);
+        startActivity(new Intent(this, SyllabusLessonsActivity.class)
+                .putExtra("ARRAY", jsonArray)
+                .putExtra("LESSONS_INFO", data.getLessonInfo()));
     }
 }

@@ -36,6 +36,10 @@
     <string name="syllabus_tab_three">Ψηφιακό Μάρκετινγκ &amp; Επικοινωνία</string>
     <string name="semester_title">Εξάμηνο Α\'</string>
 
+    <!-- Syllabus Lesson Activity -->
+    <string name="all_lessons_mandatory"><b>Όλα τα μαθήματα</b> είναι <b>υποχρεωτικά</b> σε αυτό το εξάμηνο</string>
+    <string name="some_lessons_mandatory">Αυτό το εξάμηνο ο φοιτητής θα πρέπει να δηλώσει τα <b>Υποχρεωτικά Μαθήματα</b> και <b>δύο (2)</b> απο τα <b>Μαθήματα Επιλογής</b></string>
+
     <!-- Virtual Tour Activity -->
     <string name="virtual_tour_txt">Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας</string>
 

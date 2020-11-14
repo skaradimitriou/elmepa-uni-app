@@ -7,10 +7,12 @@ import java.util.List;
 public class Semester extends Object {
 
     String semester;
+    String lessonInfo;
     List<Lesson> lessons;
 
-    public Semester(String semester, List<Lesson> lessons) {
+    public Semester(String semester, String lessonInfo, List<Lesson> lessons) {
         this.semester = semester;
+        this.lessonInfo = lessonInfo;
         this.lessons = lessons;
     }
 
@@ -20,6 +22,14 @@ public class Semester extends Object {
 
     public void setSemester(String semester) {
         this.semester = semester;
+    }
+
+    public String getLessonInfo() {
+        return lessonInfo;
+    }
+
+    public void setLessonInfo(String lessonInfo) {
+        this.lessonInfo = lessonInfo;
     }
 
     public List<Lesson> getLessons() {

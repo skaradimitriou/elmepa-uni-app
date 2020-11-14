@@ -11,21 +11,19 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.LessonClickListener;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
+import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader;
 
-public class LessonsAdapter extends ListAdapter<Lesson,LessonsViewHolder> {
+public class LessonsAdapter extends ListAdapter<Object,LessonsViewHolder> {
 
-    private LessonClickListener listener;
-
-    public LessonsAdapter(LessonClickListener listener) {
-        super(new DiffItemCallbackClass<Lesson>());
-        this.listener = listener;
+    public LessonsAdapter() {
+        super(new DiffItemCallbackClass<Object>());
     }
 
     @NonNull
     @Override
     public LessonsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lesson_item_row, parent, false);
-        return new LessonsViewHolder(view,listener);
+        View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
+        return new LessonsViewHolder(view);
     }
 
     @Override
@@ -33,4 +31,14 @@ public class LessonsAdapter extends ListAdapter<Lesson,LessonsViewHolder> {
         holder.present(getItem(position));
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        if(getItem(position) instanceof Lesson){
+            return R.layout.lesson_item_row;
+        } else if (getItem(position) instanceof LessonHeader) {
+            return R.layout.holder_lessons_header_item;
+        } else {
+            return 1;
+        }
+    }
 }

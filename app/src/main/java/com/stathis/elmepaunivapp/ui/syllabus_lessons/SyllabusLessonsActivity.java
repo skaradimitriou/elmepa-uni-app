@@ -20,6 +20,7 @@ public class SyllabusLessonsActivity extends AppCompatActivity {
 
     SyllabusLessonsViewModel viewModel;
     RecyclerView recyclerView;
+    String jsonArray, lessonsInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,12 @@ public class SyllabusLessonsActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        String jsonArray = getIntent().getExtras().getString("ARRAY");
+        lessonsInfo = getIntent().getExtras().getString("LESSONS_INFO");
+        Log.d("info", lessonsInfo);
+
+        viewModel.addTitle(lessonsInfo);
+
+        jsonArray = getIntent().getExtras().getString("ARRAY");
         viewModel.jsonToLesson(jsonArray);
 
         recyclerView = findViewById(R.id.syllabus_lessons_recycler);
