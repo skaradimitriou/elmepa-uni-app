@@ -18,31 +18,38 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ProfessorActivityClickListener;
 import com.stathis.elmepaunivapp.ui.professors.model.ProfessorModel;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 
-public class ProfessorsActivity extends AppCompatActivity implements ProfessorActivityClickListener {
+public class ProfessorsActivity extends AbstractActivity implements ProfessorActivityClickListener {
 
     private RecyclerView recyclerView;
     private EditText search;
+    private BottomNavigationView bottomNavigationView;
     private ProfessorsViewModel viewModel;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_professors);
-        viewModel = new ViewModelProvider(this).get(ProfessorsViewModel.class);
+    public ProfessorsActivity() {
+        super(R.layout.activity_professors);
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    public void initial() {
+        viewModel = new ViewModelProvider(this).get(ProfessorsViewModel.class);
 
-        //Search in recview
         search = findViewById(R.id.search_action);
+        recyclerView = findViewById(R.id.recyclerView);
+
+        // Bottom Navigation
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.nav_search);
+    }
+
+    @Override
+    public void running() {
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -60,15 +67,10 @@ public class ProfessorsActivity extends AppCompatActivity implements ProfessorAc
             }
         });
 
-        // Professors Recycler View setup
-        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(viewModel.adapter);
         viewModel.setupListener(this);
         viewModel.showProfessors();
 
-        // Bottom Navigation
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.nav_search);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -88,6 +90,11 @@ public class ProfessorsActivity extends AppCompatActivity implements ProfessorAc
                 return false;
             }
         });
+    }
+
+    @Override
+    public void stopped() {
+
     }
 
     @Override

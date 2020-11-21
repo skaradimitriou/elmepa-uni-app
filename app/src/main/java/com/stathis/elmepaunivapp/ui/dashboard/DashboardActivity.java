@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.DashboardActivityClickListener;
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
@@ -24,34 +25,39 @@ import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class DashboardActivity extends AppCompatActivity implements View.OnClickListener, DashboardActivityClickListener {
+public class DashboardActivity extends AbstractActivity implements View.OnClickListener, DashboardActivityClickListener {
 
     private RecyclerView dashboardOptions;
     private ImageView about;
     private FloatingActionButton chatbot_btn;
     private DashboardViewModel viewModel;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-        viewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+    public DashboardActivity() {
+        super(R.layout.activity_dashboard);
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    public void initial() {
+        viewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
 
         chatbot_btn = findViewById(R.id.fab_chatbot);
         about = findViewById(R.id.about);
         dashboardOptions = findViewById(R.id.dashboard_options_recview);
+    }
 
+    @Override
+    public void running() {
         dashboardOptions.setAdapter(viewModel.dashboardAdapter);
         viewModel.initListener(this);
         viewModel.displayData();
 
         about.setOnClickListener(this);
         chatbot_btn.setOnClickListener(this);
+    }
+
+    @Override
+    public void stopped() {
+        //
     }
 
     @Override

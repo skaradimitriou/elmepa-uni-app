@@ -12,41 +12,40 @@ import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 
-public class WebviewActivity extends AppCompatActivity {
+public class WebviewActivity extends AbstractActivity {
 
     private String url;
+    private WebView webview;
+    private BottomNavigationView bottomNavigationView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_webview);
+    public WebviewActivity() {
+        super(R.layout.activity_webview);
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        //passing the url data from previous activities as "URL"
+    public void initial() {
         url = getIntent().getStringExtra("URL");
 
-        //load webview with school web content
-        WebView webview = findViewById(R.id.webview);
+        webview = findViewById(R.id.webview);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+
+        checkInternetConnection();
+    }
+
+    @Override
+    public void running() {
         webview.loadUrl(url);
 
-        //enabling web js files
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        //TODO("Implement screen if no internet connection")
-
-        //bottom navigation bar
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -67,5 +66,14 @@ public class WebviewActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    public void stopped() {
+
+    }
+
+    private void checkInternetConnection(){
+        // Implement screen if no internet connection
     }
 }

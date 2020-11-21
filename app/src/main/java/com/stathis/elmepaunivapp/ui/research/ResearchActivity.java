@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ResearchActivityClickListener;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
@@ -17,31 +18,31 @@ import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class ResearchActivity extends AppCompatActivity implements ResearchActivityClickListener {
+public class ResearchActivity extends AbstractActivity implements ResearchActivityClickListener {
 
     private RecyclerView researchRecycler;
+    private BottomNavigationView bottomNavigationView;
     private ResearchViewModel viewModel;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_research_in_dept);
-        viewModel = new ViewModelProvider(this).get(ResearchViewModel.class);
+    public ResearchActivity() {
+        super(R.layout.activity_research_in_dept);
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    public void initial() {
+        viewModel = new ViewModelProvider(this).get(ResearchViewModel.class);
 
         researchRecycler = findViewById(R.id.research_activity_recycler);
         researchRecycler.setAdapter(viewModel.researchFinalAdapter);
+        bottomNavigationView= findViewById(R.id.bottom_nav);
+    }
 
+    @Override
+    public void running() {
         viewModel.initListener(this);
         viewModel.createLists();
         viewModel.displayData();
 
-        //bottom navigation
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_uni);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -62,6 +63,11 @@ public class ResearchActivity extends AppCompatActivity implements ResearchActiv
                 return false;
             }
         });
+    }
+
+    @Override
+    public void stopped() {
+
     }
 
     @Override

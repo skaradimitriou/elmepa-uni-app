@@ -15,6 +15,10 @@ abstract public class AbstractActivity extends AppCompatActivity {
 
     public abstract void stopped();
 
+    public AbstractActivity(int contentLayoutId) {
+        super(contentLayoutId);
+    }
+
     // app lifecycle primary stages
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

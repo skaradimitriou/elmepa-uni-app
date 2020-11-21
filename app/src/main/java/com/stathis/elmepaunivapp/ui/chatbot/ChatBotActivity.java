@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ChatBotListener;
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
@@ -34,7 +35,7 @@ import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class ChatBotActivity extends AppCompatActivity implements ChatBotListener {
+public class ChatBotActivity extends AbstractActivity implements ChatBotListener {
 
     private RecyclerView userMessagesRecView;
     private TextInputEditText user_text_field;
@@ -42,21 +43,21 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
     private static final int REQUEST_CALL = 1;
     private ChatbotViewModel viewModel;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_bot);
-        viewModel = new ViewModelProvider(this).get(ChatbotViewModel.class);
+    public ChatBotActivity() {
+        super(R.layout.activity_chat_bot);
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    public void initial() {
+        viewModel = new ViewModelProvider(this).get(ChatbotViewModel.class);
 
         user_text_field = findViewById(R.id.ask_questions);
         userMessagesRecView = findViewById(R.id.user_messagesRecView);
+    }
 
-        //getting messages from users
+    @Override
+    public void running() {
+//getting messages from users
         user_text_field.setOnEditorActionListener(new TextInputEditText.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -84,6 +85,11 @@ public class ChatBotActivity extends AppCompatActivity implements ChatBotListene
         userMessagesRecView.setAdapter(viewModel.chatBotAdapter);
         viewModel.setUpListener(this);
         viewModel.initAdapter();
+    }
+
+    @Override
+    public void stopped() {
+
     }
 
     public void hideKeyboard(View view) {

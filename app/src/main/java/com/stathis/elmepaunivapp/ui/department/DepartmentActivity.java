@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.DepartmentActivityListener;
 import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
 import com.stathis.elmepaunivapp.ui.department.model.DeptFieldsOfStudy;
@@ -37,23 +38,21 @@ import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class DepartmentActivity extends AppCompatActivity implements View.OnClickListener, DepartmentActivityListener {
+public class DepartmentActivity extends AbstractActivity implements View.OnClickListener, DepartmentActivityListener {
 
     private static final int REQUEST_CALL = 1;
     private FloatingActionButton call, mail;
     private RecyclerView recyclerView;
+    private BottomNavigationView bottomNavigationView;
     private DepartmentViewModel viewModel;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_department);
-        viewModel = new ViewModelProvider(this).get(DepartmentViewModel.class);
+    public DepartmentActivity() {
+        super(R.layout.activity_department);
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    public void initial() {
+        viewModel = new ViewModelProvider(this).get(DepartmentViewModel.class);
 
         call = findViewById(R.id.fab_call);
         mail = findViewById(R.id.fab_mail);
@@ -61,11 +60,15 @@ public class DepartmentActivity extends AppCompatActivity implements View.OnClic
         mail.setOnClickListener(this);
 
         recyclerView = findViewById(R.id.department_recycler);
-        recyclerView.setAdapter(viewModel.adapter);
-        viewModel.initAdapter(this);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
 
-        //bottom navigation
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        viewModel.initAdapter(this);
+    }
+
+    @Override
+    public void running() {
+        recyclerView.setAdapter(viewModel.adapter);
+
         bottomNavigationView.setSelectedItemId(R.id.nav_uni);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -86,6 +89,11 @@ public class DepartmentActivity extends AppCompatActivity implements View.OnClic
                 return false;
             }
         });
+    }
+
+    @Override
+    public void stopped() {
+
     }
 
     @Override

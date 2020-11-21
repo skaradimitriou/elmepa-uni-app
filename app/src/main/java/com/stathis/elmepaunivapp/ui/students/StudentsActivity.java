@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.StudentsActivityListener;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
@@ -21,28 +22,29 @@ import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class StudentsActivity extends AppCompatActivity implements StudentsActivityListener {
+public class StudentsActivity extends AbstractActivity implements StudentsActivityListener {
 
     private RecyclerView recyclerView;
+    private BottomNavigationView bottomNavigationView;
     private StudentsViewModel viewModel;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_students);
-        viewModel = new ViewModelProvider(this).get(StudentsViewModel.class);
+    public StudentsActivity() {
+        super(R.layout.activity_students);
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    public void initial() {
+        viewModel = new ViewModelProvider(this).get(StudentsViewModel.class);
 
         recyclerView = findViewById(R.id.students_activity_recycler);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+    }
+
+    @Override
+    public void running() {
         recyclerView.setAdapter(viewModel.adapter);
         viewModel.createList(this);
 
-        //bottom navigation & listener
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_students);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -63,6 +65,11 @@ public class StudentsActivity extends AppCompatActivity implements StudentsActiv
                 return false;
             }
         });
+    }
+
+    @Override
+    public void stopped() {
+
     }
 
     @Override

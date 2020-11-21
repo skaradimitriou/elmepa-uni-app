@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.AnnouncementClickListener;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
@@ -20,34 +21,36 @@ import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
-public class AnnouncementActivity extends AppCompatActivity implements AnnouncementClickListener {
+public class AnnouncementActivity extends AbstractActivity implements AnnouncementClickListener {
 
     private SwipeRefreshLayout swipe_refresh_layout;
+    private BottomNavigationView bottomNavigationView;
     private RecyclerView announcementsRecycler;
     private AnnouncementsViewModel viewModel;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_announcements);
-        viewModel = new ViewModelProvider(this).get(AnnouncementsViewModel.class);
-        viewModel.setupDatabase(this);
+    public AnnouncementActivity() {
+        super(R.layout.activity_announcements);
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+    public void initial() {
+        viewModel = new ViewModelProvider(this).get(AnnouncementsViewModel.class);
+        viewModel.setupDatabase(this);
+
+        bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
-        viewModel.getAnnouncements();
-        // <!---- Announcements recycler view & adapter start ---->
         announcementsRecycler = findViewById(R.id.latestNews_recView);
+        swipe_refresh_layout = findViewById(R.id.swipe_refresh_layout);
+    }
+
+    @Override
+    public void running() {
+        viewModel.getAnnouncements();
+
         viewModel.setUpListener(this);
         announcementsRecycler.setAdapter(viewModel.adapter);
 
-        // <!---- Announcements recycler view & adapter end ---->
-        swipe_refresh_layout = findViewById(R.id.swipe_refresh_layout);
         swipe_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -56,7 +59,6 @@ public class AnnouncementActivity extends AppCompatActivity implements Announcem
             }
         });
 
-        // <!---- Bottom Navigation Listener start ---->
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -79,9 +81,8 @@ public class AnnouncementActivity extends AppCompatActivity implements Announcem
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        overridePendingTransition(0, 0);
+    public void stopped() {
+        //
     }
 
     @Override
