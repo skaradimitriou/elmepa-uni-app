@@ -25,14 +25,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/margin_55"
-        android:layout_marginBottom="@dimen/margin_55"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_action"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
         tools:listitem="@layout/professor_item_row" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

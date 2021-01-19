@@ -27,13 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:layout_margin="@dimen/margin_10"
-            android:layout_marginBottom="@dimen/margin_10"
+            android:padding="@dimen/margin_15"
             android:text="@string/announcement_title"
             android:textColor="@color/black"
             android:textSize="@dimen/text_18"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ann_img" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

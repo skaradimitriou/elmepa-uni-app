@@ -37,6 +37,7 @@
     <dimen name="text_16">16sp</dimen>
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_20">20sp</dimen>
+    <dimen name="image_50">50dp</dimen>
 
 
 </resources>

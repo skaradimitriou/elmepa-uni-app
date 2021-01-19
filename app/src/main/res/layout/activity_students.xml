@@ -9,11 +9,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/students_activity_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/margin_52"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:padding="@dimen/margin_10"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"

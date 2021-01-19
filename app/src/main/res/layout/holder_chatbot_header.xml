@@ -6,8 +6,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/chatbot_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/image_50"
+        android:layout_height="@dimen/image_50"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_10"
         android:src="@drawable/chatbot"
@@ -33,7 +33,6 @@
         android:id="@+id/supported_commands"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_10"
         android:layout_marginBottom="@dimen/margin_15"
         android:background="@color/white"
         android:padding="@dimen/margin_10"

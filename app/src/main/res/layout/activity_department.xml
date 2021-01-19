@@ -10,18 +10,18 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/department_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/margin_10"
-        android:layout_marginBottom="@dimen/margin_52"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        android:paddingTop="@dimen/margin_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_20"
-        android:layout_marginBottom="@dimen/margin_30"
+        android:layout_margin="@dimen/margin_25"
         android:backgroundTint="@color/light_green"
         android:clickable="true"
         android:focusable="true"
@@ -33,8 +33,7 @@
         android:id="@+id/fab_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_20"
-        android:layout_marginBottom="@dimen/margin_30"
+        android:layout_margin="@dimen/margin_25"
         android:backgroundTint="@color/orange"
         android:clickable="true"
         android:focusable="true"

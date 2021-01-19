@@ -25,7 +25,7 @@
         <ImageView
             android:layout_width="@dimen/height_35"
             android:layout_height="@dimen/height_35"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="@dimen/margin_5"
             android:src="@drawable/arrow_right"
             app:layout_constraintBottom_toBottomOf="@id/semester_item_txt"
             app:layout_constraintEnd_toEndOf="parent"

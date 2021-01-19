@@ -28,7 +28,7 @@
             android:id="@+id/professor_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_10"
+            android:paddingStart="@dimen/margin_10"
             android:layout_marginTop="@dimen/margin_16"
             android:text="@string/professor_txt"
             android:textSize="@dimen/text_18"

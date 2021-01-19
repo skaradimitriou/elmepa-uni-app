@@ -15,7 +15,7 @@
             android:id="@+id/lessons_header_img"
             android:layout_width="@dimen/margin_45"
             android:layout_height="@dimen/margin_45"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_10"
             android:src="@drawable/info_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,14 +23,12 @@
 
         <TextView
             android:id="@+id/syllabus_lessons_header"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="65dp"
-            android:layout_marginEnd="@dimen/margin_10"
-            android:layout_marginBottom="@dimen/margin_10"
+            android:padding="@dimen/margin_5"
             android:text="@string/all_lessons_mandatory"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/lessons_header_img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/lessons_header_img"
             app:layout_constraintTop_toTopOf="@id/lessons_header_img" />
