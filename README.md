@@ -4,7 +4,7 @@
 
 You can watch the app presentation on [Youtube](https://youtu.be/FQGB7BWJGSI). <br/>
 This app is live at [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp) <br/>
-🧍 Users: 125
+🧍 Users: 140
 
 ## Main Goal
 
@@ -12,6 +12,7 @@ This app was developed for ELMEPA University (Agios Nikolaos) in Crete, so users
 a) useful student information about the department of Management Science & Technology <br/>
 b) look up their professor's e-mail and send them e-mails from the app <br/>
 c) get new announcements of the department
+d) get useful notifications about important events 🔜
 
 ## Users
 
