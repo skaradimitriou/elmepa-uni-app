@@ -44,13 +44,10 @@ public class SyllabusLessonsActivity extends AbstractActivity {
         jsonArray = getIntent().getExtras().getString("ARRAY");
         viewModel.jsonToLesson(jsonArray);
 
-
         recyclerView.setAdapter(viewModel.adapter);
         viewModel.showLessons();
     }
 
     @Override
-    public void stopped() {
-        //
-    }
+    public void stopped() {}
 }

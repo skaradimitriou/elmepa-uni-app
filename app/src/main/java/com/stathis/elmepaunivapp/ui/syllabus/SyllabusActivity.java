@@ -70,14 +70,10 @@ public class SyllabusActivity extends AbstractActivity implements SyllabusActivi
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
+            public void onTabUnselected(TabLayout.Tab tab) {}
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
+            public void onTabReselected(TabLayout.Tab tab) {}
         });
 
         tabLayout.getTabAt(userChoice).select();
@@ -85,9 +81,7 @@ public class SyllabusActivity extends AbstractActivity implements SyllabusActivi
     }
 
     @Override
-    public void stopped() {
-
-    }
+    public void stopped() {}
 
     @Override
     public void showLessons(Semester data) {

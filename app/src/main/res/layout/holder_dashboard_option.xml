@@ -29,10 +29,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_5"
+            android:paddingTop="@dimen/margin_5"
             android:text="@string/announcement_title"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/text_16"
+            style="@style/text_16_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dashboard_option_img" />

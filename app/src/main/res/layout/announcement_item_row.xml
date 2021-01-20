@@ -23,15 +23,11 @@
 
         <TextView
             android:id="@+id/ann_txt"
-            style="@style/TextAppearance.AppCompat.Medium"
+            style="@style/text_18_bold_black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
             android:padding="@dimen/margin_15"
             android:text="@string/announcement_title"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_18"
-            android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/ann_img" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

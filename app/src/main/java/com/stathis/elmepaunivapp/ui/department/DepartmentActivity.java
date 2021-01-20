@@ -92,9 +92,7 @@ public class DepartmentActivity extends AbstractActivity implements View.OnClick
     }
 
     @Override
-    public void stopped() {
-
-    }
+    public void stopped() {}
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

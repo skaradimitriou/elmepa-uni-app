@@ -43,7 +43,6 @@ public class ProfessorsActivity extends AbstractActivity implements ProfessorAct
         search = findViewById(R.id.search_action);
         recyclerView = findViewById(R.id.recyclerView);
 
-        // Bottom Navigation
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.nav_search);
     }
@@ -52,14 +51,10 @@ public class ProfessorsActivity extends AbstractActivity implements ProfessorAct
     public void running() {
         search.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -93,9 +88,7 @@ public class ProfessorsActivity extends AbstractActivity implements ProfessorAct
     }
 
     @Override
-    public void stopped() {
-
-    }
+    public void stopped() {}
 
     @Override
     protected void onPause() {

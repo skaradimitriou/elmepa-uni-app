@@ -16,9 +16,9 @@
         android:orientation="vertical"
         android:scrollbars="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/ask_questions"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/ask_questions"
         app:stackFromEnd="true" />
 
     <com.google.android.material.textfield.TextInputEditText

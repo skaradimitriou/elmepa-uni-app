@@ -35,23 +35,22 @@
 
     <TextView
         android:id="@+id/elmepa_main_txt"
-        android:layout_width="match_parent"
+        style="@style/text_20_white_bold"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:paddingTop="@dimen/text_20"
         android:text="@string/dashboard_elmepa"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_20"
-        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/elmepa_main_desc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/dashboard_det"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_18"
+        style="@style/text_18_non_bold_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/elmepa_main_txt" />

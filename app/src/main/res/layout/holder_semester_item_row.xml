@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_20"
-            android:textSize="@dimen/text_18"
+            android:textColor="@color/black"
+            style="@style/text_18_non_bold_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/semester_title" />

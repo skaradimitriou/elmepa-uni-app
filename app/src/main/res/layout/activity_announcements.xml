@@ -11,12 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:gravity="center"
         android:padding="@dimen/margin_10"
         android:text="@string/announcement_header"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_20"
-        android:textStyle="bold"
+        style="@style/text_20_white_bold"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

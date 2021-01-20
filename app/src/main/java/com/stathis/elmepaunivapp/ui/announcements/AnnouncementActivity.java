@@ -81,9 +81,7 @@ public class AnnouncementActivity extends AbstractActivity implements Announceme
     }
 
     @Override
-    public void stopped() {
-        //
-    }
+    public void stopped() {}
 
     @Override
     public void goToAnnouncement(Announcement announcement) {

@@ -21,12 +21,11 @@
 
         <TextView
             android:id="@+id/schedule_header"
+            style="@style/text_16_black"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_10"
             android:text="@string/student_schedule"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/schedule_img"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +34,7 @@
             android:id="@+id/schedule_card_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
             android:background="@color/dark_orange"
             android:padding="@dimen/margin_15"
             android:text="@string/student_schedule_btn"

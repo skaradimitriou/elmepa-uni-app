@@ -57,7 +57,7 @@ public class ChatBotActivity extends AbstractActivity implements ChatBotListener
 
     @Override
     public void running() {
-//getting messages from users
+        //getting messages from users
         user_text_field.setOnEditorActionListener(new TextInputEditText.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -88,9 +88,7 @@ public class ChatBotActivity extends AbstractActivity implements ChatBotListener
     }
 
     @Override
-    public void stopped() {
-
-    }
+    public void stopped() {}
 
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
@@ -131,9 +129,7 @@ public class ChatBotActivity extends AbstractActivity implements ChatBotListener
     }
 
     @Override
-    public void doNothing(Answer answer) {
-        //
-    }
+    public void doNothing(Answer answer) {}
 
     @Override
     public void openSchedule(Answer answer) {

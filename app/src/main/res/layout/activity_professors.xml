@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/margin_16"
         android:drawableStart="@drawable/ic_search_black_24dp"
-        android:drawablePadding="5dp"
+        android:drawablePadding="@dimen/margin_5"
         android:background="@color/white"
         android:hint="@string/professors_search_txt"
         android:singleLine="true"

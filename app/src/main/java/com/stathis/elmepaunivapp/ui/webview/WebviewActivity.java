@@ -69,9 +69,7 @@ public class WebviewActivity extends AbstractActivity {
     }
 
     @Override
-    public void stopped() {
-
-    }
+    public void stopped() {}
 
     private void checkInternetConnection(){
         // Implement screen if no internet connection

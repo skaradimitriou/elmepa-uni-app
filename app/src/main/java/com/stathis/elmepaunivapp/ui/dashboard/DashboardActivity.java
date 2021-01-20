@@ -56,9 +56,7 @@ public class DashboardActivity extends AbstractActivity implements View.OnClickL
     }
 
     @Override
-    public void stopped() {
-        //
-    }
+    public void stopped() {}
 
     @Override
     public void onClick(View view) {
