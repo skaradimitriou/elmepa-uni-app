@@ -47,6 +47,7 @@ public class ProfessorsRepo {
         professors.add(new ProfessorModel("Ματζαράκης Γεώργιος", "matzarakis@hmu.gr", "female", "Ματζαράκη Γεώργιο"));
         professors.add(new ProfessorModel("Καλαμπόκη Εύα - Μαρία", "matzarakis@hmu.gr", "female", "Καλαμπόκη Εύα - Μαρία"));
         professors.add(new ProfessorModel("Μαρκάκη Σμαράγδα", "sm.markaki@hmu.gr", "female", "Μαρκάκη Σμαράγδα"));
+        professors.add(new ProfessorModel("Καροφυλλάκης Κανάκης", "kanakis@hmu.gr", "male", "Καροφυλλάκη Κανάκη"));
 
         //sorting professor list ascending
         Collections.sort(professors, new Comparator<ProfessorModel>() {
