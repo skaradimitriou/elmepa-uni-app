@@ -21,7 +21,7 @@ b. People who want to learn more about the department.
 
 ### Programming Language 
 
-Java
+Java (soon to be factored using Kotlin)
 
 ## Architecture
 Model - View - ViewModel (MVVM)
