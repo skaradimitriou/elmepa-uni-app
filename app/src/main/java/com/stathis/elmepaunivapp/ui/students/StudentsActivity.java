@@ -1,19 +1,16 @@
 package com.stathis.elmepaunivapp.ui.students;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.StudentsActivityListener;
-import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
@@ -51,7 +48,7 @@ public class StudentsActivity extends AbstractActivity implements StudentsActivi
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(StudentsActivity.this, DashboardActivity.class));
+                        startActivity(new Intent(StudentsActivity.this, DashboardActivityKt.class));
                         break;
                     case R.id.nav_students:
                         return true;

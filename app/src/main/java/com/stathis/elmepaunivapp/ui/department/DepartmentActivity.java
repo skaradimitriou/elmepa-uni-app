@@ -1,8 +1,6 @@
 package com.stathis.elmepaunivapp.ui.department;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -12,8 +10,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -30,7 +26,7 @@ import com.stathis.elmepaunivapp.ui.department.model.SocialChannels;
 import com.stathis.elmepaunivapp.ui.department.model.VirtualTour;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
-import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity;
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt;
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
@@ -75,7 +71,7 @@ public class DepartmentActivity extends AbstractActivity implements View.OnClick
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(DepartmentActivity.this, DashboardActivity.class));
+                        startActivity(new Intent(DepartmentActivity.this, DashboardActivityKt.class));
                         break;
                     case R.id.nav_students:
                         startActivity(new Intent(DepartmentActivity.this, StudentsActivity.class));
