@@ -2,5 +2,5 @@ package com.stathis.elmepaunivapp.model
 
 interface LocalModel {
 
-    fun equalsContent() : Boolean
+    fun equalsContent(obj: LocalModel) : Boolean
 }

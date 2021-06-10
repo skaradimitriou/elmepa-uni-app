@@ -9,8 +9,7 @@ class DiffItemClass<T : LocalModel> : DiffUtil.ItemCallback<T>() {
         return oldItem == newItem
     }
 
-    @SuppressLint("DiffUtilEquals")
     override fun areContentsTheSame(oldItem: T, newItem: T): Boolean {
-        return oldItem == newItem
+        return oldItem.equalsContent(newItem)
     }
 }

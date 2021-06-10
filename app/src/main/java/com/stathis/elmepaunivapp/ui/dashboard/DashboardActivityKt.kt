@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
-import com.stathis.elmepaunivapp.listeners.activity_listeners.DashboardActivityClickListener
-import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity
+import com.stathis.elmepaunivapp.listeners.new.DashboardClickListener
 import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
@@ -25,24 +24,20 @@ class DashboardActivityKt : ElmepaActivity(R.layout.activity_dashboard) {
     override fun startOps() {
         dashboard_options_recview.adapter = viewModel.adapter
 
-        viewModel.bindList(object : DashboardActivityClickListener{
-            override fun goToAnnouncementScreen(dashboardOption: DashboardOption?) {
-                /*
-                create database for announcements and then enable this
-                startActivity(Intent(this@DashboardActivityKt, AnnouncementActivity::class.java))
-                 */
-            }
-
-            override fun goToDepartmentScreen(dashboardOption: DashboardOption?) {
-                startActivity(Intent(this@DashboardActivityKt, DepartmentActivity::class.java))
-            }
-
-            override fun goToProfessorScreen(dashboardOption: DashboardOption?) {
-                startActivity(Intent(this@DashboardActivityKt, ProfessorsActivity::class.java))
-            }
-
-            override fun goToStudentsScreen(dashboardOption: DashboardOption?) {
-                startActivity(Intent(this@DashboardActivityKt, StudentsActivity::class.java))
+        viewModel.bindList(object : DashboardClickListener{
+            override fun dashboardItemClicked(option: DashboardOption) {
+                when(option.drawable){
+                    R.drawable.ic_announcement -> {
+                    /*
+                        create database for announcements and then enable this
+                        startActivity(Intent(this@DashboardActivityKt, AnnouncementActivity::class.java))
+                     */
+                    }
+                    R.drawable.app -> startActivity(Intent(this@DashboardActivityKt, DepartmentActivity::class.java))
+                    R.drawable.ic_student -> startActivity(Intent(this@DashboardActivityKt, StudentsActivity::class.java))
+                    R.drawable.ic_teacher -> startActivity(Intent(this@DashboardActivityKt, ProfessorsActivity::class.java))
+                    else -> Unit
+                }
             }
 
             override fun learnMore() {
@@ -60,7 +55,5 @@ class DashboardActivityKt : ElmepaActivity(R.layout.activity_dashboard) {
         }
     }
 
-    override fun stopOps() {
-        //
-    }
+    override fun stopOps(){}
 }
