@@ -4,13 +4,11 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.DiffItemCallbackClass;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.SyllabusActivityListener;
-import com.stathis.elmepaunivapp.ui.research.recycler.ResearchViewHolder;
 import com.stathis.elmepaunivapp.ui.syllabus.model.Semester;
 
 public class SemesterAdapter extends ListAdapter<Semester, SemesterViewHolder> {
