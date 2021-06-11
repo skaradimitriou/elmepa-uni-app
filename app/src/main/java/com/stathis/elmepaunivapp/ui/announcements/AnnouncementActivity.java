@@ -1,23 +1,20 @@
 package com.stathis.elmepaunivapp.ui.announcements;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.AnnouncementClickListener;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
-import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
@@ -72,7 +69,7 @@ public class AnnouncementActivity extends AbstractActivity implements Announceme
                         startActivity(new Intent(AnnouncementActivity.this, DepartmentActivity.class));
                         break;
                     case R.id.nav_search:
-                        startActivity(new Intent(AnnouncementActivity.this, ProfessorsActivity.class));
+                        startActivity(new Intent(AnnouncementActivity.this, ProfessorActivity.class));
                         break;
                 }
                 return false;

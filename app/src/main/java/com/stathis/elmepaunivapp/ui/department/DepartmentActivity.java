@@ -24,9 +24,9 @@ import com.stathis.elmepaunivapp.ui.department.model.Programmes;
 import com.stathis.elmepaunivapp.ui.department.model.Research;
 import com.stathis.elmepaunivapp.ui.department.model.SocialChannels;
 import com.stathis.elmepaunivapp.ui.department.model.VirtualTour;
-import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity;
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
@@ -79,7 +79,7 @@ public class DepartmentActivity extends AbstractActivity implements View.OnClick
                     case R.id.nav_uni:
                         return true;
                     case R.id.nav_search:
-                        startActivity(new Intent(DepartmentActivity.this, ProfessorsActivity.class));
+                        startActivity(new Intent(DepartmentActivity.this, ProfessorActivity.class));
                         break;
                 }
                 return false;

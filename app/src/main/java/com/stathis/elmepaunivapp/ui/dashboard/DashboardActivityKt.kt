@@ -8,7 +8,7 @@ import com.stathis.elmepaunivapp.listeners.new.DashboardClickListener
 import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
-import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity
+import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_dashboard.*
@@ -35,7 +35,7 @@ class DashboardActivityKt : ElmepaActivity(R.layout.activity_dashboard) {
                     }
                     R.drawable.app -> startActivity(Intent(this@DashboardActivityKt, DepartmentActivity::class.java))
                     R.drawable.ic_student -> startActivity(Intent(this@DashboardActivityKt, StudentsActivity::class.java))
-                    R.drawable.ic_teacher -> startActivity(Intent(this@DashboardActivityKt, ProfessorsActivity::class.java))
+                    R.drawable.ic_teacher -> startActivity(Intent(this@DashboardActivityKt, ProfessorActivity::class.java))
                     else -> Unit
                 }
             }

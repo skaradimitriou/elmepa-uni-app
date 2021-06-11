@@ -9,9 +9,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ResearchActivityClickListener;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt;
-import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
@@ -54,7 +54,7 @@ public class ResearchActivity extends AbstractActivity implements ResearchActivi
                     case R.id.nav_uni:
                         return true;
                     case R.id.nav_search:
-                        startActivity(new Intent(ResearchActivity.this, ProfessorsActivity.class));
+                        startActivity(new Intent(ResearchActivity.this, ProfessorActivity.class));
                         break;
                 }
                 return false;

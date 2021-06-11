@@ -12,8 +12,8 @@ import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.StudentsActivityListener;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
-import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
 import com.stathis.elmepaunivapp.R;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity;
 import com.stathis.elmepaunivapp.ui.students.model.Schedule;
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks;
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
@@ -56,7 +56,7 @@ public class StudentsActivity extends AbstractActivity implements StudentsActivi
                         startActivity(new Intent(StudentsActivity.this, DepartmentActivity.class));
                         break;
                     case R.id.nav_search:
-                        startActivity(new Intent(StudentsActivity.this, ProfessorsActivity.class));
+                        startActivity(new Intent(StudentsActivity.this, ProfessorActivity.class));
                         break;
                 }
                 return false;

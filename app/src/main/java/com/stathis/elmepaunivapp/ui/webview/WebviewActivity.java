@@ -12,7 +12,7 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt;
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity;
-import com.stathis.elmepaunivapp.ui.professors.ProfessorsActivity;
+import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity;
 import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
 
 public class WebviewActivity extends AbstractActivity {
@@ -57,7 +57,7 @@ public class WebviewActivity extends AbstractActivity {
                         startActivity(new Intent(WebviewActivity.this, DepartmentActivity.class));
                         break;
                     case R.id.nav_search:
-                        startActivity(new Intent(WebviewActivity.this, ProfessorsActivity.class));
+                        startActivity(new Intent(WebviewActivity.this, ProfessorActivity.class));
                         break;
                 }
                 return false;
