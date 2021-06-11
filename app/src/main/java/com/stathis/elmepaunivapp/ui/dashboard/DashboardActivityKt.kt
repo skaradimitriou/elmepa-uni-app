@@ -33,7 +33,7 @@ class DashboardActivityKt : ElmepaActivity(R.layout.activity_dashboard) {
                         startActivity(Intent(this@DashboardActivityKt, AnnouncementActivity::class.java))
                      */
                     }
-                    R.drawable.app -> startActivity(Intent(this@DashboardActivityKt, DepartmentActivity::class.java))
+                    R.drawable.ic_books -> startActivity(Intent(this@DashboardActivityKt, DepartmentActivity::class.java))
                     R.drawable.ic_student -> startActivity(Intent(this@DashboardActivityKt, StudentsActivity::class.java))
                     R.drawable.ic_teacher -> startActivity(Intent(this@DashboardActivityKt, ProfessorActivity::class.java))
                     else -> Unit
