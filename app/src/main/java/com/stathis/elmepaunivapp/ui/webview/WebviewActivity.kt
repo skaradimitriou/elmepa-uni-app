@@ -6,7 +6,7 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
-import com.stathis.elmepaunivapp.ui.students.StudentsActivity
+import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
 import kotlinx.android.synthetic.main.activity_webview.*
 import kotlinx.android.synthetic.main.activity_webview.bottom_nav
 
@@ -26,7 +26,7 @@ class WebviewActivity : ElmepaActivity(R.layout.activity_webview) {
                     true
                 }
                 R.id.nav_students -> {
-                    startActivity(Intent(this, StudentsActivity::class.java))
+                    startActivity(Intent(this, StudentsActivityKt::class.java))
                     true
                 }
 

@@ -12,7 +12,6 @@ import com.stathis.elmepaunivapp.listeners.DepartmentCardClickListener;
 import com.stathis.elmepaunivapp.listeners.FieldsOfStudyListener;
 import com.stathis.elmepaunivapp.listeners.ProgrammesClickListener;
 import com.stathis.elmepaunivapp.listeners.SocialClickListener;
-import com.stathis.elmepaunivapp.listeners.activity_listeners.DepartmentActivityListener;
 import com.stathis.elmepaunivapp.ui.department.model.DepMembers;
 import com.stathis.elmepaunivapp.ui.department.model.DepMembersParent;
 import com.stathis.elmepaunivapp.ui.department.model.DeptFieldsOfStudy;
@@ -24,7 +23,6 @@ import com.stathis.elmepaunivapp.ui.department.model.Research;
 import com.stathis.elmepaunivapp.ui.department.model.SocialChannels;
 import com.stathis.elmepaunivapp.ui.department.model.SocialChannelsParent;
 import com.stathis.elmepaunivapp.ui.department.model.VirtualTour;
-import com.stathis.elmepaunivapp.ui.students.model.Schedule;
 
 public class DepartmentViewHolder extends RecyclerView.ViewHolder implements FieldsOfStudyListener,
         SocialClickListener, DepMembersClickListener, ProgrammesClickListener {

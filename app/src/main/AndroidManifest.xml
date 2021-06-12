@@ -19,7 +19,7 @@
         <activity android:name=".ui.syllabus.SyllabusActivity" />
         <activity android:name=".ui.research.ResearchActivity" />
         <activity android:name=".ui.professors.ProfessorActivity" />
-        <activity android:name=".ui.students.StudentsActivity" />
+        <activity android:name=".ui.students.StudentsActivityKt" />
         <activity android:name=".ui.department.DepartmentActivity" />
         <activity android:name=".ui.announcements.AnnouncementsActivity" />
         <activity android:name=".ui.dashboard.DashboardActivityKt">

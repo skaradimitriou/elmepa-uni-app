@@ -11,7 +11,7 @@ import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
-import com.stathis.elmepaunivapp.ui.students.StudentsActivity
+import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_announcements.*
 import kotlinx.android.synthetic.main.activity_announcements.bottom_nav
@@ -55,7 +55,7 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),
                     true
                 }
                 R.id.nav_students -> {
-                    startActivity(Intent(this, StudentsActivity::class.java))
+                    startActivity(Intent(this, StudentsActivityKt::class.java))
                     true
                 }
 

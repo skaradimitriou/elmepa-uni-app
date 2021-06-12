@@ -28,7 +28,7 @@ import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt;
 import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity;
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity;
-import com.stathis.elmepaunivapp.ui.students.StudentsActivity;
+import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt;
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity;
 
@@ -74,7 +74,7 @@ public class DepartmentActivity extends AbstractActivity implements View.OnClick
                         startActivity(new Intent(DepartmentActivity.this, DashboardActivityKt.class));
                         break;
                     case R.id.nav_students:
-                        startActivity(new Intent(DepartmentActivity.this, StudentsActivity.class));
+                        startActivity(new Intent(DepartmentActivity.this, StudentsActivityKt.class));
                         break;
                     case R.id.nav_uni:
                         return true;

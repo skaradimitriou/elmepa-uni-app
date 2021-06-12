@@ -13,7 +13,7 @@ import com.stathis.elmepaunivapp.listeners.latest.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.professors.model.Professor
-import com.stathis.elmepaunivapp.ui.students.StudentsActivity
+import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
 import kotlinx.android.synthetic.main.activity_professors.*
 
 class ProfessorActivity : ElmepaActivity(R.layout.activity_professors) {
@@ -44,7 +44,7 @@ class ProfessorActivity : ElmepaActivity(R.layout.activity_professors) {
                     true
                 }
                 R.id.nav_students -> {
-                    startActivity(Intent(this, StudentsActivity::class.java))
+                    startActivity(Intent(this, StudentsActivityKt::class.java))
                     true
                 }
 
