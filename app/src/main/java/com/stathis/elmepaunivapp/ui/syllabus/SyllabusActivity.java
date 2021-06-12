@@ -1,13 +1,9 @@
 package com.stathis.elmepaunivapp.ui.syllabus;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
@@ -17,9 +13,6 @@ import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.SyllabusActivityListener;
 import com.stathis.elmepaunivapp.ui.syllabus.model.Semester;
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.SyllabusLessonsActivity;
-
-import java.util.ArrayList;
-import java.util.Objects;
 
 public class SyllabusActivity extends AbstractActivity implements SyllabusActivityListener {
 

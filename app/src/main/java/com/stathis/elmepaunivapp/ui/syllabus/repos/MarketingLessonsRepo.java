@@ -1,11 +1,11 @@
 package com.stathis.elmepaunivapp.ui.syllabus.repos;
 
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
+import com.stathis.elmepaunivapp.ui.syllabus.model.Lesson;
+import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonKt;
 
 import java.util.ArrayList;
 
 public class MarketingLessonsRepo {
-
 
     private ArrayList<Lesson> AsemesterList = new ArrayList<>();
     private ArrayList<Lesson> BsemesterList = new ArrayList<>();

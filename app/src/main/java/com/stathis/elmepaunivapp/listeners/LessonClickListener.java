@@ -1,8 +1,6 @@
 package com.stathis.elmepaunivapp.listeners;
 
-import android.view.View;
-
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
+import com.stathis.elmepaunivapp.ui.syllabus.model.Lesson;
 
 public interface LessonClickListener {
 

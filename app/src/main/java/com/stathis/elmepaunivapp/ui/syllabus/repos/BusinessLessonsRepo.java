@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.ui.syllabus.repos;
 
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson;
+import com.stathis.elmepaunivapp.ui.syllabus.model.Lesson;
 
 import java.util.ArrayList;
 
