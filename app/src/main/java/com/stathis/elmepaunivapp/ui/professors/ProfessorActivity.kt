@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
-import com.stathis.elmepaunivapp.listeners.new.ProfessorScreenClickListener
+import com.stathis.elmepaunivapp.listeners.latest.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.professors.model.Professor
@@ -59,7 +59,7 @@ class ProfessorActivity : ElmepaActivity(R.layout.activity_professors) {
 
         bottom_nav.selectedItemId = R.id.nav_search
 
-        viewModel.getProfessors(object : ProfessorScreenClickListener{
+        viewModel.getProfessors(object : ProfessorScreenClickListener {
             override fun openDialog(professor: Professor) {
                 openPopUpWindow(professor)
             }

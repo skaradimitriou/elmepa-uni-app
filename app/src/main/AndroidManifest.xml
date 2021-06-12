@@ -21,7 +21,7 @@
         <activity android:name=".ui.professors.ProfessorActivity" />
         <activity android:name=".ui.students.StudentsActivity" />
         <activity android:name=".ui.department.DepartmentActivity" />
-        <activity android:name=".ui.announcements.AnnouncementActivity" />
+        <activity android:name=".ui.announcements.AnnouncementsActivity" />
         <activity android:name=".ui.dashboard.DashboardActivityKt">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

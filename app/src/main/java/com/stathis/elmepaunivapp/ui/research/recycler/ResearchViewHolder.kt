@@ -3,7 +3,7 @@ package com.stathis.elmepaunivapp.ui.research.recycler
 import android.view.View
 import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
 import com.stathis.elmepaunivapp.listeners.UsefulLinkClickListener
-import com.stathis.elmepaunivapp.listeners.new.ElmepaClickListener
+import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
 import com.stathis.elmepaunivapp.model.LocalModel
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks

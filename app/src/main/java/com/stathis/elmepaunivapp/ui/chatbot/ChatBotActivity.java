@@ -24,7 +24,6 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.stathis.elmepaunivapp.abstraction.AbstractActivity;
 import com.stathis.elmepaunivapp.listeners.activity_listeners.ChatBotListener;
-import com.stathis.elmepaunivapp.ui.announcements.AnnouncementActivity;
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer;
 import com.stathis.elmepaunivapp.R;
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity;

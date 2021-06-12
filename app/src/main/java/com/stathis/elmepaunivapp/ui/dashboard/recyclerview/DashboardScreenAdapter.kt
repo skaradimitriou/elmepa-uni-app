@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
-import com.stathis.elmepaunivapp.listeners.new.ElmepaClickListener
+import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
 import com.stathis.elmepaunivapp.model.LocalModel
 
 class DashboardScreenAdapter(private val callback: ElmepaClickListener) :

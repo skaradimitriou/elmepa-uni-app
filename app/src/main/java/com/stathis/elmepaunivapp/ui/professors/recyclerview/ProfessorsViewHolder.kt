@@ -3,7 +3,7 @@ package com.stathis.elmepaunivapp.ui.professors.recyclerview
 import android.view.View
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
-import com.stathis.elmepaunivapp.listeners.new.ElmepaClickListener
+import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
 import com.stathis.elmepaunivapp.model.LocalModel
 import com.stathis.elmepaunivapp.ui.professors.model.Professor
 import kotlinx.android.synthetic.main.professor_item_row.view.*

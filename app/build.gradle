@@ -47,21 +47,17 @@ dependencies {
     // jsoup HTML parser library @ https://jsoup.org/
     implementation 'org.jsoup:jsoup:1.10.3'
 
-    //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    //Volley
-    implementation 'com.android.volley:volley:1.1.1'
-
-    //Circle photos
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    //Cardview
     implementation "androidx.cardview:cardview:1.0.0"
 
     //Room (db library)
-    implementation "androidx.room:room-runtime:2.2.5"
-    annotationProcessor "androidx.room:room-compiler:2.2.5"
+    def room_version = "2.2.6"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt  "androidx.room:room-compiler:$room_version"
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"

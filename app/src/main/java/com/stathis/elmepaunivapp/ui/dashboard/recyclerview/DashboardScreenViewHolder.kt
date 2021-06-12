@@ -2,7 +2,7 @@ package com.stathis.elmepaunivapp.ui.dashboard.recyclerview
 
 import android.view.View
 import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
-import com.stathis.elmepaunivapp.listeners.new.ElmepaClickListener
+import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
 import com.stathis.elmepaunivapp.model.LocalModel
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption
 import kotlinx.android.synthetic.main.holder_dashboard_option.view.*
