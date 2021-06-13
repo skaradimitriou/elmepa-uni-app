@@ -59,10 +59,10 @@ class DepartmentRepository {
             FieldOfStudyParent("Γνωστικά Αντικείμενα", fieldsOfStudy),
             ProgrammeParent("Προγράμματα", programmes),
             VirtualTourModel(""),
-            ResearchKt(""),
+            Research(""),
             DepMemberParent("Μέλη Δ.Ε.Π.", depMembers),
             SocialChannelParent("Βρείτε μας Online", socialList),
-            EmptyModelKt()
+            EmptyModel()
         )
 
         departmentList.value = list

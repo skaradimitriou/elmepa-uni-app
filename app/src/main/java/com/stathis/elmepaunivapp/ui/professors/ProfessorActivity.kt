@@ -9,11 +9,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
-import com.stathis.elmepaunivapp.listeners.latest.ProfessorScreenClickListener
+import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity
-import com.stathis.elmepaunivapp.ui.department.DepartmentActivityKt
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.professors.model.Professor
-import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity
 import kotlinx.android.synthetic.main.activity_professors.*
 
 class ProfessorActivity : ElmepaActivity(R.layout.activity_professors) {
@@ -42,12 +42,12 @@ class ProfessorActivity : ElmepaActivity(R.layout.activity_professors) {
                     true
                 }
                 R.id.nav_students -> {
-                    startActivity(Intent(this, StudentsActivityKt::class.java))
+                    startActivity(Intent(this, StudentsActivity::class.java))
                     true
                 }
 
                 R.id.nav_uni -> {
-                    startActivity(Intent(this, DepartmentActivityKt::class.java))
+                    startActivity(Intent(this, DepartmentActivity::class.java))
                     true
                 }
 

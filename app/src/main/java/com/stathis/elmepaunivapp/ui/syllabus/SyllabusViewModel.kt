@@ -4,8 +4,8 @@ import android.app.Application
 import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
-import com.stathis.elmepaunivapp.listeners.latest.SyllabusClickListener
+import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
+import com.stathis.elmepaunivapp.callbacks.SyllabusClickListener
 import com.stathis.elmepaunivapp.ui.syllabus.model.Semester
 import com.stathis.elmepaunivapp.ui.syllabus.recyclerview.SemesterAdapter
 import com.stathis.elmepaunivapp.ui.syllabus.repos.BusinessLessonsRepo

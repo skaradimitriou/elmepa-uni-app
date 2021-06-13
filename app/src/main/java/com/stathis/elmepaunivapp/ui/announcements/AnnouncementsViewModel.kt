@@ -5,8 +5,8 @@ import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import com.stathis.elmepaunivapp.listeners.latest.AnnouncementClickListenerKt
-import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
+import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
+import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.announcements.recyclerviews.AnnouncementsAdapter
 import com.stathis.elmepaunivapp.ui.announcements.repo.AnnouncementRepository
@@ -19,10 +19,10 @@ class AnnouncementsViewModel(app : Application) : AndroidViewModel(app), ElmepaC
     private val repo = AnnouncementRepository(app)
     val announcements = repo.announcementList
     val error = repo.errorParsing
-    private lateinit var callback : AnnouncementClickListenerKt
+    private lateinit var callback : AnnouncementClickListener
     val adapter = AnnouncementsAdapter(this)
 
-    fun bindCallback(callback : AnnouncementClickListenerKt){
+    fun bindCallback(callback : AnnouncementClickListener){
         this.callback = callback
     }
 

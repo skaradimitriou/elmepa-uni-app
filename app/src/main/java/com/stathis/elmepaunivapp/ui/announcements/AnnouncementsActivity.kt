@@ -6,18 +6,18 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
-import com.stathis.elmepaunivapp.listeners.latest.AnnouncementClickListenerKt
+import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity
-import com.stathis.elmepaunivapp.ui.department.DepartmentActivityKt
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
-import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_announcements.*
 import kotlinx.android.synthetic.main.activity_announcements.bottom_nav
 
 class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),
-    AnnouncementClickListenerKt {
+    AnnouncementClickListener {
 
     private lateinit var viewModel : AnnouncementsViewModel
 
@@ -55,12 +55,12 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),
                     true
                 }
                 R.id.nav_students -> {
-                    startActivity(Intent(this, StudentsActivityKt::class.java))
+                    startActivity(Intent(this, StudentsActivity::class.java))
                     true
                 }
 
                 R.id.nav_uni -> {
-                    startActivity(Intent(this, DepartmentActivityKt::class.java))
+                    startActivity(Intent(this, DepartmentActivity::class.java))
                     true
                 }
 

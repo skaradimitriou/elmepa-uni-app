@@ -7,7 +7,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
-import com.stathis.elmepaunivapp.listeners.latest.SyllabusClickListener
+import com.stathis.elmepaunivapp.callbacks.SyllabusClickListener
 import com.stathis.elmepaunivapp.ui.syllabus.model.Semester
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.SyllabusLessonsActivity
 import kotlinx.android.synthetic.main.activity_syllabus.*
@@ -27,7 +27,7 @@ class SyllabusActivity : ElmepaActivity(R.layout.activity_syllabus) {
 
         tabLayout.getTabAt(userChoice)
 
-        viewModel.bindCallback(object : SyllabusClickListener{
+        viewModel.bindCallback(object : SyllabusClickListener {
             override fun onSemesterTap(syllabus: Semester) {
                 val jsonArray = Gson().toJson(syllabus.lessons)
                 Log.d("JSON_ARRAY", jsonArray)

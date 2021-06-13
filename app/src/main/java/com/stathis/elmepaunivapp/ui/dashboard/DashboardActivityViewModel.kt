@@ -6,8 +6,8 @@ import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.listeners.latest.DashboardClickListener
-import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
+import com.stathis.elmepaunivapp.callbacks.DashboardClickListener
+import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption
 import com.stathis.elmepaunivapp.ui.dashboard.recyclerview.DashboardScreenAdapter
 

@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
-import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
+import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.model.LocalModel
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonKt
+import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 
 class LessonsAdapter(private val callback: ElmepaClickListener) :
     ListAdapter<LocalModel, LessonsViewHolder>(DiffItemClass<LocalModel>()) {
@@ -25,7 +25,7 @@ class LessonsAdapter(private val callback: ElmepaClickListener) :
     override fun getItemViewType(position: Int): Int {
         return when (getItem(position)) {
             is LessonHeader -> R.layout.holder_lessons_header_item
-            is LessonKt -> R.layout.lesson_item_row
+            is Lesson -> R.layout.lesson_item_row
             else -> R.layout.holder_empty_view
         }
     }

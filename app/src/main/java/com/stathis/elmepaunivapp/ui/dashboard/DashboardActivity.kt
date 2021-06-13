@@ -4,13 +4,13 @@ import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
-import com.stathis.elmepaunivapp.listeners.latest.DashboardClickListener
+import com.stathis.elmepaunivapp.callbacks.DashboardClickListener
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
-import com.stathis.elmepaunivapp.ui.chatbot.ChatBotActivity
+import com.stathis.elmepaunivapp.ui.chatbot.ChatbotActivity
 import com.stathis.elmepaunivapp.ui.dashboard.model.DashboardOption
-import com.stathis.elmepaunivapp.ui.department.DepartmentActivityKt
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
-import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
+import com.stathis.elmepaunivapp.ui.students.StudentsActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_dashboard.*
 
@@ -29,8 +29,8 @@ class DashboardActivity : ElmepaActivity(R.layout.activity_dashboard) {
             override fun dashboardItemClicked(option: DashboardOption) {
                 when(option.drawable){
                     R.drawable.ic_announcement -> startActivity(Intent(this@DashboardActivity, AnnouncementsActivity::class.java))
-                    R.drawable.ic_books -> startActivity(Intent(this@DashboardActivity, DepartmentActivityKt::class.java))
-                    R.drawable.ic_student -> startActivity(Intent(this@DashboardActivity, StudentsActivityKt::class.java))
+                    R.drawable.ic_books -> startActivity(Intent(this@DashboardActivity, DepartmentActivity::class.java))
+                    R.drawable.ic_student -> startActivity(Intent(this@DashboardActivity, StudentsActivity::class.java))
                     R.drawable.ic_teacher -> startActivity(Intent(this@DashboardActivity, ProfessorActivity::class.java))
                     else -> Unit
                 }
@@ -43,7 +43,7 @@ class DashboardActivity : ElmepaActivity(R.layout.activity_dashboard) {
         })
 
         fab_chatbot.setOnClickListener{
-            startActivity(Intent(this@DashboardActivity,ChatBotActivity::class.java))
+            startActivity(Intent(this@DashboardActivity, ChatbotActivity::class.java))
         }
 
         about.setOnClickListener{

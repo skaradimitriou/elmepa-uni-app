@@ -2,7 +2,7 @@ package com.stathis.elmepaunivapp.ui.department.recyclerviews
 
 import android.view.View
 import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
-import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
+import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.model.LocalModel
 import com.stathis.elmepaunivapp.ui.department.model.*
 import kotlinx.android.synthetic.main.dep_members_item_row.view.*
@@ -32,7 +32,7 @@ class DepartmentChildViewHolder(itemView : View, callback : ElmepaClickListener)
                 itemView.dep_img.setImageResource(data.image)
             }
 
-            is ResearchKt -> {}
+            is Research -> {}
         }
     }
 }
