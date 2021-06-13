@@ -20,9 +20,9 @@
         <activity android:name=".ui.research.ResearchActivity" />
         <activity android:name=".ui.professors.ProfessorActivity" />
         <activity android:name=".ui.students.StudentsActivityKt" />
-        <activity android:name=".ui.department.DepartmentActivity" />
+        <activity android:name=".ui.department.DepartmentActivityKt" />
         <activity android:name=".ui.announcements.AnnouncementsActivity" />
-        <activity android:name=".ui.dashboard.DashboardActivityKt">
+        <activity android:name=".ui.dashboard.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

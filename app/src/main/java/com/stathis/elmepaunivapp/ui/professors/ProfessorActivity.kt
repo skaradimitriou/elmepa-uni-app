@@ -10,8 +10,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.listeners.latest.ProfessorScreenClickListener
-import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt
-import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivityKt
 import com.stathis.elmepaunivapp.ui.professors.model.Professor
 import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
 import kotlinx.android.synthetic.main.activity_professors.*
@@ -29,9 +29,7 @@ class ProfessorActivity : ElmepaActivity(R.layout.activity_professors) {
 
         search_action.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
             override fun afterTextChanged(p0: Editable?) {
                 viewModel.filter(p0.toString())
             }
@@ -40,7 +38,7 @@ class ProfessorActivity : ElmepaActivity(R.layout.activity_professors) {
         bottom_nav.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.nav_home -> {
-                    startActivity(Intent(this, DashboardActivityKt::class.java))
+                    startActivity(Intent(this, DashboardActivity::class.java))
                     true
                 }
                 R.id.nav_students -> {
@@ -49,7 +47,7 @@ class ProfessorActivity : ElmepaActivity(R.layout.activity_professors) {
                 }
 
                 R.id.nav_uni -> {
-                    startActivity(Intent(this, DepartmentActivity::class.java))
+                    startActivity(Intent(this, DepartmentActivityKt::class.java))
                     true
                 }
 

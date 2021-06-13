@@ -6,7 +6,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.listeners.latest.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.research.recycler.ResearchAdapter
-import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinksKt
 
 class ResearchViewModel : ViewModel(), ElmepaClickListener {
 
@@ -14,22 +14,22 @@ class ResearchViewModel : ViewModel(), ElmepaClickListener {
 
     fun createLists() {
         val researchItemsList = listOf(
-            UsefulLinks(
+            UsefulLinksKt(
                 "Ινστιτούτο Οικονομικής Ανάλυσης",
                 "https://mst.hmu.gr/ereuna/institoyto-oikonomikhs-analyshs-epicheirhmatikothtas-kai-toyrismoy/",
                 R.drawable.institute
             ),
-            UsefulLinks(
+            UsefulLinksKt(
                 "Ερευνητικά Επιτεύγματα",
                 "https://mst.hmu.gr/ereuna/ereynhtika-epiteygmata/",
                 R.drawable.achievements
             ),
-            UsefulLinks(
+            UsefulLinksKt(
                 "Δημοσιεύσεις",
                 "https://mst.hmu.gr/ereuna/dhmosieyseis/",
                 R.drawable.papers
             ),
-            UsefulLinks(
+            UsefulLinksKt(
                 "Στατιστικά Στοιχεία",
                 "https://mst.hmu.gr/ereuna/statistika-stoicheia/",
                 R.drawable.analytics
@@ -37,17 +37,17 @@ class ResearchViewModel : ViewModel(), ElmepaClickListener {
         )
 
         val researchLabList = listOf(
-            UsefulLinks(
+            UsefulLinksKt(
                 "Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων",
                 "https://mst.hmu.gr/ereuna/adeds/",
                 R.drawable.lab
             ),
-            UsefulLinks(
+            UsefulLinksKt(
                 "Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης",
                 "https://mst.hmu.gr/ereuna/datalab/",
                 R.drawable.lab
             ),
-            UsefulLinks(
+            UsefulLinksKt(
                 "Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας",
                 "https://www.e-bilab.gr/",
                 R.drawable.lab

@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.listeners.latest.StudentsScreenCallback
-import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt
-import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivityKt
 import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
 import com.stathis.elmepaunivapp.ui.students.model.UsefulLinksKt
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
@@ -67,13 +67,13 @@ class StudentsActivityKt : ElmepaActivity(R.layout.activity_students) {
         bottom_nav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> {
-                    startActivity(Intent(this, DashboardActivityKt::class.java))
+                    startActivity(Intent(this, DashboardActivity::class.java))
                     true
                 }
                 R.id.nav_students -> true
 
                 R.id.nav_uni -> {
-                    startActivity(Intent(this, DepartmentActivity::class.java))
+                    startActivity(Intent(this, DepartmentActivityKt::class.java))
                     true
                 }
 

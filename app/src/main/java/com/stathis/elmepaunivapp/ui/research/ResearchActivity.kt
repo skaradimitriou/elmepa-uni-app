@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
-import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt
-import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivityKt
 import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
 import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
 import kotlinx.android.synthetic.main.activity_research_in_dept.*
@@ -27,7 +27,7 @@ class ResearchActivity : ElmepaActivity(R.layout.activity_research_in_dept) {
         bottom_nav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> {
-                    startActivity(Intent(this, DashboardActivityKt::class.java))
+                    startActivity(Intent(this, DashboardActivity::class.java))
                     true
                 }
                 R.id.nav_students -> {
@@ -36,7 +36,7 @@ class ResearchActivity : ElmepaActivity(R.layout.activity_research_in_dept) {
                 }
 
                 R.id.nav_uni -> {
-                    startActivity(Intent(this, DepartmentActivity::class.java))
+                    startActivity(Intent(this, DepartmentActivityKt::class.java))
                     true
                 }
 

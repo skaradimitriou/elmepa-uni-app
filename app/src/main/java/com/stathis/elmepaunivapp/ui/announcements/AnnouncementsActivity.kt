@@ -8,8 +8,8 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.listeners.latest.AnnouncementClickListenerKt
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
-import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivityKt
-import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
+import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivityKt
 import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
 import com.stathis.elmepaunivapp.ui.students.StudentsActivityKt
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
@@ -51,7 +51,7 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),
         bottom_nav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> {
-                    startActivity(Intent(this, DashboardActivityKt::class.java))
+                    startActivity(Intent(this, DashboardActivity::class.java))
                     true
                 }
                 R.id.nav_students -> {
@@ -60,7 +60,7 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),
                 }
 
                 R.id.nav_uni -> {
-                    startActivity(Intent(this, DepartmentActivity::class.java))
+                    startActivity(Intent(this, DepartmentActivityKt::class.java))
                     true
                 }
 
