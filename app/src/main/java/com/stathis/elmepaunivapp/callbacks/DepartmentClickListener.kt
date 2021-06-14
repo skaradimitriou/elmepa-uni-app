@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.callbacks
 
-import com.stathis.elmepaunivapp.ui.department.model.*
+import com.stathis.elmepaunivapp.ui.main.department.model.*
 
 interface DepartmentClickListener {
     fun openSyllabus(data : FieldOfStudy)

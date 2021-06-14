@@ -2,7 +2,7 @@ package com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler
 
 import android.view.View
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
+import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.model.LocalModel
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
@@ -10,7 +10,7 @@ import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 import kotlinx.android.synthetic.main.holder_lessons_header_item.view.*
 import kotlinx.android.synthetic.main.lesson_item_row.view.*
 
-class LessonsViewHolder(itemView : View, callback : ElmepaClickListener) : AbstractViewHolder(itemView,callback) {
+class LessonsViewHolder(itemView : View, callback : ElmepaClickListener) : ElmepaViewHolder(itemView,callback) {
 
     override fun present(data: LocalModel) {
         when(data){

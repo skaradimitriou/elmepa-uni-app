@@ -6,7 +6,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.research.recycler.ResearchAdapter
-import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
 
 class ResearchViewModel : ViewModel(), ElmepaClickListener {
 

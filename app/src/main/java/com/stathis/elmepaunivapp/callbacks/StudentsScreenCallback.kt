@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.callbacks
 
-import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
 
 interface StudentsScreenCallback {
 

@@ -8,10 +8,10 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
-import com.stathis.elmepaunivapp.ui.dashboard.DashboardActivity
-import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
-import com.stathis.elmepaunivapp.ui.professors.ProfessorActivity
-import com.stathis.elmepaunivapp.ui.students.StudentsActivity
+import com.stathis.elmepaunivapp.ui.main.dashboard.DashboardFragment
+import com.stathis.elmepaunivapp.ui.main.department.DepartmentFragment
+import com.stathis.elmepaunivapp.ui.main.professors.ProfessorFragment
+import com.stathis.elmepaunivapp.ui.main.students.StudentsFragment
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_announcements.*
 import kotlinx.android.synthetic.main.activity_announcements.bottom_nav
@@ -44,34 +44,6 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),
 
         viewModel.observeData(this)
 
-        setupBottomNavigation()
-    }
-
-    private fun setupBottomNavigation() {
-        bottom_nav.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.nav_home -> {
-                    startActivity(Intent(this, DashboardActivity::class.java))
-                    true
-                }
-                R.id.nav_students -> {
-                    startActivity(Intent(this, StudentsActivity::class.java))
-                    true
-                }
-
-                R.id.nav_uni -> {
-                    startActivity(Intent(this, DepartmentActivity::class.java))
-                    true
-                }
-
-                R.id.nav_search -> {
-                    startActivity(Intent(this, ProfessorActivity::class.java))
-                    true
-                }
-
-                else -> false
-            }
-        }
     }
 
     override fun stopOps() {

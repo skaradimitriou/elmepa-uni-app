@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.stathis.elmepaunivapp.ui.main.dashboard.DashboardFragment"
+        android:label="DashboardActivity" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_search"
+            app:destination="@id/nav_search" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_uni"
+            app:destination="@id/nav_uni" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_students"
+            app:destination="@id/nav_students" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.stathis.elmepaunivapp.ui.main.professors.ProfessorFragment"
+        android:label="ProfessorActivity" />
+    <fragment
+        android:id="@+id/nav_students"
+        android:name="com.stathis.elmepaunivapp.ui.main.students.StudentsFragment"
+        android:label="StudentsActivity" />
+    <fragment
+        android:id="@+id/nav_uni"
+        android:name="com.stathis.elmepaunivapp.ui.main.department.DepartmentFragment"
+        android:label="activity_department"
+        tools:layout="@layout/fragment_department" />
+</navigation>

@@ -15,13 +15,10 @@
         <activity android:name=".ui.syllabus_lessons.SyllabusLessonsActivity" />
         <activity android:name=".ui.webview.WebviewActivity" />
         <activity android:name=".ui.chatbot.ChatbotActivity" />
-        <activity android:name=".ui.syllabus.SyllabusActivity" />
+        <activity android:name="com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity" />
         <activity android:name=".ui.research.ResearchActivity" />
-        <activity android:name=".ui.professors.ProfessorActivity" />
-        <activity android:name=".ui.students.StudentsActivity" />
-        <activity android:name=".ui.department.DepartmentActivity" />
         <activity android:name=".ui.announcements.AnnouncementsActivity" />
-        <activity android:name=".ui.dashboard.DashboardActivity">
+        <activity android:name=".ui.main.MainActivity" android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
