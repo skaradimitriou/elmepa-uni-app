@@ -8,13 +8,8 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
-import com.stathis.elmepaunivapp.ui.main.dashboard.DashboardFragment
-import com.stathis.elmepaunivapp.ui.main.department.DepartmentFragment
-import com.stathis.elmepaunivapp.ui.main.professors.ProfessorFragment
-import com.stathis.elmepaunivapp.ui.main.students.StudentsFragment
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_announcements.*
-import kotlinx.android.synthetic.main.activity_announcements.bottom_nav
 
 class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),
     AnnouncementClickListener {

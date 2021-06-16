@@ -3,20 +3,20 @@
 
     <item
         android:id="@+id/nav_home"
-        android:title="Αρχική"
+        android:title="@string/menu_home"
         android:icon="@drawable/ic_home_black_24dp"/>
     <item
         android:id="@+id/nav_students"
-        android:title="Φοιτητές"
+        android:title="@string/menu_student"
         android:icon="@drawable/ic_person_pin_black_24dp"/>
     <item
         android:id="@+id/nav_uni"
-        android:title="Τμήμα"
+        android:title="@string/menu_dept"
         android:icon="@drawable/ic_uni_black_24dp"/>
 
     <item
         android:id="@+id/nav_search"
-        android:title="Αναζήτηση"
+        android:title="@string/menu_search"
         android:icon="@drawable/ic_search_black_24dp"/>
 
 </menu>

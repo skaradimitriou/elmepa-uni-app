@@ -59,5 +59,9 @@
 
     <!-- Research Item -->
     <string name="research_item_txt">Έρευνα στο Τμήμα</string>
+    <string name="menu_home">Αρχική</string>
+    <string name="menu_student">Φοιτητές</string>
+    <string name="menu_dept">Τμήμα</string>
+    <string name="menu_search">Αναζήτηση</string>
 
 </resources>

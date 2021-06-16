@@ -5,10 +5,12 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.stathis.elmepaunivapp.database.AnnouncementsDatabaseKt
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
+import com.stathis.elmepaunivapp.util.SharedPreferencesHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.jsoup.Jsoup
+
 
 class AnnouncementRepository(app: Application) {
 
@@ -16,20 +18,37 @@ class AnnouncementRepository(app: Application) {
     val announcementList = MutableLiveData<List<Announcement>>()
     val errorParsing = MutableLiveData<Boolean>()
     val database = AnnouncementsDatabaseKt.getDatabase(context).announcementDao()
+    private val prefHelper = SharedPreferencesHelper.setHelper(context)
+    private val refreshTime = 5 * 60 * 1000 * 1000 * 1000L
 
     init {
-        CoroutineScope(Dispatchers.IO).launch {
-            val data = database.getAll()
-            when (data.isEmpty()) {
-                true -> getAnnouncements()
-                false -> getAnnouncementsFromDb()
+        val updateTime = SharedPreferencesHelper.getUpdateTime()
+        val currentTime = System.nanoTime()
+
+        when(updateTime > 0 && currentTime - updateTime < refreshTime) {
+            true -> {
+                Log.d("","Getting Data From Database")
+                getAnnouncementsFromDb()
             }
+            false -> {
+                Log.d("","Getting Data From Web")
+                getDataFromWeb()
+            }
+
         }
     }
 
-    private suspend fun getAnnouncementsFromDb() {
-        val announcements = database.getAll()
-        announcementList.postValue(announcements)
+    fun getDataFromWeb(){
+        CoroutineScope(Dispatchers.IO).launch {
+            getAnnouncements()
+        }
+    }
+
+    private fun getAnnouncementsFromDb() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val announcements = database.getAll()
+            announcementList.postValue(announcements)
+        }
     }
 
     suspend fun getAnnouncements() {
@@ -60,6 +79,8 @@ class AnnouncementRepository(app: Application) {
 
             database.deleteAll()
             database.insertAll(announcements)
+
+            SharedPreferencesHelper.saveUpdateTime(System.nanoTime())
 
             errorParsing.postValue(false)
         } catch (e: Exception) {

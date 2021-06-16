@@ -25,7 +25,7 @@ class DashboardFragmentViewModel(app: Application) : AndroidViewModel(app), Elme
                 DashboardOption("Ανακοινώσεις", R.drawable.ic_announcement),
                 DashboardOption("Το Τμήμα", R.drawable.ic_books),
                 DashboardOption("Φοιτητές", R.drawable.ic_student),
-                DashboardOption("Προσωπικό", R.drawable.ic_teacher)
+                DashboardOption("Καθηγητές", R.drawable.ic_teacher)
             )
         )
     }

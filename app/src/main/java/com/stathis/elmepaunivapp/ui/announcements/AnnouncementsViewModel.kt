@@ -14,36 +14,34 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AnnouncementsViewModel(app : Application) : AndroidViewModel(app), ElmepaClickListener {
+class AnnouncementsViewModel(app: Application) : AndroidViewModel(app), ElmepaClickListener {
 
     private val repo = AnnouncementRepository(app)
     val announcements = repo.announcementList
     val error = repo.errorParsing
-    private lateinit var callback : AnnouncementClickListener
+    private lateinit var callback: AnnouncementClickListener
     val adapter = AnnouncementsAdapter(this)
 
-    fun bindCallback(callback : AnnouncementClickListener){
+    fun bindCallback(callback: AnnouncementClickListener) {
         this.callback = callback
     }
 
-    fun refreshData(){
-        CoroutineScope(Dispatchers.IO).launch {
-            repo.getAnnouncements()
-        }
+    fun refreshData() {
+        repo.getDataFromWeb()
     }
 
-    fun observeData(owner : LifecycleOwner){
+    fun observeData(owner: LifecycleOwner) {
         announcements.observe(owner, Observer {
-            it?.let{ adapter.submitList(it) }
+            it?.let { adapter.submitList(it) }
         })
     }
 
-    fun removeObserver(owner : LifecycleOwner){
+    fun removeObserver(owner: LifecycleOwner) {
         announcements.removeObservers(owner)
     }
 
     override fun onItemClick(view: View) {
-        when(view.tag){
+        when (view.tag) {
             is Announcement -> callback.onAnnouncementTap(view.tag as Announcement)
         }
     }
