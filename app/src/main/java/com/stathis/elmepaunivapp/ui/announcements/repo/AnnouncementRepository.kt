@@ -34,7 +34,6 @@ class AnnouncementRepository(app: Application) {
                 Log.d("","Getting Data From Web")
                 getDataFromWeb()
             }
-
         }
     }
 

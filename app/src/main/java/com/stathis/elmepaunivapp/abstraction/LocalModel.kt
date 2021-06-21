@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.model
+package com.stathis.elmepaunivapp.abstraction
 
 interface LocalModel {
 

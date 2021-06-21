@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.LessonsClickListener
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler.LessonsAdapter

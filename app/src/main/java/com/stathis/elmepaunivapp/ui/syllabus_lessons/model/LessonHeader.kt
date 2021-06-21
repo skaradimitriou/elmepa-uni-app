@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.ui.syllabus_lessons.model
 
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 
 data class LessonHeader(
 

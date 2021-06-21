@@ -3,7 +3,7 @@ package com.stathis.elmepaunivapp.ui.main.students.recycler
 import android.view.View
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.students.model.Schedule
 import com.stathis.elmepaunivapp.ui.main.students.model.StudentItem
 import kotlinx.android.synthetic.main.holder_research_item_row.view.*

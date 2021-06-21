@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.ui.main.professors.model
 
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 
 data class Professor(
 

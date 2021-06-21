@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 

@@ -5,7 +5,7 @@ import android.view.View
 import androidx.lifecycle.ViewModel
 import com.stathis.elmepaunivapp.callbacks.ChatbotClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer
 import com.stathis.elmepaunivapp.ui.chatbot.model.ChatbotHeader
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question

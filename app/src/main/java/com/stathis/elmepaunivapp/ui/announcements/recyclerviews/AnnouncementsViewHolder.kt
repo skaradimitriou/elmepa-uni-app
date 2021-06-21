@@ -4,7 +4,7 @@ import android.view.View
 import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import kotlinx.android.synthetic.main.announcement_item_row.view.*
 

@@ -3,7 +3,6 @@ package com.stathis.elmepaunivapp.abstraction
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.model.LocalModel
 
 abstract class ElmepaViewHolder(itemView: View, callback: ElmepaClickListener? = null) :
     RecyclerView.ViewHolder(itemView) {

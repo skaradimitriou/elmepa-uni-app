@@ -2,7 +2,7 @@ package com.stathis.elmepaunivapp.ui.main.department
 
 import androidx.lifecycle.MutableLiveData
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.department.model.*
 
 class DepartmentRepository {
@@ -20,7 +20,9 @@ class DepartmentRepository {
             DepMember("Γιάννης Κοπανάκης", R.drawable.kopanakis),
             DepMember("Γιάννης Δημοτίκαλης", R.drawable.dimotikalis),
             DepMember("Χρήστος Λεμονάκης", R.drawable.lemonakis),
-            DepMember("Μάνος Περακάκης", R.drawable.perakakis)
+            DepMember("Μάνος Περακάκης", R.drawable.perakakis),
+            DepMember("Μάνια Μαρκάκη", R.drawable.mania_markaki),
+            DepMember("Γιάννης Φανουργιάκης", R.drawable.fanourgiakis_giannis)
         )
     }
 

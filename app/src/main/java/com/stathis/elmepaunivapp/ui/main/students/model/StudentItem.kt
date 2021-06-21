@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.ui.main.students.model
 
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 
 data class StudentItem(
 

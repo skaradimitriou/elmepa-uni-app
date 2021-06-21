@@ -4,7 +4,7 @@ import android.view.View
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 import kotlinx.android.synthetic.main.holder_lessons_header_item.view.*

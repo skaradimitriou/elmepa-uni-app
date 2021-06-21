@@ -3,7 +3,7 @@ package com.stathis.elmepaunivapp.ui.main.department.recyclerviews
 import android.view.View
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.model.LocalModel
+import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.department.model.*
 import kotlinx.android.synthetic.main.holder_research_item_row.view.*
 
