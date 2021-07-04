@@ -4,6 +4,7 @@ import android.view.View
 import androidx.lifecycle.ViewModel
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
+import com.stathis.elmepaunivapp.callbacks.ResearchClickListener
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.research.recycler.ResearchAdapter
 import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
@@ -11,6 +12,11 @@ import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
 class ResearchViewModel : ViewModel(), ElmepaClickListener {
 
     val adapter = ResearchAdapter(this)
+    private lateinit var callback : ResearchClickListener
+
+    fun bindCallbacks(callback : ResearchClickListener){
+        this.callback = callback
+    }
 
     fun createLists() {
         val researchItemsList = listOf(
@@ -64,11 +70,7 @@ class ResearchViewModel : ViewModel(), ElmepaClickListener {
 
     override fun onItemClick(view: View) {
         when(view.tag){
-            /*
-            Implement click events later on. They should open the webview activity
-             */
+            is UsefulLinks -> callback.onItemTap(view.tag as UsefulLinks)
         }
     }
-
-
 }
