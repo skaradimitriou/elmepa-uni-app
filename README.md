@@ -26,6 +26,10 @@ b. People who want to learn more about the department.
 ## Architecture
 Model - View - ViewModel (MVVM)
 
+## Technologies Used
+- Navigation Component <br/>
+- Kotlin Coroutines <br/>
+
 ### Theme 
 
 [Material Design](https://material.io/)
