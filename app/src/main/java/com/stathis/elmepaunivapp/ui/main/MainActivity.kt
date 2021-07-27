@@ -14,7 +14,18 @@ class MainActivity : ElmepaActivity(R.layout.activity_main) {
         navView.setupWithNavController(navController)
     }
 
-    override fun startOps() {}
+    override fun startOps() {
+        val test = intent.getBooleanExtra("OPEN_PROFESSORS",false)
+
+        when(test){
+            true -> loadProfessorsFragment()
+            else -> Unit
+        }
+    }
 
     override fun stopOps() {}
+
+    private fun loadProfessorsFragment(){
+        val directions = findNavController(R.id.nav_host_fragment).navigate(R.id.nav_search)
+    }
 }

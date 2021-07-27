@@ -63,5 +63,6 @@
     <string name="menu_student">Φοιτητές</string>
     <string name="menu_dept">Τμήμα</string>
     <string name="menu_search">Αναζήτηση</string>
+    <string name="widget_text">Αναζήτησε έναν καθηγητή</string>
 
 </resources>
