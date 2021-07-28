@@ -23,7 +23,6 @@ class ProfessorWidgetProvider : AppWidgetProvider() {
                 val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
 
                 val views = RemoteViews(context?.packageName, R.layout.professor_widget)
-
                 views.setOnClickPendingIntent(R.id.widget_button, pendingIntent)
 
                 appWidgetManager?.updateAppWidget(appWidgetId, views)

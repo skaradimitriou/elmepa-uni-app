@@ -19,7 +19,13 @@ class SyllabusLessonsActivity : ElmepaActivity(R.layout.activity_syllabus_lesson
         val lessonInfo = intent.getStringExtra("LESSONS_INFO")
         val lessonArray = intent.getStringExtra("ARRAY")
 
-        viewModel.createList(lessonInfo,lessonArray)
+        when(lessonInfo.isNullOrEmpty()){
+            false -> {
+                when(lessonArray.isNullOrEmpty()){
+                    false -> viewModel.createList(lessonInfo,lessonArray)
+                }
+            }
+        }
     }
 
     override fun stopOps() {}

@@ -12,7 +12,7 @@ class WebviewActivity : ElmepaActivity(R.layout.activity_webview) {
 
     override fun startOps() {
         val url = intent.getStringExtra("URL")
-        webview_window.loadUrl(url)
+        url?.let { webview_window.loadUrl(it) }
         val webSettings: WebSettings = webview_window.settings
         webSettings.javaScriptEnabled = true
     }
