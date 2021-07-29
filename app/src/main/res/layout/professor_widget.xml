@@ -6,17 +6,15 @@
     <Button
         android:id="@+id/widget_button"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textAllCaps="false"
-        android:layout_marginTop="@dimen/margin_10"
-        android:layout_marginEnd="@dimen/margin_10"
-        android:padding="@dimen/margin_16"
-        android:textColor="@color/white"
+        android:backgroundTint="@color/blue_petrol"
         android:drawableStart="@mipmap/ic_launcher"
         android:drawableEnd="@drawable/ic_arrow_right"
         android:drawableTint="@color/white"
-        android:backgroundTint="@color/blue_petrol"
+        android:padding="@dimen/margin_16"
         android:text="@string/widget_text"
-        android:layout_height="wrap_content" />
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

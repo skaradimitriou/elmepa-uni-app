@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/professor_widget"
+    android:minHeight="60dp"
+    android:minWidth="@dimen/margin_100"
+    android:minResizeWidth="150dp"
+    android:resizeMode="vertical|horizontal"
+    android:updatePeriodMillis="3600000"
+    android:widgetCategory="home_screen">
+
+</appwidget-provider>
