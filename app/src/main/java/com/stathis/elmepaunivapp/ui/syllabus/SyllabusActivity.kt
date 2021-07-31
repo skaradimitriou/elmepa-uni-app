@@ -25,7 +25,10 @@ class SyllabusActivity : ElmepaActivity(R.layout.activity_syllabus) {
 
         val userChoice = intent.getIntExtra("userTabChoice", 0)
 
-        tabLayout.getTabAt(userChoice)
+        Log.d("",userChoice.toString())
+
+
+        tabLayout.getTabAt(userChoice)?.select()
 
         viewModel.bindCallback(object : SyllabusClickListener {
             override fun onSemesterTap(syllabus: Semester) {
