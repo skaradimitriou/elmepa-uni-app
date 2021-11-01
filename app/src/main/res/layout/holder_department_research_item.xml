@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_120"
+    android:layout_marginStart="@dimen/margin_15"
+    android:layout_marginTop="@dimen/margin_15"
+    android:layout_marginEnd="15dp"
+    app:cardCornerRadius="@dimen/margin_15">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/holder_research_img"
+            android:layout_width="@dimen/height_130"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/research_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/holder_research_txt"
+            style="@style/text_18_bold_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/research_item_txt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/holder_research_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/research_card_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@color/dark_orange"
+            android:padding="@dimen/margin_15"
+            android:text="@string/dept_button_txt"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/margin_15"
+            app:layout_constraintStart_toStartOf="@id/holder_research_txt"
+            app:layout_constraintTop_toBottomOf="@+id/holder_research_txt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

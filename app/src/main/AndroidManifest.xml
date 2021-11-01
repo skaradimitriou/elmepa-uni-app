@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.stathis.elmepaunivapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Δ.Ε.Τ\n(Αγ.Νικόλαος)"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UniversityApp">
+        <activity android:name=".ui.syllabus_lessons.SyllabusLessonsActivity" />
+        <activity android:name=".ui.webview.WebviewActivity" />
+        <activity android:name=".ui.chatbot.ChatbotActivity" />
+        <activity android:name="com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity" />
+        <activity android:name=".ui.research.ResearchActivity" />
+        <activity android:name=".ui.announcements.AnnouncementsActivity" />
+        <activity android:name=".ui.main.MainActivity" android:windowSoftInputMode="adjustPan"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+
+</manifest>

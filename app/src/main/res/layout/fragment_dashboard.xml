@@ -1,0 +1,91 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg"
+    android:fillViewport="false">
+
+    <ImageView
+        android:id="@+id/elmepa_bg_img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_130"
+        android:scaleType="fitXY"
+        android:src="@drawable/agios_nikolaos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_120"
+        android:alpha="0.6"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/about"
+        android:layout_width="@dimen/margin_30"
+        android:layout_height="@dimen/margin_30"
+        android:layout_margin="@dimen/margin_10"
+        android:background="@drawable/ic_info_black_24dp"
+        android:clickable="true"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/elmepa_main_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/dashboard_det"
+        android:paddingStart="@dimen/margin_10"
+        style="@style/text_16_non_bold_white"
+        app:layout_constraintBottom_toBottomOf="@id/elmepa_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/elmepa_logo"
+        app:layout_constraintTop_toTopOf="@id/elmepa_logo" />
+
+    <ImageView
+        android:id="@+id/elmepa_logo"
+        android:layout_width="@dimen/height_70"
+        android:layout_height="@dimen/height_70"
+        android:src="@drawable/elmepa_logo"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginStart="@dimen/margin_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/round_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/elmepa_logo"
+        android:background="@drawable/round_corners_top"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dashboard_options_recview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toTopOf="@id/round_bg"
+        app:spanCount="2"
+        tools:itemCount="4"
+        tools:listitem="@layout/holder_dashboard_option" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_chatbot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:backgroundTint="@color/blue_petrol"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/chatbot_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
