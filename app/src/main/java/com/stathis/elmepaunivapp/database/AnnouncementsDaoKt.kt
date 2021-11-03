@@ -8,20 +8,20 @@ import java.util.*
 interface AnnouncementsDaoKt {
 
     @Query("SELECT * FROM Announcements")
-    suspend fun getAll(): List<Announcement>
+    fun getAll(): List<Announcement>
 
     @Query("DELETE from Announcements")
-    suspend fun deleteAll()
+    fun deleteAll()
 
     @Insert
-    suspend fun insert(announcement: Announcement)
+    fun insert(announcement: Announcement)
 
     @Insert
-    suspend fun insertAll(announcement: ArrayList<Announcement>)
+    fun insertAll(announcement: ArrayList<Announcement>)
 
     @Delete
-    suspend fun update(announcement: ArrayList<Announcement>)
+    fun update(announcement: ArrayList<Announcement>)
 
     @Delete
-    suspend fun delete(announcement: Announcement)
+    fun delete(announcement: Announcement)
 }

@@ -18,7 +18,8 @@
         <activity android:name="com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity" />
         <activity android:name=".ui.research.ResearchActivity" />
         <activity android:name=".ui.announcements.AnnouncementsActivity" />
-        <activity android:name=".ui.main.MainActivity" android:windowSoftInputMode="adjustPan">
+        <activity android:name=".ui.main.MainActivity" android:windowSoftInputMode="adjustPan"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +27,8 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".widget.ProfessorWidgetProvider">
+        <receiver android:name=".widget.ProfessorWidgetProvider"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -34,7 +36,8 @@
                 android:name="android.appwidget.provider" android:resource="@xml/professor_appwidget_info"/>
         </receiver>
 
-        <receiver android:name=".widget.ScheduleWidgetProvider">
+        <receiver android:name=".widget.ScheduleWidgetProvider"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
