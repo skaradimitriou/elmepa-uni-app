@@ -3,7 +3,7 @@
 
     <!-- Dashboard Activity -->
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
-    <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \n και Τεχνολογίας (Άγιος Νικόλαος)</string>
+    <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>
 
     <!-- Announcement Activity -->
     <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>

@@ -9,7 +9,8 @@
     <ImageView
         android:id="@+id/elmepa_bg_img"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_160"
+        android:layout_height="@dimen/height_110"
+        android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
         android:src="@drawable/agios_nikolaos"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,7 +18,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_160"
+        android:layout_height="@dimen/height_110"
         android:alpha="0.5"
         android:background="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +31,7 @@
         android:layout_margin="@dimen/margin_10"
         android:background="@drawable/ic_info_black_24dp"
         android:clickable="true"
+        android:contentDescription="@string/app_name"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,30 +40,30 @@
         style="@style/text_20_white_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/text_20"
+        android:paddingStart="@dimen/margin_10"
         android:text="@string/dashboard_elmepa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/elmepa_logo"
+        app:layout_constraintTop_toTopOf="@id/elmepa_logo" />
 
     <TextView
         android:id="@+id/elmepa_main_desc"
+        style="@style/text_16_non_bold_white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:paddingStart="@dimen/margin_10"
         android:text="@string/dashboard_det"
-        style="@style/text_18_non_bold_white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/elmepa_logo"
         app:layout_constraintTop_toBottomOf="@+id/elmepa_main_txt" />
 
     <ImageView
         android:id="@+id/elmepa_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/height_70"
+        android:layout_height="@dimen/height_70"
+        android:layout_margin="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_100"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/elmepa_logo"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,11 +71,11 @@
         android:id="@+id/dashboard_options_recview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_25"
+        android:layout_margin="@dimen/margin_16"
         android:foregroundGravity="center_horizontal"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/elmepa_logo"
+        app:layout_constraintTop_toBottomOf="@+id/elmepa_bg_img"
         app:spanCount="2"
         tools:itemCount="4"
         tools:listitem="@layout/holder_dashboard_option" />
@@ -85,6 +87,7 @@
         android:layout_margin="@dimen/margin_20"
         android:backgroundTint="@color/blue_petrol"
         android:clickable="true"
+        android:contentDescription="@string/app_name"
         android:focusable="true"
         android:src="@drawable/chatbot_big"
         app:layout_constraintBottom_toBottomOf="parent"
