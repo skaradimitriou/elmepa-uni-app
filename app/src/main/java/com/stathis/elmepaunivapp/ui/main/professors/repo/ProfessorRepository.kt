@@ -15,35 +15,40 @@ class ProfessorRepository {
         Professor("Δημοτίκαλης Γιάννης", "jdim@hmu.gr", "male", "Δημοτίκαλη Γιάννη"),
         Professor("Λεμονάκης Χρήστος", "lemonakis@hmu.gr", "male", "Λεμονάκη Χρήστο"),
         Professor("Περακάκης Μάνος", "mperakakis@hmu.gr", "male", "Περακάκη Μάνο"),
-        Professor("Αικατερινίδης Ιωάννης", "aikaterinidis@gmail.com", "male", "Αικατερινίδη Ιωάννη"),
+        Professor("Μάνια Μαρκάκη", "maniamarkaki@gmail.com", "female", "Μάνια Μαρκάκη"),
         Professor("Αστρουλάκης Νικόλαος", "n.astroulakis@gmail.com", "male", "Αστρουλάκη Νικόλαο"),
+        Professor("Αφορδακός Ορέστης", "orestis.afordakos@gmail.com", "male", "Αφορδακό Ορέστη"),
         Professor("Βάρδας Ιωάννης", "vardasg@hmu.gr", "male", "Βάρδα Ιωάννη"),
         Professor("Βασιλειάδης Γεώργιος", "gvasil@hmu.gr", "male", "Βασιλειάδη Γεώργιο"),
+        Professor("Βασσάκης Κωνσταντίνος", "kvassakis@hmu.gr", "male", "Βασσάκη Κωνσταντίνο"),
+        Professor("Καλαμπόκη Εύα - Μαρία", "evakalampokis@gmail.com", "female", "Καλαμπόκη Εύα - Μαρία"),
         Professor("Κοκκινάκης Εμμανουήλ", "manoskokkinakis@yahoo.gr", "male", "Κοκκινάκη Εμμανουήλ"),
         Professor("Κόττη Εύη", "kottievi@hmu.gr", "female", "Κόττη Εύη"),
-        Professor("Μαρκάκη Μαρία", "mmarkaki@hmu.gr", "female", "Μαρκάκη Μαρία"),
-        Professor("Μεραμβελιωτάκης Γεώργιος", "gmeramv@hmu.gr", "male", "Μεραμβελιωτάκη Γεώργιο"),
-        Professor("Μπάλλας Παναγιώτης", "ballas@hmu.gr", "male", "Μπάλλα Παναγιώτη"),
-        Professor("Σκουλουδάκης Εμμανουήλ", "Εskououdakis@hmu.gr", "male", "Σκουλουδάκη Εμμανουήλ"),
+        Professor("Παπουτσάκης Κωνσταντίνος", "kpapoutsakis@hmu.gr", "male", "Παπουτσάκη Κωνσταντίνο"),
+        Professor("Σκουλουδάκης Εμμανουήλ", "eskouloudakis@hmu.gr", "male", "Σκουλουδάκη Εμμανουήλ"),
         Professor("Σχοινιωτάκης Νικόλαος", "freemarkos@yahoo.gr", "male", "Σχοινιωτάκη Νικόλαο"),
-        Professor("Τριχάς Νικόλαος", "ntrihas@hmu.gr", "male", "Τριχά Νικόλαο"),
         Professor("Τσιλιμπώκος Κωνσταντίνος", "kostsil@hotmail.com", "male", "Τσιλιμπώκο Κωνσταντίνο"),
-        Professor("Φανουργιάκης Ιωάννης", "jfanourgiakis@yahoo.com", "male", "Φανουργιάκη Ιωάννη"),
         Professor("Φαφαλιός Παύλος", "fafalios@ics.forth.gr", "male", "Φαφαλιό Παύλο"),
+        Professor("Χουρδάκης Μαρίνος", "mchourdakis@hotmail.com", "male", "Χουρδάκη Μαρίνο"),
         Professor("Αρακαδάκης Α. Γεώργιος", "arakadakisjr@hmu.gr", "male", "Αρακαδάκη Α. Γεώργιο"),
         Professor("Καμπέλη Κωνσταντίνα", "nantia.kampeli@gmail.com", "female", "Καμπέλη Κωνσταντίνα"),
         Professor("Καπανταϊδάκης Ιωάννης", "jkapad@csd.uoc.gr", "male", "Καπανταϊδάκη Ιωάννη"),
-        Professor("Μπατζανακάκη Ελένη", "eleni@candiafinance.gr", "female", "Μπατζανακάκη Ελένη"),
-        Professor("Περονικολής Μιχαήλ", "m.peronikolis@yahoo.com", "male", "Περονικολή Μιχαήλ"),
+        Professor("Μαρκάκη Σμαράγδα", "sm.markaki@hmu.gr", "female", "Μαρκάκη Σμαράγδα"),
+        Professor("Περονικολής Μιχαήλ", "m.peronikolis@hmu.gr", "male", "Περονικολή Μιχαήλ"),
         Professor("Πετράκης Νικόλαος", "nickpetran@yahoo.gr", "male", "Πετράκη Νικόλαο"),
+        Professor("Αικατερινίδης Ιωάννης", "aikaterinidis@gmail.com", "male", "Αικατερινίδη Ιωάννη"),
+        Professor("Μαρκάκη Μαρία", "mmarkaki@hmu.gr", "female", "Μαρκάκη Μαρία"),
+        Professor("Μεραμβελιωτάκης Γεώργιος", "gmeramv@hmu.gr", "male", "Μεραμβελιωτάκη Γεώργιο"),
+        Professor("Μπάλλας Παναγιώτης", "ballas@hmu.gr", "male", "Μπάλλα Παναγιώτη"),
+        Professor("Τριχάς Νικόλαος", "ntrihas@hmu.gr", "male", "Τριχά Νικόλαο"),
+        Professor("Φανουργιάκης Ιωάννης", "jfanourgiakis@yahoo.com", "male", "Φανουργιάκη Ιωάννη"),
+        Professor("Μπατζανακάκη Ελένη", "eleni@candiafinance.gr", "female", "Μπατζανακάκη Ελένη"),
         Professor("Σφακιανάκης Θεόδωρος", "tmsfakia@hmu.gr", "male", "Σφακιανάκη Θεόδωρο"),
         Professor("Ταβλαδάκη Δέσποινα", "dtavladaki@hmu.gr", "female", "Ταβλαδάκη Δέσποινα"),
         Professor("Καλαρχάκη Αικατερίνη", "kalarhaki@hmu.gr", "female", "Καλαρχάκη Αικατερίνη"),
         Professor("Καροφύλλου Ειρήνη", "karofillou@hmu.gr", "female", "Καροφύλλου Ειρήνη"),
         Professor("Παρθύμου Γεωργία", "gparth@hmu.gr", "female", "Παρθύμου Γεωργία"),
         Professor("Ματζαράκης Γεώργιος", "matzarakis@hmu.gr", "female", "Ματζαράκη Γεώργιο"),
-        Professor("Καλαμπόκη Εύα - Μαρία", "matzarakis@hmu.gr", "female", "Καλαμπόκη Εύα - Μαρία"),
-        Professor("Μαρκάκη Σμαράγδα", "sm.markaki@hmu.gr", "female", "Μαρκάκη Σμαράγδα"),
         Professor("Καροφυλλάκης Κανάκης", "kanakis@hmu.gr", "male", "Καροφυλλάκη Κανάκη")
     )
 
@@ -58,7 +63,7 @@ class ProfessorRepository {
     fun filter(text: String) {
         val filteredList = arrayListOf<Professor>()
         for (item in professorList) {
-            if (item.fullName.toLowerCase().contains(text.toLowerCase())) {
+            if (item.fullName.lowercase().contains(text.lowercase())) {
                 filteredList.add(item)
             }
         }
