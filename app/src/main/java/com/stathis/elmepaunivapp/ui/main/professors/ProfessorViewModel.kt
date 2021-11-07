@@ -1,20 +1,20 @@
 package com.stathis.elmepaunivapp.ui.main.professors
 
+import android.app.Application
 import android.view.View
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.ui.main.professors.model.Professor
 import com.stathis.elmepaunivapp.ui.main.professors.recyclerview.ProfessorsAdapter
 import com.stathis.elmepaunivapp.ui.main.professors.repo.ProfessorRepository
 
-class ProfessorViewModel : ViewModel(), ElmepaClickListener {
+class ProfessorViewModel(app : Application) : AndroidViewModel(app), ElmepaClickListener {
 
-    private val repo = ProfessorRepository()
+    private val repo = ProfessorRepository(app)
     val professors = repo.professors
-    val professorList = repo.getProfessors()
     val adapter = ProfessorsAdapter(this)
     private lateinit var callback : ProfessorScreenClickListener
 
