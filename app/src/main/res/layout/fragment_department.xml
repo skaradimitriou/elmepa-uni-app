@@ -21,23 +21,37 @@
         android:id="@+id/fab_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_25"
+        android:layout_marginBottom="@dimen/margin_10"
         android:backgroundTint="@color/light_green"
         android:clickable="true"
+        android:visibility="invisible"
         android:focusable="true"
         android:src="@drawable/ic_phone_white_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/fab_mail"
+        app:layout_constraintEnd_toEndOf="@id/main_fab" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_25"
+        android:layout_marginBottom="@dimen/margin_10"
         android:backgroundTint="@color/orange"
         android:clickable="true"
         android:focusable="true"
+        android:visibility="invisible"
         android:src="@drawable/ic_mail_white_24dp"
+        app:layout_constraintBottom_toTopOf="@id/main_fab"
+        app:layout_constraintEnd_toEndOf="@id/main_fab" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/main_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_25"
+        android:backgroundTint="@color/colorAccent"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_info_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

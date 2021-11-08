@@ -11,8 +11,7 @@ import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_announcements.*
 
-class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),
-    AnnouncementClickListener {
+class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),AnnouncementClickListener {
 
     private lateinit var viewModel : AnnouncementsViewModel
 
