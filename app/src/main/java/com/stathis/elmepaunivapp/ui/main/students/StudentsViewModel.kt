@@ -1,6 +1,8 @@
 package com.stathis.elmepaunivapp.ui.main.students
 
+import android.app.Application
 import android.view.View
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
@@ -10,10 +12,11 @@ import com.stathis.elmepaunivapp.ui.main.students.model.StudentItem
 import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
 import com.stathis.elmepaunivapp.ui.main.students.recycler.StudentAdapter
 
-class StudentsViewModel : ViewModel(), ElmepaClickListener {
+class StudentsViewModel(app : Application) : AndroidViewModel(app), ElmepaClickListener {
 
     private lateinit var callback : StudentsScreenCallback
     val adapter = StudentAdapter(this)
+    private val repo = StudentsRepository(app)
 
     fun bindCallbacks(callback : StudentsScreenCallback) {
         this.callback = callback
