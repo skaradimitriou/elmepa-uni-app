@@ -1,6 +1,8 @@
 package com.stathis.elmepaunivapp.ui.main.department
 
+import android.app.Application
 import android.view.View
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
@@ -9,9 +11,9 @@ import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.main.department.model.*
 import com.stathis.elmepaunivapp.ui.main.department.recyclerviews.DepartmentAdapter
 
-class DepartmentViewModel : ViewModel(), ElmepaClickListener {
+class DepartmentViewModel(app : Application) : AndroidViewModel(app), ElmepaClickListener {
 
-    private val repo = DepartmentRepository()
+    private val repo = DepartmentRepository(app)
     val departmentData = repo.departmentList
     private lateinit var callback : DepartmentClickListener
     val adapter = DepartmentAdapter(this)

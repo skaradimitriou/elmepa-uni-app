@@ -29,7 +29,7 @@ class StudentsRepository(val app : Application) {
 
             data.value = studentScreenData
         } catch (ioException: IOException) {
-            ioException.printStackTrace()
+            //ioException.printStackTrace()
         }
     }
 }

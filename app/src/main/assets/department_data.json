@@ -1,0 +1,100 @@
+{
+	"carouselItems" : [
+		{
+			"imageResource" : "virtual_tour",
+			"url" : "https://mst.hmu.gr/hmutour/",
+			"title" : "Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας",
+			"position" : 1
+		},
+		{
+			"imageResource" : "research_img",
+			"url" : "",
+			"title" : "Έρευνα στο Τμήμα",
+			"position" : 2
+		}
+	],
+	"syllabusItems" : [
+		{
+			"imageResource" : "data",
+			"title" : "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής",
+			"tabNo" : 0
+		},
+		{
+			"imageResource" : "business",
+			"title" : "Διοίκηση Επιχειρήσεων & Οργανισμών",
+			"tabNo" : 1
+		},
+		{
+			"imageResource" : "digitalmkt",
+			"title" : "Ψηφιακό Μάρκετινγκ και Επικοινωνία",
+			"tabNo" : 2
+		}
+	],
+	"programmes" : [
+		{
+			"imageResource" : "ungrad",
+			"title" : "Προπτυχιακές Σπουδές",
+			"description" : "ΔΙΑΡΚΕΙΑΣ 4 ΕΤΩΝ",
+			"url" : "https://mst.hmu.gr/tmima/ypopshphioi-phoithtes/"
+		},{
+			"imageResource" : "postgrad",
+			"title" : "Μεταπτυχιακά Προγράμματα",
+			"description" : "ΔΙΑΡΚΕΙΑΣ 2 ΕΤΩΝ",
+			"url" : "https://mst.hmu.gr/metaptyxiako/metaptychiako-programma/"
+		},{
+			"imageResource" : "phd",
+			"title" : "Εκπόνηση Διδακτορικού",
+			"description" : "ΕΛΑΧΙΣΤΗΣ ΔΙΑΡΚΕΙΑΣ 3 ΕΤΩΝ",
+			"url" : "https://mst.hmu.gr/metaptyxiako/didaktorikes-spoydes/"
+		},
+	],
+	"depMembers" : [
+		{
+			"name" : "Στέλιος Παπαδάκης",
+			"img" : "papadakis"
+		},{
+			"name" : "Κώστας Παναγιωτάκης",
+			"img" : "panagiotakis"
+		},{
+			"name" : "Γιώργος Μαστοράκης",
+			"img" : "mastorakis"
+		},{
+			"name" : "Γιάννης Κοπανάκης",
+			"img" : "kopanakis"
+		},{
+			"name" : "Γιάννης Δημοτίκαλης",
+			"img" : "dimotikalis"
+		},{
+			"name" : "Χρήστος Λεμονάκης",
+			"img" : "lemonakis"
+		},{
+			"name" : "Μάνος Περακάκης",
+			"img" : "perakakis"
+		},{
+			"name" : "Μάνια Μαρκάκη",
+			"img" : "mania_markaki"
+		},{
+			"name" : "Γιάννης Φανουργιάκης",
+			"img" : "fanourgiakis_giannis"
+		}
+	],
+	"links" : [
+		{
+			"imageResource" : "map",
+			"title" : "Χάρτης",
+			"url" : "https://www.google.gr/maps/place/Hellenic+Mediterσ46953,25.6549865,17z/data=!3m1!4b1!4m5!3m4!1s0x149a7fea00679c2f:0x8038b06fd113f3fb!8m2!3d35.1946909!4d25.6571752"
+		},{
+			"imageResource" : "youtube",
+			"title" : "Youtube",
+			"url" : "UCapUQKQVrP2p4_ijj_OxvNg"
+		},{
+			"imageResource" : "linkedin",
+			"title" : "LinkedIn",
+			"url" : "https://www.linkedin.com/groups/13536369/"
+		},{
+			"imageResource" : "researchgate",
+			"title" : "Research\nGate",
+			"url" : "https://www.researchgate.net/institution/Hellenic_Mediterranean_University/department/Department_of_Management_Science_and_Technology_Agios_Nikolaos"
+		}
+	]
+}
