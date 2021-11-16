@@ -7,8 +7,8 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.main.students.model.Schedule
-import com.stathis.elmepaunivapp.ui.main.students.model.StudentItem
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.NewStudentItem
 
 class StudentAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, StudentViewHolder>(DiffItemClass<LocalModel>()) {
 
@@ -21,11 +21,9 @@ class StudentAdapter(private val callback : ElmepaClickListener) : ListAdapter<L
         holder.bindData(getItem(position))
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return when(getItem(position)){
-            is StudentItem -> R.layout.holder_research_item_row
-            is Schedule -> R.layout.holder_schedule_item_row
+    override fun getItemViewType(position: Int): Int =  when(getItem(position)){
+            is NewStudentItem -> R.layout.holder_parent_horizontal_nested_item
+            is CarouselParent -> R.layout.holder_viewpager_item
             else -> R.layout.holder_empty_view
-        }
     }
 }

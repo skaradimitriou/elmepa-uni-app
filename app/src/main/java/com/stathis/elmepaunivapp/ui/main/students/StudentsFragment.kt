@@ -7,6 +7,9 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.StudentsScreenCallback
 import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.LinkItem
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.SyllabusItem
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.fragment_students.*
@@ -20,39 +23,28 @@ class StudentsFragment : ElmepaFragment(R.layout.fragment_students) {
     }
 
     override fun startOps() {
-        viewModel.createLists()
         students_activity_recycler.adapter = viewModel.adapter
 
+        viewModel.observe(this)
+
         viewModel.bindCallbacks(object : StudentsScreenCallback {
-            override fun openSchedule() {
-                startActivity(Intent(requireContext(), WebviewActivity::class.java)
-                    .putExtra("URL", "https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/"))
-            }
-
-            override fun openLink(usefulLinks: UsefulLinks) {
-                startActivity(Intent(requireContext(), WebviewActivity::class.java)
-                    .putExtra("URL", usefulLinks.url))
-            }
-
-            override fun openSyllabus(usefulLink: UsefulLinks) {
-                goToSyllabus(usefulLink)
-            }
+            override fun openCarouselItem(item: CarouselItem) = openUrl(item.url)
+            override fun openLink(item: LinkItem) = openUrl(item.url)
+            override fun openSyllabus(item: SyllabusItem) = openSyllabusScreen(item.tabNo)
         })
-
     }
 
-    private fun goToSyllabus(data: UsefulLinks) {
-        when(data.name){
-            "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής" -> goToDirection(0)
-            "Διοίκηση Επιχειρήσεων & Οργανισμών" -> goToDirection(1)
-            "Ψηφιακό Μάρκετινγκ και Επικοινωνία" -> goToDirection(2)
-        }
+    override fun stopOps() {
+        viewModel.release(this)
     }
 
-    override fun stopOps() {}
+    private fun openUrl(url : String){
+        startActivity(Intent(requireContext(), WebviewActivity::class.java)
+            .putExtra("URL", url))
+    }
 
-    private fun goToDirection(value : Int){
+    private fun openSyllabusScreen(position : Int){
         startActivity(Intent(requireContext(), SyllabusActivity::class.java)
-            .putExtra("userTabChoice", value))
+            .putExtra("userTabChoice", position))
     }
 }

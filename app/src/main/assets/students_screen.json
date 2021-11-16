@@ -1,44 +1,97 @@
 {
 	"carouselItems" : [
 		{
-			"url" : "",
-			"title" : ""
+			"imageResource" : "calendar",
+			"url" : "https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/",
+			"title" : "Κάνε tap για να δεις \nτο Ωρολόγιο Πρόγραμμα",
+			"position" : 1
 		},
 		{
-			"url" : "",
-			"title" : ""
+			"imageResource" : "acadschedule",
+			"url" : "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/",
+			"title" : "Ακαδημαϊκό Ημερολόγιο",
+			"position" : 2
 		},
 		{
-			"url" : "",
-			"title" : ""
+			"imageResource" : "mentor",
+			"url" : "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/",
+			"title" : "Σύμβουλος Καθηγητής",
+			"position" : 3
+		},{
+			"imageResource" : "erasmus",
+			"url" : "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/",
+			"title" : "Πρόγραμμα Erasmus+",
+			"position" : 4
 		}
 	],
 	"syllabusItems" : [
 		{
-			"url" : "",
-			"title" : "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής"
+			"imageResource" : "data",
+			"title" : "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής",
+			"tabNo" : 0
 		},
 		{
-			"url" : "Διοίκηση Επιχειρήσεων & Οργανισμών",
-			"title" : ""
+			"imageResource" : "business",
+			"title" : "Διοίκηση Επιχειρήσεων & Οργανισμών",
+			"tabNo" : 1
 		},
 		{
-			"url" : "",
-			"title" : "Ψηφιακό Μάρκετινγκ και Επικοινωνία"
+			"imageResource" : "digitalmkt",
+			"title" : "Ψηφιακό Μάρκετινγκ και Επικοινωνία",
+			"tabNo" : 2
 		}
 	],
 	"links" : [
 		{
-			"url" : "https://submit-academicid.minedu.gov.gr/",
-			"title" : "Ηλεκτρονική Γραμματεία"
+			"imageResource" : "eudoxus",
+			"title" : "Ηλεκτρονική Γραμματεία",
+			"url" : "https://submit-academicid.minedu.gov.gr/"
 		},
 		{
-			"url" : "",
-			"title" : ""
+			"imageResource" : "student_card",
+			"title" : "Ακαδημαική Ταυτότητα",
+			"url" : "https://submit-academicid.minedu.gov.gr/"
 		},
 		{
-			"url" : "",
-			"title" : ""
+			"imageResource" : "students",
+			"title" : "Σύστημα Φοιτητών",
+			"url" : "https://student.hmu.gr/"
+		},{
+			"imageResource" : "fb",
+			"title" : "Σελίδα Φοιτητών",
+			"url" : "https://www.facebook.com/groups/213104128868246/"
+		},{
+			"imageResource" : "eclass",
+			"title" : "e-Class",
+			"url" : "https://eclass.hmu.gr/"
+		},{
+			"imageResource" : "dimos",
+			"title" : "Δήμος Αγ.Νικολάου",
+			"url" : "https://www.dimosagn.gr/"
+		},{
+			"imageResource" : "tripadvisor",
+			"title" : "Προτεινόμενα Εστιατόρια",
+			"url" : "https://www.tripadvisor.com.gr/"
+		},{
+			"imageResource" : "eudoxus",
+			"title" : "Εύδοξος",
+			"url" : "https://eudoxus.gr/"
+		},{
+			"imageResource" : "webmail",
+			"title" : "Edu E-mail Φοιτητή",
+			"url" : "http://webmail.edu.hmu.gr/"
+		},{
+			"imageResource" : "events",
+			"title" : "Events Τμήματος",
+			"url" : "https://mst.hmu.gr/news_gr/"
+		},{
+			"imageResource" : "ktel",
+			"title" : "Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου",
+			"url" : "https://mst.hmu.gr/news_gr/"
+		},{
+			"imageResource" : "app",
+			"title" : "Εφαρμογή Εξάπλωσης Covid-19",
+			"url" : "https://mst.hmu.gr/1473-2/"
 		}
 	]
 }

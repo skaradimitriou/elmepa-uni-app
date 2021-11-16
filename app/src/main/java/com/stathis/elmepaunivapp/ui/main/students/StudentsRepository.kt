@@ -8,26 +8,11 @@ import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.StudentResponse
 import java.io.IOException
+import java.lang.Exception
 
 class StudentsRepository(val app : Application) {
 
-    /*
-     * Carousel -> Schedule, Academic Schedule, Mentor Program, Erasmus+
-     * This should change automatically after 2 seconds
-     *
-     * Syllabus -> Redesign the 3 major streams to be more UI friendly
-     *
-     * Useful links -> Vertical Scroll & redesign to be more simple like a list with many options
-     *
-     * So, the parent model will have a list of:
-     *
-     * CarouselItem (3 items)
-     * SyllabusItem (3 items)
-     * UsefulLinksItem (12 items)
-     *
-     */
-
-    val professors = MutableLiveData<StudentResponse>()
+    val data = MutableLiveData<StudentResponse>()
     private lateinit var studentScreenData : StudentResponse
 
     init {
@@ -38,8 +23,11 @@ class StudentsRepository(val app : Application) {
         try {
             val jsonString = app.assets.open("students_screen.json").bufferedReader().use { it.readText() }
             val listPersonType = object : TypeToken<StudentResponse>() {}.type
+
             studentScreenData  = Gson().fromJson(jsonString, listPersonType)
             Log.d(app.getString(R.string.app_name),studentScreenData.toString())
+
+            data.value = studentScreenData
         } catch (ioException: IOException) {
             ioException.printStackTrace()
         }
