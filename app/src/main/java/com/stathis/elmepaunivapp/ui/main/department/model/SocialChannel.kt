@@ -3,9 +3,9 @@ package com.stathis.elmepaunivapp.ui.main.department.model
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 
 data class SocialChannel(
-    val name : String,
+    val title : String,
     val url : String,
-    val image : Int
+    val imageResource : String
 ) : LocalModel {
     override fun equalsContent(obj: LocalModel): Boolean = false
 }

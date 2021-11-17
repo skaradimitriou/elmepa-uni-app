@@ -5,13 +5,16 @@ import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
+import com.stathis.elmepaunivapp.R
+import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.main.department.model.*
 import com.stathis.elmepaunivapp.ui.main.department.recyclerviews.DepartmentAdapter
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
 
-class DepartmentViewModel(app : Application) : AndroidViewModel(app), ElmepaClickListener {
+class DepartmentViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickListener {
 
     private val repo = DepartmentRepository(app)
     val departmentData = repo.departmentList
@@ -20,7 +23,14 @@ class DepartmentViewModel(app : Application) : AndroidViewModel(app), ElmepaClic
 
     fun observeData(owner: LifecycleOwner) {
         departmentData.observe(owner, Observer {
-            adapter.submitList(it)
+            adapter.submitList(listOf(
+                CarouselParent(it.carouselItems),
+                NewDepartmentItem(getString(R.string.deptSyllabusItems),it.syllabusItems),
+                NewDepartmentItem(getString(R.string.deptProgramms),it.programmes),
+                NewDepartmentItem(getString(R.string.deptDepMembers),it.depMembers),
+                NewDepartmentItem(getString(R.string.deptSocial),it.links),
+                EmptyModel()
+            ))
         })
     }
 
@@ -37,8 +47,7 @@ class DepartmentViewModel(app : Application) : AndroidViewModel(app), ElmepaClic
             is FieldOfStudy -> callback.openSyllabus(view.tag as FieldOfStudy)
             is Programme -> callback.openProgrammes(view.tag as Programme)
             is SocialChannel -> callback.openSocial(view.tag as SocialChannel)
-            is VirtualTourModel -> callback.openVirtualTour(view.tag as VirtualTourModel)
-            is Research -> callback.openResearch(view.tag as Research)
+            is CarouselItem -> callback.openCarouselItem(view.tag as CarouselItem)
         }
     }
 }

@@ -14,6 +14,13 @@
 
     <!-- Department Activity -->
     <string name="dept_button_txt">Μάθε περισσότερα</string>
+    <string name="virtual_tour">virtual_tour</string>
+    <string name="research_img">research_img</string>
+    <string name="map">map</string>
+    <string name="deptSyllabusItems">Γνωστικά Αντικείμενα</string>
+    <string name="deptProgramms">Προγράμματα</string>
+    <string name="deptDepMembers">Μέλη Δ.Ε.Π.</string>
+    <string name="deptSocial">Βρείτε μας Online</string>
 
     <!-- Students Activity -->
     <string name="students_title">Φοιτητές</string>

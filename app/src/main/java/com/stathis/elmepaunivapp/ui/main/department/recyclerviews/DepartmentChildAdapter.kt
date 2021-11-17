@@ -7,7 +7,10 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.main.department.model.*
+import com.stathis.elmepaunivapp.ui.main.department.model.DepMember
+import com.stathis.elmepaunivapp.ui.main.department.model.FieldOfStudy
+import com.stathis.elmepaunivapp.ui.main.department.model.Programme
+import com.stathis.elmepaunivapp.ui.main.department.model.SocialChannel
 
 class DepartmentChildAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, DepartmentChildViewHolder>(DiffItemClass<LocalModel>()) {
 

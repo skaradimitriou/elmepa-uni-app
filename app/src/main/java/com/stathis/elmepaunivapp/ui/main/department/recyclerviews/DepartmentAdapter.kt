@@ -8,8 +8,8 @@ import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.department.model.EmptyModel
-import com.stathis.elmepaunivapp.ui.main.department.model.Research
-import com.stathis.elmepaunivapp.ui.main.department.model.VirtualTourModel
+import com.stathis.elmepaunivapp.ui.main.department.model.NewDepartmentItem
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
 
 class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, DepartmentViewHolder>(DiffItemClass<LocalModel>()) {
 
@@ -24,10 +24,10 @@ class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapte
 
     override fun getItemViewType(position: Int): Int {
         return when(getItem(position)){
-            is Research -> R.layout.holder_department_research_item
-            is VirtualTourModel -> R.layout.holder_virtual_tour
+            is CarouselParent -> R.layout.holder_viewpager_item
+            is NewDepartmentItem -> R.layout.holder_parent_horizontal_nested_item
             is EmptyModel -> R.layout.holder_empty_view
-            else -> R.layout.holder_research_item_row
+            else -> R.layout.holder_empty_view
         }
     }
 }

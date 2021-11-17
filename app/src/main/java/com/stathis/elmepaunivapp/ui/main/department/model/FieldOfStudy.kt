@@ -4,9 +4,9 @@ import com.stathis.elmepaunivapp.abstraction.LocalModel
 
 data class FieldOfStudy(
 
-    val name : String,
-    val direction : String,
-    val image : Int
+    val title : String,
+    val tabNo : Int,
+    val imageResource : String
 
 ) : LocalModel {
     override fun equalsContent(obj: LocalModel): Boolean  = false

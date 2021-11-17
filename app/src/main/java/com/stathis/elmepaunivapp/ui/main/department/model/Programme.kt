@@ -4,9 +4,9 @@ import com.stathis.elmepaunivapp.abstraction.LocalModel
 
 data class Programme(
 
-    val name: String,
+    val title: String,
     val description: String,
-    val image: Int,
+    val imageResource: String,
     val url: String
 
 ) : LocalModel {

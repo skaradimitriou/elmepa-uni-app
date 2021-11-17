@@ -12,6 +12,10 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
 import com.stathis.elmepaunivapp.ui.main.department.model.*
+import com.stathis.elmepaunivapp.ui.main.department.model.FieldOfStudy
+import com.stathis.elmepaunivapp.ui.main.department.model.Programme
+import com.stathis.elmepaunivapp.ui.main.department.model.SocialChannel
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
@@ -38,17 +42,16 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
         }
 
         viewModel.bindCallbacks(object : DepartmentClickListener {
-            override fun openSyllabus(data: FieldOfStudy) {
-                goToSyllabus(data)
+            override fun openCarouselItem(data: CarouselItem) {
+                when(data.imageResource){
+                    resources.getString(R.string.virtual_tour) -> openUrl(data.url)
+                    resources.getString(R.string.research_img) -> goToResearch()
+                }
             }
 
-            override fun openVirtualTour(data: VirtualTourModel) {
-                startActivity(Intent(requireContext(),WebviewActivity::class.java)
-                    .putExtra("URL","https://mst.hmu.gr/hmutour/"))
-            }
-
+            override fun openSyllabus(data: FieldOfStudy) = goToDirection(data.tabNo)
             override fun openSocial(data: SocialChannel) {
-                if (data.image == R.drawable.youtube) {
+                if (data.imageResource == resources.getString(R.string.map)) {
                     try {
                         //goes to channel in youtube app
                         startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("vnd.youtube.com/channel/" + data.url)))
@@ -61,14 +64,7 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
                 }
             }
 
-            override fun openProgrammes(data: Programme) {
-                startActivity(Intent(requireContext(), WebviewActivity::class.java)
-                    .putExtra("URL", data.url))
-            }
-
-            override fun openResearch(data: Research) {
-                startActivity(Intent(requireContext(), ResearchActivity::class.java))
-            }
+            override fun openProgrammes(data: Programme) = openUrl(data.url)
         })
 
 
@@ -153,16 +149,16 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
         }
     }
 
-    private fun goToSyllabus(data: FieldOfStudy) {
-        when(data.name){
-            "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής" -> goToDirection(0)
-            "Διοίκηση Επιχειρήσεων & Οργανισμών" -> goToDirection(1)
-            "Ψηφιακό Μάρκετινγκ και Επικοινωνία" -> goToDirection(2)
-        }
-    }
-
     private fun goToDirection(value : Int){
         startActivity(Intent(requireContext(), SyllabusActivity::class.java)
             .putExtra("userTabChoice", value))
+    }
+
+    private fun openUrl(url : String){
+        startActivity(Intent(requireContext(), WebviewActivity::class.java).putExtra("URL", url))
+    }
+
+    private fun goToResearch() {
+        startActivity(Intent(requireContext(), ResearchActivity::class.java))
     }
 }
