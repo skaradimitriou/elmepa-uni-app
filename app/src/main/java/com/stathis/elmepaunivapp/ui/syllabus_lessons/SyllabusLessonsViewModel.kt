@@ -1,10 +1,12 @@
 package com.stathis.elmepaunivapp.ui.syllabus_lessons
 
+import android.app.Application
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.JsonArray
+import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.LessonsClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
@@ -12,7 +14,7 @@ import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler.LessonsAdapter
 
-class SyllabusLessonsViewModel : ViewModel(), ElmepaClickListener {
+class SyllabusLessonsViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickListener {
 
     val adapter = LessonsAdapter(this)
     private lateinit var callback : LessonsClickListener
@@ -31,6 +33,8 @@ class SyllabusLessonsViewModel : ViewModel(), ElmepaClickListener {
         Log.d("List",list.toString())
         adapter.submitList(list)
     }
+
+
 
     override fun onItemClick(view: View) {
         when(view.tag){

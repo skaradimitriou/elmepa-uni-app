@@ -9,7 +9,6 @@ import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.ui.main.professors.model.Professor
 import com.stathis.elmepaunivapp.ui.main.professors.recyclerview.ProfessorsAdapter
-import com.stathis.elmepaunivapp.ui.main.professors.repo.ProfessorRepository
 
 class ProfessorViewModel(app : Application) : AndroidViewModel(app), ElmepaClickListener {
 

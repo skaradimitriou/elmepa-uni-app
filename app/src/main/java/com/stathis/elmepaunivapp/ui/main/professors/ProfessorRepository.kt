@@ -1,7 +1,6 @@
-package com.stathis.elmepaunivapp.ui.main.professors.repo
+package com.stathis.elmepaunivapp.ui.main.professors
 
 import android.app.Application
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson

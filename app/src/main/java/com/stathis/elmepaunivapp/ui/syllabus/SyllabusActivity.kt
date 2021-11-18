@@ -27,6 +27,7 @@ class SyllabusActivity : ElmepaActivity(R.layout.activity_syllabus) {
 
         Log.d("",userChoice.toString())
 
+        viewModel.observe(this)
 
         tabLayout.getTabAt(userChoice)?.select()
 
