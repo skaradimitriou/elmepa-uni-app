@@ -9,10 +9,6 @@ import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.announcements.recyclerviews.AnnouncementsAdapter
-import com.stathis.elmepaunivapp.ui.announcements.repo.AnnouncementRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class AnnouncementsViewModel(app: Application) : AndroidViewModel(app), ElmepaClickListener {
 

@@ -50,7 +50,6 @@ class StudentViewHolder(itemView : View, val callback : ElmepaClickListener) : E
                         }
                     }
                 })
-
             }
         }
     }

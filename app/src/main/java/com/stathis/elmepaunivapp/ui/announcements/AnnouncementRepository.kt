@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.announcements.repo
+package com.stathis.elmepaunivapp.ui.announcements
 
 import android.app.Application
 import android.util.Log
