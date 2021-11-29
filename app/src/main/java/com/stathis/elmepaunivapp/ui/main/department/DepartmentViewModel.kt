@@ -34,9 +34,7 @@ class DepartmentViewModel(app : Application) : ElmepaViewModel(app), ElmepaClick
         })
     }
 
-    fun removeObserver(owner: LifecycleOwner) {
-        departmentData.removeObservers(owner)
-    }
+    fun removeObserver(owner: LifecycleOwner) = departmentData.removeObservers(owner)
 
     fun bindCallbacks(callback : DepartmentClickListener) {
         this.callback = callback

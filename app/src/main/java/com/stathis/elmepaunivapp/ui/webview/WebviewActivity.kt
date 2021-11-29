@@ -20,6 +20,9 @@ class WebviewActivity : ElmepaActivity(R.layout.activity_webview) {
     override fun stopOps() {}
 
     override fun onBackPressed() {
-        super.onBackPressed()
+        when {
+            webview_window.canGoBack() -> webview_window.goBack()
+            else -> super.onBackPressed()
+        }
     }
 }

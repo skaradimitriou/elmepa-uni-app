@@ -9,6 +9,7 @@ import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.NewStudentItem
+import com.stathis.elmepaunivapp.ui.main.students.model.refactor.UsefulLinksParent
 import kotlinx.android.synthetic.main.holder_parent_horizontal_nested_item.view.*
 import kotlinx.android.synthetic.main.holder_viewpager_item.view.*
 
@@ -19,6 +20,13 @@ class StudentViewHolder(itemView : View, val callback : ElmepaClickListener) : E
     override fun present(data: LocalModel) {
         when(data){
             is NewStudentItem -> {
+                itemView.nested_title.text = data.title
+                val adapter = UsefulLinksAdapter(callback)
+                adapter.submitList(data.list)
+                itemView.nested_recycler.adapter = adapter
+            }
+
+            is UsefulLinksParent -> {
                 itemView.nested_title.text = data.title
                 val adapter = UsefulLinksAdapter(callback)
                 adapter.submitList(data.list)

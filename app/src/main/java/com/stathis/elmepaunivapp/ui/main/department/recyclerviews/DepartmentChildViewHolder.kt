@@ -1,6 +1,5 @@
 package com.stathis.elmepaunivapp.ui.main.department.recyclerviews
 
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
@@ -21,36 +20,23 @@ class DepartmentChildViewHolder(itemView : View, callback : ElmepaClickListener)
         when(data){
             is FieldOfStudy -> {
                 itemView.fields_holder_txt.text = data.title
-                //itemView.fields_img.setImageResource(data.image)
                 loadImg(data.imageResource,itemView.fields_img)
             }
 
             is Programme -> {
                 itemView.programmes_holder_txt.text = data.title
                 itemView.programmes_description.text = data.description
-                //itemView.programmes_img.setImageResource(data.image)
                 loadImg(data.imageResource,itemView.programmes_img)
             }
             is SocialChannel -> {
                 itemView.social_txt.text = data.title
-                //itemView.social_circle_img.setImageResource(data.imageResource)
-//                itemView.social_circle_img.setImageResource(myImage)
-//                try {
-//                    val myImage = itemView.resources.getIdentifier(data.imageResource, "drawable", "com.stathis.elmepaunivapp")
-//                    itemView.social_circle_img.setImageResource(myImage)
-//                }catch (e : Exception){
-//                    Log.d("","")
-//                }
-
                 loadImg(data.imageResource,itemView.social_circle_img)
             }
             is DepMember -> {
                 itemView.dep_name.text = data.name
-
                 loadImg(data.img,itemView.dep_img)
             }
 
-            //is Research -> {}
         }
     }
 
@@ -59,7 +45,7 @@ class DepartmentChildViewHolder(itemView : View, callback : ElmepaClickListener)
             val myImage = itemView.resources.getIdentifier(img, "drawable", "com.stathis.elmepaunivapp")
             imgView.setImageResource(myImage)
         }catch (e : Exception){
-            Log.d("","")
+            //FIXME: Add default image
         }
     }
 }

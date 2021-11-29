@@ -10,7 +10,7 @@
         style="@style/text_20_white_bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/blue_petrol"
         android:padding="@dimen/margin_10"
         android:text="@string/announcement_header"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,5 +32,4 @@
             tools:listitem="@layout/announcement_item_row" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

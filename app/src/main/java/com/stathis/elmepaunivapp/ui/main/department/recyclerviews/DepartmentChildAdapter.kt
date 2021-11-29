@@ -23,13 +23,11 @@ class DepartmentChildAdapter(private val callback : ElmepaClickListener) : ListA
         holder.bindData(getItem(position))
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return when(getItem(position)) {
-            is FieldOfStudy -> R.layout.field_item_row
-            is Programme -> R.layout.programmes_item_row
-            is SocialChannel -> R.layout.social_item_row
-            is DepMember -> R.layout.dep_members_item_row
-            else -> R.layout.holder_empty_view
-        }
+    override fun getItemViewType(position: Int): Int = when(getItem(position)) {
+        is FieldOfStudy -> R.layout.field_item_row
+        is Programme -> R.layout.programmes_item_row
+        is SocialChannel -> R.layout.social_item_row
+        is DepMember -> R.layout.dep_members_item_row
+        else -> R.layout.holder_empty_view
     }
 }

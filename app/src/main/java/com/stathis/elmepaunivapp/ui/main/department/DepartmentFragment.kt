@@ -50,24 +50,13 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
             }
 
             override fun openSyllabus(data: FieldOfStudy) = goToDirection(data.tabNo)
-            override fun openSocial(data: SocialChannel) {
-                if (data.imageResource == resources.getString(R.string.map)) {
-                    try {
-                        //goes to channel in youtube app
-                        startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("vnd.youtube.com/channel/" + data.url)))
-                    } catch (e: Exception) {
-                        //goes to channel in web view (opens browser)
-                        startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com/channel/" + data.url)))
-                    }
-                } else {
-                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(data.url)))
-                }
+            override fun openSocial(data: SocialChannel) = when(data.title){
+                    resources.getString(R.string.youtube) -> openYoutube(data.url)
+                    else -> openUrl(data.url)
             }
 
             override fun openProgrammes(data: Programme) = openUrl(data.url)
         })
-
-
 
         fab_call.setOnClickListener{
             callSecretary()
@@ -155,10 +144,20 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
     }
 
     private fun openUrl(url : String){
-        startActivity(Intent(requireContext(), WebviewActivity::class.java).putExtra("URL", url))
+        startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(url)))
     }
 
     private fun goToResearch() {
         startActivity(Intent(requireContext(), ResearchActivity::class.java))
+    }
+
+    private fun openYoutube(url : String){
+        try {
+            //goes to channel in youtube app
+            startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("vnd.youtube.com/channel/$url")))
+        } catch (e: Exception) {
+            //goes to channel in web view (opens browser)
+            startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com/channel/$url")))
+        }
     }
 }

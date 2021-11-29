@@ -1,8 +1,11 @@
 package com.stathis.elmepaunivapp.ui.chatbot
 
+import android.app.Application
 import android.os.Handler
 import android.view.View
 import androidx.lifecycle.ViewModel
+import com.stathis.elmepaunivapp.R
+import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ChatbotClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
@@ -11,12 +14,12 @@ import com.stathis.elmepaunivapp.ui.chatbot.model.ChatbotHeader
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question
 import com.stathis.elmepaunivapp.ui.chatbot.recyclerview.ChatbotAdapter
 
-class ChatbotViewModel : ViewModel(), ElmepaClickListener {
+class ChatbotViewModel(app: Application) : ElmepaViewModel(app), ElmepaClickListener {
 
     private lateinit var callback: ChatbotClickListener
     private val messagesList = arrayListOf<LocalModel>()
     val adapter = ChatbotAdapter(this)
-    private lateinit var answer : String
+    private lateinit var answer: String
 
     init {
         messagesList.add(ChatbotHeader())
@@ -39,30 +42,43 @@ class ChatbotViewModel : ViewModel(), ElmepaClickListener {
 
     private fun getChatbotAnswer(response: String): String {
         if (response.contains("πρόγραμμα σπουδών") || response.contains("προγραμμα σπουδών") || response.contains(
-                "πρόγραμμα σπουδων") || response.contains("προγραμμα σπουδων") || response.contains("σπουδων")) {
-             answer = "Κάνε tap για να δείς το πρόγραμμα σπουδών!"
+                "πρόγραμμα σπουδων"
+            ) || response.contains("προγραμμα σπουδων") || response.contains("σπουδων")
+        ) {
+            answer = "Κάνε tap για να δείς το πρόγραμμα σπουδών!"
         } else if (response.contains("ωρολογιο προγραμμα") || response.contains("ωρολόγιο πρόγραμμα") || response.contains(
-                "ωρολόγιο") || response.contains("ωρολογιο")) {
-             answer = "Κάνε tap για να δείς το πρόγραμμα των μαθημάτων!"
-        } else if (response.contains("τηλέφωνο") || response.contains("τηλεφωνο") || response.contains("γραμματεία") || response.contains("γραμματεια")) {
-             answer = "Κάνε tap για να καλέσω την Γραμματεία του Τμήματος!"
+                "ωρολόγιο"
+            ) || response.contains("ωρολογιο")
+        ) {
+            answer = "Κάνε tap για να δείς το πρόγραμμα των μαθημάτων!"
+        } else if (response.contains("τηλέφωνο") || response.contains("τηλεφωνο") || response.contains(
+                "γραμματεία"
+            ) || response.contains("γραμματεια")
+        ) {
+            answer = "Κάνε tap για να καλέσω την Γραμματεία του Τμήματος!"
         } else if (response.contains("email") || response.contains("e-mail")) {
-             answer = "Κάνε tap για να στείλεις e-mail στην Γραμματεία!"
+            answer = "Κάνε tap για να στείλεις e-mail στην Γραμματεία!"
         } else if (response.contains("καθηγητ") || response.contains("καθηγητές") || response.contains(
-                "προσωπικό")) {
-             answer = "Κάνε tap για να αναζητήσεις έναν καθηγητή του Τμήματος!"
+                "προσωπικό"
+            )
+        ) {
+            answer = "Κάνε tap για να αναζητήσεις έναν καθηγητή του Τμήματος!"
         } else if (response.contains("ανακοινώσεις") || response.contains("ανακοιν") || response.contains(
-                "ανακοινωση") || response.contains("ανακοίνωση")) {
-             answer = "Κάνε tap για να δεις τις ανακοινώσεις του Τμήματος!"
+                "ανακοινωση"
+            ) || response.contains("ανακοίνωση")
+        ) {
+            answer = "Κάνε tap για να δεις τις ανακοινώσεις του Τμήματος!"
         } else if (response.contains("εικονική περιήγηση") || response.contains("περιήγηση") || response.contains(
-                "περιηγηση") || response.contains("εικονικη")) {
-             answer = "Κάνε tap για να δείς την εικονική περιήγηση!"
+                "περιηγηση"
+            ) || response.contains("εικονικη")
+        ) {
+            answer = "Κάνε tap για να δείς την εικονική περιήγηση!"
         } else if (response.contains("γεια") || response.contains("γειά")) {
-             answer = "Γεία σου και εσένα!"
+            answer = "Γεία σου και εσένα!"
         } else if (response.contains("ευχαριστώ") || response.contains("ευχαριστω")) {
-             answer = "Παρακαλώ!"
+            answer = "Παρακαλώ!"
         } else {
-             answer = "Δεν γνωρίζω την απάντηση ακόμα"
+            answer = "Δεν γνωρίζω την απάντηση ακόμα"
         }
 
         return answer
@@ -74,14 +90,14 @@ class ChatbotViewModel : ViewModel(), ElmepaClickListener {
         }
     }
 
-    private fun checkWhichCallback(answer : Answer) {
-        when(answer.text){
-            "Κάνε tap για να δεις τις ανακοινώσεις του Τμήματος!" -> callback.openAnnouncements()
-            "Κάνε tap για να δείς το πρόγραμμα σπουδών!" -> callback.goToSyllabus()
-            "Κάνε tap για να δείς το πρόγραμμα των μαθημάτων!" -> callback.openSchedule()
-            "Κάνε tap για να καλέσω την Γραμματεία του Τμήματος!" -> callback.callSecretary()
-            "Κάνε tap για να στείλεις e-mail στην Γραμματεία!" -> callback.emailToSecretary()
-            "Κάνε tap για να δείς την εικονική περιήγηση!" -> callback.virtualTour()
+    private fun checkWhichCallback(answer: Answer) {
+        when (answer.text) {
+            getString(R.string.chatbot_announcements) -> callback.openAnnouncements()
+            getString(R.string.chatbot_syllabus) -> callback.goToSyllabus()
+            getString(R.string.chatbot_schedule) -> callback.openSchedule()
+            getString(R.string.chatbot_call_secretary) -> callback.callSecretary()
+            getString(R.string.chatbot_email_secretary) -> callback.emailToSecretary()
+            getString(R.string.chatbot_virtual_tour) -> callback.virtualTour()
             else -> Unit
         }
     }

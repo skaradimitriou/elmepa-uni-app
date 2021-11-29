@@ -28,7 +28,7 @@ class DepartmentRepository(val app : Application) {
 
             departmentList.value = departmentScreenData
         } catch (ioException: IOException) {
-            //ioException.printStackTrace()
+            //FIXME: Add livedata to get error to screen
         }
     }
 }

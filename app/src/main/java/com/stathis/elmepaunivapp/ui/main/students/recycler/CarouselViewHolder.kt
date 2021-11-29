@@ -20,7 +20,7 @@ class CarouselViewHolder(itemView : View, callback : ElmepaClickListener) : Elme
                     val myImage = itemView.resources.getIdentifier(data.imageResource, "drawable", "com.stathis.elmepaunivapp")
                     itemView.carousel_img.setImageResource(myImage)
                 }catch (e : Exception){
-                    Log.d("","")
+                    //FIXME: Add default img
                 }
             }
         }

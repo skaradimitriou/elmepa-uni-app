@@ -17,8 +17,8 @@ class ProfessorsViewHolder(itemView : View, callback : ElmepaClickListener) : El
                 itemView.professor_email.text = data.email
 
                 when(data.gender){
-                    "male" -> itemView.professor_img.setImageResource(R.drawable.male_professor)
-                    "female" -> itemView.professor_img.setImageResource(R.drawable.female_professor)
+                    itemView.resources.getString(R.string.male) -> itemView.professor_img.setImageResource(R.drawable.male_professor)
+                    itemView.resources.getString(R.string.female) -> itemView.professor_img.setImageResource(R.drawable.female_professor)
                 }
             }
         }

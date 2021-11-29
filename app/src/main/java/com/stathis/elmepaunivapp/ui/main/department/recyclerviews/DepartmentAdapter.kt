@@ -22,12 +22,10 @@ class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapte
         holder.bindData(getItem(position))
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return when(getItem(position)){
-            is CarouselParent -> R.layout.holder_viewpager_item
-            is NewDepartmentItem -> R.layout.holder_parent_horizontal_nested_item
-            is EmptyModel -> R.layout.holder_empty_view
-            else -> R.layout.holder_empty_view
-        }
+    override fun getItemViewType(position: Int): Int = when(getItem(position)){
+        is CarouselParent -> R.layout.holder_viewpager_item
+        is NewDepartmentItem -> R.layout.holder_parent_horizontal_nested_item
+        is EmptyModel -> R.layout.holder_empty_view
+        else -> R.layout.holder_empty_view
     }
 }

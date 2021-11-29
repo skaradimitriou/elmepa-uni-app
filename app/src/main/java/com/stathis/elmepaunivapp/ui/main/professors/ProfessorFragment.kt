@@ -47,16 +47,12 @@ class ProfessorFragment : ElmepaFragment(R.layout.fragment_professors) {
         builder.setTitle("Νέο e-mail")
 
         when(professor.gender){
-            "male" -> builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ.${professor.vocative};")
-            "female" -> builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ.${professor.vocative};")
+            resources.getString(R.string.male) -> builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ.${professor.vocative};")
+            resources.getString(R.string.female) -> builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ.${professor.vocative};")
         }
 
-        builder.setPositiveButton(
-            "Ναι"
-        ) { dialog, which -> sendEmail(professor) }
-        builder.setNegativeButton(
-            "Άκυρο"
-        ) { dialog, which -> dialog.dismiss() }
+        builder.setPositiveButton("Ναι") { dialog, which -> sendEmail(professor) }
+        builder.setNegativeButton("Άκυρο") { dialog, which -> dialog.dismiss() }
         builder.show()
     }
 
