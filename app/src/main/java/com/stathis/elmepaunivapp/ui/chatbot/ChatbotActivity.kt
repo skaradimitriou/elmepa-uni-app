@@ -68,8 +68,7 @@ class ChatbotActivity : ElmepaActivity(R.layout.activity_chat_bot) {
         ask_questions.setOnEditorActionListener { view, actionId, event ->
             when (actionId == EditorInfo.IME_ACTION_DONE) {
                 true -> {
-                    val response = ask_questions.text.toString().toLowerCase()
-                    Log.d("RESPONSE", response)
+                    val response = ask_questions.text.toString().lowercase()
                     ask_questions.text?.clear()
                     hideKeyboard(view)
 

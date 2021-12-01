@@ -8,7 +8,6 @@ import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.StudentResponse
 import java.io.IOException
-import java.lang.Exception
 
 class StudentsRepository(val app : Application) {
 

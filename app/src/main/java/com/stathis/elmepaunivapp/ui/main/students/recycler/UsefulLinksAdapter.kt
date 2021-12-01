@@ -7,6 +7,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
+import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.LinkItem
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.SyllabusItem
 
@@ -24,6 +25,7 @@ class UsefulLinksAdapter(private val callback : ElmepaClickListener) : ListAdapt
     override fun getItemViewType(position: Int): Int = when(getItem(position)){
         is SyllabusItem -> R.layout.useful_links_item_row
         is LinkItem -> R.layout.holder_horizontal_link_item
+        is UsefulLinks -> R.layout.useful_links_item_row
         else -> R.layout.holder_empty_view
     }
 }

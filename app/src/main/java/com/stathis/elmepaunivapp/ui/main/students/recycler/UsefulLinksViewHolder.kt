@@ -11,10 +11,11 @@ import com.stathis.elmepaunivapp.ui.main.students.model.refactor.SyllabusItem
 import kotlinx.android.synthetic.main.useful_links_item_row.view.*
 import java.lang.Exception
 
-class UsefulLinksViewHolder(itemView : View, callback : ElmepaClickListener) : ElmepaViewHolder(itemView,callback) {
+class UsefulLinksViewHolder(itemView: View, callback: ElmepaClickListener) :
+    ElmepaViewHolder(itemView, callback) {
 
     override fun present(data: LocalModel) {
-        when(data){
+        when (data) {
             is LinkItem -> {
                 itemView.links_holder_txt.text = data.title
                 loadImg(data.imageResource)
@@ -24,15 +25,21 @@ class UsefulLinksViewHolder(itemView : View, callback : ElmepaClickListener) : E
                 itemView.links_holder_txt.text = data.title
                 loadImg(data.imageResource)
             }
+
+            is UsefulLinks -> {
+                itemView.links_holder_txt.text = data.name
+                loadImg(data.imageResource)
+            }
         }
     }
 
-    private fun loadImg(img : String){
+    private fun loadImg(img: String) {
         try {
-            val myImage = itemView.resources.getIdentifier(img, "drawable", "com.stathis.elmepaunivapp")
+            val myImage =
+                itemView.resources.getIdentifier(img, "drawable", "com.stathis.elmepaunivapp")
             itemView.links_img.setImageResource(myImage)
-        }catch (e : Exception){
-            Log.d("","")
+        } catch (e: Exception) {
+            Log.d("", "")
         }
     }
 }

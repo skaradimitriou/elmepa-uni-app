@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.StudentsScreenCallback
-import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.LinkItem
 import com.stathis.elmepaunivapp.ui.main.students.model.refactor.SyllabusItem
@@ -40,7 +39,7 @@ class StudentsFragment : ElmepaFragment(R.layout.fragment_students) {
 
     private fun openUrl(url : String){
         startActivity(Intent(requireContext(), WebviewActivity::class.java)
-            .putExtra("URL", url))
+            .putExtra(getString(R.string.url_tag), url))
     }
 
     private fun openSyllabusScreen(position : Int){

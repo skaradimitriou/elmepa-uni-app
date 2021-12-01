@@ -2,7 +2,6 @@ package com.stathis.elmepaunivapp.ui.main.students
 
 import android.app.Application
 import android.view.View
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.stathis.elmepaunivapp.R

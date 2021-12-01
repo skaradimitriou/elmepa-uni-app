@@ -1,71 +1,59 @@
 package com.stathis.elmepaunivapp.ui.research
 
+import android.app.Application
+import android.util.Log
 import android.view.View
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.R
+import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.ResearchClickListener
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.research.recycler.ResearchAdapter
 import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.syllabus.model.Semester
+import java.io.IOException
 
-class ResearchViewModel : ViewModel(), ElmepaClickListener {
+class ResearchViewModel(val app : Application) : ElmepaViewModel(app), ElmepaClickListener {
 
     val adapter = ResearchAdapter(this)
     private lateinit var callback : ResearchClickListener
+    private lateinit var model : List<ResearchModel>
+    val data = MutableLiveData<List<ResearchModel>>()
 
     fun bindCallbacks(callback : ResearchClickListener){
         this.callback = callback
     }
 
-    fun createLists() {
-        val researchItemsList = listOf(
-            UsefulLinks(
-                "Ινστιτούτο Οικονομικής Ανάλυσης",
-                "https://mst.hmu.gr/ereuna/institoyto-oikonomikhs-analyshs-epicheirhmatikothtas-kai-toyrismoy/",
-                R.drawable.institute
-            ),
-            UsefulLinks(
-                "Ερευνητικά Επιτεύγματα",
-                "https://mst.hmu.gr/ereuna/ereynhtika-epiteygmata/",
-                R.drawable.achievements
-            ),
-            UsefulLinks(
-                "Δημοσιεύσεις",
-                "https://mst.hmu.gr/ereuna/dhmosieyseis/",
-                R.drawable.papers
-            ),
-            UsefulLinks(
-                "Στατιστικά Στοιχεία",
-                "https://mst.hmu.gr/ereuna/statistika-stoicheia/",
-                R.drawable.analytics
-            )
-        )
+    init {
+        getResearchData()
+    }
 
-        val researchLabList = listOf(
-            UsefulLinks(
-                "Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων",
-                "https://mst.hmu.gr/ereuna/adeds/",
-                R.drawable.lab
-            ),
-            UsefulLinks(
-                "Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης",
-                "https://mst.hmu.gr/ereuna/datalab/",
-                R.drawable.lab
-            ),
-            UsefulLinks(
-                "Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας",
-                "https://www.e-bilab.gr/",
-                R.drawable.lab
-            )
-        )
+    fun getResearchData() {
+        try {
+            val jsonString = app.assets.open("research.json").bufferedReader().use { it.readText() }
+            val listPersonType = object : TypeToken<List<ResearchModel>>() {}.type
+            model = Gson().fromJson(jsonString, listPersonType)
+            Log.d(app.getString(R.string.app_name),model.toString())
+            data.value = model
+        } catch (ioException: IOException) {
+            ioException.printStackTrace()
+        }
+    }
 
-        adapter.submitList(
-            listOf(
-                ResearchModel("Έρευνα στο Τμήμα", researchLabList),
-                ResearchModel("Έρευνητικά Εργαστήρια", researchItemsList)
-            )
-        )
+    fun observe(owner : LifecycleOwner){
+        data.observe(owner,Observer{
+            adapter.submitList(it)
+        })
+    }
+
+    fun release(owner: LifecycleOwner){
+        data.removeObservers(owner)
     }
 
     override fun onItemClick(view: View) {

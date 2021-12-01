@@ -81,7 +81,7 @@ class AnnouncementRepository(app: Application) {
 
             SharedPreferencesHelper.saveUpdateTime(System.nanoTime())
 
-            errorParsing.postValue(false)
+            errorParsing.postValue(true)
         } catch (e: Exception) {
             Log.d("", e.toString())
             getAnnouncementsFromDb()

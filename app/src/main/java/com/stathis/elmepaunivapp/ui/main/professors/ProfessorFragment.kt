@@ -43,28 +43,27 @@ class ProfessorFragment : ElmepaFragment(R.layout.fragment_professors) {
     }
 
     private fun openPopUpWindow(professor : Professor) {
-        val builder = MaterialAlertDialogBuilder(requireContext())
-        builder.setTitle("Νέο e-mail")
+        MaterialAlertDialogBuilder(requireContext()).also {
+            it.setTitle(getString(R.string.dialog_new_email))
+            when(professor.gender){
+                resources.getString(R.string.male) -> it.setMessage(getString(R.string.send_email_to_male_professor).format(professor.vocative))
+                resources.getString(R.string.female) -> it.setMessage(getString(R.string.send_email_to_female_professor).format(professor.vocative))
+            }
 
-        when(professor.gender){
-            resources.getString(R.string.male) -> builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ.${professor.vocative};")
-            resources.getString(R.string.female) -> builder.setMessage("Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ.${professor.vocative};")
-        }
-
-        builder.setPositiveButton("Ναι") { dialog, which -> sendEmail(professor) }
-        builder.setNegativeButton("Άκυρο") { dialog, which -> dialog.dismiss() }
-        builder.show()
+            it.setPositiveButton(getString(R.string.dialog_yes)) { dialog, which -> sendEmail(professor) }
+            it.setNegativeButton(getString(R.string.dialog_cancel)) { dialog, which -> dialog.dismiss() }
+        }.show()
     }
 
     private fun sendEmail(professor : Professor){
         val i = Intent(Intent.ACTION_SEND)
-            .setType("message/rfc822")
-            .putExtra(Intent.EXTRA_EMAIL, arrayOf<String>(professor.email))
+            .setType(getString(R.string.email_type))
+            .putExtra(Intent.EXTRA_EMAIL, arrayOf(professor.email))
 
         try {
-            startActivity(Intent.createChooser(i, "Send mail..."))
+            startActivity(Intent.createChooser(i, getString(R.string.sending_email)))
         } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(requireContext(),"There are no email clients installed.",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),getString(R.string.no_clients_installed),Toast.LENGTH_SHORT).show()
         }
     }
 

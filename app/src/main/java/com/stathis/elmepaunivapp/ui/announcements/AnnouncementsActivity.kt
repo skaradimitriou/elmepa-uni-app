@@ -1,9 +1,9 @@
 package com.stathis.elmepaunivapp.ui.announcements
 
 import android.content.Intent
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
@@ -31,7 +31,7 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),An
 
         viewModel.error.observe(this, Observer {
             when(it){
-                true -> Toast.makeText(this,"Error getting Data from site", Toast.LENGTH_LONG).show()
+                true -> Snackbar.make(findViewById(R.id.announcements_parent),resources.getString(R.string.announcements_get_error),Snackbar.LENGTH_LONG).show()
                 false -> Unit
             }
         })

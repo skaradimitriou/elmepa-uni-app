@@ -21,13 +21,14 @@ class ResearchActivity : ElmepaActivity(R.layout.activity_research_in_dept) {
         viewModel.bindCallbacks(object : ResearchClickListener {
             override fun onItemTap(item : UsefulLinks) {
                 startActivity(Intent(this@ResearchActivity,WebviewActivity::class.java)
-                    .putExtra("URL",item.url))
+                    .putExtra(getString(R.string.url_tag),item.url))
             }
         })
 
         research_activity_recycler.adapter = viewModel.adapter
-        viewModel.createLists()
+
+        viewModel.observe(this)
     }
 
-    override fun stopOps() {}
+    override fun stopOps() = viewModel.release(this)
 }

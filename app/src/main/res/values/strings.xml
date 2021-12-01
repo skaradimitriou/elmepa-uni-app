@@ -4,15 +4,40 @@
     <!-- Dashboard Activity -->
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
     <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>
+    <string name="url_tag">URL</string>
+    <string name="learn_more_url">https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/</string>
+
+    <string name="dashboard_announcements">Ανακοινώσεις</string>
+    <string name="dashboard_department">Το Τμήμα</string>
+    <string name="dashboard_students">Φοιτητές</string>
+    <string name="dashboard_professors">Καθηγητές</string>
+
+    <string name="about_app_text">Η εφαρμογή αυτή αναπτύχθηκε το 2020 από τον απόφοιτο του Τμήματος \n Στάθη  Καραδημητρίου με την επίβλεψη του Κώστα Παναγιωτάκη, Αναπληρωτή Καθηγητή και Προέδρου του Τμήματος\n" με σκοπό την εξυπηρέτηση των μελών του Τμήματος και την προώθηση του τμήματος σε υποψήφιους φοιτητές. \n Αποτελεί την επόμενη έκδοση της εφαρμογής κινητών που είχε αναπτυχθεί στα πλαίσια της πτυχιακής εργασίας \n των φοιτητών του τμήματος Πελοπίδα Κεφαλιανού και Μαρίας Λαγουδάκη το 2017.</string>
+    <string name="about_app_title">Σχετικά με την εφαρμογή</string>
+    <string name="about_app_learnMore">Μάθε Περισσότερα</string>
+    <string name="about_app_cancel">Ακυρο</string>
+
 
     <!-- Announcement Activity -->
     <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
     <string name="announcement_title">This is an announcement title</string>
+    <string name="announcements_get_error">Error getting Data from site</string>
 
     <!-- Professors Activity -->
     <string name="professors_search_txt">Αναζήτησε έναν καθηγητή</string>
     <string name="male">male</string>
     <string name="female">female</string>
+
+    <string name="send_email_to_male_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. %1$s;</string>
+    <string name="send_email_to_female_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ. %1$s;</string>
+
+    <string name="email_type">message/rfc822</string>
+    <string name="sending_email">Send mail...</string>
+    <string name="no_clients_installed">There are no email clients installed.</string>
+
+    <string name="dialog_new_email">Νέο e-mail</string>
+    <string name="dialog_yes">Ναι</string>
+    <string name="dialog_cancel">Άκυρο</string>
 
     <!-- Department Activity -->
     <string name="dept_button_txt">Μάθε περισσότερα</string>

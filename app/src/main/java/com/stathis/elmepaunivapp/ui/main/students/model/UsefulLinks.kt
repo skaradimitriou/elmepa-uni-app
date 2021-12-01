@@ -6,7 +6,7 @@ data class UsefulLinks(
 
     val name : String,
     val url : String,
-    val imageResource : Int
+    val imageResource : String
 
 ) : LocalModel {
     override fun equalsContent(obj: LocalModel): Boolean = false

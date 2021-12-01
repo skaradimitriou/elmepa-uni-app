@@ -40,7 +40,7 @@ class DashboardFragment : ElmepaFragment(R.layout.fragment_dashboard) {
 
             override fun learnMore() {
                 startActivity(Intent(requireContext(), WebviewActivity::class.java)
-                    .putExtra("URL","https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"))
+                    .putExtra(resources.getString(R.string.url_tag),resources.getString(R.string.learn_more_url)))
             }
         })
 
