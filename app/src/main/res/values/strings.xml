@@ -17,7 +17,6 @@
     <string name="about_app_learnMore">Μάθε Περισσότερα</string>
     <string name="about_app_cancel">Ακυρο</string>
 
-
     <!-- Announcement Activity -->
     <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
     <string name="announcement_title">This is an announcement title</string>
@@ -50,12 +49,19 @@
     <string name="deptSocial">Βρείτε μας Online</string>
     <string name="youtube">Youtube</string>
 
+    <string name="secretary_tel">tel:2841091103</string>
+    <string name="secretary_mail">kalarhaki@hmu.gr</string>
+
+    <string name="yt_app_link">vnd.youtube.com/channel/%1$s</string>
+    <string name="yt_web_link">https://www.youtube.com/channel/%1$s</string>
+
     <!-- Students Activity -->
     <string name="students_title">Φοιτητές</string>
     <string name="student_schedule">Κάνε tap για να δεις\nτο ωρολόγιο πρόγραμμα</string>
     <string name="student_schedule_btn">Μάθε Περισσότερα</string>
     <string name="student_syllabus">Πρόγραμμα Σπουδών</string>
     <string name="student_useful_links">Χρήσιμοι Σύνδεσμοι</string>
+    <string name="userTabChoice">userTabChoice</string>
 
     <!-- Research in Dept Activity -->
     <string name="research_title">Έρευνα</string>
@@ -82,6 +88,9 @@
     <!-- Syllabus Lesson Activity -->
     <string name="all_lessons_mandatory"><b>Όλα τα μαθήματα</b> είναι <b>υποχρεωτικά</b> σε αυτό το εξάμηνο</string>
     <string name="some_lessons_mandatory">Αυτό το εξάμηνο ο φοιτητής θα πρέπει να δηλώσει τα <b>Υποχρεωτικά Μαθήματα</b> και <b>δύο (2)</b> απο τα <b>Μαθήματα Επιλογής</b></string>
+    <string name="data">data</string>
+    <string name="mkt">mkt</string>
+    <string name="ba">ba</string>
 
     <!-- Virtual Tour Activity -->
     <string name="virtual_tour_txt">Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας</string>

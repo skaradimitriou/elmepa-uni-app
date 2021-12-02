@@ -1,7 +1,10 @@
 package com.stathis.elmepaunivapp.ui.syllabus_lessons.model
 
+import android.os.Parcelable
 import com.stathis.elmepaunivapp.abstraction.LocalModel
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Lesson(
 
     var name: String,
@@ -9,6 +12,6 @@ data class Lesson(
     val description: String,
     val direction: String
 
-) : LocalModel {
+) : LocalModel, Parcelable {
     override fun equalsContent(obj: LocalModel): Boolean = false
 }

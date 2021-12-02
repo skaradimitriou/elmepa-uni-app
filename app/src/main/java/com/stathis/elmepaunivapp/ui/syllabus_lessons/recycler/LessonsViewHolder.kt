@@ -21,9 +21,9 @@ class LessonsViewHolder(itemView : View, callback : ElmepaClickListener) : Elmep
                 itemView.lesson_description.text = data.description
 
                 when(data.direction){
-                    "data" -> itemView.lesson_name.setBackgroundColor(itemView.resources.getColor(R.color.lesson_green))
-                    "mkt" -> itemView.lesson_name.setBackgroundColor(itemView.resources.getColor(R.color.lesson_blue))
-                    "ba" -> itemView.lesson_name.setBackgroundColor(itemView.resources.getColor(R.color.dark_orange))
+                    itemView.resources.getString(R.string.data) -> itemView.lesson_name.setBackgroundColor(itemView.resources.getColor(R.color.lesson_green))
+                    itemView.resources.getString(R.string.mkt) -> itemView.lesson_name.setBackgroundColor(itemView.resources.getColor(R.color.lesson_blue))
+                    itemView.resources.getString(R.string.ba) -> itemView.lesson_name.setBackgroundColor(itemView.resources.getColor(R.color.dark_orange))
                 }
             }
         }

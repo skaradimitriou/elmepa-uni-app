@@ -19,12 +19,10 @@ class ChatbotAdapter(private val callback : ElmepaClickListener) : ListAdapter<L
 
     override fun onBindViewHolder(holder: ChatbotViewHolder, position: Int) = holder.bindData(getItem(position))
 
-    override fun getItemViewType(position: Int): Int {
-        return when(getItem(position)){
-            is Question -> R.layout.holder_question_item
-            is Answer -> R.layout.holder_answer_item
-            is ChatbotHeader -> R.layout.holder_chatbot_header
-            else -> R.layout.holder_empty_view
-        }
+    override fun getItemViewType(position: Int): Int = when(getItem(position)){
+        is Question -> R.layout.holder_question_item
+        is Answer -> R.layout.holder_answer_item
+        is ChatbotHeader -> R.layout.holder_chatbot_header
+        else -> R.layout.holder_empty_view
     }
 }

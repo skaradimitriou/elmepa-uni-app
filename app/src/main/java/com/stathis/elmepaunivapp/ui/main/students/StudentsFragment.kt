@@ -44,6 +44,6 @@ class StudentsFragment : ElmepaFragment(R.layout.fragment_students) {
 
     private fun openSyllabusScreen(position : Int){
         startActivity(Intent(requireContext(), SyllabusActivity::class.java)
-            .putExtra("userTabChoice", position))
+            .putExtra(resources.getString(R.string.userTabChoice), position))
     }
 }

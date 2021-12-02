@@ -45,12 +45,12 @@ class ChatbotViewModel(app: Application) : ElmepaViewModel(app), ElmepaClickList
                 "πρόγραμμα σπουδων"
             ) || response.contains("προγραμμα σπουδων") || response.contains("σπουδων")
         ) {
-            answer = "Κάνε tap για να δείς το πρόγραμμα σπουδών!"
+            answer = getString(R.string.chatbot_syllabus)
         } else if (response.contains("ωρολογιο προγραμμα") || response.contains("ωρολόγιο πρόγραμμα") || response.contains(
                 "ωρολόγιο"
             ) || response.contains("ωρολογιο")
         ) {
-            answer = "Κάνε tap για να δείς το πρόγραμμα των μαθημάτων!"
+            answer = getString(R.string.chatbot_schedule)
         } else if (response.contains("τηλέφωνο") || response.contains("τηλεφωνο") || response.contains(
                 "γραμματεία"
             ) || response.contains("γραμματεια")
@@ -67,12 +67,12 @@ class ChatbotViewModel(app: Application) : ElmepaViewModel(app), ElmepaClickList
                 "ανακοινωση"
             ) || response.contains("ανακοίνωση")
         ) {
-            answer = "Κάνε tap για να δεις τις ανακοινώσεις του Τμήματος!"
+            answer = getString(R.string.chatbot_announcements)
         } else if (response.contains("εικονική περιήγηση") || response.contains("περιήγηση") || response.contains(
                 "περιηγηση"
             ) || response.contains("εικονικη")
         ) {
-            answer = "Κάνε tap για να δείς την εικονική περιήγηση!"
+            answer = getString(R.string.chatbot_virtual_tour)
         } else if (response.contains("γεια") || response.contains("γειά")) {
             answer = "Γεία σου και εσένα!"
         } else if (response.contains("ευχαριστώ") || response.contains("ευχαριστω")) {
@@ -90,15 +90,13 @@ class ChatbotViewModel(app: Application) : ElmepaViewModel(app), ElmepaClickList
         }
     }
 
-    private fun checkWhichCallback(answer: Answer) {
-        when (answer.text) {
-            getString(R.string.chatbot_announcements) -> callback.openAnnouncements()
-            getString(R.string.chatbot_syllabus) -> callback.goToSyllabus()
-            getString(R.string.chatbot_schedule) -> callback.openSchedule()
-            getString(R.string.chatbot_call_secretary) -> callback.callSecretary()
-            getString(R.string.chatbot_email_secretary) -> callback.emailToSecretary()
-            getString(R.string.chatbot_virtual_tour) -> callback.virtualTour()
-            else -> Unit
-        }
+    private fun checkWhichCallback(answer: Answer) = when (answer.text) {
+        getString(R.string.chatbot_announcements) -> callback.openAnnouncements()
+        getString(R.string.chatbot_syllabus) -> callback.goToSyllabus()
+        getString(R.string.chatbot_schedule) -> callback.openSchedule()
+        getString(R.string.chatbot_call_secretary) -> callback.callSecretary()
+        getString(R.string.chatbot_email_secretary) -> callback.emailToSecretary()
+        getString(R.string.chatbot_virtual_tour) -> callback.virtualTour()
+        else -> Unit
     }
 }

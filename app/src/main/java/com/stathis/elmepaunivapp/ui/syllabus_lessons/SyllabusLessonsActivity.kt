@@ -1,8 +1,10 @@
 package com.stathis.elmepaunivapp.ui.syllabus_lessons
 
+import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
+import com.stathis.elmepaunivapp.ui.syllabus.model.Semester
 import kotlinx.android.synthetic.main.activity_syllabus_lessons.*
 
 class SyllabusLessonsActivity : ElmepaActivity(R.layout.activity_syllabus_lessons) {
@@ -16,16 +18,9 @@ class SyllabusLessonsActivity : ElmepaActivity(R.layout.activity_syllabus_lesson
     override fun startOps() {
         syllabus_lessons_recycler.adapter = viewModel.adapter
 
-        val lessonInfo = intent.getStringExtra("LESSONS_INFO")
-        val lessonArray = intent.getStringExtra("ARRAY")
+        val semester = intent.getParcelableExtra<Semester>("SEMESTER")
 
-        when(lessonInfo.isNullOrEmpty()){
-            false -> {
-                when(lessonArray.isNullOrEmpty()){
-                    false -> viewModel.createList(lessonInfo,lessonArray)
-                }
-            }
-        }
+        semester?.let { viewModel.bindList(it) }
     }
 
     override fun stopOps() {}

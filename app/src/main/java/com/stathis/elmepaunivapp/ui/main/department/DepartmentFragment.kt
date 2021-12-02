@@ -122,25 +122,25 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
 
     private fun callSecretary() {
         startActivity(Intent(Intent.ACTION_DIAL).also {
-            it.data = Uri.parse("tel:2841091103")
+            it.data = Uri.parse(resources.getString(R.string.secretary_tel))
         })
     }
 
     private fun sendMail() {
         val i = Intent(Intent.ACTION_SEND)
-            .setType("message/rfc822")
-            .putExtra(Intent.EXTRA_EMAIL, arrayOf<String>("kalarhaki@hmu.gr"))
+            .setType(resources.getString(R.string.email_type))
+            .putExtra(Intent.EXTRA_EMAIL, arrayOf<String>(resources.getString(R.string.secretary_mail)))
 
         try {
-            startActivity(Intent.createChooser(i, "Send mail..."))
+            startActivity(Intent.createChooser(i, resources.getString(R.string.sending_email)))
         } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(requireContext(),"There are no email clients installed.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),resources.getString(R.string.no_clients_installed), Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun goToDirection(value : Int){
         startActivity(Intent(requireContext(), SyllabusActivity::class.java)
-            .putExtra("userTabChoice", value))
+            .putExtra(resources.getString(R.string.userTabChoice), value))
     }
 
     private fun openUrl(url : String){
@@ -154,10 +154,10 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
     private fun openYoutube(url : String){
         try {
             //goes to channel in youtube app
-            startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("vnd.youtube.com/channel/$url")))
+            startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.yt_app_link).format(url))))
         } catch (e: Exception) {
             //goes to channel in web view (opens browser)
-            startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com/channel/$url")))
+            startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.yt_web_link).format(url))))
         }
     }
 }

@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_syllabus.*
 
 class SyllabusActivity : ElmepaActivity(R.layout.activity_syllabus) {
 
-    private lateinit var viewModel : SyllabusViewModel
+    private lateinit var viewModel: SyllabusViewModel
 
     override fun init() {
         viewModel = ViewModelProvider(this).get(SyllabusViewModel::class.java)
@@ -25,26 +25,19 @@ class SyllabusActivity : ElmepaActivity(R.layout.activity_syllabus) {
 
         val userChoice = intent.getIntExtra("userTabChoice", 0)
 
-        Log.d("",userChoice.toString())
-
         viewModel.observe(this)
 
         tabLayout.getTabAt(userChoice)?.select()
 
         viewModel.bindCallback(object : SyllabusClickListener {
             override fun onSemesterTap(syllabus: Semester) {
-                val jsonArray = Gson().toJson(syllabus.lessons)
-                Log.d("JSON_ARRAY", jsonArray)
-                startActivity(Intent(this@SyllabusActivity, SyllabusLessonsActivity::class.java)
-                        .putExtra("ARRAY", jsonArray)
-                        .putExtra("LESSONS_INFO", syllabus.lessonInfo)
-                )
+                startActivity(Intent(this@SyllabusActivity, SyllabusLessonsActivity::class.java).putExtra("SEMESTER", syllabus))
             }
         })
 
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                when(tab?.position){
+                when (tab?.position) {
                     0 -> viewModel.getDataList()
                     1 -> viewModel.getBaList()
                     2 -> viewModel.getMktList()

@@ -46,6 +46,6 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),An
 
     override fun onAnnouncementTap(announcement: Announcement) {
         startActivity(Intent(this, WebviewActivity::class.java)
-            .putExtra("URL",announcement.url))
+            .putExtra(resources.getString(R.string.url_tag),announcement.url))
     }
 }

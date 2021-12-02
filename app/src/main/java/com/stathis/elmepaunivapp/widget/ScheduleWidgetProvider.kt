@@ -20,7 +20,7 @@ class ScheduleWidgetProvider : AppWidgetProvider() {
         if (appWidgetIds != null) {
             for (appWidgetId in appWidgetIds) {
                 val intent = Intent(context, WebviewActivity::class.java)
-                    .putExtra("URL", "https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/")
+                    .putExtra(context?.resources?.getString(R.string.url_tag), context?.resources?.getString(R.string.learn_more_url))
                 val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
 
                 val views = RemoteViews(context?.packageName, R.layout.schedule_widget)
