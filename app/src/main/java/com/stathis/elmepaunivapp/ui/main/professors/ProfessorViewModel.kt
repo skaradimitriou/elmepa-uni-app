@@ -5,12 +5,13 @@ import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
+import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.ui.main.professors.model.Professor
 import com.stathis.elmepaunivapp.ui.main.professors.recyclerview.ProfessorsAdapter
 
-class ProfessorViewModel(app : Application) : AndroidViewModel(app), ElmepaClickListener {
+class ProfessorViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickListener {
 
     private val repo = ProfessorRepository(app)
     val professors = repo.professors
@@ -36,7 +37,6 @@ class ProfessorViewModel(app : Application) : AndroidViewModel(app), ElmepaClick
     fun observeData(owner : LifecycleOwner) {
         professors.observe(owner, Observer{
            adapter.submitList(it)
-            adapter.notifyDataSetChanged()
         })
     }
 

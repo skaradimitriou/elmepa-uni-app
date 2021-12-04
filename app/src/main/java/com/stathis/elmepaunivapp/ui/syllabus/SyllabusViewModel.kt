@@ -33,9 +33,7 @@ class SyllabusViewModel(val app : Application) : ElmepaViewModel(app), ElmepaCli
     }
 
     fun getDataList() = repo.getDataList()
-    
     fun getMktList() = repo.getMktList()
-    
     fun getBaList() = repo.getBaList()
     
     override fun onItemClick(view: View) {

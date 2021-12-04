@@ -5,12 +5,13 @@ import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
+import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.announcements.recyclerviews.AnnouncementsAdapter
 
-class AnnouncementsViewModel(app: Application) : AndroidViewModel(app), ElmepaClickListener {
+class AnnouncementsViewModel(app: Application) : ElmepaViewModel(app), ElmepaClickListener {
 
     private val repo = AnnouncementRepository(app)
     val announcements = repo.announcementList

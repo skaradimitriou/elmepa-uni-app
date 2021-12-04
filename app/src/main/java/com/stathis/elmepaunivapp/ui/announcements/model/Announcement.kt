@@ -21,5 +21,8 @@ data class Announcement(
     val imageResource : String
 
 ) : LocalModel {
-    override fun equalsContent(obj: LocalModel): Boolean  = false
+    override fun equalsContent(obj: LocalModel): Boolean  = when(obj){
+        is Announcement -> name == obj.name && url == obj.url && imageResource == obj.imageResource
+        else -> false
+    }
 }

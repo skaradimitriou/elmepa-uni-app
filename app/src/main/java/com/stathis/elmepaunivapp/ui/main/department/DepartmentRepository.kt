@@ -11,14 +11,9 @@ import java.io.IOException
 
 class DepartmentRepository(val app : Application) {
 
-    val departmentList = MutableLiveData<DepartmentResponse>()
     private lateinit var departmentScreenData : DepartmentResponse
 
-    init {
-        getStudentsScreenData()
-    }
-
-    fun getStudentsScreenData() {
+    fun getStudentsScreenData(data : MutableLiveData<DepartmentResponse>,error : MutableLiveData<Boolean>) {
         try {
             val jsonString = app.assets.open("department_data.json").bufferedReader().use { it.readText() }
             val listPersonType = object : TypeToken<DepartmentResponse>() {}.type
@@ -26,9 +21,10 @@ class DepartmentRepository(val app : Application) {
             departmentScreenData  = Gson().fromJson(jsonString, listPersonType)
             Log.d(app.getString(R.string.app_name),departmentScreenData.toString())
 
-            departmentList.value = departmentScreenData
+            data.value = departmentScreenData
+            error.value = false
         } catch (ioException: IOException) {
-            //FIXME: Add livedata to get error to screen
+            error.value = true
         }
     }
 }

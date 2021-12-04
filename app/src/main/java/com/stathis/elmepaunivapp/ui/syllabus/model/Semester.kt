@@ -14,5 +14,8 @@ data class Semester(
     val lessons: List<Lesson>
 
 ) : LocalModel, Parcelable {
-    override fun equalsContent(obj: LocalModel): Boolean = false
+    override fun equalsContent(obj: LocalModel): Boolean = when(obj){
+        is Semester -> semester == obj.semester && lessonInfo == obj.lessonInfo && lessons == obj.lessons
+        else -> false
+    }
 }

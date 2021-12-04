@@ -13,5 +13,8 @@ data class Lesson(
     val direction: String
 
 ) : LocalModel, Parcelable {
-    override fun equalsContent(obj: LocalModel): Boolean = false
+    override fun equalsContent(obj: LocalModel): Boolean = when(obj){
+        is Lesson -> name == obj.name && mandatory == obj.mandatory && description == obj.description && direction == obj.direction
+        else -> false
+    }
 }

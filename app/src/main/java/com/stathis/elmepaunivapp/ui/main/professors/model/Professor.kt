@@ -10,5 +10,8 @@ data class Professor(
     val vocative : String
 
 ) : LocalModel {
-    override fun equalsContent(obj: LocalModel): Boolean  = false
+    override fun equalsContent(obj: LocalModel): Boolean  = when(obj){
+        is Professor -> fullName == obj.fullName && email == obj.email && gender == obj.gender && vocative == obj.vocative
+        else -> false
+    }
 }

@@ -7,7 +7,9 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
@@ -66,9 +68,20 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
             sendMail()
         }
 
-        viewModel.observeData(this)
-
+        observe()
     }
+
+    private fun observe(){
+        viewModel.observeData(this)
+        viewModel.error.observe(this,Observer{
+            when(it){
+                true -> Snackbar.make(requireView().findViewById(R.id.dept_screen_parent),resources.getString(R.string.error_data), Snackbar.LENGTH_LONG).show()
+                false -> Unit
+            }
+        })
+    }
+
+    override fun stopOps() = viewModel.removeObserver(this)
 
     private fun onAddButtonClicked() {
         setVisibility(clicked)
@@ -117,8 +130,6 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
             }
         }
     }
-
-    override fun stopOps() = viewModel.removeObserver(this)
 
     private fun callSecretary() {
         startActivity(Intent(Intent.ACTION_DIAL).also {

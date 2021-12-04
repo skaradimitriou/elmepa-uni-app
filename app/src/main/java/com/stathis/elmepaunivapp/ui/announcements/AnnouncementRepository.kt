@@ -3,22 +3,21 @@ package com.stathis.elmepaunivapp.ui.announcements
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.database.AnnouncementsDatabaseKt
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
-import com.stathis.elmepaunivapp.util.SharedPreferencesHelper
+import com.stathis.elmepaunivapp.util.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.jsoup.Jsoup
 
+class AnnouncementRepository(val app: Application) {
 
-class AnnouncementRepository(app: Application) {
-
-    val context = app
     val announcementList = MutableLiveData<List<Announcement>>()
     val errorParsing = MutableLiveData<Boolean>()
-    val database = AnnouncementsDatabaseKt.getDatabase(context).announcementDao()
-    private val prefHelper = SharedPreferencesHelper.setHelper(context)
+    val database = AnnouncementsDatabaseKt.getDatabase(app).announcementDao()
+    private val prefHelper = SharedPreferencesHelper.setHelper(app)
     private val refreshTime = 5 * 60 * 1000 * 1000 * 1000L
 
     init {
@@ -26,14 +25,8 @@ class AnnouncementRepository(app: Application) {
         val currentTime = System.nanoTime()
 
         when(updateTime > 0 && currentTime - updateTime < refreshTime) {
-            true -> {
-                Log.d("","Getting Data From Database")
-                getAnnouncementsFromDb()
-            }
-            false -> {
-                Log.d("","Getting Data From Web")
-                getDataFromWeb()
-            }
+            true -> getAnnouncementsFromDb() //Getting Data From Database
+            false -> getDataFromWeb() //Getting Data From Web
         }
     }
 
@@ -50,28 +43,16 @@ class AnnouncementRepository(app: Application) {
         }
     }
 
-    suspend fun getAnnouncements() {
+    fun getAnnouncements() {
         val announcements = arrayListOf<Announcement>()
 
         try {
-            val url = "https://mst.hmu.gr/news_gr/"
-            val doc = Jsoup.connect(url).get()
-            val data = doc.select("article")
+            val doc = Jsoup.connect(BASE_URL).get().select(DATA_TYPE)
             for (i in 0..12) {
-                val imgUrl = data.select("a.entry-featured-image-url")
-                    .select("img")
-                    .eq(i)
-                    .attr("src")
-                val title = data.select("h2.entry-title")
-                    .select("h2")
-                    .eq(i)
-                    .text()
-                val detailUrl = data.select("h2.entry-title")
-                    .select("a")
-                    .eq(i)
-                    .attr("href")
+                val imgUrl = doc.select(IMG_HTML_TAG).select(IMG_TYPE).eq(i).attr(IMG_SOURCE)
+                val title = doc.select(TITLE_HTML_TAG).select(TITLE_TYPE).eq(i).text()
+                val detailUrl = doc.select(URL_HTML_TAG).select(URL_TYPE).eq(i).attr(URL_ATTR)
                 announcements.add(Announcement(title, detailUrl, imgUrl))
-                Log.d("items", "img: $imgUrl . title: $title")
             }
 
             announcementList.postValue(announcements)
@@ -80,10 +61,8 @@ class AnnouncementRepository(app: Application) {
             database.insertAll(announcements)
 
             SharedPreferencesHelper.saveUpdateTime(System.nanoTime())
-
-            errorParsing.postValue(true)
         } catch (e: Exception) {
-            Log.d("", e.toString())
+            Log.d(app.resources.getString(R.string.app_name), e.toString())
             getAnnouncementsFromDb()
         }
     }

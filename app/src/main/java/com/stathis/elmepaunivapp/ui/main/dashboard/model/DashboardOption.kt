@@ -8,5 +8,8 @@ data class DashboardOption(
     val drawable : Int
 
 ) : LocalModel {
-    override fun equalsContent(obj : LocalModel): Boolean = false
+    override fun equalsContent(obj : LocalModel): Boolean = when(obj){
+        is DashboardOption -> title == obj.title && drawable == obj.drawable
+        else -> false
+    }
 }

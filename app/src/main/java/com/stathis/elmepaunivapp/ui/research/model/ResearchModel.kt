@@ -9,5 +9,8 @@ data class ResearchModel(
     val researchItems : List<UsefulLinks>
 
 ) : LocalModel {
-    override fun equalsContent(obj: LocalModel): Boolean = false
+    override fun equalsContent(obj: LocalModel): Boolean = when(obj){
+        is ResearchModel -> categoryName == obj.categoryName && researchItems == obj.researchItems
+        else -> false
+    }
 }

@@ -4,6 +4,7 @@ import android.app.Application
 import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
@@ -17,12 +18,17 @@ import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
 class DepartmentViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickListener {
 
     private val repo = DepartmentRepository(app)
-    val departmentData = repo.departmentList
+    val data = MutableLiveData<DepartmentResponse>()
+    val error = MutableLiveData<Boolean>()
     private lateinit var callback : DepartmentClickListener
     val adapter = DepartmentAdapter(this)
 
+    init {
+        repo.getStudentsScreenData(data,error)
+    }
+
     fun observeData(owner: LifecycleOwner) {
-        departmentData.observe(owner, Observer {
+        data.observe(owner, Observer {
             adapter.submitList(listOf(
                 CarouselParent(it.carouselItems),
                 NewDepartmentItem(getString(R.string.deptSyllabusItems),it.syllabusItems),
@@ -34,7 +40,7 @@ class DepartmentViewModel(app : Application) : ElmepaViewModel(app), ElmepaClick
         })
     }
 
-    fun removeObserver(owner: LifecycleOwner) = departmentData.removeObservers(owner)
+    fun removeObserver(owner: LifecycleOwner) = data.removeObservers(owner)
 
     fun bindCallbacks(callback : DepartmentClickListener) {
         this.callback = callback

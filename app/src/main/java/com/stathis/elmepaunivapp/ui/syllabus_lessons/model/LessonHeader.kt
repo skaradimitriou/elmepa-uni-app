@@ -7,5 +7,8 @@ data class LessonHeader(
     val title : String
 
 ) : LocalModel {
-    override fun equalsContent(obj: LocalModel): Boolean = false
+    override fun equalsContent(obj: LocalModel): Boolean = when(obj){
+        is LessonHeader -> title == obj.title
+        else -> false
+    }
 }

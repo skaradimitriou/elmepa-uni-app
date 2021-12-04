@@ -49,6 +49,8 @@
     <string name="deptSocial">Βρείτε μας Online</string>
     <string name="youtube">Youtube</string>
 
+    <string name="error_data">Παρουσιάστηκε κάποιο σφάλμα</string>
+
     <string name="secretary_tel">tel:2841091103</string>
     <string name="secretary_mail">kalarhaki@hmu.gr</string>
 
@@ -66,6 +68,7 @@
     <!-- Research in Dept Activity -->
     <string name="research_title">Έρευνα</string>
     <string name="research_recycler_title">Έρευνα στο Τμήμα</string>
+    <string name="syllabus_intent_data">SEMESTER</string>
 
     <!-- Chatbot Activity -->
     <string name="elmepaChatBotHeader">ΕΛΜΕΠΑ Chatbot</string>
