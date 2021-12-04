@@ -6,8 +6,8 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.LinkItem
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.SyllabusItem
+import com.stathis.elmepaunivapp.ui.main.students.model.LinkItem
+import com.stathis.elmepaunivapp.ui.main.students.model.SyllabusItem
 import kotlinx.android.synthetic.main.useful_links_item_row.view.*
 import java.lang.Exception
 

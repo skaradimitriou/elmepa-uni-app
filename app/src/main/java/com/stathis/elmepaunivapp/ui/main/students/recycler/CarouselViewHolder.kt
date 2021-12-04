@@ -1,11 +1,10 @@
 package com.stathis.elmepaunivapp.ui.main.students.recycler
 
-import android.util.Log
 import android.view.View
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselItem
 import kotlinx.android.synthetic.main.holder_carousel_item.view.*
 import java.lang.Exception
 

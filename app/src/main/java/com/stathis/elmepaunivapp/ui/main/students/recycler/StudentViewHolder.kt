@@ -7,9 +7,9 @@ import androidx.viewpager2.widget.ViewPager2.SCROLL_STATE_IDLE
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.NewStudentItem
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.UsefulLinksParent
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselParent
+import com.stathis.elmepaunivapp.ui.main.students.model.NewStudentItem
+import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinksParent
 import kotlinx.android.synthetic.main.holder_parent_horizontal_nested_item.view.*
 import kotlinx.android.synthetic.main.holder_viewpager_item.view.*
 

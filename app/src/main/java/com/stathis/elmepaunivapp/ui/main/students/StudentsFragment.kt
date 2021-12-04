@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.StudentsScreenCallback
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.LinkItem
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.SyllabusItem
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselItem
+import com.stathis.elmepaunivapp.ui.main.students.model.LinkItem
+import com.stathis.elmepaunivapp.ui.main.students.model.SyllabusItem
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.fragment_students.*

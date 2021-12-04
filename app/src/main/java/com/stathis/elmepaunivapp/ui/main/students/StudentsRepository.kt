@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.StudentResponse
+import com.stathis.elmepaunivapp.ui.main.students.model.StudentResponse
 import java.io.IOException
 
 class StudentsRepository(val app : Application) {

@@ -7,5 +7,8 @@ data class SocialChannel(
     val url : String,
     val imageResource : String
 ) : LocalModel {
-    override fun equalsContent(obj: LocalModel): Boolean = false
+    override fun equalsContent(obj: LocalModel): Boolean = when(obj){
+        is SocialChannel -> title == obj.title && url == obj.url && imageResource == obj.imageResource
+        else -> false
+    }
 }

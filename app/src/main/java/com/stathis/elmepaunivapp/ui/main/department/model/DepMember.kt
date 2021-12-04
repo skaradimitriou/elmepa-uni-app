@@ -8,5 +8,8 @@ data class DepMember(
     val img : String
 
 ) : LocalModel {
-    override fun equalsContent(obj: LocalModel): Boolean = false
+    override fun equalsContent(obj: LocalModel): Boolean = when(obj){
+        is DepMember -> name == obj.name && img == obj.img
+        else -> false
+    }
 }

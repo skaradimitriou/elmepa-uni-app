@@ -7,9 +7,9 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.NewStudentItem
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.UsefulLinksParent
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselParent
+import com.stathis.elmepaunivapp.ui.main.students.model.NewStudentItem
+import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinksParent
 
 class StudentAdapter(private val callback: ElmepaClickListener) :
     ListAdapter<LocalModel, StudentViewHolder>(DiffItemClass<LocalModel>()) {

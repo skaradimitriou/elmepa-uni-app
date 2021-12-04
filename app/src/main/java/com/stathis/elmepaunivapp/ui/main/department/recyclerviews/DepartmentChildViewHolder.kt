@@ -36,7 +36,6 @@ class DepartmentChildViewHolder(itemView : View, callback : ElmepaClickListener)
                 itemView.dep_name.text = data.name
                 loadImg(data.img,itemView.dep_img)
             }
-
         }
     }
 

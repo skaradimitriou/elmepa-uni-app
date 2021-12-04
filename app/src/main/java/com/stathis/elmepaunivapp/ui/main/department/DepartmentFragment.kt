@@ -13,14 +13,12 @@ import com.google.android.material.snackbar.Snackbar
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
-import com.stathis.elmepaunivapp.ui.main.department.model.*
 import com.stathis.elmepaunivapp.ui.main.department.model.FieldOfStudy
 import com.stathis.elmepaunivapp.ui.main.department.model.Programme
 import com.stathis.elmepaunivapp.ui.main.department.model.SocialChannel
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
-import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.fragment_department.*
 
 class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {

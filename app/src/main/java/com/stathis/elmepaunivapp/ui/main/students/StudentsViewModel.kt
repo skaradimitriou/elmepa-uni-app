@@ -8,7 +8,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.StudentsScreenCallback
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.*
+import com.stathis.elmepaunivapp.ui.main.students.model.*
 import com.stathis.elmepaunivapp.ui.main.students.recycler.StudentAdapter
 
 class StudentsViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickListener {
@@ -27,7 +27,8 @@ class StudentsViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickLi
             adapter.submitList(listOf(
                 CarouselParent(it.carouselItems),
                 NewStudentItem(getString(R.string.student_syllabus),it.syllabusItems),
-                UsefulLinksParent(getString(R.string.student_useful_links),it.links)))
+                UsefulLinksParent(getString(R.string.student_useful_links),it.links)
+            ))
         })
     }
 

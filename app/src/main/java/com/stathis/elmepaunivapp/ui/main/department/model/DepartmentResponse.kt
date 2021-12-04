@@ -1,7 +1,7 @@
 package com.stathis.elmepaunivapp.ui.main.department.model
 
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselItem
 
 data class DepartmentResponse(
 
@@ -12,5 +12,8 @@ data class DepartmentResponse(
     val links : List<SocialChannel>
 
 ) : LocalModel {
-    override fun equalsContent(obj: LocalModel): Boolean = false
+    override fun equalsContent(obj: LocalModel): Boolean = when(obj){
+        is DepartmentResponse -> carouselItems == obj.carouselItems && syllabusItems == obj.syllabusItems && programmes == obj.programmes && depMembers == obj.depMembers && links == obj.links
+        else -> false
+    }
 }

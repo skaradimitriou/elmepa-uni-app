@@ -2,7 +2,6 @@ package com.stathis.elmepaunivapp.ui.main.department
 
 import android.app.Application
 import android.view.View
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -12,8 +11,8 @@ import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.main.department.model.*
 import com.stathis.elmepaunivapp.ui.main.department.recyclerviews.DepartmentAdapter
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselItem
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselItem
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselParent
 
 class DepartmentViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickListener {
 

@@ -8,8 +8,8 @@ import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.LinkItem
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.SyllabusItem
+import com.stathis.elmepaunivapp.ui.main.students.model.LinkItem
+import com.stathis.elmepaunivapp.ui.main.students.model.SyllabusItem
 
 class UsefulLinksAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, UsefulLinksViewHolder>(DiffItemClass<LocalModel>()) {
 

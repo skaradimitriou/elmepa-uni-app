@@ -9,7 +9,7 @@ import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.department.model.EmptyModel
 import com.stathis.elmepaunivapp.ui.main.department.model.NewDepartmentItem
-import com.stathis.elmepaunivapp.ui.main.students.model.refactor.CarouselParent
+import com.stathis.elmepaunivapp.ui.main.students.model.CarouselParent
 
 class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, DepartmentViewHolder>(DiffItemClass<LocalModel>()) {
 
