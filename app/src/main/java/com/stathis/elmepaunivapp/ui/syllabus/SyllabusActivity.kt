@@ -2,7 +2,9 @@ package com.stathis.elmepaunivapp.ui.syllabus
 
 import android.content.Intent
 import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.stathis.elmepaunivapp.R
@@ -23,15 +25,21 @@ class SyllabusActivity : ElmepaActivity(R.layout.activity_syllabus) {
     override fun startOps() {
         syllabus_recycler.adapter = viewModel.adapter
 
-        val userChoice = intent.getIntExtra("userTabChoice", 0)
+        val userChoice = intent.getIntExtra(resources.getString(R.string.userTabChoice), 0)
 
         viewModel.observe(this)
+        viewModel.error.observe(this, Observer{
+            when(it){
+                true -> Snackbar.make(findViewById(R.id.syllabus_screen_parent),resources.getString(R.string.announcements_get_error), Snackbar.LENGTH_LONG).show()
+                false -> Unit
+            }
+        })
 
         tabLayout.getTabAt(userChoice)?.select()
 
         viewModel.bindCallback(object : SyllabusClickListener {
             override fun onSemesterTap(syllabus: Semester) {
-                startActivity(Intent(this@SyllabusActivity, SyllabusLessonsActivity::class.java).putExtra("SEMESTER", syllabus))
+                startActivity(Intent(this@SyllabusActivity, SyllabusLessonsActivity::class.java).putExtra(getString(R.string.syllabus_intent_data), syllabus))
             }
         })
 

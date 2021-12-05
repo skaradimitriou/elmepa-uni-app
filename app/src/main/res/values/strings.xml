@@ -123,4 +123,7 @@
     <string name="undergraduate_students">Προπτυχιακοι Φοιτητές</string>
     <string name="postgraduate_students">Μεταπτυχιακοί Φοιτητές</string>
 
+    <!-- Professor Widget -->
+    <string name="widget_professor_intent">OPEN_PROFESSORS</string>
+
 </resources>

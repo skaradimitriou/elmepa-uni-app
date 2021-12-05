@@ -11,8 +11,7 @@ import com.stathis.elmepaunivapp.ui.main.students.model.CarouselParent
 import com.stathis.elmepaunivapp.ui.main.students.model.NewStudentItem
 import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinksParent
 
-class StudentAdapter(private val callback: ElmepaClickListener) :
-    ListAdapter<LocalModel, StudentViewHolder>(DiffItemClass<LocalModel>()) {
+class StudentAdapter(private val callback: ElmepaClickListener) : ListAdapter<LocalModel, StudentViewHolder>(DiffItemClass<LocalModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(viewType, parent, false)

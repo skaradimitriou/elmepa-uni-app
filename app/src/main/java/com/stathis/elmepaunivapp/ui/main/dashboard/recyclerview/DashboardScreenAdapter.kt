@@ -12,8 +12,7 @@ class DashboardScreenAdapter(private val callback: ElmepaClickListener) :
     ListAdapter<LocalModel, DashboardScreenViewHolder>(DiffItemClass<LocalModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashboardScreenViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.holder_dashboard_option, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.holder_dashboard_option, parent, false)
         return DashboardScreenViewHolder(view, callback)
     }
 

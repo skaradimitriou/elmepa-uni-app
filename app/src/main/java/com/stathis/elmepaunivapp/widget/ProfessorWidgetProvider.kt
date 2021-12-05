@@ -19,7 +19,7 @@ class ProfessorWidgetProvider : AppWidgetProvider() {
         if (appWidgetIds != null) {
             for (appWidgetId in appWidgetIds) {
                 val intent = Intent(context, MainActivity::class.java)
-                    .putExtra("OPEN_PROFESSORS", true)
+                    .putExtra(context?.resources?.getString(R.string.widget_professor_intent), true)
                 val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
 
                 val views = RemoteViews(context?.packageName, R.layout.professor_widget)

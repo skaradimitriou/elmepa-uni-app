@@ -8,9 +8,7 @@ import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.main.students.recycler.UsefulLinksAdapter
 import kotlinx.android.synthetic.main.holder_research_item_row.view.*
 
-class ResearchViewHolder(itemView : View, callback : ElmepaClickListener) : ElmepaViewHolder(itemView,callback) {
-
-    val callback = callback
+class ResearchViewHolder(itemView : View, val callback : ElmepaClickListener) : ElmepaViewHolder(itemView,callback) {
 
     override fun present(data: LocalModel) {
         when(data){

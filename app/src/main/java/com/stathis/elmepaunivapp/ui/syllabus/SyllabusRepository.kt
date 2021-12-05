@@ -11,14 +11,9 @@ import java.io.IOException
 
 class SyllabusRepository(val app : Application){
 
-    val data = MutableLiveData<List<Semester>>()
     private lateinit var model : List<Semester>
 
-    init {
-        getBaList()
-    }
-
-    fun getBaList() {
+    fun getBaList(data : MutableLiveData<List<Semester>>,error : MutableLiveData<Boolean>) {
         try {
             val jsonString = app.assets.open("undergraduate_ba_syllabus.json").bufferedReader().use { it.readText() }
             val listPersonType = object : TypeToken<List<Semester>>() {}.type
@@ -26,11 +21,11 @@ class SyllabusRepository(val app : Application){
             Log.d(app.getString(R.string.app_name),model.toString())
             data.value = model
         } catch (ioException: IOException) {
-            ioException.printStackTrace()
+            error.value = true
         }
     }
 
-    fun getDataList() {
+    fun getDataList(data : MutableLiveData<List<Semester>>,error : MutableLiveData<Boolean>) {
         try {
             val jsonString = app.assets.open("undergraduate_data_syllabus.json").bufferedReader().use { it.readText() }
             val listPersonType = object : TypeToken<List<Semester>>() {}.type
@@ -38,11 +33,11 @@ class SyllabusRepository(val app : Application){
             Log.d(app.getString(R.string.app_name),model.toString())
             data.value = model
         } catch (ioException: IOException) {
-            ioException.printStackTrace()
+            error.value = true
         }
     }
 
-    fun getMktList() {
+    fun getMktList(data : MutableLiveData<List<Semester>>,error : MutableLiveData<Boolean>) {
         try {
             val jsonString = app.assets.open("undergraduate_mkt_syllabus.json").bufferedReader().use { it.readText() }
             val listPersonType = object : TypeToken<List<Semester>>() {}.type
@@ -50,7 +45,7 @@ class SyllabusRepository(val app : Application){
             Log.d(app.getString(R.string.app_name),model.toString())
             data.value = model
         } catch (ioException: IOException) {
-            ioException.printStackTrace()
+            error.value = true
         }
     }
 }

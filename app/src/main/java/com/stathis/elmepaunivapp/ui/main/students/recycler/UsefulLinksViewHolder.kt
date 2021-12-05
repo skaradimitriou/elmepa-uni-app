@@ -11,8 +11,7 @@ import com.stathis.elmepaunivapp.ui.main.students.model.SyllabusItem
 import kotlinx.android.synthetic.main.useful_links_item_row.view.*
 import java.lang.Exception
 
-class UsefulLinksViewHolder(itemView: View, callback: ElmepaClickListener) :
-    ElmepaViewHolder(itemView, callback) {
+class UsefulLinksViewHolder(itemView: View, callback: ElmepaClickListener) : ElmepaViewHolder(itemView, callback) {
 
     override fun present(data: LocalModel) {
         when (data) {
