@@ -30,10 +30,10 @@ class DepartmentViewModel(app : Application) : ElmepaViewModel(app), ElmepaClick
         data.observe(owner, Observer {
             adapter.submitList(listOf(
                 CarouselParent(it.carouselItems),
-                NewDepartmentItem(getString(R.string.deptSyllabusItems),it.syllabusItems),
-                NewDepartmentItem(getString(R.string.deptProgramms),it.programmes),
-                NewDepartmentItem(getString(R.string.deptDepMembers),it.depMembers),
-                NewDepartmentItem(getString(R.string.deptSocial),it.links),
+                HorizontalDepartmentItem(getString(R.string.deptSyllabusItems),it.syllabusItems),
+                VerticalDepartmentItem(getString(R.string.deptProgramms),it.programmes),
+                HorizontalDepartmentItem(getString(R.string.deptDepMembers),it.depMembers),
+                HorizontalDepartmentItem(getString(R.string.deptSocial),it.links),
                 EmptyModel()
             ))
         })

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/height_130"
-    android:layout_height="@dimen/height_210"
+    android:layout_height="@dimen/height_220"
     android:layout_margin="@dimen/margin_10"
     android:clickable="true"
     android:focusable="true"
@@ -20,6 +20,7 @@
             android:layout_height="@dimen/height_140"
             android:paddingBottom="@dimen/margin_10"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/ungrad" />

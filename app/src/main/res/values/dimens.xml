@@ -39,6 +39,9 @@
     <dimen name="text_20">20sp</dimen>
     <dimen name="image_50">50dp</dimen>
     <dimen name="dimen_50">50dp</dimen>
+    <dimen name="height_230dp">230dp</dimen>
+    <dimen name="height_220">220dp</dimen>
+    <dimen name="dimen_70">70dp</dimen>
 
 
 </resources>

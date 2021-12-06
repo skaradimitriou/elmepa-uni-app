@@ -9,6 +9,15 @@
         <item name="colorSurface">#FFFFFF</item>
     </style>
 
+    <!-- Holder Styles -->
+    <style name="holder_programmes_style">
+        <item name="android:layout_marginTop">@dimen/margin_5</item>
+        <item name="android:layout_marginBottom">@dimen/margin_5</item>
+        <item name="android:layout_marginStart">@dimen/margin_10</item>
+        <item name="android:layout_marginEnd">@dimen/margin_10</item>
+    </style>
+
+
     <!-- Text Styles -->
     <style name="text_20_white_bold" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColor">@color/white</item>
