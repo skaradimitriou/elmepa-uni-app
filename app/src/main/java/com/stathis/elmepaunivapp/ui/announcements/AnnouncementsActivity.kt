@@ -1,17 +1,22 @@
 package com.stathis.elmepaunivapp.ui.announcements
 
 import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
+import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
 import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
+import com.stathis.elmepaunivapp.databinding.ActivityAnnouncementsBinding
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_announcements.*
 
-class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),AnnouncementClickListener {
+class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding>(R.layout.activity_announcements),AnnouncementClickListener {
 
     private lateinit var viewModel : AnnouncementsViewModel
 
@@ -20,13 +25,13 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),An
     }
 
     override fun startOps() {
-        latestNews_recView.adapter = viewModel.adapter
+        binding.latestNewsRecView.adapter = viewModel.adapter
 
         viewModel.bindCallback(this)
 
-        swipe_refresh_layout.setOnRefreshListener {
+        binding.swipeRefreshLayout.setOnRefreshListener {
             viewModel.refreshData()
-            swipe_refresh_layout.isRefreshing = false
+            binding.swipeRefreshLayout.isRefreshing = false
         }
 
         viewModel.error.observe(this, Observer {
@@ -37,7 +42,6 @@ class AnnouncementsActivity : ElmepaActivity(R.layout.activity_announcements),An
         })
 
         viewModel.observeData(this)
-
     }
 
     override fun stopOps() {

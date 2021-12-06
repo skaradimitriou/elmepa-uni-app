@@ -11,17 +11,17 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
+import com.stathis.elmepaunivapp.abstraction.ElmepaBindingFragment
 import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
+import com.stathis.elmepaunivapp.databinding.FragmentDepartmentBinding
 import com.stathis.elmepaunivapp.ui.main.department.model.FieldOfStudy
 import com.stathis.elmepaunivapp.ui.main.department.model.Programme
 import com.stathis.elmepaunivapp.ui.main.department.model.SocialChannel
 import com.stathis.elmepaunivapp.ui.main.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
-import kotlinx.android.synthetic.main.fragment_department.*
 
-class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
+class DepartmentFragment : ElmepaBindingFragment<FragmentDepartmentBinding>(R.layout.fragment_department) {
 
     private lateinit var viewModel : DepartmentViewModel
     private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.rotate_open_anim) }
@@ -30,14 +30,14 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
     private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.to_bottom_anim) }
     private var clicked = false
 
-    override fun init(view : View) {
+    override fun init() {
         viewModel = ViewModelProvider(this).get(DepartmentViewModel::class.java)
     }
 
     override fun startOps() {
-        department_recycler.adapter = viewModel.adapter
+        binding.departmentRecycler.adapter = viewModel.adapter
 
-        main_fab.setOnClickListener {
+        binding.mainFab.setOnClickListener {
             onAddButtonClicked()
         }
 
@@ -58,11 +58,11 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
             override fun openProgrammes(data: Programme) = openUrl(data.url)
         })
 
-        fab_call.setOnClickListener{
+        binding.fabCall.setOnClickListener{
             callSecretary()
         }
 
-        fab_mail.setOnClickListener {
+        binding.fabMail.setOnClickListener {
             sendMail()
         }
 
@@ -73,7 +73,7 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
         viewModel.observeData(this)
         viewModel.error.observe(this,Observer{
             when(it){
-                true -> Snackbar.make(requireView().findViewById(R.id.dept_screen_parent),resources.getString(R.string.error_data), Snackbar.LENGTH_LONG).show()
+                true -> Snackbar.make(binding.deptScreenParent,resources.getString(R.string.error_data), Snackbar.LENGTH_LONG).show()
                 false -> Unit
             }
         })
@@ -91,14 +91,14 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
     private fun setAnimation(clicked : Boolean) {
         when(clicked){
             true -> {
-                fab_call.startAnimation(toBottom)
-                fab_mail.startAnimation(toBottom)
-                main_fab.startAnimation(rotateClose)
+                binding.fabCall.startAnimation(toBottom)
+                binding.fabMail.startAnimation(toBottom)
+                binding.mainFab.startAnimation(rotateClose)
             }
             false -> {
-                fab_call.startAnimation(fromBottom)
-                fab_mail.startAnimation(fromBottom)
-                main_fab.startAnimation(rotateOpen)
+                binding.fabCall.startAnimation(fromBottom)
+                binding.fabMail.startAnimation(fromBottom)
+                binding.mainFab.startAnimation(rotateOpen)
             }
         }
     }
@@ -106,12 +106,12 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
     private fun setVisibility(clicked : Boolean) {
         when(clicked){
             true -> {
-                fab_call.visibility = View.INVISIBLE
-                fab_mail.visibility = View.INVISIBLE
+                binding.fabCall.visibility = View.INVISIBLE
+                binding.fabMail.visibility = View.INVISIBLE
             }
             false -> {
-                fab_call.visibility = View.VISIBLE
-                fab_mail.visibility = View.VISIBLE
+                binding.fabCall.visibility = View.VISIBLE
+                binding.fabMail.visibility = View.VISIBLE
             }
         }
     }
@@ -119,12 +119,12 @@ class DepartmentFragment : ElmepaFragment(R.layout.fragment_department) {
     private fun setClickable(clicked: Boolean){
         when(clicked){
             true -> {
-                fab_call.isClickable = false
-                fab_mail.isClickable = false
+                binding.fabCall.isClickable = false
+                binding.fabMail.isClickable = false
             }
             false -> {
-                fab_call.isClickable = true
-                fab_mail.isClickable = true
+                binding.fabCall.isClickable = true
+                binding.fabMail.isClickable = true
             }
         }
     }

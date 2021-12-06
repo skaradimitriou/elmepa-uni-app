@@ -32,15 +32,12 @@ class StudentsViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickLi
         })
     }
 
-    fun release(owner: LifecycleOwner){
-        studentScreenData.removeObservers(owner)
-    }
+    fun release(owner: LifecycleOwner) = studentScreenData.removeObservers(owner)
 
-    override fun onItemClick(view: View) {
-        when(view.tag){
-            is CarouselItem -> callback.openCarouselItem(view.tag as CarouselItem)
-            is LinkItem -> callback.openLink(view.tag as LinkItem)
-            is SyllabusItem -> callback.openSyllabus(view.tag as SyllabusItem)
-        }
+    override fun onItemClick(view: View) = when(view.tag){
+        is CarouselItem -> callback.openCarouselItem(view.tag as CarouselItem)
+        is LinkItem -> callback.openLink(view.tag as LinkItem)
+        is SyllabusItem -> callback.openSyllabus(view.tag as SyllabusItem)
+        else -> Unit
     }
 }

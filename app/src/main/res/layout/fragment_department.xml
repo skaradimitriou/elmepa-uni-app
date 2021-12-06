@@ -1,61 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dept_screen_parent"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/grey_bg"
-    tools:context=".ui.main.department.DepartmentFragment">
+    xmlns:tools="http://schemas.android.com/tools" >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/department_recycler"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dept_screen_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/grey_bg"
+        tools:context=".ui.main.department.DepartmentFragment" >
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_10"
-        android:backgroundTint="@color/light_green"
-        android:clickable="true"
-        android:contentDescription="@string/app_name"
-        android:focusable="true"
-        android:src="@drawable/ic_phone_white_24dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/fab_mail"
-        app:layout_constraintEnd_toEndOf="@id/main_fab" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/department_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_mail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_10"
-        android:backgroundTint="@color/orange"
-        android:clickable="true"
-        android:contentDescription="@string/app_name"
-        android:focusable="true"
-        android:src="@drawable/ic_mail_white_24dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/main_fab"
-        app:layout_constraintEnd_toEndOf="@id/main_fab" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:backgroundTint="@color/light_green"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:src="@drawable/ic_phone_white_24dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/fab_mail"
+            app:layout_constraintEnd_toEndOf="@id/main_fab" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/main_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_25"
-        android:backgroundTint="@color/colorAccent"
-        android:clickable="true"
-        android:contentDescription="@string/app_name"
-        android:focusable="true"
-        android:src="@drawable/ic_info_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:backgroundTint="@color/orange"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:src="@drawable/ic_mail_white_24dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/main_fab"
+            app:layout_constraintEnd_toEndOf="@id/main_fab" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/main_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_25"
+            android:backgroundTint="@color/colorAccent"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:src="@drawable/ic_info_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

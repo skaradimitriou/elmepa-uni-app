@@ -11,13 +11,15 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
+import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
 import com.stathis.elmepaunivapp.callbacks.ChatbotClickListener
+import com.stathis.elmepaunivapp.databinding.ActivityChatBotBinding
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_chat_bot.*
 
-class ChatbotActivity : ElmepaActivity(R.layout.activity_chat_bot) {
+class ChatbotActivity : ElmepaBindingActivity<ActivityChatBotBinding>(R.layout.activity_chat_bot) {
 
     private lateinit var viewModel : ChatbotViewModel
 
@@ -26,7 +28,7 @@ class ChatbotActivity : ElmepaActivity(R.layout.activity_chat_bot) {
     }
 
     override fun startOps() {
-        user_messagesRecView.adapter = viewModel.adapter
+        binding.userMessagesRecView.adapter = viewModel.adapter
 
         viewModel.bindCallbacks(object : ChatbotClickListener {
             override fun goToSyllabus() {
@@ -39,13 +41,8 @@ class ChatbotActivity : ElmepaActivity(R.layout.activity_chat_bot) {
 
             }
 
-            override fun callSecretary() {
-                callSecretaryOffice()
-            }
-
-            override fun emailToSecretary() {
-                emailSecretaryOffice()
-            }
+            override fun callSecretary() = callSecretaryOffice()
+            override fun emailToSecretary() = emailSecretaryOffice()
 
             override fun virtualTour() {
                 startActivity(Intent(this@ChatbotActivity,WebviewActivity::class.java)
@@ -60,16 +57,16 @@ class ChatbotActivity : ElmepaActivity(R.layout.activity_chat_bot) {
                 //this line of code scrolls to the last item of the list that is passed to the adapter
                 // it creates an illusion of the chat interactiveness
 
-                user_messagesRecView.smoothScrollToPosition(user_messagesRecView.bottom)
+                binding.userMessagesRecView.smoothScrollToPosition(user_messagesRecView.bottom)
                 viewModel.adapter.notifyDataSetChanged()
             }
         })
 
-        ask_questions.setOnEditorActionListener { view, actionId, event ->
+        binding.askQuestions.setOnEditorActionListener { view, actionId, event ->
             when (actionId == EditorInfo.IME_ACTION_DONE) {
                 true -> {
-                    val response = ask_questions.text.toString().lowercase()
-                    ask_questions.text?.clear()
+                    val response = binding.askQuestions.text.toString().lowercase()
+                    binding.askQuestions.text?.clear()
                     hideKeyboard(view)
 
                     viewModel.getResponse(response)
@@ -78,7 +75,7 @@ class ChatbotActivity : ElmepaActivity(R.layout.activity_chat_bot) {
                     // it creates an illusion of the chat interactiveness
                     when (viewModel.adapter.currentList.size > 1) {
                         true -> {
-                            user_messagesRecView.smoothScrollToPosition(user_messagesRecView.bottom)
+                            binding.userMessagesRecView.smoothScrollToPosition(user_messagesRecView.bottom)
                             viewModel.adapter.notifyDataSetChanged()
                         }
                     }

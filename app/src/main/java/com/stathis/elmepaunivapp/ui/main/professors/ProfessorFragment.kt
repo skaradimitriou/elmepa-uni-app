@@ -9,23 +9,25 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.elmepaunivapp.R
+import com.stathis.elmepaunivapp.abstraction.ElmepaBindingFragment
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
+import com.stathis.elmepaunivapp.databinding.FragmentProfessorsBinding
 import com.stathis.elmepaunivapp.ui.main.professors.model.Professor
 import kotlinx.android.synthetic.main.fragment_professors.*
 
-class ProfessorFragment : ElmepaFragment(R.layout.fragment_professors) {
+class ProfessorFragment : ElmepaBindingFragment<FragmentProfessorsBinding>(R.layout.fragment_professors) {
 
     private lateinit var viewModel : ProfessorViewModel
 
-    override fun init(view : View) {
+    override fun init() {
         viewModel = ViewModelProvider(this).get(ProfessorViewModel::class.java)
     }
 
     override fun startOps() {
-        recyclerView.adapter = viewModel.adapter
+        binding.recyclerView.adapter = viewModel.adapter
 
-        search_action.addTextChangedListener(object : TextWatcher{
+        binding.searchAction.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(p0: Editable?) {

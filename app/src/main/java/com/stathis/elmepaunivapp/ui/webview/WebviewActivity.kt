@@ -2,18 +2,17 @@ package com.stathis.elmepaunivapp.ui.webview
 
 import android.webkit.WebSettings
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
-import kotlinx.android.synthetic.main.activity_webview.*
+import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
+import com.stathis.elmepaunivapp.databinding.ActivityWebviewBinding
 
-class WebviewActivity : ElmepaActivity(R.layout.activity_webview) {
-
+class WebviewActivity : ElmepaBindingActivity<ActivityWebviewBinding>(R.layout.activity_webview) {
 
     override fun init() {}
 
     override fun startOps() {
         val url = intent.getStringExtra(resources.getString(R.string.url_tag))
-        url?.let { webview_window.loadUrl(it) }
-        val webSettings: WebSettings = webview_window.settings
+        url?.let { binding.webviewWindow.loadUrl(it) }
+        val webSettings: WebSettings = binding.webviewWindow.settings
         webSettings.javaScriptEnabled = true
     }
 
@@ -21,7 +20,7 @@ class WebviewActivity : ElmepaActivity(R.layout.activity_webview) {
 
     override fun onBackPressed() {
         when {
-            webview_window.canGoBack() -> webview_window.goBack()
+            binding.webviewWindow.canGoBack() -> binding.webviewWindow.goBack()
             else -> super.onBackPressed()
         }
     }
