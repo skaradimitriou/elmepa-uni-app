@@ -28,19 +28,19 @@ class ProfessorViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickL
         repo.filter(text)
     }
 
-    override fun onItemClick(view: View) {
-        when(view.tag){
-            is Professor -> callback.openDialog(view.tag as Professor)
-        }
-    }
-
     fun observeData(owner : LifecycleOwner) {
         professors.observe(owner, Observer{
-           adapter.submitList(it)
+            adapter.submitList(it)
         })
     }
 
     fun removeObserver(owner : LifecycleOwner){
         professors.removeObservers(owner)
+    }
+
+    override fun onItemClick(view: View) {
+        when(view.tag){
+            is Professor -> callback.openDialog(view.tag as Professor)
+        }
     }
 }

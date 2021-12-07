@@ -36,9 +36,7 @@ class ProfessorFragment : ElmepaBindingFragment<FragmentProfessorsBinding>(R.lay
         })
 
         viewModel.getProfessors(object : ProfessorScreenClickListener {
-            override fun openDialog(professor: Professor) {
-                openPopUpWindow(professor)
-            }
+            override fun openDialog(professor: Professor) = openPopUpWindow(professor)
         })
 
         viewModel.observeData(this)
