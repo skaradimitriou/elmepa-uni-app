@@ -81,6 +81,9 @@
     <string name="chatbot_call_secretary">Κάνε tap για να καλέσω την Γραμματεία του Τμήματος!</string>
     <string name="chatbot_email_secretary">Κάνε tap για να στείλεις e-mail στην Γραμματεία!</string>
     <string name="chatbot_virtual_tour">Κάνε tap για να δείς την εικονική περιήγηση!</string>
+    <string name="chatbot_hello">Γεία σου και εσένα!</string>
+    <string name="chatbot_you_re_welcome">Παρακαλώ!</string>
+    <string name="chatbot_dont_know_yet">Δεν γνωρίζω την απάντηση ακόμα</string>
 
     <!-- Syllabus Activity -->
     <string name="syllabus_tab_one">Επιστήμη των Δεδομένων &amp; Τεχνολογίες Πληροφορικής</string>

@@ -74,11 +74,11 @@ class ChatbotViewModel(app: Application) : ElmepaViewModel(app), ElmepaClickList
         ) {
             answer = getString(R.string.chatbot_virtual_tour)
         } else if (response.contains("γεια") || response.contains("γειά")) {
-            answer = "Γεία σου και εσένα!"
+            answer = getString(R.string.chatbot_hello)
         } else if (response.contains("ευχαριστώ") || response.contains("ευχαριστω")) {
-            answer = "Παρακαλώ!"
+            answer = getString(R.string.chatbot_you_re_welcome)
         } else {
-            answer = "Δεν γνωρίζω την απάντηση ακόμα"
+            answer = getString(R.string.chatbot_dont_know_yet)
         }
 
         return answer

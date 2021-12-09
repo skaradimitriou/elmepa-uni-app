@@ -17,6 +17,10 @@ import com.stathis.elmepaunivapp.databinding.ActivityChatBotBinding
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
 import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
+import com.stathis.elmepaunivapp.util.SCHEDULE_URL
+import com.stathis.elmepaunivapp.util.SECRETARY_MAIL
+import com.stathis.elmepaunivapp.util.SECRETARY_TEL
+import com.stathis.elmepaunivapp.util.VIRTUAL_TOUR_URL
 import kotlinx.android.synthetic.main.activity_chat_bot.*
 
 class ChatbotActivity : ElmepaBindingActivity<ActivityChatBotBinding>(R.layout.activity_chat_bot) {
@@ -31,22 +35,12 @@ class ChatbotActivity : ElmepaBindingActivity<ActivityChatBotBinding>(R.layout.a
         binding.userMessagesRecView.adapter = viewModel.adapter
 
         viewModel.bindCallbacks(object : ChatbotClickListener {
-            override fun goToSyllabus() {
-                startActivity(Intent(this@ChatbotActivity, SyllabusActivity::class.java))
-            }
-
-            override fun openSchedule() {
-                startActivity(Intent(this@ChatbotActivity, WebviewActivity::class.java)
-                    .putExtra("URL", "https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/"))
-
-            }
-
+            override fun openSchedule()  = openUrl(SCHEDULE_URL)
             override fun callSecretary() = callSecretaryOffice()
             override fun emailToSecretary() = emailSecretaryOffice()
-
-            override fun virtualTour() {
-                startActivity(Intent(this@ChatbotActivity,WebviewActivity::class.java)
-                    .putExtra("URL","https://mst.hmu.gr/hmutour/"))
+            override fun virtualTour() = openUrl(VIRTUAL_TOUR_URL)
+            override fun goToSyllabus() {
+                startActivity(Intent(this@ChatbotActivity, SyllabusActivity::class.java))
             }
 
             override fun openAnnouncements() {
@@ -54,8 +48,8 @@ class ChatbotActivity : ElmepaBindingActivity<ActivityChatBotBinding>(R.layout.a
             }
 
             override fun chatbotReplied() {
-                //this line of code scrolls to the last item of the list that is passed to the adapter
-                // it creates an illusion of the chat interactiveness
+                /* this line of code scrolls to the last item of the list that is passed to the adapter
+                 * it creates an illusion of the chat interactiveness */
 
                 binding.userMessagesRecView.smoothScrollToPosition(user_messagesRecView.bottom)
                 viewModel.adapter.notifyDataSetChanged()
@@ -87,21 +81,27 @@ class ChatbotActivity : ElmepaBindingActivity<ActivityChatBotBinding>(R.layout.a
         }
     }
 
+    private fun openUrl(url : String){
+        startActivity(Intent(this@ChatbotActivity,WebviewActivity::class.java)
+            .putExtra(resources.getString(R.string.url_tag), url))
+    }
+
     private fun emailSecretaryOffice() {
-        val i = Intent(Intent.ACTION_SEND)
-            .setType("message/rfc822")
-            .putExtra(Intent.EXTRA_EMAIL, arrayOf<String>("kalarhaki@hmu.gr"))
+        val i = Intent(Intent.ACTION_SEND).also{
+            it.type = resources.getString(R.string.email_type)
+            it.putExtra(Intent.EXTRA_EMAIL, arrayOf(SECRETARY_MAIL))
+        }
 
         try {
-            startActivity(Intent.createChooser(i, "Send mail..."))
+            startActivity(Intent.createChooser(i, resources.getString(R.string.sending_email)))
         } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(this,"There are no email clients installed.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,resources.getString(R.string.no_clients_installed), Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun callSecretaryOffice() {
         startActivity(Intent(Intent.ACTION_DIAL).also {
-            it.data = Uri.parse("tel:2841091103")
+            it.data = Uri.parse(SECRETARY_TEL)
         })
     }
 

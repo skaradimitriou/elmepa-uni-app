@@ -1,21 +1,26 @@
 package com.stathis.elmepaunivapp.ui.chatbot.recyclerview
 
-import android.view.View
-import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
+import androidx.databinding.ViewDataBinding
+import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
+import com.stathis.elmepaunivapp.BR
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.chatbot.model.Answer
 import com.stathis.elmepaunivapp.ui.chatbot.model.ChatbotHeader
 import com.stathis.elmepaunivapp.ui.chatbot.model.Question
-import kotlinx.android.synthetic.main.holder_answer_item.view.*
-import kotlinx.android.synthetic.main.holder_question_item.view.*
 
-class ChatbotViewHolder(itemView : View, callback : ElmepaClickListener) : ElmepaViewHolder(itemView, callback) {
+class ChatbotViewHolder(val binding : ViewDataBinding, val callback : ElmepaClickListener) : AbstractViewHolder(binding) {
 
     override fun present(data: LocalModel) {
         when(data){
-            is Answer -> itemView.bot_reply_txt.text = data.text
-            is Question -> itemView.user_msg_txt.text = data.text
+            is Answer -> {
+                binding.setVariable(BR.answer,data)
+                binding.setVariable(BR.callback,callback)
+            }
+            is Question -> {
+                binding.setVariable(BR.question,data)
+                binding.setVariable(BR.callback,callback)
+            }
             is ChatbotHeader -> {}
         }
     }
