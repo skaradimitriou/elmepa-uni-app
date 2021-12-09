@@ -5,6 +5,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.util.MyBindingAdapters.Companion.setBackground
+import java.lang.Exception
 
 class MyBindingAdapters {
 
@@ -16,6 +17,12 @@ class MyBindingAdapters {
                 img.context.resources.getString(R.string.male) -> img.setImageResource(R.drawable.male_professor)
                 img.context.resources.getString(R.string.female) -> img.setImageResource(R.drawable.female_professor)
             }
+        }
+
+        @BindingAdapter("setImageSrc")
+        @JvmStatic
+        fun setImageSrc(img : ImageView,drawable: Int){
+            img.setImageResource(drawable)
         }
 
         @BindingAdapter("setBackground")
