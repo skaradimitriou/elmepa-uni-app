@@ -1,10 +1,14 @@
 package com.stathis.elmepaunivapp.util
 
 import android.widget.ImageView
+import android.widget.ListAdapter
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
+import com.stathis.elmepaunivapp.abstraction.LocalModel
+import com.stathis.elmepaunivapp.ui.main.students.recycler.UsefulLinksAdapter
 import java.lang.Exception
 
 class MyBindingAdapters {
@@ -50,6 +54,12 @@ class MyBindingAdapters {
             }catch (e : Exception){
                 img.setImageResource(R.mipmap.ic_launcher)
             }
+        }
+
+        @BindingAdapter("adapter")
+        @JvmStatic
+        fun setRecyclerViewAdapter(recycler : RecyclerView, adapter: androidx.recyclerview.widget.ListAdapter<LocalModel,RecyclerView.ViewHolder>){
+            recycler.adapter = adapter
         }
     }
 }

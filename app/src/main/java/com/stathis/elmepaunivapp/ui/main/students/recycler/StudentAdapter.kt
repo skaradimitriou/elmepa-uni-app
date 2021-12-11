@@ -16,6 +16,8 @@ class StudentAdapter(private val callback: ElmepaClickListener) : ListAdapter<Lo
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(viewType, parent, false)
         return StudentViewHolder(view, callback)
+
+        //FIXME: Migrate to databinding pending
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {

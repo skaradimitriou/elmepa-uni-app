@@ -17,6 +17,8 @@ class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapte
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DepartmentViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(viewType,parent,false)
         return DepartmentViewHolder(view, callback)
+
+        //FIXME: Migrate to databinding pending
     }
 
     override fun onBindViewHolder(holder: DepartmentViewHolder, position: Int) {

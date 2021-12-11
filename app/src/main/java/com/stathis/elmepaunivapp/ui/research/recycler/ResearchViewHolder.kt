@@ -1,23 +1,23 @@
 package com.stathis.elmepaunivapp.ui.research.recycler
 
-import android.view.View
-import com.stathis.elmepaunivapp.abstraction.ElmepaViewHolder
+import androidx.databinding.ViewDataBinding
+import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
+import com.stathis.elmepaunivapp.BR
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.main.students.recycler.UsefulLinksAdapter
-import kotlinx.android.synthetic.main.holder_research_item_row.view.*
 
-class ResearchViewHolder(itemView : View, val callback : ElmepaClickListener) : ElmepaViewHolder(itemView,callback) {
+class ResearchViewHolder(val binding : ViewDataBinding, val callback : ElmepaClickListener) : AbstractViewHolder(binding) {
 
     override fun present(data: LocalModel) {
         when(data){
             is ResearchModel -> {
-                itemView.research_item_header.text = data.categoryName
-
                 val adapter = UsefulLinksAdapter(callback)
                 adapter.submitList(data.researchItems)
-                itemView.research_recycler.adapter = adapter
+
+                binding.setVariable(BR.model,data)
+                binding.setVariable(BR.adapter,adapter)
             }
         }
     }
