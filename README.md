@@ -29,6 +29,7 @@ Model - View - ViewModel (MVVM)
 ## Technologies Used
 - Navigation Component <br/>
 - Kotlin Coroutines <br/>
+- Data Binding
 
 ### Theme 
 
