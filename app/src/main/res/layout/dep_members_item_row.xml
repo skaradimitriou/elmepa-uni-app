@@ -1,30 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/margin_7"
-    android:layout_marginTop="@dimen/margin_10"
-    android:layout_marginRight="@dimen/margin_7">
+<layout>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/dep_img"
-        android:layout_width="@dimen/height_70"
-        android:layout_height="@dimen/height_70"
-        android:src="@drawable/dimotikalis"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="member"
+            type="com.stathis.elmepaunivapp.ui.main.department.model.DepMember" />
 
-    <TextView
-        android:id="@+id/dep_name"
-        android:layout_width="@dimen/height_110"
+        <variable
+            name="callback"
+            type="com.stathis.elmepaunivapp.callbacks.ElmepaClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="@dimen/text_16"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dep_img"
-        tools:text="@string/dep_member_txt" />
+        android:layout_marginLeft="@dimen/margin_7"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_7"
+        android:onClick="@{(view) -> callback.onItemClick(view)}">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/dep_img"
+            loadLocalPhoto="@{member.img}"
+            android:layout_width="@dimen/height_70"
+            android:layout_height="@dimen/height_70"
+            android:src="@drawable/dimotikalis"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dep_name"
+            android:layout_width="@dimen/height_110"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{member.name}"
+            android:textSize="@dimen/text_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dep_img"
+            tools:text="@string/dep_member_txt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

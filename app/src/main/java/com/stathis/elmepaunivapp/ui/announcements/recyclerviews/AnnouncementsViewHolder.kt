@@ -14,9 +14,6 @@ class AnnouncementsViewHolder(val binding : ViewDataBinding, val callback : Elme
             is Announcement -> {
                 binding.setVariable(BR.announcement,data)
                 binding.setVariable(BR.callback,callback)
-//
-//                itemView.ann_txt.text = data.name
-//                Picasso.get().load(data.imageResource).into(itemView.ann_img)
             }
         }
     }

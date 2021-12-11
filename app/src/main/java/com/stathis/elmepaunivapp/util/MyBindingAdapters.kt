@@ -5,6 +5,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
+import java.lang.Exception
 
 class MyBindingAdapters {
 
@@ -37,6 +38,17 @@ class MyBindingAdapters {
                 textView.context.resources.getString(R.string.data) -> textView.setBackgroundColor(textView.context.resources.getColor(R.color.lesson_green))
                 textView.context.resources.getString(R.string.mkt) -> textView.setBackgroundColor(textView.context.resources.getColor(R.color.lesson_blue))
                 textView.context.resources.getString(R.string.ba) -> textView.setBackgroundColor(textView.context.resources.getColor(R.color.dark_orange))
+            }
+        }
+
+        @BindingAdapter("loadLocalPhoto")
+        @JvmStatic
+        fun loadLocalPhoto(img : ImageView,photo: String){
+            try {
+                val myImage = img.context.resources.getIdentifier(photo, "drawable", "com.stathis.elmepaunivapp")
+                img.setImageResource(myImage)
+            }catch (e : Exception){
+                img.setImageResource(R.mipmap.ic_launcher)
             }
         }
     }
