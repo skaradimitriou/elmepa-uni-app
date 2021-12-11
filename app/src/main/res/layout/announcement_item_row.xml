@@ -1,35 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/CardView.Light"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/margin_15"
-    app:cardCornerRadius="@dimen/margin_10">
+<layout xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="announcement"
+            type="com.stathis.elmepaunivapp.ui.announcements.model.Announcement" />
+
+        <variable
+            name="callback"
+            type="com.stathis.elmepaunivapp.callbacks.ElmepaClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/CardView.Light"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:onClick="@{(view) -> callback.onItemClick(view)}"
+        android:layout_margin="@dimen/margin_15"
+        app:cardCornerRadius="@dimen/margin_10">
 
-        <ImageView
-            android:id="@+id/ann_img"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_200"
-            android:scaleType="centerCrop"
-            android:src="@color/grey"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/ann_txt"
-            style="@style/text_18_bold_black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_15"
-            android:text="@string/announcement_title"
-            app:layout_constraintTop_toBottomOf="@id/ann_img" />
+            <ImageView
+                android:id="@+id/ann_img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_200"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                loadImageFromUrl="@{announcement.imageResource}"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/ann_txt"
+                style="@style/text_18_bold_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_15"
+                android:text="@{announcement.name}"
+                tools:text="@string/announcement_title"
+                app:layout_constraintTop_toBottomOf="@id/ann_img" />
 
-</androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

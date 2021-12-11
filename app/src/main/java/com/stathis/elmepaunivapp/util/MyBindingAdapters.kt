@@ -3,13 +3,18 @@ package com.stathis.elmepaunivapp.util
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.util.MyBindingAdapters.Companion.setBackground
-import java.lang.Exception
 
 class MyBindingAdapters {
 
     companion object {
+        @BindingAdapter("loadImageFromUrl")
+        @JvmStatic
+        fun ImageView.loadImg(url: String) {
+            Picasso.get().load(url).into(this)
+        }
+
         @BindingAdapter("setImgResource")
         @JvmStatic
         fun setImage(img : ImageView,gender: String){
