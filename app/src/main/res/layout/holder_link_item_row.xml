@@ -3,8 +3,8 @@
 
     <data>
         <variable
-            name="link"
-            type="com.stathis.elmepaunivapp.ui.main.students.model.LinkItem" />
+            name="item"
+            type="com.stathis.elmepaunivapp.ui.main.students.model.SyllabusItem" />
 
         <variable
             name="callback"
@@ -14,12 +14,12 @@
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/height_130"
+        android:layout_height="@dimen/height_220"
         android:layout_margin="@dimen/margin_10"
         android:clickable="true"
-        android:focusable="true"
         android:onClick="@{(view) -> callback.onItemClick(view)}"
+        android:focusable="true"
         app:cardCornerRadius="@dimen/margin_15"
         app:cardElevation="@dimen/margin_3">
 
@@ -32,9 +32,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_140"
                 android:paddingBottom="@dimen/margin_10"
-                android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
-                loadLocalPhoto="@{link.imageResource}"
+                loadLocalPhoto="@{item.imageResource}"
+                android:contentDescription="@string/app_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@drawable/ungrad" />
@@ -47,10 +47,9 @@
                 android:layout_marginStart="@dimen/margin_5"
                 android:layout_marginEnd="@dimen/margin_5"
                 android:gravity="center"
-                android:padding="@dimen/margin_10"
                 android:textAlignment="center"
+                android:text="@{item.title}"
                 android:textStyle="bold"
-                android:text="@{link.title}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/links_img"
