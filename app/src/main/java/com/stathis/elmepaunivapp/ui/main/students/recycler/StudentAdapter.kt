@@ -27,7 +27,7 @@ class StudentAdapter(private val callback: ElmepaClickListener) : ListAdapter<Lo
     override fun getItemViewType(position: Int): Int = when (getItem(position)) {
         is NewStudentItem -> R.layout.holder_parent_horizontal_nested_item
         is UsefulLinksParent -> R.layout.holder_parent_vertical_grid_nested_item
-        is CarouselParent -> R.layout.holder_viewpager_item
+        is CarouselParent -> R.layout.holder_viewpager_stud_item
         else -> R.layout.holder_empty_view
     }
 }

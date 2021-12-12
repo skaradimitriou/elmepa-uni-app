@@ -15,19 +15,13 @@ import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 
 class LessonsAdapter(private val callback: ElmepaClickListener) : ListAdapter<LocalModel, LessonsViewHolder>(DiffItemClass<LocalModel>()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonsViewHolder = when(viewType){
-        R.layout.holder_lessons_header_item -> {
-            val view = HolderLessonsHeaderItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-            LessonsViewHolder(view,callback)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonsViewHolder {
+        val view = when(viewType){
+            R.layout.holder_lessons_header_item -> HolderLessonsHeaderItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            R.layout.lesson_item_row -> LessonItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            else -> HolderEmptyItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         }
-        R.layout.lesson_item_row -> {
-            val view = LessonItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-            LessonsViewHolder(view,callback)
-        }
-        else -> {
-            val view = HolderEmptyItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-            LessonsViewHolder(view,callback)
-        }
+        return LessonsViewHolder(view,callback)
     }
 
     override fun onBindViewHolder(holder: LessonsViewHolder, position: Int) {

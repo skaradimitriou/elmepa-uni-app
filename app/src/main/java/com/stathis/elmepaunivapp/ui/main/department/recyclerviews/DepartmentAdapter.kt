@@ -7,6 +7,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
+import com.stathis.elmepaunivapp.databinding.*
 import com.stathis.elmepaunivapp.ui.main.department.model.EmptyModel
 import com.stathis.elmepaunivapp.ui.main.department.model.HorizontalDepartmentItem
 import com.stathis.elmepaunivapp.ui.main.department.model.VerticalDepartmentItem
@@ -15,10 +16,14 @@ import com.stathis.elmepaunivapp.ui.main.students.model.CarouselParent
 class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, DepartmentViewHolder>(DiffItemClass<LocalModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DepartmentViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(viewType,parent,false)
+        val view = when(viewType){
+            R.layout.holder_viewpager_dept_item -> HolderViewpagerDeptItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            R.layout.holder_dept_horizontal_nested_item -> HolderDeptHorizontalNestedItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            R.layout.holder_parent_vertical_nested_item -> HolderDeptVerticalNestedItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            R.layout.holder_empty_view -> HolderEmptyViewBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            else -> HolderEmptyItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        }
         return DepartmentViewHolder(view, callback)
-
-        //FIXME: Migrate to databinding pending
     }
 
     override fun onBindViewHolder(holder: DepartmentViewHolder, position: Int) {
@@ -26,9 +31,9 @@ class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapte
     }
 
     override fun getItemViewType(position: Int): Int = when(getItem(position)){
-        is CarouselParent -> R.layout.holder_viewpager_item
-        is HorizontalDepartmentItem -> R.layout.holder_parent_horizontal_nested_item
-        is VerticalDepartmentItem -> R.layout.holder_parent_vertical_nested_item
+        is CarouselParent -> R.layout.holder_viewpager_dept_item
+        is HorizontalDepartmentItem -> R.layout.holder_dept_horizontal_nested_item
+        is VerticalDepartmentItem -> R.layout.holder_dept_vertical_nested_item
         is EmptyModel -> R.layout.holder_empty_view
         else -> R.layout.holder_empty_view
     }

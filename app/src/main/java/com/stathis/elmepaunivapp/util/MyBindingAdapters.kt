@@ -1,14 +1,18 @@
 package com.stathis.elmepaunivapp.util
 
+import android.os.Handler
 import android.widget.ImageView
 import android.widget.ListAdapter
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.LocalModel
+import com.stathis.elmepaunivapp.ui.main.students.recycler.CarouselAdapter
 import com.stathis.elmepaunivapp.ui.main.students.recycler.UsefulLinksAdapter
+import kotlinx.android.synthetic.main.holder_viewpager_dept_item.view.*
 import java.lang.Exception
 
 class MyBindingAdapters {
@@ -60,6 +64,38 @@ class MyBindingAdapters {
         @JvmStatic
         fun setRecyclerViewAdapter(recycler : RecyclerView, adapter: androidx.recyclerview.widget.ListAdapter<LocalModel,RecyclerView.ViewHolder>){
             recycler.adapter = adapter
+        }
+
+        /*
+         *  This is a temp solution to include a self sliding viewpager on top of Students/Dept Screen
+         *  Will be refactored into a more secure implementation later on, because handler is deprecated.
+         */
+
+        @BindingAdapter("setScrollableViewPager")
+        @JvmStatic
+        fun setScrollableViewPager(viewPager : ViewPager2, adapter : CarouselAdapter){
+            val sliderHandler = Handler()
+
+            val sliderRunnable = Runnable {
+                when (viewPager.currentItem == adapter.itemCount - 1) {
+                    true -> viewPager.currentItem = 0
+                    else -> viewPager.currentItem = viewPager.currentItem + 1
+                }
+            }
+
+            viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    sliderHandler.removeCallbacks(sliderRunnable)
+                    sliderHandler.postDelayed(sliderRunnable, 2500)
+                }
+
+                override fun onPageScrollStateChanged(state: Int) {
+                    when (state == ViewPager2.SCROLL_STATE_IDLE) {
+                        true -> sliderHandler.postDelayed(sliderRunnable, 2500)
+                    }
+                }
+            })
         }
     }
 }
