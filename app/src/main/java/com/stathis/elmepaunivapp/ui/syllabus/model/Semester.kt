@@ -4,7 +4,6 @@ import android.os.Parcelable
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 import kotlinx.android.parcel.Parcelize
-import java.io.Serializable
 
 @Parcelize
 data class Semester(

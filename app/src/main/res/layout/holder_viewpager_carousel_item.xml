@@ -3,7 +3,7 @@
 
     <data>
         <variable
-            name="item"
+            name="model"
             type="com.stathis.elmepaunivapp.ui.main.students.model.CarouselParent" />
 
         <variable

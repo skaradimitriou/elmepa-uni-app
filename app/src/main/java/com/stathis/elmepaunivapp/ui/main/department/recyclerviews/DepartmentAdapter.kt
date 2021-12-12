@@ -17,7 +17,7 @@ class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DepartmentViewHolder {
         val view = when(viewType){
-            R.layout.holder_viewpager_dept_item -> HolderViewpagerDeptItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            R.layout.holder_viewpager_carousel_item -> HolderViewpagerCarouselItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             R.layout.holder_dept_horizontal_nested_item -> HolderDeptHorizontalNestedItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             R.layout.holder_parent_vertical_nested_item -> HolderDeptVerticalNestedItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             R.layout.holder_empty_view -> HolderEmptyViewBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -31,7 +31,7 @@ class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapte
     }
 
     override fun getItemViewType(position: Int): Int = when(getItem(position)){
-        is CarouselParent -> R.layout.holder_viewpager_dept_item
+        is CarouselParent -> R.layout.holder_viewpager_carousel_item
         is HorizontalDepartmentItem -> R.layout.holder_dept_horizontal_nested_item
         is VerticalDepartmentItem -> R.layout.holder_dept_vertical_nested_item
         is EmptyModel -> R.layout.holder_empty_view

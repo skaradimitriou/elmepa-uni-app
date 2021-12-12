@@ -11,8 +11,6 @@ import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.main.students.recycler.CarouselAdapter
-import com.stathis.elmepaunivapp.ui.main.students.recycler.UsefulLinksAdapter
-import kotlinx.android.synthetic.main.holder_viewpager_dept_item.view.*
 import java.lang.Exception
 
 class MyBindingAdapters {
@@ -38,6 +36,10 @@ class MyBindingAdapters {
         fun setImageSrc(img : ImageView,drawable: Int){
             img.setImageResource(drawable)
         }
+
+        /*
+         * Refactor the setBackground fun later on because getColor is deprecated.
+         */
 
         @BindingAdapter("setBackground")
         @JvmStatic
