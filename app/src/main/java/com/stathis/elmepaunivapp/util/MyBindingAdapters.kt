@@ -2,8 +2,8 @@ package com.stathis.elmepaunivapp.util
 
 import android.os.Handler
 import android.widget.ImageView
-import android.widget.ListAdapter
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -37,17 +37,13 @@ class MyBindingAdapters {
             img.setImageResource(drawable)
         }
 
-        /*
-         * Refactor the setBackground fun later on because getColor is deprecated.
-         */
-
         @BindingAdapter("setBackground")
         @JvmStatic
         fun setBackground(textView : TextView,type: String){
             when(type){
-                textView.context.resources.getString(R.string.data) -> textView.setBackgroundColor(textView.context.resources.getColor(R.color.lesson_green))
-                textView.context.resources.getString(R.string.mkt) -> textView.setBackgroundColor(textView.context.resources.getColor(R.color.lesson_blue))
-                textView.context.resources.getString(R.string.ba) -> textView.setBackgroundColor(textView.context.resources.getColor(R.color.dark_orange))
+                textView.context.resources.getString(R.string.data) -> textView.setBackgroundColor(ContextCompat.getColor(textView.context, R.color.lesson_green))
+                textView.context.resources.getString(R.string.mkt) -> textView.setBackgroundColor(ContextCompat.getColor(textView.context, R.color.lesson_blue))
+                textView.context.resources.getString(R.string.ba) -> textView.setBackgroundColor(ContextCompat.getColor(textView.context, R.color.dark_orange))
             }
         }
 

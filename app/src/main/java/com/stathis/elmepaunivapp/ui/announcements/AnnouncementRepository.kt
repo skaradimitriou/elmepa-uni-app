@@ -20,6 +20,12 @@ class AnnouncementRepository(val app: Application) {
     private val prefHelper = SharedPreferencesHelper.setHelper(app)
     private val refreshTime = 5 * 60 * 1000 * 1000 * 1000L
 
+    /*
+    FIXME: Logic -> Try to get data from db,
+                    if this fails, then get from web
+                    use the timer as well
+     */
+
     init {
         val updateTime = SharedPreferencesHelper.getUpdateTime()
         val currentTime = System.nanoTime()

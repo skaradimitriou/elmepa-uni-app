@@ -9,11 +9,11 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.DashboardClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.main.dashboard.model.DashboardOption
-import com.stathis.elmepaunivapp.ui.main.dashboard.recyclerview.DashboardScreenAdapter
+import com.stathis.elmepaunivapp.ui.main.dashboard.recyclerview.DashboardAdapter
 
-class DashboardFragmentViewModel(val app: Application) : ElmepaViewModel(app), ElmepaClickListener {
+class DashboardViewModel(val app: Application) : ElmepaViewModel(app), ElmepaClickListener {
 
-    val adapter = DashboardScreenAdapter(this)
+    val adapter = DashboardAdapter(this)
     private lateinit var callback: DashboardClickListener
 
     fun bindList(callback: DashboardClickListener) {

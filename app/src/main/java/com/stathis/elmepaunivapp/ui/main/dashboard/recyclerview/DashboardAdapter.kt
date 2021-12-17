@@ -3,21 +3,20 @@ package com.stathis.elmepaunivapp.ui.main.dashboard.recyclerview
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.databinding.HolderDashboardOptionBinding
 
-class DashboardScreenAdapter(private val callback: ElmepaClickListener) :
-    ListAdapter<LocalModel, DashboardScreenViewHolder>(DiffItemClass<LocalModel>()) {
+class DashboardAdapter(private val callback: ElmepaClickListener) :
+    ListAdapter<LocalModel, DashboardViewHolder>(DiffItemClass<LocalModel>()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashboardScreenViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashboardViewHolder {
         val view = HolderDashboardOptionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return DashboardScreenViewHolder(view, callback)
+        return DashboardViewHolder(view, callback)
     }
 
-    override fun onBindViewHolder(holder: DashboardScreenViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DashboardViewHolder, position: Int) {
         holder.bindData(getItem(position))
     }
 }

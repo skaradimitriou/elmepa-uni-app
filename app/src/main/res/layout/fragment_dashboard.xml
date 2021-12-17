@@ -11,7 +11,7 @@
         <ImageView
             android:id="@+id/elmepa_bg_img"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_110"
+            android:layout_height="@dimen/height_140"
             android:contentDescription="@string/app_name"
             android:scaleType="fitXY"
             android:src="@drawable/agios_nikolaos"
@@ -20,7 +20,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_110"
+            android:layout_height="@dimen/height_140"
             android:alpha="0.5"
             android:background="@color/black"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,54 +30,63 @@
             android:id="@+id/about"
             android:layout_width="@dimen/margin_30"
             android:layout_height="@dimen/margin_30"
+            android:contentDescription="@string/app_name"
             android:layout_margin="@dimen/margin_10"
             android:background="@drawable/ic_info_black_24dp"
             android:clickable="true"
-            android:contentDescription="@string/app_name"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/elmepa_main_txt"
-            style="@style/text_20_white_bold"
+            style="@style/text_18_bold_white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/margin_10"
+            android:paddingTop="@dimen/text_20"
             android:text="@string/dashboard_elmepa"
-            app:layout_constraintStart_toEndOf="@id/elmepa_logo"
-            app:layout_constraintTop_toTopOf="@id/elmepa_logo" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/elmepa_main_desc"
-            style="@style/text_16_non_bold_white"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/margin_10"
+            android:gravity="center"
             android:text="@string/dashboard_det"
+            style="@style/text_16_non_bold_white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/elmepa_logo"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/elmepa_main_txt" />
+
+        <View
+            android:id="@+id/home_center"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toEndOf="@id/elmepa_bg_img"
+            app:layout_constraintStart_toStartOf="@id/elmepa_bg_img"
+            app:layout_constraintBottom_toBottomOf="@id/elmepa_bg_img"/>
 
         <ImageView
             android:id="@+id/elmepa_logo"
-            android:layout_width="@dimen/height_70"
-            android:layout_height="@dimen/height_70"
-            android:layout_margin="@dimen/margin_16"
-            android:layout_marginTop="@dimen/margin_100"
-            android:contentDescription="@string/app_name"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:src="@drawable/elmepa_logo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toEndOf="@id/home_center"
+            app:layout_constraintBottom_toBottomOf="@id/elmepa_bg_img"
+            app:layout_constraintStart_toStartOf="@id/home_center"
+            app:layout_constraintTop_toTopOf="@id/home_center" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dashboard_options_recview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_16"
+            android:layout_margin="@dimen/margin_25"
             android:foregroundGravity="center_horizontal"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/elmepa_bg_img"
+            app:layout_constraintTop_toBottomOf="@+id/elmepa_logo"
             app:spanCount="2"
             tools:itemCount="4"
             tools:listitem="@layout/holder_dashboard_option" />

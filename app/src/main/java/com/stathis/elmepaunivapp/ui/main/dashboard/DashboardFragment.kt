@@ -14,10 +14,10 @@ import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 
 class DashboardFragment : ElmepaBindingFragment<FragmentDashboardBinding>(R.layout.fragment_dashboard) {
 
-    private lateinit var viewModel : DashboardFragmentViewModel
+    private lateinit var viewModel : DashboardViewModel
 
     override fun init() {
-        viewModel = ViewModelProvider(this).get(DashboardFragmentViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
     }
 
     override fun startOps() {
