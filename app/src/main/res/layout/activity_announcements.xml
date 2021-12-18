@@ -8,22 +8,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/elmepa_main_txt"
-            style="@style/text_20_white_bold"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/announcements_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blue_petrol"
-            android:padding="@dimen/margin_10"
             android:text="@string/announcement_header"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/elmepa_main_txt">
+            app:layout_constraintTop_toBottomOf="@+id/announcements_toolbar">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/latestNews_recView"

@@ -2,6 +2,7 @@ package com.stathis.elmepaunivapp.ui.announcements
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -25,6 +26,11 @@ class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding
     }
 
     override fun startOps() {
+        binding.announcementsToolbar.title = resources.getString(R.string.announcement_header)
+
+        setSupportActionBar(binding.announcementsToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         binding.latestNewsRecView.adapter = viewModel.adapter
 
         viewModel.bindCallback(this)
@@ -51,5 +57,10 @@ class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding
     override fun onAnnouncementTap(announcement: Announcement) {
         startActivity(Intent(this, WebviewActivity::class.java)
             .putExtra(resources.getString(R.string.url_tag),announcement.url))
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

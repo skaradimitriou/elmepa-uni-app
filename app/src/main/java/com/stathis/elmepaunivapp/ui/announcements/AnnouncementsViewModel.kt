@@ -24,7 +24,7 @@ class AnnouncementsViewModel(app: Application) : ElmepaViewModel(app), ElmepaCli
     }
 
     fun refreshData() {
-        repo.getDataFromWeb()
+        repo.getData()
     }
 
     fun observeData(owner: LifecycleOwner) {

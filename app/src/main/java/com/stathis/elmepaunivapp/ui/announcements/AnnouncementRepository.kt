@@ -9,6 +9,7 @@ import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.util.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.jsoup.Jsoup
 
@@ -21,12 +22,20 @@ class AnnouncementRepository(val app: Application) {
     private val refreshTime = 5 * 60 * 1000 * 1000 * 1000L
 
     /*
-    FIXME: Logic -> Try to get data from db,
-                    if this fails, then get from web
-                    use the timer as well
+     *  Repo data fetch logic:
+     *  Trying to get data from db,  if this fails, then get from web.
+     *  The app decides when to fetch data from web or db from the timer implemented
      */
 
     init {
+        try{
+            getAnnouncementsFromDb()
+        }catch (e:Exception){
+            getDataFromWeb()
+        }
+    }
+
+    fun getData(){
         val updateTime = SharedPreferencesHelper.getUpdateTime()
         val currentTime = System.nanoTime()
 
