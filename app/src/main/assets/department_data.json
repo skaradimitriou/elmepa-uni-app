@@ -1,16 +1,22 @@
 {
 	"carouselItems" : [
 		{
+			"imageResource" : "postgrad",
+			"url" : "https://mst.hmu.gr/metaptyxiako/metaptychiako-programma/",
+			"title" : "Πρόγραμμα  Μεταπτυχιακών Σπουδών  «Διοίκηση και Ψηφιακός Μετασχηματισμός",
+			"position" : 1
+		},
+		{
 			"imageResource" : "virtual_tour",
 			"url" : "https://mst.hmu.gr/hmutour/",
 			"title" : "Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας",
-			"position" : 1
+			"position" : 2
 		},
 		{
 			"imageResource" : "research_img",
 			"url" : "",
 			"title" : "Έρευνα στο Τμήμα",
-			"position" : 2
+			"position" : 3
 		}
 	],
 	"syllabusItems" : [
@@ -84,6 +90,14 @@
 			"title" : "Χάρτης",
 			"url" : "https://www.google.gr/maps/place/Hellenic+Mediterσ46953,25.6549865,17z/data=!3m1!4b1!4m5!3m4!1s0x149a7fea00679c2f:0x8038b06fd113f3fb!8m2!3d35.1946909!4d25.6571752"
 		},{
+			"imageResource" : "fb",
+			"title" : "Facebook",
+			"url" : "https://www.facebook.com/hmu.mst/"
+		},{
+			"imageResource" : "insta",
+			"title" : "Instagram",
+			"url" : "https://www.instagram.com/hmu_agiosnikolaos/"
+		}, {
 			"imageResource" : "youtube",
 			"title" : "Youtube",
 			"url" : "UCapUQKQVrP2p4_ijj_OxvNg"

@@ -19,7 +19,7 @@ class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapte
         val view = when(viewType){
             R.layout.holder_viewpager_carousel_item -> HolderViewpagerCarouselItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             R.layout.holder_dept_horizontal_nested_item -> HolderDeptHorizontalNestedItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-            R.layout.holder_parent_vertical_nested_item -> HolderDeptVerticalNestedItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            R.layout.holder_dept_vertical_nested_item -> HolderDeptVerticalNestedItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             R.layout.holder_empty_view -> HolderEmptyViewBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             else -> HolderEmptyItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         }
