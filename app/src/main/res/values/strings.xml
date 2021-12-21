@@ -103,7 +103,7 @@
 
 
     <!-- No Internet Activity -->
-    <string name="no_internet">NO INTERNET</string>
+    <string name="no_internet">Δεν υπάρχει σύνδεση στο Internet</string>
 
     <!-- Dep Member Item -->
     <string name="dep_member_txt">Κωστας Παναγιωτακης</string>

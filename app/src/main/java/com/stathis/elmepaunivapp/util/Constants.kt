@@ -1,5 +1,8 @@
 package com.stathis.elmepaunivapp.util
 
+import androidx.annotation.ColorInt
+import com.google.android.material.snackbar.Snackbar
+
 const val BASE_URL = "https://mst.hmu.gr/news_gr/"
 const val DATA_TYPE = "article"
 
@@ -19,3 +22,8 @@ const val SCHEDULE_URL = "https://mst.hmu.gr/proptyxiako/orologio-programma-math
 
 const val SECRETARY_MAIL = "kalarhaki@hmu.gr"
 const val SECRETARY_TEL = "tel:2841091103"
+
+fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar{
+    this.view.setBackgroundColor(colorInt)
+    return this
+}

@@ -3,11 +3,14 @@ package com.stathis.elmepaunivapp.ui.announcements
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
+import com.novoda.merlin.*
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
@@ -15,17 +18,33 @@ import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityAnnouncementsBinding
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
+import com.stathis.elmepaunivapp.util.withColor
 import kotlinx.android.synthetic.main.activity_announcements.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 
-class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding>(R.layout.activity_announcements),AnnouncementClickListener {
+class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding>(R.layout.activity_announcements),AnnouncementClickListener,Connectable,Disconnectable,Bindable {
 
     private lateinit var viewModel : AnnouncementsViewModel
+    private lateinit var merlin : Merlin
 
     override fun init() {
         viewModel = ViewModelProvider(this).get(AnnouncementsViewModel::class.java)
+
+        merlin = Merlin.Builder().withConnectableCallbacks()
+            .withDisconnectableCallbacks()
+            .withBindableCallbacks()
+            .build(this)
+
+        merlin.registerConnectable(this)
+        merlin.registerDisconnectable(this)
+        merlin.registerBindable(this)
     }
 
     override fun startOps() {
+        merlin?.let { merlin.bind() }
+
         binding.announcementsToolbar.title = resources.getString(R.string.announcement_header)
 
         setSupportActionBar(binding.announcementsToolbar)
@@ -62,5 +81,23 @@ class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    override fun onConnect() = viewModel.refreshData()
+
+    override fun onDisconnect() {
+        Snackbar.make(binding.announcementsParent, resources.getString(R.string.no_internet), Snackbar.LENGTH_LONG)
+            .withColor(ContextCompat.getColor(this, R.color.orange))
+            .show()
+    }
+
+    override fun onBind(networkStatus: NetworkStatus?) = when(networkStatus?.isAvailable){
+        true -> onConnect()
+        else -> onDisconnect()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        merlin?.let { merlin.unbind() }
     }
 }
