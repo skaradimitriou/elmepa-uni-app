@@ -20,7 +20,7 @@ class SyllabusViewModel(val app : Application) : ElmepaViewModel(app), ElmepaCli
     val adapter = SemesterAdapter(this)
 
     init{
-        getDataList()
+        getLocalData(0)
     }
 
     fun observe(owner: LifecycleOwner) {
@@ -33,10 +33,8 @@ class SyllabusViewModel(val app : Application) : ElmepaViewModel(app), ElmepaCli
         this.callback = callback
     }
 
-    fun getDataList() = repo.getDataList(data,error)
-    fun getMktList() = repo.getMktList(data,error)
-    fun getBaList() = repo.getBaList(data,error)
-    
+    fun getLocalData(position : Int) = repo.decideWhichList(position,data,error)
+
     override fun onItemClick(view: View) {
         when(view.tag){
             is Semester -> callback.onSemesterTap(view.tag as Semester)

@@ -28,6 +28,7 @@
                 android:id="@+id/carousel_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
                 loadLocalPhoto="@{item.imageResource}"
                 android:scaleType="centerCrop"
                 android:src="@color/grey" />
@@ -41,15 +42,12 @@
 
             <TextView
                 android:id="@+id/carousel_title"
-                style="@style/text_16_black"
+                style="@style/text_20_white_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="@dimen/margin_10"
-                android:textColor="@color/white"
                 android:text="@{item.title}"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

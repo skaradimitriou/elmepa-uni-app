@@ -13,33 +13,16 @@ class SyllabusRepository(val app : Application){
 
     private lateinit var model : List<Semester>
 
-    fun getBaList(data : MutableLiveData<List<Semester>>,error : MutableLiveData<Boolean>) {
-        try {
-            val jsonString = app.assets.open("undergraduate_ba_syllabus.json").bufferedReader().use { it.readText() }
-            val listPersonType = object : TypeToken<List<Semester>>() {}.type
-            model = Gson().fromJson(jsonString, listPersonType)
-            Log.d(app.getString(R.string.app_name),model.toString())
-            data.value = model
-        } catch (ioException: IOException) {
-            error.value = true
-        }
+    fun decideWhichList(position : Int,data : MutableLiveData<List<Semester>>, error: MutableLiveData<Boolean>) = when(position){
+        0 -> getLocalData("undergraduate_data_syllabus.json",data,error)
+        1 -> getLocalData("undergraduate_ba_syllabus.json",data,error)
+        2 -> getLocalData("undergraduate_mkt_syllabus.json",data,error)
+        else -> Unit
     }
 
-    fun getDataList(data : MutableLiveData<List<Semester>>,error : MutableLiveData<Boolean>) {
+    fun getLocalData(fileName : String, data : MutableLiveData<List<Semester>>,error : MutableLiveData<Boolean>){
         try {
-            val jsonString = app.assets.open("undergraduate_data_syllabus.json").bufferedReader().use { it.readText() }
-            val listPersonType = object : TypeToken<List<Semester>>() {}.type
-            model = Gson().fromJson(jsonString, listPersonType)
-            Log.d(app.getString(R.string.app_name),model.toString())
-            data.value = model
-        } catch (ioException: IOException) {
-            error.value = true
-        }
-    }
-
-    fun getMktList(data : MutableLiveData<List<Semester>>,error : MutableLiveData<Boolean>) {
-        try {
-            val jsonString = app.assets.open("undergraduate_mkt_syllabus.json").bufferedReader().use { it.readText() }
+            val jsonString = app.assets.open(fileName).bufferedReader().use { it.readText() }
             val listPersonType = object : TypeToken<List<Semester>>() {}.type
             model = Gson().fromJson(jsonString, listPersonType)
             Log.d(app.getString(R.string.app_name),model.toString())

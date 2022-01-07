@@ -44,12 +44,7 @@ class SyllabusActivity : ElmepaBindingActivity<ActivitySyllabusBinding>(R.layout
 
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                when (tab?.position) {
-                    0 -> viewModel.getDataList()
-                    1 -> viewModel.getBaList()
-                    2 -> viewModel.getMktList()
-                    else -> Unit
-                }
+                tab?.position?.let { viewModel.getLocalData(it) }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}

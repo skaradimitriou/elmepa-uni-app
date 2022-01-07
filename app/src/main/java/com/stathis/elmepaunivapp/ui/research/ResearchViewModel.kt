@@ -42,7 +42,7 @@ class ResearchViewModel(val app : Application) : ElmepaViewModel(app), ElmepaCli
             Log.d(app.getString(R.string.app_name),model.toString())
             data.value = model
         } catch (ioException: IOException) {
-            ioException.printStackTrace()
+            //ioException.printStackTrace()
         }
     }
 
