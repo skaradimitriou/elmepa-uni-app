@@ -84,6 +84,7 @@
     <string name="chatbot_hello">Γεία σου και εσένα!</string>
     <string name="chatbot_you_re_welcome">Παρακαλώ!</string>
     <string name="chatbot_dont_know_yet">Δεν γνωρίζω την απάντηση ακόμα</string>
+    <string name="chatbot_search_professor">Κάνε tap για να αναζητήσεις έναν καθηγητή του Τμήματος!</string>
 
     <!-- Syllabus Activity -->
     <string name="syllabus_tab_one">Επιστήμη των Δεδομένων &amp; Τεχνολογίες Πληροφορικής</string>

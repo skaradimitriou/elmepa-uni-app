@@ -2,13 +2,13 @@
 <layout>
 
     <data>
+
         <variable
             name="item"
             type="com.stathis.elmepaunivapp.ui.main.department.model.EmptyModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_100">
 

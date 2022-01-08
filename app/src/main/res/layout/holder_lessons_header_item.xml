@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="lessonHeader"
             type="com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader" />
@@ -37,12 +38,12 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_5"
                 android:text="@{lessonHeader.title}"
-                tools:text="@string/all_lessons_mandatory"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/lessons_header_img"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lessons_header_img"
-                app:layout_constraintTop_toTopOf="@id/lessons_header_img" />
+                app:layout_constraintTop_toTopOf="@id/lessons_header_img"
+                tools:text="@string/all_lessons_mandatory" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

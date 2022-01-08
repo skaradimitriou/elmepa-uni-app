@@ -21,7 +21,7 @@ class DashboardFragment : ElmepaBindingFragment<FragmentDashboardBinding>(R.layo
     }
 
     override fun startOps() {
-        binding.dashboardOptionsRecview.adapter = viewModel.adapter
+        binding.viewModel = viewModel
 
         viewModel.bindList(object : DashboardClickListener {
             override fun dashboardItemClicked(option: DashboardOption) {

@@ -2,6 +2,7 @@
 <layout>
 
     <data>
+
         <variable
             name="item"
             type="com.stathis.elmepaunivapp.ui.main.students.model.CarouselItem" />
@@ -15,9 +16,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:onClick="@{(view) -> callback.onItemClick(view)}"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin_10"
+        android:onClick="@{(view) -> callback.onItemClick(view)}"
         app:cardCornerRadius="@dimen/margin_10">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,10 +27,10 @@
 
             <ImageView
                 android:id="@+id/carousel_img"
+                loadLocalPhoto="@{item.imageResource}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/app_name"
-                loadLocalPhoto="@{item.imageResource}"
                 android:scaleType="centerCrop"
                 android:src="@color/grey" />
 

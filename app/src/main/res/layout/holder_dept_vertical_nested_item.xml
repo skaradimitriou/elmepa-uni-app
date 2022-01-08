@@ -2,6 +2,7 @@
 <layout>
 
     <data>
+
         <variable
             name="item"
             type="com.stathis.elmepaunivapp.ui.main.department.model.VerticalDepartmentItem" />
@@ -19,12 +20,12 @@
 
         <TextView
             android:id="@+id/nested_title"
+            style="@style/text_18_bold_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="@dimen/margin_15"
             android:text="@{item.title}"
-            style="@style/text_18_bold_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,10 +33,10 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nested_recycler"
+            adapter="@{adapter}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            adapter="@{adapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nested_title" />

@@ -55,14 +55,14 @@ class ChatbotViewModel(app: Application) : ElmepaViewModel(app), ElmepaClickList
                 "γραμματεία"
             ) || response.contains("γραμματεια")
         ) {
-            answer = "Κάνε tap για να καλέσω την Γραμματεία του Τμήματος!"
+            answer = getString(R.string.chatbot_call_secretary)
         } else if (response.contains("email") || response.contains("e-mail")) {
-            answer = "Κάνε tap για να στείλεις e-mail στην Γραμματεία!"
+            answer = getString(R.string.chatbot_email_secretary)
         } else if (response.contains("καθηγητ") || response.contains("καθηγητές") || response.contains(
                 "προσωπικό"
             )
         ) {
-            answer = "Κάνε tap για να αναζητήσεις έναν καθηγητή του Τμήματος!"
+            answer = getString(R.string.chatbot_search_professor)
         } else if (response.contains("ανακοινώσεις") || response.contains("ανακοιν") || response.contains(
                 "ανακοινωση"
             ) || response.contains("ανακοίνωση")

@@ -20,8 +20,8 @@
         android:layout_height="@dimen/height_230dp"
         android:layout_margin="@dimen/margin_10"
         android:clickable="true"
-        android:onClick="@{(view) -> callback.onItemClick(view)}"
         android:focusable="true"
+        android:onClick="@{(view) -> callback.onItemClick(view)}"
         app:cardCornerRadius="@dimen/margin_15"
         app:cardElevation="@dimen/margin_3">
 
@@ -31,8 +31,8 @@
 
             <ImageView
                 android:id="@+id/fields_img"
-                android:layout_width="match_parent"
                 loadLocalPhoto="@{fieldOfStudy.imageResource}"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/height_140"
                 android:contentDescription="@string/app_name"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,9 +45,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_7"
                 android:layout_marginRight="@dimen/margin_7"
+                android:text="@{fieldOfStudy.title}"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:text="@{fieldOfStudy.title}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fields_img"

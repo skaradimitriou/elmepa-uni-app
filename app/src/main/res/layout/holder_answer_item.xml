@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="answer"
             type="com.stathis.elmepaunivapp.ui.chatbot.model.Answer" />
@@ -16,8 +16,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:onClick="@{(view) -> callback.onItemClick(view)}"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{(view) -> callback.onItemClick(view)}">
 
         <TextView
             android:id="@+id/bot_reply_txt"
@@ -31,9 +31,9 @@
             android:paddingTop="@dimen/margin_15"
             android:paddingEnd="@dimen/margin_20"
             android:paddingBottom="@dimen/margin_15"
+            android:text="@{answer.text}"
             android:textColor="@color/white"
             android:textSize="13sp"
-            android:text="@{answer.text}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

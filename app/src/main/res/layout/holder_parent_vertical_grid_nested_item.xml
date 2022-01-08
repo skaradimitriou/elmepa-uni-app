@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
     <data>
+
         <variable
             name="model"
             type="com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinksParent" />
@@ -19,11 +21,11 @@
 
         <TextView
             android:id="@+id/nested_title"
+            style="@style/text_18_bold_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="@dimen/margin_15"
-            style="@style/text_18_bold_black"
             android:text="@{model.title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,14 +34,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nested_recycler"
+            adapter="@{adapter}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:spanCount="2"
-            adapter="@{adapter}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nested_title" />
+            app:layout_constraintTop_toBottomOf="@id/nested_title"
+            app:spanCount="2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
