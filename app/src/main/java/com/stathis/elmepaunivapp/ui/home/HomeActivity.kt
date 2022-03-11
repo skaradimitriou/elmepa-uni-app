@@ -1,13 +1,15 @@
-package com.stathis.elmepaunivapp.ui.main
+package com.stathis.elmepaunivapp.ui.home
 
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
-import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
+import com.stathis.elmepaunivapp.databinding.ActivityHomeBinding
 
-class MainActivity : ElmepaBindingActivity<ActivityMainBinding>(R.layout.activity_main) {
+class HomeActivity : ElmepaBindingActivity<ActivityHomeBinding>(R.layout.activity_home) {
 
     private lateinit var navController : NavController
 
