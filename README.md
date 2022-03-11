@@ -39,5 +39,5 @@ Model - View - ViewModel (MVVM)
 
 [Picasso](https://square.github.io/picasso/) <br/> 
 [JSOUP](https://jsoup.org/) <br/>
-[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database
+[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database <br/>
 [Merlin](https://github.com/novoda/merlin) Simple Network Monitoring
