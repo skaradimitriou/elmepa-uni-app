@@ -5,11 +5,11 @@
 
         <variable
             name="item"
-            type="com.stathis.elmepaunivapp.ui.main.department.model.HorizontalDepartmentItem" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.department.model.HorizontalDepartmentItem" />
 
         <variable
             name="adapter"
-            type="com.stathis.elmepaunivapp.ui.main.department.recyclerviews.DepartmentChildAdapter" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.department.recyclerviews.DepartmentChildAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

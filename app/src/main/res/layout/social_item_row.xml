@@ -5,7 +5,7 @@
 
         <variable
             name="social"
-            type="com.stathis.elmepaunivapp.ui.main.department.model.SocialChannel" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.department.model.SocialChannel" />
 
         <variable
             name="callback"

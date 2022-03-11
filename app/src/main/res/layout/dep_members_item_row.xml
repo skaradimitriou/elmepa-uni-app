@@ -4,7 +4,7 @@
     <data>
         <variable
             name="member"
-            type="com.stathis.elmepaunivapp.ui.main.department.model.DepMember" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.department.model.DepMember" />
 
         <variable
             name="callback"

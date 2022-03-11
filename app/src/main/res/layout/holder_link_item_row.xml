@@ -5,7 +5,7 @@
 
         <variable
             name="item"
-            type="com.stathis.elmepaunivapp.ui.main.students.model.SyllabusItem" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.students.model.SyllabusItem" />
 
         <variable
             name="callback"

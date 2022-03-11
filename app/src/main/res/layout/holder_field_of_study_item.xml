@@ -5,7 +5,7 @@
 
         <variable
             name="fieldOfStudy"
-            type="com.stathis.elmepaunivapp.ui.main.department.model.FieldOfStudy" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.department.model.FieldOfStudy" />
 
         <variable
             name="callback"

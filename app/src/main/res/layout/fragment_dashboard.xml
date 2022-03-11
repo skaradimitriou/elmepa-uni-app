@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.stathis.elmepaunivapp.ui.main.dashboard.DashboardViewModel" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.dashboard.DashboardViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -3,14 +3,12 @@ package com.stathis.elmepaunivapp.ui.chatbot
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
 import com.stathis.elmepaunivapp.callbacks.ChatbotClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityChatBotBinding

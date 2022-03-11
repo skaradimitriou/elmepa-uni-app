@@ -6,7 +6,6 @@ import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.R
@@ -15,8 +14,7 @@ import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.ResearchClickListener
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.research.recycler.ResearchAdapter
-import com.stathis.elmepaunivapp.ui.main.students.model.UsefulLinks
-import com.stathis.elmepaunivapp.ui.syllabus.model.Semester
+import com.stathis.elmepaunivapp.ui.home.fragments.students.model.UsefulLinks
 import java.io.IOException
 
 class ResearchViewModel(val app : Application) : ElmepaViewModel(app), ElmepaClickListener {

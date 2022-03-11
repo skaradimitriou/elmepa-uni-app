@@ -4,11 +4,11 @@
     <data>
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.main.students.model.CarouselParent" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.students.model.CarouselParent" />
 
         <variable
             name="adapter"
-            type="com.stathis.elmepaunivapp.ui.main.students.recycler.CarouselAdapter" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.students.recycler.CarouselAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

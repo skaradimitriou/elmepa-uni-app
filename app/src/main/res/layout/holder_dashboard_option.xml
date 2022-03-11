@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.stathis.elmepaunivapp.ui.main.dashboard.model.DashboardOption" />
+            type="com.stathis.elmepaunivapp.ui.home.fragments.dashboard.model.DashboardOption" />
 
         <variable
             name="callback"
