@@ -8,7 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorSurface">#FFFFFF</item>
         <item name="android:statusBarColor">@color/dark_grey</item>
+        <item name="actionBarStyle">@style/elmepaActionBar</item>
     </style>
+
+    <style name="elmepaActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/blue_petrol</item>
+    </style>
+
+    <style name="elmepa_card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/margin_10</item>
+        <item name="android:layout_marginTop">@dimen/margin_10</item>
+        <item name="android:layout_marginStart">@dimen/margin_10</item>
+        <item name="android:layout_marginEnd">@dimen/margin_10</item>
+    </style>
+
 
     <!-- Holder Styles -->
     <style name="holder_programmes_style">

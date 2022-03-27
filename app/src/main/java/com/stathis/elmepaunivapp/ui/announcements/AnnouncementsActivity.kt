@@ -37,9 +37,7 @@ class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding
     override fun startOps() {
         merlin?.let { merlin.bind() }
 
-        binding.announcementsToolbar.title = resources.getString(R.string.announcement_header)
-
-        setSupportActionBar(binding.announcementsToolbar)
+        supportActionBar?.title = resources.getString(R.string.announcement_header)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.latestNewsRecView.adapter = viewModel.adapter
@@ -66,8 +64,7 @@ class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding
     }
 
     override fun onAnnouncementTap(announcement: Announcement) {
-        startActivity(Intent(this, WebviewActivity::class.java)
-            .putExtra(resources.getString(R.string.url_tag),announcement.url))
+        startActivity(Intent(this, WebviewActivity::class.java).putExtra(resources.getString(R.string.url_tag),announcement.url))
     }
 
     override fun onSupportNavigateUp(): Boolean {

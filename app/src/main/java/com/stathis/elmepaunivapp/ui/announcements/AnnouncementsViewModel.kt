@@ -28,9 +28,9 @@ class AnnouncementsViewModel(app: Application) : ElmepaViewModel(app), ElmepaCli
     }
 
     fun observeData(owner: LifecycleOwner) {
-        announcements.observe(owner, Observer {
+        announcements.observe(owner) {
             it?.let { adapter.submitList(it) }
-        })
+        }
     }
 
     fun removeObserver(owner: LifecycleOwner) {
