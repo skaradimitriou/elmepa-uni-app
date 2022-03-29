@@ -22,6 +22,7 @@ class ProfessorFragment : ElmepaBindingFragment<FragmentProfessorsBinding>(R.lay
     }
 
     override fun startOps() {
+        activity?.title = getString(R.string.dashboard_professors)
         binding.recyclerView.adapter = viewModel.adapter
 
         binding.searchAction.addTextChangedListener(object : TextWatcher{
