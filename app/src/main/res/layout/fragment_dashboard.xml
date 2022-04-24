@@ -9,45 +9,38 @@
             type="com.stathis.elmepaunivapp.ui.home.dashboard.DashboardViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey_bg"
-        android:paddingStart="@dimen/dimen_10"
-        android:paddingTop="@dimen/dimen_16"
-        android:paddingEnd="@dimen/dimen_10">
+        android:background="@color/grey_bg">
 
-        <include
-            android:id="@+id/main_card"
-            layout="@layout/main_screen_header_item" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/dashboard_options_recview"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:adapter="@{viewModel.adapter}"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/margin_10"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/main_card"
-            app:layout_constraintStart_toStartOf="@id/main_card"
-            app:layout_constraintTop_toBottomOf="@+id/main_card"
-            app:spanCount="2"
-            tools:itemCount="4"
-            tools:listitem="@layout/holder_dashboard_option" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_chatbot"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_20"
-            android:backgroundTint="@color/blue_petrol"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/chatbot_big"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@null" />
+            android:paddingStart="@dimen/dimen_10"
+            android:paddingTop="@dimen/dimen_16"
+            android:paddingEnd="@dimen/dimen_10">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <include
+                android:id="@+id/main_card"
+                layout="@layout/main_screen_header_item" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dashboard_options_recview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{viewModel.adapter}"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/margin_10"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/main_card"
+                app:layout_constraintStart_toStartOf="@id/main_card"
+                app:layout_constraintTop_toBottomOf="@+id/main_card"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/holder_dashboard_option" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

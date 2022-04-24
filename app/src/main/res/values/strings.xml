@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">University App</string>
 
+    <!-- Drawer -->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
     <!-- Dashboard Activity -->
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
     <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>

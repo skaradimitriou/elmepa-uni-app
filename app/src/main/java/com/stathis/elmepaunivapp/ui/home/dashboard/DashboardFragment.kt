@@ -35,9 +35,9 @@ class DashboardFragment : ElmepaFragment<FragmentDashboardBinding>(R.layout.frag
             }
         })
 
-        binding.fabChatbot.setOnClickListener{
-            startActivity(Intent(requireContext(), ChatbotActivity::class.java))
-        }
+//        binding.fabChatbot.setOnClickListener{
+//            startActivity(Intent(requireContext(), ChatbotActivity::class.java))
+//        }
     }
 
     override fun stopOps(){}

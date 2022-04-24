@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/announcements"
+        android:title="@string/announcement_header" />
+
+    <item
+        android:id="@+id/department"
+        android:title="@string/dashboard_department" />
+
+    <item
+        android:id="@+id/students"
+        android:title="@string/dashboard_students" />
+
+    <item
+        android:id="@+id/professors"
+        android:title="@string/dashboard_professors" />
+</menu>
