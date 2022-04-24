@@ -9,7 +9,7 @@
 
         <variable
             name="adapter"
-            type="com.stathis.elmepaunivapp.ui.home.fragments.students.recycler.UsefulLinksAdapter" />
+            type="com.stathis.elmepaunivapp.ui.home.students.recycler.UsefulLinksAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

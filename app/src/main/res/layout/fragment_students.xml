@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.fragments.department.DepartmentFragment">
+        tools:context=".ui.home.department.DepartmentFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/students_activity_recycler"

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="professor"
-            type="com.stathis.elmepaunivapp.ui.home.fragments.professors.model.Professor" />
+            type="com.stathis.elmepaunivapp.ui.home.professors.model.Professor" />
 
         <variable
             name="callback"

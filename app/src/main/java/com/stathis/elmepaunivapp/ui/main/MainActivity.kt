@@ -4,10 +4,10 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
+import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
 
-class MainActivity : ElmepaBindingActivity<ActivityMainBinding>(R.layout.activity_main) {
+class MainActivity : ElmepaActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private lateinit var navController : NavController
 

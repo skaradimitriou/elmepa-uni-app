@@ -5,11 +5,11 @@
 
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.home.fragments.students.model.UsefulLinksParent" />
+            type="com.stathis.elmepaunivapp.ui.home.students.model.UsefulLinksParent" />
 
         <variable
             name="adapter"
-            type="com.stathis.elmepaunivapp.ui.home.fragments.students.recycler.UsefulLinksAdapter" />
+            type="com.stathis.elmepaunivapp.ui.home.students.recycler.UsefulLinksAdapter" />
 
     </data>
 

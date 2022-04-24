@@ -1,7 +1,7 @@
 package com.stathis.elmepaunivapp.ui.research.model
 
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.home.fragments.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.home.students.model.UsefulLinks
 
 data class ResearchModel(
 

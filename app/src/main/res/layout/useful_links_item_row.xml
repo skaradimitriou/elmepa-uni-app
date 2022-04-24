@@ -5,7 +5,7 @@
 
         <variable
             name="usefulLink"
-            type="com.stathis.elmepaunivapp.ui.home.fragments.students.model.UsefulLinks" />
+            type="com.stathis.elmepaunivapp.ui.home.students.model.UsefulLinks" />
 
         <variable
             name="callback"

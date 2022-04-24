@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.stathis.elmepaunivapp.ui.home.fragments.dashboard.DashboardFragment"
+        android:name="com.stathis.elmepaunivapp.ui.home.dashboard.DashboardFragment"
         android:label="DashboardActivity" >
         <action
             android:id="@+id/action_nav_home_to_nav_search"
@@ -21,15 +21,15 @@
     </fragment>
     <fragment
         android:id="@+id/nav_search"
-        android:name="com.stathis.elmepaunivapp.ui.home.fragments.professors.ProfessorFragment"
+        android:name="com.stathis.elmepaunivapp.ui.home.professors.ProfessorFragment"
         android:label="ProfessorActivity" />
     <fragment
         android:id="@+id/nav_students"
-        android:name="com.stathis.elmepaunivapp.ui.home.fragments.students.StudentsFragment"
+        android:name="com.stathis.elmepaunivapp.ui.home.students.StudentsFragment"
         android:label="StudentsActivity" />
     <fragment
         android:id="@+id/nav_uni"
-        android:name="com.stathis.elmepaunivapp.ui.home.fragments.department.DepartmentFragment"
+        android:name="com.stathis.elmepaunivapp.ui.home.department.DepartmentFragment"
         android:label="activity_department"
         tools:layout="@layout/fragment_department" />
 </navigation>

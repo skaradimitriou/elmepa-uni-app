@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
+import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.ChatbotClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityChatBotBinding
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
@@ -21,7 +21,7 @@ import com.stathis.elmepaunivapp.util.SECRETARY_TEL
 import com.stathis.elmepaunivapp.util.VIRTUAL_TOUR_URL
 import kotlinx.android.synthetic.main.activity_chat_bot.*
 
-class ChatbotActivity : ElmepaBindingActivity<ActivityChatBotBinding>(R.layout.activity_chat_bot) {
+class ChatbotActivity : ElmepaActivity<ActivityChatBotBinding>(R.layout.activity_chat_bot) {
 
     private lateinit var viewModel : ChatbotViewModel
 

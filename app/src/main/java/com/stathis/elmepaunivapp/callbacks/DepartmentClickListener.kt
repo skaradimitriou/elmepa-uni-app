@@ -1,9 +1,9 @@
 package com.stathis.elmepaunivapp.callbacks
 
-import com.stathis.elmepaunivapp.ui.home.fragments.department.model.FieldOfStudy
-import com.stathis.elmepaunivapp.ui.home.fragments.department.model.Programme
-import com.stathis.elmepaunivapp.ui.home.fragments.department.model.SocialChannel
-import com.stathis.elmepaunivapp.ui.home.fragments.students.model.CarouselItem
+import com.stathis.elmepaunivapp.ui.home.department.model.FieldOfStudy
+import com.stathis.elmepaunivapp.ui.home.department.model.Programme
+import com.stathis.elmepaunivapp.ui.home.department.model.SocialChannel
+import com.stathis.elmepaunivapp.ui.home.students.model.CarouselItem
 
 interface DepartmentClickListener {
     fun openCarouselItem(data : CarouselItem)

@@ -7,16 +7,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.novoda.merlin.*
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
+import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityAnnouncementsBinding
 import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import com.stathis.elmepaunivapp.util.withColor
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 
-class AnnouncementsActivity : ElmepaBindingActivity<ActivityAnnouncementsBinding>(R.layout.activity_announcements),AnnouncementClickListener,Connectable,Disconnectable,Bindable {
+class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.layout.activity_announcements),AnnouncementClickListener,Connectable,Disconnectable,Bindable {
 
     private lateinit var viewModel : AnnouncementsViewModel
     private lateinit var merlin : Merlin

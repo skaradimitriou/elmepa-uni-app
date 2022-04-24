@@ -18,6 +18,7 @@
     <string name="about_app_cancel">Ακυρο</string>
 
     <!-- Announcement Activity -->
+    <string name="main_screen_title">Αρχική</string>
     <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
     <string name="announcement_title">This is an announcement title</string>
     <string name="announcements_get_error">Error getting Data from site</string>

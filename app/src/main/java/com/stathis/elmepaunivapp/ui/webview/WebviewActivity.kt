@@ -2,10 +2,10 @@ package com.stathis.elmepaunivapp.ui.webview
 
 import android.webkit.WebSettings
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
+import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivityWebviewBinding
 
-class WebviewActivity : ElmepaBindingActivity<ActivityWebviewBinding>(R.layout.activity_webview) {
+class WebviewActivity : ElmepaActivity<ActivityWebviewBinding>(R.layout.activity_webview) {
 
     override fun init() {}
 

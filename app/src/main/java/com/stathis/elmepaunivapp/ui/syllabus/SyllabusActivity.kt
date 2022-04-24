@@ -6,14 +6,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaBindingActivity
+import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.SyllabusClickListener
 import com.stathis.elmepaunivapp.databinding.ActivitySyllabusBinding
 import com.stathis.elmepaunivapp.ui.syllabus.model.Semester
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.SyllabusLessonsActivity
 import kotlinx.android.synthetic.main.activity_syllabus.*
 
-class SyllabusActivity : ElmepaBindingActivity<ActivitySyllabusBinding>(R.layout.activity_syllabus) {
+class SyllabusActivity : ElmepaActivity<ActivitySyllabusBinding>(R.layout.activity_syllabus) {
 
     private lateinit var viewModel: SyllabusViewModel
 

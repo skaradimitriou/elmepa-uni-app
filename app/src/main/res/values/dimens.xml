@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="dimen_5">5dp</dimen>
+    <dimen name="dimen_10">10dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+
     <!-- Object sizes -->
     <dimen name="margin_3">3dp</dimen>
     <dimen name="margin_5">5dp</dimen>

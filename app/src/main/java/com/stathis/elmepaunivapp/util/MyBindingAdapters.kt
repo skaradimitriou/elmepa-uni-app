@@ -5,12 +5,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.home.fragments.students.recycler.CarouselAdapter
+import com.stathis.elmepaunivapp.ui.home.students.recycler.CarouselAdapter
 import java.lang.Exception
 
 class MyBindingAdapters {
@@ -33,8 +31,8 @@ class MyBindingAdapters {
 
         @BindingAdapter("setImageSrc")
         @JvmStatic
-        fun setImageSrc(img : ImageView,drawable: Int){
-            img.setImageResource(drawable)
+        fun ImageView.setImageSrc(drawable: Int){
+            this.setImageResource(drawable)
         }
 
         @BindingAdapter("setBackground")
@@ -56,12 +54,6 @@ class MyBindingAdapters {
             }catch (e : Exception){
                 img.setImageResource(R.mipmap.ic_launcher)
             }
-        }
-
-        @BindingAdapter("adapter")
-        @JvmStatic
-        fun setRecyclerViewAdapter(recycler : RecyclerView, adapter: androidx.recyclerview.widget.ListAdapter<LocalModel,RecyclerView.ViewHolder>){
-            recycler.adapter = adapter
         }
 
         /*
