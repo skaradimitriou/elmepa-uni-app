@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/ic_home_black_24dp"/>
+
+    <item
+        android:id="@+id/nav_search"
+        android:title="@string/menu_professors"
+        android:icon="@drawable/ic_professors"/>
+
+    <item
+        android:id="@+id/nav_syllabus"
+        android:title="@string/menu_syllabus"
+        android:icon="@drawable/ic_book"/>
+
+</menu>

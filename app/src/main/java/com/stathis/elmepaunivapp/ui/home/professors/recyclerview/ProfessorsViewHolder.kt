@@ -12,7 +12,7 @@ class ProfessorsViewHolder(val binding : ViewDataBinding, val  callback : Elmepa
     override fun present(data: LocalModel) {
         when(data){
             is Professor -> {
-                binding.setVariable(BR.professor,data)
+                binding.setVariable(BR.model,data)
                 binding.setVariable(BR.callback,callback)
             }
         }

@@ -5,6 +5,11 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
 
+    <!-- Bottom Navigation Bar -->
+    <string name="menu_home">Αρχική</string>
+    <string name="menu_professors">Καθηγητές</string>
+    <string name="menu_syllabus">Μαθήματα</string>
+
     <!-- Dashboard Activity -->
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
     <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>
@@ -123,7 +128,6 @@
 
     <!-- Research Item -->
     <string name="research_item_txt">Έρευνα στο Τμήμα</string>
-    <string name="menu_home">Αρχική</string>
     <string name="menu_student">Φοιτητές</string>
     <string name="menu_dept">Τμήμα</string>
     <string name="menu_search">Αναζήτηση</string>

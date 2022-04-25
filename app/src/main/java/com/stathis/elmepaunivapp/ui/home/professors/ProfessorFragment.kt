@@ -12,48 +12,66 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.databinding.FragmentProfessorsBinding
 import com.stathis.elmepaunivapp.ui.home.professors.model.Professor
+import com.stathis.elmepaunivapp.util.afterTextChanged
+import com.stathis.elmepaunivapp.util.stopRefresh
 
 class ProfessorFragment : ElmepaFragment<FragmentProfessorsBinding>(R.layout.fragment_professors) {
 
-    private lateinit var viewModel : ProfessorViewModel
+    private lateinit var viewModel: ProfessorViewModel
 
     override fun init() {
-        viewModel = ViewModelProvider(this).get(ProfessorViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ProfessorViewModel::class.java]
+        binding.viewModel = viewModel
+
+        activity?.title = getString(R.string.dashboard_professors)
     }
 
     override fun startOps() {
-        activity?.title = getString(R.string.dashboard_professors)
-        binding.recyclerView.adapter = viewModel.adapter
+        binding.searchAction.afterTextChanged { query ->
+            viewModel.filter(query)
+        }
 
-        binding.searchAction.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-            override fun afterTextChanged(p0: Editable?) {
-                viewModel.filter(p0.toString())
-            }
-        })
+        binding.swipeToRefresh.setOnRefreshListener {
+            viewModel.getData()
+        }
 
-        viewModel.getProfessors(object : ProfessorScreenClickListener {
+        viewModel.addCallback(object : ProfessorScreenClickListener {
             override fun openDialog(professor: Professor) = openPopUpWindow(professor)
         })
 
-        viewModel.observeData(this)
+        viewModel.professors.observe(viewLifecycleOwner) {
+            binding.swipeToRefresh.stopRefresh()
+        }
+
+        viewModel.observe(viewLifecycleOwner)
     }
 
-    private fun openPopUpWindow(professor : Professor) {
+    private fun openPopUpWindow(professor: Professor) {
         MaterialAlertDialogBuilder(requireContext()).also {
             it.setTitle(getString(R.string.dialog_new_email))
-            when(professor.gender){
-                resources.getString(R.string.male) -> it.setMessage(getString(R.string.send_email_to_male_professor).format(professor.vocative))
-                resources.getString(R.string.female) -> it.setMessage(getString(R.string.send_email_to_female_professor).format(professor.vocative))
+            when (professor.gender) {
+                resources.getString(R.string.male) -> it.setMessage(
+                    getString(R.string.send_email_to_male_professor).format(
+                        professor.vocative
+                    )
+                )
+                resources.getString(R.string.female) -> it.setMessage(
+                    getString(R.string.send_email_to_female_professor).format(
+                        professor.vocative
+                    )
+                )
             }
 
-            it.setPositiveButton(getString(R.string.dialog_yes)) { dialog, which -> sendEmail(professor) }
+            it.setPositiveButton(getString(R.string.dialog_yes)) { dialog, which ->
+                sendEmail(
+                    professor
+                )
+            }
             it.setNegativeButton(getString(R.string.dialog_cancel)) { dialog, which -> dialog.dismiss() }
         }.show()
     }
 
-    private fun sendEmail(professor : Professor){
+    private fun sendEmail(professor: Professor) {
         val i = Intent(Intent.ACTION_SEND)
             .setType(getString(R.string.email_type))
             .putExtra(Intent.EXTRA_EMAIL, arrayOf(professor.email))
@@ -61,9 +79,13 @@ class ProfessorFragment : ElmepaFragment<FragmentProfessorsBinding>(R.layout.fra
         try {
             startActivity(Intent.createChooser(i, getString(R.string.sending_email)))
         } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(requireContext(),getString(R.string.no_clients_installed),Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.no_clients_installed),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
-    override fun stopOps() = viewModel.removeObserver(this)
+    override fun stopOps() = viewModel.release(viewLifecycleOwner)
 }

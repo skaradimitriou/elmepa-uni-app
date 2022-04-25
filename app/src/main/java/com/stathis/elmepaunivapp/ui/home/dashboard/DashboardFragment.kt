@@ -8,7 +8,6 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.DashboardClickListener
 import com.stathis.elmepaunivapp.databinding.FragmentDashboardBinding
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
-import com.stathis.elmepaunivapp.ui.chatbot.ChatbotActivity
 import com.stathis.elmepaunivapp.ui.home.dashboard.model.DashboardOption
 
 class DashboardFragment : ElmepaFragment<FragmentDashboardBinding>(R.layout.fragment_dashboard) {
@@ -16,7 +15,7 @@ class DashboardFragment : ElmepaFragment<FragmentDashboardBinding>(R.layout.frag
     private lateinit var viewModel : DashboardViewModel
 
     override fun init() {
-        viewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
+        viewModel = ViewModelProvider(this)[DashboardViewModel::class.java]
         binding.viewModel = viewModel
     }
 
@@ -27,9 +26,9 @@ class DashboardFragment : ElmepaFragment<FragmentDashboardBinding>(R.layout.frag
             override fun dashboardItemClicked(option: DashboardOption) {
                 when(option.drawable){
                     R.drawable.ic_announcement -> startActivity(Intent(requireContext(),AnnouncementsActivity::class.java))
-                    R.drawable.ic_books -> goToDestination(R.id.nav_uni)
-                    R.drawable.ic_student -> goToDestination(R.id.nav_students)
-                    R.drawable.ic_teacher -> goToDestination(R.id.nav_search)
+                    //R.drawable.ic_books -> goToDestination(R.id.nav_uni)
+                    //R.drawable.ic_student -> goToDestination(R.id.nav_students)
+                    //R.drawable.ic_teacher -> goToDestination(R.id.nav_search)
                     else -> Unit
                 }
             }
