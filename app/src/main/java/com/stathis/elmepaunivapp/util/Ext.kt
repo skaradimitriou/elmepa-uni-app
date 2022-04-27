@@ -5,18 +5,19 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.android.material.tabs.TabLayout
 import com.stathis.elmepaunivapp.ui.home.professors.model.Professor
 
 fun SwipeRefreshLayout.stopRefresh() {
     this.isRefreshing = false
 }
 
-fun Application.readLocalJson(jsonName : String) : String {
+fun Application.readLocalJson(jsonName: String): String {
     return this.assets.open(jsonName).bufferedReader().use { it.readText() }
 }
 
-fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit){
-    this.addTextChangedListener(object : TextWatcher{
+fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+    this.addTextChangedListener(object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
         override fun afterTextChanged(p0: Editable?) {
@@ -25,10 +26,21 @@ fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit){
     })
 }
 
-fun Professor.equalsName(name : String): Boolean {
+fun Professor.equalsName(name: String): Boolean {
     return this.fullName.lowercase().contains(name.lowercase())
 }
 
-fun List<Professor>.sortedAlphabetically() : List<Professor> {
+fun List<Professor>.sortedAlphabetically(): List<Professor> {
     return this.sortedWith(compareBy { it.fullName })
+}
+
+fun TabLayout.onTabSelected(selectedTab: (Int) -> Unit) {
+    this.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        override fun onTabSelected(tab: TabLayout.Tab?) {
+            tab?.position?.let { selectedTab.invoke(it) }
+        }
+
+        override fun onTabUnselected(tab: TabLayout.Tab?) {}
+        override fun onTabReselected(tab: TabLayout.Tab?) {}
+    })
 }

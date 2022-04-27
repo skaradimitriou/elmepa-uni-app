@@ -12,24 +12,13 @@
         <action
             android:id="@+id/action_nav_home_to_nav_search"
             app:destination="@id/nav_search" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_uni"
-            app:destination="@id/nav_uni" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_students"
-            app:destination="@id/nav_students" />
     </fragment>
     <fragment
         android:id="@+id/nav_search"
         android:name="com.stathis.elmepaunivapp.ui.home.professors.ProfessorFragment"
         android:label="ProfessorActivity" />
     <fragment
-        android:id="@+id/nav_students"
-        android:name="com.stathis.elmepaunivapp.ui.home.students.StudentsFragment"
-        android:label="StudentsActivity" />
-    <fragment
-        android:id="@+id/nav_uni"
-        android:name="com.stathis.elmepaunivapp.ui.home.department.DepartmentFragment"
-        android:label="activity_department"
-        tools:layout="@layout/fragment_department" />
+        android:id="@+id/nav_syllabus"
+        android:name="com.stathis.elmepaunivapp.ui.home.syllabus.SyllabusFragment"
+        android:label="SyllabusFragment" />
 </navigation>

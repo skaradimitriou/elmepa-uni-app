@@ -1,6 +1,7 @@
 package com.stathis.elmepaunivapp.ui.home.dashboard
 
 import android.content.Intent
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.stathis.elmepaunivapp.R
@@ -12,10 +13,9 @@ import com.stathis.elmepaunivapp.ui.home.dashboard.model.DashboardOption
 
 class DashboardFragment : ElmepaFragment<FragmentDashboardBinding>(R.layout.fragment_dashboard) {
 
-    private lateinit var viewModel : DashboardViewModel
+    private val viewModel : DashboardViewModel by viewModels()
 
     override fun init() {
-        viewModel = ViewModelProvider(this)[DashboardViewModel::class.java]
         binding.viewModel = viewModel
     }
 

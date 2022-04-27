@@ -9,7 +9,6 @@ import com.stathis.elmepaunivapp.databinding.FragmentStudentsBinding
 import com.stathis.elmepaunivapp.ui.home.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.home.students.model.LinkItem
 import com.stathis.elmepaunivapp.ui.home.students.model.SyllabusItem
-import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 
 class StudentsFragment : ElmepaFragment<FragmentStudentsBinding>(R.layout.fragment_students) {
@@ -39,6 +38,6 @@ class StudentsFragment : ElmepaFragment<FragmentStudentsBinding>(R.layout.fragme
     }
 
     private fun openSyllabusScreen(position : Int){
-        startActivity(Intent(requireContext(), SyllabusActivity::class.java).putExtra(resources.getString(R.string.userTabChoice), position))
+        //startActivity(Intent(requireContext(), SyllabusActivity::class.java).putExtra(resources.getString(R.string.userTabChoice), position))
     }
 }

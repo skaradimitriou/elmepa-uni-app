@@ -2,10 +2,8 @@ package com.stathis.elmepaunivapp.ui.home.professors
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.text.Editable
-import android.text.TextWatcher
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
@@ -17,12 +15,10 @@ import com.stathis.elmepaunivapp.util.stopRefresh
 
 class ProfessorFragment : ElmepaFragment<FragmentProfessorsBinding>(R.layout.fragment_professors) {
 
-    private lateinit var viewModel: ProfessorViewModel
+    private val viewModel: ProfessorViewModel by viewModels()
 
     override fun init() {
-        viewModel = ViewModelProvider(this)[ProfessorViewModel::class.java]
         binding.viewModel = viewModel
-
         activity?.title = getString(R.string.dashboard_professors)
     }
 

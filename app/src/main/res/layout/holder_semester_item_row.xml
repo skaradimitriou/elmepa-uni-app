@@ -7,7 +7,7 @@
 
         <variable
             name="semester"
-            type="com.stathis.elmepaunivapp.ui.syllabus.model.Semester" />
+            type="com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester" />
 
         <variable
             name="callback"
@@ -18,9 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_10"
-        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginTop="@dimen/dimen_10"
         android:layout_marginEnd="@dimen/margin_10"
-        android:onClick="@{(view) -> callback.onItemClick(view)}">
+        android:tag="@{semester}"
+        android:onClick="@{(view) -> callback.onItemClick(view)}"
+        app:cardCornerRadius="@dimen/dimen_5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

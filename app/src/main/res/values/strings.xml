@@ -97,9 +97,9 @@
     <string name="chatbot_search_professor">Κάνε tap για να αναζητήσεις έναν καθηγητή του Τμήματος!</string>
 
     <!-- Syllabus Activity -->
-    <string name="syllabus_tab_one">Επιστήμη των Δεδομένων &amp; Τεχνολογίες Πληροφορικής</string>
-    <string name="syllabus_tab_two">Διοίκηση Επιχειρήσεων &amp; Οργανισμών</string>
-    <string name="syllabus_tab_three">Ψηφιακό Μάρκετινγκ &amp; Επικοινωνία</string>
+    <string name="syllabus_tab_one">Επιστήμη των \nΔεδομένων &amp; Τεχνολογίες\n Πληροφορικής</string>
+    <string name="syllabus_tab_two">Διοίκηση Επιχειρήσεων \n&amp; Οργανισμών</string>
+    <string name="syllabus_tab_three">Ψηφιακό Μάρκετινγκ \n&amp; Επικοινωνία</string>
     <string name="semester_title">Εξάμηνο Α\'</string>
 
     <!-- Syllabus Lesson Activity -->
@@ -138,5 +138,7 @@
 
     <!-- Professor Widget -->
     <string name="widget_professor_intent">OPEN_PROFESSORS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,16 +1,12 @@
 package com.stathis.elmepaunivapp.ui.syllabus_lessons
 
 import android.app.Application
-import android.util.Log
 import android.view.View
-import androidx.lifecycle.ViewModel
-import com.google.gson.Gson
-import com.google.gson.JsonArray
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.LessonsClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.syllabus.model.Semester
+import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
 import com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler.LessonsAdapter

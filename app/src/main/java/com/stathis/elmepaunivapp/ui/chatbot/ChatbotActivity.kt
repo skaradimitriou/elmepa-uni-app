@@ -13,7 +13,6 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.ChatbotClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityChatBotBinding
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
-import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import com.stathis.elmepaunivapp.util.SCHEDULE_URL
 import com.stathis.elmepaunivapp.util.SECRETARY_MAIL
@@ -38,7 +37,7 @@ class ChatbotActivity : ElmepaActivity<ActivityChatBotBinding>(R.layout.activity
             override fun emailToSecretary() = emailSecretaryOffice()
             override fun virtualTour() = openUrl(VIRTUAL_TOUR_URL)
             override fun goToSyllabus() {
-                startActivity(Intent(this@ChatbotActivity, SyllabusActivity::class.java))
+                //startActivity(Intent(this@ChatbotActivity, SyllabusActivity::class.java))
             }
 
             override fun openAnnouncements() {

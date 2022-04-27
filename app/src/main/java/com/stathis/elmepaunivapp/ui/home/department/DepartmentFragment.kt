@@ -19,7 +19,6 @@ import com.stathis.elmepaunivapp.ui.home.department.model.Programme
 import com.stathis.elmepaunivapp.ui.home.department.model.SocialChannel
 import com.stathis.elmepaunivapp.ui.home.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity
-import com.stathis.elmepaunivapp.ui.syllabus.SyllabusActivity
 
 class DepartmentFragment : ElmepaFragment<FragmentDepartmentBinding>(R.layout.fragment_department) {
 
@@ -148,8 +147,8 @@ class DepartmentFragment : ElmepaFragment<FragmentDepartmentBinding>(R.layout.fr
     }
 
     private fun goToDirection(value : Int){
-        startActivity(Intent(requireContext(), SyllabusActivity::class.java)
-            .putExtra(resources.getString(R.string.userTabChoice), value))
+        //startActivity(Intent(requireContext(), SyllabusActivity::class.java)
+            //.putExtra(resources.getString(R.string.userTabChoice), value))
     }
 
     private fun openUrl(url : String){

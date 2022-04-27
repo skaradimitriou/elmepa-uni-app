@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivitySyllabusLessonsBinding
-import com.stathis.elmepaunivapp.ui.syllabus.model.Semester
+import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
 
 class SyllabusLessonsActivity : ElmepaActivity<ActivitySyllabusLessonsBinding>(R.layout.activity_syllabus_lessons) {
 

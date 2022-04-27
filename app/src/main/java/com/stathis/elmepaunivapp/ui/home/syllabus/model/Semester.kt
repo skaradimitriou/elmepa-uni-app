@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.syllabus.model
+package com.stathis.elmepaunivapp.ui.home.syllabus.model
 
 import android.os.Parcelable
 import com.stathis.elmepaunivapp.abstraction.LocalModel
