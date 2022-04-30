@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.syllabus_lessons
+package com.stathis.elmepaunivapp.ui.lessons
 
 import android.app.Application
 import android.view.View
@@ -7,11 +7,11 @@ import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.LessonsClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler.LessonsAdapter
+import com.stathis.elmepaunivapp.ui.lessons.model.LessonHeader
+import com.stathis.elmepaunivapp.ui.lessons.model.Lesson
+import com.stathis.elmepaunivapp.ui.lessons.adapter.LessonsAdapter
 
-class SyllabusLessonsViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickListener {
+class LessonsViewModel(app : Application) : ElmepaViewModel(app), ElmepaClickListener {
 
     val adapter = LessonsAdapter(this)
     private lateinit var callback : LessonsClickListener

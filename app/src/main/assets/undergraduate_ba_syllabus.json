@@ -4,32 +4,27 @@
     "lessons": [
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Εισαγωγή στην Οικονομική Θεωρία"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Οργάνωση και Διοίκηση Επιχειρήσεων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Μαθηματική Ανάλυση"
       },
       {
-        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ  \nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ\nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
+        "mandatory": true,
         "name": "Επιχειρησιακή Επικοινωνία"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Εισαγωγή στην πληροφορική"
       }
     ],
@@ -40,32 +35,27 @@
     "lessons": [
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Πιθανότητες και Στατιστική"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Μάρκετινγκ"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Αρχές Λογιστικής"
       },
       {
-        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ  \nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
-        "direction": "ba",
+        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ\nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
         "mandatory": "Μάθημα Υποχρεωτικό",
         "name": "Δομημένος Προγραμματισμός"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Γραμμική Άλγεβρα και Διακριτά Μαθηματικά"
       }
     ],
@@ -76,32 +66,27 @@
     "lessons": [
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Επιχειρησιακή Έρευνα"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Εφαρμοσμένη Στατιστική"
       },
       {
-        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ  \nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ\nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
+        "mandatory": true,
         "name": "Αντικειμενοστραφής Προγραμματισμός"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Αλγόριθμοι και Δομές Δεδομένων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Χρηματοοικονομική Λογιστική"
       }
     ],
@@ -112,32 +97,27 @@
     "lessons": [
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Χρηματοοικονομική Διοίκηση"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Λήψη Επιχειρηματικών Αποφάσεων"
       },
       {
-        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ \nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ\nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
+        "mandatory": true,
         "name": "Βάσεις Δεδομένων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Μέθοδοι Βελτιστοποίησης"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Σχεδιασμός και Βέλτιστη Εμπειρία Χρήση (UX)"
       }
     ],
@@ -148,32 +128,27 @@
     "lessons": [
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Διοίκηση Έργων και Προγραμμάτων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Διοίκηση Ποιότητας"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Μηχανική Μάθηση"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Επιχειρησιακή Διαδικτύωση και Ηλεκτρονικές Συναλλαγές"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Πληροφοριακά Συστήματα"
       }
     ],
@@ -184,44 +159,37 @@
     "lessons": [
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Διαχείριση Ανθρωπίνων Πόρων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Ηγεσία και Οργανωσιακή Ψυχολογία"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Επιχειρησιακή Πολιτική και Στρατηγική"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Διεθνή Οικονομικά και Αγορές"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Δημόσιες Σχέσεις - Επικοινωνία"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Διαχείριση και επεξεργασία Μεγάλου όγκου δεδομένων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Συστήματα Διαχείρισης Επιχειρησιακών Πόρων"
       }
     ],
@@ -232,56 +200,47 @@
     "lessons": [
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Ανάπτυξη Προσωπικών Ικανοτήτων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Στοχαστική Μοντελοποίηση και Προσομοίωση"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Διοίκηση Παραγωγής και Υπηρεσιών"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Διοίκηση Εφοδιαστικής Αλυσίδας"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Ψηφιακή Καινοτομία και Επιχειρηματικότητα"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Εμπορικό και Εργατικό Δίκαιο"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Ανάλυση Χρονοσειρών"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Έμπειρα Συστήματα"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Κοινωνική Ευθύνη Επιχειρήσεων και Οργανισμών"
       }
     ],
@@ -291,57 +250,48 @@
     "lessonInfo": "Αυτό το εξάμηνο ο φοιτητής θα πρέπει να δηλώσει τα Υποχρεωτικά Μαθήματα και δύο (2) απο τα Μαθήματα Επιλογής",
     "lessons": [
       {
-        "description": " ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "description": "Εκπόνηση Πτυχιακής Εργασίας",
+        "mandatory": true,
         "name": "Πτυχιακή Εργασία"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Υποχρεωτικό",
+        "mandatory": true,
         "name": "Επιχειρηματικός Σχεδιασμός"
       },
       {
-        "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "description": "Εκπόνηση Πρακτικής Άσκησης",
+        "mandatory": false,
         "name": "Πρακτική Άσκηση"
       },
       {
-        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ  \nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "description": "ΘΕΩΡΙΑ : 2 ΩΡΕΣ\nΕΡΓΑΣΤΗΡΙΟ : 2 ΩΡΕΣ",
+        "mandatory": false,
         "name": "Προχωρημένα Συστήματα Διαχείρισης Επιχειρησιακών Πόρων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Χρηματοοικονομική Μηχανική"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Θέματα Επιχειρησιακής Έρευνας και Συστημάτων Αποφάσεων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Οπτική και Διερευνητική Ανάλυση Δεδομένων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Σχεδιασμός και Ανάπτυξη Προϊόντων"
       },
       {
         "description": "ΘΕΩΡΙΑ : 4 ΩΡΕΣ",
-        "direction": "ba",
-        "mandatory": "Μάθημα Επιλογής",
+        "mandatory": false,
         "name": "Προχωρημένα θέματα υπολογιστής Νοημοσύνης"
       }
     ],

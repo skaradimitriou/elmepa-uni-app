@@ -17,4 +17,7 @@
     <color name="lesson_blue">#417ba3</color>
     <color name="lesson_green">#2a8c3f</color>
 
+    <color name="dark_blue">#222C54</color>
+    <color name="info_header_bg">#c6d2f6</color>
+
 </resources>

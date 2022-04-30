@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/lesson_info"
+        android:title="@string/lesson_info_title"
+        android:icon="@drawable/info_icon"
+        app:showAsAction="always|collapseActionView" >
+    </item>
+</menu>

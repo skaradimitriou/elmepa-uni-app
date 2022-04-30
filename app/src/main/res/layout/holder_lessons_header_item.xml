@@ -7,7 +7,7 @@
 
         <variable
             name="lessonHeader"
-            type="com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader" />
+            type="com.stathis.elmepaunivapp.ui.lessons.model.LessonHeader" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -19,30 +19,30 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark">
+            android:background="@color/info_header_bg">
 
             <ImageView
                 android:id="@+id/lessons_header_img"
-                android:layout_width="@dimen/margin_45"
-                android:layout_height="@dimen/margin_45"
+                android:layout_width="@dimen/margin_25"
+                android:layout_height="@dimen/margin_25"
                 android:layout_margin="@dimen/margin_10"
+                android:background="@drawable/info_icon"
+                android:backgroundTint="@color/dark_blue"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/info_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@id/syllabus_lessons_header" />
 
             <TextView
                 android:id="@+id/syllabus_lessons_header"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_5"
+                android:padding="@dimen/dimen_10"
                 android:text="@{lessonHeader.title}"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@id/lessons_header_img"
+                android:textColor="@color/dark_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lessons_header_img"
-                app:layout_constraintTop_toTopOf="@id/lessons_header_img"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/all_lessons_mandatory" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

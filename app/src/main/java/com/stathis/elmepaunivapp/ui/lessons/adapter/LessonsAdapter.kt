@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.syllabus_lessons.recycler
+package com.stathis.elmepaunivapp.ui.lessons.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,8 +10,8 @@ import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.databinding.HolderEmptyItemRowBinding
 import com.stathis.elmepaunivapp.databinding.HolderLessonsHeaderItemBinding
 import com.stathis.elmepaunivapp.databinding.LessonItemRowBinding
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.LessonHeader
-import com.stathis.elmepaunivapp.ui.syllabus_lessons.model.Lesson
+import com.stathis.elmepaunivapp.ui.lessons.model.LessonHeader
+import com.stathis.elmepaunivapp.ui.lessons.model.Lesson
 
 class LessonsAdapter(private val callback: ElmepaClickListener) : ListAdapter<LocalModel, LessonsViewHolder>(DiffItemClass<LocalModel>()) {
 

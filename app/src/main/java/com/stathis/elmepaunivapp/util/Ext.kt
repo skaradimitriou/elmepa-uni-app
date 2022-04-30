@@ -3,8 +3,10 @@ package com.stathis.elmepaunivapp.util
 import android.app.Application
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
 import android.widget.EditText
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
 import com.stathis.elmepaunivapp.ui.home.professors.model.Professor
 
@@ -43,4 +45,18 @@ fun TabLayout.onTabSelected(selectedTab: (Int) -> Unit) {
         override fun onTabUnselected(tab: TabLayout.Tab?) {}
         override fun onTabReselected(tab: TabLayout.Tab?) {}
     })
+}
+
+fun MenuItem?.onMenuItemTap(callback : (MenuItem) -> Unit){
+    this?.setOnMenuItemClickListener {
+        callback.invoke(it)
+        true
+    }
+}
+
+fun MaterialAlertDialogBuilder.showDialog(title: String, desc : String){
+    this.apply {
+        this.setTitle(title)
+        this.setMessage(desc)
+    }.show()
 }
