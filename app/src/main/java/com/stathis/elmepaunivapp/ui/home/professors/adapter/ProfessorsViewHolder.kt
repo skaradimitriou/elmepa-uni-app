@@ -1,11 +1,11 @@
-package com.stathis.elmepaunivapp.ui.home.professors.recyclerview
+package com.stathis.elmepaunivapp.ui.home.professors.adapter
 
 import androidx.databinding.ViewDataBinding
 import com.stathis.elmepaunivapp.BR
 import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.home.professors.model.Professor
+import com.stathis.elmepaunivapp.model.professor.Professor
 
 class ProfessorsViewHolder(val binding : ViewDataBinding, val  callback : ElmepaClickListener) : AbstractViewHolder(binding) {
 

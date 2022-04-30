@@ -9,7 +9,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.databinding.FragmentProfessorsBinding
-import com.stathis.elmepaunivapp.ui.home.professors.model.Professor
+import com.stathis.elmepaunivapp.model.professor.Professor
 import com.stathis.elmepaunivapp.util.afterTextChanged
 import com.stathis.elmepaunivapp.util.stopRefresh
 

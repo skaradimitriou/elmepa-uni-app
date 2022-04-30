@@ -8,7 +8,7 @@ import android.widget.EditText
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
-import com.stathis.elmepaunivapp.ui.home.professors.model.Professor
+import com.stathis.elmepaunivapp.model.professor.Professor
 
 fun SwipeRefreshLayout.stopRefresh() {
     this.isRefreshing = false

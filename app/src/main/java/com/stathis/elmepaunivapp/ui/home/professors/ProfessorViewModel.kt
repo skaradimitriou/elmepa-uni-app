@@ -10,8 +10,9 @@ import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
-import com.stathis.elmepaunivapp.ui.home.professors.model.Professor
-import com.stathis.elmepaunivapp.ui.home.professors.recyclerview.ProfessorsAdapter
+import com.stathis.elmepaunivapp.model.professor.Professor
+import com.stathis.elmepaunivapp.ui.home.professors.adapter.ProfessorsAdapter
+import com.stathis.elmepaunivapp.util.ShimmerHelper
 import com.stathis.elmepaunivapp.util.equalsName
 import com.stathis.elmepaunivapp.util.readLocalJson
 import com.stathis.elmepaunivapp.util.sortedAlphabetically
@@ -32,7 +33,12 @@ class ProfessorViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCli
         }
     }
 
+    private fun startShimmer() {
+        adapter.submitList(ShimmerHelper.list)
+    }
+
     fun getData() {
+        startShimmer()
         try {
             val json = app.readLocalJson("professors.json")
             val type = object : TypeToken<List<Professor>>() {}.type

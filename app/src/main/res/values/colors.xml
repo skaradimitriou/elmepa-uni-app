@@ -20,4 +20,6 @@
     <color name="dark_blue">#222C54</color>
     <color name="info_header_bg">#c6d2f6</color>
 
+    <color name="shimmer_grey_lighter">#B3B3B3</color>
+
 </resources>

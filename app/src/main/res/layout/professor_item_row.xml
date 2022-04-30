@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.home.professors.model.Professor" />
+            type="com.stathis.elmepaunivapp.model.professor.Professor" />
 
         <variable
             name="callback"

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_highlight_alpha="0.5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:layout_marginEnd="@dimen/dimen_10">
+
+            <ImageView
+                android:id="@+id/professor_img"
+                android:layout_width="@dimen/height_70"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_5"
+                android:background="@drawable/round_corners"
+                android:backgroundTint="@color/shimmer_grey_lighter"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintBottom_toBottomOf="@id/professor_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/professor_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:background="@drawable/round_corners"
+                android:backgroundTint="@color/shimmer_grey_lighter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/professor_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/professor_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:background="@drawable/round_corners"
+                android:backgroundTint="@color/shimmer_grey_lighter"
+                android:paddingBottom="@dimen/dimen_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/professor_name"
+                app:layout_constraintStart_toStartOf="@id/professor_name"
+                app:layout_constraintTop_toBottomOf="@id/professor_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</layout>

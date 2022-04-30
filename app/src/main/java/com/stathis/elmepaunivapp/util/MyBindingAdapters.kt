@@ -68,7 +68,7 @@ fun setBackground(textView : TextView, type: String){
 fun View.setRibbonColor(type : Boolean){
     when(type){
         true -> this.setBackgroundResource(R.color.lesson_blue)
-        false -> this.setBackgroundResource(R.color.orange)
+        false -> this.setBackgroundResource(R.color.dark_orange)
     }
 }
 
