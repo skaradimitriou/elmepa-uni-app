@@ -14,10 +14,13 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.model.professor.Professor
+import java.io.IOException
 
 fun TextView.alignText() {
-    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         this.justificationMode = LineBreaker.JUSTIFICATION_MODE_INTER_WORD
     }
 }
@@ -29,6 +32,24 @@ fun SwipeRefreshLayout.stopRefresh() {
 fun Application.readLocalJson(jsonName: String): String {
     return this.assets.open(jsonName).bufferedReader().use { it.readText() }
 }
+
+/**
+ * @param Object
+ *
+ * Tries to read a local file and deserialize it into a list of the object passed as parameter.
+ */
+
+inline fun <reified T>Application.readLocalJsonList(fileName: String, data: (List<T>?) -> Unit) {
+    try {
+        val json = this.assets.open(fileName).bufferedReader().use { it.readText() }
+        val type = object : TypeToken<List<T>>() {}.type
+        val list: List<T> = Gson().fromJson(json, type)
+        data.invoke(list)
+    } catch (ioException: IOException) {
+        data.invoke(listOf())
+    }
+}
+
 
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
@@ -59,14 +80,14 @@ fun TabLayout.onTabSelected(selectedTab: (Int) -> Unit) {
     })
 }
 
-fun MenuItem?.onMenuItemTap(callback : (MenuItem) -> Unit){
+fun MenuItem?.onMenuItemTap(callback: (MenuItem) -> Unit) {
     this?.setOnMenuItemClickListener {
         callback.invoke(it)
         true
     }
 }
 
-fun MaterialAlertDialogBuilder.showDialog(title: String, desc : String){
+fun MaterialAlertDialogBuilder.showDialog(title: String, desc: String) {
     this.apply {
         this.setTitle(title)
         this.setMessage(desc)
@@ -75,7 +96,7 @@ fun MaterialAlertDialogBuilder.showDialog(title: String, desc : String){
 
 fun DrawerLayout.closeMyDrawer() = this.closeDrawer(GravityCompat.START)
 
-fun ActionBar.setupBar(title : String){
+fun ActionBar.setupBar(title: String) {
     this.setDisplayHomeAsUpEnabled(true)
     this.title = title
 }

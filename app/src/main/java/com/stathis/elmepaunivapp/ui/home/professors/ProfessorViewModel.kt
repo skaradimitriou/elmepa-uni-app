@@ -5,8 +5,6 @@ import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
@@ -14,11 +12,9 @@ import com.stathis.elmepaunivapp.model.professor.Professor
 import com.stathis.elmepaunivapp.ui.home.professors.adapter.ProfessorsAdapter
 import com.stathis.elmepaunivapp.util.ShimmerHelper
 import com.stathis.elmepaunivapp.util.equalsName
-import com.stathis.elmepaunivapp.util.readLocalJson
-import com.stathis.elmepaunivapp.util.sortedAlphabetically
+import com.stathis.elmepaunivapp.util.readLocalJsonList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.io.IOException
 
 class ProfessorViewModel(val app: Application) : ElmepaViewModel(app), ElmepaClickListener {
 
@@ -39,14 +35,13 @@ class ProfessorViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCli
 
     fun getData() {
         startShimmer()
-        try {
-            val json = app.readLocalJson("professors.json")
-            val type = object : TypeToken<List<Professor>>() {}.type
-            professorList = Gson().fromJson(json, type)
-            professors.postValue(professorList.sortedAlphabetically())
-        } catch (ioException: IOException) {
-            professors.value = listOf()
-        }
+
+        app.readLocalJsonList<Professor>("professors.json", data = { list ->
+            list?.let {
+                professorList = it
+                professors.postValue(professorList)
+            }
+        })
     }
 
     fun addCallback(callback: ProfessorScreenClickListener) {
