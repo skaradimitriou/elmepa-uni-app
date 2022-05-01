@@ -7,12 +7,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.SyllabusClickListener
 import com.stathis.elmepaunivapp.ui.home.syllabus.adapter.SemesterAdapter
 import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
+import com.stathis.elmepaunivapp.util.ShimmerHelper
 import com.stathis.elmepaunivapp.util.readLocalJson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,6 +29,8 @@ class SyllabusViewModel(val app: Application) : ElmepaViewModel(app), ElmepaClic
     }
 
     fun getData(tabPosition : Int) {
+        adapter.submitList(ShimmerHelper.list)
+
         when(tabPosition){
             0 -> getSemesters("undergraduate_data_syllabus.json")
             1 -> getSemesters("undergraduate_ba_syllabus.json")
