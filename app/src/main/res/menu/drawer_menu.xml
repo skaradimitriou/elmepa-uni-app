@@ -15,4 +15,8 @@
     <item
         android:id="@+id/professors"
         android:title="@string/dashboard_professors" />
+
+    <item
+        android:id="@+id/about_app"
+        android:title="@string/about_app_title" />
 </menu>

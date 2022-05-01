@@ -39,13 +39,9 @@ class LessonsActivity : ElmepaActivity<ActivitySyllabusLessonsBinding>(R.layout.
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
-        android.R.id.home -> {
-            onBackPressed()
-            true
-        }
-
-        else -> false
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun openPopUpWindow() {

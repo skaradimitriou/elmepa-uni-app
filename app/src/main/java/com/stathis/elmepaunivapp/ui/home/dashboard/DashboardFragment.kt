@@ -2,7 +2,6 @@ package com.stathis.elmepaunivapp.ui.home.dashboard
 
 import android.content.Intent
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
@@ -33,10 +32,6 @@ class DashboardFragment : ElmepaFragment<FragmentDashboardBinding>(R.layout.frag
                 }
             }
         })
-
-//        binding.fabChatbot.setOnClickListener{
-//            startActivity(Intent(requireContext(), ChatbotActivity::class.java))
-//        }
     }
 
     override fun stopOps(){}

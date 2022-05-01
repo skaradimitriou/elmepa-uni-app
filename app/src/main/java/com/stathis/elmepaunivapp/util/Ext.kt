@@ -1,14 +1,26 @@
 package com.stathis.elmepaunivapp.util
 
 import android.app.Application
+import android.graphics.text.LineBreaker
+import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.ActionBar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
 import com.stathis.elmepaunivapp.model.professor.Professor
+
+fun TextView.alignText() {
+    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+        this.justificationMode = LineBreaker.JUSTIFICATION_MODE_INTER_WORD
+    }
+}
 
 fun SwipeRefreshLayout.stopRefresh() {
     this.isRefreshing = false
@@ -59,4 +71,11 @@ fun MaterialAlertDialogBuilder.showDialog(title: String, desc : String){
         this.setTitle(title)
         this.setMessage(desc)
     }.show()
+}
+
+fun DrawerLayout.closeMyDrawer() = this.closeDrawer(GravityCompat.START)
+
+fun ActionBar.setupBar(title : String){
+    this.setDisplayHomeAsUpEnabled(true)
+    this.title = title
 }

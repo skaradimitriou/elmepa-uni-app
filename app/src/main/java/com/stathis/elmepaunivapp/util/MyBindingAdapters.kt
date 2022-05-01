@@ -1,5 +1,6 @@
 package com.stathis.elmepaunivapp.util
 
+import android.graphics.Paint
 import android.os.Handler
 import android.view.View
 import android.widget.ImageView
@@ -10,7 +11,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.ui.home.students.recycler.CarouselAdapter
-import java.lang.Exception
 
 /**
  * Binding Adapters for ImageViews
@@ -47,6 +47,11 @@ fun loadLocalPhoto(img : ImageView, photo: String){
 /**
  * Binding Adapters for TextViews
  */
+
+@BindingAdapter("underline")
+fun TextView.underline(underlined : Boolean) {
+    if(underlined) this.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+}
 
 @BindingAdapter("setBackground")
 fun setBackground(textView : TextView, type: String){

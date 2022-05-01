@@ -23,6 +23,10 @@ const val SCHEDULE_URL = "https://mst.hmu.gr/proptyxiako/orologio-programma-math
 const val SECRETARY_MAIL = "kalarhaki@hmu.gr"
 const val SECRETARY_TEL = "tel:2841091103"
 
+const val URL = "URL"
+
+const val ABOUT_MOBILE_APP_URL = "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"
+
 fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar{
     this.view.setBackgroundColor(colorInt)
     return this
