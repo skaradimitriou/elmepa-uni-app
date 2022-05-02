@@ -6,7 +6,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.SyllabusClickListener
 import com.stathis.elmepaunivapp.databinding.FragmentSyllabusBinding
-import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
+import com.stathis.elmepaunivapp.model.syllabus.Semester
 import com.stathis.elmepaunivapp.ui.lessons.LessonsActivity
 import com.stathis.elmepaunivapp.util.onTabSelected
 
@@ -16,7 +16,7 @@ class SyllabusFragment : ElmepaFragment<FragmentSyllabusBinding>(R.layout.fragme
     private val viewModel : SyllabusViewModel by viewModels()
 
     override fun init() {
-        requireActivity().title = getString(R.string.student_syllabus)
+        activity?.title = getString(R.string.student_syllabus)
         binding.viewModel = viewModel
     }
 

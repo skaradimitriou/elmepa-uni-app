@@ -6,7 +6,7 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.LessonsClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
+import com.stathis.elmepaunivapp.model.syllabus.Semester
 import com.stathis.elmepaunivapp.ui.lessons.model.LessonHeader
 import com.stathis.elmepaunivapp.ui.lessons.model.Lesson
 import com.stathis.elmepaunivapp.ui.lessons.adapter.LessonsAdapter

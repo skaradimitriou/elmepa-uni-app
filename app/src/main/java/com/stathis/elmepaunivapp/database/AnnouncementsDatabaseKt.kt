@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
+import com.stathis.elmepaunivapp.model.Announcement
 
 @Database(entities = [Announcement::class] , version = 1, exportSchema = false)
 abstract class AnnouncementsDatabaseKt : RoomDatabase() {

@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.stathis.elmepaunivapp.ui.announcements.AnnouncementsViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/announcements_parent"
         android:layout_width="match_parent"
@@ -20,7 +27,10 @@
                 android:id="@+id/latestNews_recView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:adapter="@{viewModel.adapter}"
+                android:clipToPadding="false"
                 android:orientation="vertical"
+                android:paddingBottom="@dimen/dimen_40"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="3"
                 tools:listitem="@layout/announcement_item_row" />

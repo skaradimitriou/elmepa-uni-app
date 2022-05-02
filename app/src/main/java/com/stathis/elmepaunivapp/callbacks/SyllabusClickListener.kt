@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.callbacks
 
-import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
+import com.stathis.elmepaunivapp.model.syllabus.Semester
 
 interface SyllabusClickListener {
     fun onSemesterTap(syllabus : Semester)

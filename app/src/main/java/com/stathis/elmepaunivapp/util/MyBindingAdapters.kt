@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.ui.home.students.recycler.CarouselAdapter
@@ -16,9 +17,9 @@ import com.stathis.elmepaunivapp.ui.home.students.recycler.CarouselAdapter
  * Binding Adapters for ImageViews
  */
 
-@BindingAdapter("loadImageFromUrl")
-fun ImageView.loadImg(url: String) {
-    Picasso.get().load(url).into(this)
+@BindingAdapter("loadImageUrl")
+fun ImageView.loadImage(imageUrl : String){
+    Glide.with(this.context).load(imageUrl).placeholder(R.color.shimmer_grey_lighter).into(this)
 }
 
 @BindingAdapter("setImgResource")
@@ -51,18 +52,6 @@ fun loadLocalPhoto(img : ImageView, photo: String){
 @BindingAdapter("underline")
 fun TextView.underline(underlined : Boolean) {
     if(underlined) this.paintFlags = Paint.UNDERLINE_TEXT_FLAG
-}
-
-@BindingAdapter("setBackground")
-fun setBackground(textView : TextView, type: String){
-    when(type){
-        textView.context.resources.getString(R.string.data) -> textView.setBackgroundColor(
-            ContextCompat.getColor(textView.context, R.color.lesson_green))
-        textView.context.resources.getString(R.string.mkt) -> textView.setBackgroundColor(
-            ContextCompat.getColor(textView.context, R.color.lesson_blue))
-        textView.context.resources.getString(R.string.ba) -> textView.setBackgroundColor(
-            ContextCompat.getColor(textView.context, R.color.dark_orange))
-    }
 }
 
 /**

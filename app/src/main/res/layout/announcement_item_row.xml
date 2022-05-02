@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="announcement"
-            type="com.stathis.elmepaunivapp.ui.announcements.model.Announcement" />
+            name="model"
+            type="com.stathis.elmepaunivapp.model.Announcement" />
 
         <variable
             name="callback"
@@ -17,7 +17,8 @@
         style="@style/elmepa_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{(view) -> callback.onItemClick(view)}">
+        android:onClick="@{(view) -> callback.onItemClick(view)}"
+        android:tag="@{model}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,7 +26,7 @@
 
             <ImageView
                 android:id="@+id/ann_img"
-                loadImageFromUrl="@{announcement.imageResource}"
+                loadImageUrl="@{model.imageResource}"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_200"
                 android:contentDescription="@string/app_name"
@@ -41,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_15"
-                android:text="@{announcement.name}"
+                android:text="@{model.name}"
                 app:layout_constraintTop_toBottomOf="@id/ann_img"
                 tools:text="@string/announcement_title" />
 

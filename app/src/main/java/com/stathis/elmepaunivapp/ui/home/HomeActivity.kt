@@ -32,8 +32,7 @@ class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home)
     }
 
     override fun startOps() {
-        val cameFromWidget =
-            intent.getBooleanExtra(resources.getString(R.string.widget_professor_intent), false)
+        val cameFromWidget = intent.getBooleanExtra(resources.getString(R.string.widget_professor_intent), false)
 
         when (cameFromWidget) {
             true -> navController.navigate(R.id.nav_search)
@@ -70,6 +69,7 @@ class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home)
             }
 
             R.id.professors -> {
+                navController.navigate(R.id.nav_search)
                 binding.drawerLayout.closeMyDrawer()
             }
 

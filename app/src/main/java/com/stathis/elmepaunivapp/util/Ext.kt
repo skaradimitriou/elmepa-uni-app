@@ -1,6 +1,7 @@
 package com.stathis.elmepaunivapp.util
 
 import android.app.Application
+import android.content.Context
 import android.graphics.text.LineBreaker
 import android.os.Build
 import android.text.Editable
@@ -16,6 +17,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.novoda.merlin.Merlin
 import com.stathis.elmepaunivapp.model.professor.Professor
 import java.io.IOException
 
@@ -100,3 +102,8 @@ fun ActionBar.setupBar(title: String) {
     this.setDisplayHomeAsUpEnabled(true)
     this.title = title
 }
+
+fun Merlin.Builder.construct(context : Context) : Merlin = this.withConnectableCallbacks()
+    .withDisconnectableCallbacks()
+    .withBindableCallbacks()
+    .build(context)

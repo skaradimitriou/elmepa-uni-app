@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.announcements.model
+package com.stathis.elmepaunivapp.model
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

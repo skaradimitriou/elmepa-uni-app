@@ -9,7 +9,7 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.SyllabusClickListener
 import com.stathis.elmepaunivapp.ui.home.syllabus.adapter.SemesterAdapter
-import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
+import com.stathis.elmepaunivapp.model.syllabus.Semester
 import com.stathis.elmepaunivapp.util.ShimmerHelper
 import com.stathis.elmepaunivapp.util.readLocalJsonList
 import kotlinx.coroutines.Dispatchers

@@ -11,7 +11,7 @@ import com.stathis.elmepaunivapp.databinding.HolderEmptyItemRowBinding
 import com.stathis.elmepaunivapp.databinding.HolderSemesterItemRowBinding
 import com.stathis.elmepaunivapp.databinding.HolderSemesterShimmerItemBinding
 import com.stathis.elmepaunivapp.model.ShimmerModel
-import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
+import com.stathis.elmepaunivapp.model.syllabus.Semester
 
 class SemesterAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, SemesterViewHolder>(DiffItemClass<LocalModel>()) {
 

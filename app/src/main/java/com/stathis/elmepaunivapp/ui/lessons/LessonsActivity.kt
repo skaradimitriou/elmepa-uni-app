@@ -7,7 +7,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivitySyllabusLessonsBinding
-import com.stathis.elmepaunivapp.ui.home.syllabus.model.Semester
+import com.stathis.elmepaunivapp.model.syllabus.Semester
 import com.stathis.elmepaunivapp.util.onMenuItemTap
 import com.stathis.elmepaunivapp.util.setupBar
 import com.stathis.elmepaunivapp.util.showDialog

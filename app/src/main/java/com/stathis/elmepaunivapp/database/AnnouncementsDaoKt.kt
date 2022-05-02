@@ -1,7 +1,7 @@
 package com.stathis.elmepaunivapp.database
 
 import androidx.room.*
-import com.stathis.elmepaunivapp.ui.announcements.model.Announcement
+import com.stathis.elmepaunivapp.model.Announcement
 import java.util.*
 
 @Dao
