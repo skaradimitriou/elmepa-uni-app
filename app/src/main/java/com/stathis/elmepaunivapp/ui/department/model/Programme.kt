@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.home.department.model
+package com.stathis.elmepaunivapp.ui.department.model
 
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 

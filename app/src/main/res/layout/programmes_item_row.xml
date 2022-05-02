@@ -5,7 +5,7 @@
 
         <variable
             name="programme"
-            type="com.stathis.elmepaunivapp.ui.home.department.model.Programme" />
+            type="com.stathis.elmepaunivapp.ui.department.model.Programme" />
 
         <variable
             name="callback"

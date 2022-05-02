@@ -3,6 +3,7 @@ package com.stathis.elmepaunivapp.util
 import androidx.annotation.ColorInt
 import com.google.android.material.snackbar.Snackbar
 
+const val DEFAULT_URL = "https://mst.hmu.gr/"
 const val BASE_URL = "https://mst.hmu.gr/news_gr/"
 const val DATA_TYPE = "article"
 
@@ -24,6 +25,9 @@ const val SECRETARY_MAIL = "kalarhaki@hmu.gr"
 const val SECRETARY_TEL = "tel:2841091103"
 
 const val URL = "URL"
+const val TITLE = "TITLE"
+const val DEFAULT_WEB_TITLE = "ΔΕΤ Αγ. Νικόλαος"
+const val ANNOUNCEMENT = "Ανακοίνωση"
 
 const val ABOUT_MOBILE_APP_URL = "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"
 

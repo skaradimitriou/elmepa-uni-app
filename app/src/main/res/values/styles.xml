@@ -15,6 +15,11 @@
         <item name="background">@color/blue_petrol</item>
     </style>
 
+    <style name="elmepaFabBtn" parent="ShapeAppearanceOverlay.Material3.FloatingActionButton">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
     <style name="elmepa_card" parent="Widget.MaterialComponents.CardView">
         <item name="cardCornerRadius">@dimen/margin_10</item>
         <item name="android:layout_marginTop">@dimen/margin_10</item>

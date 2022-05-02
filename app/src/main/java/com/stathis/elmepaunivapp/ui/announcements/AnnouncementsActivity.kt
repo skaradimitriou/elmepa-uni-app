@@ -11,15 +11,13 @@ import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityAnnouncementsBinding
 import com.stathis.elmepaunivapp.model.Announcement
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
-import com.stathis.elmepaunivapp.util.construct
-import com.stathis.elmepaunivapp.util.setupBar
-import com.stathis.elmepaunivapp.util.stopRefresh
-import com.stathis.elmepaunivapp.util.withColor
+import com.stathis.elmepaunivapp.util.*
 
-class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.layout.activity_announcements),AnnouncementClickListener,Connectable,Disconnectable,Bindable {
+class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.layout.activity_announcements),
+    AnnouncementClickListener, Connectable, Disconnectable, Bindable {
 
-    private val viewModel : AnnouncementsViewModel by viewModels()
-    private lateinit var merlin : Merlin
+    private val viewModel: AnnouncementsViewModel by viewModels()
+    private lateinit var merlin: Merlin
 
     override fun init() {
         supportActionBar?.setupBar(getString(R.string.announcement_header))
@@ -37,8 +35,12 @@ class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.lay
         }
 
         viewModel.error.observe(this) {
-            when(it){
-                true -> Snackbar.make(findViewById(R.id.announcements_parent),resources.getString(R.string.announcements_get_error),Snackbar.LENGTH_LONG).show()
+            when (it) {
+                true -> Snackbar.make(
+                    findViewById(R.id.announcements_parent),
+                    resources.getString(R.string.announcements_get_error),
+                    Snackbar.LENGTH_LONG
+                ).show()
                 false -> Unit
             }
         }
@@ -51,7 +53,10 @@ class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.lay
     }
 
     override fun onAnnouncementTap(announcement: Announcement) {
-        startActivity(Intent(this, WebviewActivity::class.java).putExtra(resources.getString(R.string.url_tag),announcement.url))
+        startActivity(Intent(this, WebviewActivity::class.java).apply {
+            putExtra(URL, announcement.url)
+            putExtra(TITLE, ANNOUNCEMENT)
+        })
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -71,12 +76,16 @@ class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.lay
     override fun onConnect() = viewModel.refreshData()
 
     override fun onDisconnect() {
-        Snackbar.make(binding.announcementsParent, resources.getString(R.string.no_internet), Snackbar.LENGTH_LONG)
+        Snackbar.make(
+            binding.announcementsParent,
+            resources.getString(R.string.no_internet),
+            Snackbar.LENGTH_LONG
+        )
             .withColor(ContextCompat.getColor(this, R.color.orange))
             .show()
     }
 
-    override fun onBind(networkStatus: NetworkStatus?) = when(networkStatus?.isAvailable){
+    override fun onBind(networkStatus: NetworkStatus?) = when (networkStatus?.isAvailable) {
         true -> onConnect()
         else -> onDisconnect()
     }

@@ -1,14 +1,14 @@
-package com.stathis.elmepaunivapp.ui.home.department.recyclerviews
+package com.stathis.elmepaunivapp.ui.department.adapter
 
 import com.stathis.elmepaunivapp.BR
 import androidx.databinding.ViewDataBinding
 import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.home.department.model.DepMember
-import com.stathis.elmepaunivapp.ui.home.department.model.FieldOfStudy
-import com.stathis.elmepaunivapp.ui.home.department.model.Programme
-import com.stathis.elmepaunivapp.ui.home.department.model.SocialChannel
+import com.stathis.elmepaunivapp.ui.department.model.DepMember
+import com.stathis.elmepaunivapp.ui.department.model.FieldOfStudy
+import com.stathis.elmepaunivapp.ui.department.model.Programme
+import com.stathis.elmepaunivapp.ui.department.model.SocialChannel
 
 class DepartmentChildViewHolder(val binding : ViewDataBinding, val callback : ElmepaClickListener) : AbstractViewHolder(binding) {
 

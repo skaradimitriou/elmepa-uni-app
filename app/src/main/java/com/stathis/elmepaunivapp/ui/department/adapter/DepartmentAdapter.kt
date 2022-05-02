@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.home.department.recyclerviews
+package com.stathis.elmepaunivapp.ui.department.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,9 +8,9 @@ import com.stathis.elmepaunivapp.abstraction.DiffItemClass
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.databinding.*
-import com.stathis.elmepaunivapp.ui.home.department.model.EmptyModel
-import com.stathis.elmepaunivapp.ui.home.department.model.HorizontalDepartmentItem
-import com.stathis.elmepaunivapp.ui.home.department.model.VerticalDepartmentItem
+import com.stathis.elmepaunivapp.ui.department.model.EmptyModel
+import com.stathis.elmepaunivapp.ui.department.model.HorizontalDepartmentItem
+import com.stathis.elmepaunivapp.ui.department.model.VerticalDepartmentItem
 import com.stathis.elmepaunivapp.ui.home.students.model.CarouselParent
 
 class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, DepartmentViewHolder>(DiffItemClass<LocalModel>()) {

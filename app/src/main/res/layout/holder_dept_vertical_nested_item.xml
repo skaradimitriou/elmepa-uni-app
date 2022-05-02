@@ -5,11 +5,11 @@
 
         <variable
             name="item"
-            type="com.stathis.elmepaunivapp.ui.home.department.model.VerticalDepartmentItem" />
+            type="com.stathis.elmepaunivapp.ui.department.model.VerticalDepartmentItem" />
 
         <variable
             name="adapter"
-            type="com.stathis.elmepaunivapp.ui.home.department.recyclerviews.DepartmentChildAdapter" />
+            type="com.stathis.elmepaunivapp.ui.department.adapter.DepartmentChildAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -33,7 +33,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nested_recycler"
-            adapter="@{adapter}"
+            android:adapter="@{adapter}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"

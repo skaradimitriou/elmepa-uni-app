@@ -7,6 +7,8 @@ import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
+import android.view.View
+import android.webkit.WebView
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
@@ -14,10 +16,13 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.snackbar.SnackbarContentLayout
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.novoda.merlin.Merlin
+import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.model.professor.Professor
 import java.io.IOException
 
@@ -31,8 +36,15 @@ fun SwipeRefreshLayout.stopRefresh() {
     this.isRefreshing = false
 }
 
-fun Application.readLocalJson(jsonName: String): String {
-    return this.assets.open(jsonName).bufferedReader().use { it.readText() }
+inline fun <reified T> Application.readJsonData(fileName: String, data: (T?) -> Unit) {
+    try {
+        val json = this.assets.open(fileName).bufferedReader().use { it.readText() }
+        val type = object : TypeToken<T>() {}.type
+        val response: T = Gson().fromJson(json, type)
+        data.invoke(response)
+    } catch (ioException: IOException) {
+        data.invoke(null)
+    }
 }
 
 /**
@@ -41,7 +53,7 @@ fun Application.readLocalJson(jsonName: String): String {
  * Tries to read a local file and deserialize it into a list of the object passed as parameter.
  */
 
-inline fun <reified T>Application.readLocalJsonList(fileName: String, data: (List<T>?) -> Unit) {
+inline fun <reified T> Application.readLocalJsonList(fileName: String, data: (List<T>?) -> Unit) {
     try {
         val json = this.assets.open(fileName).bufferedReader().use { it.readText() }
         val type = object : TypeToken<List<T>>() {}.type
@@ -51,7 +63,6 @@ inline fun <reified T>Application.readLocalJsonList(fileName: String, data: (Lis
         data.invoke(listOf())
     }
 }
-
 
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
@@ -96,6 +107,12 @@ fun MaterialAlertDialogBuilder.showDialog(title: String, desc: String) {
     }.show()
 }
 
+fun DrawerLayout.openOrClose(): Boolean {
+    if (this.isOpen) this.closeDrawer(GravityCompat.START)
+    else this.openDrawer(GravityCompat.START)
+    return true
+}
+
 fun DrawerLayout.closeMyDrawer() = this.closeDrawer(GravityCompat.START)
 
 fun ActionBar.setupBar(title: String) {
@@ -103,7 +120,21 @@ fun ActionBar.setupBar(title: String) {
     this.title = title
 }
 
-fun Merlin.Builder.construct(context : Context) : Merlin = this.withConnectableCallbacks()
+fun Merlin.Builder.construct(context: Context): Merlin = this.withConnectableCallbacks()
     .withDisconnectableCallbacks()
     .withBindableCallbacks()
     .build(context)
+
+fun WebView.enableJS() {
+    this.settings.javaScriptEnabled = true
+}
+
+fun View.showOrHide(clicked : Boolean) {
+    if (clicked) this.visibility = View.INVISIBLE else this.visibility = View.VISIBLE
+}
+
+fun View.setClickability(clicked : Boolean) {
+    this.isClickable = !clicked
+}
+
+inline fun showSnack(view : View, msg : String) = Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()

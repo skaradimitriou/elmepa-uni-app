@@ -3,7 +3,6 @@ package com.stathis.elmepaunivapp.ui.home
 import android.content.Intent
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -13,7 +12,10 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivityHomeBinding
 import com.stathis.elmepaunivapp.ui.about.AboutActivity
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
+import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
+import com.stathis.elmepaunivapp.ui.students.StudentActivity
 import com.stathis.elmepaunivapp.util.closeMyDrawer
+import com.stathis.elmepaunivapp.util.openOrClose
 
 class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home),
     NavigationView.OnNavigationItemSelectedListener {
@@ -45,39 +47,17 @@ class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home)
 
     override fun stopOps() {}
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (binding.drawerLayout.isOpen) {
-            true -> binding.drawerLayout.closeDrawer(GravityCompat.START)
-            false -> binding.drawerLayout.openDrawer(GravityCompat.START)
-        }
-        return true
-    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = binding.drawerLayout.openOrClose()
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.announcements -> {
-                startActivity(Intent(this, AnnouncementsActivity::class.java))
-                binding.drawerLayout.closeMyDrawer()
-            }
-
-            R.id.department -> {
-                binding.drawerLayout.closeMyDrawer()
-            }
-
-            R.id.students -> {
-                binding.drawerLayout.closeMyDrawer()
-            }
-
-            R.id.professors -> {
-                navController.navigate(R.id.nav_search)
-                binding.drawerLayout.closeMyDrawer()
-            }
-
-            R.id.about_app -> {
-                startActivity(Intent(this, AboutActivity::class.java))
-                binding.drawerLayout.closeMyDrawer()
-            }
+        val intent: Intent = when (item.itemId) {
+            R.id.announcements -> Intent(this, AnnouncementsActivity::class.java)
+            R.id.department -> Intent(this, DepartmentActivity::class.java)
+            R.id.students -> Intent(this, StudentActivity::class.java)
+            else -> Intent(this, AboutActivity::class.java)
         }
+        startActivity(intent)
+        binding.drawerLayout.closeMyDrawer()
         return true
     }
 }

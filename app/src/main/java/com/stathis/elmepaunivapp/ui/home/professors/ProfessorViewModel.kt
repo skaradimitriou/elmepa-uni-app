@@ -13,6 +13,7 @@ import com.stathis.elmepaunivapp.ui.home.professors.adapter.ProfessorsAdapter
 import com.stathis.elmepaunivapp.util.ShimmerHelper
 import com.stathis.elmepaunivapp.util.equalsName
 import com.stathis.elmepaunivapp.util.readLocalJsonList
+import com.stathis.elmepaunivapp.util.sortedAlphabetically
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -38,7 +39,7 @@ class ProfessorViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCli
 
         app.readLocalJsonList<Professor>("professors.json", data = { list ->
             list?.let {
-                professorList = it
+                professorList = it.sortedAlphabetically()
                 professors.postValue(professorList)
             }
         })

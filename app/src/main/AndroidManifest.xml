@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.students.StudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.department.DepartmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.about.AboutActivity"
             android:exported="false" />
         <activity

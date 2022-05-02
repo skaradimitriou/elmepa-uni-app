@@ -1,12 +1,12 @@
-package com.stathis.elmepaunivapp.ui.home.department.recyclerviews
+package com.stathis.elmepaunivapp.ui.department.adapter
 
 import androidx.databinding.ViewDataBinding
 import com.stathis.elmepaunivapp.abstraction.AbstractViewHolder
 import com.stathis.elmepaunivapp.BR
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.home.department.model.HorizontalDepartmentItem
-import com.stathis.elmepaunivapp.ui.home.department.model.VerticalDepartmentItem
+import com.stathis.elmepaunivapp.ui.department.model.HorizontalDepartmentItem
+import com.stathis.elmepaunivapp.ui.department.model.VerticalDepartmentItem
 import com.stathis.elmepaunivapp.ui.home.students.model.CarouselParent
 import com.stathis.elmepaunivapp.ui.home.students.recycler.CarouselAdapter
 
