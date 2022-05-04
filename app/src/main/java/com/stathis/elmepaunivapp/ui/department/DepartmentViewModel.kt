@@ -58,7 +58,6 @@ class DepartmentViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCl
 
     override fun onItemClick(view: View) {
         when (view.tag) {
-            is FieldOfStudy -> callback.openSyllabus(view.tag as FieldOfStudy)
             is Programme -> callback.openProgrammes(view.tag as Programme)
             is SocialChannel -> callback.openSocial(view.tag as SocialChannel)
             is CarouselItem -> callback.openCarouselItem(view.tag as CarouselItem)

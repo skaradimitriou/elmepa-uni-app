@@ -12,7 +12,7 @@ class CarouselViewHolder(val binding : ViewDataBinding, val callback : ElmepaCli
     override fun present(data: LocalModel) {
         when(data){
             is CarouselItem -> {
-                binding.setVariable(BR.item,data)
+                binding.setVariable(BR.model,data)
                 binding.setVariable(BR.callback,callback)
             }
         }

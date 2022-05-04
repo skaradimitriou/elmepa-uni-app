@@ -4,7 +4,7 @@
     <data>
 
         <variable
-            name="fieldOfStudy"
+            name="model"
             type="com.stathis.elmepaunivapp.ui.department.model.FieldOfStudy" />
 
         <variable
@@ -21,6 +21,7 @@
         android:layout_margin="@dimen/margin_10"
         android:clickable="true"
         android:focusable="true"
+        android:tag="@{model}"
         android:onClick="@{(view) -> callback.onItemClick(view)}"
         app:cardCornerRadius="@dimen/margin_15"
         app:cardElevation="@dimen/margin_3">
@@ -31,7 +32,7 @@
 
             <ImageView
                 android:id="@+id/fields_img"
-                loadLocalPhoto="@{fieldOfStudy.imageResource}"
+                loadLocalPhoto="@{model.imageResource}"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_140"
                 android:contentDescription="@string/app_name"
@@ -45,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_7"
                 android:layout_marginRight="@dimen/margin_7"
-                android:text="@{fieldOfStudy.title}"
+                android:text="@{model.title}"
                 android:textAlignment="center"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"

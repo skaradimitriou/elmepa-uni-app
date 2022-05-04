@@ -45,8 +45,6 @@ class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.ac
                     resources.getString(R.string.research_img) -> goToResearch()
                 }
             }
-
-            override fun openSyllabus(data: FieldOfStudy) {}
             override fun openSocial(data: SocialChannel) = when (data.title) {
                 resources.getString(R.string.youtube) -> openYoutube(data.url)
                 else -> openUrl(data.url)

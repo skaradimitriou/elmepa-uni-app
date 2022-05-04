@@ -13,26 +13,16 @@ import com.stathis.elmepaunivapp.ui.department.model.SocialChannel
 class DepartmentChildViewHolder(val binding : ViewDataBinding, val callback : ElmepaClickListener) : AbstractViewHolder(binding) {
 
     override fun present(data: LocalModel) {
-        when(data){
-            is FieldOfStudy -> {
-                binding.setVariable(BR.fieldOfStudy,data)
-                binding.setVariable(BR.callback,callback)
-            }
-
-            is Programme -> {
-                binding.setVariable(BR.programme,data)
-                binding.setVariable(BR.callback,callback)
-            }
-
-            is SocialChannel -> {
-                binding.setVariable(BR.social,data)
-                binding.setVariable(BR.callback,callback)
-            }
-
-            is DepMember -> {
-                binding.setVariable(BR.member,data)
-                binding.setVariable(BR.callback,callback)
-            }
+        when (data) {
+            is FieldOfStudy -> bindElements(data)
+            is Programme -> bindElements(data)
+            is SocialChannel -> bindElements(data)
+            is DepMember -> bindElements(data)
         }
+    }
+
+    private fun bindElements(data : LocalModel){
+        binding.setVariable(BR.model,data)
+        binding.setVariable(BR.callback,callback)
     }
 }

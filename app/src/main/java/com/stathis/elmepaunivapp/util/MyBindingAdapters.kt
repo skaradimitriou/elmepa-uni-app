@@ -36,12 +36,12 @@ fun ImageView.setImageSrc(drawable: Int){
 }
 
 @BindingAdapter("loadLocalPhoto")
-fun loadLocalPhoto(img : ImageView, photo: String){
+fun ImageView.loadLocalPhoto(photo: String){
     try {
-        val myImage = img.context.resources.getIdentifier(photo, "drawable", "com.stathis.elmepaunivapp")
-        img.setImageResource(myImage)
+        val myImage = this.context.resources.getIdentifier(photo, "drawable", "com.stathis.elmepaunivapp")
+        this.setImageResource(myImage)
     }catch (e : Exception){
-        img.setImageResource(R.mipmap.ic_launcher)
+        this.setImageResource(R.mipmap.ic_launcher)
     }
 }
 
