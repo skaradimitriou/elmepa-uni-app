@@ -11,8 +11,8 @@ import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.department.adapter.DepartmentAdapter
 import com.stathis.elmepaunivapp.ui.department.model.*
-import com.stathis.elmepaunivapp.ui.home.students.model.CarouselItem
-import com.stathis.elmepaunivapp.ui.home.students.model.CarouselParent
+import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
+import com.stathis.elmepaunivapp.ui.students.model.CarouselParent
 import com.stathis.elmepaunivapp.util.readJsonData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

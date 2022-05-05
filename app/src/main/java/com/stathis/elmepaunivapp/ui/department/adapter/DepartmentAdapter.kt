@@ -11,7 +11,7 @@ import com.stathis.elmepaunivapp.databinding.*
 import com.stathis.elmepaunivapp.ui.department.model.EmptyModel
 import com.stathis.elmepaunivapp.ui.department.model.HorizontalDepartmentItem
 import com.stathis.elmepaunivapp.ui.department.model.VerticalDepartmentItem
-import com.stathis.elmepaunivapp.ui.home.students.model.CarouselParent
+import com.stathis.elmepaunivapp.ui.students.model.CarouselParent
 
 class DepartmentAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, DepartmentViewHolder>(DiffItemClass<LocalModel>()) {
 

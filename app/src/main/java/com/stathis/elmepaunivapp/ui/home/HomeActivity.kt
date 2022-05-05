@@ -54,6 +54,7 @@ class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home)
             R.id.announcements -> Intent(this, AnnouncementsActivity::class.java)
             R.id.department -> Intent(this, DepartmentActivity::class.java)
             R.id.students -> Intent(this, StudentActivity::class.java)
+            //R.id.get_in_touch -> Create Activity
             else -> Intent(this, AboutActivity::class.java)
         }
         startActivity(intent)

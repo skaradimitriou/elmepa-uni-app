@@ -24,23 +24,6 @@
 			"position" : 4
 		}
 	],
-	"syllabusItems" : [
-		{
-			"imageResource" : "data",
-			"title" : "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής",
-			"tabNo" : 0
-		},
-		{
-			"imageResource" : "business",
-			"title" : "Διοίκηση Επιχειρήσεων & Οργανισμών",
-			"tabNo" : 1
-		},
-		{
-			"imageResource" : "digitalmkt",
-			"title" : "Ψηφιακό Μάρκετινγκ και Επικοινωνία",
-			"tabNo" : 2
-		}
-	],
 	"links" : [
 		{
 			"imageResource" : "eudoxus",

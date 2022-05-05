@@ -5,13 +5,11 @@ import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.squareup.picasso.Picasso
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.ui.home.students.recycler.CarouselAdapter
+import com.stathis.elmepaunivapp.ui.students.recycler.CarouselAdapter
 
 /**
  * Binding Adapters for ImageViews

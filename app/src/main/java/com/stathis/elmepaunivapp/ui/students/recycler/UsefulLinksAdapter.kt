@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.home.students.recycler
+package com.stathis.elmepaunivapp.ui.students.recycler
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,9 +11,9 @@ import com.stathis.elmepaunivapp.databinding.HolderEmptyItemRowBinding
 import com.stathis.elmepaunivapp.databinding.HolderHorizontalLinkItemBinding
 import com.stathis.elmepaunivapp.databinding.HolderLinkItemRowBinding
 import com.stathis.elmepaunivapp.databinding.UsefulLinksItemRowBinding
-import com.stathis.elmepaunivapp.ui.home.students.model.UsefulLinks
-import com.stathis.elmepaunivapp.ui.home.students.model.LinkItem
-import com.stathis.elmepaunivapp.ui.home.students.model.SyllabusItem
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.students.model.LinkItem
+import com.stathis.elmepaunivapp.ui.students.model.SyllabusItem
 
 class UsefulLinksAdapter(private val callback : ElmepaClickListener) : ListAdapter<LocalModel, UsefulLinksViewHolder>(DiffItemClass<LocalModel>()) {
 
@@ -35,6 +35,6 @@ class UsefulLinksAdapter(private val callback : ElmepaClickListener) : ListAdapt
         is SyllabusItem -> R.layout.holder_link_item_row
         is LinkItem -> R.layout.holder_horizontal_link_item
         is UsefulLinks -> R.layout.useful_links_item_row
-        else -> R.layout.holder_empty_view
+        else -> R.layout.holder_empty_item_row
     }
 }

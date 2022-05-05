@@ -4,11 +4,11 @@
     <data>
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.home.students.model.CarouselParent" />
+            type="com.stathis.elmepaunivapp.ui.students.model.CarouselParent" />
 
         <variable
             name="adapter"
-            type="com.stathis.elmepaunivapp.ui.home.students.recycler.CarouselAdapter" />
+            type="com.stathis.elmepaunivapp.ui.students.recycler.CarouselAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_200"
             android:orientation="horizontal"
-            adapter="@{adapter}"
+            android:adapter="@{adapter}"
             setScrollableViewPager="@{adapter}"
             tools:listitem="@layout/holder_carousel_item"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

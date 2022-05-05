@@ -6,7 +6,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.ResearchClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityResearchInDeptBinding
-import com.stathis.elmepaunivapp.ui.home.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import kotlinx.android.synthetic.main.activity_research_in_dept.*
 

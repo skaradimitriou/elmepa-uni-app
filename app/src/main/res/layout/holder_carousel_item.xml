@@ -5,7 +5,7 @@
 
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.home.students.model.CarouselItem" />
+            type="com.stathis.elmepaunivapp.ui.students.model.CarouselItem" />
 
         <variable
             name="callback"
@@ -33,7 +33,7 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
-                android:src="@color/grey" />
+                tools:src="@color/grey" />
 
             <View
                 android:layout_width="match_parent"

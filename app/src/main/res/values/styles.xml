@@ -15,6 +15,12 @@
         <item name="background">@color/blue_petrol</item>
     </style>
 
+    <style name="elmepa_recycler">
+        <item name="android:paddingBottom">@dimen/dimen_40</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
     <style name="elmepaFabBtn" parent="ShapeAppearanceOverlay.Material3.FloatingActionButton">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>

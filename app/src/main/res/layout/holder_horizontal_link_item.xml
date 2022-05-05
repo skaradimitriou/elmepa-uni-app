@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="link"
-            type="com.stathis.elmepaunivapp.ui.home.students.model.LinkItem" />
+            name="model"
+            type="com.stathis.elmepaunivapp.ui.students.model.LinkItem" />
 
         <variable
             name="callback"
@@ -20,6 +20,7 @@
         android:layout_margin="@dimen/margin_10"
         android:clickable="true"
         android:focusable="true"
+        android:tag="@{model}"
         android:onClick="@{(view) -> callback.onItemClick(view)}"
         app:cardCornerRadius="@dimen/margin_15"
         app:cardElevation="@dimen/margin_3">
@@ -30,7 +31,7 @@
 
             <ImageView
                 android:id="@+id/links_img"
-                loadLocalPhoto="@{link.imageResource}"
+                loadLocalPhoto="@{model.imageResource}"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_140"
                 android:contentDescription="@string/app_name"
@@ -49,7 +50,7 @@
                 android:layout_marginEnd="@dimen/margin_5"
                 android:gravity="center"
                 android:padding="@dimen/margin_10"
-                android:text="@{link.title}"
+                android:text="@{model.title}"
                 android:textAlignment="center"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"

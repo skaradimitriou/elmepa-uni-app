@@ -9,10 +9,9 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityDepartmentBinding
-import com.stathis.elmepaunivapp.ui.department.model.FieldOfStudy
 import com.stathis.elmepaunivapp.ui.department.model.Programme
 import com.stathis.elmepaunivapp.ui.department.model.SocialChannel
-import com.stathis.elmepaunivapp.ui.home.students.model.CarouselItem
+import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity
 import com.stathis.elmepaunivapp.util.setClickability
 import com.stathis.elmepaunivapp.util.setupBar

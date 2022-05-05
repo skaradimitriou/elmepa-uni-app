@@ -16,7 +16,15 @@
         android:id="@+id/professors"
         android:title="@string/dashboard_professors" />
 
-    <item
-        android:id="@+id/about_app"
-        android:title="@string/about_app_title" />
+    <item android:title="@string/the_app">
+        <menu>
+            <item
+                android:id="@+id/about_app"
+                android:title="@string/about_app_title" />
+
+            <item
+                android:id="@+id/get_in_touch"
+                android:title="@string/contact" />
+        </menu>
+    </item>
 </menu>

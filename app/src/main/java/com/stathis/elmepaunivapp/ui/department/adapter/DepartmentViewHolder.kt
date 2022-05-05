@@ -7,8 +7,8 @@ import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.department.model.HorizontalDepartmentItem
 import com.stathis.elmepaunivapp.ui.department.model.VerticalDepartmentItem
-import com.stathis.elmepaunivapp.ui.home.students.model.CarouselParent
-import com.stathis.elmepaunivapp.ui.home.students.recycler.CarouselAdapter
+import com.stathis.elmepaunivapp.ui.students.model.CarouselParent
+import com.stathis.elmepaunivapp.ui.students.recycler.CarouselAdapter
 
 class DepartmentViewHolder(val binding : ViewDataBinding,val callback : ElmepaClickListener) : AbstractViewHolder(binding) {
 
@@ -17,22 +17,22 @@ class DepartmentViewHolder(val binding : ViewDataBinding,val callback : ElmepaCl
             is HorizontalDepartmentItem -> {
                 val adapter = DepartmentChildAdapter(callback)
                 adapter.submitList(data.list)
-                binding.setVariable(BR.item,data)
-                binding.setVariable(BR.adapter,adapter)
+                binding.setVariable(BR.model, data)
+                binding.setVariable(BR.adapter, adapter)
             }
 
             is VerticalDepartmentItem -> {
                 val adapter = DepartmentChildAdapter(callback)
                 adapter.submitList(data.list)
-                binding.setVariable(BR.item,data)
-                binding.setVariable(BR.adapter,adapter)
+                binding.setVariable(BR.model, data)
+                binding.setVariable(BR.adapter, adapter)
             }
 
             is CarouselParent -> {
                 val adapter = CarouselAdapter(callback)
                 adapter.submitList(data.list)
-                binding.setVariable(BR.item,data)
-                binding.setVariable(BR.adapter,adapter)
+                binding.setVariable(BR.model, data)
+                binding.setVariable(BR.adapter, adapter)
             }
         }
     }

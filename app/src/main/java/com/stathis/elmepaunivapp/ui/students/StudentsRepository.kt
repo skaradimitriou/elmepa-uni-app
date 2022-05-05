@@ -1,4 +1,4 @@
-package com.stathis.elmepaunivapp.ui.home.students
+package com.stathis.elmepaunivapp.ui.students
 
 import android.app.Application
 import android.util.Log
@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.ui.home.students.model.StudentResponse
+import com.stathis.elmepaunivapp.ui.students.model.StudentResponse
 import java.io.IOException
 
 class StudentsRepository(val app : Application) {

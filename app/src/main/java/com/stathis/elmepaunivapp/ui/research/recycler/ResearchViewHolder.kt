@@ -6,7 +6,7 @@ import com.stathis.elmepaunivapp.BR
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
-import com.stathis.elmepaunivapp.ui.home.students.recycler.UsefulLinksAdapter
+import com.stathis.elmepaunivapp.ui.students.recycler.UsefulLinksAdapter
 
 class ResearchViewHolder(val binding : ViewDataBinding, val callback : ElmepaClickListener) : AbstractViewHolder(binding) {
 

@@ -1,14 +1,13 @@
-package com.stathis.elmepaunivapp.ui.home.students.model
+package com.stathis.elmepaunivapp.ui.students.model
 
 import com.stathis.elmepaunivapp.abstraction.LocalModel
 
 data class StudentResponse(
     val carouselItems : List<CarouselItem>,
-    val syllabusItems : List<SyllabusItem>,
     val links : List<LinkItem>
 ) : LocalModel {
     override fun equalsContent(obj: LocalModel): Boolean = when(obj){
-        is StudentResponse -> carouselItems == obj.carouselItems && syllabusItems == obj.syllabusItems && links == obj.links
+        is StudentResponse -> carouselItems == obj.carouselItems && links == obj.links
         else -> false
     }
 }

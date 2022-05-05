@@ -1,7 +1,7 @@
 package com.stathis.elmepaunivapp.ui.department.model
 
 import com.stathis.elmepaunivapp.abstraction.LocalModel
-import com.stathis.elmepaunivapp.ui.home.students.model.CarouselItem
+import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
 
 data class DepartmentResponse(
 

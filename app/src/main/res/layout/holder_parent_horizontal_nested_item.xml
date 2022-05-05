@@ -5,11 +5,11 @@
 
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.home.students.model.NewStudentItem" />
+            type="com.stathis.elmepaunivapp.ui.students.model.NewStudentItem" />
 
         <variable
             name="adapter"
-            type="com.stathis.elmepaunivapp.ui.home.students.recycler.UsefulLinksAdapter" />
+            type="com.stathis.elmepaunivapp.ui.students.recycler.UsefulLinksAdapter" />
 
     </data>
 
@@ -34,7 +34,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nested_recycler"
-            adapter="@{adapter}"
+            android:adapter="@{adapter}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

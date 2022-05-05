@@ -5,11 +5,11 @@
 
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.home.students.model.UsefulLinksParent" />
+            type="com.stathis.elmepaunivapp.ui.students.model.UsefulLinksParent" />
 
         <variable
             name="adapter"
-            type="com.stathis.elmepaunivapp.ui.home.students.recycler.UsefulLinksAdapter" />
+            type="com.stathis.elmepaunivapp.ui.students.recycler.UsefulLinksAdapter" />
 
     </data>
 
@@ -34,10 +34,10 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nested_recycler"
-            adapter="@{adapter}"
+            style="@style/elmepa_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:adapter="@{adapter}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nested_title"

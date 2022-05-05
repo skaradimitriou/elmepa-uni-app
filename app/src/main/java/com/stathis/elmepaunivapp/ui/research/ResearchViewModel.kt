@@ -14,7 +14,7 @@ import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.ResearchClickListener
 import com.stathis.elmepaunivapp.ui.research.model.ResearchModel
 import com.stathis.elmepaunivapp.ui.research.recycler.ResearchAdapter
-import com.stathis.elmepaunivapp.ui.home.students.model.UsefulLinks
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinks
 import java.io.IOException
 
 class ResearchViewModel(val app : Application) : ElmepaViewModel(app), ElmepaClickListener {
