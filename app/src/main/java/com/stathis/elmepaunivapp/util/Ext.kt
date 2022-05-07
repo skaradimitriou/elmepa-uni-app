@@ -17,13 +17,14 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.snackbar.SnackbarContentLayout
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.novoda.merlin.Merlin
-import com.stathis.elmepaunivapp.R
+import com.stathis.elmepaunivapp.callbacks.DashboardClickListener
 import com.stathis.elmepaunivapp.model.professor.Professor
+import com.stathis.elmepaunivapp.ui.home.dashboard.DashboardViewModel
+import com.stathis.elmepaunivapp.ui.home.dashboard.model.DashboardOption
 import java.io.IOException
 
 fun TextView.alignText() {
@@ -137,4 +138,12 @@ fun View.setClickability(clicked : Boolean) {
     this.isClickable = !clicked
 }
 
-inline fun showSnack(view : View, msg : String) = Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
+fun showSnack(view : View, msg : String) = Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
+
+fun DashboardViewModel.addCallback(item : (DashboardOption) -> Unit){
+    this.addCallback(object : DashboardClickListener{
+        override fun dashboardItemClicked(option: DashboardOption) {
+            item.invoke(option)
+        }
+    })
+}

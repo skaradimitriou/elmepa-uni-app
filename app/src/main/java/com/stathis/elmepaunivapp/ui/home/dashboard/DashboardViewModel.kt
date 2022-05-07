@@ -28,7 +28,7 @@ class DashboardViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCli
             DashboardOption(getString(R.string.dashboard_announcements), R.drawable.ic_announcement),
             DashboardOption(getString(R.string.dashboard_department), R.drawable.ic_books),
             DashboardOption(getString(R.string.dashboard_students), R.drawable.ic_student),
-            DashboardOption(getString(R.string.dashboard_professors), R.drawable.ic_teacher)
+            DashboardOption(getString(R.string.research_recycler_title), R.drawable.research_img)
         )
         adapter.submitList(list)
     }

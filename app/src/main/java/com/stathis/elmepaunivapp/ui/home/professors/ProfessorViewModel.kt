@@ -15,6 +15,7 @@ import com.stathis.elmepaunivapp.util.equalsName
 import com.stathis.elmepaunivapp.util.readLocalJsonList
 import com.stathis.elmepaunivapp.util.sortedAlphabetically
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ProfessorViewModel(val app: Application) : ElmepaViewModel(app), ElmepaClickListener {
@@ -25,9 +26,7 @@ class ProfessorViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCli
     private lateinit var callback: ProfessorScreenClickListener
 
     init {
-        viewModelScope.launch(Dispatchers.IO) {
-            getData()
-        }
+        getData()
     }
 
     private fun startShimmer() {
@@ -37,12 +36,16 @@ class ProfessorViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCli
     fun getData() {
         startShimmer()
 
-        app.readLocalJsonList<Professor>("professors.json", data = { list ->
-            list?.let {
-                professorList = it.sortedAlphabetically()
-                professors.postValue(professorList)
-            }
-        })
+        viewModelScope.launch(Dispatchers.IO) {
+            delay(1000)
+
+            app.readLocalJsonList<Professor>("professors.json", data = { list ->
+                list?.let {
+                    professorList = it.sortedAlphabetically()
+                    professors.postValue(professorList)
+                }
+            })
+        }
     }
 
     fun addCallback(callback: ProfessorScreenClickListener) {
