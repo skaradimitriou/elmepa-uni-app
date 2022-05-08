@@ -30,5 +30,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/about_app" />
 
+        <TextView
+            android:id="@+id/about_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_16"
+            android:text="@string/about_app_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/learn_more" />
+
+        <TextView
+            android:id="@+id/news_publisher_name"
+            style="@style/text_16_non_bold_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dimen_16"
+            android:paddingTop="@dimen/dimen_16"
+            android:text="@string/news_publisher_header"
+            app:layout_constraintTop_toBottomOf="@id/about_data" />
+
+        <TextView
+            android:id="@+id/news_publisher_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dimen_16"
+            android:paddingTop="@dimen/dimen_5"
+            android:text="@string/news_publisher_desc"
+            app:layout_constraintTop_toBottomOf="@id/news_publisher_name" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

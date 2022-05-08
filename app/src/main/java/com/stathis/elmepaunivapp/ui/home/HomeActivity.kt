@@ -12,6 +12,7 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivityHomeBinding
 import com.stathis.elmepaunivapp.ui.about.AboutActivity
 import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
+import com.stathis.elmepaunivapp.ui.contact.ContactActivity
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity
 import com.stathis.elmepaunivapp.ui.students.StudentActivity
@@ -56,7 +57,7 @@ class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home)
             R.id.department -> Intent(this, DepartmentActivity::class.java)
             R.id.students -> Intent(this, StudentActivity::class.java)
             R.id.research -> Intent(this,ResearchActivity::class.java)
-            //R.id.get_in_touch -> Create Activity
+            R.id.get_in_touch -> Intent(this, ContactActivity::class.java)
             else -> Intent(this, AboutActivity::class.java)
         }
         startActivity(intent)

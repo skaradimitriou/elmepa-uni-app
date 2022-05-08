@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.research.model.ResearchItem" />
+            type="com.stathis.elmepaunivapp.ui.contact.model.ContactItem" />
 
         <variable
             name="callback"
@@ -15,7 +15,7 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        style="@style/holder_programmes_style"
+        style="@style/elmepa_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="@{(view) -> callback.onItemClick(view)}"
@@ -28,28 +28,31 @@
             android:layout_height="match_parent"
             android:background="?android:attr/selectableItemBackground">
 
-            <ImageView
-                android:id="@+id/research_item_img"
-                loadLocalPhoto="@{model.imageResource}"
-                android:layout_width="@dimen/dimen_70"
-                android:layout_height="@dimen/height_70"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/ungrad" />
-
             <TextView
-                android:id="@+id/research_item_title"
+                android:id="@+id/contact_item_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_10"
-                android:text="@{model.name}"
+                android:padding="@dimen/dimen_16"
+                style="@style/text_16_bold_petrol"
+                android:text="@{model.title}"
                 android:textColor="@color/dark_grey"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/research_item_img"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/announcement_title" />
+
+            <TextView
+                android:id="@+id/contact_item_desc"
+                setHtmlText="@{model.description}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dimen_16"
+                android:paddingEnd="@dimen/dimen_16"
+                android:paddingBottom="@dimen/dimen_16"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contact_item_title"
                 tools:text="@string/announcement_title" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ class AboutActivity : ElmepaActivity<ActivityAboutBinding>(R.layout.activity_abo
 
     override fun startOps() {
         binding.aboutApp.alignText()
+        binding.aboutData.alignText()
         binding.learnMore.setOnClickListener {
             startActivity(Intent(this, WebviewActivity::class.java).apply {
                 putExtra(URL, ABOUT_MOBILE_APP_URL)

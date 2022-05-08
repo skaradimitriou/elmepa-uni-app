@@ -52,6 +52,11 @@ fun TextView.underline(underlined : Boolean) {
     if(underlined) this.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 }
 
+@BindingAdapter("setHtmlText")
+fun TextView.setText(text: String) {
+    this.text = text.toNonHtmlText()
+}
+
 /**
  * Others
  */

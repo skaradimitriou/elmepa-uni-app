@@ -31,6 +31,9 @@ const val ANNOUNCEMENT = "Ανακοίνωση"
 
 const val ABOUT_MOBILE_APP_URL = "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"
 
+const val EMAIL = "E-mail"
+const val TELEPHONE = "Τηλέφωνo"
+
 fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar{
     this.view.setBackgroundColor(colorInt)
     return this

@@ -33,4 +33,9 @@ class StudentActivity : ElmepaActivity<ActivityStudentBinding>(R.layout.activity
     private fun openUrl(url : String){
         startActivity(Intent(this, WebviewActivity::class.java).putExtra(getString(R.string.url_tag), url))
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

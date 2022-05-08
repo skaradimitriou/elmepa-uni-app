@@ -22,6 +22,7 @@
     <string name="dashboard_professors">Καθηγητές</string>
 
     <string name="about_app_text">Η εφαρμογή αυτή αναπτύχθηκε το 2020 από τον απόφοιτο του Τμήματος Στάθη  Καραδημητρίου με την επίβλεψη του Κώστα Παναγιωτάκη, Αναπληρωτή Καθηγητή και Προέδρου του Τμήματος με σκοπό την εξυπηρέτηση των μελών του Τμήματος και την προώθηση του τμήματος σε υποψήφιους φοιτητές. Αποτελεί την επόμενη έκδοση της εφαρμογής κινητών που είχε αναπτυχθεί στα πλαίσια της πτυχιακής εργασίας των φοιτητών του τμήματος Πελοπίδα Κεφαλιανού και Μαρίας Λαγουδάκη το 2017.</string>
+    <string name="about_app_data">Η εφαρμογή χρησιμοποιεί δεδομένα σε μορφή rss απο το official site της σχολής (https://mst.hmu.gr/) Τα δεδομένα αυτά ανήκουν στο ΕΛΜΕΠΑ (Τμήμα ΔΕΤ - Άγιος Νικόλαος).</string>
     <string name="the_app">Εφαρμογή</string>
     <string name="about_app_title">Ανάπτυξη Εφαρμογής</string>
     <string name="contact">Επικοινωνία</string>
@@ -139,6 +140,13 @@
     <string name="schedule_txt">Δες το Πρόγραμμα</string>
     <string name="undergraduate_students">Προπτυχιακοι Φοιτητές</string>
     <string name="postgraduate_students">Μεταπτυχιακοί Φοιτητές</string>
+
+    <!-- About App-->
+    <string name="news_publisher_header">News Publisher</string>
+    <string name="news_publisher_desc">E–mail: kalarhaki@hmu.gr\nΤηλ.: 28410–91103</string>
+
+    <!-- Contact -->
+    <string name="contact_title">Επικοινωνία</string>
 
     <!-- Professor Widget -->
     <string name="widget_professor_intent">OPEN_PROFESSORS</string>

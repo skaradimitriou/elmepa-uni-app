@@ -37,7 +37,7 @@ class ProfessorViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCli
         startShimmer()
 
         viewModelScope.launch(Dispatchers.IO) {
-            delay(1000)
+            delay(500)
 
             app.readLocalJsonList<Professor>("professors.json", data = { list ->
                 list?.let {

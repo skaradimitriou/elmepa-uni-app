@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.text.LineBreaker
 import android.os.Build
 import android.text.Editable
+import android.text.Html
 import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
@@ -26,6 +27,14 @@ import com.stathis.elmepaunivapp.model.professor.Professor
 import com.stathis.elmepaunivapp.ui.home.dashboard.DashboardViewModel
 import com.stathis.elmepaunivapp.ui.home.dashboard.model.DashboardOption
 import java.io.IOException
+
+fun String.toNonHtmlText(): String {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        Html.fromHtml(this,Html.FROM_HTML_MODE_LEGACY).toString()
+    } else {
+        Html.fromHtml(this).toString()
+    }
+}
 
 fun TextView.alignText() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
