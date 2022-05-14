@@ -37,10 +37,18 @@ const val STUD_FB_PG = "Σελίδα Φοιτητών"
 const val EDU_MAIL = "Edu E-mail Φοιτητή"
 const val STUDENTS_PLATFORM = "Σύστημα Φοιτητών"
 
+const val RESEARCH = "research"
+
 const val ABOUT_MOBILE_APP_URL = "https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/"
 
 const val EMAIL = "E-mail"
 const val TELEPHONE = "Τηλέφωνo"
+
+const val YOUTUBE = "Youtube"
+
+const val EMAIL_TYPE = "message/rfc822"
+const val SEND_MAIL = "Send mail..."
+const val NO_CLIENTS_INSTALLED = "There are no email clients installed."
 
 fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar{
     this.view.setBackgroundColor(colorInt)

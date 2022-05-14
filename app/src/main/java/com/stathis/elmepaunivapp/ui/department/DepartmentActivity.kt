@@ -13,10 +13,8 @@ import com.stathis.elmepaunivapp.ui.department.model.Programme
 import com.stathis.elmepaunivapp.ui.department.model.SocialChannel
 import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity
-import com.stathis.elmepaunivapp.util.setClickability
-import com.stathis.elmepaunivapp.util.setupBar
-import com.stathis.elmepaunivapp.util.showOrHide
-import com.stathis.elmepaunivapp.util.showSnack
+import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
+import com.stathis.elmepaunivapp.util.*
 
 class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.activity_department) {
 
@@ -39,17 +37,18 @@ class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.ac
 
         viewModel.bindCallbacks(object : DepartmentClickListener {
             override fun openCarouselItem(data: CarouselItem) {
-                when (data.imageResource) {
-                    resources.getString(R.string.virtual_tour) -> openUrl(data.url)
-                    resources.getString(R.string.research_img) -> goToResearch()
+                when (data.webTitle) {
+                    RESEARCH -> goToResearch()
+                    else -> openUrl(data.url, data.webTitle)
                 }
             }
+
             override fun openSocial(data: SocialChannel) = when (data.title) {
-                resources.getString(R.string.youtube) -> openYoutube(data.url)
-                else -> openUrl(data.url)
+                YOUTUBE -> openYoutube(data.url)
+                else -> openUrlInBrowser(data.url)
             }
 
-            override fun openProgrammes(data: Programme) = openUrl(data.url)
+            override fun openProgrammes(data: Programme) = openUrl(data.url, data.title)
         })
 
         observe()
@@ -58,7 +57,8 @@ class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.ac
     private fun observe() {
         viewModel.observe(this)
         viewModel.error.observe(this) { hasError ->
-            if(hasError) showSnack(binding.deptScreenParent,resources.getString(R.string.error_data))
+            if (hasError)
+                showSnack(binding.deptScreenParent, resources.getString(R.string.error_data))
         }
     }
 
@@ -93,23 +93,30 @@ class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.ac
 
     private fun callSecretary() {
         startActivity(Intent(Intent.ACTION_DIAL).apply {
-            data = Uri.parse(resources.getString(R.string.secretary_tel))
+            data = Uri.parse(SECRETARY_TEL)
         })
     }
 
     private fun sendMail() {
-        val i = Intent(Intent.ACTION_SEND).setType(resources.getString(R.string.email_type))
-            .putExtra(Intent.EXTRA_EMAIL, arrayOf(resources.getString(R.string.secretary_mail)))
+        val i = Intent(Intent.ACTION_SEND).setType(EMAIL_TYPE)
+            .putExtra(Intent.EXTRA_EMAIL, arrayOf(SECRETARY_MAIL))
 
         try {
-            startActivity(Intent.createChooser(i, resources.getString(R.string.sending_email)))
+            startActivity(Intent.createChooser(i, SEND_MAIL))
         } catch (ex: ActivityNotFoundException) {
-            showSnack(binding.deptScreenParent,resources.getString(R.string.no_clients_installed))
+            showSnack(binding.deptScreenParent, NO_CLIENTS_INSTALLED)
         }
     }
 
-    private fun openUrl(url: String) {
+    private fun openUrlInBrowser(url: String) {
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+    }
+
+    private fun openUrl(url: String, title: String? = null) {
+        startActivity(Intent(this, WebviewActivity::class.java).apply {
+            putExtra(URL, url)
+            putExtra(TITLE, title)
+        })
     }
 
     private fun goToResearch() {
@@ -119,7 +126,7 @@ class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.ac
     private fun openYoutube(url: String) {
         try {
             //goes to channel in youtube app
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.yt_app_link).format(url))))
+            startActivity(Intent( Intent.ACTION_VIEW, Uri.parse(getString(R.string.yt_app_link).format(url))))
         } catch (e: Exception) {
             //goes to channel in web view (opens browser)
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.yt_web_link).format(url))))

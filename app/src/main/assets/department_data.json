@@ -4,18 +4,21 @@
 			"imageResource" : "postgrad",
 			"url" : "https://mst.hmu.gr/metaptyxiako/metaptychiako-programma/",
 			"title" : "Πρόγραμμα  Μεταπτυχιακών Σπουδών  «Διοίκηση και Ψηφιακός Μετασχηματισμός",
+			"webTitle" : "Πρόγραμμα  Μεταπτυχιακών Σπουδών  «Διοίκηση και Ψηφιακός Μετασχηματισμός",
 			"position" : 1
 		},
 		{
 			"imageResource" : "virtual_tour",
 			"url" : "https://mst.hmu.gr/hmutour/",
 			"title" : "Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας",
+			"webTitle" : "Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας",
 			"position" : 2
 		},
 		{
 			"imageResource" : "research_img",
 			"url" : "",
 			"title" : "Έρευνα στο Τμήμα",
+			"webTitle" : "research",
 			"position" : 3
 		}
 	],
@@ -82,6 +85,9 @@
 		},{
 			"name" : "Γιάννης\n Φανουργιάκης",
 			"img" : "fanourgiakis_giannis"
+		},{
+			"name" : "Γιώργος Βασιλειάδης",
+			"img" : "gvasileiadis"
 		}
 	],
 	"links" : [
