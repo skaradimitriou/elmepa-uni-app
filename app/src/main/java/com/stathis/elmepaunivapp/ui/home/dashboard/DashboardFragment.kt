@@ -22,11 +22,11 @@ class DashboardFragment : ElmepaFragment<FragmentDashboardBinding>(R.layout.frag
 
     override fun startOps() {
         viewModel.addCallback {
-            val intent = when(it.drawable){
-                R.drawable.ic_announcement -> Intent(requireContext(), AnnouncementsActivity::class.java)
-                R.drawable.ic_books -> Intent(requireContext(), DepartmentActivity::class.java)
-                R.drawable.ic_student -> Intent(requireContext(), StudentActivity::class.java)
-                else ->Intent(requireContext(), ResearchActivity::class.java)
+            val intent = when(it.title){
+                getString(R.string.dashboard_announcements) -> Intent(requireContext(), AnnouncementsActivity::class.java)
+                getString(R.string.dashboard_department) -> Intent(requireContext(), DepartmentActivity::class.java)
+                getString(R.string.dashboard_students) -> Intent(requireContext(), StudentActivity::class.java)
+                else -> Intent(requireContext(), ResearchActivity::class.java)
             }
             startActivity(intent)
         }

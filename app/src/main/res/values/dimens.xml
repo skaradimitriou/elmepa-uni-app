@@ -4,6 +4,10 @@
     <dimen name="dimen_5">5dp</dimen>
     <dimen name="dimen_10">10dp</dimen>
     <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
+    <dimen name="dimen_50">50dp</dimen>
+    <dimen name="dimen_70">70dp</dimen>
+    <dimen name="dimen_100">100dp</dimen>
 
     <!-- Object sizes -->
     <dimen name="margin_3">3dp</dimen>
@@ -33,6 +37,7 @@
     <dimen name="height_140">140dp</dimen>
     <dimen name="height_200">200dp</dimen>
     <dimen name="height_210">210dp</dimen>
+    <dimen name="height_220">220dp</dimen>
     <dimen name="height_230">230dp</dimen>
     <dimen name="height_250">250dp</dimen>
 
@@ -43,12 +48,5 @@
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_20">20sp</dimen>
     <dimen name="image_50">50dp</dimen>
-    <dimen name="dimen_50">50dp</dimen>
-    <dimen name="height_230dp">230dp</dimen>
-    <dimen name="height_220">220dp</dimen>
-    <dimen name="dimen_70">70dp</dimen>
-    <dimen name="dimen_40">40dp</dimen>
-    <dimen name="dimen_100">100dp</dimen>
-
 
 </resources>

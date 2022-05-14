@@ -23,8 +23,8 @@ fun ImageView.loadImage(imageUrl : String){
 @BindingAdapter("setImgResource")
 fun setImage(img : ImageView, gender: String){
     when(gender){
-        img.context.resources.getString(R.string.male) -> img.setImageResource(R.drawable.male_professor)
-        img.context.resources.getString(R.string.female) -> img.setImageResource(R.drawable.female_professor)
+        img.context.resources.getString(R.string.male) -> img.setImageResource(R.drawable.male)
+        img.context.resources.getString(R.string.female) -> img.setImageResource(R.drawable.female)
     }
 }
 

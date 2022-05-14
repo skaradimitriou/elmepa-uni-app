@@ -12,6 +12,7 @@ import android.view.View
 import android.webkit.WebView
 import android.widget.EditText
 import android.widget.TextView
+import androidx.annotation.ColorInt
 import androidx.appcompat.app.ActionBar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -145,6 +146,11 @@ fun View.showOrHide(clicked : Boolean) {
 
 fun View.setClickability(clicked : Boolean) {
     this.isClickable = !clicked
+}
+
+fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar{
+    this.view.setBackgroundColor(colorInt)
+    return this
 }
 
 fun showSnack(view : View, msg : String) = Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()

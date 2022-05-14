@@ -25,10 +25,10 @@ class DashboardViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCli
 
     private fun bindData() {
         val list = listOf(
-            DashboardOption(getString(R.string.dashboard_announcements), R.drawable.ic_announcement),
-            DashboardOption(getString(R.string.dashboard_department), R.drawable.ic_books),
-            DashboardOption(getString(R.string.dashboard_students), R.drawable.ic_student),
-            DashboardOption(getString(R.string.research_recycler_title), R.drawable.research_img)
+            DashboardOption(getString(R.string.dashboard_announcements), R.drawable.home_announcements),
+            DashboardOption(getString(R.string.dashboard_department), R.drawable.home_department),
+            DashboardOption(getString(R.string.dashboard_students), R.drawable.home_students),
+            DashboardOption(getString(R.string.research_recycler_title), R.drawable.home_research)
         )
         adapter.submitList(list)
     }
