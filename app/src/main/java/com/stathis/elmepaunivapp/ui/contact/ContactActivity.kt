@@ -9,9 +9,7 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.ContactClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityContactBinding
 import com.stathis.elmepaunivapp.ui.contact.model.ContactItem
-import com.stathis.elmepaunivapp.util.EMAIL
-import com.stathis.elmepaunivapp.util.TELEPHONE
-import com.stathis.elmepaunivapp.util.setupBar
+import com.stathis.elmepaunivapp.util.*
 
 class ContactActivity : ElmepaActivity<ActivityContactBinding>(R.layout.activity_contact) {
 
@@ -39,11 +37,11 @@ class ContactActivity : ElmepaActivity<ActivityContactBinding>(R.layout.activity
     }
 
     private fun sendMail() {
-        val i = Intent(Intent.ACTION_SEND).setType(resources.getString(R.string.email_type))
-            .putExtra(Intent.EXTRA_EMAIL, arrayOf(resources.getString(R.string.secretary_mail)))
+        val i = Intent(Intent.ACTION_SEND).setType(EMAIL_TYPE)
+            .putExtra(Intent.EXTRA_EMAIL, arrayOf(SECRETARY_MAIL))
 
         try {
-            startActivity(Intent.createChooser(i, resources.getString(R.string.sending_email)))
+            startActivity(Intent.createChooser(i, SEND_MAIL))
         } catch (ex: ActivityNotFoundException) {
             //
         }
@@ -51,7 +49,7 @@ class ContactActivity : ElmepaActivity<ActivityContactBinding>(R.layout.activity
 
     private fun callOffice() {
         startActivity(Intent(Intent.ACTION_DIAL).apply {
-            data = Uri.parse(resources.getString(R.string.secretary_tel))
+            data = Uri.parse(SECRETARY_TEL)
         })
     }
 

@@ -10,8 +10,7 @@ import com.stathis.elmepaunivapp.abstraction.ElmepaFragment
 import com.stathis.elmepaunivapp.callbacks.ProfessorScreenClickListener
 import com.stathis.elmepaunivapp.databinding.FragmentProfessorsBinding
 import com.stathis.elmepaunivapp.model.professor.Professor
-import com.stathis.elmepaunivapp.util.afterTextChanged
-import com.stathis.elmepaunivapp.util.stopRefresh
+import com.stathis.elmepaunivapp.util.*
 
 class ProfessorFragment : ElmepaFragment<FragmentProfessorsBinding>(R.layout.fragment_professors) {
 
@@ -46,22 +45,12 @@ class ProfessorFragment : ElmepaFragment<FragmentProfessorsBinding>(R.layout.fra
         MaterialAlertDialogBuilder(requireContext()).also {
             it.setTitle(getString(R.string.dialog_new_email))
             when (professor.gender) {
-                resources.getString(R.string.male) -> it.setMessage(
-                    getString(R.string.send_email_to_male_professor).format(
-                        professor.vocative
-                    )
-                )
-                resources.getString(R.string.female) -> it.setMessage(
-                    getString(R.string.send_email_to_female_professor).format(
-                        professor.vocative
-                    )
-                )
+                resources.getString(R.string.male) -> it.setMessage(getString(R.string.send_email_to_male_professor).format(professor.vocative))
+                resources.getString(R.string.female) -> it.setMessage(getString(R.string.send_email_to_female_professor).format(professor.vocative))
             }
 
             it.setPositiveButton(getString(R.string.dialog_yes)) { dialog, which ->
-                sendEmail(
-                    professor
-                )
+                sendEmail(professor)
             }
             it.setNegativeButton(getString(R.string.dialog_cancel)) { dialog, which -> dialog.dismiss() }
         }.show()
@@ -69,17 +58,13 @@ class ProfessorFragment : ElmepaFragment<FragmentProfessorsBinding>(R.layout.fra
 
     private fun sendEmail(professor: Professor) {
         val i = Intent(Intent.ACTION_SEND)
-            .setType(getString(R.string.email_type))
+            .setType(EMAIL_TYPE)
             .putExtra(Intent.EXTRA_EMAIL, arrayOf(professor.email))
 
         try {
-            startActivity(Intent.createChooser(i, getString(R.string.sending_email)))
+            startActivity(Intent.createChooser(i, SEND_MAIL))
         } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(
-                requireContext(),
-                getString(R.string.no_clients_installed),
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(requireContext(), NO_CLIENTS_INSTALLED, Toast.LENGTH_SHORT).show()
         }
     }
 

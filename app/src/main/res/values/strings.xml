@@ -13,13 +13,13 @@
     <!-- Dashboard Activity -->
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
     <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>
-    <string name="url_tag">URL</string>
-    <string name="learn_more_url">https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/</string>
 
     <string name="dashboard_announcements">Ανακοινώσεις</string>
     <string name="dashboard_department">Το Τμήμα</string>
     <string name="dashboard_students">Φοιτητές</string>
     <string name="dashboard_professors">Καθηγητές</string>
+
+    <!-- About Activity -->
 
     <string name="about_app_text">Η εφαρμογή αυτή αναπτύχθηκε το 2020 από τον απόφοιτο του Τμήματος Στάθη  Καραδημητρίου με την επίβλεψη του Κώστα Παναγιωτάκη, Αναπληρωτή Καθηγητή και Προέδρου του Τμήματος με σκοπό την εξυπηρέτηση των μελών του Τμήματος και την προώθηση του τμήματος σε υποψήφιους φοιτητές. Αποτελεί την επόμενη έκδοση της εφαρμογής κινητών που είχε αναπτυχθεί στα πλαίσια της πτυχιακής εργασίας των φοιτητών του τμήματος Πελοπίδα Κεφαλιανού και Μαρίας Λαγουδάκη το 2017.</string>
     <string name="about_app_data">Η εφαρμογή χρησιμοποιεί δεδομένα σε μορφή rss απο το official site της σχολής (https://mst.hmu.gr/) Τα δεδομένα αυτά ανήκουν στο ΕΛΜΕΠΑ (Τμήμα ΔΕΤ - Άγιος Νικόλαος).</string>
@@ -58,9 +58,6 @@
 
     <string name="error_data">Παρουσιάστηκε κάποιο σφάλμα</string>
 
-    <string name="secretary_tel">tel:2841091103</string>
-    <string name="secretary_mail">kalarhaki@hmu.gr</string>
-
     <string name="yt_app_link">vnd.youtube.com/channel/%1$s</string>
     <string name="yt_web_link">https://www.youtube.com/channel/%1$s</string>
 
@@ -70,28 +67,11 @@
     <string name="student_schedule_btn">Μάθε Περισσότερα</string>
     <string name="student_syllabus">Πρόγραμμα Σπουδών</string>
     <string name="student_useful_links">Χρήσιμοι Σύνδεσμοι</string>
-    <string name="userTabChoice">userTabChoice</string>
 
     <!-- Research in Dept Activity -->
     <string name="research_title">Έρευνα</string>
     <string name="research_recycler_title">Έρευνα στο Τμήμα</string>
     <string name="syllabus_intent_data">SEMESTER</string>
-
-    <!-- Chatbot Activity -->
-    <string name="elmepaChatBotHeader">ΕΛΜΕΠΑ Chatbot</string>
-    <string name="chatBotDescription">Το ChatBot υποστηρίζει τις ακόλουθες ερωτήσεις: Τηλέφωνο Γραμματείας, Πρόγραμμα Σπουδών, Ωρολόγιο Πρόγραμμα, Email Γραμματείας, Καθηγητές, Εικονική Περιήγηση, Ανακοινώσεις</string>
-    <string name="chatBotMessageTxt">Πώς μπορώ να σε βοηθήσω;</string>
-    <string name="answer_txt">Πώς μπορώ να σε βοηθήσω;</string>
-    <string name="chatbot_announcements">Κάνε tap για να δεις τις ανακοινώσεις του Τμήματος!</string>
-    <string name="chatbot_syllabus">Κάνε tap για να δείς το πρόγραμμα σπουδών!</string>
-    <string name="chatbot_schedule">Κάνε tap για να δείς το πρόγραμμα των μαθημάτων!</string>
-    <string name="chatbot_call_secretary">Κάνε tap για να καλέσω την Γραμματεία του Τμήματος!</string>
-    <string name="chatbot_email_secretary">Κάνε tap για να στείλεις e-mail στην Γραμματεία!</string>
-    <string name="chatbot_virtual_tour">Κάνε tap για να δείς την εικονική περιήγηση!</string>
-    <string name="chatbot_hello">Γεία σου και εσένα!</string>
-    <string name="chatbot_you_re_welcome">Παρακαλώ!</string>
-    <string name="chatbot_dont_know_yet">Δεν γνωρίζω την απάντηση ακόμα</string>
-    <string name="chatbot_search_professor">Κάνε tap για να αναζητήσεις έναν καθηγητή του Τμήματος!</string>
 
     <!-- Syllabus Activity -->
     <string name="syllabus_tab_one">Επιστήμη των \nΔεδομένων &amp; Τεχνολογίες\n Πληροφορικής</string>
@@ -111,7 +91,6 @@
 
     <!-- Virtual Tour Activity -->
     <string name="virtual_tour_txt">Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας</string>
-
 
     <!-- No Internet Activity -->
     <string name="no_internet">Δεν υπάρχει σύνδεση στο Internet</string>

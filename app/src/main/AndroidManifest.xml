@@ -24,9 +24,6 @@
         <activity
             android:name=".ui.about.AboutActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="false" />
         <activity android:name=".ui.lessons.LessonsActivity" />
         <activity android:name=".ui.webview.WebviewActivity" />
         <activity android:name=".ui.research.ResearchActivity" />
