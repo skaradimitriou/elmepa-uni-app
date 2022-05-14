@@ -7,6 +7,7 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="grey">#88888888</color>
+    <color name="grey_darker">#aaaaaa</color>
     <color name="dark_grey">#3D3F43</color>
     <color name="grey_bg">#F0F0F0</color>
     <color name="blue_petrol">#296f89</color>
@@ -16,6 +17,8 @@
     <color name="light_blue">#3d8bcb</color>
     <color name="lesson_blue">#417ba3</color>
     <color name="lesson_green">#2a8c3f</color>
+
+    <color name="elmepa_blue">#007aff</color>
 
     <color name="dark_blue">#222C54</color>
     <color name="info_header_bg">#c6d2f6</color>

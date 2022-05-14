@@ -4,31 +4,35 @@
 			"imageResource" : "calendar",
 			"url" : "https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/",
 			"title" : "Κάνε tap για να δεις \nτο Ωρολόγιο Πρόγραμμα",
+			"webTitle" : "Ωρολόγιο Πρόγραμμα",
 			"position" : 1
 		},
 		{
 			"imageResource" : "acadschedule",
 			"url" : "https://mst.hmu.gr/proptyxiako/akadhmaiko-hmerologio/",
 			"title" : "Ακαδημαϊκό Ημερολόγιο",
+			"webTitle" : "Ακαδημαϊκό Ημερολόγιο",
 			"position" : 2
 		},
 		{
 			"imageResource" : "mentor",
 			"url" : "https://mst.hmu.gr/proptyxiako/symboylos-kathhghths/",
 			"title" : "Σύμβουλος Καθηγητής",
+			"webTitle" : "Σύμβουλος Καθηγητής",
 			"position" : 3
 		},{
 			"imageResource" : "erasmus",
 			"url" : "https://mst.hmu.gr/proptyxiako/programma-erasmus-dia-bioy-mathhsh/",
 			"title" : "Πρόγραμμα Erasmus+",
+			"webTitle" : "Πρόγραμμα Erasmus+",
 			"position" : 4
 		}
 	],
 	"links" : [
 		{
-			"imageResource" : "eudoxus",
+			"imageResource" : "secretariat",
 			"title" : "Ηλεκτρονική Γραμματεία",
-			"url" : "https://submit-academicid.minedu.gov.gr/"
+			"url" : "https://secretariat.hmu.gr/auth/login.html"
 		},
 		{
 			"imageResource" : "student_card",
@@ -70,7 +74,7 @@
 		},{
 			"imageResource" : "ktel",
 			"title" : "Κ.Τ.Ε.Λ Ηρακλείου - Λασιθίου",
-			"url" : "https://mst.hmu.gr/news_gr/"
+			"url" : "https://www.ktelherlas.gr/"
 		},{
 			"imageResource" : "app",
 			"title" : "Εφαρμογή Εξάπλωσης Covid-19",

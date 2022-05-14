@@ -29,6 +29,17 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/ann_when"
+                    style="@style/text_18_bold_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_16"
+                    android:background="@drawable/round_corners"
+                    android:backgroundTint="@color/shimmer_grey_lighter"
+                    app:layout_constraintTop_toBottomOf="@id/ann_img"
+                    tools:text="@string/announcement_title" />
+
+                <TextView
                     android:id="@+id/ann_txt"
                     style="@style/text_18_bold_black"
                     android:layout_width="match_parent"
@@ -37,7 +48,7 @@
                     android:background="@drawable/round_corners"
                     android:backgroundTint="@color/shimmer_grey_lighter"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ann_img"
+                    app:layout_constraintTop_toBottomOf="@id/ann_when"
                     tools:text="@string/announcement_title" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

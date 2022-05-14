@@ -17,6 +17,9 @@ data class Announcement(
     @ColumnInfo(name = "url")
     val url : String,
 
+    @ColumnInfo(name = "pubDate")
+    val pubDate : String,
+
     @ColumnInfo(name = "imageResource")
     val imageResource : String
 

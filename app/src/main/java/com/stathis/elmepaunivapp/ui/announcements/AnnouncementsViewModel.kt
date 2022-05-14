@@ -10,7 +10,7 @@ import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
-import com.stathis.elmepaunivapp.database.AnnouncementsDatabaseKt
+import com.stathis.elmepaunivapp.database.AnnouncementsDatabase
 import com.stathis.elmepaunivapp.model.Announcement
 import com.stathis.elmepaunivapp.ui.announcements.adapter.AnnouncementsAdapter
 import com.stathis.elmepaunivapp.util.*
@@ -24,7 +24,7 @@ class AnnouncementsViewModel(app: Application) : ElmepaViewModel(app), ElmepaCli
     val adapter = AnnouncementsAdapter(this)
     val announcements = MutableLiveData<List<Announcement>>()
     val error = MutableLiveData<Boolean>()
-    val database = AnnouncementsDatabaseKt.getDatabase(app).announcementDao()
+    val database = AnnouncementsDatabase.getDatabase(app).announcementDao()
     private val prefHelper = SharedPreferencesHelper.setHelper(app)
     private val refreshTime = 5 * 60 * 1000 * 1000 * 1000L
 
@@ -85,8 +85,9 @@ class AnnouncementsViewModel(app: Application) : ElmepaViewModel(app), ElmepaCli
             for (i in 0..12) {
                 val imgUrl = doc.select(IMG_HTML_TAG).select(IMG_TYPE).eq(i).attr(IMG_SOURCE)
                 val title = doc.select(TITLE_HTML_TAG).select(TITLE_TYPE).eq(i).text()
+                val pubDate = doc.select(PARAGRAPH_HTML_TAG).select(PARAGRAPH_TYPE).eq(i).text()
                 val detailUrl = doc.select(URL_HTML_TAG).select(URL_TYPE).eq(i).attr(URL_ATTR)
-                announcementList.add(Announcement(title, detailUrl, imgUrl))
+                announcementList.add(Announcement(title, detailUrl, pubDate, imgUrl))
             }
 
             announcements.postValue(announcementList)

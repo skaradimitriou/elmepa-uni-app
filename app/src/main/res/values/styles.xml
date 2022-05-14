@@ -94,4 +94,10 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="text_14_bold_grey" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/grey_darker</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

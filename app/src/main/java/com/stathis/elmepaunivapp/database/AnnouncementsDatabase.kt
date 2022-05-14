@@ -6,24 +6,24 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.stathis.elmepaunivapp.model.Announcement
 
-@Database(entities = [Announcement::class] , version = 1, exportSchema = false)
-abstract class AnnouncementsDatabaseKt : RoomDatabase() {
+@Database(entities = [Announcement::class] , version = 2, exportSchema = false)
+abstract class AnnouncementsDatabase : RoomDatabase() {
 
-    abstract fun announcementDao(): AnnouncementsDaoKt
+    abstract fun announcementDao(): AnnouncementsDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the
         // same time.
         @Volatile
-        private var INSTANCE: AnnouncementsDatabaseKt? = null
+        private var INSTANCE: AnnouncementsDatabase? = null
 
-        fun getDatabase(context: Context): AnnouncementsDatabaseKt {
+        fun getDatabase(context: Context): AnnouncementsDatabase {
             // if the INSTANCE is not null, then return it,
             // if it is, then create the database
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    AnnouncementsDatabaseKt::class.java,
+                    AnnouncementsDatabase::class.java,
                     "announcements_database"
                 ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance

@@ -57,6 +57,11 @@ fun TextView.setText(text: String) {
     this.text = text.toNonHtmlText()
 }
 
+@BindingAdapter("setPubDate")
+fun TextView.setPubDate(text: String) {
+    this.text = text.substringBefore('|')
+}
+
 /**
  * Others
  */

@@ -5,7 +5,7 @@ import com.stathis.elmepaunivapp.model.Announcement
 import java.util.*
 
 @Dao
-interface AnnouncementsDaoKt {
+interface AnnouncementsDao {
 
     @Query("SELECT * FROM Announcements")
     fun getAll(): List<Announcement>

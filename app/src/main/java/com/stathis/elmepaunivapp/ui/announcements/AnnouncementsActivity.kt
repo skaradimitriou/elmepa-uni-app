@@ -36,11 +36,7 @@ class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.lay
 
         viewModel.error.observe(this) {
             when (it) {
-                true -> Snackbar.make(
-                    findViewById(R.id.announcements_parent),
-                    resources.getString(R.string.announcements_get_error),
-                    Snackbar.LENGTH_LONG
-                ).show()
+                true -> showSnack(findViewById(R.id.announcements_parent), resources.getString(R.string.announcements_get_error))
                 false -> Unit
             }
         }
