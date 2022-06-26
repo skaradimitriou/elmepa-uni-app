@@ -29,7 +29,8 @@ Model - View - ViewModel (MVVM)
 ## Technologies Used
 - Navigation Component <br/>
 - Kotlin Coroutines <br/>
-- Data Binding
+- Data Binding <br/>
+- Kotlin extension functions
 
 ### Theme 
 
@@ -37,7 +38,9 @@ Model - View - ViewModel (MVVM)
 
 ### Libraries
 
-[Picasso](https://square.github.io/picasso/) <br/> 
-[JSOUP](https://jsoup.org/) <br/>
 [Room](https://developer.android.com/topic/libraries/architecture/room) Local Database <br/>
-[Merlin](https://github.com/novoda/merlin) Simple Network Monitoring
+[Glide](https://github.com/bumptech/glide) <br/>
+[JSOUP](https://jsoup.org/) <br/>
+[Merlin](https://github.com/novoda/merlin) Network Monitoring <br/>
+[Shimmer](https://github.com/facebook/shimmer-android) <br/>
+[Gson](https://github.com/google/gson)
