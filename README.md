@@ -39,8 +39,8 @@ Model - View - ViewModel (MVVM)
 ### Libraries
 
 [Room](https://developer.android.com/topic/libraries/architecture/room) Local Database <br/>
-[Glide](https://github.com/bumptech/glide) <br/>
-[JSOUP](https://jsoup.org/) <br/>
+[Glide](https://github.com/bumptech/glide) for image loading<br/>
+[JSOUP](https://jsoup.org/) for html parser<br/>
 [Merlin](https://github.com/novoda/merlin) Network Monitoring <br/>
-[Shimmer](https://github.com/facebook/shimmer-android) <br/>
-[Gson](https://github.com/google/gson)
+[Shimmer](https://github.com/facebook/shimmer-android) for lazy loading <br/>
+[Gson](https://github.com/google/gson) for serialization/deserialization
