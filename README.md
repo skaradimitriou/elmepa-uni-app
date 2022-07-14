@@ -1,4 +1,4 @@
-# Elmepa University App
+# Mobile Εφαρμογή Τμήματος ΔΕΤ, ΕΛΜΕΠΑ
 
 ![ELMEPA University App](https://user-images.githubusercontent.com/64270931/98338632-227cbe00-2013-11eb-8283-9ff5ade07f5c.png)
 
@@ -8,7 +8,7 @@ This app is live at [Google Play](https://play.google.com/store/apps/details?id=
 
 ## Main Goal
 
-This app was developed for ELMEPA University (Agios Nikolaos) in Crete, so users can gain:<br/>
+This app was developed for [ELMEPA University](https://mst.hmu.gr/) (Agios Nikolaos) in Crete, so users can gain:<br/>
 a) useful student information about the department of Management Science & Technology <br/>
 b) look up their professor's e-mail and send them e-mails from the app <br/>
 c) get new announcements of the department
