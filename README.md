@@ -9,6 +9,21 @@ Read more about the app [HERE](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmh
 
 ## Main Goal
 
+The project will be refactored soon. 🚧
+
+Future tech stack:
+- Multi-module mobile application
+- Single Activity multiple Fragments approach
+- MVVM Clean Architecture
+- Kotlin
+- Hilt
+- Navigation Component
+- DataBinding
+- Kotlin Flows for async ops
+- Room
+- Glide
+- Merlin for network state
+
 This app was developed for [ELMEPA University](https://mst.hmu.gr/) (Agios Nikolaos) in Crete, so users can gain:<br/>
 a) useful student information about the department of Management Science & Technology <br/>
 b) look up their professor's e-mail and send them e-mails from the app <br/>
