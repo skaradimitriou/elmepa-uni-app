@@ -7,11 +7,11 @@ This app is live at [Google Play](https://play.google.com/store/apps/details?id=
 Read more about the app [HERE](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) <br/>
 🧍 Users: 140
 
-## Main Goal
+## Future Implementations
 
 The project will be refactored soon. 🚧
 
-Future tech stack:
+Future Tech Stack:
 - Multi-module mobile application
 - Single Activity multiple Fragments approach
 - MVVM Clean Architecture
@@ -23,6 +23,9 @@ Future tech stack:
 - Room
 - Glide
 - Merlin for network state
+- Firebase Firestore as a BackEnd server
+
+## Main Goal
 
 This app was developed for [ELMEPA University](https://mst.hmu.gr/) (Agios Nikolaos) in Crete, so users can gain:<br/>
 a) useful student information about the department of Management Science & Technology <br/>
