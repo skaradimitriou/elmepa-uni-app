@@ -22,3 +22,8 @@ dependencyResolutionManagement{
 
 rootProject.name = "ElmepaUniApp"
 include (":app")
+include(":data")
+include(":domain")
+include(":core")
+include(":model")
+include(":feature")
