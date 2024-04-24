@@ -26,7 +26,7 @@ class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home)
     private lateinit var navController: NavController
 
     override fun init() {
-        navController = findNavController(R.id.nav_host_fragment)
+        //navController = findNavController(R.id.nav_host_fragment)
 
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
 
@@ -36,15 +36,15 @@ class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home)
     }
 
     override fun startOps() {
-        val cameFromWidget = intent.getBooleanExtra(resources.getString(R.string.widget_professor_intent), false)
-
-        when (cameFromWidget) {
-            true -> navController.navigate(R.id.nav_search)
-            else -> Unit
-        }
-
-        binding.bottomNavigationMenu.setupWithNavController(navController)
-        binding.drawerMenu.setNavigationItemSelectedListener(this)
+//        val cameFromWidget = intent.getBooleanExtra(resources.getString(R.string.widget_professor_intent), false)
+//
+//        when (cameFromWidget) {
+//            true -> navController.navigate(R.id.nav_search)
+//            else -> Unit
+//        }
+//
+//        binding.bottomNavigationMenu.setupWithNavController(navController)
+//        binding.drawerMenu.setNavigationItemSelectedListener(this)
     }
 
     override fun stopOps() {}
