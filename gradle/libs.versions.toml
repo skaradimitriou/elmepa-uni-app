@@ -1,0 +1,84 @@
+[versions]
+agp = "8.3.2"
+kotlin = "1.9.0"
+coreKtx = "1.13.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.11.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+
+lifecycle = "2.7.0"
+navigation = "2.7.7"
+coroutines = "1.7.3"
+retrofit = "2.9.0"
+hiltVersion = "2.48.1"
+okhttp = "4.10.0"
+timber = "5.0.1"
+swipeToRefresh = "1.1.0"
+
+#Old dependencies
+shimmer = "0.5.0"
+jsoup = "1.10.3"
+circleImgView = "3.1.0"
+glide = "4.16.0"
+room = "2.6.1"
+gson = "2.10.1"
+preference = "1.2.1"
+merlin = "1.2.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+fragment-navigation = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+ui-navigation = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+
+viewModelLifecycle = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+liveDataLifecycle = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "lifecycle" }
+
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+okhttp-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
+
+swipeToRefresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipeToRefresh" }
+
+
+#OLD DEPENDENCIES
+shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
+jsoup = { group = "org.jsoup", name = "jsoup", version.ref = "jsoup" }
+
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+circleImgView = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImgView" }
+
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preference" }
+merlin = { group = "com.novoda", name = "merlin", version.ref = "merlin" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }

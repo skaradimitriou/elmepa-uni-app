@@ -22,7 +22,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.novoda.merlin.Merlin
 import com.stathis.elmepaunivapp.callbacks.DashboardClickListener
 import com.stathis.elmepaunivapp.model.professor.Professor
 import com.stathis.elmepaunivapp.ui.home.dashboard.DashboardViewModel
@@ -131,10 +130,10 @@ fun ActionBar.setupBar(title: String) {
     this.title = title
 }
 
-fun Merlin.Builder.construct(context: Context): Merlin = this.withConnectableCallbacks()
-    .withDisconnectableCallbacks()
-    .withBindableCallbacks()
-    .build(context)
+//fun Merlin.Builder.construct(context: Context): Merlin = this.withConnectableCallbacks()
+//    .withDisconnectableCallbacks()
+//    .withBindableCallbacks()
+//    .build(context)
 
 fun WebView.enableJS() {
     this.settings.javaScriptEnabled = true

@@ -100,6 +100,7 @@ fun setScrollableViewPager(viewPager : ViewPager2, adapter : CarouselAdapter){
         override fun onPageScrollStateChanged(state: Int) {
             when (state == ViewPager2.SCROLL_STATE_IDLE) {
                 true -> sliderHandler.postDelayed(sliderRunnable, 2500)
+                else -> Unit
             }
         }
     })
