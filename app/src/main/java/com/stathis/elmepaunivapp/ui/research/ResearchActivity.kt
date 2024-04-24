@@ -11,7 +11,6 @@ import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import com.stathis.elmepaunivapp.util.TITLE
 import com.stathis.elmepaunivapp.util.URL
 import com.stathis.elmepaunivapp.util.setupBar
-import kotlinx.android.synthetic.main.activity_research_in_dept.*
 
 class ResearchActivity : ElmepaActivity<ActivityResearchInDeptBinding>(R.layout.activity_research_in_dept) {
 

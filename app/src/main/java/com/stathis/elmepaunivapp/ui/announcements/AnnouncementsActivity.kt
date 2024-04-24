@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
-import com.novoda.merlin.*
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.AnnouncementClickListener
@@ -14,16 +13,16 @@ import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
 import com.stathis.elmepaunivapp.util.*
 
 class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.layout.activity_announcements),
-    AnnouncementClickListener, Connectable, Disconnectable, Bindable {
+    AnnouncementClickListener{
 
     private val viewModel: AnnouncementsViewModel by viewModels()
-    private lateinit var merlin: Merlin
+    //private lateinit var merlin: Merlin
 
     override fun init() {
         supportActionBar?.setupBar(getString(R.string.announcement_header))
         binding.viewModel = viewModel
 
-        setupMerlin()
+        //setupMerlin()
     }
 
     override fun startOps() {
@@ -60,34 +59,34 @@ class AnnouncementsActivity : ElmepaActivity<ActivityAnnouncementsBinding>(R.lay
         return true
     }
 
-    private fun setupMerlin() {
-        merlin = Merlin.Builder().construct(this)
+//    private fun setupMerlin() {
+//        merlin = Merlin.Builder().construct(this)
+//
+//        merlin.registerConnectable(this)
+//        merlin.registerDisconnectable(this)
+//        merlin.registerBindable(this)
+//        merlin.bind()
+//    }
 
-        merlin.registerConnectable(this)
-        merlin.registerDisconnectable(this)
-        merlin.registerBindable(this)
-        merlin.bind()
-    }
+//    override fun onConnect() = viewModel.refreshData()
+//
+//    override fun onDisconnect() {
+//        Snackbar.make(
+//            binding.announcementsParent,
+//            resources.getString(R.string.no_internet),
+//            Snackbar.LENGTH_LONG
+//        )
+//            .withColor(ContextCompat.getColor(this, R.color.orange))
+//            .show()
+//    }
 
-    override fun onConnect() = viewModel.refreshData()
-
-    override fun onDisconnect() {
-        Snackbar.make(
-            binding.announcementsParent,
-            resources.getString(R.string.no_internet),
-            Snackbar.LENGTH_LONG
-        )
-            .withColor(ContextCompat.getColor(this, R.color.orange))
-            .show()
-    }
-
-    override fun onBind(networkStatus: NetworkStatus?) = when (networkStatus?.isAvailable) {
-        true -> onConnect()
-        else -> onDisconnect()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        merlin.unbind()
-    }
+//    override fun onBind(networkStatus: NetworkStatus?) = when (networkStatus?.isAvailable) {
+//        true -> onConnect()
+//        else -> onDisconnect()
+//    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        merlin.unbind()
+//    }
 }
