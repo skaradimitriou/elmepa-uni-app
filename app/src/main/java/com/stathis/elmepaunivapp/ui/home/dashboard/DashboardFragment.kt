@@ -16,20 +16,20 @@ class DashboardFragment : ElmepaFragment<FragmentDashboardBinding>(R.layout.frag
     private val viewModel : DashboardViewModel by viewModels()
 
     override fun init() {
-        activity?.title = getString(R.string.main_screen_title)
-        binding.viewModel = viewModel
+//        activity?.title = getString(R.string.main_screen_title)
+//        binding.viewModel = viewModel
     }
 
     override fun startOps() {
-        viewModel.addCallback {
-            val intent = when(it.title){
-                getString(R.string.dashboard_announcements) -> Intent(requireContext(), AnnouncementsActivity::class.java)
-                getString(R.string.dashboard_department) -> Intent(requireContext(), DepartmentActivity::class.java)
-                getString(R.string.dashboard_students) -> Intent(requireContext(), StudentActivity::class.java)
-                else -> Intent(requireContext(), ResearchActivity::class.java)
-            }
-            startActivity(intent)
-        }
+//        viewModel.addCallback {
+//            val intent = when(it.title){
+//                getString(R.string.dashboard_announcements) -> Intent(requireContext(), AnnouncementsActivity::class.java)
+//                getString(R.string.dashboard_department) -> Intent(requireContext(), DepartmentActivity::class.java)
+//                getString(R.string.dashboard_students) -> Intent(requireContext(), StudentActivity::class.java)
+//                else -> Intent(requireContext(), ResearchActivity::class.java)
+//            }
+//            startActivity(intent)
+//        }
     }
 
     override fun stopOps(){}

@@ -16,29 +16,30 @@ import com.stathis.elmepaunivapp.ui.students.recycler.CarouselAdapter
  */
 
 @BindingAdapter("loadImageUrl")
-fun ImageView.loadImage(imageUrl : String){
+fun ImageView.loadImage(imageUrl: String) {
     Glide.with(this.context).load(imageUrl).placeholder(R.color.shimmer_grey_lighter).into(this)
 }
 
 @BindingAdapter("setImgResource")
-fun setImage(img : ImageView, gender: String){
-    when(gender){
+fun setImage(img: ImageView, gender: String) {
+    when (gender) {
         img.context.resources.getString(R.string.male) -> img.setImageResource(R.drawable.male)
         img.context.resources.getString(R.string.female) -> img.setImageResource(R.drawable.female)
     }
 }
 
 @BindingAdapter("setImageSrc")
-fun ImageView.setImageSrc(drawable: Int){
+fun ImageView.setImageSrc(drawable: Int) {
     this.setImageResource(drawable)
 }
 
 @BindingAdapter("loadLocalPhoto")
-fun ImageView.loadLocalPhoto(photo: String){
+fun ImageView.loadLocalPhoto(photo: String) {
     try {
-        val myImage = this.context.resources.getIdentifier(photo, "drawable", "com.stathis.elmepaunivapp")
+        val myImage =
+            this.context.resources.getIdentifier(photo, "drawable", "com.stathis.elmepaunivapp")
         this.setImageResource(myImage)
-    }catch (e : Exception){
+    } catch (e: Exception) {
         this.setImageResource(R.mipmap.ic_launcher)
     }
 }
@@ -48,8 +49,8 @@ fun ImageView.loadLocalPhoto(photo: String){
  */
 
 @BindingAdapter("underline")
-fun TextView.underline(underlined : Boolean) {
-    if(underlined) this.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+fun TextView.underline(underlined: Boolean) {
+    if (underlined) this.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 }
 
 @BindingAdapter("setHtmlText")
@@ -67,8 +68,8 @@ fun TextView.setPubDate(text: String) {
  */
 
 @BindingAdapter("setRibbonColor")
-fun View.setRibbonColor(type : Boolean){
-    when(type){
+fun View.setRibbonColor(type: Boolean) {
+    when (type) {
         true -> this.setBackgroundResource(R.color.lesson_blue)
         false -> this.setBackgroundResource(R.color.dark_orange)
     }
@@ -80,7 +81,7 @@ fun View.setRibbonColor(type : Boolean){
  */
 
 @BindingAdapter("setScrollableViewPager")
-fun setScrollableViewPager(viewPager : ViewPager2, adapter : CarouselAdapter){
+fun setScrollableViewPager(viewPager: ViewPager2, adapter: CarouselAdapter) {
     val sliderHandler = Handler()
 
     val sliderRunnable = Runnable {

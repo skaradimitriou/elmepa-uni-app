@@ -1,7 +1,6 @@
 package com.stathis.elmepaunivapp.util
 
 import android.app.Application
-import android.content.Context
 import android.graphics.text.LineBreaker
 import android.os.Build
 import android.text.Editable
@@ -30,7 +29,7 @@ import java.io.IOException
 
 fun String.toNonHtmlText(): String {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-        Html.fromHtml(this,Html.FROM_HTML_MODE_LEGACY).toString()
+        Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY).toString()
     } else {
         Html.fromHtml(this).toString()
     }
@@ -139,23 +138,23 @@ fun WebView.enableJS() {
     this.settings.javaScriptEnabled = true
 }
 
-fun View.showOrHide(clicked : Boolean) {
+fun View.showOrHide(clicked: Boolean) {
     if (clicked) this.visibility = View.INVISIBLE else this.visibility = View.VISIBLE
 }
 
-fun View.setClickability(clicked : Boolean) {
+fun View.setClickability(clicked: Boolean) {
     this.isClickable = !clicked
 }
 
-fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar{
+fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar {
     this.view.setBackgroundColor(colorInt)
     return this
 }
 
-fun showSnack(view : View, msg : String) = Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
+fun showSnack(view: View, msg: String) = Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
 
-fun DashboardViewModel.addCallback(item : (DashboardOption) -> Unit){
-    this.addCallback(object : DashboardClickListener{
+fun DashboardViewModel.addCallback(item: (DashboardOption) -> Unit) {
+    this.addCallback(object : DashboardClickListener {
         override fun dashboardItemClicked(option: DashboardOption) {
             item.invoke(option)
         }

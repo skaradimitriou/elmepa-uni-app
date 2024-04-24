@@ -32,6 +32,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildTypes {
+        viewBinding.enable = true
+        dataBinding.enable = true
+    }
 }
 
 dependencies {
@@ -47,6 +52,11 @@ dependencies {
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    implementation(libs.fragment.navigation)
+    implementation(libs.ui.navigation)
+
+    implementation(libs.timber)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
