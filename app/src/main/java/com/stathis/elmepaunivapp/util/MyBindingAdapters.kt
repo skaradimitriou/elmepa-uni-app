@@ -17,7 +17,9 @@ import com.stathis.elmepaunivapp.ui.students.recycler.CarouselAdapter
 
 @BindingAdapter("loadImageUrl")
 fun ImageView.loadImage(imageUrl: String) {
-    Glide.with(this.context).load(imageUrl).placeholder(R.color.shimmer_grey_lighter).into(this)
+    Glide.with(this.context).load(imageUrl)
+        .placeholder(com.stathis.core.R.color.shimmer_grey_lighter)
+        .into(this)
 }
 
 @BindingAdapter("setImgResource")
@@ -70,8 +72,8 @@ fun TextView.setPubDate(text: String) {
 @BindingAdapter("setRibbonColor")
 fun View.setRibbonColor(type: Boolean) {
     when (type) {
-        true -> this.setBackgroundResource(R.color.lesson_blue)
-        false -> this.setBackgroundResource(R.color.dark_orange)
+        true -> this.setBackgroundResource(com.stathis.core.R.color.lesson_blue)
+        false -> this.setBackgroundResource(com.stathis.core.R.color.dark_orange)
     }
 }
 

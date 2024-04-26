@@ -21,10 +21,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.stathis.elmepaunivapp.callbacks.DashboardClickListener
 import com.stathis.elmepaunivapp.model.professor.Professor
-import com.stathis.elmepaunivapp.ui.home.dashboard.DashboardViewModel
-import com.stathis.elmepaunivapp.ui.home.dashboard.model.DashboardOption
 import java.io.IOException
 
 fun String.toNonHtmlText(): String {
@@ -152,11 +149,3 @@ fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar {
 }
 
 fun showSnack(view: View, msg: String) = Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
-
-fun DashboardViewModel.addCallback(item: (DashboardOption) -> Unit) {
-    this.addCallback(object : DashboardClickListener {
-        override fun dashboardItemClicked(option: DashboardOption) {
-            item.invoke(option)
-        }
-    })
-}

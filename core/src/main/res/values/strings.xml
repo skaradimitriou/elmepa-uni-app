@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <string name="announcements">Ανακοινώσεις</string>
+    <string name="department">Το Τμήμα</string>
+    <string name="students">Φοιτητές</string>
+    <string name="professors">Καθηγητές</string>
+    <string name="research_in_dept">Έρευνα στο Τμήμα</string>
+
+    <!-- Dashboard Activity -->
+    <string name="main_screen_title">Αρχική</string>
+    <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
+    <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>
+
+</resources>
