@@ -10,10 +10,6 @@
     <string name="menu_professors">Καθηγητές</string>
     <string name="menu_syllabus">Μαθήματα</string>
 
-    <!-- Dashboard Activity -->
-    <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
-    <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>
-
     <string name="dashboard_announcements">Ανακοινώσεις</string>
     <string name="dashboard_department">Το Τμήμα</string>
     <string name="dashboard_students">Φοιτητές</string>

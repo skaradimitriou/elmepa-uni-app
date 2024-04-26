@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home.HomeFragment">
+        android:background="@color/grey_bg">
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dashboardRecycler"
+            style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="Dashboard" />
+            android:paddingHorizontal="@dimen/dimen_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/holder_dashboard_option" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

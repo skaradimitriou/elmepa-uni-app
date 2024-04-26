@@ -40,6 +40,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    implementation(project(":core"))
     implementation(project(":model"))
 
     implementation(libs.hilt.android)
