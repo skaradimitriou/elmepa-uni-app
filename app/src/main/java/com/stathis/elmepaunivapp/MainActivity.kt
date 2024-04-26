@@ -1,5 +1,6 @@
 package com.stathis.elmepaunivapp
 
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -23,6 +24,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun init() {
         navController = findNavController(R.id.navHostFragment)
         navigator = NavigatorImpl(this, navController)
+
+        onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                navigator.goBack()
+            }
+        })
     }
 
     override fun startOps() {

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-parcelize")
     id("kotlin-kapt")
+    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 }
 
@@ -76,10 +77,6 @@ dependencies {
     implementation(libs.circleImgView)
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
-
-    implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
-    kapt(libs.room.compiler)
 
     implementation(libs.swipeToRefresh)
     implementation(libs.gson)

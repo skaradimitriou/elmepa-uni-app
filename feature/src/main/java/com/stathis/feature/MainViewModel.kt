@@ -4,9 +4,10 @@ import android.app.Application
 import android.os.Bundle
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
+import com.stathis.core.di.IoDispatcher
 import com.stathis.feature.navigation.NavigationAction
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -14,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    app: Application
+    app: Application,
+    @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) : BaseViewModel(app) {
 
     val navState: StateFlow<NavModel?>
@@ -23,7 +25,7 @@ class MainViewModel @Inject constructor(
     private val _navState = MutableStateFlow<NavModel?>(null)
 
     fun navigateWithAction(action: NavigationAction?, data: Bundle? = null) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcher) {
             _navState.emit(NavModel(action, data))
         }
     }

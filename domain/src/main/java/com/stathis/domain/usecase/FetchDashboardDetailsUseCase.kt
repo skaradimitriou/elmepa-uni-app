@@ -10,5 +10,5 @@ class FetchDashboardDetailsUseCase @Inject constructor(
     private val repo: DashboardRepository
 ) : BaseUseCase<Flow<List<UiModel>>> {
 
-    override suspend fun invoke(vararg args: String?) = repo.fetchDashboardDetails()
+    override suspend fun invoke(vararg args: Any?) = repo.fetchDashboardDetails()
 }

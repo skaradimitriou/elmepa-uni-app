@@ -9,6 +9,12 @@
         android:id="@+id/homeFragment"
         android:name="com.stathis.feature.home.HomeFragment"
         android:label="DashboardFragment"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/announcementsFragment"
+        android:name="com.stathis.feature.announcements.AnnouncementsFragment"
+        android:label="AnnouncementsFragment"
+        tools:layout="@layout/fragment_announcements" />
 
 </navigation>

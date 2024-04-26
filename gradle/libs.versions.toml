@@ -1,4 +1,5 @@
 [versions]
+ksp = "1.8.10-1.0.9"
 agp = "8.3.2"
 kotlin = "1.9.0"
 coreKtx = "1.13.0"
@@ -82,3 +83,4 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
