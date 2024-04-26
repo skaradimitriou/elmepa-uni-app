@@ -8,8 +8,8 @@
         android:layout_height="wrap_content"
         android:alpha="0.5">
 
-        <androidx.cardview.widget.CardView
-            style="@style/elmepa_card"
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppMaterialCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -18,41 +18,39 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/ann_img"
+                    android:id="@+id/announcementImgView"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/height_200"
-                    android:background="@color/shimmer_grey_lighter"
-                    android:contentDescription="@string/app_name"
                     android:scaleType="centerCrop"
+                    android:src="@color/grey"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/ann_when"
-                    style="@style/text_18_bold_black"
+                    android:id="@+id/announcementDateTxtView"
+                    style="@style/text_14_bold_grey"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16"
-                    android:background="@drawable/round_corners"
-                    android:backgroundTint="@color/shimmer_grey_lighter"
-                    app:layout_constraintTop_toBottomOf="@id/ann_img"
-                    tools:text="@string/announcement_title" />
+                    android:background="@color/shimmer_grey_lighter"
+                    android:paddingHorizontal="@dimen/dimen_16"
+                    android:paddingTop="@dimen/dimen_16"
+                    app:layout_constraintTop_toBottomOf="@id/announcementImgView"
+                    tools:text="@tools:sample/lorem" />
 
                 <TextView
-                    android:id="@+id/ann_txt"
+                    android:id="@+id/announcementTitleTxtView"
                     style="@style/text_18_bold_black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16"
-                    android:background="@drawable/round_corners"
-                    android:backgroundTint="@color/shimmer_grey_lighter"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ann_when"
-                    tools:text="@string/announcement_title" />
+                    android:background="@color/shimmer_grey_lighter"
+                    android:paddingHorizontal="@dimen/dimen_16"
+                    android:paddingBottom="@dimen/dimen_16"
+                    app:layout_constraintTop_toBottomOf="@id/announcementDateTxtView"
+                    tools:text="@tools:sample/lorem" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 </layout>

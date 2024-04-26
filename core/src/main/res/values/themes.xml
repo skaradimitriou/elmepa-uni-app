@@ -12,6 +12,10 @@
     </style>
 
     <!-- NEW STYLES -->
+    <style name="AppMaterialCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/margin_10</item>
+    </style>
+
     <style name="AppRecyclerStyle">
         <item name="android:paddingBottom">@dimen/dimen_40</item>
         <item name="android:clipToPadding">false</item>

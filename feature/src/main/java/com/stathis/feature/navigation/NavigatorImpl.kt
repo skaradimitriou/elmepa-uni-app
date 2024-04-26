@@ -17,6 +17,7 @@ class NavigatorImpl @Inject constructor(
 
     override fun goToScreen(action: NavigationAction?, bundle: Bundle?) = when (action) {
         NavigationAction.DASHBOARD -> navController.navigate(R.id.homeFragment)
+        NavigationAction.ANNOUNCEMENTS -> navController.navigate(R.id.announcementsFragment)
         else -> Unit
     }
 

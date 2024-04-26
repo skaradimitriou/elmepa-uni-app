@@ -4,14 +4,11 @@ import android.content.Intent
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivityHomeBinding
 import com.stathis.elmepaunivapp.ui.about.AboutActivity
-import com.stathis.elmepaunivapp.ui.announcements.AnnouncementsActivity
 import com.stathis.elmepaunivapp.ui.contact.ContactActivity
 import com.stathis.elmepaunivapp.ui.department.DepartmentActivity
 import com.stathis.elmepaunivapp.ui.research.ResearchActivity
@@ -53,10 +50,9 @@ class HomeActivity : ElmepaActivity<ActivityHomeBinding>(R.layout.activity_home)
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val intent: Intent = when (item.itemId) {
-            R.id.announcements -> Intent(this, AnnouncementsActivity::class.java)
             R.id.department -> Intent(this, DepartmentActivity::class.java)
             R.id.students -> Intent(this, StudentActivity::class.java)
-            R.id.research -> Intent(this,ResearchActivity::class.java)
+            R.id.research -> Intent(this, ResearchActivity::class.java)
             R.id.get_in_touch -> Intent(this, ContactActivity::class.java)
             else -> Intent(this, AboutActivity::class.java)
         }
