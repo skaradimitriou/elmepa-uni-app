@@ -11,16 +11,6 @@ import com.bumptech.glide.Glide
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.ui.students.recycler.CarouselAdapter
 
-/**
- * Binding Adapters for ImageViews
- */
-
-@BindingAdapter("loadImageUrl")
-fun ImageView.loadImage(imageUrl: String) {
-    Glide.with(this.context).load(imageUrl)
-        .placeholder(com.stathis.core.R.color.shimmer_grey_lighter)
-        .into(this)
-}
 
 @BindingAdapter("setImgResource")
 fun setImage(img: ImageView, gender: String) {
@@ -28,11 +18,6 @@ fun setImage(img: ImageView, gender: String) {
         img.context.resources.getString(R.string.male) -> img.setImageResource(R.drawable.male)
         img.context.resources.getString(R.string.female) -> img.setImageResource(R.drawable.female)
     }
-}
-
-@BindingAdapter("setImageSrc")
-fun ImageView.setImageSrc(drawable: Int) {
-    this.setImageResource(drawable)
 }
 
 @BindingAdapter("loadLocalPhoto")
@@ -58,11 +43,6 @@ fun TextView.underline(underlined: Boolean) {
 @BindingAdapter("setHtmlText")
 fun TextView.setText(text: String) {
     this.text = text.toNonHtmlText()
-}
-
-@BindingAdapter("setPubDate")
-fun TextView.setPubDate(text: String) {
-    this.text = text.substringBefore('|')
 }
 
 /**

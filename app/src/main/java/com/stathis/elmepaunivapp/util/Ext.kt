@@ -131,10 +131,6 @@ fun ActionBar.setupBar(title: String) {
 //    .withBindableCallbacks()
 //    .build(context)
 
-fun WebView.enableJS() {
-    this.settings.javaScriptEnabled = true
-}
-
 fun View.showOrHide(clicked: Boolean) {
     if (clicked) this.visibility = View.INVISIBLE else this.visibility = View.VISIBLE
 }

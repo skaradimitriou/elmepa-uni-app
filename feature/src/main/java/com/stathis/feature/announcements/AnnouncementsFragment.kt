@@ -1,26 +1,35 @@
 package com.stathis.feature.announcements
 
+import android.os.Bundle
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.setupItemDecoration
+import com.stathis.feature.MainViewModel
 import com.stathis.feature.R
 import com.stathis.feature.announcements.adapter.AnnouncementsAdapter
 import com.stathis.feature.databinding.FragmentAnnouncementsBinding
+import com.stathis.feature.navigation.NavigationAction
+import com.stathis.feature.util.TITLE
+import com.stathis.feature.util.URL
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @AndroidEntryPoint
 class AnnouncementsFragment :
     BaseFragment<FragmentAnnouncementsBinding>(R.layout.fragment_announcements) {
 
     private val viewModel by viewModels<AnnouncementsViewModel>()
+    private val activityVM by activityViewModels<MainViewModel>()
 
     private val adapter = AnnouncementsAdapter { selectedAnnouncement ->
-        //FIXME: Open announcement on Web (?)
-        Timber.d("$selectedAnnouncement")
+        val args = Bundle().apply {
+            putString(URL, selectedAnnouncement.url)
+            putString(TITLE, selectedAnnouncement.name)
+        }
+        activityVM.navigateWithAction(NavigationAction.WEBVIEW, args)
     }
 
     override fun init() {

@@ -9,7 +9,7 @@ import com.stathis.elmepaunivapp.callbacks.StudentsScreenCallback
 import com.stathis.elmepaunivapp.databinding.ActivityStudentBinding
 import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.students.model.LinkItem
-import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
+import com.stathis.feature.webview.WebViewFragment
 import com.stathis.elmepaunivapp.util.*
 import com.stathis.elmepaunivapp.util.setupBar
 
@@ -38,7 +38,7 @@ class StudentActivity : ElmepaActivity<ActivityStudentBinding>(R.layout.activity
     private fun openBrowser(url: String) = startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 
     private fun openUrl(url: String, title: String? = null) {
-        startActivity(Intent(this, WebviewActivity::class.java).apply {
+        startActivity(Intent(this, WebViewFragment::class.java).apply {
             putExtra(URL, url)
             putExtra(TITLE, title)
         })

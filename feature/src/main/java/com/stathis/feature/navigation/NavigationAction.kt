@@ -5,5 +5,6 @@ enum class NavigationAction {
     ANNOUNCEMENTS,
     DEPARTMENT,
     STUDENTS,
-    RESEARCH
+    RESEARCH,
+    WEBVIEW
 }

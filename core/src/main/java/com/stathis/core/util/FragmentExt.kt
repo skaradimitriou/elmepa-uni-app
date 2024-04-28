@@ -1,5 +1,6 @@
 package com.stathis.core.util
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 
 /**
