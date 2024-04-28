@@ -16,5 +16,10 @@
         android:name="com.stathis.feature.announcements.AnnouncementsFragment"
         android:label="AnnouncementsFragment"
         tools:layout="@layout/fragment_announcements" />
+    <fragment
+        android:id="@+id/researchFragment"
+        android:name="com.stathis.feature.research.ResearchFragment"
+        android:label="ResearchFragment"
+        tools:layout="@layout/fragment_research_in_dept" />
 
 </navigation>

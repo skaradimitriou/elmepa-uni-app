@@ -6,8 +6,10 @@ import com.stathis.data.datasource.local.AnnouncementsDao
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.repository.AnnouncementsRepositoryImpl
 import com.stathis.data.repository.DashboardRepositoryImpl
+import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.domain.repository.DashboardRepository
+import com.stathis.domain.repository.ResearchRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,5 +31,10 @@ class RepositoryModule {
         preferencesHelper: SharedPreferencesHelper
     ): AnnouncementRepository {
         return AnnouncementsRepositoryImpl(localDataSource, remoteDataSource, preferencesHelper)
+    }
+
+    @Provides
+    fun provideResearchRepository(app: Application): ResearchRepository {
+        return ResearchRepositoryImpl(app)
     }
 }

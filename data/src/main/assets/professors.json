@@ -1,0 +1,254 @@
+[
+  {
+    "email": "spap@hmu.gr",
+    "fullName": "Παπαδάκης Στέλιος",
+    "gender": "male",
+    "vocative": "Παπαδάκη Στέλιο"
+  },
+  {
+    "email": "cpanag@hmu.gr",
+    "fullName": "Παναγιωτάκης Κώστας",
+    "gender": "male",
+    "vocative": "Παναγιωτάκη Κώστα"
+  },
+  {
+    "email": "gmastorakis@hmu.gr",
+    "fullName": "Μαστοράκης Γιώργος",
+    "gender": "male",
+    "vocative": "Μαστοράκη Γιώργο"
+  },
+  {
+    "email": "kopanakis@hmu.gr",
+    "fullName": "Κοπανάκης Γιάννης",
+    "gender": "male",
+    "vocative": "Κοπανάκη Γιάννη"
+  },
+  {
+    "email": "jdim@hmu.gr",
+    "fullName": "Δημοτίκαλης Γιάννης",
+    "gender": "male",
+    "vocative": "Δημοτίκαλη Γιάννη"
+  },
+  {
+    "email": "lemonakis@hmu.gr",
+    "fullName": "Λεμονάκης Χρήστος",
+    "gender": "male",
+    "vocative": "Λεμονάκη Χρήστο"
+  },
+  {
+    "email": "mperakakis@hmu.gr",
+    "fullName": "Περακάκης Μάνος",
+    "gender": "male",
+    "vocative": "Περακάκη Μάνο"
+  },
+  {
+    "email": "maniamarkaki@gmail.com",
+    "fullName": "Μάνια Μαρκάκη",
+    "gender": "female",
+    "vocative": "Μάνια Μαρκάκη"
+  },
+  {
+    "email": "n.astroulakis@gmail.com",
+    "fullName": "Αστρουλάκης Νικόλαος",
+    "gender": "male",
+    "vocative": "Αστρουλάκη Νικόλαο"
+  },
+  {
+    "email": "orestis.afordakos@gmail.com",
+    "fullName": "Αφορδακός Ορέστης",
+    "gender": "male",
+    "vocative": "Αφορδακό Ορέστη"
+  },
+  {
+    "email": "vardasg@hmu.gr",
+    "fullName": "Βάρδας Ιωάννης",
+    "gender": "male",
+    "vocative": "Βάρδα Ιωάννη"
+  },
+  {
+    "email": "gvasil@hmu.gr",
+    "fullName": "Βασιλειάδης Γεώργιος",
+    "gender": "male",
+    "vocative": "Βασιλειάδη Γεώργιο"
+  },
+  {
+    "email": "kvassakis@hmu.gr",
+    "fullName": "Βασσάκης Κωνσταντίνος",
+    "gender": "male",
+    "vocative": "Βασσάκη Κωνσταντίνο"
+  },
+  {
+    "email": "evakalampokis@gmail.com",
+    "fullName": "Καλαμπόκη Εύα - Μαρία",
+    "gender": "female",
+    "vocative": "Καλαμπόκη Εύα - Μαρία"
+  },
+  {
+    "email": "manoskokkinakis@yahoo.gr",
+    "fullName": "Κοκκινάκης Εμμανουήλ",
+    "gender": "male",
+    "vocative": "Κοκκινάκη Εμμανουήλ"
+  },
+  {
+    "email": "kottievi@hmu.gr",
+    "fullName": "Κόττη Εύη",
+    "gender": "female",
+    "vocative": "Κόττη Εύη"
+  },
+  {
+    "email": "kpapoutsakis@hmu.gr",
+    "fullName": "Παπουτσάκης Κωνσταντίνος",
+    "gender": "male",
+    "vocative": "Παπουτσάκη Κωνσταντίνο"
+  },
+  {
+    "email": "eskouloudakis@hmu.gr",
+    "fullName": "Σκουλουδάκης Εμμανουήλ",
+    "gender": "male",
+    "vocative": "Σκουλουδάκη Εμμανουήλ"
+  },
+  {
+    "email": "freemarkos@yahoo.gr",
+    "fullName": "Σχοινιωτάκης Νικόλαος",
+    "gender": "male",
+    "vocative": "Σχοινιωτάκη Νικόλαο"
+  },
+  {
+    "email": "kostsil@hotmail.com",
+    "fullName": "Τσιλιμπώκος Κωνσταντίνος",
+    "gender": "male",
+    "vocative": "Τσιλιμπώκο Κωνσταντίνο"
+  },
+  {
+    "email": "fafalios@ics.forth.gr",
+    "fullName": "Φαφαλιός Παύλος",
+    "gender": "male",
+    "vocative": "Φαφαλιό Παύλο"
+  },
+  {
+    "email": "mchourdakis@hotmail.com",
+    "fullName": "Χουρδάκης Μαρίνος",
+    "gender": "male",
+    "vocative": "Χουρδάκη Μαρίνο"
+  },
+  {
+    "email": "arakadakisjr@hmu.gr",
+    "fullName": "Αρακαδάκης Α. Γεώργιος",
+    "gender": "male",
+    "vocative": "Αρακαδάκη Α. Γεώργιο"
+  },
+  {
+    "email": "nantia.kampeli@gmail.com",
+    "fullName": "Καμπέλη Κωνσταντίνα",
+    "gender": "female",
+    "vocative": "Καμπέλη Κωνσταντίνα"
+  },
+  {
+    "email": "jkapad@csd.uoc.gr",
+    "fullName": "Καπανταϊδάκης Ιωάννης",
+    "gender": "male",
+    "vocative": "Καπανταϊδάκη Ιωάννη"
+  },
+  {
+    "email": "sm.markaki@hmu.gr",
+    "fullName": "Μαρκάκη Σμαράγδα",
+    "gender": "female",
+    "vocative": "Μαρκάκη Σμαράγδα"
+  },
+  {
+    "email": "m.peronikolis@hmu.gr",
+    "fullName": "Περονικολής Μιχαήλ",
+    "gender": "male",
+    "vocative": "Περονικολή Μιχαήλ"
+  },
+  {
+    "email": "nickpetran@yahoo.gr",
+    "fullName": "Πετράκης Νικόλαος",
+    "gender": "male",
+    "vocative": "Πετράκη Νικόλαο"
+  },
+  {
+    "email": "aikaterinidis@gmail.com",
+    "fullName": "Αικατερινίδης Ιωάννης",
+    "gender": "male",
+    "vocative": "Αικατερινίδη Ιωάννη"
+  },
+  {
+    "email": "mmarkaki@hmu.gr",
+    "fullName": "Μαρκάκη Μαρία",
+    "gender": "female",
+    "vocative": "Μαρκάκη Μαρία"
+  },
+  {
+    "email": "gmeramv@hmu.gr",
+    "fullName": "Μεραμβελιωτάκης Γεώργιος",
+    "gender": "male",
+    "vocative": "Μεραμβελιωτάκη Γεώργιο"
+  },
+  {
+    "email": "ballas@hmu.gr",
+    "fullName": "Μπάλλας Παναγιώτης",
+    "gender": "male",
+    "vocative": "Μπάλλα Παναγιώτη"
+  },
+  {
+    "email": "ntrihas@hmu.gr",
+    "fullName": "Τριχάς Νικόλαος",
+    "gender": "male",
+    "vocative": "Τριχά Νικόλαο"
+  },
+  {
+    "email": "jfanourgiakis@yahoo.com",
+    "fullName": "Φανουργιάκης Ιωάννης",
+    "gender": "male",
+    "vocative": "Φανουργιάκη Ιωάννη"
+  },
+  {
+    "email": "eleni@candiafinance.gr",
+    "fullName": "Μπατζανακάκη Ελένη",
+    "gender": "female",
+    "vocative": "Μπατζανακάκη Ελένη"
+  },
+  {
+    "email": "tmsfakia@hmu.gr",
+    "fullName": "Σφακιανάκης Θεόδωρος",
+    "gender": "male",
+    "vocative": "Σφακιανάκη Θεόδωρο"
+  },
+  {
+    "email": "dtavladaki@hmu.gr",
+    "fullName": "Ταβλαδάκη Δέσποινα",
+    "gender": "female",
+    "vocative": "Ταβλαδάκη Δέσποινα"
+  },
+  {
+    "email": "kalarhaki@hmu.gr",
+    "fullName": "Καλαρχάκη Αικατερίνη",
+    "gender": "female",
+    "vocative": "Καλαρχάκη Αικατερίνη"
+  },
+  {
+    "email": "karofillou@hmu.gr",
+    "fullName": "Καροφύλλου Ειρήνη",
+    "gender": "female",
+    "vocative": "Καροφύλλου Ειρήνη"
+  },
+  {
+    "email": "gparth@hmu.gr",
+    "fullName": "Παρθύμου Γεωργία",
+    "gender": "female",
+    "vocative": "Παρθύμου Γεωργία"
+  },
+  {
+    "email": "matzarakis@hmu.gr",
+    "fullName": "Ματζαράκης Γεώργιος",
+    "gender": "female",
+    "vocative": "Ματζαράκη Γεώργιο"
+  },
+  {
+    "email": "kanakis@hmu.gr",
+    "fullName": "Καροφυλλάκης Κανάκης",
+    "gender": "male",
+    "vocative": "Καροφυλλάκη Κανάκη"
+  }
+]

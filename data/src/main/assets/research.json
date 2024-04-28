@@ -1,0 +1,47 @@
+[
+  {
+    "categoryName": "Έρευνα στο Τμήμα",
+    "researchItems": [
+      {
+        "name": "Ινστιτούτο Οικονομικής Ανάλυσης",
+        "url": "https://mst.hmu.gr/ereuna/institoyto-oikonomikhs-analyshs-epicheirhmatikothtas-kai-toyrismoy/",
+        "imageResource": "institute"
+      },
+      {
+        "name": "Ερευνητικά Επιτεύγματα",
+        "url": "https://mst.hmu.gr/ereuna/ereynhtika-epiteygmata/",
+        "imageResource": "achievements"
+      },
+      {
+        "name": "Δημοσιεύσεις",
+        "url": "https://mst.hmu.gr/ereuna/dhmosieyseis/",
+        "imageResource": "papers"
+      },
+      {
+        "name": "Στατιστικά Στοιχεία",
+        "url": "https://mst.hmu.gr/ereuna/statistika-stoicheia/",
+        "imageResource": "analytics"
+      }
+    ]
+  },
+  {
+    "categoryName": "Έρευνητικά Εργαστήρια",
+    "researchItems": [
+      {
+        "name": "Εργαστήριο Διοικητικής Οικονομικής και Συστημάτων Αποφάσεων",
+        "url": "https://mst.hmu.gr/ereuna/adeds/",
+        "imageResource": "lab"
+      },
+      {
+        "name": "Εργαστήριο Επιστήμης Δεδομένων, Πολυμέσων και Μοντελοποίησης",
+        "url": "https://mst.hmu.gr/ereuna/datalab/",
+        "imageResource": "lab"
+      },
+      {
+        "name": "Εργαστήριο Ηλεκτρονικής Επιχειρηματικής Ευφυΐας",
+        "url": "https://www.e-bilab.gr/",
+        "imageResource": "lab"
+      }
+    ]
+  }
+]

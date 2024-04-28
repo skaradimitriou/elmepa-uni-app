@@ -1,13 +1,13 @@
-package com.stathis.elmepaunivapp.ui.research.model
+package com.stathis.model.research
 
-import com.stathis.elmepaunivapp.abstraction.LocalModel
+import com.stathis.core.base.UiModel
 
 data class ResearchItem(
     val name: String,
     val url: String,
     val imageResource: String
-) : LocalModel {
-    override fun equalsContent(obj: LocalModel): Boolean = when (obj) {
+) : UiModel {
+    override fun equalsContent(obj: UiModel): Boolean = when (obj) {
         is ResearchItem -> name == obj.name && url == obj.url && imageResource == obj.imageResource
         else -> false
     }
