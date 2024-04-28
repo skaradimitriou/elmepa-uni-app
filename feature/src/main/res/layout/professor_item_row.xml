@@ -7,22 +7,18 @@
 
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.model.professor.Professor" />
+            type="com.stathis.model.professors.Professor" />
 
         <variable
             name="callback"
-            type="com.stathis.elmepaunivapp.callbacks.ElmepaClickListener" />
+            type="com.stathis.feature.professors.adapter.ProfessorsCallback" />
     </data>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/schedule_cardview"
+    <com.google.android.material.card.MaterialCardView
+        style="@style/AppMaterialCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_10"
-        android:layout_marginTop="@dimen/dimen_10"
-        android:layout_marginEnd="@dimen/dimen_10"
-        android:onClick="@{(view) -> callback.onItemClick(view)}"
-        android:tag="@{model}"
+        android:onClick="@{() -> callback.onProfessorTap(model)}"
         app:cardCornerRadius="@dimen/dimen_10">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,47 +26,44 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/professor_img"
-                setImgResource="@{model.gender}"
+                android:id="@+id/professorImgView"
                 android:layout_width="@dimen/height_70"
                 android:layout_height="0dp"
+                android:contentDescription="@tools:sample/lorem"
                 android:padding="@dimen/dimen_10"
-                android:layout_marginStart="@dimen/margin_5"
-                android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="@id/professor_email"
+                app:layout_constraintBottom_toBottomOf="@id/professorEmailTxtView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/male_professor" />
+                app:setGenderImage="@{model.gender}"
+                tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/professor_name"
+                android:id="@+id/professorNameTxtView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_10"
-                android:layout_marginTop="@dimen/margin_16"
-                android:layout_marginEnd="@dimen/dimen_10"
+                android:layout_margin="@dimen/dimen_16"
                 android:text="@{model.fullName}"
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/text_16"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/professor_img"
+                app:layout_constraintStart_toEndOf="@id/professorImgView"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/professor_txt" />
+                tools:text="@tools:sample/lorem" />
 
             <TextView
-                android:id="@+id/professor_email"
+                android:id="@+id/professorEmailTxtView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/dimen_16"
                 android:text="@{model.email}"
                 android:textSize="@dimen/text_16"
-                app:layout_constraintEnd_toEndOf="@id/professor_name"
-                app:layout_constraintStart_toStartOf="@id/professor_name"
-                app:layout_constraintTop_toBottomOf="@id/professor_name"
-                tools:text="@string/professor_mail" />
+                app:layout_constraintEnd_toEndOf="@id/professorNameTxtView"
+                app:layout_constraintStart_toStartOf="@id/professorNameTxtView"
+                app:layout_constraintTop_toBottomOf="@id/professorNameTxtView"
+                tools:text="@tools:sample/lorem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>

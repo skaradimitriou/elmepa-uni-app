@@ -6,9 +6,11 @@ import com.stathis.data.datasource.local.AnnouncementsDao
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.repository.AnnouncementsRepositoryImpl
 import com.stathis.data.repository.DashboardRepositoryImpl
+import com.stathis.data.repository.ProfessorsRepositoryImpl
 import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.domain.repository.DashboardRepository
+import com.stathis.domain.repository.ProfessorsRepository
 import com.stathis.domain.repository.ResearchRepository
 import dagger.Module
 import dagger.Provides
@@ -36,5 +38,10 @@ class RepositoryModule {
     @Provides
     fun provideResearchRepository(app: Application): ResearchRepository {
         return ResearchRepositoryImpl(app)
+    }
+
+    @Provides
+    fun provideProfessorsRepository(app: Application): ProfessorsRepository {
+        return ProfessorsRepositoryImpl(app)
     }
 }

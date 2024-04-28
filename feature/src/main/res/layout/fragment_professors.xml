@@ -3,20 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.stathis.elmepaunivapp.ui.home.professors.ProfessorViewModel" />
-    </data>
-
-
-    <androidx.constraintlayout.motion.widget.MotionLayout
-        android:id="@+id/constraintLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/grey_bg"
-        app:layoutDescription="@xml/fragment_professors_xml_constraintlayout_scene">
+        android:layout_height="match_parent">
 
         <EditText
             android:id="@+id/search_action"
@@ -33,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_to_refresh"
+            android:id="@+id/swipeToRefresh"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -42,17 +31,13 @@
             app:layout_constraintTop_toBottomOf="@+id/search_action">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/professorsRecycler"
+                style="@style/AppRecyclerStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:adapter="@{viewModel.adapter}"
-                android:clipToPadding="false"
-                android:orientation="vertical"
-                android:paddingBottom="40dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/professor_item_row" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

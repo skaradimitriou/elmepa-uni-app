@@ -24,24 +24,6 @@
     <string name="contact">Επικοινωνία</string>
     <string name="learn_more_app_url">Μάθε Περισσότερα</string>
 
-    <!-- Announcement Activity -->
-    <string name="main_screen_title">Αρχική</string>
-    <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
-    <string name="announcement_title">This is an announcement title</string>
-    <string name="announcements_get_error">Error getting Data from site</string>
-
-    <!-- Professors Activity -->
-    <string name="professors_search_txt">Αναζήτησε έναν καθηγητή</string>
-    <string name="male">male</string>
-    <string name="female">female</string>
-
-    <string name="send_email_to_male_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. %1$s;</string>
-    <string name="send_email_to_female_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ. %1$s;</string>
-
-    <string name="dialog_new_email">Νέο e-mail</string>
-    <string name="dialog_yes">Ναι</string>
-    <string name="dialog_cancel">Άκυρο</string>
-
     <!-- Department Activity -->
     <string name="dept_button_txt">Μάθε περισσότερα</string>
     <string name="virtual_tour">virtual_tour</string>

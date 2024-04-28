@@ -33,3 +33,11 @@ fun ImageView.loadLocalPhoto(photo: String) {
         this.setImageResource(R.mipmap.ic_launcher)
     }
 }
+
+@BindingAdapter("setGenderImage")
+fun setImage(img: ImageView, gender: String) {
+    when (gender) {
+        img.context.resources.getString(R.string.male) -> img.setImageResource(R.drawable.male)
+        img.context.resources.getString(R.string.female) -> img.setImageResource(R.drawable.female)
+    }
+}

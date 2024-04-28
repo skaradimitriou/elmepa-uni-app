@@ -17,5 +17,6 @@ enum class OptionType {
     ANNOUNCEMENTS,
     STUDENTS,
     DEPARTMENT,
-    RESEARCH
+    RESEARCH,
+    PROFESSORS
 }
