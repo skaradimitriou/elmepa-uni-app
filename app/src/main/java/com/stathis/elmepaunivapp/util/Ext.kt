@@ -3,13 +3,9 @@ package com.stathis.elmepaunivapp.util
 import android.app.Application
 import android.graphics.text.LineBreaker
 import android.os.Build
-import android.text.Editable
 import android.text.Html
-import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
-import android.webkit.WebView
-import android.widget.EditText
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.ActionBar
@@ -21,7 +17,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.stathis.elmepaunivapp.model.professor.Professor
 import java.io.IOException
 
 fun String.toNonHtmlText(): String {
@@ -68,24 +63,6 @@ inline fun <reified T> Application.readLocalJsonList(fileName: String, data: (Li
     } catch (ioException: IOException) {
         data.invoke(listOf())
     }
-}
-
-fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
-    this.addTextChangedListener(object : TextWatcher {
-        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-        override fun afterTextChanged(p0: Editable?) {
-            afterTextChanged.invoke(p0.toString())
-        }
-    })
-}
-
-fun Professor.equalsName(name: String): Boolean {
-    return this.fullName.lowercase().contains(name.lowercase())
-}
-
-fun List<Professor>.sortedAlphabetically(): List<Professor> {
-    return this.sortedWith(compareBy { it.fullName })
 }
 
 fun TabLayout.onTabSelected(selectedTab: (Int) -> Unit) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- General -->
     <string name="announcements">Ανακοινώσεις</string>
     <string name="department">Το Τμήμα</string>
@@ -7,9 +8,26 @@
     <string name="professors">Καθηγητές</string>
     <string name="research_in_dept">Έρευνα στο Τμήμα</string>
 
-    <!-- Dashboard Activity -->
+    <!-- Dashboard -->
     <string name="main_screen_title">Αρχική</string>
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
     <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>
+
+    <!-- Announcement Activity -->
+    <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
+    <string name="announcement_title">This is an announcement title</string>
+    <string name="announcements_get_error">Error getting Data from site</string>
+
+    <!-- Professors -->
+    <string name="professors_search_txt">Αναζήτησε έναν καθηγητή</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="send_email_to_male_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. %1$s;</string>
+    <string name="send_email_to_female_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ. %1$s;</string>
+
+    <string name="dialog_new_email">Νέο e-mail</string>
+    <string name="dialog_yes">Ναι</string>
+    <string name="dialog_cancel">Άκυρο</string>
+
 
 </resources>

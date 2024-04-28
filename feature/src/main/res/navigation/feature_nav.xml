@@ -29,4 +29,10 @@
         android:label="WebViewFragment"
         tools:layout="@layout/fragment_webview" />
 
+    <fragment
+        android:id="@+id/professorFragment"
+        android:name="com.stathis.feature.professors.ProfessorFragment"
+        android:label="ProfessorFragment"
+        tools:layout="@layout/fragment_professors" />
+
 </navigation>

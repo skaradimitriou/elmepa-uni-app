@@ -3,6 +3,7 @@ package com.stathis.data.util
 import android.app.Application
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.stathis.model.professors.Professor
 import java.io.IOException
 
 /**
@@ -20,4 +21,12 @@ inline fun <reified T> Application.readLocalJsonList(fileName: String, data: (Li
     } catch (ioException: IOException) {
         data.invoke(listOf())
     }
+}
+
+fun Professor.equalsName(name: String): Boolean {
+    return this.fullName.lowercase().contains(name.lowercase())
+}
+
+fun List<Professor>.sortedAlphabetically(): List<Professor> {
+    return this.sortedWith(compareBy { it.fullName })
 }

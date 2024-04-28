@@ -7,18 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.ui.students.recycler.CarouselAdapter
-
-
-@BindingAdapter("setImgResource")
-fun setImage(img: ImageView, gender: String) {
-    when (gender) {
-        img.context.resources.getString(R.string.male) -> img.setImageResource(R.drawable.male)
-        img.context.resources.getString(R.string.female) -> img.setImageResource(R.drawable.female)
-    }
-}
 
 @BindingAdapter("loadLocalPhoto")
 fun ImageView.loadLocalPhoto(photo: String) {
