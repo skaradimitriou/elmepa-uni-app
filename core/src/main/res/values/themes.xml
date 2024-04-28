@@ -3,17 +3,18 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
-<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-<!--        <item name="colorAccent">@color/colorAccent</item>-->
-<!--        <item name="colorSurface">#FFFFFF</item>-->
-<!--        <item name="android:statusBarColor">@color/dark_grey</item>-->
-<!--        <item name="actionBarStyle">@style/elmepaActionBar</item>-->
+        <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--        <item name="colorAccent">@color/colorAccent</item>-->
+        <!--        <item name="colorSurface">#FFFFFF</item>-->
+        <!--        <item name="android:statusBarColor">@color/dark_grey</item>-->
+        <!--        <item name="actionBarStyle">@style/elmepaActionBar</item>-->
     </style>
 
     <!-- NEW STYLES -->
     <style name="AppMaterialCard" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">@dimen/margin_10</item>
+        <item name="background">@color/white</item>
     </style>
 
     <style name="AppRecyclerStyle">
@@ -22,8 +23,6 @@
         <item name="android:orientation">vertical</item>
         <item name="android:overScrollMode">never</item>
     </style>
-
-
 
 
     <!-- OLD STYLES -->

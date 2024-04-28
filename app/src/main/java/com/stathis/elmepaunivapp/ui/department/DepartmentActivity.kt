@@ -12,9 +12,20 @@ import com.stathis.elmepaunivapp.databinding.ActivityDepartmentBinding
 import com.stathis.elmepaunivapp.ui.department.model.Programme
 import com.stathis.elmepaunivapp.ui.department.model.SocialChannel
 import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
-import com.stathis.elmepaunivapp.ui.research.ResearchActivity
 import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
-import com.stathis.elmepaunivapp.util.*
+import com.stathis.elmepaunivapp.util.EMAIL_TYPE
+import com.stathis.elmepaunivapp.util.NO_CLIENTS_INSTALLED
+import com.stathis.elmepaunivapp.util.RESEARCH
+import com.stathis.elmepaunivapp.util.SECRETARY_MAIL
+import com.stathis.elmepaunivapp.util.SECRETARY_TEL
+import com.stathis.elmepaunivapp.util.SEND_MAIL
+import com.stathis.elmepaunivapp.util.TITLE
+import com.stathis.elmepaunivapp.util.URL
+import com.stathis.elmepaunivapp.util.YOUTUBE
+import com.stathis.elmepaunivapp.util.setClickability
+import com.stathis.elmepaunivapp.util.setupBar
+import com.stathis.elmepaunivapp.util.showOrHide
+import com.stathis.elmepaunivapp.util.showSnack
 
 class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.activity_department) {
 
@@ -120,16 +131,26 @@ class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.ac
     }
 
     private fun goToResearch() {
-        startActivity(Intent(this, ResearchActivity::class.java))
+        //startActivity(Intent(this, ResearchActivity::class.java))
     }
 
     private fun openYoutube(url: String) {
         try {
             //goes to channel in youtube app
-            startActivity(Intent( Intent.ACTION_VIEW, Uri.parse(getString(R.string.yt_app_link).format(url))))
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse(getString(R.string.yt_app_link).format(url))
+                )
+            )
         } catch (e: Exception) {
             //goes to channel in web view (opens browser)
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.yt_web_link).format(url))))
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse(getString(R.string.yt_web_link).format(url))
+                )
+            )
         }
     }
 

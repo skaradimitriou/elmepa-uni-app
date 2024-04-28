@@ -4,6 +4,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.stathis.core.R
 
 @BindingAdapter("setImageDrawable")
 fun ImageView.setImageDrawable(drawable: Int) {
@@ -20,4 +21,15 @@ fun ImageView.loadImage(imageUrl: String) {
 @BindingAdapter("setPubDate")
 fun TextView.setPubDate(text: String) {
     this.text = text.substringBefore('|')
+}
+
+@BindingAdapter("loadLocalPhoto")
+fun ImageView.loadLocalPhoto(photo: String) {
+    try {
+        val myImage =
+            this.context.resources.getIdentifier(photo, "drawable", "com.stathis.elmepaunivapp")
+        this.setImageResource(myImage)
+    } catch (e: Exception) {
+        this.setImageResource(R.mipmap.ic_launcher)
+    }
 }

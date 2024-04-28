@@ -7,21 +7,19 @@
 
         <variable
             name="model"
-            type="com.stathis.elmepaunivapp.ui.research.model.ResearchItem" />
+            type="com.stathis.model.research.ResearchItem" />
 
         <variable
             name="callback"
-            type="com.stathis.elmepaunivapp.callbacks.ElmepaClickListener" />
+            type="com.stathis.feature.research.recycler.ResearchCallback" />
     </data>
 
-    <androidx.cardview.widget.CardView
-        style="@style/holder_programmes_style"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
+        style="@style/AppMaterialCard"
         android:layout_height="wrap_content"
-        android:onClick="@{(view) -> callback.onItemClick(view)}"
-        android:tag="@{model}"
-        app:cardCornerRadius="@dimen/margin_10"
-        app:cardElevation="@dimen/margin_3">
+        android:onClick="@{() -> callback.onResearchItemTap(model)}"
+        app:cardCornerRadius="@dimen/margin_10">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -29,18 +27,18 @@
             android:background="?android:attr/selectableItemBackground">
 
             <ImageView
-                android:id="@+id/research_item_img"
-                loadLocalPhoto="@{model.imageResource}"
-                android:layout_width="@dimen/dimen_70"
-                android:layout_height="@dimen/height_70"
-                android:contentDescription="@string/app_name"
+                android:id="@+id/itemImgView"
+                android:layout_width="@dimen/dimen_85"
+                android:layout_height="@dimen/dimen_85"
+                android:contentDescription="@tools:sample/lorem"
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/ungrad" />
+                app:loadLocalPhoto="@{model.imageResource}"
+                tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/research_item_title"
+                android:id="@+id/titleTxtView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_10"
@@ -48,10 +46,10 @@
                 android:textColor="@color/dark_grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/research_item_img"
+                app:layout_constraintStart_toEndOf="@id/itemImgView"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/announcement_title" />
+                tools:text="@tools:sample/lorem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
