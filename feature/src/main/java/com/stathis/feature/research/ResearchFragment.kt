@@ -1,30 +1,36 @@
 package com.stathis.feature.research
 
+import android.os.Bundle
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.setupItemDecoration
+import com.stathis.feature.MainViewModel
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentResearchInDeptBinding
+import com.stathis.feature.navigation.NavigationAction
 import com.stathis.feature.research.recycler.ResearchAdapter
+import com.stathis.feature.util.TITLE
+import com.stathis.feature.util.URL
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @AndroidEntryPoint
 class ResearchFragment :
     BaseFragment<FragmentResearchInDeptBinding>(R.layout.fragment_research_in_dept) {
 
     private val viewModel by viewModels<ResearchViewModel>()
+    private val activityVM by activityViewModels<MainViewModel>()
 
     private val adapter = ResearchAdapter { item ->
-        Timber.d("$item")
-        //FIXME: Open in webview inside the app
-        //startActivity(Intent(this@ResearchActivity, WebviewActivity::class.java).apply {
-//            putExtra(URL, item.url)
-//            putExtra(TITLE, item.name)
-//        })
+        val args = Bundle().apply {
+            putString(URL, item.url)
+            putString(TITLE, item.name)
+        }
+
+        activityVM.navigateWithAction(NavigationAction.WEBVIEW, args)
     }
 
     override fun init() {

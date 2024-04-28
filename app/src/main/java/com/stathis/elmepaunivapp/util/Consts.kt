@@ -1,6 +1,6 @@
 package com.stathis.elmepaunivapp.util
 
-const val DEFAULT_URL = "https://mst.hmu.gr/"
+
 
 const val VIRTUAL_TOUR_URL = "https://mst.hmu.gr/hmutour"
 const val SCHEDULE_URL = "https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/"
@@ -10,8 +10,6 @@ const val SECRETARY_TEL = "tel:2841091103"
 
 const val URL = "URL"
 const val TITLE = "TITLE"
-const val DEFAULT_WEB_TITLE = "ΔΕΤ Αγ. Νικόλαος"
-const val ANNOUNCEMENT = "Ανακοίνωση"
 
 const val SECRETARY = "Ηλεκτρονική Γραμματεία"
 const val STUD_FB_PG = "Σελίδα Φοιτητών"

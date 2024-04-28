@@ -1,5 +1,6 @@
 package com.stathis.core.util
 
+import android.webkit.WebView
 import androidx.recyclerview.widget.RecyclerView
 import com.stathis.core.decorations.CustomItemDecoration
 
@@ -16,3 +17,5 @@ fun RecyclerView.setupItemDecoration(
     val decor = CustomItemDecoration(top, start, end, bottom)
     addItemDecoration(decor)
 }
+
+fun WebView.enableJS() = apply { settings.javaScriptEnabled = true }

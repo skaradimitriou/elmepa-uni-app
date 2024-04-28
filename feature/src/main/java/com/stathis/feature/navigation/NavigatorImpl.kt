@@ -19,6 +19,7 @@ class NavigatorImpl @Inject constructor(
         NavigationAction.DASHBOARD -> navController.navigate(R.id.homeFragment)
         NavigationAction.ANNOUNCEMENTS -> navController.navigate(R.id.announcementsFragment)
         NavigationAction.RESEARCH -> navController.navigate(R.id.researchFragment)
+        NavigationAction.WEBVIEW -> navController.navigate(R.id.webViewFragment, bundle)
         else -> Unit
     }
 

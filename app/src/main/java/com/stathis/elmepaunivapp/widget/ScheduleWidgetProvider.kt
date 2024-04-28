@@ -7,7 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.ui.webview.WebviewActivity
+import com.stathis.feature.webview.WebViewFragment
 import com.stathis.elmepaunivapp.util.SCHEDULE_URL
 import com.stathis.elmepaunivapp.util.TITLE
 import com.stathis.elmepaunivapp.util.URL
@@ -21,7 +21,7 @@ class ScheduleWidgetProvider : AppWidgetProvider() {
     ) {
         if (appWidgetIds != null) {
             for (appWidgetId in appWidgetIds) {
-                val intent = Intent(context, WebviewActivity::class.java).apply {
+                val intent = Intent(context, WebViewFragment::class.java).apply {
                     putExtra(URL, SCHEDULE_URL)
                     putExtra(TITLE, context?.getString(R.string.schedule_txt))
                 }
