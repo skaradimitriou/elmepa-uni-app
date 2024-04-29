@@ -9,10 +9,12 @@ import com.stathis.data.repository.AnnouncementsRepositoryImpl
 import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.ProfessorsRepositoryImpl
 import com.stathis.data.repository.ResearchRepositoryImpl
+import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.domain.repository.DashboardRepository
 import com.stathis.domain.repository.ProfessorsRepository
 import com.stathis.domain.repository.ResearchRepository
+import com.stathis.domain.repository.SyllabusRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,4 +47,9 @@ class RepositoryModule {
     fun provideProfessorsRepository(
         firestore: FirebaseFirestore
     ): ProfessorsRepository = ProfessorsRepositoryImpl(firestore)
+
+    @Provides
+    fun provideSyllabusRepository(
+        firestore: FirebaseFirestore
+    ): SyllabusRepository = SyllabusRepositoryImpl(firestore)
 }

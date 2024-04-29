@@ -35,4 +35,10 @@
         android:label="ProfessorFragment"
         tools:layout="@layout/fragment_professors" />
 
+    <fragment
+        android:id="@+id/nav_syllabus"
+        android:name="com.stathis.feature.ui.syllabus.SyllabusFragment"
+        android:label="SyllabusFragment"
+        tools:layout="@layout/fragment_syllabus" />
+
 </navigation>

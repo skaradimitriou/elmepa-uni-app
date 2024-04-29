@@ -65,17 +65,6 @@ inline fun <reified T> Application.readLocalJsonList(fileName: String, data: (Li
     }
 }
 
-fun TabLayout.onTabSelected(selectedTab: (Int) -> Unit) {
-    this.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-        override fun onTabSelected(tab: TabLayout.Tab?) {
-            tab?.position?.let { selectedTab.invoke(it) }
-        }
-
-        override fun onTabUnselected(tab: TabLayout.Tab?) {}
-        override fun onTabReselected(tab: TabLayout.Tab?) {}
-    })
-}
-
 fun MenuItem?.onMenuItemTap(callback: (MenuItem) -> Unit) {
     this?.setOnMenuItemClickListener {
         callback.invoke(it)

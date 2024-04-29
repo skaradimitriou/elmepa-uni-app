@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.material)
 
     implementation(libs.hilt.android)
+    implementation(libs.firebase.firestore)
     kapt(libs.hilt.compiler)
 
     implementation(libs.glide)

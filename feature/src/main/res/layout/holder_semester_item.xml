@@ -6,52 +6,49 @@
     <data>
 
         <variable
-            name="semester"
-            type="com.stathis.elmepaunivapp.model.syllabus.Semester" />
+            name="model"
+            type="com.stathis.model.syllabus.Semester" />
 
         <variable
             name="callback"
-            type="com.stathis.elmepaunivapp.callbacks.ElmepaClickListener" />
+            type="com.stathis.feature.ui.syllabus.adapter.SemesterCallback" />
+
     </data>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
+        style="@style/AppMaterialCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_10"
-        android:layout_marginTop="@dimen/dimen_10"
-        android:layout_marginEnd="@dimen/margin_10"
-        android:tag="@{semester}"
-        android:onClick="@{(view) -> callback.onItemClick(view)}"
+        android:onClick="@{() -> callback.onSemesterTap(model)}"
         app:cardCornerRadius="@dimen/dimen_5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="?android:attr/selectableItemBackground">
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/semester_item_txt"
+                android:id="@+id/itemTxtView"
                 style="@style/text_18_non_bold_white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_20"
-                android:text="@{semester.semester}"
+                android:text="@{model.name}"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/semester_title" />
+                tools:text="@tools:sample/lorem" />
 
             <ImageView
                 android:layout_width="@dimen/height_35"
                 android:layout_height="@dimen/height_35"
                 android:layout_marginEnd="@dimen/margin_5"
-                android:contentDescription="@string/app_name"
+                android:contentDescription="@{model.name}"
                 android:src="@drawable/arrow_right"
-                app:layout_constraintBottom_toBottomOf="@id/semester_item_txt"
+                app:layout_constraintBottom_toBottomOf="@id/itemTxtView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/semester_item_txt" />
+                app:layout_constraintTop_toTopOf="@id/itemTxtView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>

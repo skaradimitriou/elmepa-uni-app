@@ -51,10 +51,7 @@
     <string name="research_recycler_title">Έρευνα στο Τμήμα</string>
     <string name="syllabus_intent_data">SEMESTER</string>
 
-    <!-- Syllabus Activity -->
-    <string name="syllabus_tab_one">Επιστήμη των \nΔεδομένων &amp; Τεχνολογίες\n Πληροφορικής</string>
-    <string name="syllabus_tab_two">Διοίκηση Επιχειρήσεων \n&amp; Οργανισμών</string>
-    <string name="syllabus_tab_three">Ψηφιακό Μάρκετινγκ \n&amp; Επικοινωνία</string>
+
     <string name="semester_title">Εξάμηνο Α\'</string>
 
     <!-- Syllabus Lesson Activity -->

@@ -7,7 +7,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivitySyllabusLessonsBinding
-import com.stathis.elmepaunivapp.model.syllabus.Semester
+import com.stathis.model.syllabus.Semester
 import com.stathis.elmepaunivapp.util.onMenuItemTap
 import com.stathis.elmepaunivapp.util.setupBar
 import com.stathis.elmepaunivapp.util.showDialog
@@ -21,11 +21,11 @@ class LessonsActivity : ElmepaActivity<ActivitySyllabusLessonsBinding>(R.layout.
     }
 
     override fun startOps() {
-        val semester = intent.getParcelableExtra<Semester>(resources.getString(R.string.syllabus_intent_data))
-        semester?.let {
-            supportActionBar?.setupBar(it.semester)
-            viewModel.bindList(it)
-        }
+//        val semester = intent.getParcelableExtra<Semester>(resources.getString(R.string.syllabus_intent_data))
+//        semester?.let {
+//            supportActionBar?.setupBar(it.semester)
+//            viewModel.bindList(it)
+//        }
     }
 
     override fun stopOps() {}

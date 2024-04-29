@@ -25,10 +25,15 @@
     <string name="female">female</string>
     <string name="send_email_to_male_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. %1$s;</string>
     <string name="send_email_to_female_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ. %1$s;</string>
-
     <string name="dialog_new_email">Νέο e-mail</string>
     <string name="dialog_yes">Ναι</string>
     <string name="dialog_cancel">Άκυρο</string>
+
+    <!-- Syllabus Activity -->
+    <string name="syllabus">Πρόγραμμα Σπουδών</string>
+    <string name="syllabus_tab_one">Επιστήμη των \nΔεδομένων &amp; Τεχνολογίες\n Πληροφορικής</string>
+    <string name="syllabus_tab_two">Διοίκηση Επιχειρήσεων \n&amp; Οργανισμών</string>
+    <string name="syllabus_tab_three">Ψηφιακό Μάρκετινγκ \n&amp; Επικοινωνία</string>
 
 
 </resources>
