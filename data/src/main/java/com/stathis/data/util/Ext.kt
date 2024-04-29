@@ -22,11 +22,3 @@ inline fun <reified T> Application.readLocalJsonList(fileName: String, data: (Li
         data.invoke(listOf())
     }
 }
-
-fun Professor.equalsName(name: String): Boolean {
-    return this.fullName.lowercase().contains(name.lowercase())
-}
-
-fun List<Professor>.sortedAlphabetically(): List<Professor> {
-    return this.sortedWith(compareBy { it.fullName })
-}
