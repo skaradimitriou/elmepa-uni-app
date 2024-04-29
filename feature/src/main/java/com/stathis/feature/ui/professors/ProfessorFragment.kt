@@ -4,7 +4,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.afterTextChanged
+import com.stathis.core.util.inflateCustomMenu
+import com.stathis.core.util.respondToQuery
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.core.util.showProfessorDialog
@@ -27,6 +28,15 @@ class ProfessorFragment : BaseFragment<FragmentProfessorsBinding>(R.layout.fragm
     override fun init() {
         setScreenTitle(getString(com.stathis.core.R.string.professors))
 
+        inflateCustomMenu(
+            menuId = R.menu.professor_menu,
+            respondItemId = R.id.action_search,
+            callback = { menuItem ->
+                menuItem.respondToQuery(
+                    queryHint = getString(com.stathis.core.R.string.search_for_professor)
+                ) { query -> viewModel.filterProfessorsByName(query) }
+            })
+
         binding.professorsRecycler.apply {
             setupItemDecoration(start = 30, end = 30, bottom = 30)
             adapter = this@ProfessorFragment.adapter
@@ -35,10 +45,6 @@ class ProfessorFragment : BaseFragment<FragmentProfessorsBinding>(R.layout.fragm
 
     override fun startOps() {
         viewModel.fetchProfessors()
-
-        binding.searchAction.afterTextChanged { query ->
-            viewModel.filterProfessorsByName(query)
-        }
 
         binding.swipeToRefresh.setOnRefreshListener {
             viewModel.fetchProfessors()

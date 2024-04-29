@@ -6,6 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
+import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.R
@@ -34,6 +35,7 @@ class ResearchFragment :
     }
 
     override fun init() {
+        setScreenTitle(getString(com.stathis.core.R.string.research_in_dept))
         viewModel.fetchResearchInformation()
 
         binding.researchRecycler.apply {

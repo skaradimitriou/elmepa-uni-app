@@ -27,4 +27,13 @@ class NavigatorImpl @Inject constructor(
     override fun goBack() {
         navController.navigateUp()
     }
+
+    override fun isAtHomeScreens(): Boolean {
+        val currentDestination = navController.currentDestination?.id
+        return listOf(
+            R.id.nav_home,
+            R.id.nav_professors,
+            //R.id.nav_syllabus
+        ).contains(currentDestination)
+    }
 }

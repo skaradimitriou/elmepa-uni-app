@@ -6,12 +6,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
+import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
-import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.R
-import com.stathis.feature.ui.announcements.adapter.AnnouncementsAdapter
 import com.stathis.feature.databinding.FragmentAnnouncementsBinding
 import com.stathis.feature.navigation.NavigationAction
+import com.stathis.feature.ui.MainViewModel
+import com.stathis.feature.ui.announcements.adapter.AnnouncementsAdapter
 import com.stathis.feature.util.TITLE
 import com.stathis.feature.util.URL
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,6 +34,8 @@ class AnnouncementsFragment :
     }
 
     override fun init() {
+        setScreenTitle(getString(com.stathis.core.R.string.announcements))
+
         binding.announcementsRecycler.apply {
             adapter = this@AnnouncementsFragment.adapter
             setupItemDecoration(top = 40, start = 30, end = 30)

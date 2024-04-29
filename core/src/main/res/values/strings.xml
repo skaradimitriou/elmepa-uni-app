@@ -19,7 +19,8 @@
     <string name="announcements_get_error">Error getting Data from site</string>
 
     <!-- Professors -->
-    <string name="professors_search_txt">Αναζήτησε έναν καθηγητή</string>
+    <string name="menu_search">Αναζήτηση</string>
+    <string name="search_for_professor">Αναζήτησε έναν καθηγητή</string>
     <string name="male">male</string>
     <string name="female">female</string>
     <string name="send_email_to_male_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. %1$s;</string>

@@ -13,7 +13,7 @@
         android:drawableEnd="@drawable/ic_arrow_right"
         android:drawableTint="@color/white"
         android:padding="@dimen/margin_16"
-        android:text="@string/widget_text"
+        android:text="@string/search_for_professor"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 

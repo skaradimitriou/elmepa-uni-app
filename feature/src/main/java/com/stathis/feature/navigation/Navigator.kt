@@ -14,4 +14,6 @@ interface Navigator {
     fun goToScreen(action: NavigationAction?, bundle: Bundle? = null)
 
     fun goBack()
+
+    fun isAtHomeScreens() : Boolean
 }
