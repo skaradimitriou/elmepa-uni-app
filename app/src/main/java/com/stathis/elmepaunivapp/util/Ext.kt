@@ -33,10 +33,6 @@ fun TextView.alignText() {
     }
 }
 
-fun SwipeRefreshLayout.stopRefresh() {
-    this.isRefreshing = false
-}
-
 inline fun <reified T> Application.readJsonData(fileName: String, data: (T?) -> Unit) {
     try {
         val json = this.assets.open(fileName).bufferedReader().use { it.readText() }
