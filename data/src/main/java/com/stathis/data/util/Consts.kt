@@ -13,3 +13,10 @@ const val PARAGRAPH_TYPE = "p"
 const val URL_HTML_TAG = "h2.entry-title"
 const val URL_TYPE = "a"
 const val URL_ATTR = "href"
+
+/*
+ * Professors Constant Values
+ */
+
+const val PROFESSOR_DB_PATH = "professors"
+const val FULLNAME = "fullName"

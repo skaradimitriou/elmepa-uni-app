@@ -4,6 +4,7 @@ import com.stathis.core.base.UiModel
 
 data class Professor(
     val fullName: String,
+    val image: String,
     val email: String,
     val gender: String,
     val vocative: String

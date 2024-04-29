@@ -5,6 +5,9 @@ plugins {
     id("kotlin-kapt")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.googleServices)
+    id("com.google.firebase.crashlytics")
+    id("com.google.firebase.firebase-perf")
 }
 
 android {
@@ -65,6 +68,8 @@ dependencies {
     implementation(libs.ui.navigation)
 
     implementation(libs.hilt.android)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.perf)
     kapt(libs.hilt.compiler)
 
     implementation(libs.timber)
@@ -81,6 +86,9 @@ dependencies {
     implementation(libs.swipeToRefresh)
     implementation(libs.gson)
     implementation(libs.preference.ktx)
+
+    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    implementation("com.google.firebase:firebase-perf")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

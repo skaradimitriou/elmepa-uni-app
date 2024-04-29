@@ -1,6 +1,7 @@
 package com.stathis.data.di
 
 import android.app.Application
+import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.core.util.SharedPreferencesHelper
 import com.stathis.data.datasource.local.AnnouncementsDao
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
@@ -41,7 +42,7 @@ class RepositoryModule {
     }
 
     @Provides
-    fun provideProfessorsRepository(app: Application): ProfessorsRepository {
-        return ProfessorsRepositoryImpl(app)
-    }
+    fun provideProfessorsRepository(
+        firestore: FirebaseFirestore
+    ): ProfessorsRepository = ProfessorsRepositoryImpl(firestore)
 }

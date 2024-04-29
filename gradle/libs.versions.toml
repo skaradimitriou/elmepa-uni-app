@@ -19,6 +19,14 @@ hiltVersion = "2.48.1"
 okhttp = "4.10.0"
 timber = "5.0.1"
 swipeToRefresh = "1.1.0"
+firebaseCrashlytics = "18.6.4"
+gradle = "8.1.4"
+googleServicesVersion = "4.4.1"
+firebaseCrashlyticsGradle = "2.9.9"
+firebasePerf = "20.5.2"
+perfPlugin = "1.4.2"
+firebaseFirestore = "24.11.1"
+firebaseStorage = "20.3.0"
 
 #Old dependencies
 shimmer = "0.5.0"
@@ -28,7 +36,7 @@ glide = "4.16.0"
 room = "2.6.1"
 gson = "2.10.1"
 preference = "1.2.1"
-merlin = "1.2.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -76,7 +84,14 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preference" }
-merlin = { group = "com.novoda", name = "merlin", version.ref = "merlin" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
+gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServicesVersion" }
+firebase-crashlytics-gradle = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsGradle" }
+firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebasePerf" }
+perf-plugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "perfPlugin" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -84,3 +99,4 @@ jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "k
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "googleServicesVersion" }

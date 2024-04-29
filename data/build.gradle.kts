@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.googleServices)
 }
 
 android {
@@ -46,6 +47,8 @@ dependencies {
     implementation(project(":model"))
 
     implementation(libs.hilt.android)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
     kapt(libs.hilt.compiler)
 
     implementation(libs.room.runtime)
