@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.webkit.WebView
 import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.tabs.TabLayout
 import com.stathis.core.decorations.CustomItemDecoration
 
 
@@ -25,13 +26,14 @@ fun RecyclerView.setupItemDecoration(
 
 fun WebView.enableJS() = apply { settings.javaScriptEnabled = true }
 
-fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
-    this.addTextChangedListener(object : TextWatcher {
-        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-        override fun afterTextChanged(p0: Editable?) {
-            afterTextChanged.invoke(p0.toString())
+fun TabLayout.onTabSelected(selectedTab: (Int) -> Unit) {
+    this.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        override fun onTabSelected(tab: TabLayout.Tab?) {
+            tab?.position?.let { selectedTab.invoke(it) }
         }
+
+        override fun onTabUnselected(tab: TabLayout.Tab?) {}
+        override fun onTabReselected(tab: TabLayout.Tab?) {}
     })
 }
 

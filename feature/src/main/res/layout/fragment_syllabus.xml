@@ -3,20 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.stathis.elmepaunivapp.ui.home.syllabus.SyllabusViewModel" />
-    </data>
-
-    <androidx.constraintlayout.motion.widget.MotionLayout
-        android:id="@+id/constraintLayout3"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/grey_bg"
-        app:layoutDescription="@xml/fragment_syllabus_xml_constraintlayout3_scene"
-        tools:context=".ui.home.syllabus.SyllabusFragment">
+        android:layout_height="match_parent">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
@@ -46,19 +35,15 @@
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/syllabus_recycler"
+            android:id="@+id/syllabusRecycler"
+            style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:adapter="@{viewModel.adapter}"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/dimen_10"
-            android:paddingBottom="@dimen/dimen_40"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-            tools:listitem="@layout/holder_semester_item_row" />
+            tools:listitem="@layout/holder_semester_item" />
 
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

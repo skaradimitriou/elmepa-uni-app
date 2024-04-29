@@ -7,5 +7,6 @@ enum class NavigationAction {
     STUDENTS,
     RESEARCH,
     PROFESSORS,
+    SYLLABUS,
     WEBVIEW
 }

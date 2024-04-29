@@ -20,6 +20,7 @@ class NavigatorImpl @Inject constructor(
         NavigationAction.ANNOUNCEMENTS -> navController.navigate(R.id.announcementsFragment)
         NavigationAction.RESEARCH -> navController.navigate(R.id.researchFragment)
         NavigationAction.PROFESSORS -> navController.navigate(R.id.nav_professors)
+        NavigationAction.SYLLABUS -> navController.navigate(R.id.nav_syllabus)
         NavigationAction.WEBVIEW -> navController.navigate(R.id.webViewFragment, bundle)
         else -> Unit
     }

@@ -14,11 +14,11 @@ import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 class ProfessorsRepositoryImpl @Inject constructor(
-    private val firestore: FirebaseFirestore
+    private val fireStore: FirebaseFirestore
 ) : ProfessorsRepository {
 
     override suspend fun fetchAllProfessors(): Flow<List<Professor>> = flow {
-        val result = firestore.collection(PROFESSOR_DB_PATH)
+        val result = fireStore.collection(PROFESSOR_DB_PATH)
             .orderBy(FULLNAME)
             .get()
             .await()
@@ -29,7 +29,7 @@ class ProfessorsRepositoryImpl @Inject constructor(
     }
 
     override suspend fun searchForProfessor(name: String): Flow<List<Professor>> = flow {
-        val result = firestore.collection(PROFESSOR_DB_PATH)
+        val result = fireStore.collection(PROFESSOR_DB_PATH)
             .orderBy(FULLNAME)
             .startAt(name.firstCharCapital())
             .endAt(name.firstCharCapital() + "\uf8ff")
