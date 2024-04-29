@@ -14,7 +14,7 @@ fun ImageView.setImageDrawable(drawable: Int) {
 @BindingAdapter("loadImageUrl")
 fun ImageView.loadImage(imageUrl: String) {
     Glide.with(this.context).load(imageUrl)
-        .placeholder(com.stathis.core.R.color.shimmer_grey_lighter)
+        .placeholder(R.color.shimmer_grey_lighter)
         .into(this)
 }
 
@@ -34,10 +34,12 @@ fun ImageView.loadLocalPhoto(photo: String) {
     }
 }
 
-@BindingAdapter("setGenderImage")
-fun setImage(img: ImageView, gender: String) {
-    when (gender) {
-        img.context.resources.getString(R.string.male) -> img.setImageResource(R.drawable.male)
-        img.context.resources.getString(R.string.female) -> img.setImageResource(R.drawable.female)
+@BindingAdapter("setProfessorImage", "professorGender")
+fun ImageView.setProfessorImage(url: String, gender: String) {
+    val genderImg = when (gender) {
+        resources.getString(R.string.male) -> R.drawable.male
+        else -> R.drawable.female
     }
+
+    Glide.with(context).load(url).error(genderImg).into(this)
 }

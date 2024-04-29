@@ -16,10 +16,10 @@ class NavigatorImpl @Inject constructor(
 ) : Navigator {
 
     override fun goToScreen(action: NavigationAction?, bundle: Bundle?) = when (action) {
-        NavigationAction.DASHBOARD -> navController.navigate(R.id.homeFragment)
+        NavigationAction.DASHBOARD -> navController.navigate(R.id.nav_home)
         NavigationAction.ANNOUNCEMENTS -> navController.navigate(R.id.announcementsFragment)
         NavigationAction.RESEARCH -> navController.navigate(R.id.researchFragment)
-        NavigationAction.PROFESSORS -> navController.navigate(R.id.professorFragment)
+        NavigationAction.PROFESSORS -> navController.navigate(R.id.nav_professors)
         NavigationAction.WEBVIEW -> navController.navigate(R.id.webViewFragment, bundle)
         else -> Unit
     }

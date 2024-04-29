@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="com.stathis.feature.home.recyclerview.DashboardCallback" />
+            type="com.stathis.feature.ui.home.recyclerview.DashboardCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

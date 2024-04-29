@@ -3,35 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/nav_home">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.stathis.feature.home.HomeFragment"
+        android:id="@+id/nav_home"
+        android:name="com.stathis.feature.ui.home.HomeFragment"
         android:label="DashboardFragment"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/announcementsFragment"
-        android:name="com.stathis.feature.announcements.AnnouncementsFragment"
+        android:name="com.stathis.feature.ui.announcements.AnnouncementsFragment"
         android:label="AnnouncementsFragment"
         tools:layout="@layout/fragment_announcements" />
 
     <fragment
         android:id="@+id/researchFragment"
-        android:name="com.stathis.feature.research.ResearchFragment"
+        android:name="com.stathis.feature.ui.research.ResearchFragment"
         android:label="ResearchFragment"
         tools:layout="@layout/fragment_research_in_dept" />
 
     <fragment
         android:id="@+id/webViewFragment"
-        android:name="com.stathis.feature.webview.WebViewFragment"
+        android:name="com.stathis.feature.ui.webview.WebViewFragment"
         android:label="WebViewFragment"
         tools:layout="@layout/fragment_webview" />
 
     <fragment
-        android:id="@+id/professorFragment"
-        android:name="com.stathis.feature.professors.ProfessorFragment"
+        android:id="@+id/nav_professors"
+        android:name="com.stathis.feature.ui.professors.ProfessorFragment"
         android:label="ProfessorFragment"
         tools:layout="@layout/fragment_professors" />
 

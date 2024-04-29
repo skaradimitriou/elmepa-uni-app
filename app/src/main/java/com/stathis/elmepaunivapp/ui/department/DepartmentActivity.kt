@@ -12,7 +12,7 @@ import com.stathis.elmepaunivapp.databinding.ActivityDepartmentBinding
 import com.stathis.elmepaunivapp.ui.department.model.Programme
 import com.stathis.elmepaunivapp.ui.department.model.SocialChannel
 import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
-import com.stathis.feature.webview.WebViewFragment
+import com.stathis.feature.ui.webview.WebViewFragment
 import com.stathis.elmepaunivapp.util.EMAIL_TYPE
 import com.stathis.elmepaunivapp.util.NO_CLIENTS_INSTALLED
 import com.stathis.elmepaunivapp.util.RESEARCH

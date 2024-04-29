@@ -6,9 +6,10 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.stathis.core.base.BaseActivity
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
-import com.stathis.feature.MainViewModel
+import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.navigation.NavigatorImpl
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -24,6 +25,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun init() {
         navController = findNavController(R.id.navHostFragment)
         navigator = NavigatorImpl(this, navController)
+
+        binding.bottomNavView.setupWithNavController(navController)
 
         onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {

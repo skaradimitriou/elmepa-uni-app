@@ -9,7 +9,7 @@ import com.stathis.elmepaunivapp.callbacks.StudentsScreenCallback
 import com.stathis.elmepaunivapp.databinding.ActivityStudentBinding
 import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.students.model.LinkItem
-import com.stathis.feature.webview.WebViewFragment
+import com.stathis.feature.ui.webview.WebViewFragment
 import com.stathis.elmepaunivapp.util.*
 import com.stathis.elmepaunivapp.util.setupBar
 

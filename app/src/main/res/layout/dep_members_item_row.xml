@@ -28,7 +28,7 @@
             loadLocalPhoto="@{model.img}"
             android:layout_width="@dimen/height_70"
             android:layout_height="@dimen/height_70"
-            android:src="@drawable/dimotikalis"
+            android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

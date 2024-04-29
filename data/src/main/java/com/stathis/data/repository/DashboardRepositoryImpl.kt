@@ -42,15 +42,6 @@ class DashboardRepositoryImpl @Inject constructor(
                 drawable = R.drawable.home_research,
                 type = OptionType.RESEARCH
             ),
-            /*
-             * FIXME: Remove those from this list. Professors & Syllabus will be located at
-             *  bottom nav menu
-             */
-            DashboardOption(
-                title = "Καθηγητές",
-                drawable = R.drawable.home_research,
-                type = OptionType.PROFESSORS
-            ),
         )
         emit(list)
     }

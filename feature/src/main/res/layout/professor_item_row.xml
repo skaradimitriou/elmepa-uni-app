@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="com.stathis.feature.professors.adapter.ProfessorsCallback" />
+            type="com.stathis.feature.ui.professors.adapter.ProfessorsCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -35,7 +35,8 @@
                 app:layout_constraintBottom_toBottomOf="@id/professorEmailTxtView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:setGenderImage="@{model.gender}"
+                app:setProfessorImage="@{model.image}"
+                app:professorGender="@{model.gender}"
                 tools:src="@tools:sample/avatars" />
 
             <TextView

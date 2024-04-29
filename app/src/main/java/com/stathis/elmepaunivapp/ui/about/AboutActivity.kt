@@ -4,7 +4,7 @@ import android.content.Intent
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.databinding.ActivityAboutBinding
-import com.stathis.feature.webview.WebViewFragment
+import com.stathis.feature.ui.webview.WebViewFragment
 import com.stathis.elmepaunivapp.util.*
 
 class AboutActivity : ElmepaActivity<ActivityAboutBinding>(R.layout.activity_about) {

@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="com.stathis.feature.announcements.adapter.AnnouncementsCallback" />
+            type="com.stathis.feature.ui.announcements.adapter.AnnouncementsCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

@@ -9,7 +9,7 @@
 
         <variable
             name="adapter"
-            type="com.stathis.feature.research.recycler.ResearchChildAdapter" />
+            type="com.stathis.feature.ui.research.recycler.ResearchChildAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

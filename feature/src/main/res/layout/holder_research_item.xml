@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="com.stathis.feature.research.recycler.ResearchCallback" />
+            type="com.stathis.feature.ui.research.recycler.ResearchCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

@@ -7,7 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
 import com.stathis.elmepaunivapp.R
-import com.stathis.feature.webview.WebViewFragment
+import com.stathis.feature.ui.webview.WebViewFragment
 import com.stathis.elmepaunivapp.util.SCHEDULE_URL
 import com.stathis.elmepaunivapp.util.TITLE
 import com.stathis.elmepaunivapp.util.URL
