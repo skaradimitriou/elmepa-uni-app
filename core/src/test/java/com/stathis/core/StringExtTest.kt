@@ -6,19 +6,27 @@ import org.junit.Test
 
 class StringExtTest {
 
-    //unit test for firstCharCapital
     @Test
-    fun `firstCharCapital returns the first char of the word capital`() {
-        val word = "hello"
-        val result = word.firstCharCapital()
-        assertEquals(result, "Hello")
+    fun `first char capital test`() {
+        val input = "hello"
+        val expected = "Hello"
+        val result = input.firstCharCapital()
+        assertEquals(expected, result)
     }
 
-    //make firstCharLetter input nullable
     @Test
-    fun `firstCharCapital returns the first char of the word capital when input is null`() {
-        val word: String? = null
-        val result = word.firstCharCapital()
-        assertEquals(result, "")
+    fun `first char capital test with empty string`() {
+        val input = ""
+        val expected = ""
+        val result = input.firstCharCapital()
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun `first char capital test with null string`() {
+        val input = null
+        val expected = ""
+        val result = input.firstCharCapital()
+        assertEquals(expected, result)
     }
 }

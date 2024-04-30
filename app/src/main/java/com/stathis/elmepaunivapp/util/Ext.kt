@@ -27,12 +27,6 @@ fun String.toNonHtmlText(): String {
     }
 }
 
-fun TextView.alignText() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-        this.justificationMode = LineBreaker.JUSTIFICATION_MODE_INTER_WORD
-    }
-}
-
 inline fun <reified T> Application.readJsonData(fileName: String, data: (T?) -> Unit) {
     try {
         val json = this.assets.open(fileName).bufferedReader().use { it.readText() }

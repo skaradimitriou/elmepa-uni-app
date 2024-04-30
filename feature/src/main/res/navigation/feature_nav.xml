@@ -41,4 +41,10 @@
         android:label="SyllabusFragment"
         tools:layout="@layout/fragment_syllabus" />
 
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.stathis.feature.ui.about.AboutAppFragment"
+        android:label="AboutAppFragment"
+        tools:layout="@layout/fragment_about_app" />
+
 </navigation>

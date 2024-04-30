@@ -1,10 +1,10 @@
 package com.stathis.core.util
 
-import android.text.Editable
-import android.text.TextWatcher
+import android.graphics.text.LineBreaker
+import android.os.Build
 import android.view.MenuItem
 import android.webkit.WebView
-import android.widget.EditText
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
 import com.stathis.core.decorations.CustomItemDecoration
@@ -50,4 +50,10 @@ fun MenuItem.respondToQuery(queryHint: String, callback: (String) -> Unit) {
             return false
         }
     })
+}
+
+fun TextView.alignText() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        justificationMode = LineBreaker.JUSTIFICATION_MODE_INTER_WORD
+    }
 }
