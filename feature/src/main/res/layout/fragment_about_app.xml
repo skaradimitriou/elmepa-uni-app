@@ -7,10 +7,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/grey_bg"
-        tools:context=".ui.about.AboutActivity">
+        tools:context="com.stathis.feature.ui.about.AboutAppFragment">
 
         <TextView
-            android:id="@+id/about_app"
+            android:id="@+id/aboutAppTxtView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_16"
@@ -19,44 +19,44 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/learn_more"
+            android:id="@+id/learnMoreTxtView"
             style="@style/text_16_bold_petrol"
-            underline="@{true}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:padding="@dimen/dimen_10"
             android:text="@string/learn_more_app_url"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/about_app" />
+            app:layout_constraintTop_toBottomOf="@id/aboutAppTxtView"
+            app:underline="@{true}" />
 
         <TextView
-            android:id="@+id/about_data"
+            android:id="@+id/aboutDataTxtView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_16"
             android:text="@string/about_app_data"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/learn_more" />
+            app:layout_constraintTop_toBottomOf="@id/learnMoreTxtView" />
 
         <TextView
-            android:id="@+id/news_publisher_name"
+            android:id="@+id/newsPublisherNameTxtView"
             style="@style/text_16_non_bold_black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/dimen_16"
             android:paddingTop="@dimen/dimen_16"
             android:text="@string/news_publisher_header"
-            app:layout_constraintTop_toBottomOf="@id/about_data" />
+            app:layout_constraintTop_toBottomOf="@id/aboutDataTxtView" />
 
         <TextView
-            android:id="@+id/news_publisher_desc"
+            android:id="@+id/newsPublisherDescTxtView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/dimen_16"
             android:paddingTop="@dimen/dimen_5"
             android:text="@string/news_publisher_desc"
-            app:layout_constraintTop_toBottomOf="@id/news_publisher_name" />
+            app:layout_constraintTop_toBottomOf="@id/newsPublisherNameTxtView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

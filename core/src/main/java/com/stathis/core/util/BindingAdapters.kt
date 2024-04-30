@@ -1,5 +1,6 @@
 package com.stathis.core.util
 
+import android.graphics.Paint
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -16,6 +17,11 @@ fun ImageView.loadImage(imageUrl: String) {
     Glide.with(this.context).load(imageUrl)
         .placeholder(R.color.shimmer_grey_lighter)
         .into(this)
+}
+
+@BindingAdapter("underline")
+fun TextView.underline(underlined: Boolean) {
+    if (underlined) this.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 }
 
 @BindingAdapter("setPubDate")
