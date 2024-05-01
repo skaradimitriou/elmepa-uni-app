@@ -1,10 +1,8 @@
 package com.stathis.elmepaunivapp.util
 
-import android.graphics.Paint
 import android.os.Handler
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.stathis.elmepaunivapp.R
@@ -19,15 +17,6 @@ fun ImageView.loadLocalPhoto(photo: String) {
     } catch (e: Exception) {
         this.setImageResource(R.mipmap.ic_launcher)
     }
-}
-
-/**
- * Binding Adapters for TextViews
- */
-
-@BindingAdapter("setHtmlText")
-fun TextView.setText(text: String) {
-    this.text = text.toNonHtmlText()
 }
 
 /**

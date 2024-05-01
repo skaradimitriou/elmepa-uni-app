@@ -1,6 +1,5 @@
 package com.stathis.elmepaunivapp.util
 
-const val VIRTUAL_TOUR_URL = "https://mst.hmu.gr/hmutour"
 const val SCHEDULE_URL = "https://mst.hmu.gr/proptyxiako/orologio-programma-mathimaton/"
 
 const val SECRETARY_MAIL = "kalarhaki@hmu.gr"
@@ -15,10 +14,6 @@ const val EDU_MAIL = "Edu E-mail Φοιτητή"
 const val STUDENTS_PLATFORM = "Σύστημα Φοιτητών"
 
 const val RESEARCH = "research"
-
-const val EMAIL = "E-mail"
-const val TELEPHONE = "Τηλέφωνo"
-
 const val YOUTUBE = "Youtube"
 
 const val EMAIL_TYPE = "message/rfc822"

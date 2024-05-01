@@ -47,4 +47,10 @@
         android:label="AboutAppFragment"
         tools:layout="@layout/fragment_about_app" />
 
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.stathis.feature.ui.contact.ContactFragment"
+        android:label="ContactFragment"
+        tools:layout="@layout/fragment_contact" />
+
 </navigation>

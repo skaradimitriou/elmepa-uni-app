@@ -7,11 +7,13 @@ import com.stathis.data.datasource.local.AnnouncementsDao
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.repository.AnnouncementsRepositoryImpl
 import com.stathis.data.repository.DashboardRepositoryImpl
+import com.stathis.data.repository.DepartmentRepositoryImpl
 import com.stathis.data.repository.ProfessorsRepositoryImpl
 import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.domain.repository.DashboardRepository
+import com.stathis.domain.repository.DepartmentRepository
 import com.stathis.domain.repository.ProfessorsRepository
 import com.stathis.domain.repository.ResearchRepository
 import com.stathis.domain.repository.SyllabusRepository
@@ -52,4 +54,9 @@ class RepositoryModule {
     fun provideSyllabusRepository(
         firestore: FirebaseFirestore
     ): SyllabusRepository = SyllabusRepositoryImpl(firestore)
+
+    @Provides
+    fun provideDepartmentRepository(
+        firestore: FirebaseFirestore
+    ): DepartmentRepository = DepartmentRepositoryImpl(firestore)
 }

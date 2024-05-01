@@ -18,7 +18,6 @@
     <!-- About Activity -->
 
 
-
     <!-- Department Activity -->
     <string name="dept_button_txt">Μάθε περισσότερα</string>
     <string name="virtual_tour">virtual_tour</string>
@@ -88,12 +87,8 @@
     <string name="news_publisher_header">News Publisher</string>
     <string name="news_publisher_desc">E–mail: kalarhaki@hmu.gr\nΤηλ.: 28410–91103</string>
 
-    <!-- Contact -->
-    <string name="contact_title">Επικοινωνία</string>
 
     <!-- Professor Widget -->
     <string name="widget_professor_intent">OPEN_PROFESSORS</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

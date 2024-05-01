@@ -1,6 +1,7 @@
 package com.stathis.core.util
 
 import android.graphics.Paint
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -27,6 +28,16 @@ fun TextView.underline(underlined: Boolean) {
 @BindingAdapter("setPubDate")
 fun TextView.setPubDate(text: String) {
     this.text = text.substringBefore('|')
+}
+
+@BindingAdapter("textAndVisibility")
+fun TextView.setTextAndVisibility(text: String) {
+    if (text.isEmpty()) {
+        visibility = View.GONE
+    } else {
+        visibility = View.VISIBLE
+        this.text = text
+    }
 }
 
 @BindingAdapter("loadLocalPhoto")

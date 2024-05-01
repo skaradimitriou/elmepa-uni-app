@@ -1,7 +1,6 @@
 package com.stathis.elmepaunivapp
 
 import android.view.MenuItem
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -9,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.stathis.core.base.BaseActivity
+import com.stathis.core.util.onBackButtonClick
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
 import com.stathis.feature.navigation.NavigatorImpl
 import com.stathis.feature.ui.MainViewModel
@@ -36,17 +36,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             supportActionBar?.setDisplayHomeAsUpEnabled(!isAtHomeScreens)
         }
 
-        onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                navigator.goBack()
-            }
-        })
+        onBackButtonClick {
+            navigator.goBack()
+        }
     }
 
     override fun startOps() {
         lifecycleScope.launch {
             viewModel.navState.flowWithLifecycle(lifecycle).collect { data ->
-                data?.let { 
+                data?.let {
                     navigator.goToScreen(it.action, it.bundle)
                     viewModel.navigateWithAction(null)
                 }
