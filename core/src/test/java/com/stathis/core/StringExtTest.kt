@@ -1,32 +1,43 @@
 package com.stathis.core
 
 import com.stathis.core.util.makeFirstCharCapital
-import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertNotNull
+import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
 class StringExtTest {
 
     @Test
-    fun `first char capital test`() {
+    fun testCapitalCaseWithString_ReturnsTrue() {
         val input = "hello"
         val expected = "Hello"
-        val result = input.makeFirstCharCapital()
-        assertEquals(expected, result)
+        assertTrue(input.makeFirstCharCapital() == expected)
     }
 
     @Test
-    fun `first char capital test with empty string`() {
-        val input = ""
-        val expected = ""
-        val result = input.makeFirstCharCapital()
-        assertEquals(expected, result)
+    fun testAllCapitalWord_ReturnsTrue() {
+        val input = "WORD"
+        val expected = "Word"
+        assertTrue(input.makeFirstCharCapital() == expected)
     }
 
     @Test
-    fun `first char capital test with null string`() {
-        val input = null
+    fun testMakeFirstLetterCapitalWithNullInput_ReturnsTrue() {
+        val input: String? = null
         val expected = ""
-        val result = input.makeFirstCharCapital()
-        assertEquals(expected, result)
+        assertTrue(input.makeFirstCharCapital() == expected)
+    }
+
+    @Test
+    fun testMakeFirstLetterCapitalWithNullInput() {
+        val input: String? = null
+        assertNotNull(input.makeFirstCharCapital())
+    }
+
+    @Test
+    fun testMakeFirstLetterCapitalSameWord_ReturnsTrue() {
+        val input = "Word"
+        val expected = "Word"
+        assertTrue(input.makeFirstCharCapital() == expected)
     }
 }

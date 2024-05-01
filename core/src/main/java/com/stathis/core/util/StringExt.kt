@@ -8,6 +8,6 @@ import android.text.Html
 
 fun String?.makeFirstCharCapital() = toNotNull().lowercase().replaceFirstChar(Char::uppercase)
 
-fun String.toNonHtmlText(): String {
+fun String?.toNonHtmlText(): String {
     return Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY).toString()
 }

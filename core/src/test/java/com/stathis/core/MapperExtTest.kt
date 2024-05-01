@@ -1,7 +1,10 @@
 package com.stathis.core
 
+import com.stathis.core.util.toListOf
 import com.stathis.core.util.toNotNull
 import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertNotNull
+import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
 class MapperExtTest {
@@ -9,17 +12,13 @@ class MapperExtTest {
     @Test
     fun `toNotNull returns empty string when input is null`() {
         val input: String? = null
-        val expected = ""
-        val result = input.toNotNull()
-        assertEquals(result, expected)
+        assertEquals(input.toNotNull(), "")
     }
 
     @Test
     fun `toNotNull returns string when input is not null`() {
         val input = "Hello"
-        val expected = "Hello"
-        val result = input.toNotNull()
-        assertEquals(result, expected)
+        assertEquals(input.toNotNull(), "Hello")
     }
 
     @Test
@@ -60,5 +59,24 @@ class MapperExtTest {
         val expected = false
         val result = input.toNotNull()
         assertEquals(result, expected)
+    }
+
+    @Test
+    fun toNotNullWithNullList() {
+        val list: List<String>? = null
+        assertTrue(list.toNotNull().isEmpty())
+    }
+
+    @Test
+    fun toNotNullWithStringList() {
+        val list = listOf("one")
+        assertTrue(list.toNotNull().size == 1)
+    }
+
+    @Test
+    fun toListOfWithNullListTest(){
+        val list : List<String?>? = null
+        val mappedString = list.toListOf{ "one" }
+        assertNotNull(mappedString)
     }
 }
