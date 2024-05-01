@@ -1,7 +1,7 @@
 package com.stathis.data.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.core.util.firstCharCapital
+import com.stathis.core.util.makeFirstCharCapital
 import com.stathis.data.datasource.remote.mapper.ProfessorsMapper
 import com.stathis.data.datasource.remote.model.ProfessorDto
 import com.stathis.data.util.FULLNAME
@@ -31,8 +31,8 @@ class ProfessorsRepositoryImpl @Inject constructor(
     override suspend fun searchForProfessor(name: String): Flow<List<Professor>> = flow {
         val result = fireStore.collection(PROFESSOR_DB_PATH)
             .orderBy(FULLNAME)
-            .startAt(name.firstCharCapital())
-            .endAt(name.firstCharCapital() + "\uf8ff")
+            .startAt(name.makeFirstCharCapital())
+            .endAt(name.makeFirstCharCapital() + "\uf8ff")
             .get()
             .await()
             .toObjects(ProfessorDto::class.java)

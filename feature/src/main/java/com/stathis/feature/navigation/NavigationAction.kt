@@ -9,5 +9,6 @@ enum class NavigationAction {
     PROFESSORS,
     SYLLABUS,
     WEBVIEW,
+    CONTACT,
     ABOUT_APP
 }

@@ -5,6 +5,7 @@ import android.os.Build
 import android.view.MenuItem
 import android.webkit.WebView
 import android.widget.TextView
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
 import com.stathis.core.decorations.CustomItemDecoration
@@ -56,4 +57,9 @@ fun TextView.alignText() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         justificationMode = LineBreaker.JUSTIFICATION_MODE_INTER_WORD
     }
+}
+
+@BindingAdapter("setHtmlText")
+fun TextView.setText(text: String) {
+    this.text = text.toNonHtmlText()
 }

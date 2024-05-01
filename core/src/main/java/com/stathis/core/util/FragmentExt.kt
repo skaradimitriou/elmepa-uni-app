@@ -2,6 +2,7 @@ package com.stathis.core.util
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -65,4 +66,31 @@ fun Fragment.showProfessorDialog(message: String, email: String) {
         }
         setNegativeButton(getString(R.string.dialog_cancel)) { dialog, which -> dialog.dismiss() }
     }.show()
+}
+
+/**
+ * Helper fun to launch an email intent to a specific email address.
+ */
+
+fun Fragment.startEmailIntent(emailAddress: String) {
+    val mailIntent = Intent(Intent.ACTION_SEND).apply {
+        type = EMAIL_TYPE
+        putExtra(Intent.EXTRA_EMAIL, arrayOf(emailAddress))
+    }
+
+    try {
+        startActivity(Intent.createChooser(mailIntent, SEND_MAIL))
+    } catch (ex: ActivityNotFoundException) {
+        //
+    }
+}
+
+/**
+ * Helper fun to launch a dial intent to a specific number.
+ */
+
+fun Fragment.startDialIntent(numberToDial: String) {
+    startActivity(Intent(Intent.ACTION_DIAL).apply {
+        data = Uri.parse(numberToDial)
+    })
 }

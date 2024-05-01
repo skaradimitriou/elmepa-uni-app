@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.stathis.model.contact.ContactItem" />
+
+        <variable
+            name="callback"
+            type="com.stathis.feature.ui.contact.adapter.ContactCallback" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/AppMaterialCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(view) -> callback.onContactItemClick(model)}"
+        app:cardCornerRadius="@dimen/margin_10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dimen_16">
+
+            <TextView
+                android:id="@+id/titleTxtView"
+                style="@style/text_16_bold_petrol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{model.title}"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/descriptionLine1TxtView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleTxtView"
+                app:textAndVisibility="@{model.descriptionLine1}"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/descriptionLine2TxtView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/descriptionLine1TxtView"
+                app:textAndVisibility="@{model.descriptionLine2}"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/descriptionLine3TxtView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/descriptionLine2TxtView"
+                app:textAndVisibility="@{model.descriptionLine3}"
+                tools:text="@tools:sample/lorem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
