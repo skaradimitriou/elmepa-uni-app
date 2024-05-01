@@ -46,7 +46,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun startOps() {
         lifecycleScope.launch {
             viewModel.navState.flowWithLifecycle(lifecycle).collect { data ->
-                data?.let { navigator.goToScreen(it.action, it.bundle) }
+                data?.let { 
+                    navigator.goToScreen(it.action, it.bundle)
+                    viewModel.navigateWithAction(null)
+                }
             }
         }
     }
