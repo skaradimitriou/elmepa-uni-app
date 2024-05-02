@@ -15,6 +15,7 @@
 
     <!-- Announcement Activity -->
     <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
+    <string name="announcement_share_body">%s. Διάβασε περισσότερα στο %1s</string>
     <string name="announcement_title">This is an announcement title</string>
     <string name="announcements_get_error">Error getting Data from site</string>
 

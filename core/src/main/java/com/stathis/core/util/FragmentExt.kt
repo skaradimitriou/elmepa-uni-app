@@ -14,6 +14,7 @@ import androidx.lifecycle.Lifecycle
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.stathis.core.R
 
+
 /**
  * Helper fun to simplify setting a screen title in a [Fragment].
  */
@@ -93,4 +94,19 @@ fun Fragment.startDialIntent(numberToDial: String) {
     startActivity(Intent(Intent.ACTION_DIAL).apply {
         data = Uri.parse(numberToDial)
     })
+}
+
+/**
+ * Helper fun to launch a share plain text intent.
+ */
+
+fun Fragment.startShareIntent(subject: String, body: String) {
+    val txtIntent = Intent(Intent.ACTION_SEND).apply {
+        setType("text/plain")
+        putExtra(Intent.EXTRA_SUBJECT, subject)
+        putExtra(Intent.EXTRA_TEXT, body)
+    }
+
+    val intent = Intent.createChooser(txtIntent, "Share", null)
+    startActivity(intent)
 }

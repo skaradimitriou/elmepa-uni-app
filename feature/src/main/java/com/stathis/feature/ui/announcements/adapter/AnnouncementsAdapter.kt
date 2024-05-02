@@ -58,11 +58,17 @@ class AnnouncementsViewHolder(
             is Announcement -> {
                 binding.setVariable(BR.model, data)
                 binding.setVariable(BR.callback, callback)
+
+                (binding as HolderAnnouncementItemBinding).announcementImgView.setOnLongClickListener {
+                    callback.onLongAnnouncementTap(data)
+                    true
+                }
             }
         }
     }
 }
 
-fun interface AnnouncementsCallback {
+interface AnnouncementsCallback {
     fun onAnnouncementTap(model: Announcement)
+    fun onLongAnnouncementTap(model: Announcement)
 }
