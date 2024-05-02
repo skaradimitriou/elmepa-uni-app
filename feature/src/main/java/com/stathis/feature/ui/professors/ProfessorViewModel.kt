@@ -3,10 +3,10 @@ package com.stathis.feature.ui.professors
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
+import com.stathis.core.base.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchProfessorsUseCase
 import com.stathis.domain.usecase.FilterProfessorsUseCase
-import com.stathis.model.professors.Professor
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -22,10 +22,10 @@ class ProfessorViewModel @Inject constructor(
     private val filterProfessorsUseCase: FilterProfessorsUseCase
 ) : BaseViewModel(app) {
 
-    val professors: SharedFlow<List<Professor>>
+    val professors: SharedFlow<List<UiModel>>
         get() = _professors
 
-    private val _professors = MutableSharedFlow<List<Professor>>()
+    private val _professors = MutableSharedFlow<List<UiModel>>()
 
     fun fetchProfessors() {
         viewModelScope.launch(dispatcher) {

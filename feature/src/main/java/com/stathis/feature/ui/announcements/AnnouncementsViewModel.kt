@@ -28,8 +28,6 @@ class AnnouncementsViewModel @Inject constructor(
 
     fun fetchAnnouncements(forceUpdate: Boolean? = false) {
         viewModelScope.launch(dispatcher) {
-            _announcements.emit(ShimmerGenerator.list)
-
             useCase.invoke(forceUpdate).collect { data ->
                 _announcements.emit(data)
             }

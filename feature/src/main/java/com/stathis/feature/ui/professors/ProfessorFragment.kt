@@ -41,11 +41,11 @@ class ProfessorFragment : BaseFragment<FragmentProfessorsBinding>(R.layout.fragm
             setupItemDecoration(start = 30, end = 30, bottom = 30)
             adapter = this@ProfessorFragment.adapter
         }
+
+        viewModel.fetchProfessors()
     }
 
     override fun startOps() {
-        viewModel.fetchProfessors()
-
         binding.swipeToRefresh.setOnRefreshListener {
             viewModel.fetchProfessors()
         }
