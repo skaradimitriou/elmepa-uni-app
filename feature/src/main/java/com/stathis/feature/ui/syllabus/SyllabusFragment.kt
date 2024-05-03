@@ -1,16 +1,14 @@
 package com.stathis.feature.ui.syllabus
 
-import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.onTabSelected
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentSyllabusBinding
-import com.stathis.feature.ui.syllabus.adapter.SemesterAdapter
+import com.stathis.feature.ui.syllabus.adapter.OrientationAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -20,30 +18,22 @@ class SyllabusFragment : BaseFragment<FragmentSyllabusBinding>(R.layout.fragment
 
     private val viewModel by viewModels<SyllabusViewModel>()
 
-    private val adapter = SemesterAdapter { selectedSemester ->
-        Timber.d("Syllabus clicked. $selectedSemester")
-        val bundle = Bundle().apply {
-            putInt("TAB", binding.tabLayout.selectedTabPosition)
-            putString("SEMESTER", selectedSemester.name)
-        }
-        Timber.d("Bundle created. $bundle")
+    private val adapter = OrientationAdapter { orientationType, semester ->
+        //FIXME: Pass data to next screen for filtering
+        Timber.d(orientationType.toString())
     }
 
     override fun init() {
         setScreenTitle(getString(com.stathis.core.R.string.syllabus))
 
-        viewModel.fetchSemesters()
-
         binding.syllabusRecycler.apply {
-            setupItemDecoration(start = 30, end = 30, bottom = 30)
+            setupItemDecoration(start = 30, end = 30, top = 30)
             adapter = this@SyllabusFragment.adapter
         }
     }
 
     override fun startOps() {
-        binding.tabLayout.onTabSelected { tabPosition ->
-            viewModel.fetchSemesters()
-        }
+        viewModel.fetchSemesters()
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.semesters.flowWithLifecycle(lifecycle).collect {

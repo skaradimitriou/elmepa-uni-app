@@ -60,3 +60,12 @@ fun ImageView.setProfessorImage(url: String, gender: String) {
 
     Glide.with(context).load(url).error(genderImg).into(this)
 }
+
+@BindingAdapter("animateArrow")
+fun ImageView.animateArrow(isExpanded: Boolean) {
+    if (isExpanded) {
+        animate().rotation(90f).start()
+    } else {
+        animate().rotation(0f).start()
+    }
+}

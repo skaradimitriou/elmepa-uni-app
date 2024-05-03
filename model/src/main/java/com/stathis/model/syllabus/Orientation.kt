@@ -1,5 +1,15 @@
 package com.stathis.model.syllabus
 
-enum class Orientation {
-    BA, MARKETING, DATA
+import com.stathis.core.base.UiModel
+
+data class Orientation(
+    val title: String,
+    val semesters: List<Semester>,
+    val type: OrientationType,
+    var isExpanded: Boolean = false
+) : UiModel {
+    override fun equalsContent(obj: UiModel) = when (obj) {
+        is Orientation -> title == obj.title
+        else -> false
+    }
 }

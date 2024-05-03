@@ -5,11 +5,11 @@ import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchSemestersUseCase
-import com.stathis.model.syllabus.Semester
+import com.stathis.model.syllabus.Orientation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,10 +20,10 @@ class SyllabusViewModel @Inject constructor(
     private val useCase: FetchSemestersUseCase
 ) : BaseViewModel(app) {
 
-    val semesters: SharedFlow<List<Semester>>
+    val semesters: StateFlow<List<Orientation>>
         get() = _semesters
 
-    private val _semesters = MutableSharedFlow<List<Semester>>()
+    private val _semesters = MutableStateFlow<List<Orientation>>(listOf())
 
     fun fetchSemesters() {
         viewModelScope.launch(dispatcher) {

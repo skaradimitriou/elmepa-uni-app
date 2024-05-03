@@ -7,43 +7,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/dark_grey"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tabIndicatorColor="@color/white"
-            app:tabTextColor="@color/white">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/syllabus_tab_one" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/syllabus_tab_two" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/syllabus_tab_three" />
-
-        </com.google.android.material.tabs.TabLayout>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/syllabusRecycler"
             style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-            tools:listitem="@layout/holder_semester_item" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/holder_orientation_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
