@@ -5,14 +5,13 @@ import android.content.Intent
 import android.net.Uri
 import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
+import com.stathis.core.base.BaseActivity
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
 import com.stathis.elmepaunivapp.databinding.ActivityDepartmentBinding
 import com.stathis.elmepaunivapp.ui.department.model.Programme
 import com.stathis.elmepaunivapp.ui.department.model.SocialChannel
 import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
-import com.stathis.feature.ui.webview.WebViewFragment
 import com.stathis.elmepaunivapp.util.EMAIL_TYPE
 import com.stathis.elmepaunivapp.util.NO_CLIENTS_INSTALLED
 import com.stathis.elmepaunivapp.util.RESEARCH
@@ -26,8 +25,9 @@ import com.stathis.elmepaunivapp.util.setClickability
 import com.stathis.elmepaunivapp.util.setupBar
 import com.stathis.elmepaunivapp.util.showOrHide
 import com.stathis.elmepaunivapp.util.showSnack
+import com.stathis.feature.ui.webview.WebViewFragment
 
-class DepartmentActivity : ElmepaActivity<ActivityDepartmentBinding>(R.layout.activity_department) {
+class DepartmentActivity : BaseActivity<ActivityDepartmentBinding>(R.layout.activity_department) {
 
     private val viewModel: DepartmentViewModel by viewModels()
     private val rotateOpen by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim) }

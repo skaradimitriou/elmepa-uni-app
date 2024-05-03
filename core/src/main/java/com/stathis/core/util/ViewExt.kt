@@ -3,6 +3,7 @@ package com.stathis.core.util
 import android.graphics.text.LineBreaker
 import android.os.Build
 import android.view.MenuItem
+import android.view.View
 import android.webkit.WebView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -62,4 +63,12 @@ fun TextView.alignText() {
 @BindingAdapter("setHtmlText")
 fun TextView.setText(text: String) {
     this.text = text.toNonHtmlText()
+}
+
+@BindingAdapter("setRibbonColor")
+fun View.setRibbonColor(type: Boolean) {
+    when (type) {
+        true -> setBackgroundResource(com.stathis.core.R.color.lesson_blue)
+        false -> setBackgroundResource(com.stathis.core.R.color.dark_orange)
+    }
 }

@@ -5,19 +5,23 @@ import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.stathis.core.base.BaseViewModel
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.DepartmentClickListener
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.ui.department.adapter.DepartmentAdapter
-import com.stathis.elmepaunivapp.ui.department.model.*
+import com.stathis.elmepaunivapp.ui.department.model.DepartmentResponse
+import com.stathis.elmepaunivapp.ui.department.model.HorizontalDepartmentItem
+import com.stathis.elmepaunivapp.ui.department.model.Programme
+import com.stathis.elmepaunivapp.ui.department.model.SocialChannel
+import com.stathis.elmepaunivapp.ui.department.model.VerticalDepartmentItem
 import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.students.model.CarouselParent
 import com.stathis.elmepaunivapp.util.readJsonData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class DepartmentViewModel(val app: Application) : ElmepaViewModel(app), ElmepaClickListener {
+class DepartmentViewModel(val app: Application) : BaseViewModel(app), ElmepaClickListener {
 
     val data = MutableLiveData<DepartmentResponse>()
     val error = MutableLiveData<Boolean>()
@@ -41,7 +45,10 @@ class DepartmentViewModel(val app: Application) : ElmepaViewModel(app), ElmepaCl
             adapter.submitList(
                 listOf(
                     CarouselParent(it.carouselItems),
-                    HorizontalDepartmentItem(getString(R.string.deptSyllabusItems), it.syllabusItems),
+                    HorizontalDepartmentItem(
+                        getString(R.string.deptSyllabusItems),
+                        it.syllabusItems
+                    ),
                     VerticalDepartmentItem(getString(R.string.deptProgramms), it.programmes),
                     HorizontalDepartmentItem(getString(R.string.deptDepMembers), it.depMembers),
                     HorizontalDepartmentItem(getString(R.string.deptSocial), it.links),

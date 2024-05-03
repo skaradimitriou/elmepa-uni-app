@@ -1,26 +1,25 @@
 package com.stathis.elmepaunivapp.ui.students
 
 import android.app.Application
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.viewModelScope
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import com.stathis.core.base.BaseViewModel
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaViewModel
 import com.stathis.elmepaunivapp.callbacks.ElmepaClickListener
 import com.stathis.elmepaunivapp.callbacks.StudentsScreenCallback
+import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
+import com.stathis.elmepaunivapp.ui.students.model.CarouselParent
+import com.stathis.elmepaunivapp.ui.students.model.LinkItem
+import com.stathis.elmepaunivapp.ui.students.model.StudentResponse
+import com.stathis.elmepaunivapp.ui.students.model.UsefulLinksParent
 import com.stathis.elmepaunivapp.ui.students.recycler.StudentAdapter
-import com.stathis.elmepaunivapp.ui.students.model.*
 import com.stathis.elmepaunivapp.util.readJsonData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.io.IOException
 
-class StudentsViewModel(val app : Application) : ElmepaViewModel(app), ElmepaClickListener {
+class StudentsViewModel(val app : Application) : BaseViewModel(app), ElmepaClickListener {
 
     private lateinit var callback : StudentsScreenCallback
     val adapter = StudentAdapter(this)
