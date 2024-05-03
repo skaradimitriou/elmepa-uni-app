@@ -3,17 +3,22 @@ package com.stathis.elmepaunivapp.ui.students
 import android.content.Intent
 import android.net.Uri
 import androidx.activity.viewModels
+import com.stathis.core.base.BaseActivity
 import com.stathis.elmepaunivapp.R
-import com.stathis.elmepaunivapp.abstraction.ElmepaActivity
 import com.stathis.elmepaunivapp.callbacks.StudentsScreenCallback
 import com.stathis.elmepaunivapp.databinding.ActivityStudentBinding
 import com.stathis.elmepaunivapp.ui.students.model.CarouselItem
 import com.stathis.elmepaunivapp.ui.students.model.LinkItem
-import com.stathis.feature.ui.webview.WebViewFragment
-import com.stathis.elmepaunivapp.util.*
+import com.stathis.elmepaunivapp.util.EDU_MAIL
+import com.stathis.elmepaunivapp.util.SECRETARY
+import com.stathis.elmepaunivapp.util.STUDENTS_PLATFORM
+import com.stathis.elmepaunivapp.util.STUD_FB_PG
+import com.stathis.elmepaunivapp.util.TITLE
+import com.stathis.elmepaunivapp.util.URL
 import com.stathis.elmepaunivapp.util.setupBar
+import com.stathis.feature.ui.webview.WebViewFragment
 
-class StudentActivity : ElmepaActivity<ActivityStudentBinding>(R.layout.activity_student) {
+class StudentActivity : BaseActivity<ActivityStudentBinding>(R.layout.activity_student) {
 
     private val viewModel: StudentsViewModel by viewModels()
 

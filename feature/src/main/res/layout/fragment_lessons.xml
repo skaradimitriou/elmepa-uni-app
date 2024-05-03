@@ -3,28 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="viewModel"
-            type="com.stathis.elmepaunivapp.ui.lessons.LessonsViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/grey_bg"
-        tools:context=".ui.lessons.LessonsActivity">
+        tools:context="com.stathis.feature.ui.lessons.LessonsFragment">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/syllabus_lessons_recycler"
+            android:id="@+id/syllabusRecycler"
+            style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/dimen_40"
-            android:adapter="@{viewModel.adapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="7"
             tools:listitem="@layout/lesson_item_row" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

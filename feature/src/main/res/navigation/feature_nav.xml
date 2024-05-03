@@ -42,6 +42,12 @@
         tools:layout="@layout/fragment_syllabus" />
 
     <fragment
+        android:id="@+id/lessonsFragment"
+        android:name="com.stathis.feature.ui.lessons.LessonsFragment"
+        android:label="LessonsFragment"
+        tools:layout="@layout/fragment_lessons" />
+
+    <fragment
         android:id="@+id/aboutAppFragment"
         android:name="com.stathis.feature.ui.about.AboutAppFragment"
         android:label="AboutAppFragment"

@@ -70,6 +70,14 @@ fun Fragment.showProfessorDialog(message: String, email: String) {
 }
 
 /**
+ * Helper fun to show a default dialog with a simple title & message in a [Fragment].
+ */
+
+fun Fragment.showDialog(title: String, message: String) {
+    MaterialAlertDialogBuilder(requireContext()).setTitle(title).setMessage(message).show()
+}
+
+/**
  * Helper fun to launch an email intent to a specific email address.
  */
 

@@ -1,7 +1,6 @@
 package com.stathis.elmepaunivapp.util
 
 import android.os.Handler
-import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.ViewPager2
@@ -16,18 +15,6 @@ fun ImageView.loadLocalPhoto(photo: String) {
         this.setImageResource(myImage)
     } catch (e: Exception) {
         this.setImageResource(R.mipmap.ic_launcher)
-    }
-}
-
-/**
- * Others
- */
-
-@BindingAdapter("setRibbonColor")
-fun View.setRibbonColor(type: Boolean) {
-    when (type) {
-        true -> this.setBackgroundResource(com.stathis.core.R.color.lesson_blue)
-        false -> this.setBackgroundResource(com.stathis.core.R.color.dark_orange)
     }
 }
 

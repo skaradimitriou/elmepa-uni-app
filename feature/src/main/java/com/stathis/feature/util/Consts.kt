@@ -8,3 +8,6 @@ const val DEFAULT_WEB_TITLE = "ΔΕΤ Αγ. Νικόλαος"
 
 const val URL = "URL"
 const val TITLE = "TITLE"
+
+const val SEMESTER = "SEMESTER"
+const val ORIENTATION = "ORIENTATION"
