@@ -24,7 +24,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
             <TextView
                 android:id="@+id/itemTxtView"
@@ -37,16 +38,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@tools:sample/lorem" />
-
-            <ImageView
-                android:layout_width="@dimen/height_35"
-                android:layout_height="@dimen/height_35"
-                android:layout_marginEnd="@dimen/margin_5"
-                android:contentDescription="@{model.name}"
-                android:src="@drawable/arrow_right"
-                app:layout_constraintBottom_toBottomOf="@id/itemTxtView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/itemTxtView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -52,8 +52,8 @@ class RepositoryModule {
 
     @Provides
     fun provideSyllabusRepository(
-        firestore: FirebaseFirestore
-    ): SyllabusRepository = SyllabusRepositoryImpl(firestore)
+        app: Application
+    ): SyllabusRepository = SyllabusRepositoryImpl(app)
 
     @Provides
     fun provideDepartmentRepository(
