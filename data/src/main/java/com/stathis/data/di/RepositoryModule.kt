@@ -10,12 +10,14 @@ import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.DepartmentRepositoryImpl
 import com.stathis.data.repository.ProfessorsRepositoryImpl
 import com.stathis.data.repository.ResearchRepositoryImpl
+import com.stathis.data.repository.StudentsRepositoryImpl
 import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.domain.repository.DashboardRepository
 import com.stathis.domain.repository.DepartmentRepository
 import com.stathis.domain.repository.ProfessorsRepository
 import com.stathis.domain.repository.ResearchRepository
+import com.stathis.domain.repository.StudentsRepository
 import com.stathis.domain.repository.SyllabusRepository
 import dagger.Module
 import dagger.Provides
@@ -60,4 +62,10 @@ class RepositoryModule {
     fun provideDepartmentRepository(
         firestore: FirebaseFirestore
     ): DepartmentRepository = DepartmentRepositoryImpl(firestore)
+
+    @Provides
+    fun provideStudentsRepository(
+        app : Application,
+        fireStore: FirebaseFirestore
+    ): StudentsRepository = StudentsRepositoryImpl(app,fireStore)
 }

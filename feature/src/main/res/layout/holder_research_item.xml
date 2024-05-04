@@ -19,7 +19,7 @@
         style="@style/AppMaterialCard"
         android:layout_height="wrap_content"
         android:onClick="@{() -> callback.onResearchItemTap(model)}"
-        app:cardCornerRadius="@dimen/margin_10">
+        app:cardCornerRadius="@dimen/dimen_16">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:id="@+id/titleTxtView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_10"
+                android:padding="@dimen/dimen_16"
                 android:text="@{model.name}"
                 android:textColor="@color/dark_grey"
                 app:layout_constraintBottom_toBottomOf="parent"

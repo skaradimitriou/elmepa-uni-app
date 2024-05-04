@@ -18,8 +18,7 @@
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{(view) -> callback.onContactItemClick(model)}"
-        app:cardCornerRadius="@dimen/margin_10">
+        android:onClick="@{(view) -> callback.onContactItemClick(model)}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

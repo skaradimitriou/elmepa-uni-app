@@ -8,11 +8,6 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.stathis.core.R
 
-@BindingAdapter("setImageDrawable")
-fun ImageView.setImageDrawable(drawable: Int) {
-    this.setImageResource(drawable)
-}
-
 @BindingAdapter("loadImageUrl")
 fun ImageView.loadImage(imageUrl: String) {
     Glide.with(this.context).load(imageUrl)

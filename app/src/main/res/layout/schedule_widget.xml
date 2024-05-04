@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_50"
-        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginTop="@dimen/dimen_16"
         android:src="@drawable/ic_schedule" />
 
     <TextView
