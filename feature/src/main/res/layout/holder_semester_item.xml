@@ -32,7 +32,7 @@
                 style="@style/text_18_non_bold_white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_20"
+                android:padding="@dimen/dimen_16"
                 android:text="@{model.name}"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"

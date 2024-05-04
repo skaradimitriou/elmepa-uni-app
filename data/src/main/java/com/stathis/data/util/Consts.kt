@@ -18,6 +18,7 @@ const val URL_ATTR = "href"
  * Professors Constant Values
  */
 
+const val STUDENTS_DB_PATH = "students"
 const val CONTACT_DB_PATH = "contact"
 const val PROFESSOR_DB_PATH = "professors"
 const val FULLNAME = "fullName"

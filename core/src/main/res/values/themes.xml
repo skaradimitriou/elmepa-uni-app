@@ -13,7 +13,7 @@
 
     <!-- NEW STYLES -->
     <style name="AppMaterialCard" parent="Widget.Material3.CardView.Elevated">
-        <item name="cardCornerRadius">@dimen/margin_10</item>
+        <item name="cardCornerRadius">@dimen/dimen_10</item>
         <item name="background">@color/white</item>
     </style>
 
@@ -24,36 +24,9 @@
         <item name="android:overScrollMode">never</item>
     </style>
 
-
-    <!-- OLD STYLES -->
-    <style name="elmepaActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
-        <item name="background">@color/blue_petrol</item>
-    </style>
-
-    <style name="elmepa_recycler">
-        <item name="android:paddingBottom">@dimen/dimen_40</item>
-        <item name="android:clipToPadding">false</item>
-        <item name="android:orientation">vertical</item>
-    </style>
-
     <style name="elmepaFabBtn" parent="ShapeAppearanceOverlay.Material3.FloatingActionButton">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-    </style>
-
-    <style name="elmepa_card" parent="Widget.MaterialComponents.CardView">
-        <item name="cardCornerRadius">@dimen/margin_10</item>
-        <item name="android:layout_marginTop">@dimen/margin_10</item>
-        <item name="android:layout_marginStart">@dimen/margin_10</item>
-        <item name="android:layout_marginEnd">@dimen/margin_10</item>
-    </style>
-
-    <!-- Holder Styles -->
-    <style name="holder_programmes_style">
-        <item name="android:layout_marginTop">@dimen/margin_5</item>
-        <item name="android:layout_marginBottom">@dimen/margin_5</item>
-        <item name="android:layout_marginStart">@dimen/margin_10</item>
-        <item name="android:layout_marginEnd">@dimen/margin_10</item>
     </style>
 
 

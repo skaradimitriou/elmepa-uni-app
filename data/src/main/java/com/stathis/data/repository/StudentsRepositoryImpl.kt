@@ -1,0 +1,47 @@
+package com.stathis.data.repository
+
+import android.app.Application
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.stathis.core.base.UiModel
+import com.stathis.data.datasource.remote.mapper.StudentsMapper
+import com.stathis.data.datasource.remote.model.StudentsResponseDto
+import com.stathis.data.util.STUDENTS_DB_PATH
+import com.stathis.domain.repository.StudentsRepository
+import com.stathis.model.network.NetworkResult
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.tasks.await
+import java.io.IOException
+import javax.inject.Inject
+
+class StudentsRepositoryImpl @Inject constructor(
+    private val application: Application,
+    private val fireStore: FirebaseFirestore
+) : StudentsRepository {
+
+    override suspend fun fetchStudentScreenData(): Flow<NetworkResult<List<UiModel>>> = flow {
+        emit(NetworkResult.Loading())
+
+        val queryResult = fireStore.collection(STUDENTS_DB_PATH)
+            .document("screen_data")
+            .get()
+            .await()
+            .toObject(StudentsResponseDto::class.java)
+
+        val result = StudentsMapper.toDomainModel(queryResult)
+        emit(NetworkResult.Success(result))
+    }
+}
+
+inline fun <reified T> Application.readJsonData(fileName: String, data: (T?) -> Unit) {
+    try {
+        val json = this.assets.open(fileName).bufferedReader().use { it.readText() }
+        val type = object : TypeToken<T>() {}.type
+        val response: T = Gson().fromJson(json, type)
+        data.invoke(response)
+    } catch (ioException: IOException) {
+        data.invoke(null)
+    }
+}

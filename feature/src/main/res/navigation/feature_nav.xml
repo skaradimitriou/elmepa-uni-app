@@ -59,4 +59,10 @@
         android:label="ContactFragment"
         tools:layout="@layout/fragment_contact" />
 
+    <fragment
+        android:id="@+id/studentsFragment"
+        android:name="com.stathis.feature.ui.students.StudentsFragment"
+        android:label="StudentsFragment"
+        tools:layout="@layout/fragment_students" />
+
 </navigation>
