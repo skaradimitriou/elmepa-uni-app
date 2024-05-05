@@ -3,7 +3,8 @@ package com.stathis.data.di
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.core.util.SharedPreferencesHelper
-import com.stathis.data.datasource.local.AnnouncementsDao
+import com.stathis.data.datasource.local.announcements.AnnouncementsDao
+import com.stathis.data.datasource.local.professors.ProfessorsDatabase
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.repository.AnnouncementsRepositoryImpl
 import com.stathis.data.repository.DashboardRepositoryImpl
@@ -50,8 +51,9 @@ class RepositoryModule {
 
     @Provides
     fun provideProfessorsRepository(
-        firestore: FirebaseFirestore
-    ): ProfessorsRepository = ProfessorsRepositoryImpl(firestore)
+        firestore: FirebaseFirestore,
+        localProfessorsDataSource: ProfessorsDatabase
+    ): ProfessorsRepository = ProfessorsRepositoryImpl(firestore, localProfessorsDataSource)
 
     @Provides
     fun provideSyllabusRepository(

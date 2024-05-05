@@ -1,7 +1,7 @@
 package com.stathis.data.datasource.remote.services
 
 import com.stathis.core.util.SharedPreferencesHelper
-import com.stathis.data.datasource.local.AnnouncementsDao
+import com.stathis.data.datasource.local.announcements.AnnouncementsDao
 import com.stathis.data.util.DATA_TYPE
 import com.stathis.data.util.IMG_HTML_TAG
 import com.stathis.data.util.IMG_SOURCE
