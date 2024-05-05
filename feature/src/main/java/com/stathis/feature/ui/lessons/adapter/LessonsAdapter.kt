@@ -15,7 +15,9 @@ import com.stathis.feature.databinding.LessonItemRowBinding
 import com.stathis.model.syllabus.Lesson
 import com.stathis.model.syllabus.LessonHeader
 
-class LessonsAdapter : ListAdapter<UiModel, LessonsViewHolder>(BaseDiffUtil<UiModel>()) {
+class LessonsAdapter(
+    private val callback: LessonCallback
+) : ListAdapter<UiModel, LessonsViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,7 +32,7 @@ class LessonsAdapter : ListAdapter<UiModel, LessonsViewHolder>(BaseDiffUtil<UiMo
 
             else -> HolderEmptyViewBinding.inflate(inflater, parent, false)
         }
-        return LessonsViewHolder(view)
+        return LessonsViewHolder(view, callback)
     }
 
     override fun onBindViewHolder(holder: LessonsViewHolder, position: Int) {
@@ -44,7 +46,10 @@ class LessonsAdapter : ListAdapter<UiModel, LessonsViewHolder>(BaseDiffUtil<UiMo
     }
 }
 
-class LessonsViewHolder(private val binding: ViewDataBinding) : BaseViewHolder(binding) {
+class LessonsViewHolder(
+    private val binding: ViewDataBinding,
+    private val callback: LessonCallback
+) : BaseViewHolder(binding) {
 
     override fun bind(data: UiModel) {
         when (data) {
@@ -54,7 +59,12 @@ class LessonsViewHolder(private val binding: ViewDataBinding) : BaseViewHolder(b
 
             is Lesson -> {
                 binding.setVariable(BR.model, data)
+                binding.setVariable(BR.callback, callback)
             }
         }
     }
+}
+
+fun interface LessonCallback {
+    fun onLessonTap(model: Lesson)
 }

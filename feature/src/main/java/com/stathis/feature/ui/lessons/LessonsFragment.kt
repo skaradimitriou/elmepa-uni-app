@@ -1,5 +1,7 @@
 package com.stathis.feature.ui.lessons
 
+import android.os.Bundle
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -12,7 +14,10 @@ import com.stathis.core.util.showDialog
 import com.stathis.core.util.toNotNull
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentLessonsBinding
+import com.stathis.feature.navigation.NavigationAction
+import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.ui.lessons.adapter.LessonsAdapter
+import com.stathis.feature.util.LESSON
 import com.stathis.feature.util.ORIENTATION
 import com.stathis.feature.util.SEMESTER
 import com.stathis.model.syllabus.OrientationType
@@ -23,8 +28,14 @@ import kotlinx.coroutines.launch
 class LessonsFragment : BaseFragment<FragmentLessonsBinding>(R.layout.fragment_lessons) {
 
     private val viewModel by viewModels<LessonsViewModel>()
+    private val activityVM by activityViewModels<MainViewModel>()
 
-    private val adapter = LessonsAdapter()
+    private val adapter = LessonsAdapter { selectedLesson ->
+        val args = Bundle().apply {
+            putString(LESSON, selectedLesson.name)
+        }
+        activityVM.navigateWithAction(NavigationAction.LESSON_DETAILS, args)
+    }
 
     override fun init() {
         inflateCustomMenu(

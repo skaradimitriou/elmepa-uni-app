@@ -4,9 +4,10 @@ import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.core.R
 import com.stathis.core.base.UiModel
-import com.stathis.data.datasource.remote.mapper.LessonMapper
+import com.stathis.data.datasource.remote.mapper.LessonListMapper
 import com.stathis.data.datasource.remote.model.LessonDto
 import com.stathis.domain.repository.SyllabusRepository
+import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.LessonHeader
 import com.stathis.model.syllabus.Orientation
 import com.stathis.model.syllabus.OrientationType
@@ -66,7 +67,7 @@ class SyllabusRepositoryImpl @Inject constructor(
             .await()
             .toObjects(LessonDto::class.java)
 
-        val mappedResult = LessonMapper.toDomainModel(queryResult)
+        val mappedResult = LessonListMapper.toDomainModel(queryResult)
 
 
         val headerText = if (mappedResult.all { it.mandatory }) {
@@ -79,5 +80,18 @@ class SyllabusRepositoryImpl @Inject constructor(
         result.add(LessonHeader(headerText))
         result.addAll(mappedResult)
         emit(result)
+    }
+
+    override suspend fun fetchLessonDetails(lessonName: String) = flow {
+        emit(NetworkResult.Loading())
+        val queryResult = fireStore.collection("undergraduate_lessons")
+            .whereEqualTo("name", lessonName)
+            .limit(1)
+            .get()
+            .await()
+            .toObjects(LessonDto::class.java)
+
+        val mappedResult = LessonListMapper.toDomainModel(queryResult)
+        emit(NetworkResult.Success(mappedResult))
     }
 }

@@ -8,11 +8,16 @@
         <variable
             name="model"
             type="com.stathis.model.syllabus.Lesson" />
+
+        <variable
+            name="callback"
+            type="com.stathis.feature.ui.lessons.adapter.LessonCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
+        android:onClick="@{() -> callback.onLessonTap(model)}"
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout

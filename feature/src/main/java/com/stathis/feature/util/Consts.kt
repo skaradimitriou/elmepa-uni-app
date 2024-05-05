@@ -11,3 +11,4 @@ const val TITLE = "TITLE"
 
 const val SEMESTER = "SEMESTER"
 const val ORIENTATION = "ORIENTATION"
+const val LESSON = "LESSON"

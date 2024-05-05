@@ -48,6 +48,12 @@
         tools:layout="@layout/fragment_lessons" />
 
     <fragment
+        android:id="@+id/lessonDetailsFragment"
+        android:name="com.stathis.feature.ui.lessondetails.LessonDetailsFragment"
+        android:label="LessonDetailsFragment"
+        tools:layout="@layout/fragment_lesson_details" />
+
+    <fragment
         android:id="@+id/aboutAppFragment"
         android:name="com.stathis.feature.ui.about.AboutAppFragment"
         android:label="AboutAppFragment"
