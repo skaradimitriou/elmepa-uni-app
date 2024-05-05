@@ -9,8 +9,8 @@ import com.stathis.domain.usecase.FetchLessonsUseCase
 import com.stathis.model.syllabus.OrientationType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,10 +21,10 @@ class LessonsViewModel @Inject constructor(
     private val useCase: FetchLessonsUseCase
 ) : BaseViewModel(app) {
 
-    val lessons: SharedFlow<List<UiModel>>
+    val lessons: StateFlow<List<UiModel>>
         get() = _lessons
 
-    private val _lessons = MutableSharedFlow<List<UiModel>>()
+    private val _lessons = MutableStateFlow<List<UiModel>>(listOf())
 
     fun fetchLessonsForSemesterAndOrientation(semesterName: String, orientation: OrientationType) {
         viewModelScope.launch(dispatcher) {

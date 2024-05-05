@@ -9,8 +9,8 @@ import com.stathis.domain.usecase.FetchProfessorsUseCase
 import com.stathis.domain.usecase.FilterProfessorsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -22,10 +22,10 @@ class ProfessorViewModel @Inject constructor(
     private val filterProfessorsUseCase: FilterProfessorsUseCase
 ) : BaseViewModel(app) {
 
-    val professors: SharedFlow<List<UiModel>>
+    val professors: StateFlow<List<UiModel>>
         get() = _professors
 
-    private val _professors = MutableSharedFlow<List<UiModel>>()
+    private val _professors = MutableStateFlow<List<UiModel>>(listOf())
 
     fun fetchProfessors() {
         viewModelScope.launch(dispatcher) {

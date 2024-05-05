@@ -57,6 +57,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         android.R.id.home -> {
             navigator.goBack()
+            viewModel.navigateWithAction(null)
             true
         }
 

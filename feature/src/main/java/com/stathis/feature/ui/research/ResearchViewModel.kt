@@ -8,8 +8,8 @@ import com.stathis.domain.usecase.FetchResearchInDeptUseCase
 import com.stathis.model.research.ResearchResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,10 +20,10 @@ class ResearchViewModel @Inject constructor(
     private val useCase: FetchResearchInDeptUseCase
 ) : BaseViewModel(app) {
 
-    val data: SharedFlow<List<ResearchResponse>>
+    val data: StateFlow<List<ResearchResponse>>
         get() = _data
 
-    private val _data = MutableSharedFlow<List<ResearchResponse>>()
+    private val _data = MutableStateFlow<List<ResearchResponse>>(listOf())
 
     fun fetchResearchInformation() {
         viewModelScope.launch(dispatcher) {

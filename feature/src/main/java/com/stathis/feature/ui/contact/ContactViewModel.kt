@@ -8,8 +8,8 @@ import com.stathis.domain.usecase.FetchContactDetailsUseCase
 import com.stathis.model.contact.ContactItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,10 +20,10 @@ class ContactViewModel @Inject constructor(
     private val useCase: FetchContactDetailsUseCase
 ) : BaseViewModel(app) {
 
-    val contactDetails: SharedFlow<List<ContactItem>>
+    val contactDetails: StateFlow<List<ContactItem>>
         get() = _contactDetails
 
-    private val _contactDetails = MutableSharedFlow<List<ContactItem>>()
+    private val _contactDetails = MutableStateFlow<List<ContactItem>>(listOf())
 
     fun fetchContactDetails() {
         viewModelScope.launch(dispatcher) {
