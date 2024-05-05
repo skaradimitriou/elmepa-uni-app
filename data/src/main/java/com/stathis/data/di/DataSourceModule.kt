@@ -1,7 +1,7 @@
 package com.stathis.data.di
 
 import com.stathis.core.util.SharedPreferencesHelper
-import com.stathis.data.datasource.local.AnnouncementsDao
+import com.stathis.data.datasource.local.announcements.AnnouncementsDao
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSourceImpl
 import dagger.Module

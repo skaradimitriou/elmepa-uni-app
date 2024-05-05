@@ -1,4 +1,4 @@
-package com.stathis.data.datasource.local
+package com.stathis.data.datasource.local.announcements
 
 import androidx.room.Dao
 import androidx.room.Delete
