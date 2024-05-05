@@ -19,6 +19,7 @@ const val URL_ATTR = "href"
  */
 
 const val STUDENTS_DB_PATH = "students"
+const val RESEARCH_DB_PATH = "research_in_dept"
 const val CONTACT_DB_PATH = "contact"
 const val PROFESSOR_DB_PATH = "professors"
 const val FULLNAME = "fullName"

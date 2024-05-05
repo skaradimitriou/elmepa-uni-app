@@ -43,9 +43,10 @@ class RepositoryModule {
     }
 
     @Provides
-    fun provideResearchRepository(app: Application): ResearchRepository {
-        return ResearchRepositoryImpl(app)
-    }
+    fun provideResearchRepository(
+        fireStore: FirebaseFirestore
+    ): ResearchRepository = ResearchRepositoryImpl(fireStore)
+
 
     @Provides
     fun provideProfessorsRepository(

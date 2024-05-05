@@ -8,10 +8,10 @@ import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
-import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentResearchInDeptBinding
 import com.stathis.feature.navigation.NavigationAction
+import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.ui.research.recycler.ResearchAdapter
 import com.stathis.feature.util.TITLE
 import com.stathis.feature.util.URL
@@ -27,7 +27,7 @@ class ResearchFragment :
 
     private val adapter = ResearchAdapter { item ->
         val args = Bundle().apply {
-            putString(URL, item.url)
+            putString(URL, item.openUrl)
             putString(TITLE, item.name)
         }
 

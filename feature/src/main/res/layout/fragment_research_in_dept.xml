@@ -10,7 +10,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/researchRecycler"
-            style="@style/elmepa_recycler"
+            style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

@@ -15,8 +15,8 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
         style="@style/AppMaterialCard"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="@{() -> callback.onResearchItemTap(model)}"
         app:cardCornerRadius="@dimen/dimen_16">
@@ -34,7 +34,7 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:loadLocalPhoto="@{model.imageResource}"
+                app:loadLocalPhoto="@{model.imageUrl}"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
