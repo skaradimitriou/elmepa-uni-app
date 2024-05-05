@@ -65,7 +65,6 @@ class RepositoryModule {
 
     @Provides
     fun provideStudentsRepository(
-        app : Application,
         fireStore: FirebaseFirestore
-    ): StudentsRepository = StudentsRepositoryImpl(app,fireStore)
+    ): StudentsRepository = StudentsRepositoryImpl(fireStore)
 }

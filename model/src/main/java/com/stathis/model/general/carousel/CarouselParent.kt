@@ -3,7 +3,7 @@ package com.stathis.model.general.carousel
 import com.stathis.core.base.UiModel
 
 data class CarouselParent(
-    val carouselItems: List<CarouselItem>
+    val carouselItems: List<UiModel>
 ) : UiModel {
     override fun equalsContent(obj: UiModel): Boolean = when (obj) {
         is CarouselParent -> carouselItems == obj.carouselItems

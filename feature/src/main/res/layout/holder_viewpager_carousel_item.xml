@@ -16,14 +16,15 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
-            app:setScrollableViewPager="@{adapter}"
+            style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_200"
+            android:layout_height="@dimen/height_250"
             android:adapter="@{adapter}"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:setScrollableViewPager="@{adapter}"
             tools:listitem="@layout/holder_carousel_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

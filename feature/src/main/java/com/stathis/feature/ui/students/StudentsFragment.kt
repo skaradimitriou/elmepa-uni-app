@@ -37,7 +37,7 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
         viewModel.fetchStudentInformation()
 
         binding.studentsRec.apply {
-            setupItemDecoration(top = 30, start = 30, end = 30)
+            setupItemDecoration(top = 20, start = 30, end = 30)
             adapter = this@StudentsFragment.adapter
         }
     }
@@ -47,7 +47,7 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
             viewModel.data.collect { result ->
                 when (result) {
                     is NetworkResult.Loading -> {
-                        Timber.d("${result}")
+                        adapter.submitList(result.data)
                     }
 
                     is NetworkResult.Success -> {

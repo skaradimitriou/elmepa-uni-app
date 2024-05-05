@@ -13,11 +13,14 @@
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>
     <string name="dashboard_det">Τμήμα Διοικητικής Επιστήμης \nκαι Τεχνολογίας (Άγιος Νικόλαος)</string>
 
-    <!-- Announcement Activity -->
+    <!-- Announcement Screen -->
     <string name="announcement_header">Νέα &amp; Ανακοινώσεις</string>
     <string name="announcement_share_body">%s. Διάβασε περισσότερα στο %1s</string>
     <string name="announcement_title">This is an announcement title</string>
     <string name="announcements_get_error">Error getting Data from site</string>
+
+    <!-- Students Screen -->
+    <string name="useful_links">Χρήσιμοι Σύνδεσμοι</string>
 
     <!-- Professors -->
     <string name="menu_search">Αναζήτηση</string>

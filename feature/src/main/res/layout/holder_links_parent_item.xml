@@ -20,8 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:padding="@dimen/dimen_16"
-            android:text="Χρήσιμοι Σύνδεσμοι"
+            android:paddingBottom="@dimen/dimen_16"
+            android:text="@string/useful_links"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

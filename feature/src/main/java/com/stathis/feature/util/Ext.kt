@@ -2,6 +2,7 @@ package com.stathis.feature.util
 
 import android.os.Handler
 import androidx.databinding.BindingAdapter
+import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.stathis.feature.common.CarouselAdapter
 import com.stathis.feature.navigation.NavigationAction
@@ -37,6 +38,8 @@ fun setScrollableViewPager(viewPager: ViewPager2, adapter: CarouselAdapter) {
             else -> viewPager.currentItem = viewPager.currentItem + 1
         }
     }
+
+    viewPager.setPageTransformer(MarginPageTransformer(30))
 
     viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
         override fun onPageSelected(position: Int) {
