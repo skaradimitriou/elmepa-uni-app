@@ -5,18 +5,16 @@ import com.stathis.data.datasource.remote.model.LessonDto
 import com.stathis.model.syllabus.Lesson
 import com.stathis.model.syllabus.OrientationType
 
-object LessonMapper : BaseMapper<List<LessonDto>?, List<Lesson>> {
+object LessonMapper : BaseMapper<LessonDto?, Lesson> {
 
-    override fun toDomainModel(dtoModel: List<LessonDto>?) = dtoModel?.map {
-        Lesson(
-            name = it.name.toNotNull(),
-            description = it.description.toNotNull(),
-            hours = it.hours.toNotNull(),
-            mandatory = it.mandatory.toNotNull(),
-            orientation = it.orientation.toListOfOrientations(),
-            semester = it.semester.toNotNull()
-        )
-    }.toNotNull().sortedBy { !it.mandatory }
+    override fun toDomainModel(dtoModel: LessonDto?) = Lesson(
+        name = dtoModel?.name.toNotNull(),
+        description = dtoModel?.description.toNotNull(),
+        hours = dtoModel?.hours.toNotNull(),
+        mandatory = dtoModel?.mandatory.toNotNull(),
+        orientation = dtoModel?.orientation.toListOfOrientations(),
+        semester = dtoModel?.semester.toNotNull()
+    )
 
     private fun List<String?>?.toListOfOrientations() = this?.map {
         OrientationType.valueOf(it ?: OrientationType.UNDEFINED.name)

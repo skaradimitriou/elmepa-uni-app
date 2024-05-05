@@ -23,6 +23,10 @@ class NavigatorImpl @Inject constructor(
         NavigationAction.PROFESSORS -> navController.navigate(R.id.nav_professors)
         NavigationAction.SYLLABUS -> navController.navigate(R.id.nav_syllabus)
         NavigationAction.LESSONS -> navController.navigate(R.id.lessonsFragment, bundle)
+        NavigationAction.LESSON_DETAILS -> navController.navigate(
+            R.id.lessonDetailsFragment, bundle
+        )
+
         NavigationAction.WEBVIEW -> navController.navigate(R.id.webViewFragment, bundle)
         NavigationAction.CONTACT -> navController.navigate(R.id.contactFragment)
         NavigationAction.ABOUT_APP -> navController.navigate(R.id.aboutAppFragment)
