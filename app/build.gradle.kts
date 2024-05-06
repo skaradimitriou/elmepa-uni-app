@@ -79,12 +79,10 @@ dependencies {
     implementation(libs.shimmer)
     implementation(libs.jsoup)
     implementation(libs.glide)
-    implementation(libs.circleImgView)
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
     implementation(libs.swipeToRefresh)
-    implementation(libs.gson)
     implementation(libs.preference.ktx)
 
     implementation(platform("com.google.firebase:firebase-bom:32.8.1"))

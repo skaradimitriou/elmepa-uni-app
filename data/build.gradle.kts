@@ -57,7 +57,6 @@ dependencies {
     kapt(libs.room.compiler)
 
     implementation(libs.jsoup)
-    implementation(libs.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -1,9 +1,6 @@
 package com.stathis.data.repository
 
-import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.stathis.core.base.UiModel
 import com.stathis.data.datasource.remote.mapper.StudentsMapper
 import com.stathis.data.datasource.remote.model.StudentsResponseDto
@@ -16,7 +13,6 @@ import com.stathis.model.util.ShimmerGenerator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
-import java.io.IOException
 import javax.inject.Inject
 
 class StudentsRepositoryImpl @Inject constructor(
@@ -38,16 +34,5 @@ class StudentsRepositoryImpl @Inject constructor(
 
         val result = StudentsMapper.toDomainModel(queryResult)
         emit(NetworkResult.Success(result))
-    }
-}
-
-inline fun <reified T> Application.readJsonData(fileName: String, data: (T?) -> Unit) {
-    try {
-        val json = this.assets.open(fileName).bufferedReader().use { it.readText() }
-        val type = object : TypeToken<T>() {}.type
-        val response: T = Gson().fromJson(json, type)
-        data.invoke(response)
-    } catch (ioException: IOException) {
-        data.invoke(null)
     }
 }

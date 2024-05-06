@@ -1,85 +1,15 @@
 <resources>
     <string name="app_name">University App</string>
 
-    <!-- Drawer -->
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-
     <!-- Bottom Navigation Bar -->
     <string name="menu_home">Αρχική</string>
     <string name="menu_personnel">Προσωπικό</string>
     <string name="menu_syllabus">Μαθήματα</string>
 
-    <string name="dashboard_announcements">Ανακοινώσεις</string>
-    <string name="dashboard_department">Το Τμήμα</string>
-    <string name="dashboard_students">Φοιτητές</string>
-    <string name="dashboard_personnel">Προσωπικό</string>
-
-    <!-- About Activity -->
-
-
-    <!-- Department Activity -->
-    <string name="dept_button_txt">Μάθε περισσότερα</string>
-    <string name="virtual_tour">virtual_tour</string>
-    <string name="map">map</string>
-    <string name="deptSyllabusItems">Γνωστικά Αντικείμενα</string>
-    <string name="deptProgramms">Προγράμματα</string>
-    <string name="deptDepMembers">Μέλη Δ.Ε.Π.</string>
-    <string name="deptSocial">Βρείτε μας Online</string>
-    <string name="youtube">Youtube</string>
-
-    <string name="error_data">Παρουσιάστηκε κάποιο σφάλμα</string>
-
-    <string name="yt_app_link">vnd.youtube.com/channel/%1$s</string>
-    <string name="yt_web_link">https://www.youtube.com/channel/%1$s</string>
-
-    <!-- Students Activity -->
-    <string name="students_title">Φοιτητές</string>
-    <string name="student_schedule">Κάνε tap για να δεις\nτο ωρολόγιο πρόγραμμα</string>
-    <string name="student_schedule_btn">Μάθε Περισσότερα</string>
-    <string name="student_syllabus">Πρόγραμμα Σπουδών</string>
-    <string name="student_useful_links">Χρήσιμοι Σύνδεσμοι</string>
-
-    <!-- Research in Dept Activity -->
-    <string name="research_title">Έρευνα</string>
-    <string name="research_recycler_title">Έρευνα στο Τμήμα</string>
-    <string name="syllabus_intent_data">SEMESTER</string>
-
-
-    <string name="semester_title">Εξάμηνο Α\'</string>
-
-
-    <string name="data">data</string>
-    <string name="mkt">mkt</string>
-    <string name="ba">ba</string>
-
-    <!-- Virtual Tour Activity -->
-    <string name="virtual_tour_txt">Εικονική Περιήγηση στο Τμήμα \n Διοικητικής Επιστήμης και Τεχνολογίας</string>
-
-    <!-- No Internet Activity -->
-    <string name="no_internet">Δεν υπάρχει σύνδεση στο Internet</string>
-
-    <!-- Dep Member Item -->
-    <string name="dep_member_txt">Κωστας Παναγιωτακης</string>
-
-    <!-- Social Item -->
-    <string name="social_txt">YouTube</string>
-
-    <!-- Research Item -->
-    <string name="research_item_txt">Έρευνα στο Τμήμα</string>
-    <string name="menu_student">Φοιτητές</string>
-    <string name="menu_dept">Τμήμα</string>
-
-    <string name="schedule_txt">Δες το Πρόγραμμα</string>
-    <string name="undergraduate_students">Προπτυχιακοι Φοιτητές</string>
-    <string name="postgraduate_students">Μεταπτυχιακοί Φοιτητές</string>
-
-    <!-- About App-->
-    <string name="news_publisher_header">News Publisher</string>
-    <string name="news_publisher_desc">E–mail: kalarhaki@hmu.gr\nΤηλ.: 28410–91103</string>
-
-
     <!-- Personnel Widget -->
     <string name="open_personnel">OPEN_PERSONNEL</string>
+
+    <!-- Schedule Widget -->
+    <string name="schedule_txt">Δες το Πρόγραμμα</string>
 
 </resources>
