@@ -6,8 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:allowBackup="true"
         android:name=".util.App"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Δ.Ε.Τ\n(Αγ.Νικόλαος)"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -24,7 +24,7 @@
         </activity>
 
         <receiver
-            android:name=".widget.ProfessorWidgetProvider"
+            android:name=".widget.PersonnelWidgetProvider"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -32,7 +32,7 @@
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/professor_appwidget_info" />
+                android:resource="@xml/personnel_appwidget_info" />
         </receiver>
         <receiver
             android:name=".widget.ScheduleWidgetProvider"

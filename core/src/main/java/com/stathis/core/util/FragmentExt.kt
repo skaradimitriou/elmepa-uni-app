@@ -50,7 +50,7 @@ fun Fragment.inflateCustomMenu(menuId: Int, respondItemId: Int, callback: (MenuI
     }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 }
 
-fun Fragment.showProfessorDialog(message: String, email: String) {
+fun Fragment.showPersonnelDialog(message: String, email: String) {
     MaterialAlertDialogBuilder(requireContext()).apply {
         setTitle(getString(R.string.dialog_new_email))
         setMessage(message)

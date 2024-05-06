@@ -4,19 +4,19 @@ import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.core.util.SharedPreferencesHelper
 import com.stathis.data.datasource.local.announcements.AnnouncementsDao
-import com.stathis.data.datasource.local.professors.ProfessorsDatabase
+import com.stathis.data.datasource.local.personnel.PersonnelDatabase
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.repository.AnnouncementsRepositoryImpl
 import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.DepartmentRepositoryImpl
-import com.stathis.data.repository.ProfessorsRepositoryImpl
+import com.stathis.data.repository.PersonnelRepositoryImpl
 import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.data.repository.StudentsRepositoryImpl
 import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.domain.repository.DashboardRepository
 import com.stathis.domain.repository.DepartmentRepository
-import com.stathis.domain.repository.ProfessorsRepository
+import com.stathis.domain.repository.PersonnelRepository
 import com.stathis.domain.repository.ResearchRepository
 import com.stathis.domain.repository.StudentsRepository
 import com.stathis.domain.repository.SyllabusRepository
@@ -50,10 +50,10 @@ class RepositoryModule {
 
 
     @Provides
-    fun provideProfessorsRepository(
-        firestore: FirebaseFirestore,
-        localProfessorsDataSource: ProfessorsDatabase
-    ): ProfessorsRepository = ProfessorsRepositoryImpl(firestore, localProfessorsDataSource)
+    fun providePersonnelRepository(
+        fireStore: FirebaseFirestore,
+        localDataSource: PersonnelDatabase
+    ): PersonnelRepository = PersonnelRepositoryImpl(fireStore, localDataSource)
 
     @Provides
     fun provideSyllabusRepository(

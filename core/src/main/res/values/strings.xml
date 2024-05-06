@@ -5,7 +5,7 @@
     <string name="announcements">Ανακοινώσεις</string>
     <string name="department">Το Τμήμα</string>
     <string name="students">Φοιτητές</string>
-    <string name="professors">Καθηγητές</string>
+    <string name="personnel">Προσωπικό</string>
     <string name="research_in_dept">Έρευνα στο Τμήμα</string>
 
     <!-- Dashboard -->
@@ -22,13 +22,13 @@
     <!-- Students Screen -->
     <string name="useful_links">Χρήσιμοι Σύνδεσμοι</string>
 
-    <!-- Professors -->
+    <!-- Personnel -->
     <string name="menu_search">Αναζήτηση</string>
-    <string name="search_for_professor">Αναζήτησε έναν καθηγητή</string>
+    <string name="search_in_personnel">Αναζήτησε κάποιον/α</string>
     <string name="male">male</string>
     <string name="female">female</string>
-    <string name="send_email_to_male_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. %1$s;</string>
-    <string name="send_email_to_female_professor">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ. %1$s;</string>
+    <string name="send_email_to_male_personnel">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στον κ. %1$s;</string>
+    <string name="send_email_to_female_personnel">Είσαι σίγουρος πως θέλεις να στείλεις e-mail στην κ. %1$s;</string>
     <string name="dialog_new_email">Νέο e-mail</string>
     <string name="dialog_yes">Ναι</string>
     <string name="dialog_cancel">Άκυρο</string>
