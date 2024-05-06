@@ -7,9 +7,9 @@
         android:title="@string/menu_home" />
 
     <item
-        android:id="@+id/nav_professors"
-        android:icon="@drawable/ic_professors"
-        android:title="@string/menu_professors" />
+        android:id="@+id/nav_personnel"
+        android:icon="@drawable/ic_personnel"
+        android:title="@string/menu_personnel" />
 
     <item
         android:id="@+id/nav_syllabus"

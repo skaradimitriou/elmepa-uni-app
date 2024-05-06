@@ -20,7 +20,7 @@ class NavigatorImpl @Inject constructor(
         NavigationAction.ANNOUNCEMENTS -> navController.navigate(R.id.announcementsFragment)
         NavigationAction.STUDENTS -> navController.navigate(R.id.studentsFragment)
         NavigationAction.RESEARCH -> navController.navigate(R.id.researchFragment)
-        NavigationAction.PROFESSORS -> navController.navigate(R.id.nav_professors)
+        NavigationAction.PERSONNEL -> navController.navigate(R.id.nav_personnel)
         NavigationAction.SYLLABUS -> navController.navigate(R.id.nav_syllabus)
         NavigationAction.LESSONS -> navController.navigate(R.id.lessonsFragment, bundle)
         NavigationAction.LESSON_DETAILS -> navController.navigate(
@@ -41,7 +41,7 @@ class NavigatorImpl @Inject constructor(
         val currentDestination = navController.currentDestination?.id
         return listOf(
             R.id.nav_home,
-            R.id.nav_professors,
+            R.id.nav_personnel,
             //R.id.nav_syllabus
         ).contains(currentDestination)
     }

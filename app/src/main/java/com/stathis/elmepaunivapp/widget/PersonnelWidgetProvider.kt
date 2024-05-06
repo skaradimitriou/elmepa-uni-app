@@ -9,19 +9,21 @@ import android.widget.RemoteViews
 import com.stathis.elmepaunivapp.MainActivity
 import com.stathis.elmepaunivapp.R
 
-class ProfessorWidgetProvider : AppWidgetProvider() {
+class PersonnelWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(
         context: Context?,
         appWidgetManager: AppWidgetManager?,
         appWidgetIds: IntArray?
     ) {
-        if (appWidgetIds != null) {
-            for (appWidgetId in appWidgetIds) {
-                val intent = Intent(context, MainActivity::class.java).putExtra(context?.resources?.getString(R.string.widget_professor_intent), true)
-                val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+        appWidgetIds?.let { appWidgets ->
+            appWidgets.forEach { appWidgetId ->
+                val intent = Intent(context, MainActivity::class.java).apply {
+                    putExtra(context?.resources?.getString(R.string.open_personnel), true)
+                }
 
-                val views = RemoteViews(context?.packageName, R.layout.professor_widget)
+                val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+                val views = RemoteViews(context?.packageName, R.layout.personnel_widget)
                 views.setOnClickPendingIntent(R.id.widget_button, pendingIntent)
 
                 appWidgetManager?.updateAppWidget(appWidgetId, views)

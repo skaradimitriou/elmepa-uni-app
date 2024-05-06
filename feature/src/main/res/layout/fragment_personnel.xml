@@ -11,12 +11,12 @@
         app:layout_constraintTop_toBottomOf="@+id/search_action">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/professorsRecycler"
+            android:id="@+id/personnelRecycler"
             style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/professor_item_row" />
+            tools:listitem="@layout/holder_personnel_item" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>

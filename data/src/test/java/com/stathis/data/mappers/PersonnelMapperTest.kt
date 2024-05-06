@@ -1,28 +1,28 @@
 package com.stathis.data.mappers
 
-import com.stathis.data.datasource.remote.mapper.ProfessorsMapper
-import com.stathis.data.datasource.remote.model.ProfessorDto
+import com.stathis.data.datasource.remote.mapper.PersonnelMapper
+import com.stathis.data.datasource.remote.model.PersonnelDto
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
-class ProfessorsMapperTest {
+class PersonnelMapperTest {
 
     @Test
-    fun testNullProfessorDtoTest() {
-        val input: List<ProfessorDto>? = null
-        val mappedInput = ProfessorsMapper.toDomainModel(input)
+    fun testNullPersonnelDtoTest() {
+        val input: List<PersonnelDto>? = null
+        val mappedInput = PersonnelMapper.toDomainModel(input)
         assertTrue(mappedInput.isEmpty())
     }
 
     @Test
-    fun testProfessorDtoMapping() {
+    fun testPersonnelDtoMapping() {
         val input = listOf(
-            ProfessorDto(
+            PersonnelDto(
                 fullName = "Test Testopoulos",
                 gender = "Male"
             )
         )
-        val mappedResult = ProfessorsMapper.toDomainModel(input)
+        val mappedResult = PersonnelMapper.toDomainModel(input)
 
         val fullName = mappedResult.getOrNull(0)?.fullName
         val gender = mappedResult.getOrNull(0)?.gender

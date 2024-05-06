@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.stathis.core.base.BaseActivity
 import com.stathis.core.util.onBackButtonClick
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
+import com.stathis.feature.navigation.NavigationAction
 import com.stathis.feature.navigation.NavigatorImpl
 import com.stathis.feature.ui.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,6 +35,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         navController.addOnDestinationChangedListener { _, _, _ ->
             val isAtHomeScreens = navigator.isAtHomeScreens()
             supportActionBar?.setDisplayHomeAsUpEnabled(!isAtHomeScreens)
+        }
+
+        val cameFromWidget = intent.getBooleanExtra(getString(R.string.open_personnel), false)
+        if (cameFromWidget) {
+            navigator.goToScreen(NavigationAction.PERSONNEL)
         }
 
         onBackButtonClick {

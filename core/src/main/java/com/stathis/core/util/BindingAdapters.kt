@@ -46,8 +46,8 @@ fun ImageView.loadLocalPhoto(photo: String) {
     }
 }
 
-@BindingAdapter("setProfessorImage", "professorGender")
-fun ImageView.setProfessorImage(url: String, gender: String) {
+@BindingAdapter("setPersonnelImage", "personnelGender")
+fun ImageView.setPersonnelImage(url: String, gender: String) {
     val genderImg = when (gender) {
         resources.getString(R.string.male) -> R.drawable.male
         else -> R.drawable.female

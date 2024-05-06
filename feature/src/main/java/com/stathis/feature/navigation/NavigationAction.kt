@@ -6,7 +6,7 @@ enum class NavigationAction {
     DEPARTMENT,
     STUDENTS,
     RESEARCH,
-    PROFESSORS,
+    PERSONNEL,
     SYLLABUS,
     LESSONS,
     LESSON_DETAILS,

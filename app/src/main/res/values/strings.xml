@@ -7,13 +7,13 @@
 
     <!-- Bottom Navigation Bar -->
     <string name="menu_home">Αρχική</string>
-    <string name="menu_professors">Καθηγητές</string>
+    <string name="menu_personnel">Προσωπικό</string>
     <string name="menu_syllabus">Μαθήματα</string>
 
     <string name="dashboard_announcements">Ανακοινώσεις</string>
     <string name="dashboard_department">Το Τμήμα</string>
     <string name="dashboard_students">Φοιτητές</string>
-    <string name="dashboard_professors">Καθηγητές</string>
+    <string name="dashboard_personnel">Προσωπικό</string>
 
     <!-- About Activity -->
 
@@ -62,10 +62,6 @@
     <!-- Dep Member Item -->
     <string name="dep_member_txt">Κωστας Παναγιωτακης</string>
 
-    <!-- Professor Item -->
-    <string name="professor_txt">Κωστας Παναγιωτακης</string>
-    <string name="professor_mail">cpanag@domain.com</string>
-
     <!-- Social Item -->
     <string name="social_txt">YouTube</string>
 
@@ -83,7 +79,7 @@
     <string name="news_publisher_desc">E–mail: kalarhaki@hmu.gr\nΤηλ.: 28410–91103</string>
 
 
-    <!-- Professor Widget -->
-    <string name="widget_professor_intent">OPEN_PROFESSORS</string>
+    <!-- Personnel Widget -->
+    <string name="open_personnel">OPEN_PERSONNEL</string>
 
 </resources>

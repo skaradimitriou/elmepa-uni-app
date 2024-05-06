@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.stathis.data.datasource.local.announcements.AnnouncementsDatabase
-import com.stathis.data.datasource.local.professors.ProfessorsDatabase
+import com.stathis.data.datasource.local.personnel.PersonnelDatabase
 import com.stathis.data.util.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -41,10 +41,10 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideProfessorsDatabase(application: Application) = Room.databaseBuilder(
+    fun providePersonnelDatabase(application: Application) = Room.databaseBuilder(
         application.applicationContext,
-        ProfessorsDatabase::class.java,
-        "professors_db"
+        PersonnelDatabase::class.java,
+        "personnel_db"
     ).fallbackToDestructiveMigration().build()
 
     @Provides
