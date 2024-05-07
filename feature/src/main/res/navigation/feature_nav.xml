@@ -71,4 +71,10 @@
         android:label="StudentsFragment"
         tools:layout="@layout/fragment_students" />
 
+    <fragment
+        android:id="@+id/departmentFragment"
+        android:name="com.stathis.feature.ui.department.DepartmentFragment"
+        android:label="DepartmentFragment"
+        tools:layout="@layout/fragment_department" />
+
 </navigation>

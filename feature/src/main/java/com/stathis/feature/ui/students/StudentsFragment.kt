@@ -75,33 +75,4 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
         }
         activityVM.navigateWithAction(NavigationAction.WEBVIEW, args)
     }
-
-
-//
-//    override fun startOps() {
-//        viewModel.observe(this)
-//        viewModel.bindCallbacks(object : StudentsScreenCallback {
-//            override fun openCarouselItem(item: CarouselItem) = openUrl(item.url, item.webTitle)
-//            override fun openLink(item: LinkItem) = when (item.title) {
-//                SECRETARY, STUDENTS_PLATFORM, STUD_FB_PG, EDU_MAIL -> openBrowser(item.url)
-//                else -> openUrl(item.url, item.title)
-//            }
-//        })
-//    }
-//
-//    override fun stopOps() = viewModel.release(this)
-//
-//    private fun openBrowser(url: String) = startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-//
-//    private fun openUrl(url: String, title: String? = null) {
-//        startActivity(Intent(this, WebViewFragment::class.java).apply {
-//            putExtra(URL, url)
-//            putExtra(TITLE, title)
-//        })
-//    }
-//
-//    override fun onSupportNavigateUp(): Boolean {
-//        onBackPressed()
-//        return true
-//    }
 }

@@ -10,13 +10,10 @@ appcompat = "1.6.1"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
-
 lifecycle = "2.7.0"
 navigation = "2.7.7"
 coroutines = "1.7.3"
-retrofit = "2.9.0"
 hiltVersion = "2.48.1"
-okhttp = "4.10.0"
 timber = "5.0.1"
 swipeToRefresh = "1.1.0"
 gradle = "8.1.4"
@@ -32,6 +29,7 @@ jsoup = "1.10.3"
 glide = "4.16.0"
 room = "2.6.1"
 preference = "1.2.1"
+circleImgView = "3.1.0"
 
 
 [libraries]
@@ -52,11 +50,6 @@ lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java
 coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 
-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
-
-okhttp-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
-
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
@@ -76,6 +69,7 @@ firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version
 perf-plugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "perfPlugin" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+circleImgView = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImgView" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -61,6 +61,8 @@ dependencies {
     implementation(libs.swipeToRefresh)
     implementation(libs.shimmer)
 
+    implementation(libs.circleImgView)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

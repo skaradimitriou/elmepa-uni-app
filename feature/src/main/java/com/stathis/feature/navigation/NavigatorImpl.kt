@@ -19,6 +19,7 @@ class NavigatorImpl @Inject constructor(
         NavigationAction.DASHBOARD -> navController.navigate(R.id.nav_home)
         NavigationAction.ANNOUNCEMENTS -> navController.navigate(R.id.announcementsFragment)
         NavigationAction.STUDENTS -> navController.navigate(R.id.studentsFragment)
+        NavigationAction.DEPARTMENT -> navController.navigate(R.id.departmentFragment)
         NavigationAction.RESEARCH -> navController.navigate(R.id.researchFragment)
         NavigationAction.PERSONNEL -> navController.navigate(R.id.nav_personnel)
         NavigationAction.SYLLABUS -> navController.navigate(R.id.nav_syllabus)
