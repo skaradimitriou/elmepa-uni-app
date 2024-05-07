@@ -2,14 +2,12 @@ package com.stathis.core.util
 
 import android.graphics.text.LineBreaker
 import android.os.Build
-import android.os.Handler
 import android.view.MenuItem
 import android.view.View
 import android.webkit.WebView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.stathis.core.decorations.CustomItemDecoration
 
@@ -72,6 +70,6 @@ fun View.setRibbonColor(isMandatory: Boolean) {
     if (isMandatory) {
         setBackgroundResource(com.stathis.core.R.color.lesson_blue)
     } else {
-        setBackgroundResource(com.stathis.core.R.color.dark_orange)
+        setBackgroundResource(com.stathis.core.R.color.lesson_orange)
     }
 }

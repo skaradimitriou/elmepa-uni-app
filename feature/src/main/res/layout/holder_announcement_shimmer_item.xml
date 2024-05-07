@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:layout_width="match_parent"
@@ -20,34 +19,12 @@
                 <ImageView
                     android:id="@+id/announcementImgView"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/height_200"
+                    android:layout_height="@dimen/height_300"
                     android:scaleType="centerCrop"
                     android:src="@color/grey"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/announcementDateTxtView"
-                    style="@style/text_14_bold_grey"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer_grey_lighter"
-                    android:paddingHorizontal="@dimen/dimen_16"
-                    android:paddingTop="@dimen/dimen_16"
-                    app:layout_constraintTop_toBottomOf="@id/announcementImgView"
-                    tools:text="@tools:sample/lorem" />
-
-                <TextView
-                    android:id="@+id/announcementTitleTxtView"
-                    style="@style/text_18_bold_black"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer_grey_lighter"
-                    android:paddingHorizontal="@dimen/dimen_16"
-                    android:paddingBottom="@dimen/dimen_16"
-                    app:layout_constraintTop_toBottomOf="@id/announcementDateTxtView"
-                    tools:text="@tools:sample/lorem" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>

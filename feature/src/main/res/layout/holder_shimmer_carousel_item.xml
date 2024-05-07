@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <com.facebook.shimmer.ShimmerFrameLayout
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/shimmer_grey_lighter"
-        app:shimmer_highlight_alpha="0.5"/>
+        app:shimmer_highlight_alpha="0.5">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppMaterialCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/itemImgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/shimmer_grey_lighter"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </layout>

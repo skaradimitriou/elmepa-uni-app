@@ -28,7 +28,7 @@
 
             <TextView
                 android:id="@+id/orientationTitleTxtView"
-                style="@style/text_18_bold_black"
+                style="@style/text_18_bold"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{model.title}"

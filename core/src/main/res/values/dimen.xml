@@ -28,6 +28,7 @@
     <dimen name="height_220">220dp</dimen>
     <dimen name="height_230">230dp</dimen>
     <dimen name="height_250">250dp</dimen>
+    <dimen name="height_300">300dp</dimen>
 
     <!-- Text sizes -->
     <dimen name="text_12">12sp</dimen>

@@ -23,14 +23,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/dimen_16">
 
             <ImageView
                 android:id="@+id/personnelImgView"
-                android:layout_width="@dimen/dimen_100"
+                android:layout_width="@dimen/dimen_70"
                 android:layout_height="0dp"
                 android:contentDescription="@tools:sample/lorem"
-                android:padding="@dimen/dimen_16"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="@id/personnelEmailTxtView"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,13 +41,11 @@
 
             <TextView
                 android:id="@+id/personnelNameTxtView"
+                style="@style/text_18_bold"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dimen_16"
+                android:layout_marginStart="@dimen/dimen_16"
                 android:text="@{model.fullName}"
-                android:textColor="@color/dark_grey"
-                android:textSize="@dimen/text_18"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/personnelImgView"
                 app:layout_constraintTop_toTopOf="parent"
@@ -55,12 +53,11 @@
 
             <TextView
                 android:id="@+id/personnelDescriptionTxtView"
+                style="@style/text_16"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/dimen_5"
-                android:paddingBottom="@dimen/dimen_16"
+                android:layout_marginTop="@dimen/dimen_5"
                 android:text="@{model.description}"
-                android:textSize="@dimen/text_16"
                 app:layout_constraintEnd_toEndOf="@id/personnelNameTxtView"
                 app:layout_constraintStart_toStartOf="@id/personnelNameTxtView"
                 app:layout_constraintTop_toBottomOf="@id/personnelNameTxtView"
@@ -68,11 +65,11 @@
 
             <TextView
                 android:id="@+id/personnelEmailTxtView"
+                style="@style/text_16"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/dimen_16"
+                android:layout_marginTop="@dimen/dimen_16"
                 android:text="@{model.email}"
-                android:textSize="@dimen/text_16"
                 app:layout_constraintEnd_toEndOf="@id/personnelDescriptionTxtView"
                 app:layout_constraintStart_toStartOf="@id/personnelDescriptionTxtView"
                 app:layout_constraintTop_toBottomOf="@id/personnelDescriptionTxtView"

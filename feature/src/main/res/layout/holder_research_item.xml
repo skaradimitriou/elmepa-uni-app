@@ -39,11 +39,11 @@
 
             <TextView
                 android:id="@+id/titleTxtView"
+                style="@style/text_16"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dimen_16"
                 android:text="@{model.name}"
-                android:textColor="@color/dark_grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/itemImgView"
