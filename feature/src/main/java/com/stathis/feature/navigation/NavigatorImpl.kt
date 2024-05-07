@@ -43,7 +43,7 @@ class NavigatorImpl @Inject constructor(
         return listOf(
             R.id.nav_home,
             R.id.nav_personnel,
-            //R.id.nav_syllabus
+            R.id.nav_syllabus
         ).contains(currentDestination)
     }
 }

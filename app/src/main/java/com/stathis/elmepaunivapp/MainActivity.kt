@@ -45,6 +45,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         onBackButtonClick {
             navigator.goBack()
+            viewModel.navigateWithAction(null)
         }
     }
 

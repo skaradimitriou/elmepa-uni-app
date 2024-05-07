@@ -10,8 +10,8 @@ import com.stathis.core.base.UiModel
 import com.stathis.feature.BR
 import com.stathis.feature.R
 import com.stathis.feature.databinding.HolderEmptyViewBinding
+import com.stathis.feature.databinding.HolderLessonItemBinding
 import com.stathis.feature.databinding.HolderLessonsHeaderItemBinding
-import com.stathis.feature.databinding.LessonItemRowBinding
 import com.stathis.model.syllabus.Lesson
 import com.stathis.model.syllabus.LessonHeader
 
@@ -26,8 +26,8 @@ class LessonsAdapter(
                 HolderLessonsHeaderItemBinding.inflate(inflater, parent, false)
             }
 
-            R.layout.lesson_item_row -> {
-                LessonItemRowBinding.inflate(inflater, parent, false)
+            R.layout.holder_lesson_item -> {
+                HolderLessonItemBinding.inflate(inflater, parent, false)
             }
 
             else -> HolderEmptyViewBinding.inflate(inflater, parent, false)
@@ -41,7 +41,7 @@ class LessonsAdapter(
 
     override fun getItemViewType(position: Int): Int = when (getItem(position)) {
         is LessonHeader -> R.layout.holder_lessons_header_item
-        is Lesson -> R.layout.lesson_item_row
+        is Lesson -> R.layout.holder_lesson_item
         else -> R.layout.holder_empty_view
     }
 }

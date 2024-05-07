@@ -45,7 +45,7 @@ class OrientationViewHolder(
                 binding.semesterRecycler.setupItemDecoration(bottom = 30)
                 adapter.submitList(data.semesters)
 
-                binding.expandCollapseBtn.setOnClickListener {
+                binding.orientationCard.setOnClickListener {
                     data.isExpanded = !data.isExpanded
                     binding.model = data
                 }

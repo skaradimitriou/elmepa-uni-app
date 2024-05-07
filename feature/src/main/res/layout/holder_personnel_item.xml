@@ -23,7 +23,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/dimen_120"
             android:padding="@dimen/dimen_16">
 
             <ImageView
@@ -32,7 +32,7 @@
                 android:layout_height="0dp"
                 android:contentDescription="@tools:sample/lorem"
                 android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="@id/personnelEmailTxtView"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:personnelGender="@{model.gender}"
@@ -57,10 +57,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_5"
-                android:text="@{model.description}"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@id/personnelNameTxtView"
                 app:layout_constraintStart_toStartOf="@id/personnelNameTxtView"
                 app:layout_constraintTop_toBottomOf="@id/personnelNameTxtView"
+                app:setPersonnelDescription="@{model.description}"
                 tools:text="@tools:sample/lorem" />
 
             <TextView
@@ -70,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_16"
                 android:text="@{model.email}"
-                app:layout_constraintEnd_toEndOf="@id/personnelDescriptionTxtView"
-                app:layout_constraintStart_toStartOf="@id/personnelDescriptionTxtView"
+                app:layout_constraintEnd_toEndOf="@id/personnelNameTxtView"
+                app:layout_constraintStart_toStartOf="@id/personnelNameTxtView"
                 app:layout_constraintTop_toBottomOf="@id/personnelDescriptionTxtView"
                 tools:text="@tools:sample/lorem" />
 

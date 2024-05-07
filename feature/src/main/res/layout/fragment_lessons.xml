@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/lesson_item_row" />
+            tools:listitem="@layout/holder_lesson_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

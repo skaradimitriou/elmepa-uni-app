@@ -17,6 +17,7 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/orientationCard"
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

@@ -35,17 +35,6 @@ fun TextView.setTextAndVisibility(text: String) {
     }
 }
 
-@BindingAdapter("loadLocalPhoto")
-fun ImageView.loadLocalPhoto(photo: String) {
-    try {
-        val myImage =
-            this.context.resources.getIdentifier(photo, "drawable", "com.stathis.elmepaunivapp")
-        this.setImageResource(myImage)
-    } catch (e: Exception) {
-        this.setImageResource(R.mipmap.ic_launcher)
-    }
-}
-
 @BindingAdapter("setPersonnelImage", "personnelGender")
 fun ImageView.setPersonnelImage(url: String, gender: String) {
     val genderImg = when (gender) {
@@ -54,6 +43,17 @@ fun ImageView.setPersonnelImage(url: String, gender: String) {
     }
 
     Glide.with(context).load(url).error(genderImg).into(this)
+}
+
+@BindingAdapter("setPersonnelDescription")
+fun TextView.setPersonnelDescription(description: String) {
+    visibility = if (description.isEmpty()) {
+        View.GONE
+    } else {
+        View.VISIBLE
+    }
+
+    text = description
 }
 
 @BindingAdapter("animateArrow")
