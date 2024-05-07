@@ -62,13 +62,14 @@ class SyllabusRepositoryImpl @Inject constructor(
     ): Flow<List<UiModel>> = flow {
         val queryResult = fireStore.collection("undergraduate_lessons")
             .whereEqualTo("semester", semester)
-            .whereArrayContains("orientation", orientationType)
             .get()
             .await()
             .toObjects(LessonDto::class.java)
 
-        val mappedResult = LessonListMapper.toDomainModel(queryResult)
-
+        val mappedResult = LessonListMapper.toDomainModel(
+            dtoModel = queryResult,
+            args = arrayOf(orientationType.name)
+        ).filter { it.orientation.contains(orientationType) }
 
         val headerText = if (mappedResult.all { it.mandatory }) {
             app.getString(R.string.all_lessons_mandatory)
