@@ -18,7 +18,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/info_header_bg"
+            android:background="@color/light_blue"
             android:padding="@dimen/dimen_16">
 
             <ImageView
@@ -26,7 +26,7 @@
                 android:layout_width="@dimen/dimen_32"
                 android:layout_height="@dimen/dimen_32"
                 android:background="@drawable/ic_info"
-                android:backgroundTint="@color/dark_blue"
+                android:backgroundTint="@color/navy"
                 android:contentDescription="@tools:sample/lorem"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_16"
                 android:text="@{lessonHeader.title}"
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/navy"
                 android:textSize="@dimen/text_18"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/infoImgView"

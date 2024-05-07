@@ -17,8 +17,8 @@
     <com.google.android.material.card.MaterialCardView
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
-        android:onClick="@{() -> callback.onLessonTap(model)}"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> callback.onLessonTap(model)}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,17 +32,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:setRibbonColor="@{model.mandatory}"
-                tools:background="@color/dark_blue" />
+                tools:background="@color/navy" />
 
             <TextView
                 android:id="@+id/titleTxtView"
+                style="@style/text_18"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/dimen_16"
                 android:paddingVertical="@dimen/dimen_24"
                 android:text="@{model.name}"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintEnd_toStartOf="@id/moreIconImgView"
                 app:layout_constraintStart_toEndOf="@id/lessonRibbon"
                 app:layout_constraintTop_toTopOf="parent"

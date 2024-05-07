@@ -27,11 +27,10 @@
 
             <TextView
                 android:id="@+id/titleTxtView"
-                style="@style/text_16_bold_petrol"
+                style="@style/text_16_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{model.title}"
-                android:textColor="@color/dark_grey"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@tools:sample/lorem" />
@@ -41,7 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_10"
-                android:textColor="@color/dark_grey"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/titleTxtView"
                 app:textAndVisibility="@{model.descriptionLine1}"
@@ -52,7 +50,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_4"
-                android:textColor="@color/dark_grey"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/descriptionLine1TxtView"
                 app:textAndVisibility="@{model.descriptionLine2}"
@@ -63,7 +60,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_4"
-                android:textColor="@color/dark_grey"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/descriptionLine2TxtView"
                 app:textAndVisibility="@{model.descriptionLine3}"

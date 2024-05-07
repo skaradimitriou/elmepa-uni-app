@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/lessonTitleTxtView"
-            style="@style/text_18_bold_black"
+            style="@style/text_18_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_16"

@@ -1,2 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="actionBarStyle">@style/AppToolbar</item>
+    </style>
+
+    <!-- App Styling -->
+    <style name="AppToolbar" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:background">@color/dark_mode_element</item>
+    </style>
+
+    <style name="AppBackground">
+        <item name="background">@color/dark_mode_surface</item>
+    </style>
+
+    <style name="AppMaterialCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/dimen_10</item>
+        <item name="cardForegroundColor">@android:color/transparent</item>
+        <item name="cardBackgroundColor">@color/dark_mode_element_2</item>
+    </style>
+
+    <style name="AppRecyclerStyle">
+        <item name="android:paddingBottom">@dimen/dimen_40</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="text_20_bold" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_18_bold" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_16_bold" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_20" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/text_20</item>
+    </style>
+
+    <style name="text_18" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/text_18</item>
+    </style>
+
+    <style name="text_16" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+
+</resources>

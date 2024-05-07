@@ -16,25 +16,24 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        style="@style/AppMaterialCard"
+        android:theme="@style/AppMaterialCardSecondary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:strokeColor="@android:color/transparent"
         android:onClick="@{() -> callback.onSemesterTap(model)}"
         app:cardCornerRadius="@dimen/dimen_5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/itemTxtView"
-                style="@style/text_18_non_bold_white"
+                style="@style/text_18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dimen_16"
                 android:text="@{model.name}"
-                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@tools:sample/lorem" />

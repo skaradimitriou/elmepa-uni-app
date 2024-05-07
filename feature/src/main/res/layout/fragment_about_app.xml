@@ -6,11 +6,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey_bg"
         tools:context="com.stathis.feature.ui.about.AboutAppFragment">
 
         <TextView
             android:id="@+id/aboutAppTxtView"
+            style="@style/text_16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_16"
@@ -20,7 +20,7 @@
 
         <TextView
             android:id="@+id/learnMoreTxtView"
-            style="@style/text_16_bold_petrol"
+            style="@style/text_18_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -32,6 +32,7 @@
 
         <TextView
             android:id="@+id/aboutDataTxtView"
+            style="@style/text_16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_16"
@@ -41,7 +42,7 @@
 
         <TextView
             android:id="@+id/newsPublisherNameTxtView"
-            style="@style/text_16_non_bold_black"
+            style="@style/text_18_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/dimen_16"
@@ -51,6 +52,7 @@
 
         <TextView
             android:id="@+id/newsPublisherDescTxtView"
+            style="@style/text_16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/dimen_16"

@@ -42,7 +42,7 @@
 
             <TextView
                 android:id="@+id/titleTxtView"
-                style="@style/text_20_white_bold"
+                style="@style/text_20_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"

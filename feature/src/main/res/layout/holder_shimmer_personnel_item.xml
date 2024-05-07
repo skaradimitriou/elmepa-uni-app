@@ -2,57 +2,35 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="model"
+            type="com.stathis.model.personnel.Person" />
+
+        <variable
+            name="callback"
+            type="com.stathis.feature.ui.personnel.adapter.PersonnelCallback" />
+    </data>
+
     <com.facebook.shimmer.ShimmerFrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:shimmer_highlight_alpha="0.5">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppMaterialCard"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/dimen_10"
-            android:layout_marginTop="@dimen/dimen_10"
-            android:layout_marginEnd="@dimen/dimen_10">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/imgView"
-                android:layout_width="@dimen/height_70"
-                android:layout_height="0dp"
-                android:layout_marginStart="@dimen/dimen_5"
-                android:background="@color/grey_bg"
-                android:backgroundTint="@color/shimmer_grey_lighter"
-                android:contentDescription="@tools:sample/lorem"
-                app:layout_constraintBottom_toBottomOf="@id/emailTxtView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_100"
+                android:background="@color/shimmer_grey_lighter"
+                android:padding="@dimen/dimen_16">
 
-            <TextView
-                android:id="@+id/nameTxtView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_10"
-                android:layout_marginTop="@dimen/dimen_16"
-                android:layout_marginEnd="@dimen/dimen_10"
-                android:background="@color/grey_bg"
-                android:backgroundTint="@color/shimmer_grey_lighter"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imgView"
-                app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/emailTxtView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_5"
-                android:layout_marginBottom="@dimen/dimen_10"
-                android:background="@color/grey_bg"
-                android:backgroundTint="@color/shimmer_grey_lighter"
-                android:paddingBottom="@dimen/dimen_10"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/nameTxtView"
-                app:layout_constraintStart_toStartOf="@id/nameTxtView"
-                app:layout_constraintTop_toBottomOf="@id/nameTxtView" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.facebook.shimmer.ShimmerFrameLayout>
 </layout>

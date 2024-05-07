@@ -30,6 +30,7 @@
                 android:layout_height="@dimen/height_200"
                 android:scaleType="centerCrop"
                 android:src="@color/grey"
+                android:contentDescription="@{model.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -37,18 +38,19 @@
 
             <TextView
                 android:id="@+id/announcementDateTxtView"
-                style="@style/text_14_bold_grey"
+                style="@style/text_16_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/dimen_16"
                 android:paddingTop="@dimen/dimen_16"
-                android:text="@{model.pubDate}"
+                android:textColor="@color/text_grey"
                 app:layout_constraintTop_toBottomOf="@id/announcementImgView"
+                app:setPubDate="@{model.pubDate}"
                 tools:text="@tools:sample/lorem" />
 
             <TextView
                 android:id="@+id/announcementTitleTxtView"
-                style="@style/text_18_bold_black"
+                style="@style/text_18_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/dimen_16"

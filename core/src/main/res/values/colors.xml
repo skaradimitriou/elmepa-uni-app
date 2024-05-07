@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="white">#FFFFFF</color>
+    <!-- Color Palette -->
     <color name="black">#000000</color>
     <color name="grey">#88888888</color>
-    <color name="grey_darker">#aaaaaa</color>
-    <color name="dark_grey">#3D3F43</color>
     <color name="grey_bg">#F0F0F0</color>
-    <color name="blue_petrol">#296f89</color>
-    <color name="light_green">#53a653</color>
-    <color name="orange">#f15c22</color>
-    <color name="dark_orange">#e02b20</color>
-    <color name="light_blue">#3d8bcb</color>
+
+    <!-- Light Mode Color Palette -->
+    <color name="white">#FFFFFF</color>
+    <color name="light_mode_gray">#8899A6</color>
+    <color name="blue">#344955</color>
+    <color name="blue_darker">#232f34</color>
+    <color name="navy">#222C54</color>
+    <color name="light_blue">#c6d2f6</color>
+    <color name="petrol">#296f89</color>
+    <color name="petrol_15_opacity">#15296f89</color>
+
+    <!-- Dark Mode color palette -->
+    <color name="dark_mode_surface">#121212</color>
+    <color name="dark_mode_element">#1e1e1e</color>
+    <color name="dark_mode_element_2">#222222</color>
+
+    <!-- Text Colors -->
+    <color name="text_grey">#aaaaaa</color>
+    <color name="text_grey_dark">#3D3F43</color>
+
+    <!-- Dark Mode Text Colors -->
+    <color name="primary_text">#ffffff</color>
+
+    <!-- Other -->
+    <color name="lesson_orange">#e02b20</color>
     <color name="lesson_blue">#417ba3</color>
-    <color name="lesson_green">#2a8c3f</color>
-
-    <color name="elmepa_blue">#007aff</color>
-
-    <color name="dark_blue">#222C54</color>
-    <color name="info_header_bg">#c6d2f6</color>
-
     <color name="shimmer_grey_lighter">#B3B3B3</color>
+
 </resources>

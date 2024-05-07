@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:backgroundTint="@color/blue_petrol"
+        android:backgroundTint="@color/petrol"
         android:drawableStart="@mipmap/ic_launcher"
         android:drawableEnd="@drawable/ic_arrow_right"
         android:drawableTint="@color/white"

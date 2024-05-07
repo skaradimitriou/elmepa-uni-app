@@ -31,10 +31,10 @@
 
                 <TextView
                     android:id="@+id/linkTitleTxtView"
-                    style="@style/text_18_bold_black"
+                    style="@style/text_18_bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_16"
+                    android:paddingTop="@dimen/dimen_16"
                     android:background="@color/shimmer_grey_lighter"
                     android:gravity="center_horizontal"
                     app:layout_constraintStart_toStartOf="parent"
