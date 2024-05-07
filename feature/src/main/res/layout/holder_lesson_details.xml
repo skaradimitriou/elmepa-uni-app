@@ -13,28 +13,54 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        style="@style/AppRoundedShape"
+        android:layout_margin="@dimen/dimen_10"
+        android:padding="@dimen/dimen_16">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/lessonImgView"
+            android:layout_width="@dimen/height_80"
+            android:layout_height="@dimen/height_80"
+            android:background="@drawable/circle_bg"
+            android:src="@drawable/book"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lessonTitleTxtView"
-            style="@style/text_18_bold"
-            android:layout_width="match_parent"
+            style="@style/text_20_bold"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen_16"
+            android:paddingStart="@dimen/dimen_16"
             android:text="@{model.name}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lessonImgView"
+            app:layout_constraintTop_toTopOf="@id/lessonImgView"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/lessonHoursTxtView"
+            style="@style/text_16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:text="@{model.hours}"
+            app:layout_constraintEnd_toEndOf="@id/lessonTitleTxtView"
+            app:layout_constraintStart_toStartOf="@id/lessonTitleTxtView"
+            app:layout_constraintTop_toBottomOf="@id/lessonTitleTxtView"
             tools:text="@tools:sample/lorem" />
 
         <TextView
             android:id="@+id/lessonDescTxtView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_32"
             android:text="@{model.description}"
             android:textSize="@dimen/text_16"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lessonTitleTxtView"
+            app:layout_constraintTop_toBottomOf="@id/lessonImgView"
             tools:text="@tools:sample/lorem/random" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

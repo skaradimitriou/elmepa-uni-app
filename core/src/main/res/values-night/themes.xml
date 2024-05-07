@@ -21,6 +21,11 @@
         <item name="cardBackgroundColor">@color/dark_mode_element_2</item>
     </style>
 
+    <style name="AppRoundedShape" >
+        <item name="android:background">@drawable/round_corners_bg</item>
+        <item name="android:backgroundTint">@color/dark_mode_element_2</item>
+    </style>
+
     <style name="AppRecyclerStyle">
         <item name="android:paddingBottom">@dimen/dimen_40</item>
         <item name="android:clipToPadding">false</item>
@@ -32,7 +37,6 @@
     <style name="text_20_bold" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textSize">@dimen/text_20</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:gravity">center</item>
     </style>
 
     <style name="text_18_bold" parent="Theme.AppCompat.Light.NoActionBar">
