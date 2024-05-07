@@ -13,6 +13,7 @@
     <dimen name="dimen_70">70dp</dimen>
     <dimen name="dimen_85">85dp</dimen>
     <dimen name="dimen_100">100dp</dimen>
+    <dimen name="dimen_120">120dp</dimen>
     <dimen name="dimen_150">150dp</dimen>
 
     <!-- Height sizes -->

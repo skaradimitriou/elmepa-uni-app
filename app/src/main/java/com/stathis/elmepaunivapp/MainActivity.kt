@@ -40,6 +40,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         val cameFromWidget = intent.getBooleanExtra(getString(R.string.open_personnel), false)
         if (cameFromWidget) {
             navigator.goToScreen(NavigationAction.PERSONNEL)
+            viewModel.navigateWithAction(null)
         }
 
         onBackButtonClick {

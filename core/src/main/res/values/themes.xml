@@ -60,6 +60,13 @@
         <item name="android:overScrollMode">never</item>
     </style>
 
+    <style name="AppNestedRecyclerStyle">
+        <item name="android:paddingBottom">@dimen/dimen_16</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
     <!-- Text Styles -->
     <style name="text_20_bold" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textSize">@dimen/text_20</item>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.stathis.model.department.Programme" />
+
+        <variable
+            name="callback"
+            type="com.stathis.feature.ui.department.adapter.ProgrammeCallback" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/AppMaterialCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_5"
+        android:onClick="@{() -> callback.onProgrammeTap(model)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/programmeImgView"
+                android:layout_width="@dimen/height_80"
+                android:layout_height="@dimen/height_80"
+                android:contentDescription="@{model.title}"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadImageUrl="@{model.imageUrl}"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/titleTxtView"
+                style="@style/text_18_bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_16"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:text="@{model.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/programmeImgView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/descriptionTxtView"
+                style="@style/text_16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:paddingBottom="@dimen/dimen_16"
+                android:text="@{model.description}"
+                app:layout_constraintEnd_toEndOf="@id/titleTxtView"
+                app:layout_constraintStart_toStartOf="@id/titleTxtView"
+                app:layout_constraintTop_toBottomOf="@id/titleTxtView"
+                tools:text="@tools:sample/lorem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
