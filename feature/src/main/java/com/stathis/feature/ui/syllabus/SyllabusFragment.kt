@@ -11,6 +11,7 @@ import com.stathis.core.util.setupItemDecoration
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentSyllabusBinding
 import com.stathis.feature.navigation.NavigationAction
+import com.stathis.feature.ui.MainSharedViewModel
 import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.ui.syllabus.adapter.OrientationAdapter
 import com.stathis.feature.util.ORIENTATION
@@ -23,13 +24,14 @@ class SyllabusFragment : BaseFragment<FragmentSyllabusBinding>(R.layout.fragment
 
     private val viewModel by viewModels<SyllabusViewModel>()
     private val activityVM by activityViewModels<MainViewModel>()
+    private val sharedVM by activityViewModels<MainSharedViewModel>()
 
     private val adapter = OrientationAdapter { orientationType, semester ->
         val args = Bundle().apply {
             putString(SEMESTER, semester.name)
             putSerializable(ORIENTATION, orientationType)
         }
-
+        sharedVM.selectedOrientation = orientationType
         activityVM.navigateWithAction(NavigationAction.LESSONS, args)
     }
 
@@ -40,11 +42,11 @@ class SyllabusFragment : BaseFragment<FragmentSyllabusBinding>(R.layout.fragment
             setupItemDecoration(start = 30, end = 30, top = 30)
             adapter = this@SyllabusFragment.adapter
         }
+
+        viewModel.fetchSemesters(sharedVM.selectedOrientation)
     }
 
     override fun startOps() {
-        viewModel.fetchSemesters()
-
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.semesters.flowWithLifecycle(lifecycle).collect {
                 adapter.submitList(it)

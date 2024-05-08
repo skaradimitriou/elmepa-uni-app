@@ -12,6 +12,7 @@ import com.stathis.core.util.onBackButtonClick
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
 import com.stathis.feature.navigation.NavigationAction
 import com.stathis.feature.navigation.NavigatorImpl
+import com.stathis.feature.ui.MainSharedViewModel
 import com.stathis.feature.ui.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,6 +24,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private lateinit var navController: NavController
 
     private val viewModel by viewModels<MainViewModel>()
+    private val sharedViewModel by viewModels<MainSharedViewModel>()
 
     override fun init() {
         navController = findNavController(R.id.navHostFragment)

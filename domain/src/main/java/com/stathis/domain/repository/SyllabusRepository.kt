@@ -9,12 +9,12 @@ import kotlinx.coroutines.flow.Flow
 
 interface SyllabusRepository {
 
-    suspend fun fetchSemesters(): Flow<List<Orientation>>
+    suspend fun fetchSemesters(selectedOrientationType: OrientationType): Flow<List<Orientation>>
 
     suspend fun fetchLessonsForSemesterAndOrientation(
         semester: String,
         orientationType: OrientationType
     ): Flow<List<UiModel>>
 
-    suspend fun fetchLessonDetails(lessonName: String) : Flow<NetworkResult<List<Lesson>>>
+    suspend fun fetchLessonDetails(lessonName: String): Flow<NetworkResult<List<Lesson>>>
 }

@@ -6,6 +6,7 @@ import com.stathis.core.base.BaseViewModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchSemestersUseCase
 import com.stathis.model.syllabus.Orientation
+import com.stathis.model.syllabus.OrientationType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,9 +26,9 @@ class SyllabusViewModel @Inject constructor(
 
     private val _semesters = MutableStateFlow<List<Orientation>>(listOf())
 
-    fun fetchSemesters() {
+    fun fetchSemesters(selectedOrientation: OrientationType?) {
         viewModelScope.launch(dispatcher) {
-            useCase.invoke().collect {
+            useCase.invoke(selectedOrientation).collect {
                 _semesters.emit(it)
             }
         }
