@@ -1,4 +1,4 @@
-# Mobile Εφαρμογή Τμήματος ΔΕΤ, ΕΛΜΕΠΑ
+# Management Science & Technology (ELMEPA) University App (Android)
 
 ![ELMEPA University App](https://user-images.githubusercontent.com/64270931/98338632-227cbe00-2013-11eb-8283-9ff5ade07f5c.png)
 
@@ -7,41 +7,31 @@ This app is live at [Google Play](https://play.google.com/store/apps/details?id=
 Read more about the app [HERE](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) <br/>
 🧍 Users: 140
 
-## Main Goal
 
-This app was developed for [ELMEPA University](https://mst.hmu.gr/) (Agios Nikolaos) in Crete, so users can gain:<br/>
-a) useful student information about the department of Management Science & Technology <br/>
-b) look up their professor's e-mail and send them e-mails from the app <br/>
-c) get new announcements of the department
-d) get useful notifications about important events 🔜
+This repository contains an Android application built & tailored specifically for our university community.
 
-## Users
+## Features
 
-a. Students of the department <br/>
-b. People who want to learn more about the department.
+- **Interactive Interface**: Engaging user experience designed to cater to the needs of students, faculty, and staff.
+- **Real-time Updates**: Stay informed with the latest news & announcements directly from the university.
+- **Engaging Syllabus**: Easily access your schedule and syllabus while on the go.
+- **Social Integration**: Look up & connect with University's personnel effortlessly.
 
-### Programming Language 
+## Tech Stack
 
-[Kotlin](https://kotlinlang.org/)
+- **Kotlin**: A modern programming language for building robust Android applications.
+- **Android Jetpack**: Utilize the latest Android Jetpack components for efficient development.
+- **MVVM Clean Architecture**: Implement a clean separation of concerns with Model-View-ViewModel architecture following Clean Architecture principles.
+- **Coroutines**: Leverage Kotlin Coroutines for asynchronous and non-blocking programming.
+- **Kotlin Flows**: Utilize Kotlin Flows for reactive programming, enabling seamless data stream processing.
+- **Room Database**: Utilize Room Persistence Library for local data storage and caching.
+- **Firebase**: Integrates with Firebase services (Firestore, Storage, Crashlytics, Performance) for data flow and app monitoring purposes.
+- **Material 3**: Implement intuitive and visually appealing UI with Material Design 3 guidelines.
+- **Glide**: Efficiently load and display images with Glide, a fast and flexible image loading library.
+- **Shimmer**: Enhance UI loading experience with shimmer effects to indicate content loading.
+- **Kotlin DSL**: Utilize Kotlin DSL for configuring build scripts and project setup, enhancing build script readability and maintainability.
 
-## Architecture
-Model - View - ViewModel (MVVM)
 
-## Technologies Used
-- Navigation Component <br/>
-- Kotlin Coroutines <br/>
-- Data Binding <br/>
-- Kotlin extension functions
+## Feedback
 
-### Theme 
-
-[Material Design](https://material.io/)
-
-### Libraries
-
-[Room](https://developer.android.com/topic/libraries/architecture/room) Local Database <br/>
-[Glide](https://github.com/bumptech/glide) for image loading<br/>
-[JSOUP](https://jsoup.org/) for html parser<br/>
-[Merlin](https://github.com/novoda/merlin) Network Monitoring <br/>
-[Shimmer](https://github.com/facebook/shimmer-android) for lazy loading <br/>
-[Gson](https://github.com/google/gson) for serialization/deserialization
+We value your feedback! If you have any suggestions, feature requests, or bug reports, please don't hesitate to [open an issue](https://github.com/skaradimitriou/elmepa-uni-app/issues) on GitHub.
