@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:paddingBottom="@dimen/dimen_16"
-            android:text="Βρείτε μας στα Social"
+            android:text="@string/dept_find_us_at_social"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/lorem" />

@@ -22,6 +22,12 @@
     <!-- Students Screen -->
     <string name="useful_links">Χρήσιμοι Σύνδεσμοι</string>
 
+    <!-- Department Screen -->
+    <string name="dept_find_us_at_social">Βρείτε μας στα Social</string>
+    <string name="dept_programmes">Προγράμματα</string>
+    <string name="dept_field_of_study">Γνωστικά Αντικείμενα</string>
+    <string name="dept_dep_members">Μέλη Δ.Ε.Π</string>
+
     <!-- Personnel -->
     <string name="menu_search">Αναζήτηση</string>
     <string name="search_in_personnel">Αναζήτησε κάποιον/α</string>
