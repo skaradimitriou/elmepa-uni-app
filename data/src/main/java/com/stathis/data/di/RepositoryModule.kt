@@ -9,6 +9,7 @@ import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.repository.AnnouncementsRepositoryImpl
 import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.DepartmentRepositoryImpl
+import com.stathis.data.repository.FaqRepositoryImpl
 import com.stathis.data.repository.PersonnelRepositoryImpl
 import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.data.repository.StudentsRepositoryImpl
@@ -16,6 +17,7 @@ import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.domain.repository.DashboardRepository
 import com.stathis.domain.repository.DepartmentRepository
+import com.stathis.domain.repository.FaqRepository
 import com.stathis.domain.repository.PersonnelRepository
 import com.stathis.domain.repository.ResearchRepository
 import com.stathis.domain.repository.StudentsRepository
@@ -70,4 +72,9 @@ class RepositoryModule {
     fun provideStudentsRepository(
         fireStore: FirebaseFirestore
     ): StudentsRepository = StudentsRepositoryImpl(fireStore)
+
+    @Provides
+    fun provideFaqRepository(
+        fireStore: FirebaseFirestore
+    ): FaqRepository = FaqRepositoryImpl(fireStore)
 }

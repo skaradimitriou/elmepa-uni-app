@@ -19,6 +19,7 @@ fun OptionType.toNavigationAction(): NavigationAction = when (this) {
     OptionType.DEPARTMENT -> NavigationAction.DEPARTMENT
     OptionType.STUDENTS -> NavigationAction.STUDENTS
     OptionType.RESEARCH -> NavigationAction.RESEARCH
+    OptionType.FAQ -> NavigationAction.FAQ
     OptionType.CONTACT -> NavigationAction.CONTACT
     OptionType.ABOUT -> NavigationAction.ABOUT_APP
 }
