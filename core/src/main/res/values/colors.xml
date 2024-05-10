@@ -15,6 +15,7 @@
     <color name="light_blue">#c6d2f6</color>
     <color name="petrol">#296f89</color>
     <color name="petrol_15_opacity">#15296f89</color>
+    <color name="petrol_35_opacity">#35296f89</color>
 
     <!-- Dark Mode color palette -->
     <color name="dark_mode_surface">#121212</color>

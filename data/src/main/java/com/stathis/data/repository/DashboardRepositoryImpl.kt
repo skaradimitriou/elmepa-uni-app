@@ -43,6 +43,11 @@ class DashboardRepositoryImpl @Inject constructor(
                 type = OptionType.RESEARCH
             ),
             DashboardOption(
+                title = app.getString(R.string.faq_title),
+                drawable = R.drawable.home_faq,
+                type = OptionType.FAQ
+            ),
+            DashboardOption(
                 title = app.getString(R.string.contact),
                 drawable = R.drawable.contact,
                 type = OptionType.CONTACT

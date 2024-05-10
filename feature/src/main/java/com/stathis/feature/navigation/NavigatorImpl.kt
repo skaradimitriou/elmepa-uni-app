@@ -30,6 +30,7 @@ class NavigatorImpl @Inject constructor(
 
         NavigationAction.WEBVIEW -> navController.navigate(R.id.webViewFragment, bundle)
         NavigationAction.CONTACT -> navController.navigate(R.id.contactFragment)
+        NavigationAction.FAQ -> navController.navigate(R.id.faqFragment)
         NavigationAction.ABOUT_APP -> navController.navigate(R.id.aboutAppFragment)
         else -> Unit
     }

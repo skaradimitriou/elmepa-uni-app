@@ -77,4 +77,10 @@
         android:label="DepartmentFragment"
         tools:layout="@layout/fragment_department" />
 
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="com.stathis.feature.ui.faq.FaqFragment"
+        android:label="FaqFragment"
+        tools:layout="@layout/fragment_faq" />
+
 </navigation>
