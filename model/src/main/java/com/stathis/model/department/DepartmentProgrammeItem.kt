@@ -15,7 +15,8 @@ data class Programme(
     val title: String,
     val description: String,
     val imageUrl: String,
-    val openUrl: String
+    val openUrl: String,
+    val openInBrowser: Boolean
 ) : UiModel {
     override fun equalsContent(obj: UiModel) = when (obj) {
         is Programme -> title == obj.title && imageUrl == obj.imageUrl

@@ -1,5 +1,7 @@
 package com.stathis.feature.ui.students
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -37,6 +39,7 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
         viewModel.fetchStudentInformation()
 
         binding.studentsRec.apply {
+            itemAnimator = null
             setupItemDecoration(top = 20, start = 30, end = 30)
             adapter = this@StudentsFragment.adapter
         }
@@ -64,11 +67,31 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
 
     override fun stopOps() {}
 
-    override fun onCarouselTap(model: CarouselItem) = openWebView(model.title, model.openUrl)
+    override fun onCarouselTap(model: CarouselItem) = openUrl(
+        shouldOpenInBrowser = model.openInBrowser,
+        title = model.title,
+        url = model.openUrl
+    )
 
-    override fun onLinkTap(model: Link) = openWebView(model.title, model.openUrl)
+    override fun onLinkTap(model: Link) = openUrl(
+        shouldOpenInBrowser = model.openInBrowser,
+        title = model.title,
+        url = model.openUrl
+    )
 
-    private fun openWebView(title: String, url: String) {
+    private fun openUrl(shouldOpenInBrowser: Boolean, title: String? = null, url: String) {
+        if (shouldOpenInBrowser) {
+            openNativeBrowser(url)
+        } else {
+            openWebView(title, url)
+        }
+    }
+
+    private fun openNativeBrowser(url: String) {
+        startActivity(Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(url) })
+    }
+
+    private fun openWebView(title: String? = null, url: String) {
         val args = Bundle().apply {
             putString(TITLE, title)
             putString(URL, url)

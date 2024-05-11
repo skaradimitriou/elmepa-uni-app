@@ -10,11 +10,13 @@ data class CarouselItemDto(
     val webTitle: String? = null,
     val imageUrl: String? = null,
     val openUrl: String? = null,
-    val position: Int? = null
+    val position: Int? = null,
+    val openInBrowser: Boolean? = null
 )
 
 data class LinkDto(
     val title: String? = null,
     val imageUrl: String? = null,
-    val openUrl: String? = null
+    val openUrl: String? = null,
+    val openInBrowser: Boolean? = null
 )

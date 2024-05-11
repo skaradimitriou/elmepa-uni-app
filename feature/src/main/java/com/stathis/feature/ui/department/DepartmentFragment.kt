@@ -1,5 +1,7 @@
 package com.stathis.feature.ui.department
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -35,6 +37,7 @@ class DepartmentFragment : BaseFragment<FragmentDepartmentBinding>(R.layout.frag
         setScreenTitle(getString(com.stathis.core.R.string.department))
 
         binding.departmentRecycler.apply {
+            itemAnimator = null
             setupItemDecoration(top = 30, start = 30, end = 30)
             adapter = this@DepartmentFragment.adapter
         }
@@ -52,13 +55,37 @@ class DepartmentFragment : BaseFragment<FragmentDepartmentBinding>(R.layout.frag
 
     override fun stopOps() {}
 
-    override fun onCarouselItemTap(model: CarouselItem) = openWebView(model.title, model.openUrl)
+    override fun onCarouselItemTap(model: CarouselItem) = openUrl(
+        shouldOpenInBrowser = model.openInBrowser,
+        title = model.title,
+        url = model.openUrl
+    )
 
-    override fun onProgrammeItemTap(model: Programme) = openWebView(model.title, model.openUrl)
+    override fun onProgrammeItemTap(model: Programme) = openUrl(
+        shouldOpenInBrowser = model.openInBrowser,
+        title = model.title,
+        url = model.openUrl
+    )
 
-    override fun onSocialItemTap(model: SocialItem) = openWebView(model.title, model.openUrl)
+    override fun onSocialItemTap(model: SocialItem) = openUrl(
+        shouldOpenInBrowser = model.openInBrowser,
+        title = model.title,
+        url = model.openUrl
+    )
 
-    private fun openWebView(title: String, url: String) {
+    private fun openUrl(shouldOpenInBrowser: Boolean, title: String? = null, url: String) {
+        if (shouldOpenInBrowser) {
+            openNativeBrowser(url)
+        } else {
+            openWebView(title, url)
+        }
+    }
+
+    private fun openNativeBrowser(url: String) {
+        startActivity(Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(url) })
+    }
+
+    private fun openWebView(title: String? = null, url: String) {
         val args = Bundle().apply {
             putString(TITLE, title)
             putString(URL, url)

@@ -14,7 +14,8 @@ data class DepartmentSocialItem(
 data class SocialItem(
     val title: String,
     val imageUrl: String,
-    val openUrl: String
+    val openUrl: String,
+    val openInBrowser: Boolean
 ) : UiModel {
     override fun equalsContent(obj: UiModel) = when (obj) {
         is SocialItem -> title == obj.title

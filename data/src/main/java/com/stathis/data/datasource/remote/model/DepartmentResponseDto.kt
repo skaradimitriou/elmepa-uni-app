@@ -17,11 +17,13 @@ data class ProgrammeItemDto(
     val title: String? = null,
     val description: String? = null,
     val imageUrl: String? = null,
-    val openUrl: String? = null
+    val openUrl: String? = null,
+    val openInBrowser: Boolean? = null
 )
 
 data class SocialItemDto(
     val title: String? = null,
     val imageUrl: String? = null,
-    val openUrl: String? = null
+    val openUrl: String? = null,
+    val openInBrowser: Boolean? = null
 )

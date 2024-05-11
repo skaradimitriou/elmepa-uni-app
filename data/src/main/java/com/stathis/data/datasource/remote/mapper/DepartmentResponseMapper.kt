@@ -46,7 +46,8 @@ object DepartmentResponseMapper : BaseMapper<DepartmentResponseDto?, List<UiMode
             title = item.title.toNotNull(),
             description = item.description.toNotNull(),
             imageUrl = item.imageUrl.toNotNull(),
-            openUrl = item.openUrl.toNotNull()
+            openUrl = item.openUrl.toNotNull(),
+            openInBrowser = item.openInBrowser.toNotNull()
         )
     }.toNotNull()
 
@@ -55,7 +56,8 @@ object DepartmentResponseMapper : BaseMapper<DepartmentResponseDto?, List<UiMode
         SocialItem(
             title = item.title.toNotNull(),
             imageUrl = item.imageUrl.toNotNull(),
-            openUrl = item.openUrl.toNotNull()
+            openUrl = item.openUrl.toNotNull(),
+            openInBrowser = item.openInBrowser.toNotNull()
         )
     }.toNotNull()
 }

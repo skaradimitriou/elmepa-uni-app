@@ -18,5 +18,6 @@ object CarouselMapper : BaseMapper<List<CarouselItemDto>?, CarouselParent> {
         imageUrl = this?.imageUrl.toNotNull(),
         openUrl = this?.openUrl.toNotNull(),
         position = this?.position.toNotNull(),
+        openInBrowser = this?.openInBrowser.toNotNull()
     )
 }

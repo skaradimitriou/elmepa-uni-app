@@ -22,6 +22,7 @@ object StudentsMapper : BaseMapper<StudentsResponseDto?, List<UiModel>> {
     private fun LinkDto?.toDomainModel() = Link(
         title = this?.title.toNotNull(),
         imageUrl = this?.imageUrl.toNotNull(),
-        openUrl = this?.openUrl.toNotNull()
+        openUrl = this?.openUrl.toNotNull(),
+        openInBrowser = this?.openInBrowser.toNotNull()
     )
 }
