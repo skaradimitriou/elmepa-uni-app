@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import com.stathis.core.util.SharedPreferencesHelper
+import com.stathis.core.util.networkmanager.NetworkManager
+import com.stathis.core.util.networkmanager.NetworkManagerImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,4 +27,10 @@ class CoreModule {
     fun providePrefsHelper(prefs: SharedPreferences): SharedPreferencesHelper {
         return SharedPreferencesHelper(prefs)
     }
+
+    @Provides
+    @Singleton
+    fun provideNetworkManager(
+        app: Application
+    ): NetworkManager = NetworkManagerImpl(app)
 }
