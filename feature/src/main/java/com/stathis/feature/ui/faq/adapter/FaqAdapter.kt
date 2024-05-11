@@ -54,15 +54,9 @@ class FaqViewHolder(
                 val binding = (binding as HolderFaqItemBinding)
                 binding.setVariable(BR.model, data)
 
-                binding.arrowImgView.setOnClickListener {
+                binding.questionTxtView.setOnClickListener {
                     data.isExpanded = !data.isExpanded
                     binding.model = data
-
-                    if (data.isExpanded) {
-                        binding.arrowImgView.animate().rotation(90f).start()
-                    } else {
-                        binding.arrowImgView.animate().rotation(0f).start()
-                    }
                 }
             }
         }
