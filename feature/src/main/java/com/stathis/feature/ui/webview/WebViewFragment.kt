@@ -2,6 +2,7 @@ package com.stathis.feature.ui.webview
 
 import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.enableJS
+import com.stathis.core.util.onPageLoaded
 import com.stathis.core.util.setScreenTitle
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentWebviewBinding
@@ -14,9 +15,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class WebViewFragment : BaseFragment<FragmentWebviewBinding>(R.layout.fragment_webview) {
 
-    override fun init() {}
+    override fun init() {
+        binding.isLoading = true
 
-    override fun startOps() {
         val title = arguments?.getString(TITLE) ?: DEFAULT_WEB_TITLE
         setScreenTitle(title)
 
@@ -24,8 +25,13 @@ class WebViewFragment : BaseFragment<FragmentWebviewBinding>(R.layout.fragment_w
         binding.webView.apply {
             loadUrl(url)
             enableJS()
+            onPageLoaded {
+                binding.isLoading = false
+            }
         }
     }
+
+    override fun startOps() {}
 
     override fun stopOps() {}
 }

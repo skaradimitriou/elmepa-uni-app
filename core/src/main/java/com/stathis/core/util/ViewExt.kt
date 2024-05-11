@@ -5,10 +5,10 @@ import android.os.Build
 import android.view.MenuItem
 import android.view.View
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.tabs.TabLayout
 import com.stathis.core.decorations.CustomItemDecoration
 
 
@@ -28,15 +28,12 @@ fun RecyclerView.setupItemDecoration(
 
 fun WebView.enableJS() = apply { settings.javaScriptEnabled = true }
 
-fun TabLayout.onTabSelected(selectedTab: (Int) -> Unit) {
-    this.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-        override fun onTabSelected(tab: TabLayout.Tab?) {
-            tab?.position?.let { selectedTab.invoke(it) }
+fun WebView.onPageLoaded(callback: () -> Unit) {
+    webViewClient = object : WebViewClient() {
+        override fun onPageCommitVisible(view: WebView?, url: String?) {
+            callback.invoke()
         }
-
-        override fun onTabUnselected(tab: TabLayout.Tab?) {}
-        override fun onTabReselected(tab: TabLayout.Tab?) {}
-    })
+    }
 }
 
 fun MenuItem.respondToQuery(queryHint: String, callback: (String) -> Unit) {

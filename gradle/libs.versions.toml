@@ -30,6 +30,7 @@ glide = "4.16.0"
 room = "2.6.1"
 preference = "1.2.1"
 circleImgView = "3.1.0"
+lottie = "6.4.0"
 
 
 [libraries]
@@ -70,6 +71,7 @@ perf-plugin = { group = "com.google.firebase", name = "perf-plugin", version.ref
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 circleImgView = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImgView" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

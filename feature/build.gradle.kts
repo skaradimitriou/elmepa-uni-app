@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.shimmer)
 
     implementation(libs.circleImgView)
+    implementation(libs.lottie)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
