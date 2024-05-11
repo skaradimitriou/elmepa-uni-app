@@ -8,6 +8,10 @@
     <string name="personnel">Προσωπικό</string>
     <string name="research_in_dept">Έρευνα στο Τμήμα</string>
 
+    <string name="conn_available_again_title">Η σύνδεση επανήλθε. Όλες οι λειτουργίες της εφαρμογής είναι διαθέσιμες και πάλι.</string>
+    <string name="no_conn_title">Η σύνδεση χάθηκε.</string>
+    <string name="no_conn_action">Επανασύνδεση</string>
+
     <!-- Dashboard -->
     <string name="main_screen_title">Αρχική</string>
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>

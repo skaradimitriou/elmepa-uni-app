@@ -8,6 +8,8 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.stathis.core.base.BaseActivity
+import com.stathis.core.util.buildAndShowSnackBar
+import com.stathis.core.util.networkmanager.NetworkStatus
 import com.stathis.core.util.onBackButtonClick
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
 import com.stathis.feature.navigation.NavigationAction
@@ -57,6 +59,32 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                 data?.let {
                     navigator.goToScreen(it.action, it.bundle)
                     viewModel.navigateWithAction(null)
+                }
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.networkStatus.flowWithLifecycle(lifecycle).collect { status ->
+                when (status) {
+                    is NetworkStatus.Unavailable -> {
+                        buildAndShowSnackBar(
+                            view = binding.main,
+                            title = getString(com.stathis.core.R.string.no_conn_title),
+                            actionText = getString(com.stathis.core.R.string.no_conn_action),
+                            callback = {
+                                viewModel.tryReconnecting()
+                            }
+                        )
+                    }
+
+                    is NetworkStatus.Restored -> {
+                        buildAndShowSnackBar(
+                            view = binding.main,
+                            title = getString(com.stathis.core.R.string.conn_available_again_title)
+                        )
+                    }
+
+                    else -> Unit
                 }
             }
         }

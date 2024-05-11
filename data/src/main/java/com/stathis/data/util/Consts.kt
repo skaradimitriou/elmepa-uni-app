@@ -1,6 +1,8 @@
 package com.stathis.data.util
 
 const val BASE_URL = "https://mst.hmu.gr/news_gr/"
+const val GOOGLE_URL = "https://www.google.com"
+const val RESPONSE_OK = 200
 
 const val DATA_TYPE = "article"
 const val IMG_HTML_TAG = "a.entry-featured-image-url"

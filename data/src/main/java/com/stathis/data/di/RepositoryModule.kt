@@ -10,6 +10,7 @@ import com.stathis.data.repository.AnnouncementsRepositoryImpl
 import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.DepartmentRepositoryImpl
 import com.stathis.data.repository.FaqRepositoryImpl
+import com.stathis.data.repository.NetworkRepositoryImpl
 import com.stathis.data.repository.PersonnelRepositoryImpl
 import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.data.repository.StudentsRepositoryImpl
@@ -18,6 +19,7 @@ import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.domain.repository.DashboardRepository
 import com.stathis.domain.repository.DepartmentRepository
 import com.stathis.domain.repository.FaqRepository
+import com.stathis.domain.repository.NetworkRepository
 import com.stathis.domain.repository.PersonnelRepository
 import com.stathis.domain.repository.ResearchRepository
 import com.stathis.domain.repository.StudentsRepository
@@ -30,6 +32,9 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 class RepositoryModule {
+
+    @Provides
+    fun provideNetworkRepository(): NetworkRepository = NetworkRepositoryImpl()
 
     @Provides
     fun provideDashboardRepository(app: Application): DashboardRepository {
