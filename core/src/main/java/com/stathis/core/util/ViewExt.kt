@@ -3,11 +3,9 @@ package com.stathis.core.util
 import android.graphics.text.LineBreaker
 import android.os.Build
 import android.view.MenuItem
-import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.TextView
-import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.stathis.core.decorations.CustomItemDecoration
 
@@ -54,19 +52,5 @@ fun MenuItem.respondToQuery(queryHint: String, callback: (String) -> Unit) {
 fun TextView.alignText() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         justificationMode = LineBreaker.JUSTIFICATION_MODE_INTER_WORD
-    }
-}
-
-@BindingAdapter("setHtmlText")
-fun TextView.setText(text: String) {
-    this.text = text.toNonHtmlText()
-}
-
-@BindingAdapter("setRibbonColor")
-fun View.setRibbonColor(isMandatory: Boolean) {
-    if (isMandatory) {
-        setBackgroundResource(com.stathis.core.R.color.lesson_blue)
-    } else {
-        setBackgroundResource(com.stathis.core.R.color.lesson_orange)
     }
 }

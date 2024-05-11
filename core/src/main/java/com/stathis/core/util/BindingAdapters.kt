@@ -64,3 +64,17 @@ fun ImageView.animateArrow(isExpanded: Boolean) {
         animate().rotation(0f).start()
     }
 }
+
+@BindingAdapter("setHtmlText")
+fun TextView.setText(text: String) {
+    this.text = text.toNonHtmlText()
+}
+
+@BindingAdapter("setRibbonColor")
+fun View.setRibbonColor(isMandatory: Boolean) {
+    if (isMandatory) {
+        setBackgroundResource(R.color.lesson_blue)
+    } else {
+        setBackgroundResource(R.color.lesson_orange)
+    }
+}
