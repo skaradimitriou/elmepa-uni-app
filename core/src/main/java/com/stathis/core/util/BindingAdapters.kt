@@ -10,8 +10,9 @@ import com.stathis.core.R
 
 @BindingAdapter("loadImageUrl")
 fun ImageView.loadImage(imageUrl: String) {
-    Glide.with(this.context).load(imageUrl)
-        .placeholder(R.color.shimmer_grey_lighter)
+    Glide.with(this.context)
+        .load(imageUrl)
+        .placeholder(R.drawable.placeholder)
         .into(this)
 }
 
@@ -42,7 +43,7 @@ fun ImageView.setPersonnelImage(url: String, gender: String) {
         else -> R.drawable.female
     }
 
-    Glide.with(context).load(url).error(genderImg).into(this)
+    Glide.with(context).load(url).placeholder(R.drawable.placeholder).error(genderImg).into(this)
 }
 
 @BindingAdapter("setPersonnelDescription")

@@ -6,10 +6,17 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_5">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppMaterialCard"
             android:layout_width="@dimen/dimen_150"
-            android:layout_height="@dimen/dimen_150"
-            android:background="@color/shimmer_grey_lighter" />
+            android:layout_height="@dimen/height_230"
+            android:layout_margin="@dimen/dimen_5">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/shimmer_grey_lighter" />
+
+        </com.google.android.material.card.MaterialCardView>
     </com.facebook.shimmer.ShimmerFrameLayout>
 </layout>

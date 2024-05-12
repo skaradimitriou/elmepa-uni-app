@@ -13,20 +13,20 @@
 
     <com.google.android.material.card.MaterialCardView
         style="@style/AppMaterialCard"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dimen_150"
         android:layout_height="@dimen/height_230"
         android:layout_margin="@dimen/dimen_5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="@dimen/dimen_150"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/itemImgView"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_100"
-                android:layout_marginTop="@dimen/dimen_10"
                 android:contentDescription="@{model.title}"
+                android:paddingTop="@dimen/dimen_10"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:loadImageUrl="@{model.imageUrl}"
