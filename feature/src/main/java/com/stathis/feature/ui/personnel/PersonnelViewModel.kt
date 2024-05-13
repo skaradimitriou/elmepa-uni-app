@@ -7,6 +7,7 @@ import com.stathis.core.base.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchPersonnelUseCase
 import com.stathis.domain.usecase.FilterPersonnelUseCase
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,10 +23,10 @@ class PersonnelViewModel @Inject constructor(
     private val filterPersonnelUseCase: FilterPersonnelUseCase
 ) : BaseViewModel(app) {
 
-    val personnel: StateFlow<List<UiModel>>
+    val personnel: StateFlow<NetworkResult<List<UiModel>>>
         get() = _personnel
 
-    private val _personnel = MutableStateFlow<List<UiModel>>(listOf())
+    private val _personnel = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
     fun fetchPersonnel() {
         viewModelScope.launch(dispatcher) {
