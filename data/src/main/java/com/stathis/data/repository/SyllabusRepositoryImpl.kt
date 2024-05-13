@@ -6,6 +6,9 @@ import com.stathis.core.R
 import com.stathis.core.base.UiModel
 import com.stathis.data.datasource.remote.mapper.LessonListMapper
 import com.stathis.data.datasource.remote.model.LessonDto
+import com.stathis.data.util.NAME
+import com.stathis.data.util.SEMESTER
+import com.stathis.data.util.SYLLABUS_DB_PATH
 import com.stathis.domain.repository.SyllabusRepository
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.LessonHeader
@@ -63,8 +66,8 @@ class SyllabusRepositoryImpl @Inject constructor(
         semester: String,
         orientationType: OrientationType
     ): Flow<List<UiModel>> = flow {
-        val queryResult = fireStore.collection("undergraduate_lessons")
-            .whereEqualTo("semester", semester)
+        val queryResult = fireStore.collection(SYLLABUS_DB_PATH)
+            .whereEqualTo(SEMESTER, semester)
             .get()
             .await()
             .toObjects(LessonDto::class.java)
@@ -88,8 +91,8 @@ class SyllabusRepositoryImpl @Inject constructor(
 
     override suspend fun fetchLessonDetails(lessonName: String) = flow {
         emit(NetworkResult.Loading())
-        val queryResult = fireStore.collection("undergraduate_lessons")
-            .whereEqualTo("name", lessonName)
+        val queryResult = fireStore.collection(SYLLABUS_DB_PATH)
+            .whereEqualTo(NAME, lessonName)
             .limit(1)
             .get()
             .await()

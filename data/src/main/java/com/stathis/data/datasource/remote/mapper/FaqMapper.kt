@@ -9,7 +9,8 @@ object FaqMapper : BaseMapper<List<FaqDto>?, List<Faq>> {
     override fun toDomainModel(dtoModel: List<FaqDto>?) = dtoModel?.map {
         Faq(
             question = it.question.toNotNull(),
-            answer = it.answer.toNotNull()
+            answer = it.answer.toNotNull(),
+            seq = it.seq.toNotNull()
         )
     }.toNotNull()
 }
