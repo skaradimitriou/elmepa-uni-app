@@ -42,10 +42,10 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:padding="@dimen/dimen_16"
-                android:text="@{model.answer}"
                 android:visibility="@{model.expanded ? View.VISIBLE : View.GONE}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/questionTxtView"
+                app:setHtmlText="@{model.answer}"
                 tools:text="@tools:sample/lorem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

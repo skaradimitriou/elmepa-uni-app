@@ -16,12 +16,19 @@ const val URL_HTML_TAG = "h2.entry-title"
 const val URL_TYPE = "a"
 const val URL_ATTR = "href"
 
-/*
- * Personnel Constant Values
+/**
+ * Database constant values.
  */
 
 const val STUDENTS_DB_PATH = "students"
+const val DEPT_DB_PATH = "department"
+const val SCREEN_DATA = "screen_data"
 const val RESEARCH_DB_PATH = "research_in_dept"
+const val SYLLABUS_DB_PATH = "undergraduate_lessons"
+const val SEMESTER = "semester"
+const val NAME = "name"
 const val CONTACT_DB_PATH = "contact"
 const val PERSONNEL_DB_PATH = "personnel"
 const val FULLNAME = "fullName"
+const val FAQ_DB_PATH = "faqs"
+const val FAQ_ORDER_BY_FIELD = "seq"

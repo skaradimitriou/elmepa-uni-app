@@ -4,6 +4,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.core.base.UiModel
 import com.stathis.data.datasource.remote.mapper.StudentsMapper
 import com.stathis.data.datasource.remote.model.StudentsResponseDto
+import com.stathis.data.util.SCREEN_DATA
 import com.stathis.data.util.STUDENTS_DB_PATH
 import com.stathis.domain.repository.StudentsRepository
 import com.stathis.model.general.carousel.CarouselParent
@@ -27,7 +28,7 @@ class StudentsRepositoryImpl @Inject constructor(
         emit(NetworkResult.Loading(data = loadingData))
 
         val queryResult = fireStore.collection(STUDENTS_DB_PATH)
-            .document("screen_data")
+            .document(SCREEN_DATA)
             .get()
             .await()
             .toObject(StudentsResponseDto::class.java)

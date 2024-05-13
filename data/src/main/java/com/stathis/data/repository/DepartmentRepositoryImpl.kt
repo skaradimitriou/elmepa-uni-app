@@ -7,6 +7,8 @@ import com.stathis.data.datasource.remote.mapper.DepartmentResponseMapper
 import com.stathis.data.datasource.remote.model.ContactItemDto
 import com.stathis.data.datasource.remote.model.DepartmentResponseDto
 import com.stathis.data.util.CONTACT_DB_PATH
+import com.stathis.data.util.DEPT_DB_PATH
+import com.stathis.data.util.SCREEN_DATA
 import com.stathis.domain.repository.DepartmentRepository
 import com.stathis.model.contact.ContactItem
 import com.stathis.model.department.DepartmentPersonnelItem
@@ -34,8 +36,8 @@ class DepartmentRepositoryImpl(
 
         emit(list)
 
-        val queryResult = fireStore.collection("department")
-            .document("screen_data")
+        val queryResult = fireStore.collection(DEPT_DB_PATH)
+            .document(SCREEN_DATA)
             .get()
             .await()
             .toObject(DepartmentResponseDto::class.java)
