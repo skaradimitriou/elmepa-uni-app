@@ -8,7 +8,7 @@ import com.stathis.data.datasource.remote.model.PersonnelDto
 import com.stathis.data.util.FULLNAME
 import com.stathis.data.util.PERSONNEL_DB_PATH
 import com.stathis.domain.repository.PersonnelRepository
-import com.stathis.model.personnel.Person
+import com.stathis.model.network.NetworkResult
 import com.stathis.model.util.ShimmerGenerator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -22,8 +22,8 @@ class PersonnelRepositoryImpl @Inject constructor(
 
     private val personnelDao = localDataSource.personnelDao()
 
-    override suspend fun fetchAllPersonnel(): Flow<List<UiModel>> = flow {
-        emit(ShimmerGenerator.list)
+    override suspend fun fetchAllPersonnel(): Flow<NetworkResult<List<UiModel>>> = flow {
+        emit(NetworkResult.Loading(ShimmerGenerator.list))
 
         val result = fireStore.collection(PERSONNEL_DB_PATH)
             .orderBy(FULLNAME)
@@ -37,13 +37,14 @@ class PersonnelRepositoryImpl @Inject constructor(
         personnelDao.insertAll(personnel)
 
         personnelDao.getAllPersonnel().collect {
-            emit(personnel)
+            emit(NetworkResult.Success(personnel))
         }
     }
 
-    override suspend fun searchForPersonnel(name: String): Flow<List<Person>> = flow {
-        personnelDao.queryPersonnelByFullname(name).collect { results ->
-            emit(results)
+    override suspend fun searchForPersonnel(name: String): Flow<NetworkResult<List<UiModel>>> =
+        flow {
+            personnelDao.queryPersonnelByFullname(name).collect { results ->
+                emit(NetworkResult.Success(results))
+            }
         }
-    }
 }

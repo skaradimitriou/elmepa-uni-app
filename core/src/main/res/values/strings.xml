@@ -42,6 +42,7 @@
     <string name="dialog_new_email">Νέο e-mail</string>
     <string name="dialog_yes">Ναι</string>
     <string name="dialog_cancel">Άκυρο</string>
+    <string name="empty_personnel_results">Δεν βρέθηκαν αποτελέσματα</string>
 
     <!-- Syllabus Activity -->
     <string name="syllabus">Πρόγραμμα Σπουδών</string>

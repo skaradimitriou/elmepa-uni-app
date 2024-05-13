@@ -12,6 +12,7 @@ import com.stathis.core.util.showPersonnelDialog
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentPersonnelBinding
 import com.stathis.feature.ui.personnel.adapter.PersonnelAdapter
+import com.stathis.model.network.NetworkResult
 import com.stathis.model.personnel.Person
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -51,9 +52,20 @@ class PersonnelFragment : BaseFragment<FragmentPersonnelBinding>(R.layout.fragme
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.personnel.flowWithLifecycle(lifecycle).collect { list ->
-                adapter.submitList(list)
-                binding.swipeToRefresh.isRefreshing = false
+            viewModel.personnel.flowWithLifecycle(lifecycle).collect { state ->
+                when (state) {
+                    is NetworkResult.Loading -> {
+                        adapter.submitList(state.data)
+                    }
+
+                    is NetworkResult.Success -> {
+                        adapter.submitList(state.data)
+                        binding.showEmptyResults = state.data?.isEmpty()
+                        binding.swipeToRefresh.isRefreshing = false
+                    }
+
+                    is NetworkResult.Failure -> Unit
+                }
             }
         }
     }
