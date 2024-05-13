@@ -39,7 +39,7 @@ class PersonnelFragment : BaseFragment<FragmentPersonnelBinding>(R.layout.fragme
             })
 
         binding.personnelRecycler.apply {
-            setupItemDecoration(start = 30, end = 30, top = 30)
+            setupItemDecoration()
             adapter = this@PersonnelFragment.adapter
         }
 

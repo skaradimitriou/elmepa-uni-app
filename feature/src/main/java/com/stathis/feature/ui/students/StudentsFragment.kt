@@ -40,7 +40,7 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
 
         binding.studentsRec.apply {
             itemAnimator = null
-            setupItemDecoration(top = 20, start = 30, end = 30)
+            setupItemDecoration()
             adapter = this@StudentsFragment.adapter
         }
     }

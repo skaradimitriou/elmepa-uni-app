@@ -57,7 +57,7 @@ class LessonsFragment : BaseFragment<FragmentLessonsBinding>(R.layout.fragment_l
         viewModel.fetchLessonsForSemesterAndOrientation(semester, orientation)
 
         binding.syllabusRecycler.apply {
-            setupItemDecoration(top = 30, start = 30, end = 30)
+            setupItemDecoration()
             adapter = this@LessonsFragment.adapter
         }
     }

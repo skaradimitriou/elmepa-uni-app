@@ -8,6 +8,10 @@ import android.text.Html
 
 fun String?.makeFirstCharCapital() = toNotNull().lowercase().replaceFirstChar(Char::uppercase)
 
+/**
+ * Helper fun to remove html format from a given string.
+ */
+
 fun String?.toNonHtmlText(): String {
     return Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY).toString()
 }

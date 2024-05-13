@@ -52,7 +52,7 @@ class AnnouncementsFragment :
 
         binding.announcementsRecycler.apply {
             adapter = this@AnnouncementsFragment.adapter
-            setupItemDecoration(top = 40, start = 30, end = 30)
+            setupItemDecoration()
         }
 
         binding.swipeToRefresh.setOnRefreshListener {
