@@ -67,7 +67,7 @@ fun ImageView.animateArrow(isExpanded: Boolean) {
 }
 
 @BindingAdapter("setHtmlText")
-fun TextView.setText(text: String) {
+fun TextView.setHtmlText(text: String) {
     this.text = text.toNonHtmlText()
 }
 

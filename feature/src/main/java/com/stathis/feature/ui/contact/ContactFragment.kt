@@ -34,7 +34,7 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
         viewModel.fetchContactDetails()
 
         binding.contactsRecycler.apply {
-            setupItemDecoration(top = 30, start = 30, end = 30)
+            setupItemDecoration()
             adapter = this@ContactFragment.adapter
         }
     }

@@ -5,6 +5,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.setScreenTitle
+import com.stathis.core.util.toNotNull
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentLessonDetailsBinding
 import com.stathis.feature.ui.lessondetails.adapter.LessonDetailsAdapter
@@ -24,7 +25,7 @@ class LessonDetailsFragment :
     override fun init() {
         setScreenTitle(getString(com.stathis.core.R.string.lesson_information))
 
-        val lessonName = arguments?.getString(LESSON) ?: ""
+        val lessonName = arguments?.getString(LESSON).toNotNull()
         viewModel.fetchLessonDetails(lessonName)
 
         binding.lessonDetailsRecycler.adapter = adapter

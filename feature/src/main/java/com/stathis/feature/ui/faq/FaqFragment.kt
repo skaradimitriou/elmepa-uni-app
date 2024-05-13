@@ -25,7 +25,7 @@ class FaqFragment : BaseFragment<FragmentFaqBinding>(R.layout.fragment_faq) {
         viewModel.fetchFaqs()
 
         binding.faqRecycler.apply {
-            setupItemDecoration(top = 30, start = 30, end = 30)
+            setupItemDecoration()
             adapter = this@FaqFragment.adapter
         }
     }

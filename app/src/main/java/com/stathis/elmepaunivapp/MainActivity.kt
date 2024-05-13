@@ -12,6 +12,7 @@ import com.stathis.core.util.buildAndShowSnackBar
 import com.stathis.core.util.networkmanager.NetworkStatus
 import com.stathis.core.util.onBackButtonClick
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
+import com.stathis.elmepaunivapp.util.ARGS
 import com.stathis.feature.navigation.NavigationAction
 import com.stathis.feature.navigation.NavigatorImpl
 import com.stathis.feature.ui.MainSharedViewModel

@@ -15,9 +15,9 @@ import com.stathis.core.decorations.CustomItemDecoration
  */
 
 fun RecyclerView.setupItemDecoration(
-    top: Int = 0,
-    start: Int = 0,
-    end: Int = 0,
+    top: Int = 30,
+    start: Int = 30,
+    end: Int = 30,
     bottom: Int = 0
 ) {
     val decor = CustomItemDecoration(top, start, end, bottom)

@@ -39,7 +39,7 @@ class SyllabusFragment : BaseFragment<FragmentSyllabusBinding>(R.layout.fragment
         setScreenTitle(getString(com.stathis.core.R.string.syllabus))
 
         binding.syllabusRecycler.apply {
-            setupItemDecoration(start = 30, end = 30, top = 30)
+            setupItemDecoration()
             adapter = this@SyllabusFragment.adapter
         }
 
