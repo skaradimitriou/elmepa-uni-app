@@ -7,6 +7,7 @@ import com.stathis.data.datasource.remote.model.FaqDto
 import com.stathis.data.util.FAQ_DB_PATH
 import com.stathis.data.util.FAQ_ORDER_BY_FIELD
 import com.stathis.domain.repository.FaqRepository
+import com.stathis.model.network.NetworkResult
 import com.stathis.model.util.ShimmerGenerator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -17,8 +18,8 @@ class FaqRepositoryImpl @Inject constructor(
     private val fireStore: FirebaseFirestore
 ) : FaqRepository {
 
-    override suspend fun fetchFaqs(): Flow<List<UiModel>> = flow {
-        emit(ShimmerGenerator.list)
+    override suspend fun fetchFaqs(): Flow<NetworkResult<List<UiModel>>> = flow {
+        emit(NetworkResult.Loading(ShimmerGenerator.list))
 
         val queryResult = fireStore.collection(FAQ_DB_PATH)
             .orderBy(FAQ_ORDER_BY_FIELD)
@@ -27,6 +28,6 @@ class FaqRepositoryImpl @Inject constructor(
             .toObjects(FaqDto::class.java)
 
         val result = FaqMapper.toDomainModel(queryResult)
-        emit(result)
+        emit(NetworkResult.Success(result))
     }
 }

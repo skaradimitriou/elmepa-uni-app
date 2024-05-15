@@ -9,6 +9,7 @@ import com.stathis.core.util.setupItemDecoration
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentFaqBinding
 import com.stathis.feature.ui.faq.adapter.FaqAdapter
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -32,8 +33,18 @@ class FaqFragment : BaseFragment<FragmentFaqBinding>(R.layout.fragment_faq) {
 
     override fun startOps() {
         lifecycleScope.launch {
-            viewModel.faq.flowWithLifecycle(lifecycle).collect { list ->
-                adapter.submitList(list)
+            viewModel.faq.flowWithLifecycle(lifecycle).collect { result ->
+                when (result) {
+                    is NetworkResult.Loading -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    is NetworkResult.Success -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    else -> Unit
+                }
             }
         }
     }

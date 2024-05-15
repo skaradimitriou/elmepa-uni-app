@@ -6,6 +6,7 @@ import com.stathis.core.base.BaseViewModel
 import com.stathis.core.base.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchLessonsUseCase
+import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.OrientationType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -21,10 +22,10 @@ class LessonsViewModel @Inject constructor(
     private val useCase: FetchLessonsUseCase
 ) : BaseViewModel(app) {
 
-    val lessons: StateFlow<List<UiModel>>
+    val lessons: StateFlow<NetworkResult<List<UiModel>>>
         get() = _lessons
 
-    private val _lessons = MutableStateFlow<List<UiModel>>(listOf())
+    private val _lessons = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
     fun fetchLessonsForSemesterAndOrientation(semesterName: String, orientation: OrientationType) {
         viewModelScope.launch(dispatcher) {

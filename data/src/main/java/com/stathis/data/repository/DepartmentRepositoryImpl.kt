@@ -16,6 +16,7 @@ import com.stathis.model.department.DepartmentProgrammeItem
 import com.stathis.model.department.DepartmentSocialItem
 import com.stathis.model.department.FieldOfStudyParent
 import com.stathis.model.general.carousel.CarouselParent
+import com.stathis.model.network.NetworkResult
 import com.stathis.model.util.ShimmerGenerator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -25,7 +26,7 @@ class DepartmentRepositoryImpl(
     private val fireStore: FirebaseFirestore
 ) : DepartmentRepository {
 
-    override suspend fun fetchDepartmentInformation(): Flow<List<UiModel>> = flow {
+    override suspend fun fetchDepartmentInformation(): Flow<NetworkResult<List<UiModel>>> = flow {
         val list = listOf(
             CarouselParent(ShimmerGenerator.list),
             FieldOfStudyParent(ShimmerGenerator.list),
@@ -34,7 +35,7 @@ class DepartmentRepositoryImpl(
             DepartmentSocialItem(ShimmerGenerator.list)
         )
 
-        emit(list)
+        emit(NetworkResult.Loading(list))
 
         val queryResult = fireStore.collection(DEPT_DB_PATH)
             .document(SCREEN_DATA)
@@ -43,16 +44,16 @@ class DepartmentRepositoryImpl(
             .toObject(DepartmentResponseDto::class.java)
 
         val data = DepartmentResponseMapper.toDomainModel(queryResult)
-        emit(data)
+        emit(NetworkResult.Success(data))
     }
 
-    override suspend fun fetchDepartmentContactDetails(): Flow<List<ContactItem>> = flow {
+    override suspend fun fetchDepartmentContactDetails(): Flow<NetworkResult<List<UiModel>>> = flow {
         val query = fireStore.collection(CONTACT_DB_PATH)
             .get()
             .await()
             .toObjects(ContactItemDto::class.java)
 
         val mappedData = ContactMapper.toDomainModel(query)
-        emit(mappedData)
+        emit(NetworkResult.Success(mappedData))
     }
 }

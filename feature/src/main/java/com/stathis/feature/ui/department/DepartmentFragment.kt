@@ -21,6 +21,7 @@ import com.stathis.feature.util.URL
 import com.stathis.model.department.Programme
 import com.stathis.model.department.SocialItem
 import com.stathis.model.general.carousel.CarouselItem
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -47,8 +48,18 @@ class DepartmentFragment : BaseFragment<FragmentDepartmentBinding>(R.layout.frag
 
     override fun startOps() {
         lifecycleScope.launch {
-            viewModel.data.flowWithLifecycle(lifecycle).collect { list ->
-                adapter.submitList(list)
+            viewModel.data.flowWithLifecycle(lifecycle).collect { result ->
+                when (result) {
+                    is NetworkResult.Loading -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    is NetworkResult.Success -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    else -> Unit
+                }
             }
         }
     }

@@ -20,6 +20,7 @@ import com.stathis.feature.ui.lessons.adapter.LessonsAdapter
 import com.stathis.feature.util.LESSON
 import com.stathis.feature.util.ORIENTATION
 import com.stathis.feature.util.SEMESTER
+import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.OrientationType
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -64,8 +65,14 @@ class LessonsFragment : BaseFragment<FragmentLessonsBinding>(R.layout.fragment_l
 
     override fun startOps() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.lessons.flowWithLifecycle(lifecycle).collect {
-                adapter.submitList(it)
+            viewModel.lessons.flowWithLifecycle(lifecycle).collect { result ->
+                when (result) {
+                    is NetworkResult.Success -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    else -> Unit
+                }
             }
         }
     }

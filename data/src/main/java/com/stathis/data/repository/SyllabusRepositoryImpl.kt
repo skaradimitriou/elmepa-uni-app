@@ -25,7 +25,7 @@ class SyllabusRepositoryImpl @Inject constructor(
     private val fireStore: FirebaseFirestore
 ) : SyllabusRepository {
 
-    override suspend fun fetchSemesters(selectedOrientationType: OrientationType): Flow<List<Orientation>> =
+    override suspend fun fetchSemesters(selectedOrientationType: OrientationType): Flow<NetworkResult<List<Orientation>>> =
         flow {
             val semesters = listOf(
                 Semester("Εξάμηνο Α'"),
@@ -59,13 +59,13 @@ class SyllabusRepositoryImpl @Inject constructor(
                 ),
             )
 
-            emit(orientations)
+            emit(NetworkResult.Success(orientations))
         }
 
     override suspend fun fetchLessonsForSemesterAndOrientation(
         semester: String,
         orientationType: OrientationType
-    ): Flow<List<UiModel>> = flow {
+    ): Flow<NetworkResult<List<UiModel>>> = flow {
         val queryResult = fireStore.collection(SYLLABUS_DB_PATH)
             .whereEqualTo(SEMESTER, semester)
             .get()
@@ -86,7 +86,7 @@ class SyllabusRepositoryImpl @Inject constructor(
         val result = mutableListOf<UiModel>()
         result.add(LessonHeader(headerText))
         result.addAll(mappedResult)
-        emit(result)
+        emit(NetworkResult.Success(result))
     }
 
     override suspend fun fetchLessonDetails(lessonName: String) = flow {

@@ -15,6 +15,7 @@ import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.ui.research.recycler.ResearchAdapter
 import com.stathis.feature.util.TITLE
 import com.stathis.feature.util.URL
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -46,8 +47,14 @@ class ResearchFragment :
 
     override fun startOps() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.data.flowWithLifecycle(lifecycle).collect { list ->
-                adapter.submitList(list)
+            viewModel.data.flowWithLifecycle(lifecycle).collect { result ->
+                when (result) {
+                    is NetworkResult.Success -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    else -> Unit
+                }
             }
         }
     }

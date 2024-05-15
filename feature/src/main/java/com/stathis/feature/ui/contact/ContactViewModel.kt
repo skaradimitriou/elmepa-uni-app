@@ -3,9 +3,10 @@ package com.stathis.feature.ui.contact
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
+import com.stathis.core.base.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchContactDetailsUseCase
-import com.stathis.model.contact.ContactItem
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,10 +21,11 @@ class ContactViewModel @Inject constructor(
     private val useCase: FetchContactDetailsUseCase
 ) : BaseViewModel(app) {
 
-    val contactDetails: StateFlow<List<ContactItem>>
+    val contactDetails: StateFlow<NetworkResult<List<UiModel>>>
         get() = _contactDetails
 
-    private val _contactDetails = MutableStateFlow<List<ContactItem>>(listOf())
+    private val _contactDetails =
+        MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
     fun fetchContactDetails() {
         viewModelScope.launch(dispatcher) {
