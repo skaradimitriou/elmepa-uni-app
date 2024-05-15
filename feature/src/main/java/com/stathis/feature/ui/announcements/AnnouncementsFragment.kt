@@ -18,6 +18,7 @@ import com.stathis.feature.ui.announcements.adapter.AnnouncementsCallback
 import com.stathis.feature.util.TITLE
 import com.stathis.feature.util.URL
 import com.stathis.model.announcements.Announcement
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -64,9 +65,19 @@ class AnnouncementsFragment :
         viewModel.fetchAnnouncements()
 
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.announcements.flowWithLifecycle(lifecycle).collect { announcements ->
-                adapter.submitList(announcements)
-                binding.swipeToRefresh.isRefreshing = false
+            viewModel.announcements.flowWithLifecycle(lifecycle).collect { result ->
+                when (result) {
+                    is NetworkResult.Loading -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    is NetworkResult.Success -> {
+                        adapter.submitList(result.data)
+                        binding.swipeToRefresh.isRefreshing = false
+                    }
+
+                    else -> Unit
+                }
             }
         }
     }

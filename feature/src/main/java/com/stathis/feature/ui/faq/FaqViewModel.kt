@@ -6,6 +6,7 @@ import com.stathis.core.base.BaseViewModel
 import com.stathis.core.base.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchFaqsUseCase
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,10 +21,10 @@ class FaqViewModel @Inject constructor(
     private val useCase: FetchFaqsUseCase
 ) : BaseViewModel(app) {
 
-    val faq: StateFlow<List<UiModel>>
+    val faq: StateFlow<NetworkResult<List<UiModel>>>
         get() = _faqs
 
-    private val _faqs = MutableStateFlow<List<UiModel>>(listOf())
+    private val _faqs = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
     fun fetchFaqs() {
         viewModelScope.launch(dispatcher) {

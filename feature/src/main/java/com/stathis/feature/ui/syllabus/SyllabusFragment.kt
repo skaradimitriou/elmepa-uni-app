@@ -16,6 +16,7 @@ import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.ui.syllabus.adapter.OrientationAdapter
 import com.stathis.feature.util.ORIENTATION
 import com.stathis.feature.util.SEMESTER
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -48,8 +49,14 @@ class SyllabusFragment : BaseFragment<FragmentSyllabusBinding>(R.layout.fragment
 
     override fun startOps() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.semesters.flowWithLifecycle(lifecycle).collect {
-                adapter.submitList(it)
+            viewModel.semesters.flowWithLifecycle(lifecycle).collect { result ->
+                when (result) {
+                    is NetworkResult.Success -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    else -> Unit
+                }
             }
         }
     }

@@ -6,6 +6,7 @@ import com.stathis.core.base.BaseViewModel
 import com.stathis.core.base.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchDepartmentInfoUseCase
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,10 +21,10 @@ class DepartmentViewModel @Inject constructor(
     private val useCase: FetchDepartmentInfoUseCase
 ) : BaseViewModel(app) {
 
-    val data: StateFlow<List<UiModel>>
+    val data: StateFlow<NetworkResult<List<UiModel>>>
         get() = _data
 
-    private val _data = MutableStateFlow<List<UiModel>>(listOf())
+    private val _data = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
     fun fetchScreenDetails() {
         viewModelScope.launch(dispatcher) {

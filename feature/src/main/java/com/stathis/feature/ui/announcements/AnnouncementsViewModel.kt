@@ -6,7 +6,7 @@ import com.stathis.core.base.BaseViewModel
 import com.stathis.core.base.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchAnnouncementsUseCase
-import com.stathis.model.util.ShimmerGenerator
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,10 +21,11 @@ class AnnouncementsViewModel @Inject constructor(
     private val useCase: FetchAnnouncementsUseCase
 ) : BaseViewModel(app) {
 
-    val announcements: StateFlow<List<UiModel>>
+    val announcements: StateFlow<NetworkResult<List<UiModel>>>
         get() = _announcements
 
-    private val _announcements = MutableStateFlow<List<UiModel>>(listOf())
+    private val _announcements =
+        MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
     fun fetchAnnouncements(forceUpdate: Boolean? = false) {
         viewModelScope.launch(dispatcher) {

@@ -5,6 +5,7 @@ import com.stathis.data.datasource.remote.mapper.ResearchMapper
 import com.stathis.data.datasource.remote.model.ResearchResponseDto
 import com.stathis.data.util.RESEARCH_DB_PATH
 import com.stathis.domain.repository.ResearchRepository
+import com.stathis.model.network.NetworkResult
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
@@ -21,6 +22,6 @@ class ResearchRepositoryImpl @Inject constructor(
 
 
         val mappedResult = ResearchMapper.toDomainModel(queryResult)
-        emit(mappedResult)
+        emit(NetworkResult.Success(mappedResult))
     }
 }

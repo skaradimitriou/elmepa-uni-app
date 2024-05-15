@@ -12,6 +12,7 @@ import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentContactBinding
 import com.stathis.feature.ui.contact.adapter.ContactAdapter
 import com.stathis.model.contact.ContactType
+import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -41,8 +42,18 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
 
     override fun startOps() {
         lifecycleScope.launch {
-            viewModel.contactDetails.flowWithLifecycle(lifecycle).collect { data ->
-                adapter.submitList(data)
+            viewModel.contactDetails.flowWithLifecycle(lifecycle).collect { result ->
+                when (result) {
+                    is NetworkResult.Loading -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    is NetworkResult.Success -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    else -> Unit
+                }
             }
         }
     }
