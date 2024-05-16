@@ -42,7 +42,7 @@ class OrientationViewHolder(
                 binding.model = data
                 binding.adapter = adapter
 
-                binding.semesterRecycler.setupItemDecoration(bottom = 30)
+                binding.semesterRecycler.setupItemDecoration(bottom = 10)
                 adapter.submitList(data.semesters)
 
                 binding.orientationCard.setOnClickListener {
