@@ -1,9 +1,9 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("kotlin-kapt")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.kapt)
     alias(libs.plugins.googleServices)
 }
 
@@ -49,12 +49,12 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.storage)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.room.runtime)
     annotationProcessor(libs.room.compiler)
     implementation(libs.room.ktx)
-    kapt(libs.room.compiler)
+    ksp(libs.room.compiler)
 
     implementation(libs.jsoup)
 

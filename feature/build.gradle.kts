@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("kotlin-kapt")
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
 }
 
@@ -52,7 +52,7 @@ dependencies {
     implementation(project(":model"))
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.fragment.navigation)
     implementation(libs.ui.navigation)

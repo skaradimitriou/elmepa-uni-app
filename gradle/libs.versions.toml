@@ -1,7 +1,8 @@
 [versions]
-ksp = "1.8.10-1.0.9"
+ksp = "1.9.0-1.0.13"
+kapt = "1.8.0"
 agp = "8.3.2"
-kotlin = "1.9.0"
+kotlin = "1.9.10"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -13,7 +14,7 @@ constraintlayout = "2.1.4"
 lifecycle = "2.8.0"
 navigation = "2.7.7"
 coroutines = "1.7.3"
-hiltVersion = "2.48.1"
+hiltVersion = "2.49"
 timber = "5.0.1"
 swipeToRefresh = "1.1.0"
 gradle = "8.1.4"
@@ -79,4 +80,5 @@ jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "k
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kapt" }
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServicesVersion" }

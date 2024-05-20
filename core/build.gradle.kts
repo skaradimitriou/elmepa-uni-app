@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("kotlin-kapt")
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
 }
 
@@ -48,7 +48,7 @@ dependencies {
 
     implementation(libs.hilt.android)
     implementation(libs.firebase.firestore)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.glide)
 
