@@ -32,3 +32,10 @@ const val PERSONNEL_DB_PATH = "personnel"
 const val FULLNAME = "fullName"
 const val FAQ_DB_PATH = "faqs"
 const val FAQ_ORDER_BY_FIELD = "seq"
+
+/**
+ * DataStore constant values
+ */
+
+const val SETTINGS = "settings"
+const val UPDATE_TIME = "update_time"

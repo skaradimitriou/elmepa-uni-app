@@ -2,7 +2,7 @@ package com.stathis.data.di
 
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.core.util.SharedPreferencesHelper
+import com.stathis.data.datasource.datastore.AnnouncementsDataStore
 import com.stathis.data.datasource.local.announcements.AnnouncementsDao
 import com.stathis.data.datasource.local.personnel.PersonnelDatabase
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
@@ -45,10 +45,12 @@ class RepositoryModule {
     fun provideAnnouncementsRepository(
         localDataSource: AnnouncementsDao,
         remoteDataSource: AnnouncementsRemoteDataSource,
-        preferencesHelper: SharedPreferencesHelper
-    ): AnnouncementRepository {
-        return AnnouncementsRepositoryImpl(localDataSource, remoteDataSource, preferencesHelper)
-    }
+        dataStore: AnnouncementsDataStore
+    ): AnnouncementRepository = AnnouncementsRepositoryImpl(
+        localDataSource,
+        remoteDataSource,
+        dataStore
+    )
 
     @Provides
     fun provideResearchRepository(

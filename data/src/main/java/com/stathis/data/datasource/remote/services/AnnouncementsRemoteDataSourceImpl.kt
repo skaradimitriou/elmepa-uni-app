@@ -1,6 +1,6 @@
 package com.stathis.data.datasource.remote.services
 
-import com.stathis.core.util.SharedPreferencesHelper
+import com.stathis.data.datasource.datastore.AnnouncementsDataStore
 import com.stathis.data.datasource.local.announcements.AnnouncementsDao
 import com.stathis.data.util.DATA_TYPE
 import com.stathis.data.util.IMG_HTML_TAG
@@ -21,7 +21,7 @@ import org.jsoup.Connection
 class AnnouncementsRemoteDataSourceImpl(
     private val jsoup: Connection,
     private val localDataSource: AnnouncementsDao,
-    private val preferences: SharedPreferencesHelper
+    private val dataStore: AnnouncementsDataStore
 ) : AnnouncementsRemoteDataSource {
 
     override suspend fun fetchAnnouncementFromRemote(): Flow<List<Announcement>> = flow {
@@ -40,7 +40,7 @@ class AnnouncementsRemoteDataSourceImpl(
             localDataSource.deleteAll()
             localDataSource.insertAll(announcementList)
 
-            preferences.saveUpdateTime(System.nanoTime())
+            dataStore.saveUpdateTime(System.nanoTime())
         } catch (e: Exception) {
             emit(listOf())
         }

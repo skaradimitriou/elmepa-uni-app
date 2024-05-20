@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.room.Room
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.stathis.data.datasource.datastore.AnnouncementsCachingDataStoreImpl
+import com.stathis.data.datasource.datastore.AnnouncementsDataStore
 import com.stathis.data.datasource.local.announcements.AnnouncementsDatabase
 import com.stathis.data.datasource.local.personnel.PersonnelDatabase
 import com.stathis.data.util.BASE_URL
@@ -30,6 +32,12 @@ class DataModule {
     @Provides
     @Singleton
     fun provideJsoup(): Connection = Jsoup.connect(BASE_URL)
+
+    @Provides
+    @Singleton
+    fun provideDataStore(app: Application): AnnouncementsDataStore {
+        return AnnouncementsCachingDataStoreImpl(app)
+    }
 
     @Provides
     @Singleton
