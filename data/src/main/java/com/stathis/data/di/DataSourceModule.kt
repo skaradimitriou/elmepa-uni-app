@@ -1,6 +1,6 @@
 package com.stathis.data.di
 
-import com.stathis.core.util.SharedPreferencesHelper
+import com.stathis.data.datasource.datastore.AnnouncementsDataStore
 import com.stathis.data.datasource.local.announcements.AnnouncementsDao
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSourceImpl
@@ -18,8 +18,10 @@ class DataSourceModule {
     fun provideAnnouncementsRemoteDataSource(
         jsoupConnection: Connection,
         announcementsDao: AnnouncementsDao,
-        preferences: SharedPreferencesHelper
-    ): AnnouncementsRemoteDataSource {
-        return AnnouncementsRemoteDataSourceImpl(jsoupConnection, announcementsDao, preferences)
-    }
+        dataStore: AnnouncementsDataStore
+    ): AnnouncementsRemoteDataSource = AnnouncementsRemoteDataSourceImpl(
+        jsoupConnection,
+        announcementsDao,
+        dataStore
+    )
 }

@@ -26,12 +26,13 @@ perfPlugin = "1.4.2"
 firebaseFirestore = "25.0.0"
 firebaseStorage = "21.0.0"
 shimmer = "0.5.0"
-jsoup = "1.10.3"
+jsoup = "1.13.1"
 glide = "4.16.0"
 room = "2.6.1"
 preference = "1.2.1"
 circleImgView = "3.1.0"
 lottie = "6.4.0"
+dataStore = "1.1.1"
 
 
 [libraries]
@@ -73,6 +74,7 @@ firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 circleImgView = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImgView" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+dataStore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

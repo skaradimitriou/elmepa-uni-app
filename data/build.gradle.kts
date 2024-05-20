@@ -57,6 +57,7 @@ dependencies {
     ksp(libs.room.compiler)
 
     implementation(libs.jsoup)
+    implementation(libs.dataStore)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
