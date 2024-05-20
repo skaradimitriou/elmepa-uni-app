@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("kotlin-parcelize")
-    id("kotlin-kapt")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.googleServices)
@@ -70,15 +68,11 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.perf)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.timber)
 
-    //old dependencies
-
     implementation(libs.shimmer)
-    implementation(libs.jsoup)
-    implementation(libs.glide)
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
