@@ -17,7 +17,7 @@ import com.stathis.model.department.SocialItem
 object DepartmentResponseMapper : BaseMapper<DepartmentResponseDto?, List<UiModel>> {
 
     override fun toDomainModel(dtoModel: DepartmentResponseDto?): List<UiModel> = listOf(
-        CarouselMapper.toDomainModel(dtoModel?.carouselItems),
+        CarouselMapper.toDomainModel(dtoModel?.carouselItems?.sortedBy { it.position }),
         FieldOfStudyParent(
             syllabusItems = dtoModel?.syllabusItems.toNotNull()
         ),
