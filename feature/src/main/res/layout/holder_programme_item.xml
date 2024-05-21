@@ -17,7 +17,7 @@
     <com.google.android.material.card.MaterialCardView
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_85"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_5"
         android:onClick="@{() -> callback.onProgrammeTap(model)}">
 
@@ -28,10 +28,10 @@
             <ImageView
                 android:id="@+id/programmeImgView"
                 android:layout_width="@dimen/height_80"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:contentDescription="@{model.title}"
                 android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/descriptionTxtView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:loadImageUrl="@{model.imageUrl}"

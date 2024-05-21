@@ -5,7 +5,7 @@
     <com.facebook.shimmer.ShimmerFrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.5">
+        android:alpha="0.2">
 
         <com.google.android.material.card.MaterialCardView
             style="@style/AppMaterialCard"
