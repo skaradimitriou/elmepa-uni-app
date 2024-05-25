@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.personnel
+package com.stathis.personnel.ui.personnel
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
@@ -9,11 +9,11 @@ import com.stathis.core.util.respondToQuery
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.core.util.showPersonnelDialog
-import com.stathis.feature.R
-import com.stathis.feature.databinding.FragmentPersonnelBinding
-import com.stathis.feature.ui.personnel.adapter.PersonnelAdapter
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.personnel.Person
+import com.stathis.personnel.R
+import com.stathis.personnel.databinding.FragmentPersonnelBinding
+import com.stathis.personnel.ui.personnel.adapter.PersonnelAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

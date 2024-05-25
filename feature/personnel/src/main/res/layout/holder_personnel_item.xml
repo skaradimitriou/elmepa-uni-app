@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="com.stathis.feature.ui.personnel.adapter.PersonnelCallback" />
+            type="com.stathis.personnel.ui.personnel.adapter.PersonnelCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

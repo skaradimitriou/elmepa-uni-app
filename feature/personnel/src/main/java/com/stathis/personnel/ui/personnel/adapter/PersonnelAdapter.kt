@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.personnel.adapter
+package com.stathis.personnel.ui.personnel.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,14 +6,14 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
+import com.stathis.core.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
-import com.stathis.feature.BR
-import com.stathis.feature.R
-import com.stathis.feature.databinding.HolderEmptyViewBinding
-import com.stathis.feature.databinding.HolderPersonnelItemBinding
-import com.stathis.feature.databinding.HolderShimmerPersonnelItemBinding
 import com.stathis.model.general.ShimmerItem
 import com.stathis.model.personnel.Person
+import com.stathis.personnel.BR
+import com.stathis.personnel.R
+import com.stathis.personnel.databinding.HolderPersonnelItemBinding
+import com.stathis.personnel.databinding.HolderShimmerPersonnelItemBinding
 
 class PersonnelAdapter(
     private val callback: PersonnelCallback
@@ -42,7 +42,7 @@ class PersonnelAdapter(
     override fun getItemViewType(position: Int): Int = when (getItem(position)) {
         is Person -> R.layout.holder_personnel_item
         is ShimmerItem -> R.layout.holder_shimmer_personnel_item
-        else -> R.layout.holder_empty_view
+        else -> com.stathis.core.R.layout.holder_empty_view
     }
 }
 

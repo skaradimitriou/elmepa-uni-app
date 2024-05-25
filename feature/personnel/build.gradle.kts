@@ -7,13 +7,12 @@ plugins {
 }
 
 android {
-    namespace = "com.stathis.feature"
+    namespace = "com.stathis.personnel"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 27
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -50,8 +49,9 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":model"))
 
-    implementation(project(":feature:personnel"))
-    implementation(project(":feature:syllabus"))
+    implementation(libs.viewModelLifecycle)
+    implementation(libs.liveDataLifecycle)
+    implementation(libs.lifecycle.common)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
@@ -62,10 +62,10 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.swipeToRefresh)
     implementation(libs.shimmer)
-
     implementation(libs.circleImgView)
-    implementation(libs.lottie)
-
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

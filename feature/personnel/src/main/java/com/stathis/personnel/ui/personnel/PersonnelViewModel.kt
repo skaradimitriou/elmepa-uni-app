@@ -1,12 +1,12 @@
-package com.stathis.feature.ui.personnel
+package com.stathis.personnel.ui.personnel
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
-import com.stathis.model.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchPersonnelUseCase
 import com.stathis.domain.usecase.FilterPersonnelUseCase
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
