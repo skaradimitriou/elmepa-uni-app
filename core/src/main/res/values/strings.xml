@@ -3,6 +3,7 @@
 
     <!-- General -->
     <string name="announcements">Ανακοινώσεις</string>
+    <string name="events">Γεγονότα &amp; Εκδηλώσεις</string>
     <string name="department">Το Τμήμα</string>
     <string name="students">Φοιτητές</string>
     <string name="personnel">Προσωπικό</string>

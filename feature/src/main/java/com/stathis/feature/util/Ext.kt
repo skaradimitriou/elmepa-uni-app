@@ -16,6 +16,7 @@ import com.stathis.model.navigation.NavigationAction
 
 fun OptionType.toNavigationAction(): NavigationAction = when (this) {
     OptionType.ANNOUNCEMENTS -> NavigationAction.ANNOUNCEMENTS
+    OptionType.EVENTS -> NavigationAction.EVENTS
     OptionType.DEPARTMENT -> NavigationAction.DEPARTMENT
     OptionType.STUDENTS -> NavigationAction.STUDENTS
     OptionType.RESEARCH -> NavigationAction.RESEARCH

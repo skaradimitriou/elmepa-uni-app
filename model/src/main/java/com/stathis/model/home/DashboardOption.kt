@@ -15,6 +15,7 @@ data class DashboardOption(
 
 enum class OptionType {
     ANNOUNCEMENTS,
+    EVENTS,
     STUDENTS,
     DEPARTMENT,
     RESEARCH,

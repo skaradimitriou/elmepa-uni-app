@@ -7,4 +7,6 @@ import kotlinx.coroutines.flow.Flow
 interface AnnouncementRepository {
 
     suspend fun fetchAnnouncements(forceUpdate: Boolean): Flow<NetworkResult<List<UiModel>>>
+
+    suspend fun fetchDepartmentEvents(forceUpdate: Boolean): Flow<NetworkResult<List<UiModel>>>
 }

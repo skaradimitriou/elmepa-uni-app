@@ -1,17 +1,21 @@
 package com.stathis.data.util
 
-const val BASE_URL = "https://mst.hmu.gr/news_gr/"
+import androidx.datastore.preferences.core.longPreferencesKey
+
+const val NEWS_URL = "https://mst.hmu.gr/news_gr/"
+const val EVENTS_URL = "https://mst.hmu.gr/events/"
+
 const val GOOGLE_URL = "https://www.google.com"
 const val RESPONSE_OK = 200
 
-const val DATA_TYPE = "article"
+const val ARTICLE = "article.et_pb_post"
 const val IMG_HTML_TAG = "a.entry-featured-image-url"
 const val IMG_TYPE = "img"
 const val IMG_SOURCE = "src"
 const val TITLE_HTML_TAG = "h2.entry-title"
 const val TITLE_TYPE = "h2"
 const val PARAGRAPH_HTML_TAG = "p.post-meta"
-const val PARAGRAPH_TYPE = "p"
+const val SPAN = "span.published"
 const val URL_HTML_TAG = "h2.entry-title"
 const val URL_TYPE = "a"
 const val URL_ATTR = "href"
@@ -38,4 +42,7 @@ const val FAQ_ORDER_BY_FIELD = "seq"
  */
 
 const val SETTINGS = "settings"
-const val UPDATE_TIME = "update_time"
+const val ANNOUNCEMENTS_UPDATE_TIME = "announcements_update_time"
+const val EVENTS_UPDATE_TIME = "events_update_time"
+val ANNOUNCEMENTS_DS_KEY = longPreferencesKey(ANNOUNCEMENTS_UPDATE_TIME)
+val EVENTS_DS_KEY = longPreferencesKey(EVENTS_UPDATE_TIME)

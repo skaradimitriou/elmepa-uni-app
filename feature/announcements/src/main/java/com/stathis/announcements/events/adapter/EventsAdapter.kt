@@ -1,4 +1,4 @@
-package com.stathis.announcements.announcements.adapter
+package com.stathis.announcements.events.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,24 +6,24 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.announcements.BR
 import com.stathis.announcements.R
-import com.stathis.announcements.databinding.HolderAnnouncementItemBinding
 import com.stathis.announcements.databinding.HolderAnnouncementShimmerItemBinding
+import com.stathis.announcements.databinding.HolderEventItemBinding
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
 import com.stathis.core.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
-import com.stathis.model.announcements.Announcement
+import com.stathis.model.announcements.Event
 import com.stathis.model.general.ShimmerItem
 
-class AnnouncementsAdapter(
-    private val callback: AnnouncementsCallback
-) : ListAdapter<UiModel, AnnouncementsViewHolder>(BaseDiffUtil<UiModel>()) {
+class EventsAdapter(
+    private val callback: EventsCallback
+) : ListAdapter<UiModel, EventsViewHolder>(BaseDiffUtil<UiModel>()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnnouncementsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = when (viewType) {
-            R.layout.holder_announcement_item -> {
-                HolderAnnouncementItemBinding.inflate(inflater, parent, false)
+            R.layout.holder_event_item -> {
+                HolderEventItemBinding.inflate(inflater, parent, false)
             }
 
             R.layout.holder_announcement_shimmer_item -> {
@@ -32,41 +32,35 @@ class AnnouncementsAdapter(
 
             else -> HolderEmptyViewBinding.inflate(inflater, parent, false)
         }
-        return AnnouncementsViewHolder(view, callback)
+        return EventsViewHolder(view, callback)
     }
 
-    override fun onBindViewHolder(holder: AnnouncementsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
     override fun getItemViewType(position: Int): Int = when (getItem(position)) {
-        is Announcement -> R.layout.holder_announcement_item
+        is Event -> R.layout.holder_event_item
         is ShimmerItem -> R.layout.holder_announcement_shimmer_item
         else -> com.stathis.core.R.layout.holder_empty_view
     }
 }
 
-class AnnouncementsViewHolder(
+class EventsViewHolder(
     private val binding: ViewDataBinding,
-    private val callback: AnnouncementsCallback
+    private val callback: EventsCallback
 ) : BaseViewHolder(binding) {
 
     override fun bind(data: UiModel) {
         when (data) {
-            is Announcement -> {
+            is Event -> {
                 binding.setVariable(BR.model, data)
                 binding.setVariable(BR.callback, callback)
-
-                (binding as HolderAnnouncementItemBinding).announcementImgView.setOnLongClickListener {
-                    callback.onLongAnnouncementTap(data)
-                    true
-                }
             }
         }
     }
 }
 
-interface AnnouncementsCallback {
-    fun onAnnouncementTap(model: Announcement)
-    fun onLongAnnouncementTap(model: Announcement)
+fun interface EventsCallback {
+    fun onEventTap(model: Event)
 }

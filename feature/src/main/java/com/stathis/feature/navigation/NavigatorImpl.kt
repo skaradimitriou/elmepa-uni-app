@@ -20,6 +20,7 @@ class NavigatorImpl @Inject constructor(
     override fun goToScreen(action: NavigationAction?, bundle: Bundle?) = when (action) {
         NavigationAction.DASHBOARD -> navController.navigateSafe(R.id.nav_home)
         NavigationAction.ANNOUNCEMENTS -> navController.navigateSafe(R.id.announcementsFragment)
+        NavigationAction.EVENTS -> navController.navigateSafe(R.id.eventsFragment)
         NavigationAction.STUDENTS -> navController.navigateSafe(R.id.studentsFragment)
         NavigationAction.DEPARTMENT -> navController.navigateSafe(R.id.departmentFragment)
         NavigationAction.RESEARCH -> navController.navigateSafe(R.id.researchFragment)
