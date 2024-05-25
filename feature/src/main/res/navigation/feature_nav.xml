@@ -55,13 +55,13 @@
 
     <fragment
         android:id="@+id/aboutAppFragment"
-        android:name="com.stathis.feature.ui.about.AboutAppFragment"
+        android:name="com.stathis.support.ui.about.AboutAppFragment"
         android:label="AboutAppFragment"
         tools:layout="@layout/fragment_about_app" />
 
     <fragment
         android:id="@+id/contactFragment"
-        android:name="com.stathis.feature.ui.contact.ContactFragment"
+        android:name="com.stathis.support.ui.contact.ContactFragment"
         android:label="ContactFragment"
         tools:layout="@layout/fragment_contact" />
 
@@ -79,7 +79,7 @@
 
     <fragment
         android:id="@+id/faqFragment"
-        android:name="com.stathis.feature.ui.faq.FaqFragment"
+        android:name="com.stathis.support.ui.faq.FaqFragment"
         android:label="FaqFragment"
         tools:layout="@layout/fragment_faq" />
 

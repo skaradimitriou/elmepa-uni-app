@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.faq.adapter
+package com.stathis.support.ui.faq.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,14 +6,14 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
+import com.stathis.core.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
-import com.stathis.feature.BR
-import com.stathis.feature.R
-import com.stathis.feature.databinding.HolderEmptyViewBinding
-import com.stathis.feature.databinding.HolderFaqItemBinding
-import com.stathis.feature.databinding.HolderShimmerFaqBinding
 import com.stathis.model.faq.Faq
 import com.stathis.model.general.ShimmerItem
+import com.stathis.support.BR
+import com.stathis.support.R
+import com.stathis.support.databinding.HolderFaqItemBinding
+import com.stathis.support.databinding.HolderShimmerFaqBinding
 
 class FaqAdapter : ListAdapter<UiModel, FaqViewHolder>(BaseDiffUtil<UiModel>()) {
 
@@ -40,7 +40,7 @@ class FaqAdapter : ListAdapter<UiModel, FaqViewHolder>(BaseDiffUtil<UiModel>()) 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
         is Faq -> R.layout.holder_faq_item
         is ShimmerItem -> R.layout.holder_shimmer_faq
-        else -> R.layout.holder_empty_view
+        else -> com.stathis.core.R.layout.holder_empty_view
     }
 }
 

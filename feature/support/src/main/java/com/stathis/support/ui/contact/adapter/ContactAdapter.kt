@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.contact.adapter
+package com.stathis.support.ui.contact.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
 import com.stathis.model.UiModel
-import com.stathis.feature.BR
-import com.stathis.feature.databinding.HolderContactItemBinding
 import com.stathis.model.contact.ContactItem
+import com.stathis.support.BR
+import com.stathis.support.databinding.HolderContactItemBinding
 
 class ContactAdapter(
     val callback: ContactCallback

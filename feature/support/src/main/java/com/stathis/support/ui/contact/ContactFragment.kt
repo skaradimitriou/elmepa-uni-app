@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.contact
+package com.stathis.support.ui.contact
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
@@ -8,11 +8,11 @@ import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.core.util.startDialIntent
 import com.stathis.core.util.startEmailIntent
-import com.stathis.feature.R
-import com.stathis.feature.databinding.FragmentContactBinding
-import com.stathis.feature.ui.contact.adapter.ContactAdapter
 import com.stathis.model.contact.ContactType
 import com.stathis.model.network.NetworkResult
+import com.stathis.support.R
+import com.stathis.support.databinding.FragmentContactBinding
+import com.stathis.support.ui.contact.adapter.ContactAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
