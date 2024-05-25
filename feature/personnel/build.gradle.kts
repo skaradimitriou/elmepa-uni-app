@@ -63,6 +63,8 @@ dependencies {
     implementation(libs.swipeToRefresh)
     implementation(libs.shimmer)
     implementation(libs.circleImgView)
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
