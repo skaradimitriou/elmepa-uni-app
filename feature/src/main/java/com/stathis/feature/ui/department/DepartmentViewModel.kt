@@ -3,7 +3,7 @@ package com.stathis.feature.ui.department
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchDepartmentInfoUseCase
 import com.stathis.model.network.NetworkResult

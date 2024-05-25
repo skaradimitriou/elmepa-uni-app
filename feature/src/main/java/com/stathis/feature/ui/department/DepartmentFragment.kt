@@ -7,13 +7,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import com.stathis.core.MainViewModel
 import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentDepartmentBinding
-import com.stathis.feature.navigation.NavigationAction
-import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.ui.department.adapter.DepartmentAdapter
 import com.stathis.feature.ui.department.adapter.DepartmentCallback
 import com.stathis.feature.util.TITLE
@@ -21,6 +20,7 @@ import com.stathis.feature.util.URL
 import com.stathis.model.department.Programme
 import com.stathis.model.department.SocialItem
 import com.stathis.model.general.carousel.CarouselItem
+import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

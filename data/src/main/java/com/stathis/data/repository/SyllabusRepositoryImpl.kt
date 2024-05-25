@@ -3,7 +3,7 @@ package com.stathis.data.repository
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.core.R
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.data.datasource.remote.mapper.LessonListMapper
 import com.stathis.data.datasource.remote.model.LessonDto
 import com.stathis.data.util.NAME

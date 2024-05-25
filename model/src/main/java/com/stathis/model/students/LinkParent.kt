@@ -1,6 +1,6 @@
 package com.stathis.model.students
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 data class LinkParent(
     val links: List<UiModel>

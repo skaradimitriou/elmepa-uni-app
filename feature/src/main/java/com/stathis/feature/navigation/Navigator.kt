@@ -1,6 +1,7 @@
 package com.stathis.feature.navigation
 
 import android.os.Bundle
+import com.stathis.model.navigation.NavigationAction
 
 /**
  * Navigator is a Helper class used for the app's navigation purposes

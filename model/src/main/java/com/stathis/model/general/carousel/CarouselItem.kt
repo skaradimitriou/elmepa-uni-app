@@ -1,6 +1,6 @@
 package com.stathis.model.general.carousel
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 data class CarouselItem(
     val title: String,

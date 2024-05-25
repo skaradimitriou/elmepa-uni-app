@@ -1,6 +1,6 @@
 package com.stathis.data.datasource.remote.mapper
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.core.util.toNotNull
 import com.stathis.data.datasource.remote.model.LinkDto
 import com.stathis.data.datasource.remote.model.StudentsResponseDto

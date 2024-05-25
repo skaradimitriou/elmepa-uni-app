@@ -37,19 +37,19 @@
 
     <fragment
         android:id="@+id/nav_syllabus"
-        android:name="com.stathis.feature.ui.syllabus.SyllabusFragment"
+        android:name="com.stathis.syllabus.ui.syllabus.SyllabusFragment"
         android:label="SyllabusFragment"
         tools:layout="@layout/fragment_syllabus" />
 
     <fragment
         android:id="@+id/lessonsFragment"
-        android:name="com.stathis.feature.ui.lessons.LessonsFragment"
+        android:name="com.stathis.syllabus.ui.lessons.LessonsFragment"
         android:label="LessonsFragment"
         tools:layout="@layout/fragment_lessons" />
 
     <fragment
         android:id="@+id/lessonDetailsFragment"
-        android:name="com.stathis.feature.ui.lessondetails.LessonDetailsFragment"
+        android:name="com.stathis.syllabus.ui.lessondetails.LessonDetailsFragment"
         android:label="LessonDetailsFragment"
         tools:layout="@layout/fragment_lesson_details" />
 

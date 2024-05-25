@@ -2,7 +2,7 @@ package com.stathis.data.repository
 
 import android.app.Application
 import com.stathis.core.R
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.domain.repository.DashboardRepository
 import com.stathis.model.general.GeneralCardModel
 import com.stathis.model.home.DashboardOption

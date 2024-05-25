@@ -12,7 +12,6 @@ android {
 
     defaultConfig {
         minSdk = 27
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -50,6 +49,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":model"))
+    implementation(project(":feature:syllabus"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)

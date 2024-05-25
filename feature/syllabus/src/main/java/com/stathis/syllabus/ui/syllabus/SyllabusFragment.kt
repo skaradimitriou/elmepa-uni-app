@@ -1,0 +1,65 @@
+package com.stathis.syllabus.ui.syllabus
+
+import android.os.Bundle
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
+import com.stathis.core.MainSharedViewModel
+import com.stathis.core.MainViewModel
+import com.stathis.core.base.BaseFragment
+import com.stathis.core.util.setScreenTitle
+import com.stathis.core.util.setupItemDecoration
+import com.stathis.model.navigation.NavigationAction
+import com.stathis.model.network.NetworkResult
+import com.stathis.syllabus.R
+import com.stathis.syllabus.databinding.FragmentSyllabusBinding
+import com.stathis.syllabus.ui.syllabus.adapter.OrientationAdapter
+import com.stathis.syllabus.util.ORIENTATION
+import com.stathis.syllabus.util.SEMESTER
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class SyllabusFragment : BaseFragment<FragmentSyllabusBinding>(R.layout.fragment_syllabus) {
+
+    private val viewModel by viewModels<SyllabusViewModel>()
+    private val activityVM by activityViewModels<MainViewModel>()
+    private val sharedVM by activityViewModels<MainSharedViewModel>()
+
+    private val adapter = OrientationAdapter { orientationType, semester ->
+        val args = Bundle().apply {
+            putString(SEMESTER, semester.name)
+            putSerializable(ORIENTATION, orientationType)
+        }
+        sharedVM.selectedOrientation = orientationType
+        activityVM.navigateWithAction(NavigationAction.LESSONS, args)
+    }
+
+    override fun init() {
+        setScreenTitle(getString(com.stathis.core.R.string.syllabus))
+
+        binding.syllabusRecycler.apply {
+            setupItemDecoration()
+            adapter = this@SyllabusFragment.adapter
+        }
+
+        viewModel.fetchSemesters(sharedVM.selectedOrientation)
+    }
+
+    override fun startOps() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.semesters.flowWithLifecycle(lifecycle).collect { result ->
+                when (result) {
+                    is NetworkResult.Success -> {
+                        adapter.submitList(result.data)
+                    }
+
+                    else -> Unit
+                }
+            }
+        }
+    }
+
+    override fun stopOps() {}
+}

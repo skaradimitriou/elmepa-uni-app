@@ -1,6 +1,6 @@
 package com.stathis.model.syllabus
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 data class LessonHeader(
     val title: String

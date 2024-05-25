@@ -1,6 +1,6 @@
 package com.stathis.model.research
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 data class ResearchItem(
     val name: String,

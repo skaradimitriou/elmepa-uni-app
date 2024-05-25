@@ -3,7 +3,7 @@ package com.stathis.model.personnel
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import org.jetbrains.annotations.NotNull
 
 @Entity(tableName = "Personnel")

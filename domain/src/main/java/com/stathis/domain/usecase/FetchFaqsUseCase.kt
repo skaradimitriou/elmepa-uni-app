@@ -1,7 +1,7 @@
 package com.stathis.domain.usecase
 
 import com.stathis.core.base.BaseUseCase
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.domain.repository.FaqRepository
 import com.stathis.model.network.NetworkResult
 import kotlinx.coroutines.flow.Flow

@@ -1,7 +1,7 @@
 package com.stathis.data.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.data.datasource.remote.mapper.FaqMapper
 import com.stathis.data.datasource.remote.model.FaqDto
 import com.stathis.data.util.FAQ_DB_PATH
