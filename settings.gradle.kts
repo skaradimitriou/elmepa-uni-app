@@ -1,7 +1,7 @@
-pluginManagement{
+pluginManagement {
     repositories {
         google {
-            content{
+            content {
                 includeGroupByRegex("com\\.android.*")
                 includeGroupByRegex("com\\.google.*")
                 includeGroupByRegex("androidx.*")
@@ -12,19 +12,20 @@ pluginManagement{
     }
 }
 
-dependencyResolutionManagement{
+dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories{
+    repositories {
         google()
         mavenCentral()
     }
 }
 
 rootProject.name = "ElmepaUniApp"
-include (":app")
+include(":app")
 include(":data")
 include(":domain")
 include(":core")
 include(":model")
 include(":feature")
 include(":feature:syllabus")
+include(":feature:personnel")
