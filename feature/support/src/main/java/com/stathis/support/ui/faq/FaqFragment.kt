@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.faq
+package com.stathis.support.ui.faq
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
@@ -6,10 +6,10 @@ import androidx.lifecycle.lifecycleScope
 import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
-import com.stathis.feature.R
-import com.stathis.feature.databinding.FragmentFaqBinding
-import com.stathis.feature.ui.faq.adapter.FaqAdapter
 import com.stathis.model.network.NetworkResult
+import com.stathis.support.R
+import com.stathis.support.databinding.FragmentFaqBinding
+import com.stathis.support.ui.faq.adapter.FaqAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

@@ -6,16 +6,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.stathis.feature.ui.contact.ContactFragment">
+        tools:context="com.stathis.support.faq.FaqFragment">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contactsRecycler"
+            android:id="@+id/faqRecycler"
             style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/holder_contact_item" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

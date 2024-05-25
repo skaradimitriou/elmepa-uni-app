@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="com.stathis.feature.ui.contact.adapter.ContactCallback" />
+            type="com.stathis.support.ui.contact.adapter.ContactCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

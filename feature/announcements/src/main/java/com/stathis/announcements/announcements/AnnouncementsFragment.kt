@@ -9,10 +9,10 @@ import com.stathis.announcements.R
 import com.stathis.announcements.announcements.adapter.AnnouncementsAdapter
 import com.stathis.announcements.announcements.adapter.AnnouncementsCallback
 import com.stathis.announcements.databinding.FragmentAnnouncementsBinding
-import com.stathis.announcements.util.TITLE
-import com.stathis.announcements.util.URL
 import com.stathis.core.MainViewModel
 import com.stathis.core.base.BaseFragment
+import com.stathis.core.util.TITLE
+import com.stathis.core.util.URL
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.core.util.startShareIntent

@@ -1,11 +1,11 @@
-package com.stathis.feature.ui.faq
+package com.stathis.support.ui.contact
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
-import com.stathis.model.UiModel
 import com.stathis.core.di.IoDispatcher
-import com.stathis.domain.usecase.FetchFaqsUseCase
+import com.stathis.domain.usecase.FetchContactDetailsUseCase
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -15,21 +15,22 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FaqViewModel @Inject constructor(
+class ContactViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: FetchFaqsUseCase
+    private val useCase: FetchContactDetailsUseCase
 ) : BaseViewModel(app) {
 
-    val faq: StateFlow<NetworkResult<List<UiModel>>>
-        get() = _faqs
+    val contactDetails: StateFlow<NetworkResult<List<UiModel>>>
+        get() = _contactDetails
 
-    private val _faqs = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
+    private val _contactDetails =
+        MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
-    fun fetchFaqs() {
+    fun fetchContactDetails() {
         viewModelScope.launch(dispatcher) {
-            useCase.invoke().collect { data ->
-                _faqs.emit(data)
+            useCase.invoke().collect { result ->
+                _contactDetails.emit(result)
             }
         }
     }

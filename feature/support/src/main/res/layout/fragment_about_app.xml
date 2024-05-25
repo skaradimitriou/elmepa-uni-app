@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.stathis.feature.ui.about.AboutAppFragment">
+        tools:context="com.stathis.feature.com.stathis.support.about.AboutAppFragment">
 
         <TextView
             android:id="@+id/aboutAppTxtView"
