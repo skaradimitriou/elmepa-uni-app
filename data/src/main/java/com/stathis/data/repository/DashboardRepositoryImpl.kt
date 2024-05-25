@@ -2,8 +2,8 @@ package com.stathis.data.repository
 
 import android.app.Application
 import com.stathis.core.R
-import com.stathis.model.UiModel
 import com.stathis.domain.repository.DashboardRepository
+import com.stathis.model.UiModel
 import com.stathis.model.general.GeneralCardModel
 import com.stathis.model.home.DashboardOption
 import com.stathis.model.home.OptionType
@@ -26,6 +26,11 @@ class DashboardRepositoryImpl @Inject constructor(
                 title = app.getString(R.string.announcements),
                 drawable = R.drawable.home_announcements,
                 type = OptionType.ANNOUNCEMENTS
+            ),
+            DashboardOption(
+                title = app.getString(R.string.events),
+                drawable = R.drawable.home_events,
+                type = OptionType.EVENTS
             ),
             DashboardOption(
                 title = app.getString(R.string.department),

@@ -8,13 +8,10 @@ import com.stathis.data.datasource.datastore.AnnouncementsCachingDataStoreImpl
 import com.stathis.data.datasource.datastore.AnnouncementsDataStore
 import com.stathis.data.datasource.local.announcements.AnnouncementsDatabase
 import com.stathis.data.datasource.local.personnel.PersonnelDatabase
-import com.stathis.data.util.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import org.jsoup.Connection
-import org.jsoup.Jsoup
 import javax.inject.Singleton
 
 @Module
@@ -28,10 +25,6 @@ class DataModule {
     @Provides
     @Singleton
     fun provideFirebaseStorage() = FirebaseStorage.getInstance().reference
-
-    @Provides
-    @Singleton
-    fun provideJsoup(): Connection = Jsoup.connect(BASE_URL)
 
     @Provides
     @Singleton
@@ -54,7 +47,4 @@ class DataModule {
         PersonnelDatabase::class.java,
         "personnel_db"
     ).fallbackToDestructiveMigration().build()
-
-    @Provides
-    fun provideDao(database: AnnouncementsDatabase) = database.announcementDao()
 }

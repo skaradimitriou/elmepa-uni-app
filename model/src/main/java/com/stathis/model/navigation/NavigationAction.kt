@@ -3,6 +3,7 @@ package com.stathis.model.navigation
 enum class NavigationAction {
     DASHBOARD,
     ANNOUNCEMENTS,
+    EVENTS,
     DEPARTMENT,
     STUDENTS,
     RESEARCH,

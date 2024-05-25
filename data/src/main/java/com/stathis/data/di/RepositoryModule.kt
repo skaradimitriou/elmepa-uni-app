@@ -3,7 +3,7 @@ package com.stathis.data.di
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.data.datasource.datastore.AnnouncementsDataStore
-import com.stathis.data.datasource.local.announcements.AnnouncementsDao
+import com.stathis.data.datasource.local.announcements.AnnouncementsDatabase
 import com.stathis.data.datasource.local.personnel.PersonnelDatabase
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.data.repository.AnnouncementsRepositoryImpl
@@ -43,11 +43,11 @@ class RepositoryModule {
 
     @Provides
     fun provideAnnouncementsRepository(
-        localDataSource: AnnouncementsDao,
+        announcementDb: AnnouncementsDatabase,
         remoteDataSource: AnnouncementsRemoteDataSource,
         dataStore: AnnouncementsDataStore
     ): AnnouncementRepository = AnnouncementsRepositoryImpl(
-        localDataSource,
+        announcementDb,
         remoteDataSource,
         dataStore
     )

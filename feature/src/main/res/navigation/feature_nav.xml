@@ -18,6 +18,12 @@
         tools:layout="@layout/fragment_announcements" />
 
     <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.stathis.announcements.events.EventsFragment"
+        android:label="EventsFragment"
+        tools:layout="@layout/fragment_events" />
+
+    <fragment
         android:id="@+id/researchFragment"
         android:name="com.stathis.feature.ui.research.ResearchFragment"
         android:label="ResearchFragment"
