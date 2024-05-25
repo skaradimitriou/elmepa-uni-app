@@ -1,6 +1,6 @@
 package com.stathis.model.home
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 data class DashboardOption(
     val title: String,

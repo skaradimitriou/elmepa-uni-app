@@ -1,6 +1,6 @@
 package com.stathis.model.contact
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 
 data class ContactItem(

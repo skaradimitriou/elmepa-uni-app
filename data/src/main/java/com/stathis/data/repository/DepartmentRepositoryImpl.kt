@@ -1,7 +1,7 @@
 package com.stathis.data.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.data.datasource.remote.mapper.ContactMapper
 import com.stathis.data.datasource.remote.mapper.DepartmentResponseMapper
 import com.stathis.data.datasource.remote.model.ContactItemDto
@@ -10,7 +10,6 @@ import com.stathis.data.util.CONTACT_DB_PATH
 import com.stathis.data.util.DEPT_DB_PATH
 import com.stathis.data.util.SCREEN_DATA
 import com.stathis.domain.repository.DepartmentRepository
-import com.stathis.model.contact.ContactItem
 import com.stathis.model.department.DepartmentPersonnelItem
 import com.stathis.model.department.DepartmentProgrammeItem
 import com.stathis.model.department.DepartmentSocialItem

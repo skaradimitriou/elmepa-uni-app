@@ -2,17 +2,17 @@ package com.stathis.feature.ui.about
 
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
+import com.stathis.core.MainViewModel
 import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.alignText
 import com.stathis.core.util.setScreenTitle
 import com.stathis.feature.R
 import com.stathis.feature.databinding.FragmentAboutAppBinding
-import com.stathis.feature.navigation.NavigationAction
-import com.stathis.feature.ui.MainViewModel
 import com.stathis.feature.util.ABOUT_MOBILE_APP_URL
 import com.stathis.feature.util.ELMEPA_MOBILE_APP
 import com.stathis.feature.util.TITLE
 import com.stathis.feature.util.URL
+import com.stathis.model.navigation.NavigationAction
 
 class AboutAppFragment : BaseFragment<FragmentAboutAppBinding>(R.layout.fragment_about_app) {
 

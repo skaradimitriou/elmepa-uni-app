@@ -6,7 +6,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.feature.BR
 import com.stathis.feature.databinding.HolderContactItemBinding
 import com.stathis.model.contact.ContactItem

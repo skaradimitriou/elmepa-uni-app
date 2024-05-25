@@ -5,8 +5,8 @@ import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.stathis.feature.common.CarouselAdapter
-import com.stathis.feature.navigation.NavigationAction
 import com.stathis.model.home.OptionType
+import com.stathis.model.navigation.NavigationAction
 
 
 /**

@@ -1,6 +1,6 @@
 package com.stathis.model.faq
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 data class Faq(
     val question: String,

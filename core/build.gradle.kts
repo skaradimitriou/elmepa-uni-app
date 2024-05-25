@@ -46,6 +46,12 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    implementation(project(":model"))
+
+    implementation(libs.viewModelLifecycle)
+    implementation(libs.liveDataLifecycle)
+    implementation(libs.lifecycle.common)
+
     implementation(libs.hilt.android)
     implementation(libs.firebase.firestore)
     ksp(libs.hilt.compiler)

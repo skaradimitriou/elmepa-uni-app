@@ -1,6 +1,6 @@
 package com.stathis.model.department
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 data class FieldOfStudyParent(
     val syllabusItems: List<UiModel>

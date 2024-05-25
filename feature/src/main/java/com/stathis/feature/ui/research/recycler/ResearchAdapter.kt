@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.feature.databinding.HolderResearchScreenItemBinding
 import com.stathis.model.research.ResearchItem

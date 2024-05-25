@@ -7,16 +7,15 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.stathis.core.MainSharedViewModel
+import com.stathis.core.MainViewModel
 import com.stathis.core.base.BaseActivity
 import com.stathis.core.util.buildAndShowSnackBar
 import com.stathis.core.util.networkmanager.NetworkStatus
 import com.stathis.core.util.onBackButtonClick
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
-import com.stathis.elmepaunivapp.util.ARGS
-import com.stathis.feature.navigation.NavigationAction
 import com.stathis.feature.navigation.NavigatorImpl
-import com.stathis.feature.ui.MainSharedViewModel
-import com.stathis.feature.ui.MainViewModel
+import com.stathis.model.navigation.NavigationAction
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -75,7 +74,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                             title = getString(com.stathis.core.R.string.no_conn_title),
                             actionText = getString(com.stathis.core.R.string.no_conn_action),
                             callback = {
-                                viewModel.tryReconnecting()
+                                //FIXME: Implement reconnection attempt case
                             }
                         )
                     }

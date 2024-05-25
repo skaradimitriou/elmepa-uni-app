@@ -1,11 +1,11 @@
 package com.stathis.data.repository
 
-import com.stathis.core.base.UiModel
 import com.stathis.core.util.toNotNull
 import com.stathis.data.datasource.datastore.AnnouncementsDataStore
 import com.stathis.data.datasource.local.announcements.AnnouncementsDao
 import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
 import com.stathis.domain.repository.AnnouncementRepository
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.util.ShimmerGenerator
 import kotlinx.coroutines.flow.Flow

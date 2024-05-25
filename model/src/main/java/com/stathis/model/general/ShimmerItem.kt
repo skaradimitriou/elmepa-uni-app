@@ -1,6 +1,6 @@
 package com.stathis.model.general
 
-import com.stathis.core.base.UiModel
+import com.stathis.model.UiModel
 
 object ShimmerItem : UiModel {
     override fun equalsContent(obj: UiModel) = false
