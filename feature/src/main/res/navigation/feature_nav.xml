@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/announcementsFragment"
-        android:name="com.stathis.feature.ui.announcements.AnnouncementsFragment"
+        android:name="com.stathis.announcements.announcements.AnnouncementsFragment"
         android:label="AnnouncementsFragment"
         tools:layout="@layout/fragment_announcements" />
 

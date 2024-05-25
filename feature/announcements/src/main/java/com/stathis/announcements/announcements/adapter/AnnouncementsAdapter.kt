@@ -1,17 +1,17 @@
-package com.stathis.feature.ui.announcements.adapter
+package com.stathis.announcements.announcements.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
+import com.stathis.announcements.BR
+import com.stathis.announcements.R
+import com.stathis.announcements.databinding.HolderAnnouncementItemBinding
+import com.stathis.announcements.databinding.HolderAnnouncementShimmerItemBinding
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
+import com.stathis.core.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
-import com.stathis.feature.BR
-import com.stathis.feature.R
-import com.stathis.feature.databinding.HolderAnnouncementItemBinding
-import com.stathis.feature.databinding.HolderAnnouncementShimmerItemBinding
-import com.stathis.feature.databinding.HolderEmptyViewBinding
 import com.stathis.model.announcements.Announcement
 import com.stathis.model.general.ShimmerItem
 
@@ -44,7 +44,7 @@ class AnnouncementsAdapter(
     override fun getItemViewType(position: Int): Int = when (getItem(position)) {
         is Announcement -> R.layout.holder_announcement_item
         is ShimmerItem -> R.layout.holder_announcement_shimmer_item
-        else -> R.layout.holder_empty_view
+        else -> com.stathis.core.R.layout.holder_empty_view
     }
 }
 

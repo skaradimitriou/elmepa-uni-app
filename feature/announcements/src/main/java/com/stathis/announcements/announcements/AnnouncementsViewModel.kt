@@ -1,11 +1,11 @@
-package com.stathis.feature.ui.announcements
+package com.stathis.announcements.announcements
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
-import com.stathis.model.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchAnnouncementsUseCase
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
