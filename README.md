@@ -8,14 +8,20 @@ Read more about the app [HERE](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmh
 
 This repository contains an Android application built & tailored specifically for our university community.
 
-## Features
+## Features 💡
 
 - **Interactive Interface**: Engaging user experience designed to cater to the needs of students, faculty, and staff.
 - **Real-time Updates**: Stay informed with the latest news & announcements directly from the university.
 - **Engaging Syllabus**: Easily access your schedule and syllabus while on the go.
 - **Social Integration**: Look up & connect with University's personnel effortlessly.
 
-## Tech Stack
+## App Architecture 🛠️
+
+```kotlin
+//Coming soon
+```
+
+## Tech Stack ⚙️
 
 - **Kotlin**: A modern programming language for building robust Android applications.
 - **Android Jetpack**: Utilize the latest Android Jetpack components for efficient development.
