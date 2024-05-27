@@ -21,6 +21,11 @@ class NavigatorImpl @Inject constructor(
         NavigationAction.DASHBOARD -> navController.navigateSafe(R.id.nav_home)
         NavigationAction.ANNOUNCEMENTS -> navController.navigateSafe(R.id.announcementsFragment)
         NavigationAction.EVENTS -> navController.navigateSafe(R.id.eventsFragment)
+        NavigationAction.POST_DETAILS -> navController.navigateSafe(
+            R.id.postDetailsFragment,
+            bundle
+        )
+
         NavigationAction.STUDENTS -> navController.navigateSafe(R.id.studentsFragment)
         NavigationAction.DEPARTMENT -> navController.navigateSafe(R.id.departmentFragment)
         NavigationAction.RESEARCH -> navController.navigateSafe(R.id.researchFragment)

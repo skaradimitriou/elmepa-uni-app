@@ -4,6 +4,7 @@ enum class NavigationAction {
     DASHBOARD,
     ANNOUNCEMENTS,
     EVENTS,
+    POST_DETAILS,
     DEPARTMENT,
     STUDENTS,
     RESEARCH,

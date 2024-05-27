@@ -10,6 +10,7 @@ const val RESPONSE_OK = 200
 
 const val ARTICLE = "article.et_pb_post"
 const val IMG_HTML_TAG = "a.entry-featured-image-url"
+const val DIV_CONTENT = "div.et_pb_post_content_0_tb_body"
 const val IMG_TYPE = "img"
 const val IMG_SOURCE = "src"
 const val TITLE_HTML_TAG = "h2.entry-title"

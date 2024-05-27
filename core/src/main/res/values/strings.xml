@@ -24,6 +24,9 @@
     <string name="announcement_title">This is an announcement title</string>
     <string name="announcements_get_error">Error getting Data from site</string>
 
+    <!-- Post Details Screen -->
+    <string name="post_details_title">Πληροφορίες</string>
+
     <!-- Students Screen -->
     <string name="useful_links">Χρήσιμοι Σύνδεσμοι</string>
 
