@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.swipeToRefresh)
     implementation(libs.shimmer)
+    implementation(libs.jsoup)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

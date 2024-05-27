@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.stathis.model.announcements.details.PostDetailsHeader" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/posterImgView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_200"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadImageUrl="@{model.image}"
+            tools:src="@tools:sample/avatars" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#50000000"
+            app:layout_constraintBottom_toBottomOf="@id/posterImgView"
+            app:layout_constraintStart_toStartOf="@id/posterImgView"
+            app:layout_constraintTop_toTopOf="@id/posterImgView" />
+
+        <TextView
+            android:id="@+id/dateTxtView"
+            style="@style/text_16_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:text="@{model.pubDate}"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/posterImgView"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/titleTxtView"
+            style="@style/text_18_bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:paddingBottom="@dimen/dimen_16"
+            android:text="@{model.title}"
+            app:layout_constraintEnd_toEndOf="@id/dateTxtView"
+            app:layout_constraintStart_toStartOf="@id/dateTxtView"
+            app:layout_constraintTop_toBottomOf="@id/dateTxtView"
+            tools:text="@tools:sample/lorem" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

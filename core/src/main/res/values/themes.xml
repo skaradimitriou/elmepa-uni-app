@@ -53,8 +53,12 @@
         <item name="cardCornerRadius">@dimen/dimen_10</item>
     </style>
 
-    <style name="AppRoundedShape" >
+    <style name="AppRoundedShape">
         <item name="android:background">@drawable/round_corners_bg</item>
+    </style>
+
+    <style name="AppBackground">
+        <item name="background">@color/white</item>
     </style>
 
     <style name="AppRecyclerStyle">

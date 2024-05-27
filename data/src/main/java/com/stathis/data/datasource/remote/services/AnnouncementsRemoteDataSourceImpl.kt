@@ -4,10 +4,13 @@ import com.stathis.data.datasource.datastore.AnnouncementsDataStore
 import com.stathis.data.datasource.local.announcements.AnnouncementsDatabase
 import com.stathis.data.datasource.remote.mapper.announcements.AnnouncementsMapper
 import com.stathis.data.datasource.remote.mapper.announcements.EventsMapper
+import com.stathis.data.datasource.remote.mapper.announcements.PostDetailsMapper
 import com.stathis.data.datasource.remote.model.announcements.AnnouncementDto
 import com.stathis.data.datasource.remote.model.announcements.EventDto
+import com.stathis.data.datasource.remote.model.announcements.PostDetailsResponseDto
 import com.stathis.data.util.ANNOUNCEMENTS_DS_KEY
 import com.stathis.data.util.ARTICLE
+import com.stathis.data.util.DIV_CONTENT
 import com.stathis.data.util.EVENTS_DS_KEY
 import com.stathis.data.util.EVENTS_URL
 import com.stathis.data.util.IMG_HTML_TAG
@@ -22,6 +25,8 @@ import com.stathis.data.util.URL_ATTR
 import com.stathis.data.util.URL_HTML_TAG
 import com.stathis.data.util.URL_TYPE
 import com.stathis.model.UiModel
+import com.stathis.model.announcements.details.PostDetailsRequest
+import com.stathis.model.announcements.details.PostDetailsResponse
 import com.stathis.model.network.NetworkResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -85,4 +90,29 @@ class AnnouncementsRemoteDataSourceImpl(
             emit(NetworkResult.Failure(e.localizedMessage?.toString()))
         }
     }
+
+    override suspend fun fetchPostDetails(request: PostDetailsRequest): Flow<NetworkResult<PostDetailsResponse>> =
+        flow {
+            emit(NetworkResult.Loading())
+
+            try {
+                val response = Jsoup.connect(request.scrapeUrl)
+                    .get()
+                    .select(DIV_CONTENT)
+                    .joinToString { divs ->
+                        divs.html()
+                    }.trim()
+
+                val dtoModel = PostDetailsResponseDto(
+                    title = request.title,
+                    imageUrl = request.imageUrl,
+                    pubDate = request.pubDate,
+                    htmlContent = response
+                )
+                val domainModel = PostDetailsMapper.toDomainModel(dtoModel)
+                emit(NetworkResult.Success(domainModel))
+            } catch (e: Exception) {
+                emit(NetworkResult.Failure(e.localizedMessage?.toString()))
+            }
+        }
 }

@@ -8,6 +8,7 @@ import com.stathis.data.util.ANNOUNCEMENTS_DS_KEY
 import com.stathis.data.util.EVENTS_DS_KEY
 import com.stathis.domain.repository.AnnouncementRepository
 import com.stathis.model.UiModel
+import com.stathis.model.announcements.details.PostDetailsRequest
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.util.ShimmerGenerator
 import kotlinx.coroutines.flow.Flow
@@ -73,4 +74,8 @@ class AnnouncementsRepositoryImpl @Inject constructor(
                 }
             }
         }
+
+    override suspend fun fetchPostDetails(
+        request: PostDetailsRequest
+    ) = remoteDataSource.fetchPostDetails(request)
 }

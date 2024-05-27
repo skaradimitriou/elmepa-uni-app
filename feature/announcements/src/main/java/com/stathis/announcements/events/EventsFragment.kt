@@ -10,6 +10,8 @@ import com.stathis.announcements.databinding.FragmentEventsBinding
 import com.stathis.announcements.events.adapter.EventsAdapter
 import com.stathis.core.MainViewModel
 import com.stathis.core.base.BaseFragment
+import com.stathis.core.util.IMAGE
+import com.stathis.core.util.PUB_DATE
 import com.stathis.core.util.TITLE
 import com.stathis.core.util.URL
 import com.stathis.core.util.setScreenTitle
@@ -27,10 +29,12 @@ class EventsFragment : BaseFragment<FragmentEventsBinding>(R.layout.fragment_eve
 
     private val adapter = EventsAdapter { model ->
         val args = Bundle().apply {
-            putString(URL, model.url)
             putString(TITLE, model.name)
+            putString(IMAGE, model.imageResource)
+            putString(URL, model.url)
+            putString(PUB_DATE, model.pubDate)
         }
-        activityVM.navigateWithAction(NavigationAction.WEBVIEW, args)
+        activityVM.navigateWithAction(NavigationAction.POST_DETAILS, args)
     }
 
     override fun init() {
