@@ -33,14 +33,14 @@ class DashboardRepositoryImpl @Inject constructor(
                 type = OptionType.EVENTS
             ),
             DashboardOption(
-                title = app.getString(R.string.department),
-                drawable = R.drawable.home_department,
-                type = OptionType.DEPARTMENT
-            ),
-            DashboardOption(
                 title = app.getString(R.string.students),
                 drawable = R.drawable.home_students,
                 type = OptionType.STUDENTS
+            ),
+            DashboardOption(
+                title = app.getString(R.string.department),
+                drawable = R.drawable.home_department,
+                type = OptionType.DEPARTMENT
             ),
             DashboardOption(
                 title = app.getString(R.string.research_in_dept),
