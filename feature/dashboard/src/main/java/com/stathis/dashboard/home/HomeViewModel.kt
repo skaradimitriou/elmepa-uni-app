@@ -1,11 +1,11 @@
-package com.stathis.feature.ui.home
+package com.stathis.dashboard.home
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
-import com.stathis.model.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchDashboardDetailsUseCase
+import com.stathis.model.UiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow

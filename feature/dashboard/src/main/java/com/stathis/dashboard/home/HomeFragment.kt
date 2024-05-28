@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.home
+package com.stathis.dashboard.home
 
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -9,10 +9,10 @@ import com.stathis.core.base.BaseFragment
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupDashboardGridLayout
 import com.stathis.core.util.setupItemDecoration
-import com.stathis.feature.R
-import com.stathis.feature.databinding.FragmentHomeBinding
-import com.stathis.feature.ui.home.recyclerview.DashboardAdapter
-import com.stathis.feature.util.toNavigationAction
+import com.stathis.dashboard.R
+import com.stathis.dashboard.databinding.FragmentHomeBinding
+import com.stathis.dashboard.home.recyclerview.DashboardAdapter
+import com.stathis.dashboard.util.toNavigationAction
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

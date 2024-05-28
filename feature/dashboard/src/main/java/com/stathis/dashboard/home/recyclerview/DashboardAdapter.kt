@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.home.recyclerview
+package com.stathis.dashboard.home.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,12 +6,12 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
+import com.stathis.core.databinding.HolderEmptyViewBinding
+import com.stathis.dashboard.BR
+import com.stathis.dashboard.R
+import com.stathis.dashboard.databinding.HolderCardItemBinding
+import com.stathis.dashboard.databinding.HolderDashboardOptionBinding
 import com.stathis.model.UiModel
-import com.stathis.feature.BR
-import com.stathis.feature.R
-import com.stathis.feature.databinding.HolderCardItemBinding
-import com.stathis.feature.databinding.HolderDashboardOptionBinding
-import com.stathis.feature.databinding.HolderEmptyViewBinding
 import com.stathis.model.general.GeneralCardModel
 import com.stathis.model.home.DashboardOption
 
@@ -42,13 +42,13 @@ class DashboardAdapter(
     override fun getItemViewType(position: Int) = when (getItem(position)) {
         is GeneralCardModel -> R.layout.holder_card_item
         is DashboardOption -> R.layout.holder_dashboard_option
-        else -> R.layout.holder_empty_view
+        else -> com.stathis.core.R.layout.holder_empty_view
     }
 }
 
 class DashboardViewHolder(
-    val binding: ViewDataBinding,
-    val callback: DashboardCallback
+    private val binding: ViewDataBinding,
+    private val callback: DashboardCallback
 ) : BaseViewHolder(binding) {
 
     override fun bind(data: UiModel) {
