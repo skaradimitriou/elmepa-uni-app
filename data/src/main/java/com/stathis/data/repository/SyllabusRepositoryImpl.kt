@@ -3,13 +3,13 @@ package com.stathis.data.repository
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.core.R
-import com.stathis.model.UiModel
 import com.stathis.data.datasource.remote.mapper.LessonListMapper
 import com.stathis.data.datasource.remote.model.LessonDto
 import com.stathis.data.util.NAME
 import com.stathis.data.util.SEMESTER
 import com.stathis.data.util.SYLLABUS_DB_PATH
 import com.stathis.domain.repository.SyllabusRepository
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.LessonHeader
 import com.stathis.model.syllabus.Orientation
@@ -40,19 +40,19 @@ class SyllabusRepositoryImpl @Inject constructor(
 
             val orientations = listOf(
                 Orientation(
-                    title = app.getString(com.stathis.core.R.string.data_orientation),
+                    title = app.getString(R.string.data_orientation),
                     semesters = semesters,
                     type = OrientationType.DATA,
                     isExpanded = selectedOrientationType == OrientationType.DATA
                 ),
                 Orientation(
-                    title = app.getString(com.stathis.core.R.string.ba_orientation),
+                    title = app.getString(R.string.ba_orientation),
                     semesters = semesters,
                     type = OrientationType.BA,
                     isExpanded = selectedOrientationType == OrientationType.BA
                 ),
                 Orientation(
-                    title = app.getString(com.stathis.core.R.string.mkt_orientation),
+                    title = app.getString(R.string.mkt_orientation),
                     semesters = semesters,
                     type = OrientationType.MKT,
                     isExpanded = selectedOrientationType == OrientationType.MKT
