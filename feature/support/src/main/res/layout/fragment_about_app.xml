@@ -8,57 +8,14 @@
         android:layout_height="match_parent"
         tools:context="com.stathis.feature.com.stathis.support.about.AboutAppFragment">
 
-        <TextView
-            android:id="@+id/aboutAppTxtView"
-            style="@style/text_16"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/aboutAppRecycler"
+            style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dimen_16"
-            android:text="@string/about_app_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/learnMoreTxtView"
-            style="@style/text_18_bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:padding="@dimen/dimen_10"
-            android:text="@string/learn_more_app_url"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/aboutAppTxtView"
-            app:underline="@{true}" />
-
-        <TextView
-            android:id="@+id/aboutDataTxtView"
-            style="@style/text_16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dimen_16"
-            android:text="@string/about_app_data"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/learnMoreTxtView" />
-
-        <TextView
-            android:id="@+id/newsPublisherNameTxtView"
-            style="@style/text_18_bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/dimen_16"
-            android:paddingTop="@dimen/dimen_16"
-            android:text="@string/news_publisher_header"
-            app:layout_constraintTop_toBottomOf="@id/aboutDataTxtView" />
-
-        <TextView
-            android:id="@+id/newsPublisherDescTxtView"
-            style="@style/text_16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/dimen_16"
-            android:paddingTop="@dimen/dimen_5"
-            android:text="@string/news_publisher_desc"
-            app:layout_constraintTop_toBottomOf="@id/newsPublisherNameTxtView" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/holder_about_card" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

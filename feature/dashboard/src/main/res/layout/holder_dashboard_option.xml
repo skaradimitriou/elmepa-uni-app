@@ -28,7 +28,7 @@
             <ImageView
                 android:id="@+id/optionImgView"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/height_80"
+                android:layout_height="@dimen/dimen_80"
                 android:contentDescription="@tools:sample/lorem"
                 android:scaleType="centerInside"
                 app:layout_constraintEnd_toEndOf="parent"

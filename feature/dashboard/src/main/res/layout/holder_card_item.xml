@@ -23,8 +23,8 @@
 
             <ImageView
                 android:id="@+id/cardImgView"
-                android:layout_width="@dimen/height_80"
-                android:layout_height="@dimen/height_80"
+                android:layout_width="@dimen/dimen_80"
+                android:layout_height="@dimen/dimen_80"
                 android:contentDescription="@{model.title}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

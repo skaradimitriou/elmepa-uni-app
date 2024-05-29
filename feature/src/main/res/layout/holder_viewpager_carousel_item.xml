@@ -18,7 +18,7 @@
             android:id="@+id/viewPager"
             style="@style/AppRecyclerStyle"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_250"
+            android:layout_height="@dimen/dimen_250"
             android:adapter="@{adapter}"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

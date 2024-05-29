@@ -6,37 +6,25 @@
     <dimen name="dimen_8">8dp</dimen>
     <dimen name="dimen_10">10dp</dimen>
     <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_20">20dp</dimen>
     <dimen name="dimen_24">24dp</dimen>
     <dimen name="dimen_32">32dp</dimen>
     <dimen name="dimen_40">40dp</dimen>
     <dimen name="dimen_50">50dp</dimen>
     <dimen name="dimen_70">70dp</dimen>
+    <dimen name="dimen_80">80dp</dimen>
     <dimen name="dimen_85">85dp</dimen>
     <dimen name="dimen_100">100dp</dimen>
     <dimen name="dimen_120">120dp</dimen>
     <dimen name="dimen_150">150dp</dimen>
-
-    <!-- Height sizes -->
-    <dimen name="height_35">35dp</dimen>
-    <dimen name="height_70">70dp</dimen>
-    <dimen name="height_80">80dp</dimen>
-    <dimen name="height_110">110dp</dimen>
-    <dimen name="height_120">120dp</dimen>
-    <dimen name="height_130">130dp</dimen>
-    <dimen name="height_140">140dp</dimen>
-    <dimen name="height_200">200dp</dimen>
-    <dimen name="height_210">210dp</dimen>
-    <dimen name="height_220">220dp</dimen>
-    <dimen name="height_230">230dp</dimen>
-    <dimen name="height_250">250dp</dimen>
-    <dimen name="height_300">300dp</dimen>
+    <dimen name="dimen_200">200dp</dimen>
+    <dimen name="dimen_230">230dp</dimen>
+    <dimen name="dimen_250">250dp</dimen>
+    <dimen name="dimen_300">300dp</dimen>
 
     <!-- Text sizes -->
-    <dimen name="text_12">12sp</dimen>
     <dimen name="text_16">16sp</dimen>
-    <dimen name="text_14">14sp</dimen>
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_20">20sp</dimen>
-    <dimen name="image_50">50dp</dimen>
 
 </resources>
