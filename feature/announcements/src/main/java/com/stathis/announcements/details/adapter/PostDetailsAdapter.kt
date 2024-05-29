@@ -47,7 +47,7 @@ class PostDetailsAdapter : ListAdapter<UiModel, PostDetailsViewHolder>(BaseDiffU
 }
 
 class PostDetailsViewHolder(
-    val binding: ViewDataBinding
+    private val binding: ViewDataBinding
 ) : BaseViewHolder(binding) {
 
     override fun bind(data: UiModel) {

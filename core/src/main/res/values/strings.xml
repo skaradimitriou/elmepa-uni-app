@@ -26,6 +26,7 @@
 
     <!-- Post Details Screen -->
     <string name="post_details_title">Πληροφορίες</string>
+    <string name="post_details_menu_action">Αποστολή</string>
 
     <!-- Students Screen -->
     <string name="useful_links">Χρήσιμοι Σύνδεσμοι</string>
