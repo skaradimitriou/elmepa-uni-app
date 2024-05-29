@@ -12,8 +12,10 @@ import com.stathis.core.util.IMAGE
 import com.stathis.core.util.PUB_DATE
 import com.stathis.core.util.TITLE
 import com.stathis.core.util.URL
+import com.stathis.core.util.inflateCustomMenu
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
+import com.stathis.core.util.startShareIntent
 import com.stathis.core.util.toNotNull
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,15 +32,27 @@ class PostDetailsFragment :
     override fun init() {
         setScreenTitle(getString(com.stathis.core.R.string.post_details_title))
 
-        binding.detailsRecycler.apply {
-            setupItemDecoration(top = 0, start = 0, end = 0)
-            adapter = this@PostDetailsFragment.adapter
-        }
-
         val title = arguments?.getString(TITLE).toNotNull()
         val imageUrl = arguments?.getString(IMAGE).toNotNull()
         val pubDate = arguments?.getString(PUB_DATE).toNotNull()
         val openUrl = arguments?.getString(URL).toNotNull()
+
+        inflateCustomMenu(
+            menuId = R.menu.post_details_menu,
+            respondItemId = R.id.action_share,
+            callback = { menuItem ->
+                val textBody = String.format(
+                    getString(com.stathis.core.R.string.announcement_share_body),
+                    title,
+                    openUrl
+                )
+                startShareIntent(subject = title, body = textBody)
+            })
+
+        binding.detailsRecycler.apply {
+            setupItemDecoration(top = 0, start = 0, end = 0)
+            adapter = this@PostDetailsFragment.adapter
+        }
 
         viewModel.fetchPostDetails(
             title = title,
