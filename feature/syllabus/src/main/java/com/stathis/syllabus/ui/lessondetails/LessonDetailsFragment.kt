@@ -35,12 +35,13 @@ class LessonDetailsFragment :
         lifecycleScope.launch {
             viewModel.lessonDetails.flowWithLifecycle(lifecycle).collect { result ->
                 when (result) {
-                    is NetworkResult.Loading -> Unit
+                    is NetworkResult.Loading -> binding.isLoading = true
                     is NetworkResult.Success -> {
+                        binding.isLoading = false
                         adapter.submitList(result.data)
                     }
 
-                    is NetworkResult.Failure -> Unit
+                    is NetworkResult.Failure -> binding.isLoading = false
                 }
             }
         }
