@@ -1,6 +1,7 @@
 package com.stathis.data.repository
 
 import android.app.Application
+import com.stathis.core.R
 import com.stathis.domain.repository.GeneralAppInfoRepository
 import com.stathis.model.UiModel
 import com.stathis.model.about.AboutAppCard
@@ -12,31 +13,28 @@ class GeneralAppInfoRepositoryImpl(
     private val app: Application
 ) : GeneralAppInfoRepository {
 
-    //FIXME: Add text for all app releases
-
     override suspend fun fetchAboutAppInfo(): Flow<List<UiModel>> = flow {
         val list = listOf(
             AboutAppHeader(
-                header = app.getString(com.stathis.core.R.string.about_app_data),
-                title = app.getString(com.stathis.core.R.string.news_publisher_header),
-                description = app.getString(com.stathis.core.R.string.news_publisher_desc)
+                header = app.getString(R.string.about_app_data),
+                title = app.getString(R.string.news_publisher_header),
+                description = app.getString(R.string.news_publisher_desc)
             ),
             AboutAppCard(
-                date = "Ιούνιος 2024",
-                description = app.getString(com.stathis.core.R.string.new_version_desc),
-                btnTxt = "Press me"
-            ), AboutAppCard(
-                date = "Ιούνιος 2024",
-                description = "Lorem ipsum sit dolor amet.",
-                btnTxt = "Press me"
-            ), AboutAppCard(
-                date = "Ιούνιος 2024",
-                description = "Lorem ipsum sit dolor amet.",
-                btnTxt = "Press me"
-            ), AboutAppCard(
-                date = "Ιούνιος 2024",
-                description = "Lorem ipsum sit dolor amet.",
-                btnTxt = "Press me"
+                date = app.getString(R.string.new_version_date),
+                description = app.getString(R.string.new_version_desc),
+            ),
+            AboutAppCard(
+                date = app.getString(R.string.third_version_date),
+                description = app.getString(R.string.third_version_desc)
+            ),
+            AboutAppCard(
+                date = app.getString(R.string.sec_version_date),
+                description = app.getString(R.string.sec_version_desc)
+            ),
+            AboutAppCard(
+                date = app.getString(R.string.first_version_date),
+                description = app.getString(R.string.first_version_desc)
             )
         )
 

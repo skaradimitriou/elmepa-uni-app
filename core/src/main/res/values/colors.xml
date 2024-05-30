@@ -4,6 +4,7 @@
     <!-- Color Palette -->
     <color name="black">#000000</color>
     <color name="grey">#88888888</color>
+    <color name="grey_light">#d5d5d5</color>
     <color name="grey_bg">#F0F0F0</color>
 
     <!-- Light Mode Color Palette -->
