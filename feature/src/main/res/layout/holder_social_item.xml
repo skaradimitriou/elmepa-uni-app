@@ -22,8 +22,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/itemImgView"
-            android:layout_width="@dimen/height_80"
-            android:layout_height="@dimen/height_80"
+            android:layout_width="@dimen/dimen_80"
+            android:layout_height="@dimen/dimen_80"
             android:layout_marginTop="@dimen/dimen_10"
             android:contentDescription="@{model.title}"
             android:scaleType="centerCrop"

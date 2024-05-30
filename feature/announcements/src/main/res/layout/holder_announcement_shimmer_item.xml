@@ -19,7 +19,7 @@
                 <ImageView
                     android:id="@+id/announcementImgView"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/height_300"
+                    android:layout_height="@dimen/dimen_300"
                     android:scaleType="centerCrop"
                     android:src="@color/grey"
                     app:layout_constraintEnd_toEndOf="parent"

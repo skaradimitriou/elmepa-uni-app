@@ -27,8 +27,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/lessonImgView"
-                android:layout_width="@dimen/height_80"
-                android:layout_height="@dimen/height_80"
+                android:layout_width="@dimen/dimen_80"
+                android:layout_height="@dimen/dimen_80"
                 android:background="@drawable/circle_bg"
                 android:src="@drawable/book"
                 app:layout_constraintStart_toStartOf="parent"
