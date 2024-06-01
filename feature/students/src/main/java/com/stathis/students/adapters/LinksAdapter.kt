@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.students.adapters
+package com.stathis.students.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,14 +6,14 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
+import com.stathis.core.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
-import com.stathis.feature.BR
-import com.stathis.feature.R
-import com.stathis.feature.databinding.HolderEmptyViewBinding
-import com.stathis.feature.databinding.HolderLinkItemBinding
-import com.stathis.feature.databinding.HolderShimmerLinkItemBinding
 import com.stathis.model.general.ShimmerItem
 import com.stathis.model.students.Link
+import com.stathis.students.BR
+import com.stathis.students.R
+import com.stathis.students.databinding.HolderLinkItemBinding
+import com.stathis.students.databinding.HolderShimmerLinkItemBinding
 
 class LinksAdapter(
     private val callback: LinksCallback
@@ -42,7 +42,7 @@ class LinksAdapter(
     override fun getItemViewType(position: Int) = when (getItem(position)) {
         is Link -> R.layout.holder_link_item
         is ShimmerItem -> R.layout.holder_shimmer_link_item
-        else -> R.layout.holder_empty_view
+        else -> com.stathis.core.R.layout.holder_empty_view
     }
 }
 

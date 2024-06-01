@@ -1,4 +1,4 @@
-package com.stathis.feature.ui.students
+package com.stathis.students
 
 import android.content.Intent
 import android.net.Uri
@@ -8,18 +8,17 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.stathis.core.MainViewModel
 import com.stathis.core.base.BaseFragment
+import com.stathis.core.util.TITLE
+import com.stathis.core.util.URL
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
-import com.stathis.feature.R
-import com.stathis.feature.databinding.FragmentStudentsBinding
-import com.stathis.feature.ui.students.adapters.StudentsAdapter
-import com.stathis.feature.ui.students.adapters.StudentsCallback
-import com.stathis.feature.util.TITLE
-import com.stathis.feature.util.URL
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.students.Link
+import com.stathis.students.adapters.StudentsAdapter
+import com.stathis.students.adapters.StudentsCallback
+import com.stathis.students.databinding.FragmentStudentsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber

@@ -1,22 +1,22 @@
-package com.stathis.feature.ui.students.adapters
+package com.stathis.students.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
+import com.stathis.core.adapters.CarouselAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
+import com.stathis.core.databinding.HolderEmptyViewBinding
+import com.stathis.core.databinding.HolderViewpagerCarouselItemBinding
 import com.stathis.model.UiModel
-import com.stathis.feature.BR
-import com.stathis.feature.R
-import com.stathis.feature.common.CarouselAdapter
-import com.stathis.feature.databinding.HolderEmptyViewBinding
-import com.stathis.feature.databinding.HolderLinksParentItemBinding
-import com.stathis.feature.databinding.HolderViewpagerCarouselItemBinding
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.general.carousel.CarouselParent
 import com.stathis.model.students.Link
 import com.stathis.model.students.LinkParent
+import com.stathis.students.BR
+import com.stathis.students.R
+import com.stathis.students.databinding.HolderLinksParentItemBinding
 
 class StudentsAdapter(
     private val callback: StudentsCallback
@@ -25,7 +25,7 @@ class StudentsAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = when (viewType) {
-            R.layout.holder_viewpager_carousel_item -> {
+            com.stathis.core.R.layout.holder_viewpager_carousel_item -> {
                 HolderViewpagerCarouselItemBinding.inflate(inflater, parent, false)
             }
 
@@ -43,9 +43,9 @@ class StudentsAdapter(
     }
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
-        is CarouselParent -> R.layout.holder_viewpager_carousel_item
+        is CarouselParent -> com.stathis.core.R.layout.holder_viewpager_carousel_item
         is LinkParent -> R.layout.holder_links_parent_item
-        else -> R.layout.holder_empty_view
+        else -> com.stathis.core.R.layout.holder_empty_view
     }
 }
 
@@ -80,26 +80,3 @@ interface StudentsCallback {
     fun onCarouselTap(model: CarouselItem)
     fun onLinkTap(model: Link)
 }
-
-
-//    : ListAdapter<LocalModel, StudentViewHolder>(DiffItemClass<LocalModel>()) {
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
-//        val view = when(viewType){
-//            R.layout.holder_viewpager_carousel_item -> HolderViewpagerCarouselItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-//            R.layout.holder_parent_vertical_grid_nested_item -> HolderParentVerticalGridNestedItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-//            else -> HolderEmptyItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-//        }
-//        return StudentViewHolder(view, callback)
-//    }
-//
-//    override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
-//        holder.bindData(getItem(position))
-//    }
-//
-//    override fun getItemViewType(position: Int): Int = when (getItem(position)) {
-//        is UsefulLinksParent -> R.layout.holder_parent_vertical_grid_nested_item
-//        is CarouselParent -> R.layout.holder_viewpager_carousel_item
-//        else -> R.layout.holder_empty_item_row
-//    }
-//}
