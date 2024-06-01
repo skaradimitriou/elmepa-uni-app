@@ -14,7 +14,7 @@ import com.stathis.core.util.buildAndShowSnackBar
 import com.stathis.core.util.networkmanager.NetworkStatus
 import com.stathis.core.util.onBackButtonClick
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
-import com.stathis.feature.navigation.NavigatorImpl
+import com.stathis.elmepaunivapp.navigation.NavigatorImpl
 import com.stathis.model.navigation.NavigationAction
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

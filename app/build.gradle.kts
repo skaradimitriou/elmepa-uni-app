@@ -56,7 +56,14 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":model"))
-    implementation(project(":feature"))
+
+    implementation(project(":feature:dashboard"))
+    implementation(project(":feature:announcements"))
+    implementation(project(":feature:personnel"))
+    implementation(project(":feature:syllabus"))
+    implementation(project(":feature:students"))
+    implementation(project(":feature:department"))
+    implementation(project(":feature:support"))
     implementation(project(":feature:common"))
 
     implementation(libs.viewModelLifecycle)
