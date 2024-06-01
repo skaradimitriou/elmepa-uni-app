@@ -7,14 +7,13 @@ plugins {
 }
 
 android {
-    namespace = "com.stathis.core"
+    namespace = "com.stathis.students"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 27
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -46,6 +45,9 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    implementation(project(":core"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
     implementation(project(":model"))
 
     implementation(libs.viewModelLifecycle)
@@ -53,11 +55,15 @@ dependencies {
     implementation(libs.lifecycle.common)
 
     implementation(libs.hilt.android)
-    implementation(libs.firebase.firestore)
     ksp(libs.hilt.compiler)
 
-    implementation(libs.glide)
+    implementation(libs.fragment.navigation)
+    implementation(libs.ui.navigation)
+
+    implementation(libs.timber)
+    implementation(libs.swipeToRefresh)
     implementation(libs.shimmer)
+    implementation(libs.circleImgView)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

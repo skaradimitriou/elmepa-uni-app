@@ -1,17 +1,17 @@
-package com.stathis.feature.common
+package com.stathis.core.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
+import com.stathis.core.BR
+import com.stathis.core.R
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
+import com.stathis.core.databinding.HolderCarouselItemBinding
+import com.stathis.core.databinding.HolderEmptyViewBinding
+import com.stathis.core.databinding.HolderShimmerCarouselItemBinding
 import com.stathis.model.UiModel
-import com.stathis.feature.BR
-import com.stathis.feature.R
-import com.stathis.feature.databinding.HolderCarouselItemBinding
-import com.stathis.feature.databinding.HolderEmptyViewBinding
-import com.stathis.feature.databinding.HolderShimmerCarouselItemBinding
 import com.stathis.model.general.ShimmerItem
 import com.stathis.model.general.carousel.CarouselItem
 

@@ -7,52 +7,45 @@
 
         <variable
             name="model"
-            type="com.stathis.model.general.carousel.CarouselItem" />
+            type="com.stathis.model.students.Link" />
 
         <variable
             name="callback"
-            type="com.stathis.feature.common.CarouselCallback" />
+            type="com.stathis.students.adapters.LinksCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:onClick="@{() -> callback.onCarouselItemTap(model)}">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_5"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:onClick="@{() -> callback.onLinkTap(model)}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/itemImgView"
+                android:id="@+id/linkImgView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@{model.title}"
+                android:layout_height="@dimen/dimen_150"
                 android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:loadImageUrl="@{model.imageUrl}"
-                tools:src="@tools:sample/backgrounds/scenic" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/gradient_bg"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/titleTxtView"
-                style="@style/text_20_bold"
+                android:id="@+id/linkTitleTxtView"
+                style="@style/text_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:paddingHorizontal="@dimen/dimen_16"
-                android:paddingVertical="@dimen/dimen_24"
+                android:padding="@dimen/dimen_16"
                 android:text="@{model.title}"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linkImgView"
                 tools:text="@tools:sample/lorem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

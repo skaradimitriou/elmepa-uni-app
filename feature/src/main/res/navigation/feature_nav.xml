@@ -79,7 +79,7 @@
 
     <fragment
         android:id="@+id/studentsFragment"
-        android:name="com.stathis.feature.ui.students.StudentsFragment"
+        android:name="com.stathis.students.StudentsFragment"
         android:label="StudentsFragment"
         tools:layout="@layout/fragment_students" />
 

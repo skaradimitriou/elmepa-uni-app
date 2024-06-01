@@ -4,18 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
+import com.stathis.core.adapters.CarouselAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
-import com.stathis.model.UiModel
+import com.stathis.core.databinding.HolderViewpagerCarouselItemBinding
 import com.stathis.feature.BR
 import com.stathis.feature.R
-import com.stathis.feature.common.CarouselAdapter
 import com.stathis.feature.databinding.HolderDepMemberParentBinding
 import com.stathis.feature.databinding.HolderEmptyViewBinding
 import com.stathis.feature.databinding.HolderFieldofstudyParentBinding
 import com.stathis.feature.databinding.HolderProgrammeParentItemBinding
 import com.stathis.feature.databinding.HolderSocialParentBinding
-import com.stathis.feature.databinding.HolderViewpagerCarouselItemBinding
+import com.stathis.model.UiModel
 import com.stathis.model.department.DepartmentPersonnelItem
 import com.stathis.model.department.DepartmentProgrammeItem
 import com.stathis.model.department.DepartmentSocialItem
@@ -32,7 +32,7 @@ class DepartmentAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DepartmentViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = when (viewType) {
-            R.layout.holder_viewpager_carousel_item -> {
+            com.stathis.core.R.layout.holder_viewpager_carousel_item -> {
                 HolderViewpagerCarouselItemBinding.inflate(inflater, parent, false)
             }
 
@@ -63,7 +63,7 @@ class DepartmentAdapter(
     }
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
-        is CarouselParent -> R.layout.holder_viewpager_carousel_item
+        is CarouselParent -> com.stathis.core.R.layout.holder_viewpager_carousel_item
         is DepartmentProgrammeItem -> R.layout.holder_programme_parent_item
         is FieldOfStudyParent -> R.layout.holder_fieldofstudy_parent
         is DepartmentPersonnelItem -> R.layout.holder_dep_member_parent

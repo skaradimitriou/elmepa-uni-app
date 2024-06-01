@@ -54,6 +54,7 @@ dependencies {
     implementation(project(":feature:announcements"))
     implementation(project(":feature:personnel"))
     implementation(project(":feature:syllabus"))
+    implementation(project(":feature:students"))
     implementation(project(":feature:support"))
     implementation(project(":feature:common"))
 
