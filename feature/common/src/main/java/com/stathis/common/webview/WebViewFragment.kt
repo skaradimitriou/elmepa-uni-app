@@ -1,15 +1,15 @@
-package com.stathis.feature.ui.webview
+package com.stathis.common.webview
 
+import com.stathis.common.R
+import com.stathis.common.databinding.FragmentWebviewBinding
+import com.stathis.common.util.DEFAULT_URL
+import com.stathis.common.util.DEFAULT_WEB_TITLE
 import com.stathis.core.base.BaseFragment
+import com.stathis.core.util.TITLE
+import com.stathis.core.util.URL
 import com.stathis.core.util.enableJS
 import com.stathis.core.util.onPageLoaded
 import com.stathis.core.util.setScreenTitle
-import com.stathis.feature.R
-import com.stathis.feature.databinding.FragmentWebviewBinding
-import com.stathis.feature.util.DEFAULT_URL
-import com.stathis.feature.util.DEFAULT_WEB_TITLE
-import com.stathis.feature.util.TITLE
-import com.stathis.feature.util.URL
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

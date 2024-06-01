@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/webViewFragment"
-        android:name="com.stathis.feature.ui.webview.WebViewFragment"
+        android:name="com.stathis.common.webview.WebViewFragment"
         android:label="WebViewFragment"
         tools:layout="@layout/fragment_webview" />
 

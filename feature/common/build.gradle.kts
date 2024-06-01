@@ -1,23 +1,17 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.googleServices)
-    id("com.google.firebase.crashlytics")
-    id("com.google.firebase.firebase-perf")
 }
 
 android {
-    namespace = "com.stathis.elmepaunivapp"
+    namespace = "com.stathis.common"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.stathis.elmepaunivapp"
         minSdk = 27
-        targetSdk = 34
-        versionCode = 9
-        versionName = "9.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,42 +40,22 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
 
     implementation(project(":core"))
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":model"))
-    implementation(project(":feature"))
-    implementation(project(":feature:common"))
 
     implementation(libs.viewModelLifecycle)
     implementation(libs.liveDataLifecycle)
     implementation(libs.lifecycle.common)
 
-    implementation(libs.fragment.navigation)
-    implementation(libs.ui.navigation)
-
     implementation(libs.hilt.android)
-    implementation(libs.firebase.crashlytics)
-    implementation(libs.firebase.perf)
     ksp(libs.hilt.compiler)
-
-    implementation(libs.timber)
-
-    implementation(libs.shimmer)
-    implementation(libs.coroutines.core)
-    implementation(libs.coroutines.android)
-
-    implementation(libs.swipeToRefresh)
-    implementation(libs.preference.ktx)
-
-    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
-    implementation("com.google.firebase:firebase-perf")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

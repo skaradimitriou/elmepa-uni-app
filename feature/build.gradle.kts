@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":feature:personnel"))
     implementation(project(":feature:syllabus"))
     implementation(project(":feature:support"))
+    implementation(project(":feature:common"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
