@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.stathis.students"
+    namespace = "com.stathis.department"
     compileSdk = 34
 
     defaultConfig {
@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+
     implementation(project(":core"))
     implementation(project(":data"))
     implementation(project(":domain"))
@@ -63,6 +64,7 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.swipeToRefresh)
     implementation(libs.shimmer)
+    implementation(libs.circleImgView)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
