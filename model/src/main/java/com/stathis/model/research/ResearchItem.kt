@@ -5,7 +5,8 @@ import com.stathis.model.UiModel
 data class ResearchItem(
     val name: String,
     val openUrl: String,
-    val imageUrl: String
+    val imageUrl: String,
+    val openInBrowser: Boolean
 ) : UiModel {
     override fun equalsContent(obj: UiModel): Boolean = when (obj) {
         is ResearchItem -> name == obj.name && openUrl == obj.openUrl && imageUrl == obj.imageUrl

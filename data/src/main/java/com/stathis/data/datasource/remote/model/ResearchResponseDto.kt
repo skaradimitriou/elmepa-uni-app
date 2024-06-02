@@ -8,5 +8,6 @@ data class ResearchResponseDto(
 data class ResearchItemDto(
     val name: String? = null,
     val url: String? = null,
-    val imageResource: String? = null
+    val imageResource: String? = null,
+    val openInBrowser: Boolean? = null
 )
