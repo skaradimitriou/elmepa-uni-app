@@ -9,7 +9,7 @@
         android:name=".util.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Δ.Ε.Τ\n(Αγ.Νικόλαος)"
+        android:label="ΔΕΤ\n(Αγ.Νικόλαος)"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
