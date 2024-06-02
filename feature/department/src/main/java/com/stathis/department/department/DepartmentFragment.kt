@@ -1,7 +1,5 @@
 package com.stathis.department.department
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -13,6 +11,7 @@ import com.stathis.core.util.TITLE
 import com.stathis.core.util.URL
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
+import com.stathis.core.util.startNativeBrowserIntent
 import com.stathis.department.R
 import com.stathis.department.databinding.FragmentDepartmentBinding
 import com.stathis.department.department.adapter.DepartmentAdapter
@@ -86,14 +85,10 @@ class DepartmentFragment : BaseFragment<FragmentDepartmentBinding>(R.layout.frag
 
     private fun openUrl(shouldOpenInBrowser: Boolean, title: String? = null, url: String) {
         if (shouldOpenInBrowser) {
-            openNativeBrowser(url)
+            startNativeBrowserIntent(url = url)
         } else {
             openWebView(title, url)
         }
-    }
-
-    private fun openNativeBrowser(url: String) {
-        startActivity(Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(url) })
     }
 
     private fun openWebView(title: String? = null, url: String) {

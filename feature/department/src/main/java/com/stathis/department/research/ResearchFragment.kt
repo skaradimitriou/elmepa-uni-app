@@ -11,6 +11,7 @@ import com.stathis.core.util.TITLE
 import com.stathis.core.util.URL
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
+import com.stathis.core.util.startNativeBrowserIntent
 import com.stathis.department.R
 import com.stathis.department.databinding.FragmentResearchInDeptBinding
 import com.stathis.department.research.recycler.ResearchAdapter
@@ -32,7 +33,11 @@ class ResearchFragment :
             putString(TITLE, item.name)
         }
 
-        activityVM.navigateWithAction(NavigationAction.WEBVIEW, args)
+        if (item.openInBrowser) {
+            startNativeBrowserIntent(url = item.openUrl)
+        } else {
+            activityVM.navigateWithAction(NavigationAction.WEBVIEW, args)
+        }
     }
 
     override fun init() {

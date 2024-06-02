@@ -118,3 +118,11 @@ fun Fragment.startShareIntent(subject: String, body: String) {
     val intent = Intent.createChooser(txtIntent, "Share", null)
     startActivity(intent)
 }
+
+/**
+ * Helper fun to launch a browser intent.
+ */
+
+fun Fragment.startNativeBrowserIntent(url: String) {
+    startActivity(Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(url) })
+}
