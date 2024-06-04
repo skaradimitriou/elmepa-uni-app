@@ -6,8 +6,9 @@ import com.stathis.core.base.BaseViewModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchSemestersUseCase
 import com.stathis.model.network.NetworkResult
-import com.stathis.model.syllabus.Orientation
 import com.stathis.model.syllabus.OrientationType
+import com.stathis.model.syllabus.Programme
+import com.stathis.model.syllabus.ProgrammeType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,15 +23,15 @@ class SyllabusViewModel @Inject constructor(
     private val useCase: FetchSemestersUseCase
 ) : BaseViewModel(app) {
 
-    val semesters: StateFlow<NetworkResult<List<Orientation>>>
+    val semesters: StateFlow<NetworkResult<List<Programme>>>
         get() = _semesters
 
     private val _semesters =
-        MutableStateFlow<NetworkResult<List<Orientation>>>(NetworkResult.Loading())
+        MutableStateFlow<NetworkResult<List<Programme>>>(NetworkResult.Loading())
 
-    fun fetchSemesters(selectedOrientation: OrientationType?) {
+    fun fetchSemestersByProgramme(programme: ProgrammeType?, orientation: OrientationType? = null) {
         viewModelScope.launch(dispatcher) {
-            useCase.invoke(selectedOrientation).collect {
+            useCase.invoke(programme, orientation).collect {
                 _semesters.emit(it)
             }
         }

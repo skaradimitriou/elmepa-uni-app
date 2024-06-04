@@ -7,6 +7,7 @@ import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchLessonDetailsUseCase
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.Lesson
+import com.stathis.model.syllabus.ProgrammeType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -27,9 +28,9 @@ class LessonDetailsViewModel @Inject constructor(
     private val _lessonDetails =
         MutableStateFlow<NetworkResult<List<Lesson>>>(NetworkResult.Loading())
 
-    fun fetchLessonDetails(lessonName: String) {
+    fun fetchLessonDetails(programmeType: ProgrammeType, lessonName: String) {
         viewModelScope.launch(dispatcher) {
-            useCase.invoke(lessonName).collect { data ->
+            useCase.invoke(programmeType, lessonName).collect { data ->
                 _lessonDetails.emit(data)
             }
         }

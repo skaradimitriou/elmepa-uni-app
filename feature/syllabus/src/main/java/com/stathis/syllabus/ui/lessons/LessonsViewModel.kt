@@ -3,11 +3,12 @@ package com.stathis.syllabus.ui.lessons
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.core.base.BaseViewModel
-import com.stathis.model.UiModel
 import com.stathis.core.di.IoDispatcher
 import com.stathis.domain.usecase.FetchLessonsUseCase
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.OrientationType
+import com.stathis.model.syllabus.ProgrammeType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -27,9 +28,13 @@ class LessonsViewModel @Inject constructor(
 
     private val _lessons = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
-    fun fetchLessonsForSemesterAndOrientation(semesterName: String, orientation: OrientationType) {
+    fun fetchLessonsByFields(
+        programme: ProgrammeType,
+        orientation: OrientationType,
+        semesterName: String,
+    ) {
         viewModelScope.launch(dispatcher) {
-            useCase.invoke(semesterName, orientation).collect { data ->
+            useCase.invoke(programme, orientation, semesterName).collect { data ->
                 _lessons.emit(data)
             }
         }

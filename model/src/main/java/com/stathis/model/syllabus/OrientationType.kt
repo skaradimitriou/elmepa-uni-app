@@ -1,5 +1,8 @@
 package com.stathis.model.syllabus
 
 enum class OrientationType {
-    BA, MKT, DATA, UNDEFINED
+    UNDEFINED,
+    BA,
+    MKT,
+    DATA
 }

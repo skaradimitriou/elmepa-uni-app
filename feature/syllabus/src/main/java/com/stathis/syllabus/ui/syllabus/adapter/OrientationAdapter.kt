@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.core.base.BaseDiffUtil
 import com.stathis.core.base.BaseViewHolder
-import com.stathis.model.UiModel
 import com.stathis.core.util.setupItemDecoration
-import com.stathis.model.syllabus.Orientation
+import com.stathis.model.UiModel
 import com.stathis.model.syllabus.OrientationType
-import com.stathis.model.syllabus.Semester
+import com.stathis.model.syllabus.Programme
+import com.stathis.model.syllabus.ProgrammeType
 import com.stathis.syllabus.databinding.HolderOrientationItemBinding
 
 class OrientationAdapter(
@@ -34,9 +34,13 @@ class OrientationViewHolder(
 
     override fun bind(data: UiModel) {
         when (data) {
-            is Orientation -> {
+            is Programme -> {
                 val adapter = SemesterAdapter { selectedSemester ->
-                    callback.onSemesterTap(data.type, selectedSemester)
+                    callback.onSemesterTap(
+                        programmeType = data.type,
+                        orientation = data.orientationType,
+                        semester = selectedSemester.name
+                    )
                 }
 
                 binding.model = data
@@ -55,5 +59,9 @@ class OrientationViewHolder(
 }
 
 fun interface OrientationCallback {
-    fun onSemesterTap(orientation: OrientationType, semester: Semester)
+    fun onSemesterTap(
+        programmeType: ProgrammeType,
+        orientation: OrientationType,
+        semester: String
+    )
 }

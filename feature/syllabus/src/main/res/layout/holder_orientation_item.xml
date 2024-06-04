@@ -9,7 +9,7 @@
 
         <variable
             name="model"
-            type="com.stathis.model.syllabus.Orientation" />
+            type="com.stathis.model.syllabus.Programme" />
 
         <variable
             name="adapter"

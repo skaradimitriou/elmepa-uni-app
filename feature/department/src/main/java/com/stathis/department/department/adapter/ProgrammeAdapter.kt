@@ -12,7 +12,7 @@ import com.stathis.department.R
 import com.stathis.department.databinding.HolderProgrammeItemBinding
 import com.stathis.department.databinding.HolderShimmerProgrammeItemBinding
 import com.stathis.model.UiModel
-import com.stathis.model.department.Programme
+import com.stathis.model.department.ProgrammeItem
 import com.stathis.model.general.ShimmerItem
 
 class ProgrammeAdapter(
@@ -40,7 +40,7 @@ class ProgrammeAdapter(
     }
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
-        is Programme -> R.layout.holder_programme_item
+        is ProgrammeItem -> R.layout.holder_programme_item
         is ShimmerItem -> R.layout.holder_shimmer_programme_item
         else -> com.stathis.core.R.layout.holder_empty_view
     }
@@ -58,5 +58,5 @@ class ProgrammeViewHolder(
 }
 
 fun interface ProgrammeCallback {
-    fun onProgrammeTap(model: Programme)
+    fun onProgrammeTap(model: ProgrammeItem)
 }

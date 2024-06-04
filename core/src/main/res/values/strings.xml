@@ -54,6 +54,7 @@
     <string name="data_orientation">Επιστήμη των \nΔεδομένων &amp; Τεχνολογίες\n Πληροφορικής</string>
     <string name="ba_orientation">Διοίκηση Επιχειρήσεων \n&amp; Οργανισμών</string>
     <string name="mkt_orientation">Ψηφιακό Μάρκετινγκ \n&amp; Επικοινωνία</string>
+    <string name="postgraduate_programme">Π.Μ.Σ. «Διοίκηση και Ψηφιακός Μετασχηματισμός»</string>
 
     <!-- Lessons -->
     <string name="lesson_info_title">Info</string>
