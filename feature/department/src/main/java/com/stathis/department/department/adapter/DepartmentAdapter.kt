@@ -20,7 +20,7 @@ import com.stathis.model.department.DepartmentPersonnelItem
 import com.stathis.model.department.DepartmentProgrammeItem
 import com.stathis.model.department.DepartmentSocialItem
 import com.stathis.model.department.FieldOfStudyParent
-import com.stathis.model.department.Programme
+import com.stathis.model.department.ProgrammeItem
 import com.stathis.model.department.SocialItem
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.general.carousel.CarouselParent
@@ -122,6 +122,6 @@ class DepartmentViewHolder(
 
 interface DepartmentCallback {
     fun onCarouselItemTap(model: CarouselItem)
-    fun onProgrammeItemTap(model: Programme)
+    fun onProgrammeItemTap(model: ProgrammeItem)
     fun onSocialItemTap(model: SocialItem)
 }

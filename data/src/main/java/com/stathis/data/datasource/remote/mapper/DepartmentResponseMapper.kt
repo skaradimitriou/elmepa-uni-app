@@ -11,7 +11,7 @@ import com.stathis.model.department.DepartmentProgrammeItem
 import com.stathis.model.department.DepartmentSocialItem
 import com.stathis.model.department.FieldOfStudy
 import com.stathis.model.department.FieldOfStudyParent
-import com.stathis.model.department.Programme
+import com.stathis.model.department.ProgrammeItem
 import com.stathis.model.department.SocialItem
 
 object DepartmentResponseMapper : BaseMapper<DepartmentResponseDto?, List<UiModel>> {
@@ -42,7 +42,7 @@ object DepartmentResponseMapper : BaseMapper<DepartmentResponseDto?, List<UiMode
 
     @JvmName("toNotNullProgrammes")
     private fun List<ProgrammeItemDto>?.toNotNull() = this?.map { item ->
-        Programme(
+        ProgrammeItem(
             title = item.title.toNotNull(),
             description = item.description.toNotNull(),
             imageUrl = item.imageUrl.toNotNull(),

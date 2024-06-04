@@ -16,7 +16,7 @@ import com.stathis.department.R
 import com.stathis.department.databinding.FragmentDepartmentBinding
 import com.stathis.department.department.adapter.DepartmentAdapter
 import com.stathis.department.department.adapter.DepartmentCallback
-import com.stathis.model.department.Programme
+import com.stathis.model.department.ProgrammeItem
 import com.stathis.model.department.SocialItem
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.navigation.NavigationAction
@@ -71,7 +71,7 @@ class DepartmentFragment : BaseFragment<FragmentDepartmentBinding>(R.layout.frag
         url = model.openUrl
     )
 
-    override fun onProgrammeItemTap(model: Programme) = openUrl(
+    override fun onProgrammeItemTap(model: ProgrammeItem) = openUrl(
         shouldOpenInBrowser = model.openInBrowser,
         title = model.title,
         url = model.openUrl

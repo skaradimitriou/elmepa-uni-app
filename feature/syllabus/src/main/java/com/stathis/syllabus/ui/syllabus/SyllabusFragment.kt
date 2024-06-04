@@ -8,6 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.stathis.core.MainSharedViewModel
 import com.stathis.core.MainViewModel
 import com.stathis.core.base.BaseFragment
+import com.stathis.core.util.onTabSelected
 import com.stathis.core.util.setScreenTitle
 import com.stathis.core.util.setupItemDecoration
 import com.stathis.model.navigation.NavigationAction
@@ -16,7 +17,10 @@ import com.stathis.syllabus.R
 import com.stathis.syllabus.databinding.FragmentSyllabusBinding
 import com.stathis.syllabus.ui.syllabus.adapter.OrientationAdapter
 import com.stathis.syllabus.util.ORIENTATION
+import com.stathis.syllabus.util.PROGRAMME
 import com.stathis.syllabus.util.SEMESTER
+import com.stathis.syllabus.util.toProgrammeType
+import com.stathis.syllabus.util.toTabPosition
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -27,24 +31,39 @@ class SyllabusFragment : BaseFragment<FragmentSyllabusBinding>(R.layout.fragment
     private val activityVM by activityViewModels<MainViewModel>()
     private val sharedVM by activityViewModels<MainSharedViewModel>()
 
-    private val adapter = OrientationAdapter { orientationType, semester ->
+    private val adapter = OrientationAdapter { programmeType, orientationType, semester ->
         val args = Bundle().apply {
-            putString(SEMESTER, semester.name)
+            putSerializable(PROGRAMME, programmeType)
             putSerializable(ORIENTATION, orientationType)
+            putString(SEMESTER, semester)
         }
+
+        sharedVM.selectedProgrammeType = programmeType
         sharedVM.selectedOrientation = orientationType
+
         activityVM.navigateWithAction(NavigationAction.LESSONS, args)
     }
 
     override fun init() {
         setScreenTitle(getString(com.stathis.core.R.string.syllabus))
 
+        val programme = sharedVM.selectedProgrammeType
+        binding.syllabusTabLayout.getTabAt(programme.toTabPosition())?.select()
+
+        viewModel.fetchSemestersByProgramme(
+            programme = programme,
+            orientation = sharedVM.selectedOrientation
+        )
+
         binding.syllabusRecycler.apply {
             setupItemDecoration()
             adapter = this@SyllabusFragment.adapter
         }
 
-        viewModel.fetchSemesters(sharedVM.selectedOrientation)
+        binding.syllabusTabLayout.onTabSelected { tab ->
+            val type = tab.position.toProgrammeType()
+            viewModel.fetchSemestersByProgramme(programme = type)
+        }
     }
 
     override fun startOps() {

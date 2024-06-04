@@ -2,14 +2,15 @@ package com.stathis.model.syllabus
 
 import com.stathis.model.UiModel
 
-data class Orientation(
+data class Programme(
     val title: String,
+    val type: ProgrammeType,
+    val orientationType: OrientationType,
     val semesters: List<Semester>,
-    val type: OrientationType,
     var isExpanded: Boolean = false
 ) : UiModel {
     override fun equalsContent(obj: UiModel) = when (obj) {
-        is Orientation -> title == obj.title
+        is Programme -> title == obj.title
         else -> false
     }
 }

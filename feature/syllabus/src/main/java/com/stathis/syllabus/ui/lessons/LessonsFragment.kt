@@ -16,11 +16,13 @@ import com.stathis.core.util.toNotNull
 import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.OrientationType
+import com.stathis.model.syllabus.ProgrammeType
 import com.stathis.syllabus.R
 import com.stathis.syllabus.databinding.FragmentLessonsBinding
 import com.stathis.syllabus.ui.lessons.adapter.LessonsAdapter
 import com.stathis.syllabus.util.LESSON
 import com.stathis.syllabus.util.ORIENTATION
+import com.stathis.syllabus.util.PROGRAMME
 import com.stathis.syllabus.util.SEMESTER
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -49,13 +51,20 @@ class LessonsFragment : BaseFragment<FragmentLessonsBinding>(R.layout.fragment_l
                 )
             })
 
-        val semester = arguments?.getString(SEMESTER).toNotNull()
-        setScreenTitle(semester)
+        val programmeType = arguments?.getSerializable<ProgrammeType>(PROGRAMME)
+            ?: ProgrammeType.UNDEFINED
 
         val orientation = arguments?.getSerializable<OrientationType>(ORIENTATION)
             ?: OrientationType.UNDEFINED
 
-        viewModel.fetchLessonsForSemesterAndOrientation(semester, orientation)
+        val semester = arguments?.getString(SEMESTER).toNotNull()
+        setScreenTitle(semester)
+
+        viewModel.fetchLessonsByFields(
+            programme = programmeType,
+            orientation = orientation,
+            semesterName = semester
+        )
 
         binding.syllabusRecycler.apply {
             setupItemDecoration()

@@ -11,6 +11,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
 import com.stathis.core.adapters.CarouselAdapter
 import com.stathis.core.decorations.CustomItemDecoration
 
@@ -25,8 +26,19 @@ fun RecyclerView.setupItemDecoration(
     end: Int = 30,
     bottom: Int = 0
 ) {
+    removeAllItemDecorations()
     val decor = CustomItemDecoration(top, start, end, bottom)
     addItemDecoration(decor)
+}
+
+/**
+ * Helper Method to clear all item decorations of a [RecyclerView].
+ */
+
+fun RecyclerView.removeAllItemDecorations() {
+    while (itemDecorationCount > 0) {
+        removeItemDecorationAt(0)
+    }
 }
 
 fun WebView.enableJS() = apply { settings.javaScriptEnabled = true }
@@ -90,6 +102,22 @@ fun setScrollableViewPager(viewPager: ViewPager2, adapter: CarouselAdapter) {
                 true -> sliderHandler.postDelayed(sliderRunnable, 2500)
                 else -> Unit
             }
+        }
+    })
+}
+
+fun TabLayout.onTabSelected(callback: (TabLayout.Tab) -> Unit) {
+    addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        override fun onTabSelected(tab: TabLayout.Tab?) {
+            tab?.let { callback.invoke(it) }
+        }
+
+        override fun onTabUnselected(tab: TabLayout.Tab?) {
+            //
+        }
+
+        override fun onTabReselected(tab: TabLayout.Tab?) {
+            //
         }
     })
 }
