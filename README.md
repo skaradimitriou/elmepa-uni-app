@@ -16,9 +16,7 @@ This repository contains an Android application built & tailored specifically fo
 
 ## App Architecture 🛠️
 
-```kotlin
-//Coming soon
-```
+![mvvm_clean_architecture](https://github.com/skaradimitriou/elmepa-uni-app/assets/64270931/e69e918e-5b90-48d4-b920-c8c771f13dab)
 
 ## Modularization 🧩
 
