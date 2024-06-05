@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.databinding.HolderEmptyViewBinding
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
+import com.stathis.common.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
 import com.stathis.model.faq.Faq
 import com.stathis.model.general.ShimmerItem
@@ -15,7 +15,7 @@ import com.stathis.support.R
 import com.stathis.support.databinding.HolderFaqItemBinding
 import com.stathis.support.databinding.HolderShimmerFaqBinding
 
-class FaqAdapter : ListAdapter<UiModel, FaqViewHolder>(BaseDiffUtil<UiModel>()) {
+class FaqAdapter : ListAdapter<com.stathis.model.UiModel, FaqViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FaqViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -40,7 +40,7 @@ class FaqAdapter : ListAdapter<UiModel, FaqViewHolder>(BaseDiffUtil<UiModel>()) 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
         is Faq -> R.layout.holder_faq_item
         is ShimmerItem -> R.layout.holder_shimmer_faq
-        else -> com.stathis.core.R.layout.holder_empty_view
+        else -> com.stathis.common.R.layout.holder_empty_view
     }
 }
 
@@ -48,7 +48,7 @@ class FaqViewHolder(
     private val binding: ViewDataBinding
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is Faq -> {
                 val binding = (binding as HolderFaqItemBinding)

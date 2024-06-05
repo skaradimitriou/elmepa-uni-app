@@ -7,12 +7,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.stathis.core.MainSharedViewModel
-import com.stathis.core.MainViewModel
-import com.stathis.core.base.BaseActivity
-import com.stathis.core.util.buildAndShowSnackBar
-import com.stathis.core.util.networkmanager.NetworkStatus
-import com.stathis.core.util.onBackButtonClick
+import com.stathis.common.MainSharedViewModel
+import com.stathis.common.MainViewModel
+import com.stathis.common.base.BaseActivity
+import com.stathis.common.util.buildAndShowSnackBar
+import com.stathis.common.util.networkmanager.NetworkStatus
+import com.stathis.common.util.onBackButtonClick
 import com.stathis.elmepaunivapp.databinding.ActivityMainBinding
 import com.stathis.elmepaunivapp.navigation.NavigatorImpl
 import com.stathis.model.navigation.NavigationAction
@@ -71,8 +71,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                     is NetworkStatus.Unavailable -> {
                         buildAndShowSnackBar(
                             view = binding.main,
-                            title = getString(com.stathis.core.R.string.no_conn_title),
-                            actionText = getString(com.stathis.core.R.string.no_conn_action),
+                            title = getString(com.stathis.common.R.string.no_conn_title),
+                            actionText = getString(com.stathis.common.R.string.no_conn_action),
                             callback = {
                                 //FIXME: Implement reconnection attempt case
                             }
@@ -82,7 +82,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                     is NetworkStatus.Restored -> {
                         buildAndShowSnackBar(
                             view = binding.main,
-                            title = getString(com.stathis.core.R.string.conn_available_again_title)
+                            title = getString(com.stathis.common.R.string.conn_available_again_title)
                         )
                     }
 

@@ -2,9 +2,8 @@ package com.stathis.syllabus.ui.syllabus
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.stathis.core.base.BaseViewModel
-import com.stathis.core.di.IoDispatcher
-import com.stathis.domain.usecase.FetchSemestersUseCase
+import com.stathis.common.base.BaseViewModel
+import com.stathis.common.di.IoDispatcher
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.OrientationType
 import com.stathis.model.syllabus.Programme
@@ -20,7 +19,7 @@ import javax.inject.Inject
 class SyllabusViewModel @Inject constructor(
     val app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: FetchSemestersUseCase
+    private val useCase: com.stathis.domain.FetchSemestersUseCase
 ) : BaseViewModel(app) {
 
     val semesters: StateFlow<NetworkResult<List<Programme>>>

@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
 import com.stathis.model.UiModel
 import com.stathis.model.syllabus.Lesson
 import com.stathis.model.syllabus.LessonHeader
@@ -17,7 +17,7 @@ import com.stathis.syllabus.databinding.HolderLessonsHeaderItemBinding
 
 class LessonsAdapter(
     private val callback: LessonCallback
-) : ListAdapter<UiModel, LessonsViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<com.stathis.model.UiModel, LessonsViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -51,7 +51,7 @@ class LessonsViewHolder(
     private val callback: LessonCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is LessonHeader -> {
                 binding.setVariable(BR.lessonHeader, data)

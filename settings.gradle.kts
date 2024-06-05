@@ -22,15 +22,17 @@ dependencyResolutionManagement {
 
 rootProject.name = "ElmepaUniApp"
 include(":app")
-include(":data")
-include(":domain")
-include(":core")
-include(":model")
+include(":core:common")
+include(":core:data")
+include(":core:domain")
+include(":core:database")
+include(":core:model")
+
 include(":feature:syllabus")
 include(":feature:personnel")
 include(":feature:announcements")
 include(":feature:support")
 include(":feature:dashboard")
-include(":feature:common")
+include(":feature:web")
 include(":feature:students")
 include(":feature:department")

@@ -5,12 +5,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.stathis.core.MainSharedViewModel
-import com.stathis.core.MainViewModel
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.onTabSelected
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.setupItemDecoration
+import com.stathis.common.MainSharedViewModel
+import com.stathis.common.MainViewModel
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.onTabSelected
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.setupItemDecoration
 import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
 import com.stathis.syllabus.R
@@ -45,7 +45,7 @@ class SyllabusFragment : BaseFragment<FragmentSyllabusBinding>(R.layout.fragment
     }
 
     override fun init() {
-        setScreenTitle(getString(com.stathis.core.R.string.syllabus))
+        setScreenTitle(getString(com.stathis.common.R.string.syllabus))
 
         val programme = sharedVM.selectedProgrammeType
         binding.syllabusTabLayout.getTabAt(programme.toTabPosition())?.select()

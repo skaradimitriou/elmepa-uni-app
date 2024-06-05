@@ -6,9 +6,9 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
-import com.stathis.common.webview.WebViewFragment
-import com.stathis.core.util.TITLE
-import com.stathis.core.util.URL
+import com.stathis.web.webview.WebViewFragment
+import com.stathis.common.util.TITLE
+import com.stathis.common.util.URL
 import com.stathis.elmepaunivapp.R
 import com.stathis.elmepaunivapp.util.SCHEDULE_URL
 

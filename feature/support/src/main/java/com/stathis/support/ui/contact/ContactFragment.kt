@@ -3,11 +3,11 @@ package com.stathis.support.ui.contact
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.setupItemDecoration
-import com.stathis.core.util.startDialIntent
-import com.stathis.core.util.startEmailIntent
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.setupItemDecoration
+import com.stathis.common.util.startDialIntent
+import com.stathis.common.util.startEmailIntent
 import com.stathis.model.contact.ContactType
 import com.stathis.model.network.NetworkResult
 import com.stathis.support.R
@@ -30,7 +30,7 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
     }
 
     override fun init() {
-        setScreenTitle(getString(com.stathis.core.R.string.contact))
+        setScreenTitle(getString(com.stathis.common.R.string.contact))
 
         viewModel.fetchContactDetails()
 

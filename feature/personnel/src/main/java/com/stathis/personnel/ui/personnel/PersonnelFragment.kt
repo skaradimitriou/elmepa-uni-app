@@ -3,12 +3,12 @@ package com.stathis.personnel.ui.personnel
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.inflateCustomMenu
-import com.stathis.core.util.respondToQuery
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.setupItemDecoration
-import com.stathis.core.util.showPersonnelDialog
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.inflateCustomMenu
+import com.stathis.common.util.respondToQuery
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.setupItemDecoration
+import com.stathis.common.util.showPersonnelDialog
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.personnel.Person
 import com.stathis.personnel.R
@@ -27,14 +27,14 @@ class PersonnelFragment : BaseFragment<FragmentPersonnelBinding>(R.layout.fragme
     }
 
     override fun init() {
-        setScreenTitle(getString(com.stathis.core.R.string.personnel))
+        setScreenTitle(getString(com.stathis.common.R.string.personnel))
 
         inflateCustomMenu(
             menuId = R.menu.personnel_menu,
             respondItemId = R.id.action_search,
             callback = { menuItem ->
                 menuItem.respondToQuery(
-                    queryHint = getString(com.stathis.core.R.string.search_in_personnel)
+                    queryHint = getString(com.stathis.common.R.string.search_in_personnel)
                 ) { query -> viewModel.filterPersonnelByName(query) }
             })
 
@@ -74,14 +74,14 @@ class PersonnelFragment : BaseFragment<FragmentPersonnelBinding>(R.layout.fragme
 
     private fun openDialog(person: Person) {
         val message = when (person.gender) {
-            resources.getString(com.stathis.core.R.string.male) -> {
-                getString(com.stathis.core.R.string.send_email_to_male_personnel).format(
+            resources.getString(com.stathis.common.R.string.male) -> {
+                getString(com.stathis.common.R.string.send_email_to_male_personnel).format(
                     person.vocative
                 )
             }
 
-            resources.getString(com.stathis.core.R.string.female) -> {
-                getString(com.stathis.core.R.string.send_email_to_female_personnel).format(
+            resources.getString(com.stathis.common.R.string.female) -> {
+                getString(com.stathis.common.R.string.send_email_to_female_personnel).format(
                     person.vocative
                 )
             }

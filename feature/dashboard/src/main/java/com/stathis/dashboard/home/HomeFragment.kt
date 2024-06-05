@@ -4,11 +4,11 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.stathis.core.MainViewModel
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.setupDashboardGridLayout
-import com.stathis.core.util.setupItemDecoration
+import com.stathis.common.MainViewModel
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.setupDashboardGridLayout
+import com.stathis.common.util.setupItemDecoration
 import com.stathis.dashboard.R
 import com.stathis.dashboard.databinding.FragmentHomeBinding
 import com.stathis.dashboard.home.recyclerview.DashboardAdapter
@@ -28,7 +28,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     }
 
     override fun init() {
-        setScreenTitle(getString(com.stathis.core.R.string.main_screen_title))
+        setScreenTitle(getString(com.stathis.common.R.string.main_screen_title))
 
         binding.dashboardRecycler.apply {
             layoutManager = requireContext().setupDashboardGridLayout()

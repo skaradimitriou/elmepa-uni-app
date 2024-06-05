@@ -3,9 +3,9 @@ package com.stathis.support.ui.about
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.setupItemDecoration
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.setupItemDecoration
 import com.stathis.support.R
 import com.stathis.support.databinding.FragmentAboutAppBinding
 import com.stathis.support.ui.about.adapter.AboutAppAdapter
@@ -20,7 +20,7 @@ class AboutAppFragment : BaseFragment<FragmentAboutAppBinding>(R.layout.fragment
     private val adapter = AboutAppAdapter()
 
     override fun init() {
-        setScreenTitle(getString(com.stathis.core.R.string.about_app_title))
+        setScreenTitle(getString(com.stathis.common.R.string.about_app_title))
 
         binding.aboutAppRecycler.apply {
             setupItemDecoration(top = 0, bottom = 0)

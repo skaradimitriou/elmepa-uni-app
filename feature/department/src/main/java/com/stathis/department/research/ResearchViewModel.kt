@@ -2,9 +2,8 @@ package com.stathis.department.research
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.stathis.core.base.BaseViewModel
-import com.stathis.core.di.IoDispatcher
-import com.stathis.domain.usecase.FetchResearchInDeptUseCase
+import com.stathis.common.base.BaseViewModel
+import com.stathis.common.di.IoDispatcher
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.research.ResearchResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +17,7 @@ import javax.inject.Inject
 class ResearchViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: FetchResearchInDeptUseCase
+    private val useCase: com.stathis.domain.FetchResearchInDeptUseCase
 ) : BaseViewModel(app) {
 
     val data: StateFlow<NetworkResult<List<ResearchResponse>>>

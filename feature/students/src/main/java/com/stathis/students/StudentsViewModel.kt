@@ -2,10 +2,8 @@ package com.stathis.students
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.stathis.core.base.BaseViewModel
-import com.stathis.core.di.IoDispatcher
-import com.stathis.domain.usecase.FetchStudentsScreenDataUseCase
-import com.stathis.model.UiModel
+import com.stathis.common.base.BaseViewModel
+import com.stathis.common.di.IoDispatcher
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -18,13 +16,13 @@ import javax.inject.Inject
 class StudentsViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: FetchStudentsScreenDataUseCase
+    private val useCase: com.stathis.domain.FetchStudentsScreenDataUseCase
 ) : BaseViewModel(app) {
 
-    val data: StateFlow<NetworkResult<List<UiModel>>>
+    val data: StateFlow<NetworkResult<List<com.stathis.model.UiModel>>>
         get() = _data
 
-    private val _data = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
+    private val _data = MutableStateFlow<NetworkResult<List<com.stathis.model.UiModel>>>(NetworkResult.Loading())
 
     fun fetchStudentInformation() {
         viewModelScope.launch(dispatcher) {

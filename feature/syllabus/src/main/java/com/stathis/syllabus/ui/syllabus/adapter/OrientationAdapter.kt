@@ -3,9 +3,9 @@ package com.stathis.syllabus.ui.syllabus.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.util.setupItemDecoration
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
+import com.stathis.common.util.setupItemDecoration
 import com.stathis.model.UiModel
 import com.stathis.model.syllabus.OrientationType
 import com.stathis.model.syllabus.Programme
@@ -14,7 +14,7 @@ import com.stathis.syllabus.databinding.HolderOrientationItemBinding
 
 class OrientationAdapter(
     private val callback: OrientationCallback
-) : ListAdapter<UiModel, OrientationViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<com.stathis.model.UiModel, OrientationViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrientationViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -32,7 +32,7 @@ class OrientationViewHolder(
     private val callback: OrientationCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is Programme -> {
                 val adapter = SemesterAdapter { selectedSemester ->
