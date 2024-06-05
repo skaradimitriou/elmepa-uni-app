@@ -8,14 +8,16 @@ import com.stathis.announcements.BR
 import com.stathis.announcements.R
 import com.stathis.announcements.databinding.HolderPostDetailsItemBinding
 import com.stathis.announcements.databinding.HolderPostDetailsWebBinding
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.databinding.HolderEmptyViewBinding
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
+import com.stathis.common.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
 import com.stathis.model.announcements.details.PostDetailsHeader
 import com.stathis.model.announcements.details.PostDetailsHtmlContent
 
-class PostDetailsAdapter : ListAdapter<UiModel, PostDetailsViewHolder>(BaseDiffUtil<UiModel>()) {
+class PostDetailsAdapter : ListAdapter<com.stathis.model.UiModel, PostDetailsViewHolder>(
+    BaseDiffUtil<UiModel>()
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostDetailsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -42,7 +44,7 @@ class PostDetailsAdapter : ListAdapter<UiModel, PostDetailsViewHolder>(BaseDiffU
     override fun getItemViewType(position: Int) = when (getItem(position)) {
         is PostDetailsHeader -> R.layout.holder_post_details_item
         is PostDetailsHtmlContent -> R.layout.holder_post_details_web
-        else -> com.stathis.core.R.layout.holder_empty_view
+        else -> com.stathis.common.R.layout.holder_empty_view
     }
 }
 
@@ -50,7 +52,7 @@ class PostDetailsViewHolder(
     private val binding: ViewDataBinding
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is PostDetailsHeader, is PostDetailsHtmlContent -> {
                 binding.setVariable(BR.model, data)

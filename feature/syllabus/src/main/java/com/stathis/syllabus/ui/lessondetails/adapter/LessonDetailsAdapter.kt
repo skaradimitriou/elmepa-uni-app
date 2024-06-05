@@ -3,15 +3,15 @@ package com.stathis.syllabus.ui.lessondetails.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
 import com.stathis.model.UiModel
 import com.stathis.model.syllabus.Lesson
 import com.stathis.syllabus.BR
 import com.stathis.syllabus.databinding.HolderLessonDetailsBinding
 
 class LessonDetailsAdapter :
-    ListAdapter<UiModel, LessonDetailsViewHolder>(BaseDiffUtil<UiModel>()) {
+    ListAdapter<com.stathis.model.UiModel, LessonDetailsViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonDetailsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -28,7 +28,7 @@ class LessonDetailsViewHolder(
     private val binding: HolderLessonDetailsBinding
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is Lesson -> {
                 binding.setVariable(BR.model, data)

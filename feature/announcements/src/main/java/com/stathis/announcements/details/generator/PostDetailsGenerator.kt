@@ -1,6 +1,6 @@
 package com.stathis.announcements.details.generator
 
-import com.stathis.core.util.toNotNull
+import com.stathis.common.util.toNotNull
 import com.stathis.model.announcements.details.PostDetailsHeader
 import com.stathis.model.announcements.details.PostDetailsHtmlContent
 import com.stathis.model.announcements.details.PostDetailsResponse

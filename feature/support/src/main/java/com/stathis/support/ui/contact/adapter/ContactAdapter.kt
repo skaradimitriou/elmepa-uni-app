@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
 import com.stathis.model.UiModel
 import com.stathis.model.contact.ContactItem
 import com.stathis.support.BR
@@ -13,7 +13,7 @@ import com.stathis.support.databinding.HolderContactItemBinding
 
 class ContactAdapter(
     val callback: ContactCallback
-) : ListAdapter<UiModel, ContactViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<com.stathis.model.UiModel, ContactViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -31,7 +31,7 @@ class ContactViewHolder(
     val callback: ContactCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is ContactItem -> {
                 binding.setVariable(BR.model, data)

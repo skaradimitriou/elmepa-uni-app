@@ -8,14 +8,14 @@ import androidx.lifecycle.lifecycleScope
 import com.stathis.announcements.R
 import com.stathis.announcements.databinding.FragmentEventsBinding
 import com.stathis.announcements.events.adapter.EventsAdapter
-import com.stathis.core.MainViewModel
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.IMAGE
-import com.stathis.core.util.PUB_DATE
-import com.stathis.core.util.TITLE
-import com.stathis.core.util.URL
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.setupItemDecoration
+import com.stathis.common.MainViewModel
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.IMAGE
+import com.stathis.common.util.PUB_DATE
+import com.stathis.common.util.TITLE
+import com.stathis.common.util.URL
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.setupItemDecoration
 import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +38,7 @@ class EventsFragment : BaseFragment<FragmentEventsBinding>(R.layout.fragment_eve
     }
 
     override fun init() {
-        setScreenTitle(getString(com.stathis.core.R.string.events))
+        setScreenTitle(getString(com.stathis.common.R.string.events))
 
         binding.eventsRecycler.apply {
             adapter = this@EventsFragment.adapter

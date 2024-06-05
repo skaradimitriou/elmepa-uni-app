@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.core.adapters.CarouselAdapter
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.databinding.HolderEmptyViewBinding
-import com.stathis.core.databinding.HolderViewpagerCarouselItemBinding
+import com.stathis.common.adapters.CarouselAdapter
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
+import com.stathis.common.databinding.HolderEmptyViewBinding
+import com.stathis.common.databinding.HolderViewpagerCarouselItemBinding
 import com.stathis.department.BR
 import com.stathis.department.R
 import com.stathis.department.databinding.HolderDepMemberParentBinding
@@ -27,12 +27,12 @@ import com.stathis.model.general.carousel.CarouselParent
 
 class DepartmentAdapter(
     private val callback: DepartmentCallback
-) : ListAdapter<UiModel, DepartmentViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<com.stathis.model.UiModel, DepartmentViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DepartmentViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = when (viewType) {
-            com.stathis.core.R.layout.holder_viewpager_carousel_item -> {
+            com.stathis.common.R.layout.holder_viewpager_carousel_item -> {
                 HolderViewpagerCarouselItemBinding.inflate(inflater, parent, false)
             }
 
@@ -63,12 +63,12 @@ class DepartmentAdapter(
     }
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
-        is CarouselParent -> com.stathis.core.R.layout.holder_viewpager_carousel_item
+        is CarouselParent -> com.stathis.common.R.layout.holder_viewpager_carousel_item
         is DepartmentProgrammeItem -> R.layout.holder_programme_parent_item
         is FieldOfStudyParent -> R.layout.holder_fieldofstudy_parent
         is DepartmentPersonnelItem -> R.layout.holder_dep_member_parent
         is DepartmentSocialItem -> R.layout.holder_social_parent
-        else -> com.stathis.core.R.layout.holder_empty_view
+        else -> com.stathis.common.R.layout.holder_empty_view
     }
 }
 
@@ -77,7 +77,7 @@ class DepartmentViewHolder(
     private val callback: DepartmentCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is CarouselParent -> {
                 val adapter = CarouselAdapter { selectedItem ->

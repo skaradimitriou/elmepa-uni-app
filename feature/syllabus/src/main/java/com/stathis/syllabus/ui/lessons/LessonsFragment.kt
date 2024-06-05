@@ -5,14 +5,14 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.stathis.core.MainViewModel
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.getSerializable
-import com.stathis.core.util.inflateCustomMenu
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.setupItemDecoration
-import com.stathis.core.util.showDialog
-import com.stathis.core.util.toNotNull
+import com.stathis.common.MainViewModel
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.getSerializable
+import com.stathis.common.util.inflateCustomMenu
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.setupItemDecoration
+import com.stathis.common.util.showDialog
+import com.stathis.common.util.toNotNull
 import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.OrientationType
@@ -46,8 +46,8 @@ class LessonsFragment : BaseFragment<FragmentLessonsBinding>(R.layout.fragment_l
             respondItemId = R.id.lesson_info,
             callback = {
                 showDialog(
-                    title = getString(com.stathis.core.R.string.info_title),
-                    message = getString(com.stathis.core.R.string.info_body)
+                    title = getString(com.stathis.common.R.string.info_title),
+                    message = getString(com.stathis.common.R.string.info_body)
                 )
             })
 

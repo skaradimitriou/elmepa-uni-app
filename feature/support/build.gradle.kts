@@ -45,10 +45,9 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
-    implementation(project(":core"))
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":model"))
+    implementation(project(":core:common"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:model"))
 
     implementation(libs.viewModelLifecycle)
     implementation(libs.liveDataLifecycle)

@@ -4,10 +4,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.stathis.core.MainSharedViewModel
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.toNotNull
+import com.stathis.common.MainSharedViewModel
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.toNotNull
 import com.stathis.model.network.NetworkResult
 import com.stathis.syllabus.R
 import com.stathis.syllabus.databinding.FragmentLessonDetailsBinding
@@ -26,7 +26,7 @@ class LessonDetailsFragment :
     private val adapter = LessonDetailsAdapter()
 
     override fun init() {
-        setScreenTitle(getString(com.stathis.core.R.string.lesson_information))
+        setScreenTitle(getString(com.stathis.common.R.string.lesson_information))
 
         val lessonName = arguments?.getString(LESSON).toNotNull()
         val programme = sharedVM.selectedProgrammeType

@@ -3,9 +3,9 @@ package com.stathis.department.research.recycler
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.util.setupItemDecoration
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
+import com.stathis.common.util.setupItemDecoration
 import com.stathis.department.databinding.HolderResearchScreenItemBinding
 import com.stathis.model.UiModel
 import com.stathis.model.research.ResearchItem
@@ -13,7 +13,7 @@ import com.stathis.model.research.ResearchResponse
 
 class ResearchAdapter(
     private val callback: ResearchCallback
-) : ListAdapter<UiModel, ResearchViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<com.stathis.model.UiModel, ResearchViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResearchViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -31,7 +31,7 @@ class ResearchViewHolder(
     private val callback: ResearchCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is ResearchResponse -> {
                 binding.model = data

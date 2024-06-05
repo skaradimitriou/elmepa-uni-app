@@ -2,10 +2,8 @@ package com.stathis.support.ui.contact
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.stathis.core.base.BaseViewModel
-import com.stathis.core.di.IoDispatcher
-import com.stathis.domain.usecase.FetchContactDetailsUseCase
-import com.stathis.model.UiModel
+import com.stathis.common.base.BaseViewModel
+import com.stathis.common.di.IoDispatcher
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -18,14 +16,14 @@ import javax.inject.Inject
 class ContactViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: FetchContactDetailsUseCase
+    private val useCase: com.stathis.domain.FetchContactDetailsUseCase
 ) : BaseViewModel(app) {
 
-    val contactDetails: StateFlow<NetworkResult<List<UiModel>>>
+    val contactDetails: StateFlow<NetworkResult<List<com.stathis.model.UiModel>>>
         get() = _contactDetails
 
     private val _contactDetails =
-        MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
+        MutableStateFlow<NetworkResult<List<com.stathis.model.UiModel>>>(NetworkResult.Loading())
 
     fun fetchContactDetails() {
         viewModelScope.launch(dispatcher) {

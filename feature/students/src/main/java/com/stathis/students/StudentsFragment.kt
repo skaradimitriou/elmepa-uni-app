@@ -4,13 +4,13 @@ import android.os.Bundle
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.stathis.core.MainViewModel
-import com.stathis.core.base.BaseFragment
-import com.stathis.core.util.TITLE
-import com.stathis.core.util.URL
-import com.stathis.core.util.setScreenTitle
-import com.stathis.core.util.setupItemDecoration
-import com.stathis.core.util.startNativeBrowserIntent
+import com.stathis.common.MainViewModel
+import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.TITLE
+import com.stathis.common.util.URL
+import com.stathis.common.util.setScreenTitle
+import com.stathis.common.util.setupItemDecoration
+import com.stathis.common.util.startNativeBrowserIntent
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
@@ -32,7 +32,7 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
     private val adapter = StudentsAdapter(this)
 
     override fun init() {
-        setScreenTitle(getString(com.stathis.core.R.string.students))
+        setScreenTitle(getString(com.stathis.common.R.string.students))
 
         viewModel.fetchStudentInformation()
 

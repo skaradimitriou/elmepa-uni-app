@@ -2,9 +2,8 @@ package com.stathis.announcements.details
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.stathis.core.base.BaseViewModel
-import com.stathis.core.di.IoDispatcher
-import com.stathis.domain.usecase.announcements.FetchPostDetailsUseCase
+import com.stathis.common.base.BaseViewModel
+import com.stathis.common.di.IoDispatcher
 import com.stathis.model.announcements.details.PostDetailsRequest
 import com.stathis.model.announcements.details.PostDetailsResponse
 import com.stathis.model.network.NetworkResult
@@ -19,7 +18,7 @@ import javax.inject.Inject
 class PostDetailsViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val postDetailsUseCase: FetchPostDetailsUseCase
+    private val postDetailsUseCase: com.stathis.domain.announcements.FetchPostDetailsUseCase
 ) : BaseViewModel(app) {
 
     val data: StateFlow<NetworkResult<PostDetailsResponse>>

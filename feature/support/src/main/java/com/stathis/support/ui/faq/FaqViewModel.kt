@@ -2,10 +2,8 @@ package com.stathis.support.ui.faq
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.stathis.core.base.BaseViewModel
-import com.stathis.core.di.IoDispatcher
-import com.stathis.domain.usecase.FetchFaqsUseCase
-import com.stathis.model.UiModel
+import com.stathis.common.base.BaseViewModel
+import com.stathis.common.di.IoDispatcher
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -18,13 +16,13 @@ import javax.inject.Inject
 class FaqViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: FetchFaqsUseCase
+    private val useCase: com.stathis.domain.FetchFaqsUseCase
 ) : BaseViewModel(app) {
 
-    val faq: StateFlow<NetworkResult<List<UiModel>>>
+    val faq: StateFlow<NetworkResult<List<com.stathis.model.UiModel>>>
         get() = _faqs
 
-    private val _faqs = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
+    private val _faqs = MutableStateFlow<NetworkResult<List<com.stathis.model.UiModel>>>(NetworkResult.Loading())
 
     fun fetchFaqs() {
         viewModelScope.launch(dispatcher) {

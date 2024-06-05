@@ -52,10 +52,9 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    implementation(project(":core"))
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":model"))
+    implementation(project(":core:common"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:model"))
 
     implementation(project(":feature:dashboard"))
     implementation(project(":feature:announcements"))
@@ -64,7 +63,7 @@ dependencies {
     implementation(project(":feature:students"))
     implementation(project(":feature:department"))
     implementation(project(":feature:support"))
-    implementation(project(":feature:common"))
+    implementation(project(":feature:web"))
 
     implementation(libs.viewModelLifecycle)
     implementation(libs.liveDataLifecycle)

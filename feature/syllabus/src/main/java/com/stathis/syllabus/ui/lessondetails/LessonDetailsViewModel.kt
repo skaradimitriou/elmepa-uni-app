@@ -2,9 +2,8 @@ package com.stathis.syllabus.ui.lessondetails
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.stathis.core.base.BaseViewModel
-import com.stathis.core.di.IoDispatcher
-import com.stathis.domain.usecase.FetchLessonDetailsUseCase
+import com.stathis.common.base.BaseViewModel
+import com.stathis.common.di.IoDispatcher
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.Lesson
 import com.stathis.model.syllabus.ProgrammeType
@@ -19,7 +18,7 @@ import javax.inject.Inject
 class LessonDetailsViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: FetchLessonDetailsUseCase
+    private val useCase: com.stathis.domain.FetchLessonDetailsUseCase
 ) : BaseViewModel(app) {
 
     val lessonDetails: StateFlow<NetworkResult<List<Lesson>>>

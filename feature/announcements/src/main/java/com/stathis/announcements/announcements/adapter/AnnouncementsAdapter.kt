@@ -8,16 +8,16 @@ import com.stathis.announcements.BR
 import com.stathis.announcements.R
 import com.stathis.announcements.databinding.HolderAnnouncementItemBinding
 import com.stathis.announcements.databinding.HolderAnnouncementShimmerItemBinding
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.databinding.HolderEmptyViewBinding
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
+import com.stathis.common.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
 import com.stathis.model.announcements.Announcement
 import com.stathis.model.general.ShimmerItem
 
 class AnnouncementsAdapter(
     private val callback: AnnouncementsCallback
-) : ListAdapter<UiModel, AnnouncementsViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<com.stathis.model.UiModel, AnnouncementsViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnnouncementsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -42,7 +42,7 @@ class AnnouncementsAdapter(
     override fun getItemViewType(position: Int): Int = when (getItem(position)) {
         is Announcement -> R.layout.holder_announcement_item
         is ShimmerItem -> R.layout.holder_announcement_shimmer_item
-        else -> com.stathis.core.R.layout.holder_empty_view
+        else -> com.stathis.common.R.layout.holder_empty_view
     }
 }
 
@@ -51,7 +51,7 @@ class AnnouncementsViewHolder(
     private val callback: AnnouncementsCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is Announcement -> {
                 binding.setVariable(BR.model, data)

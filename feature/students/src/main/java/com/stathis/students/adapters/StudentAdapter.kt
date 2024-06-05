@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.core.adapters.CarouselAdapter
-import com.stathis.core.base.BaseDiffUtil
-import com.stathis.core.base.BaseViewHolder
-import com.stathis.core.databinding.HolderEmptyViewBinding
-import com.stathis.core.databinding.HolderViewpagerCarouselItemBinding
+import com.stathis.common.adapters.CarouselAdapter
+import com.stathis.common.base.BaseDiffUtil
+import com.stathis.common.base.BaseViewHolder
+import com.stathis.common.databinding.HolderEmptyViewBinding
+import com.stathis.common.databinding.HolderViewpagerCarouselItemBinding
 import com.stathis.model.UiModel
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.general.carousel.CarouselParent
@@ -20,12 +20,12 @@ import com.stathis.students.databinding.HolderLinksParentItemBinding
 
 class StudentsAdapter(
     private val callback: StudentsCallback
-) : ListAdapter<UiModel, StudentsViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<com.stathis.model.UiModel, StudentsViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = when (viewType) {
-            com.stathis.core.R.layout.holder_viewpager_carousel_item -> {
+            com.stathis.common.R.layout.holder_viewpager_carousel_item -> {
                 HolderViewpagerCarouselItemBinding.inflate(inflater, parent, false)
             }
 
@@ -43,9 +43,9 @@ class StudentsAdapter(
     }
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
-        is CarouselParent -> com.stathis.core.R.layout.holder_viewpager_carousel_item
+        is CarouselParent -> com.stathis.common.R.layout.holder_viewpager_carousel_item
         is LinkParent -> R.layout.holder_links_parent_item
-        else -> com.stathis.core.R.layout.holder_empty_view
+        else -> com.stathis.common.R.layout.holder_empty_view
     }
 }
 
@@ -54,7 +54,7 @@ class StudentsViewHolder(
     private val callback: StudentsCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: UiModel) {
+    override fun bind(data: com.stathis.model.UiModel) {
         when (data) {
             is CarouselParent -> {
                 val adapter = CarouselAdapter { selectedItem ->
