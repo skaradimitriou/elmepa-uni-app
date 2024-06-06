@@ -1,6 +1,7 @@
-package com.stathis.data.datasource.remote.mapper
+package com.stathis.data.datasource.remote.mapper.syllabus
 
 import com.stathis.common.util.toNotNull
+import com.stathis.data.datasource.remote.mapper.EnhancedBaseMapper
 import com.stathis.data.datasource.remote.model.LessonDto
 import com.stathis.data.datasource.remote.model.OrientationModelDto
 import com.stathis.model.syllabus.Lesson

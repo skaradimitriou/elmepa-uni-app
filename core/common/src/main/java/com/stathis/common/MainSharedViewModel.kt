@@ -10,7 +10,7 @@ class MainSharedViewModel @Inject constructor(
     app: Application
 ) : BaseViewModel(app) {
 
-    var selectedProgrammeType: ProgrammeType = ProgrammeType.UNDERGRADUATE
+    var selectedProgrammeType: ProgrammeType = ProgrammeType.UNDERGRADUATE_MST
 
     var selectedOrientation: OrientationType = OrientationType.DATA
 }
