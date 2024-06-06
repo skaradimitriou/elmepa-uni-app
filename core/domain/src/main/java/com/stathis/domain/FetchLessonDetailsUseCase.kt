@@ -19,8 +19,8 @@ class FetchLessonDetailsUseCase @Inject constructor(
         val lessonName = (args.getOrNull(1) as? String?).toNotNull()
 
         val result = when (programmeType) {
-            ProgrammeType.UNDERGRADUATE -> repo.fetchUndergraduateLessonDetails(lessonName)
-            ProgrammeType.POSTGRADUATE -> repo.fetchPostgraduateLessonDetails(lessonName)
+            ProgrammeType.UNDERGRADUATE_MST -> repo.fetchUndergraduateLessonDetails(lessonName)
+            ProgrammeType.POSTGRADUATE_MST -> repo.fetchPostgraduateLessonDetails(lessonName)
             else -> flowOf(NetworkResult.Success(listOf()))
         }
 

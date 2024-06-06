@@ -17,12 +17,15 @@ interface SyllabusRepository {
 
     suspend fun fetchUndergraduateLessons(
         semesterName: String,
+        programmeType: ProgrammeType,
         orientationType: OrientationType
-    ): Flow<NetworkResult<List<com.stathis.model.UiModel>>>
+    ): Flow<NetworkResult<List<UiModel>>>
 
     suspend fun fetchPostgraduateLessons(
-        semesterName: String
-    ): Flow<NetworkResult<List<com.stathis.model.UiModel>>>
+        semesterName: String,
+        programmeType: ProgrammeType,
+        orientationType: OrientationType
+    ): Flow<NetworkResult<List<UiModel>>>
 
     suspend fun fetchUndergraduateLessonDetails(
         lessonName: String

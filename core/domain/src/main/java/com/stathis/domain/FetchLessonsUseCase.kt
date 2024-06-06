@@ -21,16 +21,19 @@ class FetchLessonsUseCase @Inject constructor(
         val semester = (args.getOrNull(2) as? String?).toNotNull()
 
         val result = when (programme) {
-            ProgrammeType.UNDERGRADUATE -> repo.fetchUndergraduateLessons(
+            ProgrammeType.UNDERGRADUATE_MST -> repo.fetchUndergraduateLessons(
                 semesterName = semester,
+                programmeType = programme,
                 orientationType = orientation
             )
 
-            ProgrammeType.POSTGRADUATE -> repo.fetchPostgraduateLessons(
-                semesterName = semester
+            ProgrammeType.POSTGRADUATE_MST -> repo.fetchPostgraduateLessons(
+                semesterName = semester,
+                programmeType = programme,
+                orientationType = orientation
             )
 
-            else -> flowOf(NetworkResult.Success(listOf()))
+            else -> flowOf(NetworkResult.Failure())
         }
 
         return result

@@ -3,11 +3,16 @@ package com.stathis.data.repository
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.common.R
-import com.stathis.data.datasource.remote.mapper.LessonListMapper
+import com.stathis.common.util.toNotNull
+import com.stathis.data.datasource.remote.mapper.syllabus.LessonListMapper
+import com.stathis.data.datasource.remote.mapper.syllabus.SyllabusRulesMapper
 import com.stathis.data.datasource.remote.model.LessonDto
+import com.stathis.data.datasource.remote.model.syllabus.SyllabusRuleResponseDto
 import com.stathis.data.util.NAME
 import com.stathis.data.util.POSTGRADUATE_SYLLABUS_DB_PATH
+import com.stathis.data.util.PROGRAMME_TYPE
 import com.stathis.data.util.SEMESTER
+import com.stathis.data.util.SYLLABUS_RULES
 import com.stathis.data.util.UNDERGRADUATE_SYLLABUS_DB_PATH
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.LessonHeader
@@ -15,6 +20,7 @@ import com.stathis.model.syllabus.OrientationType
 import com.stathis.model.syllabus.Programme
 import com.stathis.model.syllabus.ProgrammeType
 import com.stathis.model.syllabus.Semester
+import com.stathis.model.syllabus.SyllabusRule
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
@@ -42,36 +48,36 @@ class SyllabusRepositoryImpl @Inject constructor(
             )
 
             val programmes = when (programmeType) {
-                ProgrammeType.UNDERGRADUATE -> listOf(
+                ProgrammeType.UNDERGRADUATE_MST -> listOf(
                     Programme(
                         title = app.getString(R.string.data_orientation),
-                        type = ProgrammeType.UNDERGRADUATE,
+                        type = ProgrammeType.UNDERGRADUATE_MST,
                         orientationType = OrientationType.DATA,
                         semesters = semesters,
                         isExpanded = orientationType == OrientationType.DATA
                     ),
                     Programme(
                         title = app.getString(R.string.ba_orientation),
-                        type = ProgrammeType.UNDERGRADUATE,
+                        type = ProgrammeType.UNDERGRADUATE_MST,
                         orientationType = OrientationType.BA,
                         semesters = semesters,
                         isExpanded = orientationType == OrientationType.BA
                     ),
                     Programme(
                         title = app.getString(R.string.mkt_orientation),
-                        type = ProgrammeType.UNDERGRADUATE,
+                        type = ProgrammeType.UNDERGRADUATE_MST,
                         orientationType = OrientationType.MKT,
                         semesters = semesters,
                         isExpanded = orientationType == OrientationType.MKT
                     ),
                 )
 
-                ProgrammeType.POSTGRADUATE -> listOf(
+                ProgrammeType.POSTGRADUATE_MST -> listOf(
                     Programme(
                         title = app.getString(R.string.postgraduate_programme),
                         semesters = semesters.take(3),
-                        type = ProgrammeType.POSTGRADUATE,
-                        orientationType = OrientationType.UNDEFINED,
+                        type = ProgrammeType.POSTGRADUATE_MST,
+                        orientationType = OrientationType.POSTGRADUATE_MST,
                         isExpanded = true
                     )
                 )
@@ -84,6 +90,7 @@ class SyllabusRepositoryImpl @Inject constructor(
 
     override suspend fun fetchUndergraduateLessons(
         semesterName: String,
+        programmeType: ProgrammeType,
         orientationType: OrientationType
     ): Flow<NetworkResult<List<com.stathis.model.UiModel>>> = flow {
         val queryResult = fireStore.collection(UNDERGRADUATE_SYLLABUS_DB_PATH)
@@ -97,11 +104,9 @@ class SyllabusRepositoryImpl @Inject constructor(
             args = arrayOf(orientationType.name)
         ).filter { it.orientation.contains(orientationType) }
 
-        val headerText = if (mappedResult.all { it.mandatory }) {
-            app.getString(R.string.all_lessons_mandatory)
-        } else {
-            app.getString(R.string.some_lessons_mandatory)
-        }
+        val headerText = fetchSyllabusRule(programmeType = programmeType)
+            .find { it.semester == semesterName }
+            ?.description.toNotNull()
 
         val result = mutableListOf<com.stathis.model.UiModel>()
         result.add(LessonHeader(headerText))
@@ -110,7 +115,9 @@ class SyllabusRepositoryImpl @Inject constructor(
     }
 
     override suspend fun fetchPostgraduateLessons(
-        semesterName: String
+        semesterName: String,
+        programmeType: ProgrammeType,
+        orientationType: OrientationType
     ): Flow<NetworkResult<List<com.stathis.model.UiModel>>> = flow {
         val queryResult = fireStore.collection(POSTGRADUATE_SYLLABUS_DB_PATH)
             .whereEqualTo(SEMESTER, semesterName)
@@ -118,8 +125,19 @@ class SyllabusRepositoryImpl @Inject constructor(
             .await()
             .toObjects(LessonDto::class.java)
 
-        val mappedResult = LessonListMapper.toDomainModel(dtoModel = queryResult)
-        emit(NetworkResult.Success(mappedResult))
+        val mappedResult = LessonListMapper.toDomainModel(
+            dtoModel = queryResult,
+            args = arrayOf(orientationType.name)
+        )
+
+        val headerText = fetchSyllabusRule(programmeType = programmeType)
+            .find { it.semester == semesterName }
+            ?.description.toNotNull()
+
+        val result = mutableListOf<com.stathis.model.UiModel>()
+        result.add(LessonHeader(headerText))
+        result.addAll(mappedResult)
+        emit(NetworkResult.Success(result))
     }
 
     override suspend fun fetchUndergraduateLessonDetails(lessonName: String) = flow {
@@ -146,5 +164,17 @@ class SyllabusRepositoryImpl @Inject constructor(
 
         val mappedResult = LessonListMapper.toDomainModel(queryResult)
         emit(NetworkResult.Success(mappedResult))
+    }
+
+    private suspend fun fetchSyllabusRule(programmeType: ProgrammeType): List<SyllabusRule> {
+        val queryResult = fireStore.collection(SYLLABUS_RULES)
+            .whereEqualTo(PROGRAMME_TYPE, programmeType.name)
+            .get()
+            .await()
+            .toObjects(SyllabusRuleResponseDto::class.java)
+            .firstOrNull()
+
+        val mappedResult = SyllabusRulesMapper.toDomainModel(queryResult)
+        return mappedResult
     }
 }

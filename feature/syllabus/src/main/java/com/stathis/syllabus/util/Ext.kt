@@ -7,8 +7,8 @@ import com.stathis.model.syllabus.ProgrammeType
  */
 
 fun Int.toProgrammeType() = when (this) {
-    0 -> ProgrammeType.UNDERGRADUATE
-    1 -> ProgrammeType.POSTGRADUATE
+    0 -> ProgrammeType.UNDERGRADUATE_MST
+    1 -> ProgrammeType.POSTGRADUATE_MST
     else -> ProgrammeType.UNDEFINED
 }
 
@@ -18,7 +18,7 @@ fun Int.toProgrammeType() = when (this) {
 
 fun ProgrammeType?.toTabPosition() = when (this) {
     ProgrammeType.UNDEFINED -> 0
-    ProgrammeType.UNDERGRADUATE -> 0
-    ProgrammeType.POSTGRADUATE -> 1
+    ProgrammeType.UNDERGRADUATE_MST -> 0
+    ProgrammeType.POSTGRADUATE_MST -> 1
     null -> 0
 }

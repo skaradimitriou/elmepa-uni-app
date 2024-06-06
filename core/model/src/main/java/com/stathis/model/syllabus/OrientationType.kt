@@ -4,5 +4,6 @@ enum class OrientationType {
     UNDEFINED,
     BA,
     MKT,
-    DATA
+    DATA,
+    POSTGRADUATE_MST
 }
