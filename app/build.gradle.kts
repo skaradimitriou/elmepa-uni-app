@@ -57,7 +57,7 @@ dependencies {
     implementation(project(":core:model"))
 
     implementation(project(":feature:dashboard"))
-    implementation(project(":feature:announcements"))
+    implementation(project(":feature:news"))
     implementation(project(":feature:personnel"))
     implementation(project(":feature:syllabus"))
     implementation(project(":feature:students"))

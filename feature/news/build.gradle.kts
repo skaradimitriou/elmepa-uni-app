@@ -2,13 +2,12 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.kapt)
-    alias(libs.plugins.googleServices)
+    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.stathis.data"
+    namespace = "com.stathis.news"
     compileSdk = 34
 
     defaultConfig {
@@ -33,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildTypes {
+        viewBinding.enable = true
+        dataBinding.enable = true
+    }
 }
 
 dependencies {
@@ -42,26 +45,24 @@ dependencies {
     implementation(libs.material)
 
     implementation(project(":core:common"))
-    implementation(project(":core:database"))
+    implementation(project(":core:domain"))
     implementation(project(":core:model"))
+
+    implementation(libs.viewModelLifecycle)
+    implementation(libs.liveDataLifecycle)
+    implementation(libs.lifecycle.common)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    implementation(libs.firebase.firestore)
-    implementation(libs.firebase.storage)
-
-    implementation(libs.jsoup)
-    implementation(libs.dataStore)
+    implementation(libs.fragment.navigation)
+    implementation(libs.ui.navigation)
 
     implementation(libs.timber)
+    implementation(libs.swipeToRefresh)
+    implementation(libs.shimmer)
+    implementation(libs.jsoup)
     implementation(libs.paging)
-
-    implementation(libs.room.runtime)
-    annotationProcessor(libs.room.compiler)
-    implementation(libs.room.ktx)
-    implementation(libs.room.paging)
-    ksp(libs.room.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

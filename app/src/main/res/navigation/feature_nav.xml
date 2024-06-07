@@ -13,19 +13,19 @@
 
     <fragment
         android:id="@+id/announcementsFragment"
-        android:name="com.stathis.announcements.announcements.AnnouncementsFragment"
+        android:name="com.stathis.news.announcements.AnnouncementsFragment"
         android:label="AnnouncementsFragment"
         tools:layout="@layout/fragment_announcements" />
 
     <fragment
         android:id="@+id/eventsFragment"
-        android:name="com.stathis.announcements.events.EventsFragment"
+        android:name="com.stathis.news.events.EventsFragment"
         android:label="EventsFragment"
         tools:layout="@layout/fragment_events" />
 
     <fragment
         android:id="@+id/postDetailsFragment"
-        android:name="com.stathis.announcements.details.PostDetailsFragment"
+        android:name="com.stathis.news.details.PostDetailsFragment"
         android:label="PostDetailsFragment"
         tools:layout="@layout/fragment_post_details" />
 

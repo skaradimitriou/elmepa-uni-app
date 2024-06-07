@@ -30,7 +30,7 @@ include(":core:model")
 
 include(":feature:syllabus")
 include(":feature:personnel")
-include(":feature:announcements")
+include(":feature:news")
 include(":feature:support")
 include(":feature:dashboard")
 include(":feature:web")
