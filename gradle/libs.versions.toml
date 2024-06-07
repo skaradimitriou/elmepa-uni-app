@@ -7,21 +7,21 @@ coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-appcompat = "1.6.1"
+appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
-lifecycle = "2.8.0"
+lifecycle = "2.8.1"
 navigation = "2.7.7"
 coroutines = "1.7.3"
 hiltVersion = "2.49"
 timber = "5.0.1"
 swipeToRefresh = "1.1.0"
 gradle = "8.1.4"
-googleServicesVersion = "4.4.1"
-firebaseCrashlytics = "19.0.0"
+googleServicesVersion = "4.4.2"
+firebaseCrashlytics = "19.0.1"
 firebaseCrashlyticsGradle = "2.9.9"
-firebasePerf = "21.0.0"
+firebasePerf = "21.0.1"
 perfPlugin = "1.4.2"
 firebaseFirestore = "25.0.0"
 firebaseStorage = "21.0.0"
@@ -33,6 +33,8 @@ preference = "1.2.1"
 circleImgView = "3.1.0"
 lottie = "6.4.0"
 dataStore = "1.1.1"
+#Paging
+paging = "3.3.0"
 
 
 [libraries]
@@ -60,9 +62,11 @@ swipeToRefresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshla
 shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
 jsoup = { group = "org.jsoup", name = "jsoup", version.ref = "jsoup" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+paging = { group="androidx.paging", name="paging-runtime-ktx", version.ref="paging"}
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
 preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preference" }
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
 gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }

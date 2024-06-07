@@ -2,10 +2,9 @@ package com.stathis.data.di
 
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.data.datasource.datastore.AnnouncementsDataStore
-import com.stathis.data.datasource.remote.services.AnnouncementsRemoteDataSource
-import com.stathis.data.repository.AnnouncementRepository
-import com.stathis.data.repository.AnnouncementsRepositoryImpl
+import com.stathis.data.datasource.remote.datasource.NewsDataSource
+import com.stathis.data.repository.NewsRepository
+import com.stathis.data.repository.NewsRepositoryImpl
 import com.stathis.data.repository.DashboardRepository
 import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.DepartmentRepository
@@ -24,7 +23,7 @@ import com.stathis.data.repository.StudentsRepository
 import com.stathis.data.repository.StudentsRepositoryImpl
 import com.stathis.data.repository.SyllabusRepository
 import com.stathis.data.repository.SyllabusRepositoryImpl
-import com.stathis.database.local.announcements.AnnouncementsDatabase
+import com.stathis.database.local.news.NewsDatabase
 import com.stathis.database.local.personnel.PersonnelDatabase
 import dagger.Module
 import dagger.Provides
@@ -49,13 +48,11 @@ class RepositoryModule {
     @Provides
     @Singleton
     fun provideAnnouncementsRepository(
-        announcementDb: AnnouncementsDatabase,
-        remoteDataSource: AnnouncementsRemoteDataSource,
-        dataStore: AnnouncementsDataStore
-    ): AnnouncementRepository = AnnouncementsRepositoryImpl(
-        announcementDb,
-        remoteDataSource,
-        dataStore
+        newsLocalDataSource: NewsDatabase,
+        newsRemoteDataSource: NewsDataSource
+    ): NewsRepository = NewsRepositoryImpl(
+        localDataSource = newsLocalDataSource,
+        remoteDataSource = newsRemoteDataSource
     )
 
     @Provides
