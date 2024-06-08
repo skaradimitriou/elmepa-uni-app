@@ -25,15 +25,25 @@
             <TextView
                 android:id="@+id/questionTxtView"
                 style="@style/text_18"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dimen_16"
                 android:text="@{model.question}"
-                app:drawableEndCompat="@drawable/arrow_right"
                 app:drawableTint="@color/text_grey_dark"
+                app:layout_constraintEnd_toStartOf="@id/questionsArrowImgView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@tools:sample/lorem" />
+
+            <ImageView
+                android:id="@+id/questionsArrowImgView"
+                android:layout_width="@dimen/dimen_32"
+                android:layout_height="@dimen/dimen_32"
+                android:layout_margin="@dimen/dimen_16"
+                android:contentDescription="@{model.question}"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/answerTxtView"

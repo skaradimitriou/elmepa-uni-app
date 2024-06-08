@@ -15,7 +15,7 @@ import com.stathis.support.R
 import com.stathis.support.databinding.HolderFaqItemBinding
 import com.stathis.support.databinding.HolderShimmerFaqBinding
 
-class FaqAdapter : ListAdapter<com.stathis.model.UiModel, FaqViewHolder>(BaseDiffUtil<UiModel>()) {
+class FaqAdapter : ListAdapter<UiModel, FaqViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FaqViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -48,17 +48,32 @@ class FaqViewHolder(
     private val binding: ViewDataBinding
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         when (data) {
             is Faq -> {
                 val binding = (binding as HolderFaqItemBinding)
                 binding.setVariable(BR.model, data)
 
                 binding.questionTxtView.setOnClickListener {
-                    data.isExpanded = !data.isExpanded
-                    binding.model = data
+                    binding.onClick(data)
+                }
+
+                binding.questionsArrowImgView.setOnClickListener {
+                    binding.onClick(data)
                 }
             }
         }
+    }
+
+    private fun HolderFaqItemBinding.onClick(item: Faq) {
+        item.isExpanded = !item.isExpanded
+
+        if (item.isExpanded) {
+            questionsArrowImgView.rotation = 90f
+        } else {
+            questionsArrowImgView.rotation = 0f
+        }
+
+        model = item
     }
 }
