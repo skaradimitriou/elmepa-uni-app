@@ -36,7 +36,6 @@ class AnnouncementsRemoteMediator(
                 }
             }
 
-
             localDb.withTransaction {
                 if (loadType == LoadType.REFRESH) {
                     localDb.announcementDao().deleteAll()
