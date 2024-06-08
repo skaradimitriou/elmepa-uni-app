@@ -1,8 +1,8 @@
 package com.stathis.data.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.data.datasource.remote.mapper.StudentsMapper
-import com.stathis.data.datasource.remote.model.StudentsResponseDto
+import com.stathis.data.remote.mapper.StudentsMapper
+import com.stathis.data.remote.model.StudentsResponseDto
 import com.stathis.data.util.SCREEN_DATA
 import com.stathis.data.util.STUDENTS_DB_PATH
 import com.stathis.model.general.carousel.CarouselParent

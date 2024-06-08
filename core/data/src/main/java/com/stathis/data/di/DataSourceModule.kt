@@ -1,7 +1,7 @@
 package com.stathis.data.di
 
-import com.stathis.data.datasource.remote.datasource.NewsDataSource
-import com.stathis.data.datasource.remote.datasource.NewsDataSourceImpl
+import com.stathis.data.remote.datasource.NewsDataSource
+import com.stathis.data.remote.datasource.NewsDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

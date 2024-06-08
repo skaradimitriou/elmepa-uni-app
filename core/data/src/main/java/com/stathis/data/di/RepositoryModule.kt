@@ -2,9 +2,7 @@ package com.stathis.data.di
 
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.data.datasource.remote.datasource.NewsDataSource
-import com.stathis.data.repository.NewsRepository
-import com.stathis.data.repository.NewsRepositoryImpl
+import com.stathis.data.remote.datasource.NewsDataSource
 import com.stathis.data.repository.DashboardRepository
 import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.DepartmentRepository
@@ -15,6 +13,8 @@ import com.stathis.data.repository.GeneralAppInfoRepository
 import com.stathis.data.repository.GeneralAppInfoRepositoryImpl
 import com.stathis.data.repository.NetworkRepository
 import com.stathis.data.repository.NetworkRepositoryImpl
+import com.stathis.data.repository.NewsRepository
+import com.stathis.data.repository.NewsRepositoryImpl
 import com.stathis.data.repository.PersonnelRepository
 import com.stathis.data.repository.PersonnelRepositoryImpl
 import com.stathis.data.repository.ResearchRepository
@@ -25,6 +25,7 @@ import com.stathis.data.repository.SyllabusRepository
 import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.database.local.news.NewsDatabase
 import com.stathis.database.local.personnel.PersonnelDatabase
+import com.stathis.datastore.datastore.FaqDataStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -91,8 +92,12 @@ class RepositoryModule {
     @Provides
     @Singleton
     fun provideFaqRepository(
-        fireStore: FirebaseFirestore
-    ): FaqRepository = FaqRepositoryImpl(fireStore)
+        fireStore: FirebaseFirestore,
+        faqDataStore: FaqDataStore
+    ): FaqRepository = FaqRepositoryImpl(
+        fireStore = fireStore,
+        faqDataStore = faqDataStore
+    )
 
     @Provides
     @Singleton

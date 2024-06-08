@@ -4,10 +4,10 @@ import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.common.R
 import com.stathis.common.util.toNotNull
-import com.stathis.data.datasource.remote.mapper.syllabus.LessonListMapper
-import com.stathis.data.datasource.remote.mapper.syllabus.SyllabusRulesMapper
-import com.stathis.data.datasource.remote.model.LessonDto
-import com.stathis.data.datasource.remote.model.syllabus.SyllabusRuleResponseDto
+import com.stathis.data.remote.mapper.syllabus.LessonListMapper
+import com.stathis.data.remote.mapper.syllabus.SyllabusRulesMapper
+import com.stathis.data.remote.model.LessonDto
+import com.stathis.data.remote.model.syllabus.SyllabusRuleResponseDto
 import com.stathis.data.util.NAME
 import com.stathis.data.util.POSTGRADUATE_SYLLABUS_DB_PATH
 import com.stathis.data.util.PROGRAMME_TYPE
