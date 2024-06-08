@@ -3,11 +3,11 @@ package com.stathis.data.repository
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import com.stathis.data.datasource.remote.datasource.NewsDataSource
-import com.stathis.data.datasource.remote.mapper.news.PostDetailsMapper
-import com.stathis.data.datasource.remote.model.announcements.PostDetailsResponseDto
-import com.stathis.data.datasource.remote.paging.AnnouncementsRemoteMediator
-import com.stathis.data.datasource.remote.paging.EventsRemoteMediator
+import com.stathis.data.remote.datasource.NewsDataSource
+import com.stathis.data.remote.mapper.news.PostDetailsMapper
+import com.stathis.data.remote.model.announcements.PostDetailsResponseDto
+import com.stathis.data.remote.paging.AnnouncementsRemoteMediator
+import com.stathis.data.remote.paging.EventsRemoteMediator
 import com.stathis.data.util.DIV_CONTENT
 import com.stathis.database.local.news.NewsDatabase
 import com.stathis.model.announcements.details.PostDetailsRequest

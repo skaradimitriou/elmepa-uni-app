@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface DepartmentRepository {
 
-    suspend fun fetchDepartmentInformation(): Flow<NetworkResult<List<com.stathis.model.UiModel>>>
+    suspend fun fetchDepartmentInformation(): Flow<NetworkResult<List<UiModel>>>
 
-    suspend fun fetchDepartmentContactDetails(): Flow<NetworkResult<List<com.stathis.model.UiModel>>>
+    suspend fun fetchDepartmentContactDetails(): Flow<NetworkResult<List<UiModel>>>
 }

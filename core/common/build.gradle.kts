@@ -58,6 +58,7 @@ dependencies {
 
     implementation(libs.glide)
     implementation(libs.shimmer)
+    implementation(libs.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

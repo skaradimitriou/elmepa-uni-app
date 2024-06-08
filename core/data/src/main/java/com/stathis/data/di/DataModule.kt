@@ -1,10 +1,7 @@
 package com.stathis.data.di
 
-import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.stathis.data.datasource.datastore.AnnouncementsCachingDataStoreImpl
-import com.stathis.data.datasource.datastore.AnnouncementsDataStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,10 +19,4 @@ class DataModule {
     @Provides
     @Singleton
     fun provideFirebaseStorage() = FirebaseStorage.getInstance().reference
-
-    @Provides
-    @Singleton
-    fun provideDataStore(app: Application): AnnouncementsDataStore {
-        return AnnouncementsCachingDataStoreImpl(app)
-    }
 }

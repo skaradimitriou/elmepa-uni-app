@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface DashboardRepository {
 
-    suspend fun fetchDashboardDetails(): Flow<List<com.stathis.model.UiModel>>
+    suspend fun fetchDashboardDetails(): Flow<List<UiModel>>
 }

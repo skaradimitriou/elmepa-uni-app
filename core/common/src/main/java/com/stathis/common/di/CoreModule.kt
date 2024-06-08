@@ -1,6 +1,7 @@
 package com.stathis.common.di
 
 import android.app.Application
+import com.google.gson.Gson
 import com.stathis.common.util.networkmanager.NetworkManager
 import com.stathis.common.util.networkmanager.NetworkManagerImpl
 import dagger.Module
@@ -12,6 +13,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class CoreModule {
+
+    @Provides
+    @Singleton
+    fun provideGson() = Gson()
 
     @Provides
     @Singleton

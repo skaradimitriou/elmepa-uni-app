@@ -35,6 +35,8 @@ lottie = "6.4.0"
 dataStore = "1.1.1"
 #Paging
 paging = "3.3.0"
+#Gson
+gson = "2.11.0"
 
 
 [libraries]
@@ -62,7 +64,7 @@ swipeToRefresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshla
 shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
 jsoup = { group = "org.jsoup", name = "jsoup", version.ref = "jsoup" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
-paging = { group="androidx.paging", name="paging-runtime-ktx", version.ref="paging"}
+paging = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
@@ -79,6 +81,7 @@ firebase-storage = { group = "com.google.firebase", name = "firebase-storage", v
 circleImgView = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImgView" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 dataStore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

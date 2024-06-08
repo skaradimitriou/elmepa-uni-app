@@ -1,7 +1,5 @@
 package com.stathis.data.util
 
-import androidx.datastore.preferences.core.longPreferencesKey
-
 const val NEWS_URL = "https://mst.hmu.gr/news_gr/"
 const val EVENTS_URL = "https://mst.hmu.gr/events/"
 
@@ -40,13 +38,3 @@ const val PERSONNEL_DB_PATH = "personnel"
 const val FULLNAME = "fullName"
 const val FAQ_DB_PATH = "faqs"
 const val FAQ_ORDER_BY_FIELD = "seq"
-
-/**
- * DataStore constant values
- */
-
-const val SETTINGS = "settings"
-const val ANNOUNCEMENTS_UPDATE_TIME = "announcements_update_time"
-const val EVENTS_UPDATE_TIME = "events_update_time"
-val ANNOUNCEMENTS_DS_KEY = longPreferencesKey(ANNOUNCEMENTS_UPDATE_TIME)
-val EVENTS_DS_KEY = longPreferencesKey(EVENTS_UPDATE_TIME)
