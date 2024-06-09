@@ -1,5 +1,5 @@
 [versions]
-ksp = "1.9.0-1.0.13"
+ksp = "1.9.10-1.0.13"
 kapt = "1.8.0"
 agp = "8.3.2"
 kotlin = "1.9.10"
@@ -13,27 +13,42 @@ activity = "1.9.0"
 constraintlayout = "2.1.4"
 lifecycle = "2.8.1"
 navigation = "2.7.7"
+#Coroutines
 coroutines = "1.7.3"
+#Hilt
 hiltVersion = "2.49"
+#Timber
 timber = "5.0.1"
+#Swipe to refresh
 swipeToRefresh = "1.1.0"
 gradle = "8.1.4"
+#Google Services
 googleServicesVersion = "4.4.2"
+#Firebase Crashlytics
 firebaseCrashlytics = "19.0.1"
 firebaseCrashlyticsGradle = "2.9.9"
+#Firebase BoM
+firebaseBom = "33.1.0"
+#Firebase Performance
 firebasePerf = "21.0.1"
 perfPlugin = "1.4.2"
+#Firebase Firestore
 firebaseFirestore = "25.0.0"
+#Firebase Storage
 firebaseStorage = "21.0.0"
+#Shimmer loading
 shimmer = "0.5.0"
+#Jsoup Web Scraping Library
 jsoup = "1.13.1"
+#Glide
 glide = "4.16.0"
+#Room Local SQLite db
 room = "2.6.1"
-preference = "1.2.1"
+#Circle ImageView
 circleImgView = "3.1.0"
-lottie = "6.4.0"
+#DataStore local storage
 dataStore = "1.1.1"
-#Paging
+#Paging3
 paging = "3.3.0"
 #Gson
 gson = "2.11.0"
@@ -69,17 +84,16 @@ room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preference" }
-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
-google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServicesVersion" }
-firebase-crashlytics-gradle = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsGradle" }
-firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebasePerf" }
-perf-plugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "perfPlugin" }
+firebase-bom = {group="com.google.firebase", name = "firebase-bom", version.ref="firebaseBom"}
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
+firebase-crashlytics-gradle = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsGradle" }
+firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebasePerf" }
+gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServicesVersion" }
+perf-plugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "perfPlugin" }
 circleImgView = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImgView" }
-lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 dataStore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
@@ -90,4 +104,6 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kapt" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsGradle" }
+firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "perfPlugin" }
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServicesVersion" }

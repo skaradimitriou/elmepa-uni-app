@@ -4,8 +4,8 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.googleServices)
-    id("com.google.firebase.crashlytics")
-    id("com.google.firebase.firebase-perf")
+    alias(libs.plugins.firebase.crashlytics)
+    alias(libs.plugins.firebase.perf)
 }
 
 android {
@@ -73,21 +73,17 @@ dependencies {
     implementation(libs.ui.navigation)
 
     implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.perf)
-    ksp(libs.hilt.compiler)
+    implementation(platform(libs.firebase.bom))
 
     implementation(libs.timber)
 
     implementation(libs.shimmer)
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
-
-    implementation(libs.swipeToRefresh)
-    implementation(libs.preference.ktx)
-
-    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
-    implementation("com.google.firebase:firebase-perf")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
