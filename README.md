@@ -10,9 +10,9 @@ This repository contains an Android application built & tailored specifically fo
 
 - **Interactive Interface**: Engaging user experience designed to cater to the needs of students, faculty, and staff.
 - **Real-time Updates**: Stay informed with the news, announcements & events directly from the university.
-- **Engaging Syllabus**: Easily access your schedule and syllabus while on the go.
+- **Engaging Syllabus**: Easily access your schedule and syllabus while on the go (for both Undergraduate & Postgraduate students).
 - **Social Integration**: Look up & connect with University's personnel effortlessly.
-- **Dark Theming**: Tailor the app 
+- **Dark Theming**: Tailor the app to your theme preference.
 
 ## App Architecture 🛠️
 
