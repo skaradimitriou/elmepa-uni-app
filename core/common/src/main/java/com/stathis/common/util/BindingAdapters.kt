@@ -2,7 +2,6 @@ package com.stathis.common.util
 
 import android.content.Intent
 import android.content.res.Configuration
-import android.graphics.Paint
 import android.net.Uri
 import android.view.View
 import android.webkit.WebResourceRequest
@@ -16,21 +15,11 @@ import com.stathis.common.R
 
 
 @BindingAdapter("loadImageUrl")
-fun ImageView.loadImage(imageUrl: String) {
+fun ImageView.loadImage(imageUrl: String? = null) {
     Glide.with(this.context)
         .load(imageUrl)
         .placeholder(R.drawable.placeholder)
         .into(this)
-}
-
-@BindingAdapter("underline")
-fun TextView.underline(underlined: Boolean) {
-    if (underlined) this.paintFlags = Paint.UNDERLINE_TEXT_FLAG
-}
-
-@BindingAdapter("setPubDate")
-fun TextView.setPubDate(text: String) {
-    this.text = text.substringBefore('|')
 }
 
 @BindingAdapter("textAndVisibility")

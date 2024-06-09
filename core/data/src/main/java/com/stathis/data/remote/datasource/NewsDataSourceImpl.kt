@@ -5,12 +5,15 @@ import com.stathis.data.remote.mapper.news.EventsMapper
 import com.stathis.data.remote.model.announcements.AnnouncementDto
 import com.stathis.data.remote.model.announcements.EventDto
 import com.stathis.data.util.ARTICLE
+import com.stathis.data.util.DESC_INNER
+import com.stathis.data.util.DESC_TAG
 import com.stathis.data.util.EVENTS_URL
 import com.stathis.data.util.IMG_HTML_TAG
 import com.stathis.data.util.IMG_SOURCE
 import com.stathis.data.util.IMG_TYPE
 import com.stathis.data.util.NEWS_URL
 import com.stathis.data.util.PARAGRAPH_HTML_TAG
+import com.stathis.data.util.P_TAG
 import com.stathis.data.util.SPAN
 import com.stathis.data.util.TITLE_HTML_TAG
 import com.stathis.data.util.TITLE_TYPE
@@ -31,9 +34,10 @@ class NewsDataSourceImpl : NewsDataSource {
             Jsoup.connect(url).get().select(ARTICLE).map { article ->
                 val imageUrl = article.select(IMG_HTML_TAG).select(IMG_TYPE).attr(IMG_SOURCE)
                 val title = article.select(TITLE_HTML_TAG).select(TITLE_TYPE).text()
+                val description = article.select(DESC_TAG).select(DESC_INNER).select(P_TAG).text()
                 val pubDate = article.select(PARAGRAPH_HTML_TAG).select(SPAN).text()
                 val openUrl = article.select(URL_HTML_TAG).select(URL_TYPE).attr(URL_ATTR)
-                AnnouncementDto(title, imageUrl, openUrl, pubDate)
+                AnnouncementDto(title, description, imageUrl, openUrl, pubDate)
             }
         } catch (e: Exception) {
             listOf()
@@ -49,9 +53,10 @@ class NewsDataSourceImpl : NewsDataSource {
             Jsoup.connect(url).get().select(ARTICLE).map { article ->
                 val imageUrl = article.select(IMG_HTML_TAG).select(IMG_TYPE).attr(IMG_SOURCE)
                 val title = article.select(TITLE_HTML_TAG).select(TITLE_TYPE).text()
+                val description = article.select(DESC_TAG).select(DESC_INNER).select(P_TAG).text()
                 val pubDate = article.select(PARAGRAPH_HTML_TAG).select(SPAN).text()
                 val openUrl = article.select(URL_HTML_TAG).select(URL_TYPE).attr(URL_ATTR)
-                EventDto(title, imageUrl, openUrl, pubDate)
+                EventDto(title, description, imageUrl, openUrl, pubDate)
             }
         } catch (e: Exception) {
             listOf()

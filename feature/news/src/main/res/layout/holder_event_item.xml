@@ -26,13 +26,12 @@
 
             <ImageView
                 android:id="@+id/announcementImgView"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/dimen_120"
                 android:layout_height="@dimen/dimen_200"
                 android:contentDescription="@{model.name}"
                 android:onClick="@{(view) -> callback.onEventTap(model)}"
                 android:scaleType="centerCrop"
                 android:src="@color/grey"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:loadImageUrl="@{model.imageResource}" />
@@ -40,24 +39,44 @@
             <TextView
                 android:id="@+id/announcementDateTxtView"
                 style="@style/text_16_bold"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dimen_16"
-                android:paddingTop="@dimen/dimen_16"
-                android:textColor="@color/text_grey"
-                app:layout_constraintTop_toBottomOf="@id/announcementImgView"
-                app:setPubDate="@{model.pubDate}"
+                android:layout_marginHorizontal="@dimen/dimen_16"
+                android:layout_marginTop="16dp"
+                android:text="@{model.pubDate}"
+                android:textColor="@color/petrol"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/announcementImgView"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="@tools:sample/lorem" />
 
             <TextView
                 android:id="@+id/announcementTitleTxtView"
                 style="@style/text_18_bold"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dimen_16"
-                android:paddingBottom="@dimen/dimen_16"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:ellipsize="end"
+                android:maxLines="3"
                 android:text="@{model.name}"
+                app:layout_constraintEnd_toEndOf="@id/announcementDateTxtView"
+                app:layout_constraintStart_toStartOf="@id/announcementDateTxtView"
                 app:layout_constraintTop_toBottomOf="@id/announcementDateTxtView"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/announcementDescriptionTxtView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingBottom="@dimen/dimen_16"
+                android:text="@{model.description}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/announcementDateTxtView"
+                app:layout_constraintStart_toStartOf="@id/announcementDateTxtView"
+                app:layout_constraintTop_toBottomOf="@id/announcementTitleTxtView"
                 tools:text="@tools:sample/lorem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

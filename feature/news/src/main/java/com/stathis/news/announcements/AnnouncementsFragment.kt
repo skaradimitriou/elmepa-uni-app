@@ -6,8 +6,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
-import com.stathis.news.R
-import com.stathis.news.databinding.FragmentAnnouncementsBinding
 import com.stathis.common.MainViewModel
 import com.stathis.common.base.BaseFragment
 import com.stathis.common.util.IMAGE
@@ -17,9 +15,10 @@ import com.stathis.common.util.URL
 import com.stathis.common.util.setScreenTitle
 import com.stathis.common.util.setupItemDecoration
 import com.stathis.model.navigation.NavigationAction
+import com.stathis.news.R
 import com.stathis.news.announcements.adapter.AnnouncementsAdapter
+import com.stathis.news.databinding.FragmentAnnouncementsBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -58,7 +57,7 @@ class AnnouncementsFragment :
 
     override fun startOps() {
         lifecycleScope.launch {
-            viewModel.announcements.flowWithLifecycle(lifecycle).collectLatest { result ->
+            viewModel.announcements.flowWithLifecycle(lifecycle).collect { result ->
                 adapter.submitData(result)
             }
         }
