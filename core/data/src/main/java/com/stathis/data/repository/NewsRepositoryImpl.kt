@@ -25,6 +25,7 @@ class NewsRepositoryImpl @Inject constructor(
     override fun fetchAnnouncementFromRemote() = Pager(
         config = PagingConfig(
             pageSize = 1,
+            initialLoadSize = 2 * 1
         ),
         initialKey = 1,
         remoteMediator = AnnouncementsRemoteMediator(
@@ -39,6 +40,7 @@ class NewsRepositoryImpl @Inject constructor(
     override fun fetchEventsFromRemote() = Pager(
         config = PagingConfig(
             pageSize = 1,
+            initialLoadSize = 2 * 1
         ),
         initialKey = 1,
         remoteMediator = EventsRemoteMediator(

@@ -14,6 +14,9 @@ data class Announcement(
     @NotNull
     val name: String,
 
+    @ColumnInfo(name = "description")
+    val description: String,
+
     @ColumnInfo(name = "url")
     val url: String,
 

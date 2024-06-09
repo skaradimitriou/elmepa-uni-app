@@ -4,15 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.paging.PagingDataAdapter
-import com.stathis.news.databinding.HolderAnnouncementItemBinding
 import com.stathis.common.base.BaseDiffUtil
 import com.stathis.common.base.BaseViewHolder
 import com.stathis.model.announcements.Announcement
 import com.stathis.news.BR
+import com.stathis.news.databinding.HolderAnnouncementItemBinding
 
 class AnnouncementsAdapter(
     private val callback: AnnouncementsCallback
-) : PagingDataAdapter<Announcement, AnnouncementsViewHolder>(BaseDiffUtil<Announcement>()) {
+) : PagingDataAdapter<Announcement, AnnouncementsViewHolder>(BaseDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnnouncementsViewHolder {
         val inflater = LayoutInflater.from(parent.context)

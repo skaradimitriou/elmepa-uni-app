@@ -11,8 +11,9 @@ object AnnouncementsMapper : BaseMapper<List<AnnouncementDto>?, List<Announcemen
     override fun toDomainModel(dtoModel: List<AnnouncementDto>?) = dtoModel.toListOf { dto ->
         Announcement(
             name = dto.title.toNotNull(),
+            description = dto.description.toNotNull(),
             url = dto.openUrl.toNotNull(),
-            pubDate = dto.pubDate.toNotNull(),
+            pubDate = dto.pubDate.toNotNull().substringBefore('|'),
             imageResource = dto.imageUrl.toNotNull(),
         )
     }

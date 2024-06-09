@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.stathis.model.announcements.Announcement
 import com.stathis.model.announcements.Event
 
-@Database(entities = [Announcement::class, Event::class], version = 1, exportSchema = false)
+@Database(entities = [Announcement::class, Event::class], version = 3, exportSchema = false)
 abstract class NewsDatabase : RoomDatabase() {
 
     abstract fun announcementDao(): AnnouncementsDao
