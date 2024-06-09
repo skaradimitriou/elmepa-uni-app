@@ -16,27 +16,40 @@ This repository contains an Android application built & tailored specifically fo
 
 ## App Architecture 🛠️
 
-![mvvm_clean_architecture](https://github.com/skaradimitriou/elmepa-uni-app/assets/64270931/e69e918e-5b90-48d4-b920-c8c771f13dab)
+<p align="center" width="100%">
+  <img src="https://github.com/skaradimitriou/elmepa-uni-app/assets/64270931/e69e918e-5b90-48d4-b920-c8c771f13dab" alt="mvvm_clean_architecture" width="50%" height="50%" />
+</p>
+
 
 ## Modularization 🧩
 
-```kotlin
-//Coming soon
-```
+<p align="center" width="100%">
+  <img src="https://github.com/skaradimitriou/elmepa-uni-app/assets/64270931/e32082ca-6379-4b83-844a-b28375843d51" alt="app_modularization" width="35%" height="35%" />
+  <p align="center" width="100%">Navigate on <ins>each module</ins> to see detailed dependencies.</p>
+</p>
+
+#### :app
+The :app module serves as the entry point for the application. It includes the main activity and is responsible for initializing the app and routing to the appropriate feature modules.
+
+#### :core
+The :core module contains shared resources and utilities that are used across other modules. This includes common utilities, network operations, local database, datastore setup, and last but not least, the domain logic.
+
+#### :feature
+The :feature module encapsulates specific, self-contained functionality related to a particular aspect of the app. (e.g department news).
 
 ## Tech Stack ⚙️
 
-- [**Kotlin**](URL HERE): A modern programming language for building robust Android applications.
-- [**Android Jetpack**](URL HERE): Utilize the latest Android Jetpack components for efficient development.
-- [**MVVM Clean Architecture**](URL HERE): Implement a clean separation of concerns with Model-View-ViewModel architecture following Clean Architecture principles.
-- [**Coroutines**](URL HERE): Leverage Kotlin Coroutines for asynchronous and non-blocking programming.
-- [**Kotlin Flows**](URL HERE): Utilize Kotlin Flows for reactive programming, enabling seamless data stream processing.
-- [**Room Database**](URL HERE): Utilize Room Persistence Library for local data storage and caching.
-- [**Firebase**](URL HERE): Integrates with Firebase services (Firestore, Storage, Crashlytics, Performance) for data flow and app monitoring purposes.
-- [**Material 3**](URL HERE): Implement intuitive and visually appealing UI with Material Design 3 guidelines.
-- [**Glide**](URL HERE): Efficiently load and display images with Glide, a fast and flexible image loading library.
-- [**Shimmer**](URL HERE): Enhance UI loading experience with shimmer effects to indicate content loading.
-- [**Kotlin DSL**](URL HERE): Utilize Kotlin DSL for configuring build scripts and project setup, enhancing build script readability and maintainability.
+- [**Kotlin**](https://kotlinlang.org/): A modern programming language for building robust Android applications.
+- [**Android Jetpack**](https://developer.android.com/jetpack): Utilize the latest Android Jetpack components for efficient development.
+- [**MVVM Clean Architecture**](https://developer.android.com/topic/architecture): Implement a clean separation of concerns with Model-View-ViewModel architecture following Clean Architecture principles.
+- [**Coroutines**](https://kotlinlang.org/docs/coroutines-overview.html): Leverage Kotlin Coroutines for asynchronous and non-blocking programming.
+- [**Kotlin Flows**](https://developer.android.com/kotlin/flow): Utilize Kotlin Flows for reactive programming, enabling seamless data stream processing.
+- [**Room Database**](https://developer.android.com/jetpack/androidx/releases/room): Utilize Room Persistence Library for local data storage and caching.
+- [**Firebase**](https://firebase.google.com/): Integrates with Firebase services (Firestore, Storage, Crashlytics, Performance) for data flow and app monitoring purposes.
+- [**Material 3**](https://m3.material.io/): Implement intuitive and visually appealing UI with Material Design 3 guidelines.
+- [**Glide**](https://github.com/bumptech/glide): Efficiently load and display images with Glide, a fast and flexible image loading library.
+- [**Shimmer**](https://github.com/facebookarchive/shimmer-android): Enhance UI loading experience with shimmer effects to indicate content loading.
+- [**Kotlin DSL**](https://developer.android.com/build/migrate-to-kotlin-dsl): Utilize Kotlin DSL for configuring build scripts and project setup, enhancing build script readability and maintainability.
 
 
 ## Feedback
