@@ -1,5 +1,9 @@
 # Management Science & Technology (ELMEPA) University App (Android)
 
+<p align="center" width="100%">
+  <img src="https://github.com/skaradimitriou/elmepa-uni-app/assets/64270931/27b919a2-2b35-48bd-a6d8-d23a18aa7c92" alt="elmepa_uni_app"/>
+</p>
+
 You can watch the app presentation on [Youtube](https://youtu.be/FQGB7BWJGSI). <br/>
 This app is live at [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp) <br/>
 Read more about the app [HERE](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) <br/>
