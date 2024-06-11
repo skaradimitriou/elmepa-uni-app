@@ -12,11 +12,36 @@ This repository contains an Android application built & tailored specifically fo
 
 ## Features 💡
 
-- **Interactive Interface**: Engaging user experience designed to cater to the needs of students, faculty, and staff.
-- **Real-time Updates**: Stay informed with the news, announcements & events directly from the university.
-- **Engaging Syllabus**: Easily access your schedule and syllabus while on the go (for both Undergraduate & Postgraduate students).
-- **Social Integration**: Look up & connect with University's personnel effortlessly.
-- **Dark Theming**: Tailor the app to your theme preference.
+<details >
+  <summary>Interactive Interface</summary>
+  <br>
+  Engaging user experience designed to cater to the needs of students, faculty, and staff.
+</details>
+<details >
+  <summary>Department News</summary>
+  <br>
+  Stay informed with the news, announcements & events directly from the University.
+</details>
+<details >
+  <summary>Faculty Contact Information</summary>
+  <br>
+  Access the "Personnel" screen and search your professor's contact information.
+</details>
+<details >
+  <summary>Engaging Syllabus</summary>
+  <br>
+  Easily access your schedule and syllabus while on the go (for both Undergraduate & Postgraduate students).
+</details>
+<details >
+  <summary>Department FaQ</summary>
+  <br>
+  Do you have a question? Our FaQ section is here for you!
+</details>
+<details >
+  <summary>Personalization</summary>
+  <br>
+  Dark theme or Light theme? Tailor the app to your own preference.
+</details>
 
 ## App Architecture 🛠️
 
@@ -32,14 +57,24 @@ This repository contains an Android application built & tailored specifically fo
   <p align="center" width="100%">Navigate on <ins>each module</ins> to see detailed dependencies.</p>
 </p>
 
-#### :app
+<details >
+<summary>:app module</summary>
+<br>
 The :app module serves as the entry point for the application. It includes the main activity and is responsible for initializing the app and routing to the appropriate feature modules.
+</details>
 
-#### :core
+<details >
+<summary>:core module</summary>
+<br>
 The :core module contains shared resources and utilities that are used across other modules. This includes common utilities, network operations, local database, datastore setup, and last but not least, the domain logic.
+</details>
 
-#### :feature
+<details >
+<summary>:feature module</summary>
+<br>
 The :feature module encapsulates specific, self-contained functionality related to a particular aspect of the app. (e.g department news).
+</details>
+
 
 ## Tech Stack ⚙️
 
