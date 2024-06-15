@@ -16,6 +16,7 @@ import com.stathis.department.databinding.HolderFieldofstudyParentBinding
 import com.stathis.department.databinding.HolderProgrammeParentItemBinding
 import com.stathis.department.databinding.HolderSocialParentBinding
 import com.stathis.model.UiModel
+import com.stathis.model.department.DepMember
 import com.stathis.model.department.DepartmentPersonnelItem
 import com.stathis.model.department.DepartmentProgrammeItem
 import com.stathis.model.department.DepartmentSocialItem
@@ -27,7 +28,7 @@ import com.stathis.model.general.carousel.CarouselParent
 
 class DepartmentAdapter(
     private val callback: DepartmentCallback
-) : ListAdapter<com.stathis.model.UiModel, DepartmentViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<UiModel, DepartmentViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DepartmentViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -77,7 +78,7 @@ class DepartmentViewHolder(
     private val callback: DepartmentCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         when (data) {
             is CarouselParent -> {
                 val adapter = CarouselAdapter { selectedItem ->
@@ -104,7 +105,7 @@ class DepartmentViewHolder(
             }
 
             is DepartmentPersonnelItem -> {
-                val adapter = DepMembersAdapter()
+                val adapter = DepMembersAdapter(callback)
                 adapter.submitList(data.personnel)
                 binding.setVariable(BR.adapter, adapter)
             }
@@ -123,5 +124,6 @@ class DepartmentViewHolder(
 interface DepartmentCallback {
     fun onCarouselItemTap(model: CarouselItem)
     fun onProgrammeItemTap(model: ProgrammeItem)
+    fun onDepMemberItemTap(model: DepMember)
     fun onSocialItemTap(model: SocialItem)
 }

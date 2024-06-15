@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface PersonnelRepository {
 
-    suspend fun fetchAllPersonnel(): Flow<NetworkResult<List<com.stathis.model.UiModel>>>
+    suspend fun fetchAllPersonnel(): Flow<NetworkResult<List<UiModel>>>
 
-    suspend fun searchForPersonnel(name: String): Flow<NetworkResult<List<com.stathis.model.UiModel>>>
+    suspend fun searchForPersonnel(name: String): Flow<NetworkResult<List<UiModel>>>
 }

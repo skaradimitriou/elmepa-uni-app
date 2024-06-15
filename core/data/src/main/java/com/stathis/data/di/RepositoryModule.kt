@@ -2,6 +2,7 @@ package com.stathis.data.di
 
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
+import com.stathis.data.remote.datasource.DepartmentDataSource
 import com.stathis.data.remote.datasource.NewsDataSource
 import com.stathis.data.repository.DashboardRepository
 import com.stathis.data.repository.DashboardRepositoryImpl
@@ -80,8 +81,12 @@ class RepositoryModule {
     @Provides
     @Singleton
     fun provideDepartmentRepository(
-        firestore: FirebaseFirestore
-    ): DepartmentRepository = DepartmentRepositoryImpl(firestore)
+        firestore: FirebaseFirestore,
+        remoteDataSource: DepartmentDataSource
+    ): DepartmentRepository = DepartmentRepositoryImpl(
+        fireStore = firestore,
+        remoteDataSource = remoteDataSource
+    )
 
     @Provides
     @Singleton

@@ -1,6 +1,7 @@
 package com.stathis.data.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.stathis.data.remote.datasource.DepartmentDataSource
 import com.stathis.data.remote.mapper.ContactMapper
 import com.stathis.data.remote.mapper.DepartmentResponseMapper
 import com.stathis.data.remote.model.ContactItemDto
@@ -8,51 +9,39 @@ import com.stathis.data.remote.model.DepartmentResponseDto
 import com.stathis.data.util.CONTACT_DB_PATH
 import com.stathis.data.util.DEPT_DB_PATH
 import com.stathis.data.util.SCREEN_DATA
-import com.stathis.model.department.DepartmentPersonnelItem
-import com.stathis.model.department.DepartmentProgrammeItem
-import com.stathis.model.department.DepartmentSocialItem
-import com.stathis.model.department.FieldOfStudyParent
-import com.stathis.model.general.carousel.CarouselParent
+import com.stathis.data.util.getAndMapResponse
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
-import com.stathis.model.util.ShimmerGenerator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.tasks.await
+import javax.inject.Inject
 
-class DepartmentRepositoryImpl(
-    private val fireStore: FirebaseFirestore
+class DepartmentRepositoryImpl @Inject constructor(
+    private val fireStore: FirebaseFirestore,
+    private val remoteDataSource: DepartmentDataSource
 ) : DepartmentRepository {
 
-    override suspend fun fetchDepartmentInformation(): Flow<NetworkResult<List<com.stathis.model.UiModel>>> =
+    override suspend fun fetchDepartmentInformation(): Flow<NetworkResult<List<UiModel>>> =
         flow {
-            val list = listOf(
-                CarouselParent(ShimmerGenerator.list),
-                FieldOfStudyParent(ShimmerGenerator.list),
-                DepartmentProgrammeItem(ShimmerGenerator.list),
-                DepartmentPersonnelItem(ShimmerGenerator.list),
-                DepartmentSocialItem(ShimmerGenerator.list)
+            val data = getAndMapResponse<DepartmentResponseDto, List<UiModel>>(
+                query = fireStore.collection(DEPT_DB_PATH).document(SCREEN_DATA),
+                mapInto = { dtoModel ->
+                    DepartmentResponseMapper.toDomainModel(dtoModel)
+                }
             )
 
-            emit(NetworkResult.Loading(list))
-
-            val queryResult = fireStore.collection(DEPT_DB_PATH)
-                .document(SCREEN_DATA)
-                .get()
-                .await()
-                .toObject(DepartmentResponseDto::class.java)
-
-            val data = DepartmentResponseMapper.toDomainModel(queryResult)
             emit(NetworkResult.Success(data))
         }
 
-    override suspend fun fetchDepartmentContactDetails(): Flow<NetworkResult<List<com.stathis.model.UiModel>>> =
+    override suspend fun fetchDepartmentContactDetails(): Flow<NetworkResult<List<UiModel>>> =
         flow {
-            val query = fireStore.collection(CONTACT_DB_PATH)
-                .get()
-                .await()
-                .toObjects(ContactItemDto::class.java)
+            val data = getAndMapResponse<ContactItemDto, List<UiModel>>(
+                query = fireStore.collection(CONTACT_DB_PATH),
+                mapInto = { dtoModel -> ContactMapper.toDomainModel(dtoModel) }
+            )
 
-            val mappedData = ContactMapper.toDomainModel(query)
-            emit(NetworkResult.Success(mappedData))
+            emit(NetworkResult.Success(data))
         }
+
+    override suspend fun fetchDepMembers() = remoteDataSource.fetchDepMembers()
 }

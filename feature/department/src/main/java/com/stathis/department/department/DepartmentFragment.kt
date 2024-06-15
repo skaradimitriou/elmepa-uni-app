@@ -7,6 +7,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.common.MainViewModel
 import com.stathis.common.base.BaseFragment
+import com.stathis.common.util.DEP_MEMBER_INFO
 import com.stathis.common.util.TITLE
 import com.stathis.common.util.URL
 import com.stathis.common.util.setScreenTitle
@@ -16,6 +17,7 @@ import com.stathis.department.R
 import com.stathis.department.databinding.FragmentDepartmentBinding
 import com.stathis.department.department.adapter.DepartmentAdapter
 import com.stathis.department.department.adapter.DepartmentCallback
+import com.stathis.model.department.DepMember
 import com.stathis.model.department.ProgrammeItem
 import com.stathis.model.department.SocialItem
 import com.stathis.model.general.carousel.CarouselItem
@@ -76,6 +78,13 @@ class DepartmentFragment : BaseFragment<FragmentDepartmentBinding>(R.layout.frag
         title = model.title,
         url = model.openUrl
     )
+
+    override fun onDepMemberItemTap(model: DepMember) {
+        val args = Bundle().apply {
+            putParcelable(DEP_MEMBER_INFO, model)
+        }
+        activityVM.navigateWithAction(NavigationAction.DEP_MEMBER_DETAILS, args)
+    }
 
     override fun onSocialItemTap(model: SocialItem) = openUrl(
         shouldOpenInBrowser = model.openInBrowser,

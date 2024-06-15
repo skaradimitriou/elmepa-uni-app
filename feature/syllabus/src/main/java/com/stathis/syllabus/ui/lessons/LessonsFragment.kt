@@ -7,7 +7,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.common.MainViewModel
 import com.stathis.common.base.BaseFragment
-import com.stathis.common.util.getSerializable
+import com.stathis.common.util.getSerializableFromBundle
 import com.stathis.common.util.inflateCustomMenu
 import com.stathis.common.util.setScreenTitle
 import com.stathis.common.util.setupItemDecoration
@@ -51,10 +51,10 @@ class LessonsFragment : BaseFragment<FragmentLessonsBinding>(R.layout.fragment_l
                 )
             })
 
-        val programmeType = arguments?.getSerializable<ProgrammeType>(PROGRAMME)
+        val programmeType = arguments?.getSerializableFromBundle<ProgrammeType>(PROGRAMME)
             ?: ProgrammeType.UNDEFINED
 
-        val orientation = arguments?.getSerializable<OrientationType>(ORIENTATION)
+        val orientation = arguments?.getSerializableFromBundle<OrientationType>(ORIENTATION)
             ?: OrientationType.UNDEFINED
 
         val semester = arguments?.getString(SEMESTER).toNotNull()

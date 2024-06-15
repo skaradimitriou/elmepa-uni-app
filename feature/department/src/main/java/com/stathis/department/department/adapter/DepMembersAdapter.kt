@@ -12,10 +12,12 @@ import com.stathis.department.R
 import com.stathis.department.databinding.HolderDepmemberItemBinding
 import com.stathis.department.databinding.HolderShimmerDepmemberItemBinding
 import com.stathis.model.UiModel
+import com.stathis.model.department.DepMember
 import com.stathis.model.general.ShimmerItem
-import com.stathis.model.personnel.Person
 
-class DepMembersAdapter : ListAdapter<com.stathis.model.UiModel, DepMembersViewHolder>(BaseDiffUtil<UiModel>()) {
+class DepMembersAdapter(
+    private val callback: DepartmentCallback
+) : ListAdapter<UiModel, DepMembersViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DepMembersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,7 +32,7 @@ class DepMembersAdapter : ListAdapter<com.stathis.model.UiModel, DepMembersViewH
 
             else -> HolderEmptyViewBinding.inflate(inflater, parent, false)
         }
-        return DepMembersViewHolder(view)
+        return DepMembersViewHolder(view, callback)
     }
 
     override fun onBindViewHolder(holder: DepMembersViewHolder, position: Int) {
@@ -38,17 +40,19 @@ class DepMembersAdapter : ListAdapter<com.stathis.model.UiModel, DepMembersViewH
     }
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
-        is Person -> R.layout.holder_depmember_item
+        is DepMember -> R.layout.holder_depmember_item
         is ShimmerItem -> R.layout.holder_shimmer_depmember_item
         else -> com.stathis.common.R.layout.holder_empty_view
     }
 }
 
 class DepMembersViewHolder(
-    private val binding: ViewDataBinding
+    private val binding: ViewDataBinding,
+    private val callback: DepartmentCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         binding.setVariable(BR.model, data)
+        binding.setVariable(BR.callback, callback)
     }
 }

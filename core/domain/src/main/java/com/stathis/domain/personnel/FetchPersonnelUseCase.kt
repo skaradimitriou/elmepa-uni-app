@@ -1,4 +1,4 @@
-package com.stathis.domain
+package com.stathis.domain.personnel
 
 import com.stathis.common.base.BaseUseCase
 import com.stathis.data.repository.PersonnelRepository

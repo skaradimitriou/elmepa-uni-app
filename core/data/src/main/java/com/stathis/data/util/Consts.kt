@@ -2,6 +2,7 @@ package com.stathis.data.util
 
 const val NEWS_URL = "https://mst.hmu.gr/news_gr/"
 const val EVENTS_URL = "https://mst.hmu.gr/events/"
+const val DEP_MEMBERS_URL = "https://mst.hmu.gr/prosopiko/melh-dep/"
 
 const val GOOGLE_URL = "https://www.google.com"
 const val RESPONSE_OK = 200
@@ -21,6 +22,27 @@ const val SPAN = "span.published"
 const val URL_HTML_TAG = "h2.entry-title"
 const val URL_TYPE = "a"
 const val URL_ATTR = "href"
+const val H3 = "h3"
+const val H4 = "h4"
+const val LI = "li"
+const val PERCENT = "%"
+const val DATA_WIDTH = "data-width"
+
+/*
+ * Department screen Web Scraping Const
+ */
+
+const val MAIN_CONTENT = "div.et-l--post"
+const val SECTION = "div.et_pb_section"
+const val ROW = "div.et_pb_row"
+const val DEP_IMG = "span.et_pb_image_wrap"
+const val DEP_INFO = "div.et_pb_text_inner"
+const val DEP_BTN = "div.et_pb_button_module_wrapper"
+const val DEP_BTN_A = "a.et_pb_button"
+const val DEP_SKILLS = "div.et-last-child"
+const val DEP_SPAN_TITLE = "span.et_pb_counter_title"
+const val DEP_SKILL_CONTAINER = "span.et_pb_counter_container"
+const val DEP_SKILL_AMOUNT = "span.et_pb_counter_amount"
 
 /**
  * Database constant values.

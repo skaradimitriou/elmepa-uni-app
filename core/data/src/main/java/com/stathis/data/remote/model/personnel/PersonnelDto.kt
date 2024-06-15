@@ -1,4 +1,4 @@
-package com.stathis.data.remote.model
+package com.stathis.data.remote.model.personnel
 
 data class PersonnelDto(
     val fullName: String? = null,

@@ -6,6 +6,7 @@ enum class NavigationAction {
     EVENTS,
     POST_DETAILS,
     DEPARTMENT,
+    DEP_MEMBER_DETAILS,
     STUDENTS,
     RESEARCH,
     PERSONNEL,

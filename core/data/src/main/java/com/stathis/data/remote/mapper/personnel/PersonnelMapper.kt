@@ -1,7 +1,8 @@
-package com.stathis.data.remote.mapper
+package com.stathis.data.remote.mapper.personnel
 
 import com.stathis.common.util.toNotNull
-import com.stathis.data.remote.model.PersonnelDto
+import com.stathis.data.remote.mapper.BaseMapper
+import com.stathis.data.remote.model.personnel.PersonnelDto
 import com.stathis.model.personnel.Person
 
 object PersonnelMapper : BaseMapper<List<PersonnelDto>?, List<Person>> {

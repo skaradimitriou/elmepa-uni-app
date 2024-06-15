@@ -15,7 +15,7 @@ import com.stathis.model.UiModel
 import com.stathis.model.department.FieldOfStudy
 import com.stathis.model.general.ShimmerItem
 
-class FieldOfStudyAdapter : ListAdapter<com.stathis.model.UiModel, FieldOfStudyViewHolder>(
+class FieldOfStudyAdapter : ListAdapter<UiModel, FieldOfStudyViewHolder>(
     BaseDiffUtil<UiModel>()
 ) {
 
@@ -50,7 +50,7 @@ class FieldOfStudyViewHolder(
     private val binding: ViewDataBinding
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         binding.setVariable(BR.model, data)
     }
 }

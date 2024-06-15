@@ -30,7 +30,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     override fun init() {
         navController = findNavController(R.id.navHostFragment)
-        navigator = NavigatorImpl(this, navController)
+        navigator = NavigatorImpl(navController)
 
         setSupportActionBar(binding.toolbar)
 

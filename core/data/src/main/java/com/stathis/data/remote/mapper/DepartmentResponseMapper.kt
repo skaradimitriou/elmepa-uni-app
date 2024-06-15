@@ -6,7 +6,6 @@ import com.stathis.data.remote.model.ProgrammeItemDto
 import com.stathis.data.remote.model.SocialItemDto
 import com.stathis.data.remote.model.SyllabusItemDto
 import com.stathis.model.UiModel
-import com.stathis.model.department.DepartmentPersonnelItem
 import com.stathis.model.department.DepartmentProgrammeItem
 import com.stathis.model.department.DepartmentSocialItem
 import com.stathis.model.department.FieldOfStudy
@@ -23,9 +22,6 @@ object DepartmentResponseMapper : BaseMapper<DepartmentResponseDto?, List<UiMode
         ),
         DepartmentProgrammeItem(
             programmes = dtoModel?.programmes.toNotNull()
-        ),
-        DepartmentPersonnelItem(
-            personnel = PersonnelMapper.toDomainModel(dtoModel?.depMembers)
         ),
         DepartmentSocialItem(
             socialItems = dtoModel?.social.toNotNull()
