@@ -1,6 +1,5 @@
 package com.stathis.elmepaunivapp.navigation
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.navigation.NavController
 import com.stathis.elmepaunivapp.R
@@ -13,7 +12,6 @@ import javax.inject.Inject
  */
 
 class NavigatorImpl @Inject constructor(
-    private val activity: Activity?,
     private val navController: NavController
 ) : Navigator {
 

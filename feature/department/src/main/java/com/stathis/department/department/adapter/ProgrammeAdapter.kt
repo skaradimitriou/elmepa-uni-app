@@ -17,7 +17,7 @@ import com.stathis.model.general.ShimmerItem
 
 class ProgrammeAdapter(
     private val callback: ProgrammeCallback
-) : ListAdapter<com.stathis.model.UiModel, ProgrammeViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<UiModel, ProgrammeViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProgrammeViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -51,7 +51,7 @@ class ProgrammeViewHolder(
     private val callback: ProgrammeCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         binding.setVariable(BR.model, data)
         binding.setVariable(BR.callback, callback)
     }

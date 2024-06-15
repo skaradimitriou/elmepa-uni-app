@@ -4,7 +4,6 @@ data class DepartmentResponseDto(
     val carouselItems: List<CarouselItemDto>? = null,
     val syllabusItems: List<SyllabusItemDto>? = null,
     val programmes: List<ProgrammeItemDto>? = null,
-    val depMembers: List<PersonnelDto>? = null,
     val social: List<SocialItemDto>? = null
 )
 

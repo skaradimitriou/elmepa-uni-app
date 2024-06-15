@@ -1,8 +1,8 @@
 package com.stathis.data.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.data.remote.mapper.PersonnelMapper
-import com.stathis.data.remote.model.PersonnelDto
+import com.stathis.data.remote.mapper.personnel.PersonnelMapper
+import com.stathis.data.remote.model.personnel.PersonnelDto
 import com.stathis.data.util.FULLNAME
 import com.stathis.data.util.PERSONNEL_DB_PATH
 import com.stathis.database.local.personnel.PersonnelDatabase

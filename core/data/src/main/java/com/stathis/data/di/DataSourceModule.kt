@@ -1,5 +1,7 @@
 package com.stathis.data.di
 
+import com.stathis.data.remote.datasource.DepartmentDataSourceImpl
+import com.stathis.data.remote.datasource.DepartmentDataSource
 import com.stathis.data.remote.datasource.NewsDataSource
 import com.stathis.data.remote.datasource.NewsDataSourceImpl
 import dagger.Module
@@ -16,4 +18,8 @@ class DataSourceModule {
     @Provides
     @Singleton
     fun provideNewsDataSource(): NewsDataSource = NewsDataSourceImpl()
+
+    @Provides
+    @Singleton
+    fun provideDepartmentDataSource(): DepartmentDataSource = DepartmentDataSourceImpl()
 }

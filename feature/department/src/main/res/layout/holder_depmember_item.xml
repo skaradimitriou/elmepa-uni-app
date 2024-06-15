@@ -7,7 +7,11 @@
 
         <variable
             name="model"
-            type="com.stathis.model.personnel.Person" />
+            type="com.stathis.model.department.DepMember" />
+
+        <variable
+            name="callback"
+            type="com.stathis.department.department.adapter.DepartmentCallback" />
 
     </data>
 
@@ -15,7 +19,8 @@
         style="@style/AppMaterialCard"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_200"
-        android:layout_margin="@dimen/dimen_5">
+        android:layout_margin="@dimen/dimen_5"
+        android:onClick="@{() -> callback.onDepMemberItemTap(model)}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="@dimen/dimen_150"

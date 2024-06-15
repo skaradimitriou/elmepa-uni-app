@@ -22,7 +22,8 @@ class PersonnelWidgetProvider : AppWidgetProvider() {
                     putExtra(context?.resources?.getString(R.string.open_personnel), true)
                 }
 
-                val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+                val pendingIntent =
+                    PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
                 val views = RemoteViews(context?.packageName, R.layout.personnel_widget)
                 views.setOnClickPendingIntent(R.id.widget_button, pendingIntent)
 

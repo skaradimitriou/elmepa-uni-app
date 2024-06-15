@@ -6,18 +6,18 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
 import com.stathis.common.base.BaseDiffUtil
 import com.stathis.common.base.BaseViewHolder
-import com.stathis.model.UiModel
+import com.stathis.common.databinding.HolderEmptyViewBinding
 import com.stathis.department.BR
 import com.stathis.department.R
-import com.stathis.common.databinding.HolderEmptyViewBinding
 import com.stathis.department.databinding.HolderShimmerSocialItemBinding
 import com.stathis.department.databinding.HolderSocialItemBinding
+import com.stathis.model.UiModel
 import com.stathis.model.department.SocialItem
 import com.stathis.model.general.ShimmerItem
 
 class SocialItemAdapter(
     private val callback: SocialItemCallback
-) : ListAdapter<com.stathis.model.UiModel, SocialItemViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<UiModel, SocialItemViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SocialItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -51,7 +51,7 @@ class SocialItemViewHolder(
     private val callback: SocialItemCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         binding.setVariable(BR.model, data)
         binding.setVariable(BR.callback, callback)
     }

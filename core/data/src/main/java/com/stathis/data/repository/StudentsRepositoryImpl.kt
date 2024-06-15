@@ -5,6 +5,7 @@ import com.stathis.data.remote.mapper.StudentsMapper
 import com.stathis.data.remote.model.StudentsResponseDto
 import com.stathis.data.util.SCREEN_DATA
 import com.stathis.data.util.STUDENTS_DB_PATH
+import com.stathis.model.UiModel
 import com.stathis.model.general.carousel.CarouselParent
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.students.LinkParent
@@ -18,21 +19,20 @@ class StudentsRepositoryImpl @Inject constructor(
     private val fireStore: FirebaseFirestore
 ) : StudentsRepository {
 
-    override suspend fun fetchStudentScreenData(): Flow<NetworkResult<List<com.stathis.model.UiModel>>> =
-        flow {
-            val loadingData = listOf(
-                CarouselParent(ShimmerGenerator.list),
-                LinkParent(ShimmerGenerator.list)
-            )
-            emit(NetworkResult.Loading(data = loadingData))
+    override suspend fun fetchStudentScreenData(): Flow<NetworkResult<List<UiModel>>> = flow {
+        val loadingData = listOf(
+            CarouselParent(ShimmerGenerator.list),
+            LinkParent(ShimmerGenerator.list)
+        )
+        emit(NetworkResult.Loading(data = loadingData))
 
-            val queryResult = fireStore.collection(STUDENTS_DB_PATH)
-                .document(SCREEN_DATA)
-                .get()
-                .await()
-                .toObject(StudentsResponseDto::class.java)
+        val queryResult = fireStore.collection(STUDENTS_DB_PATH)
+            .document(SCREEN_DATA)
+            .get()
+            .await()
+            .toObject(StudentsResponseDto::class.java)
 
-            val result = StudentsMapper.toDomainModel(queryResult)
-            emit(NetworkResult.Success(result))
-        }
+        val result = StudentsMapper.toDomainModel(queryResult)
+        emit(NetworkResult.Success(result))
+    }
 }
