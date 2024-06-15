@@ -13,7 +13,7 @@ import com.stathis.model.research.ResearchItem
 
 class ResearchChildAdapter(
     private val callback: ResearchCallback
-) : ListAdapter<com.stathis.model.UiModel, ResearchChildViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<UiModel, ResearchChildViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResearchChildViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -31,7 +31,7 @@ class ResearchChildViewHolder(
     private val callback: ResearchCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         when (data) {
             is ResearchItem -> {
                 binding.setVariable(BR.model, data)
