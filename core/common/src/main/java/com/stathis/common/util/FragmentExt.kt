@@ -90,7 +90,7 @@ fun Fragment.startEmailIntent(emailAddress: String) {
     try {
         startActivity(Intent.createChooser(mailIntent, SEND_MAIL))
     } catch (ex: ActivityNotFoundException) {
-        //
+        Toast.makeText(requireContext(), NO_CLIENTS_INSTALLED, Toast.LENGTH_SHORT).show()
     }
 }
 

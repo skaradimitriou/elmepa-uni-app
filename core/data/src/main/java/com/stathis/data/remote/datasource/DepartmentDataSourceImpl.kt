@@ -8,6 +8,7 @@ import com.stathis.data.util.DEP_BTN
 import com.stathis.data.util.DEP_BTN_A
 import com.stathis.data.util.DEP_IMG
 import com.stathis.data.util.DEP_INFO
+import com.stathis.data.util.DEP_LINKS
 import com.stathis.data.util.DEP_MEMBERS_URL
 import com.stathis.data.util.DEP_SKILLS
 import com.stathis.data.util.DEP_SKILL_AMOUNT
@@ -23,7 +24,9 @@ import com.stathis.data.util.PERCENT
 import com.stathis.data.util.P_TAG
 import com.stathis.data.util.ROW
 import com.stathis.data.util.SECTION
+import com.stathis.data.util.UL
 import com.stathis.data.util.URL_ATTR
+import com.stathis.data.util.getUrlText
 import com.stathis.model.department.DepMember
 import com.stathis.model.network.NetworkResult
 import kotlinx.coroutines.flow.Flow
@@ -53,7 +56,19 @@ class DepartmentDataSourceImpl : DepartmentDataSource {
                             SkillDto(title, value)
                         }
 
-                    DepMemberDto(image, fullName, profession, description, linkToResume, skills)
+                    val links = html.select(DEP_LINKS).select(UL).select(LI).map {
+                        it.getUrlText()
+                    }
+
+                    DepMemberDto(
+                        image,
+                        fullName,
+                        profession,
+                        description,
+                        linkToResume,
+                        skills,
+                        links
+                    )
                 }
 
             val domainModels = DepMemberMapper.toDomainModel(dtoModels)

@@ -9,7 +9,7 @@ import com.stathis.common.base.BaseViewHolder
 import com.stathis.common.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
 import com.stathis.model.general.ShimmerItem
-import com.stathis.model.students.Link
+import com.stathis.model.students.StudentLink
 import com.stathis.students.BR
 import com.stathis.students.R
 import com.stathis.students.databinding.HolderLinkItemBinding
@@ -40,7 +40,7 @@ class LinksAdapter(
     }
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
-        is Link -> R.layout.holder_link_item
+        is StudentLink -> R.layout.holder_link_item
         is ShimmerItem -> R.layout.holder_shimmer_link_item
         else -> com.stathis.common.R.layout.holder_empty_view
     }
@@ -53,7 +53,7 @@ class LinksViewHolder(
 
     override fun bind(data: UiModel) {
         when (data) {
-            is Link -> {
+            is StudentLink -> {
                 binding.setVariable(BR.model, data)
                 binding.setVariable(BR.callback, callback)
             }
@@ -62,5 +62,5 @@ class LinksViewHolder(
 }
 
 fun interface LinksCallback {
-    fun onLinkTap(model: Link)
+    fun onLinkTap(model: StudentLink)
 }

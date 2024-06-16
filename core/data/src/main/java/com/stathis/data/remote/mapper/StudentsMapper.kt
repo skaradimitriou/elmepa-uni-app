@@ -4,8 +4,8 @@ import com.stathis.common.util.toNotNull
 import com.stathis.data.remote.model.LinkDto
 import com.stathis.data.remote.model.StudentsResponseDto
 import com.stathis.model.UiModel
-import com.stathis.model.students.Link
-import com.stathis.model.students.LinkParent
+import com.stathis.model.students.StudentLink
+import com.stathis.model.students.StudentLinkParent
 
 object StudentsMapper : BaseMapper<StudentsResponseDto?, List<UiModel>> {
 
@@ -14,12 +14,12 @@ object StudentsMapper : BaseMapper<StudentsResponseDto?, List<UiModel>> {
         dtoModel?.links.toDomainModel()
     )
 
-    private fun List<LinkDto>?.toDomainModel(): LinkParent {
+    private fun List<LinkDto>?.toDomainModel(): StudentLinkParent {
         val data = this?.map { it.toDomainModel() }.toNotNull()
-        return LinkParent(links = data)
+        return StudentLinkParent(links = data)
     }
 
-    private fun LinkDto?.toDomainModel() = Link(
+    private fun LinkDto?.toDomainModel() = StudentLink(
         title = this?.title.toNotNull(),
         imageUrl = this?.imageUrl.toNotNull(),
         openUrl = this?.openUrl.toNotNull(),

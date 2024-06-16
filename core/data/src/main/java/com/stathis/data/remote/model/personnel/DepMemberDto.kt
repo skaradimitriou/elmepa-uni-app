@@ -6,7 +6,8 @@ data class DepMemberDto(
     val profession: String? = null,
     val description: String? = null,
     val linkToResume: String? = null,
-    val skills: List<SkillDto>? = null
+    val skills: List<SkillDto>? = null,
+    val links: List<String?>? = null
 )
 
 data class SkillDto(

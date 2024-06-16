@@ -14,7 +14,7 @@ import com.stathis.common.util.startNativeBrowserIntent
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
-import com.stathis.model.students.Link
+import com.stathis.model.students.StudentLink
 import com.stathis.students.adapters.StudentsAdapter
 import com.stathis.students.adapters.StudentsCallback
 import com.stathis.students.databinding.FragmentStudentsBinding
@@ -71,7 +71,7 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
         url = model.openUrl
     )
 
-    override fun onLinkTap(model: Link) = openUrl(
+    override fun onLinkTap(model: StudentLink) = openUrl(
         shouldOpenInBrowser = model.openInBrowser,
         title = model.title,
         url = model.openUrl

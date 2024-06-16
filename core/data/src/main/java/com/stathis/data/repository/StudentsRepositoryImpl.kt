@@ -8,7 +8,7 @@ import com.stathis.data.util.STUDENTS_DB_PATH
 import com.stathis.model.UiModel
 import com.stathis.model.general.carousel.CarouselParent
 import com.stathis.model.network.NetworkResult
-import com.stathis.model.students.LinkParent
+import com.stathis.model.students.StudentLinkParent
 import com.stathis.model.util.ShimmerGenerator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -22,7 +22,7 @@ class StudentsRepositoryImpl @Inject constructor(
     override suspend fun fetchStudentScreenData(): Flow<NetworkResult<List<UiModel>>> = flow {
         val loadingData = listOf(
             CarouselParent(ShimmerGenerator.list),
-            LinkParent(ShimmerGenerator.list)
+            StudentLinkParent(ShimmerGenerator.list)
         )
         emit(NetworkResult.Loading(data = loadingData))
 

@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.stathis.model.students.Link" />
+            type="com.stathis.model.students.StudentLink" />
 
         <variable
             name="callback"

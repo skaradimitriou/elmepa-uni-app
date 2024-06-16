@@ -3,14 +3,14 @@ package com.stathis.model.students
 import com.stathis.model.UiModel
 
 
-data class Link(
+data class StudentLink(
     val title: String,
     val imageUrl: String,
     val openUrl: String,
     val openInBrowser: Boolean
 ) : UiModel {
     override fun equalsContent(obj: UiModel) = when (obj) {
-        is Link -> title == obj.title
+        is StudentLink -> title == obj.title
         else -> false
     }
 }
