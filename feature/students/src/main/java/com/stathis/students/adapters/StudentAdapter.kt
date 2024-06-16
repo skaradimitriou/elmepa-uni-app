@@ -12,8 +12,8 @@ import com.stathis.common.databinding.HolderViewpagerCarouselItemBinding
 import com.stathis.model.UiModel
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.general.carousel.CarouselParent
-import com.stathis.model.students.Link
-import com.stathis.model.students.LinkParent
+import com.stathis.model.students.StudentLink
+import com.stathis.model.students.StudentLinkParent
 import com.stathis.students.BR
 import com.stathis.students.R
 import com.stathis.students.databinding.HolderLinksParentItemBinding
@@ -44,7 +44,7 @@ class StudentsAdapter(
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
         is CarouselParent -> com.stathis.common.R.layout.holder_viewpager_carousel_item
-        is LinkParent -> R.layout.holder_links_parent_item
+        is StudentLinkParent -> R.layout.holder_links_parent_item
         else -> com.stathis.common.R.layout.holder_empty_view
     }
 }
@@ -65,7 +65,7 @@ class StudentsViewHolder(
                 binding.setVariable(BR.adapter, adapter)
             }
 
-            is LinkParent -> {
+            is StudentLinkParent -> {
                 val adapter = LinksAdapter { selectedLink ->
                     callback.onLinkTap(selectedLink)
                 }
@@ -78,5 +78,5 @@ class StudentsViewHolder(
 
 interface StudentsCallback {
     fun onCarouselTap(model: CarouselItem)
-    fun onLinkTap(model: Link)
+    fun onLinkTap(model: StudentLink)
 }

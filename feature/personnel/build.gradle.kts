@@ -63,7 +63,7 @@ dependencies {
     implementation(libs.shimmer)
     implementation(libs.circleImgView)
 
-    implementation(libs.jsoup)
+    implementation(libs.glide)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

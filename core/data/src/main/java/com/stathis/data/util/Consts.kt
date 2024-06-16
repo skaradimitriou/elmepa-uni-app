@@ -24,6 +24,7 @@ const val URL_TYPE = "a"
 const val URL_ATTR = "href"
 const val H3 = "h3"
 const val H4 = "h4"
+const val UL = "ul"
 const val LI = "li"
 const val PERCENT = "%"
 const val DATA_WIDTH = "data-width"
@@ -43,6 +44,7 @@ const val DEP_SKILLS = "div.et-last-child"
 const val DEP_SPAN_TITLE = "span.et_pb_counter_title"
 const val DEP_SKILL_CONTAINER = "span.et_pb_counter_container"
 const val DEP_SKILL_AMOUNT = "span.et_pb_counter_amount"
+const val DEP_LINKS = "ul.et_pb_social_media_follow"
 
 /**
  * Database constant values.

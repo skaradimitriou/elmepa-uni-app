@@ -32,27 +32,6 @@ fun TextView.setTextAndVisibility(text: String) {
     }
 }
 
-@BindingAdapter("setPersonnelImage", "personnelGender")
-fun ImageView.setPersonnelImage(url: String, gender: String) {
-    val genderImg = when (gender) {
-        resources.getString(R.string.male) -> R.drawable.male
-        else -> R.drawable.female
-    }
-
-    Glide.with(context).load(url).placeholder(R.drawable.placeholder).error(genderImg).into(this)
-}
-
-@BindingAdapter("setPersonnelDescription")
-fun TextView.setPersonnelDescription(description: String) {
-    visibility = if (description.isEmpty()) {
-        View.GONE
-    } else {
-        View.VISIBLE
-    }
-
-    text = description
-}
-
 @BindingAdapter("animateArrow")
 fun ImageView.animateArrow(isExpanded: Boolean) {
     if (isExpanded) {
