@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface GeneralAppInfoRepository {
 
-    suspend fun fetchAboutAppInfo(): Flow<List<com.stathis.model.UiModel>>
+    suspend fun fetchAboutAppInfo(): Flow<List<UiModel>>
 }
