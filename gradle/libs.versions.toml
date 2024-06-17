@@ -1,8 +1,8 @@
 [versions]
-ksp = "1.9.10-1.0.13"
+ksp = "2.0.0-1.0.22"
 kapt = "1.8.0"
 agp = "8.3.2"
-kotlin = "1.9.10"
+kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -11,7 +11,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
-lifecycle = "2.8.1"
+lifecycle = "2.8.2"
 navigation = "2.7.7"
 #Coroutines
 coroutines = "1.7.3"
@@ -26,7 +26,7 @@ gradle = "8.1.4"
 googleServicesVersion = "4.4.2"
 #Firebase Crashlytics
 firebaseCrashlytics = "19.0.1"
-firebaseCrashlyticsGradle = "2.9.9"
+firebaseCrashlyticsGradle = "3.0.1"
 #Firebase BoM
 firebaseBom = "33.1.0"
 #Firebase Performance

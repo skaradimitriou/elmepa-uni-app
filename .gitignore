@@ -440,4 +440,7 @@ obj/
 
 !/gradle/wrapper/gradle-wrapper.jar
 
-# End of https://www.toptal.com/developers/gitignore/api/android,androidstudio,visualstudiocode,intellij+all,eclipse,java,gradle,windows,macos,linux
+# Kotlin 2.0
+.kotlin/
+
+# End of https://www.toptal.com/developers/gitignore/api/android,androidstudio,visualstudiocode,intellij+all,eclipse,java,gradle,windows,macos,linux,kotlin
