@@ -1,5 +1,11 @@
 <resources>
 
+    <!-- Professors Screen -->
+    <string name="share_option">Κοινοποίηση Στοιχείων (Share)</string>
+    <string name="email_option">Αποστολή E-mail</string>
+    <string name="share_personnel_data">Κοινοποίηση Στοιχείων Προσωπικού Τμήματος ΔΕΤ</string>
+    <string name="share_personnel_data_format">%1s \n %2s</string>
+
     <!-- Dep Details Screen -->
     <string name="dep_details_screen_title">Πληροφορίες Μέλους Δ.Ε.Π.</string>
     <string name="sectors">Τομείς</string>
