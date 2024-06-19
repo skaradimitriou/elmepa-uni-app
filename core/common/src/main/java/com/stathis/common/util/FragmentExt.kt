@@ -12,7 +12,6 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.stathis.common.R
 
 
 /**
@@ -48,25 +47,6 @@ fun Fragment.inflateCustomMenu(menuId: Int, respondItemId: Int, callback: (MenuI
             }
         }
     }, viewLifecycleOwner, Lifecycle.State.RESUMED)
-}
-
-fun Fragment.showPersonnelDialog(message: String, email: String) {
-    MaterialAlertDialogBuilder(requireContext()).apply {
-        setTitle(getString(R.string.dialog_new_email))
-        setMessage(message)
-        setPositiveButton(getString(R.string.dialog_yes)) { dialog, which ->
-            val i = Intent(Intent.ACTION_SEND)
-                .setType(EMAIL_TYPE)
-                .putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
-
-            try {
-                startActivity(Intent.createChooser(i, SEND_MAIL))
-            } catch (ex: ActivityNotFoundException) {
-                Toast.makeText(requireContext(), NO_CLIENTS_INSTALLED, Toast.LENGTH_SHORT).show()
-            }
-        }
-        setNegativeButton(getString(R.string.dialog_cancel)) { dialog, which -> dialog.dismiss() }
-    }.show()
 }
 
 /**

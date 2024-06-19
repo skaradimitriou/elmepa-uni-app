@@ -4,11 +4,15 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.stathis.common.base.BaseFragment
+import com.stathis.common.bottomsheet.BottomSheetOption
+import com.stathis.common.bottomsheet.OptionAction
+import com.stathis.common.bottomsheet.OptionsBottomSheet
 import com.stathis.common.util.inflateCustomMenu
 import com.stathis.common.util.respondToQuery
 import com.stathis.common.util.setScreenTitle
 import com.stathis.common.util.setupItemDecoration
-import com.stathis.common.util.showPersonnelDialog
+import com.stathis.common.util.startEmailIntent
+import com.stathis.common.util.startShareIntent
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.personnel.Person
 import com.stathis.personnel.R
@@ -23,7 +27,39 @@ class PersonnelFragment : BaseFragment<FragmentPersonnelBinding>(R.layout.fragme
     private val viewModel by viewModels<PersonnelViewModel>()
 
     private val adapter = PersonnelAdapter { selectedPersonnel ->
-        openDialog(selectedPersonnel)
+        showAvailableOptions(selectedPersonnel)
+    }
+
+    private fun showAvailableOptions(selectedPersonnel: Person) {
+        val options = listOf(
+            BottomSheetOption(
+                getString(R.string.share_option),
+                showSeparator = true,
+                type = OptionAction.SHARE
+            ),
+            BottomSheetOption(getString(R.string.email_option), type = OptionAction.SEND_EMAIL)
+        )
+
+        OptionsBottomSheet.Builder()
+            .setOptions(options)
+            .setListener { model ->
+                when (model.type) {
+                    OptionAction.SHARE -> {
+                        startShareIntent(
+                            subject = getString(R.string.share_personnel_data),
+                            body = getString(
+                                R.string.share_personnel_data_format,
+                                selectedPersonnel.fullName,
+                                selectedPersonnel.email
+                            )
+                        )
+                    }
+
+                    OptionAction.SEND_EMAIL -> startEmailIntent(selectedPersonnel.email)
+                }
+            }
+            .build()
+            .show(parentFragmentManager, OptionsBottomSheet.GENERIC_BS_TAG)
     }
 
     override fun init() {
@@ -70,25 +106,5 @@ class PersonnelFragment : BaseFragment<FragmentPersonnelBinding>(R.layout.fragme
         }
     }
 
-    override fun stopOps() {}
-
-    private fun openDialog(person: Person) {
-        val message = when (person.gender) {
-            resources.getString(com.stathis.common.R.string.male) -> {
-                getString(com.stathis.common.R.string.send_email_to_male_personnel).format(
-                    person.vocative
-                )
-            }
-
-            resources.getString(com.stathis.common.R.string.female) -> {
-                getString(com.stathis.common.R.string.send_email_to_female_personnel).format(
-                    person.vocative
-                )
-            }
-
-            else -> ""
-        }
-
-        showPersonnelDialog(message, person.email)
-    }
+    override fun stopOps() = Unit
 }
