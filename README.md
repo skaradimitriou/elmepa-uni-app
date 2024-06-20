@@ -25,7 +25,7 @@ This repository contains an Android application built & tailored specifically fo
 <details >
   <summary>Faculty Contact Information</summary>
   <br>
-  Access the "Personnel" screen and search your professor's contact information.
+  Access the "Personnel" screen and search your professor's contact information. Open the Personnel details screen and learn more about your professor.
 </details>
 <details >
   <summary>Engaging Syllabus</summary>
