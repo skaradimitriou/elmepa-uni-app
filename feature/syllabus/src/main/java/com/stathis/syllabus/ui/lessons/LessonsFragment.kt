@@ -70,6 +70,15 @@ class LessonsFragment : BaseFragment<FragmentLessonsBinding>(R.layout.fragment_l
             setupItemDecoration()
             adapter = this@LessonsFragment.adapter
         }
+
+        binding.swipeToRefresh.setOnRefreshListener {
+            viewModel.fetchLessonsByFields(
+                programme = programmeType,
+                orientation = orientation,
+                semesterName = semester
+            )
+            binding.swipeToRefresh.isRefreshing = false
+        }
     }
 
     override fun startOps() {
