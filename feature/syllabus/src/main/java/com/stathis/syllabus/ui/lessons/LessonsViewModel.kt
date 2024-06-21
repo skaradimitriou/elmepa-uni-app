@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.common.base.BaseViewModel
 import com.stathis.common.di.IoDispatcher
+import com.stathis.domain.FetchLessonsUseCase
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.syllabus.OrientationType
 import com.stathis.model.syllabus.ProgrammeType
@@ -18,13 +20,13 @@ import javax.inject.Inject
 class LessonsViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: com.stathis.domain.FetchLessonsUseCase
+    private val useCase: FetchLessonsUseCase
 ) : BaseViewModel(app) {
 
-    val lessons: StateFlow<NetworkResult<List<com.stathis.model.UiModel>>>
+    val lessons: StateFlow<NetworkResult<List<UiModel>>>
         get() = _lessons
 
-    private val _lessons = MutableStateFlow<NetworkResult<List<com.stathis.model.UiModel>>>(NetworkResult.Loading())
+    private val _lessons = MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
     fun fetchLessonsByFields(
         programme: ProgrammeType,

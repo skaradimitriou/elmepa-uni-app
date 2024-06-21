@@ -109,8 +109,15 @@ class SyllabusRepositoryImpl @Inject constructor(
             ?.description.toNotNull()
 
         val result = mutableListOf<com.stathis.model.UiModel>()
-        result.add(LessonHeader(headerText))
-        result.addAll(mappedResult)
+
+        if (headerText.isNotEmpty()) {
+            result.add(LessonHeader(headerText))
+        }
+
+        if (mappedResult.isNotEmpty()) {
+            result.addAll(mappedResult)
+        }
+
         emit(NetworkResult.Success(result))
     }
 
@@ -174,7 +181,6 @@ class SyllabusRepositoryImpl @Inject constructor(
             .toObjects(SyllabusRuleResponseDto::class.java)
             .firstOrNull()
 
-        val mappedResult = SyllabusRulesMapper.toDomainModel(queryResult)
-        return mappedResult
+        return SyllabusRulesMapper.toDomainModel(queryResult)
     }
 }
