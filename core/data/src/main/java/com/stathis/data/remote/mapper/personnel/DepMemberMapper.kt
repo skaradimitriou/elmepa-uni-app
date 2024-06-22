@@ -31,18 +31,18 @@ object DepMemberMapper : BaseMapper<List<DepMemberDto>?, List<DepMember>> {
     @JvmName("toSkillDomainModel")
     private fun List<SkillDto>?.toDomainModel() = toListOf {
         Skill(
-            title = it.title.toNotNull(),
+            title = it.title.toNotNull().lowercase().uppercase(),
             value = it.value?.toIntOrNull().toNotNull(),
         )
     }
 
     @JvmName("toLinkDomainModel")
-    private fun List<String?>?.toDomainModel() = toListOf { url ->
+    private fun List<String?>?.toDomainModel() = this?.mapIndexed { position, url ->
         Link(
             openUrl = url.toCleanUrl(),
-            type = url.toLinkType()
+            type = position.toLinkType()
         )
-    }
+    } ?: listOf()
 
     private fun String?.toCleanUrl() = if (this?.contains("mail") == true) {
         substringAfter("mailto:")
@@ -50,11 +50,11 @@ object DepMemberMapper : BaseMapper<List<DepMemberDto>?, List<DepMember>> {
         this.toNotNull()
     }
 
-    private fun String?.toLinkType() = when {
-        this?.contains("mail") == true -> LinkType.MAIL
-        this?.contains("linkedin") == true -> LinkType.LINKEDIN
-        this?.contains("research") == true -> LinkType.RESEARCH_GATE
-        this?.contains("google") == true -> LinkType.GOOGLE_SCHOLAR
+    private fun Int?.toLinkType() = when (this) {
+        0 -> LinkType.MAIL
+        1 -> LinkType.RESEARCH_GATE
+        2 -> LinkType.LINKEDIN
+        3 -> LinkType.GOOGLE_SCHOLAR
         else -> LinkType.UNKNOWN
     }
 }
