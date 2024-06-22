@@ -8,6 +8,18 @@ plugins {
     alias(libs.plugins.firebase.perf)
 }
 
+/**
+ * For each release, update these values based on the type of changes:
+ *
+ * Major Version: For significant or non-backward-compatible changes.
+ * Minor Version: For backward-compatible new features or improvements.
+ * Patch Version: For small bug fixes or minor updates.
+ */
+
+val majorVersion = 4
+val minorVersion = 0
+val patchVersion = 1
+
 android {
     namespace = "com.stathis.elmepaunivapp"
     compileSdk = 34
@@ -16,8 +28,8 @@ android {
         applicationId = "com.stathis.elmepaunivapp"
         minSdk = 27
         targetSdk = 34
-        versionCode = 10
-        versionName = "10.0"
+        versionCode = majorVersion * 10000 + minorVersion * 100 + patchVersion
+        versionName = "$majorVersion.$minorVersion.$patchVersion"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
