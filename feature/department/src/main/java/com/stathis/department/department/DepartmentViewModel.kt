@@ -46,12 +46,13 @@ class DepartmentViewModel @Inject constructor(
     }
 
     companion object {
+        val tempList = ShimmerGenerator.list.take(4)
         private val list = listOf(
-            CarouselParent(ShimmerGenerator.list),
-            FieldOfStudyParent(ShimmerGenerator.list),
-            DepartmentProgrammeItem(ShimmerGenerator.list),
-            DepartmentPersonnelItem(ShimmerGenerator.list),
-            DepartmentSocialItem(ShimmerGenerator.list)
+            CarouselParent(tempList),
+            FieldOfStudyParent(tempList),
+            DepartmentProgrammeItem(tempList),
+            DepartmentPersonnelItem(tempList),
+            DepartmentSocialItem(tempList)
         )
     }
 }
