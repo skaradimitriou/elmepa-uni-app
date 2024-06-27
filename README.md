@@ -9,6 +9,7 @@ This app is live at [Google Play](https://play.google.com/store/apps/details?id=
 Read more about the app [HERE](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) <br/>
 
 This repository contains an Android application built & tailored specifically for our university community.
+Learn more about the app's releases [HERE](https://github.com/skaradimitriou/elmepa-uni-app/releases).
 
 ## Features 💡
 
