@@ -4,12 +4,11 @@
   <img src="https://github.com/skaradimitriou/elmepa-uni-app/assets/64270931/27b919a2-2b35-48bd-a6d8-d23a18aa7c92" alt="elmepa_uni_app"/>
 </p>
 
-You can watch the app presentation on [Youtube](https://youtu.be/FQGB7BWJGSI). <br/>
-This app is live at [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp) <br/>
-Read more about the app [HERE](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) <br/>
-
 This repository contains an Android application built & tailored specifically for our university community.
-Learn more about the app's releases [HERE](https://github.com/skaradimitriou/elmepa-uni-app/releases).
+
+App Presentation 🎬  | Download App 📱 | Read More about the App 📖 | Releases Overview 🚀
+------------- | ------------- | ------------- | ------------- 
+[YouTube URL](https://youtu.be/FQGB7BWJGSI)  | [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp)  |  [Elmepa URL](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) | [App Releases](https://github.com/skaradimitriou/elmepa-uni-app/releases)
 
 ## Features 💡
 
