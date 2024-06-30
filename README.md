@@ -8,7 +8,7 @@ This repository contains an Android application built & tailored specifically fo
 
 App Presentation 🎬  | Download App 📱 | Read More about the App 📖 | Releases Overview 🚀
 ------------- | ------------- | ------------- | ------------- 
-[YouTube URL](https://youtu.be/FQGB7BWJGSI)  | [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp)  |  [Elmepa URL](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) | [App Releases](https://github.com/skaradimitriou/elmepa-uni-app/releases)
+[YouTube URL](https://youtu.be/S6V7wsez1-c)  | [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp)  |  [Elmepa URL](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) | [App Releases](https://github.com/skaradimitriou/elmepa-uni-app/releases)
 
 ## Features 💡
 
