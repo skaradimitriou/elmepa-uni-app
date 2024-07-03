@@ -18,7 +18,7 @@ plugins {
 
 val majorVersion = 4
 val minorVersion = 0
-val patchVersion = 1
+val patchVersion = 2
 
 android {
     namespace = "com.stathis.elmepaunivapp"
