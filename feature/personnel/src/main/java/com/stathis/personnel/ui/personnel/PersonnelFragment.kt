@@ -37,7 +37,10 @@ class PersonnelFragment : BaseFragment<FragmentPersonnelBinding>(R.layout.fragme
                 showSeparator = true,
                 type = OptionAction.SHARE
             ),
-            BottomSheetOption(getString(R.string.email_option), type = OptionAction.SEND_EMAIL)
+            BottomSheetOption(
+                title = getString(R.string.email_option),
+                type = OptionAction.SEND_EMAIL
+            )
         )
 
         OptionsBottomSheet.Builder()

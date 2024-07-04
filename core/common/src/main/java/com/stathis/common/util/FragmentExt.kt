@@ -68,7 +68,7 @@ fun Fragment.startEmailIntent(emailAddress: String) {
     }
 
     try {
-        startActivity(Intent.createChooser(mailIntent, SEND_MAIL))
+        activity?.let { startActivity(Intent.createChooser(mailIntent, SEND_MAIL)) }
     } catch (ex: ActivityNotFoundException) {
         Toast.makeText(requireContext(), NO_CLIENTS_INSTALLED, Toast.LENGTH_SHORT).show()
     }
@@ -79,9 +79,10 @@ fun Fragment.startEmailIntent(emailAddress: String) {
  */
 
 fun Fragment.startDialIntent(numberToDial: String) {
-    startActivity(Intent(Intent.ACTION_DIAL).apply {
+    val intent = Intent(Intent.ACTION_DIAL).apply {
         data = Uri.parse(numberToDial)
-    })
+    }
+    activity?.let { startActivity(intent) }
 }
 
 /**
@@ -96,7 +97,7 @@ fun Fragment.startShareIntent(subject: String, body: String) {
     }
 
     val intent = Intent.createChooser(txtIntent, "Share", null)
-    startActivity(intent)
+    activity?.let { startActivity(intent) }
 }
 
 /**
@@ -104,5 +105,6 @@ fun Fragment.startShareIntent(subject: String, body: String) {
  */
 
 fun Fragment.startNativeBrowserIntent(url: String) {
-    startActivity(Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(url) })
+    val intent = Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(url) }
+    activity?.let { startActivity(intent) }
 }
