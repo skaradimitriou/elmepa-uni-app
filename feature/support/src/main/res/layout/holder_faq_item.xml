@@ -19,38 +19,27 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/petrol_35_opacity">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/questionTxtView"
                 style="@style/text_18"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/petrol_35_opacity"
                 android:padding="@dimen/dimen_16"
                 android:text="@{model.question}"
-                app:drawableTint="@color/text_grey_dark"
-                app:layout_constraintEnd_toStartOf="@id/questionsArrowImgView"
+                app:drawableEndCompat="@drawable/arrow_right"
+                app:drawableTint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@tools:sample/lorem" />
-
-            <ImageView
-                android:id="@+id/questionsArrowImgView"
-                android:layout_width="@dimen/dimen_32"
-                android:layout_height="@dimen/dimen_32"
-                android:layout_margin="@dimen/dimen_16"
-                android:contentDescription="@{model.question}"
-                android:src="@drawable/arrow_right"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/answerTxtView"
                 style="@style/text_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
                 android:padding="@dimen/dimen_16"
                 android:visibility="@{model.expanded ? View.VISIBLE : View.GONE}"
                 app:layout_constraintStart_toStartOf="parent"
