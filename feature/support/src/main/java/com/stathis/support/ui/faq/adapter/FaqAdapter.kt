@@ -55,25 +55,10 @@ class FaqViewHolder(
                 binding.setVariable(BR.model, data)
 
                 binding.questionTxtView.setOnClickListener {
-                    binding.onClick(data)
-                }
-
-                binding.questionsArrowImgView.setOnClickListener {
-                    binding.onClick(data)
+                    data.isExpanded = !data.isExpanded
+                    binding.setVariable(BR.model, data)
                 }
             }
         }
-    }
-
-    private fun HolderFaqItemBinding.onClick(item: Faq) {
-        item.isExpanded = !item.isExpanded
-
-        if (item.isExpanded) {
-            questionsArrowImgView.rotation = 90f
-        } else {
-            questionsArrowImgView.rotation = 0f
-        }
-
-        model = item
     }
 }
