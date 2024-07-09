@@ -1,20 +1,20 @@
 [versions]
 ksp = "2.0.0-1.0.22"
-kapt = "1.8.0"
+kapt = "2.0.0"
 agp = "8.3.2"
 kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
-lifecycle = "2.8.2"
+lifecycle = "2.8.3"
 navigation = "2.7.7"
 #Coroutines
-coroutines = "1.7.3"
+coroutines = "1.8.1"
 #Hilt
 hiltVersion = "2.49"
 #Timber
@@ -25,10 +25,10 @@ gradle = "8.1.4"
 #Google Services
 googleServicesVersion = "4.4.2"
 #Firebase Crashlytics
-firebaseCrashlytics = "19.0.1"
-firebaseCrashlyticsGradle = "3.0.1"
+firebaseCrashlytics = "19.0.2"
+firebaseCrashlyticsGradle = "3.0.2"
 #Firebase BoM
-firebaseBom = "33.1.0"
+firebaseBom = "33.1.1"
 #Firebase Performance
 firebasePerf = "21.0.1"
 perfPlugin = "1.4.2"
