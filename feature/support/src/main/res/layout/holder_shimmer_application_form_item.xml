@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
-
-        <variable
-            name="model"
-            type="com.stathis.model.support.Faq" />
-    </data>
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:layout_width="match_parent"

@@ -10,7 +10,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.stathis.common.util.toNotNull
-import com.stathis.model.faq.Faq
+import com.stathis.model.support.Faq
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

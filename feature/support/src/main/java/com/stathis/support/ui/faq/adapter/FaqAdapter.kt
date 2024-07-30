@@ -8,8 +8,8 @@ import com.stathis.common.base.BaseDiffUtil
 import com.stathis.common.base.BaseViewHolder
 import com.stathis.common.databinding.HolderEmptyViewBinding
 import com.stathis.model.UiModel
-import com.stathis.model.faq.Faq
 import com.stathis.model.general.ShimmerItem
+import com.stathis.model.support.Faq
 import com.stathis.support.BR
 import com.stathis.support.R
 import com.stathis.support.databinding.HolderFaqItemBinding

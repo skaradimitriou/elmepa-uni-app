@@ -1,4 +1,4 @@
-package com.stathis.data.remote.model
+package com.stathis.data.remote.model.support
 
 data class FaqDto(
     val question: String? = null,

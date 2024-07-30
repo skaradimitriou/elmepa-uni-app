@@ -94,9 +94,16 @@
         android:name="com.stathis.support.ui.faq.FaqFragment"
         android:label="FaqFragment"
         tools:layout="@layout/fragment_faq" />
+
     <fragment
         android:id="@+id/depDetailsFragment"
         android:name="com.stathis.personnel.ui.depmemberdetails.DepDetailsFragment"
         android:label="DepDetailsFragment" />
+
+    <fragment
+        android:id="@+id/applicationFormsFragment"
+        android:name="com.stathis.support.ui.applicationforms.ApplicationFormsFragment"
+        android:label="ApplicationFormsFragment"
+        tools:layout="@layout/fragment_application_forms" />
 
 </navigation>

@@ -68,6 +68,12 @@
     <string name="all_lessons_mandatory"><b>Όλα τα μαθήματα</b> είναι <b>υποχρεωτικά</b> σε αυτό το εξάμηνο</string>
     <string name="some_lessons_mandatory">Αυτό το εξάμηνο ο φοιτητής θα πρέπει να δηλώσει τα <b>Υποχρεωτικά Μαθήματα</b> και <b>δύο (2)</b> απο τα <b>Μαθήματα Επιλογής</b></string>
 
+
+    <!-- Application Forms Screen-->
+    <string name="application_forms_title">Αιτήσεις - Έντυπα</string>
+    <string name="application_form_info_title">Οδηγίες</string>
+    <string name="application_form_info_body">Πατώντας πάνω στην εκάστοτε αίτηση/έντυπο που είναι διαθέσιμο απο το Τμήμα, δίνεται η δυνατότητα download του αρχείου.</string>
+
     <!-- Faq Screen-->
     <string name="faq_title">Συχνές Ερωτήσεις</string>
 

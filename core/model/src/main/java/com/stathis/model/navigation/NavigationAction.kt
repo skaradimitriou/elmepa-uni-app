@@ -15,6 +15,7 @@ enum class NavigationAction {
     LESSON_DETAILS,
     WEBVIEW,
     CONTACT,
+    APPLICATION_FORMS,
     FAQ,
     ABOUT_APP
 }
