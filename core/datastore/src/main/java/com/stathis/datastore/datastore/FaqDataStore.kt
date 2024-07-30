@@ -1,6 +1,6 @@
 package com.stathis.datastore.datastore
 
-import com.stathis.model.faq.Faq
+import com.stathis.model.support.Faq
 import kotlinx.coroutines.flow.Flow
 
 interface FaqDataStore {

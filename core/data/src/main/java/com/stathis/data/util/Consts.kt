@@ -3,6 +3,7 @@ package com.stathis.data.util
 const val NEWS_URL = "https://mst.hmu.gr/news_gr/"
 const val EVENTS_URL = "https://mst.hmu.gr/events/"
 const val DEP_MEMBERS_URL = "https://mst.hmu.gr/prosopiko/melh-dep/"
+const val APPLICATION_FORMS_URL = "https://mst.hmu.gr/ypiresies/aithseis-entypa/"
 
 const val GOOGLE_URL = "https://www.google.com"
 const val RESPONSE_OK = 200

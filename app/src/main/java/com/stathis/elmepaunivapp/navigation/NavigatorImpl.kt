@@ -31,6 +31,7 @@ class NavigatorImpl @Inject constructor(
             bundle
         )
 
+        NavigationAction.APPLICATION_FORMS -> navController.navigateSafe(R.id.applicationFormsFragment)
         NavigationAction.RESEARCH -> navController.navigateSafe(R.id.researchFragment)
         NavigationAction.PERSONNEL -> navController.navigateSafe(R.id.nav_personnel)
         NavigationAction.SYLLABUS -> navController.navigateSafe(R.id.nav_syllabus)

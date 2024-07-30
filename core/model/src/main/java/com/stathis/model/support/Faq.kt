@@ -1,4 +1,4 @@
-package com.stathis.model.faq
+package com.stathis.model.support
 
 import com.stathis.model.UiModel
 

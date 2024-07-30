@@ -19,6 +19,7 @@ enum class OptionType {
     STUDENTS,
     DEPARTMENT,
     RESEARCH,
+    APPLICATION_FORMS,
     FAQ,
     CONTACT,
     ABOUT

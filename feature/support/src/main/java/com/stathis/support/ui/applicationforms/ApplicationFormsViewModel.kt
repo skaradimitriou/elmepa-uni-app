@@ -1,35 +1,35 @@
-package com.stathis.support.ui.faq
+package com.stathis.support.ui.applicationforms
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.common.base.BaseViewModel
 import com.stathis.common.di.IoDispatcher
-import com.stathis.domain.support.FetchFaqsUseCase
+import com.stathis.domain.support.FetchApplicationFormsUseCase
+import com.stathis.model.UiModel
 import com.stathis.model.network.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FaqViewModel @Inject constructor(
+class ApplicationFormsViewModel @Inject constructor(
     app: Application,
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
-    private val useCase: FetchFaqsUseCase
+    private val useCase: FetchApplicationFormsUseCase
 ) : BaseViewModel(app) {
 
-    val faq: StateFlow<NetworkResult<List<com.stathis.model.UiModel>>>
-        get() = _faqs
+    val applicationForms
+        get() = _applicationForms
 
-    private val _faqs =
-        MutableStateFlow<NetworkResult<List<com.stathis.model.UiModel>>>(NetworkResult.Loading())
+    private val _applicationForms =
+        MutableStateFlow<NetworkResult<List<UiModel>>>(NetworkResult.Loading())
 
-    fun fetchFaqs() {
+    fun fetchApplicationForms() {
         viewModelScope.launch(dispatcher) {
             useCase.invoke().collect { data ->
-                _faqs.emit(data)
+                _applicationForms.emit(data)
             }
         }
     }

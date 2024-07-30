@@ -1,8 +1,9 @@
-package com.stathis.data.remote.mapper
+package com.stathis.data.remote.mapper.support
 
 import com.stathis.common.util.toNotNull
-import com.stathis.data.remote.model.FaqDto
-import com.stathis.model.faq.Faq
+import com.stathis.data.remote.mapper.BaseMapper
+import com.stathis.data.remote.model.support.FaqDto
+import com.stathis.model.support.Faq
 
 object FaqMapper : BaseMapper<List<FaqDto>?, List<Faq>> {
 

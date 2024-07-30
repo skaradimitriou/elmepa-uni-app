@@ -9,13 +9,18 @@
 
         <variable
             name="model"
-            type="com.stathis.model.support.Faq" />
+            type="com.stathis.model.support.ApplicationFormItem" />
+
+        <variable
+            name="callback"
+            type="com.stathis.support.ui.applicationforms.adapter.ApplicationFormsCallback" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> callback.onApplicationFormClick(model)}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -28,23 +33,9 @@
                 android:layout_height="wrap_content"
                 android:background="@color/petrol_35_opacity"
                 android:padding="@dimen/dimen_16"
-                android:text="@{model.question}"
-                app:drawableEndCompat="@drawable/arrow_right"
-                app:drawableTint="@color/white"
+                android:text="@{model.title}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@tools:sample/lorem" />
-
-            <TextView
-                android:id="@+id/answerTxtView"
-                style="@style/text_16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_16"
-                android:visibility="@{model.expanded ? View.VISIBLE : View.GONE}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/questionTxtView"
-                app:setHtmlText="@{model.answer}"
                 tools:text="@tools:sample/lorem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

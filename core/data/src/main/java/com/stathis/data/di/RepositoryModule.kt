@@ -8,8 +8,8 @@ import com.stathis.data.repository.DashboardRepository
 import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.DepartmentRepository
 import com.stathis.data.repository.DepartmentRepositoryImpl
-import com.stathis.data.repository.FaqRepository
-import com.stathis.data.repository.FaqRepositoryImpl
+import com.stathis.data.repository.SupportRepository
+import com.stathis.data.repository.SupportRepositoryImpl
 import com.stathis.data.repository.GeneralAppInfoRepository
 import com.stathis.data.repository.GeneralAppInfoRepositoryImpl
 import com.stathis.data.repository.NetworkRepository
@@ -96,10 +96,10 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideFaqRepository(
+    fun provideSupportRepository(
         fireStore: FirebaseFirestore,
         faqDataStore: FaqDataStore
-    ): FaqRepository = FaqRepositoryImpl(
+    ): SupportRepository = SupportRepositoryImpl(
         fireStore = fireStore,
         faqDataStore = faqDataStore
     )

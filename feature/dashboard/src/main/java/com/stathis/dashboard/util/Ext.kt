@@ -13,6 +13,7 @@ fun OptionType.toNavigationAction(): NavigationAction = when (this) {
     OptionType.EVENTS -> NavigationAction.EVENTS
     OptionType.DEPARTMENT -> NavigationAction.DEPARTMENT
     OptionType.STUDENTS -> NavigationAction.STUDENTS
+    OptionType.APPLICATION_FORMS -> NavigationAction.APPLICATION_FORMS
     OptionType.RESEARCH -> NavigationAction.RESEARCH
     OptionType.FAQ -> NavigationAction.FAQ
     OptionType.CONTACT -> NavigationAction.CONTACT
