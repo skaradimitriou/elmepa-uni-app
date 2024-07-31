@@ -11,7 +11,7 @@ import com.stathis.syllabus.BR
 import com.stathis.syllabus.databinding.HolderLessonDetailsBinding
 
 class LessonDetailsAdapter :
-    ListAdapter<com.stathis.model.UiModel, LessonDetailsViewHolder>(BaseDiffUtil<UiModel>()) {
+    ListAdapter<UiModel, LessonDetailsViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonDetailsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -28,7 +28,7 @@ class LessonDetailsViewHolder(
     private val binding: HolderLessonDetailsBinding
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         when (data) {
             is Lesson -> {
                 binding.setVariable(BR.model, data)

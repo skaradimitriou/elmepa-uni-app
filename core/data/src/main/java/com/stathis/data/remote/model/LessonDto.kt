@@ -6,7 +6,8 @@ data class LessonDto(
     val hours: String? = null,
     val mandatory: Boolean? = null,
     val orientation: List<OrientationModelDto>? = null,
-    val semester: String? = null
+    val semester: String? = null,
+    val ects: String? = null
 )
 
 data class OrientationModelDto(

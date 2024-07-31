@@ -24,7 +24,8 @@ object LessonListMapper : EnhancedBaseMapper<List<LessonDto>?, List<Lesson>> {
         hours = this?.hours.toNotNull(),
         orientation = this?.orientation.toListOfOrientations(),
         mandatory = this?.orientation.defineIfItsMandatory(orientation),
-        semester = this?.semester.toNotNull()
+        semester = this?.semester.toNotNull(),
+        ects = this?.ects.toNotNull()
     )
 
     private fun List<OrientationModelDto?>?.toListOfOrientations() = this?.map {

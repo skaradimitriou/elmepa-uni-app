@@ -63,6 +63,7 @@
 
     <!-- LessonDetails Screen -->
     <string name="lesson_information">"Πληροφορίες Μαθήματος"</string>
+    <string name="lesson_ects">"ECTS: %s"</string>
 
     <!-- Syllabus Lesson Screen -->
     <string name="all_lessons_mandatory"><b>Όλα τα μαθήματα</b> είναι <b>υποχρεωτικά</b> σε αυτό το εξάμηνο</string>
