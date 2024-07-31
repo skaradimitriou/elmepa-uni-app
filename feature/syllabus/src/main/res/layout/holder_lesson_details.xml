@@ -59,6 +59,19 @@
                 app:layout_constraintTop_toBottomOf="@id/lessonTitleTxtView"
                 tools:text="@tools:sample/lorem" />
 
+            <TextView
+                android:id="@+id/ectsTxtView"
+                style="@style/text_16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_16"
+                android:text="@{@string/lesson_ects(model.ects)}"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintEnd_toEndOf="@id/lessonTitleTxtView"
+                app:layout_constraintStart_toStartOf="@id/lessonTitleTxtView"
+                app:layout_constraintTop_toBottomOf="@id/lessonHoursTxtView"
+                tools:text="@tools:sample/lorem" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
