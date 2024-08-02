@@ -28,6 +28,16 @@ App Presentation 🎬  | Download App 📱 | Read More about the App 📖 | Rele
   Access the "Personnel" screen and search your professor's contact information. Open the Personnel details screen and learn more about your professor.
 </details>
 <details >
+  <summary>Academic Schedule - Coming soon 🔜 in v.4.1.0</summary>
+  <br>
+  Easily access the Department's academic schedule in-app.
+</details>
+<details >
+  <summary>Application Forms- Coming soon 🔜 in v.4.1.0</summary>
+  <br>
+  Easily find the application form that you need to fill out in-app.
+</details>
+<details >
   <summary>Engaging Syllabus</summary>
   <br>
   Easily access your schedule and syllabus while on the go (for both Undergraduate & Postgraduate students).
