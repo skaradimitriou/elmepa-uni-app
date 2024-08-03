@@ -1,4 +1,4 @@
-package com.stathis.students.adapters
+package com.stathis.students.main.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,7 +20,7 @@ import com.stathis.students.databinding.HolderLinksParentItemBinding
 
 class StudentsAdapter(
     private val callback: StudentsCallback
-) : ListAdapter<com.stathis.model.UiModel, StudentsViewHolder>(BaseDiffUtil<UiModel>()) {
+) : ListAdapter<UiModel, StudentsViewHolder>(BaseDiffUtil<UiModel>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -54,7 +54,7 @@ class StudentsViewHolder(
     private val callback: StudentsCallback
 ) : BaseViewHolder(binding) {
 
-    override fun bind(data: com.stathis.model.UiModel) {
+    override fun bind(data: UiModel) {
         when (data) {
             is CarouselParent -> {
                 val adapter = CarouselAdapter { selectedItem ->

@@ -7,7 +7,7 @@
 
         <variable
             name="adapter"
-            type="com.stathis.students.adapters.LinksAdapter" />
+            type="com.stathis.students.main.adapters.LinksAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

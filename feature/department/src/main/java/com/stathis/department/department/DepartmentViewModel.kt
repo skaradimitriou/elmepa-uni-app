@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.stathis.common.base.BaseViewModel
 import com.stathis.common.di.IoDispatcher
-import com.stathis.domain.FetchDepartmentInfoUseCase
+import com.stathis.domain.department.FetchDepartmentInfoUseCase
 import com.stathis.model.UiModel
 import com.stathis.model.department.DepartmentPersonnelItem
 import com.stathis.model.department.DepartmentProgrammeItem

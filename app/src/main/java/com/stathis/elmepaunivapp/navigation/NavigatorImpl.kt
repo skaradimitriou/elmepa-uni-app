@@ -25,6 +25,7 @@ class NavigatorImpl @Inject constructor(
         )
 
         NavigationAction.STUDENTS -> navController.navigateSafe(R.id.studentsFragment)
+        NavigationAction.ACADEMIC_SCHEDULE -> navController.navigateSafe(R.id.academicScheduleFragment)
         NavigationAction.DEPARTMENT -> navController.navigateSafe(R.id.departmentFragment)
         NavigationAction.DEP_MEMBER_DETAILS -> navController.navigateSafe(
             R.id.depDetailsFragment,

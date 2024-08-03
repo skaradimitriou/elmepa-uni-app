@@ -1,4 +1,4 @@
-package com.stathis.students.adapters
+package com.stathis.students.main.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

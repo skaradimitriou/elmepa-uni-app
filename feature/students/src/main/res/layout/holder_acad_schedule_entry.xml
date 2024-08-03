@@ -7,45 +7,38 @@
 
         <variable
             name="model"
-            type="com.stathis.model.students.StudentLink" />
-
-        <variable
-            name="callback"
-            type="com.stathis.students.main.adapters.LinksCallback" />
+            type="com.stathis.model.students.AcademicScheduleEntry" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         style="@style/AppMaterialCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dimen_5"
-        android:layout_marginTop="@dimen/dimen_10"
-        android:onClick="@{() -> callback.onLinkTap(model)}">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/linkImgView"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_150"
-                android:scaleType="centerCrop"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:loadImageUrl="@{model.imageUrl}"
-                tools:src="@tools:sample/avatars" />
+            android:layout_height="match_parent"
+            android:padding="@dimen/dimen_16">
 
             <TextView
-                android:id="@+id/linkTitleTxtView"
+                android:id="@+id/titleTxtView"
+                style="@style/text_18_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{model.title}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/dateTxtView"
                 style="@style/text_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="@dimen/dimen_16"
-                android:text="@{model.title}"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:text="@{model.date}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/linkImgView"
+                app:layout_constraintTop_toBottomOf="@id/titleTxtView"
                 tools:text="@tools:sample/lorem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
