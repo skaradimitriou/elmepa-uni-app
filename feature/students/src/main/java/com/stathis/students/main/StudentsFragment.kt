@@ -1,4 +1,4 @@
-package com.stathis.students
+package com.stathis.students.main
 
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
@@ -15,9 +15,10 @@ import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.navigation.NavigationAction
 import com.stathis.model.network.NetworkResult
 import com.stathis.model.students.StudentLink
-import com.stathis.students.adapters.StudentsAdapter
-import com.stathis.students.adapters.StudentsCallback
+import com.stathis.students.R
 import com.stathis.students.databinding.FragmentStudentsBinding
+import com.stathis.students.main.adapters.StudentsAdapter
+import com.stathis.students.main.adapters.StudentsCallback
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -65,11 +66,16 @@ class StudentsFragment : BaseFragment<FragmentStudentsBinding>(R.layout.fragment
 
     override fun stopOps() {}
 
-    override fun onCarouselTap(model: CarouselItem) = openUrl(
-        shouldOpenInBrowser = model.openInBrowser,
-        title = model.title,
-        url = model.openUrl
-    )
+    override fun onCarouselTap(model: CarouselItem) = when (model.action) {
+        NavigationAction.ACADEMIC_SCHEDULE -> activityVM.navigateWithAction(model.action)
+        else -> {
+            openUrl(
+                shouldOpenInBrowser = model.openInBrowser,
+                title = model.title,
+                url = model.openUrl
+            )
+        }
+    }
 
     override fun onLinkTap(model: StudentLink) = openUrl(
         shouldOpenInBrowser = model.openInBrowser,

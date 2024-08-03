@@ -6,5 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface StudentsRepository {
 
-    suspend fun fetchStudentScreenData(): Flow<NetworkResult<List<com.stathis.model.UiModel>>>
+    suspend fun fetchStudentScreenData(): Flow<NetworkResult<List<UiModel>>>
+
+    suspend fun fetchAcademicSchedule(): Flow<NetworkResult<List<UiModel>>>
 }

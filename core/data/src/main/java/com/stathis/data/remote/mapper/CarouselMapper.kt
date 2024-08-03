@@ -1,9 +1,10 @@
 package com.stathis.data.remote.mapper
 
 import com.stathis.common.util.toNotNull
-import com.stathis.data.remote.model.CarouselItemDto
+import com.stathis.data.remote.model.students.CarouselItemDto
 import com.stathis.model.general.carousel.CarouselItem
 import com.stathis.model.general.carousel.CarouselParent
+import com.stathis.model.navigation.NavigationAction
 
 object CarouselMapper : BaseMapper<List<CarouselItemDto>?, CarouselParent> {
 
@@ -18,6 +19,7 @@ object CarouselMapper : BaseMapper<List<CarouselItemDto>?, CarouselParent> {
         imageUrl = this?.imageUrl.toNotNull(),
         openUrl = this?.openUrl.toNotNull(),
         position = this?.position.toNotNull(),
-        openInBrowser = this?.openInBrowser.toNotNull()
+        openInBrowser = this?.openInBrowser.toNotNull(),
+        action = NavigationAction.valueOf(this?.action ?: NavigationAction.NONE.name)
     )
 }

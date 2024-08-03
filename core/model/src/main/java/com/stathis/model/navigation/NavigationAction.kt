@@ -1,6 +1,7 @@
 package com.stathis.model.navigation
 
 enum class NavigationAction {
+    NONE,
     DASHBOARD,
     ANNOUNCEMENTS,
     EVENTS,
@@ -8,6 +9,7 @@ enum class NavigationAction {
     DEPARTMENT,
     DEP_MEMBER_DETAILS,
     STUDENTS,
+    ACADEMIC_SCHEDULE,
     RESEARCH,
     PERSONNEL,
     SYLLABUS,

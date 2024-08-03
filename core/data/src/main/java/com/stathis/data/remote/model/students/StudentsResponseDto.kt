@@ -1,4 +1,4 @@
-package com.stathis.data.remote.model
+package com.stathis.data.remote.model.students
 
 data class StudentsResponseDto(
     val carouselItems: List<CarouselItemDto>? = null,
@@ -11,7 +11,8 @@ data class CarouselItemDto(
     val imageUrl: String? = null,
     val openUrl: String? = null,
     val position: Int? = null,
-    val openInBrowser: Boolean? = null
+    val openInBrowser: Boolean? = null,
+    val action: String? = null
 )
 
 data class LinkDto(

@@ -1,8 +1,8 @@
 package com.stathis.data.remote.mapper
 
 import com.stathis.common.util.toNotNull
-import com.stathis.data.remote.model.LinkDto
-import com.stathis.data.remote.model.StudentsResponseDto
+import com.stathis.data.remote.model.students.LinkDto
+import com.stathis.data.remote.model.students.StudentsResponseDto
 import com.stathis.model.UiModel
 import com.stathis.model.students.StudentLink
 import com.stathis.model.students.StudentLinkParent

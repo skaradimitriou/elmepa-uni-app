@@ -1,5 +1,7 @@
 package com.stathis.data.remote.model
 
+import com.stathis.data.remote.model.students.CarouselItemDto
+
 data class DepartmentResponseDto(
     val carouselItems: List<CarouselItemDto>? = null,
     val syllabusItems: List<SyllabusItemDto>? = null,

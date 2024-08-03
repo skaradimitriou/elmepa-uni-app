@@ -1,4 +1,4 @@
-package com.stathis.domain
+package com.stathis.domain.department
 
 import com.stathis.common.base.BaseUseCase
 import com.stathis.common.di.IoDispatcher

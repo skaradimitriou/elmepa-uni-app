@@ -1,4 +1,4 @@
-package com.stathis.domain
+package com.stathis.domain.students
 
 import com.stathis.common.base.BaseUseCase
 import com.stathis.data.repository.StudentsRepository
