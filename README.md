@@ -38,6 +38,11 @@ App Presentation 🎬  | Download App 📱 | Read More about the App 📖 | Rele
   Easily find the application form that you need to fill out in-app.
 </details>
 <details >
+  <summary>Freshmen Students Information & Onboarding steps - Coming soon 🔜 in v.4.1.0</summary>
+  <br>
+  Easily access the Freshmen Student's onboarding steps in-app.
+</details>
+<details >
   <summary>Engaging Syllabus</summary>
   <br>
   Easily access your schedule and syllabus while on the go (for both Undergraduate & Postgraduate students).
