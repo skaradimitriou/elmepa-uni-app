@@ -1,3 +1,6 @@
+import Configurations.COMPILE_SDK_VERSION
+import Configurations.MIN_SDK_VERSION
+
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -8,10 +11,11 @@ plugins {
 
 android {
     namespace = "com.stathis.syllabus"
-    compileSdk = 34
+    compileSdk = COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdk = 27
+        minSdk = MIN_SDK_VERSION
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

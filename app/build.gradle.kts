@@ -1,3 +1,9 @@
+import Configurations.COMPILE_SDK_VERSION
+import Configurations.MIN_SDK_VERSION
+import Configurations.TARGET_SDK_VERSION
+import Configurations.VERSION_CODE
+import Configurations.VERSION_NAME
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -8,28 +14,16 @@ plugins {
     alias(libs.plugins.firebase.perf)
 }
 
-/**
- * For each release, update these values based on the type of changes:
- *
- * Major Version: For significant or non-backward-compatible changes.
- * Minor Version: For backward-compatible new features or improvements.
- * Patch Version: For small bug fixes or minor updates.
- */
-
-val majorVersion = 4
-val minorVersion = 0
-val patchVersion = 2
-
 android {
     namespace = "com.stathis.elmepaunivapp"
-    compileSdk = 34
+    compileSdk = COMPILE_SDK_VERSION
 
     defaultConfig {
         applicationId = "com.stathis.elmepaunivapp"
-        minSdk = 27
-        targetSdk = 34
-        versionCode = majorVersion * 10000 + minorVersion * 100 + patchVersion
-        versionName = "$majorVersion.$minorVersion.$patchVersion"
+        minSdk = MIN_SDK_VERSION
+        targetSdk = TARGET_SDK_VERSION
+        versionCode = VERSION_CODE
+        versionName = VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
