@@ -13,8 +13,8 @@ object Configurations {
      */
 
     const val MAJOR_VERSION = 4
-    const val MINOR_VERSION = 0
-    const val PATCH_VERSION = 2
+    const val MINOR_VERSION = 1
+    const val PATCH_VERSION = 0
     const val VERSION_CODE = MAJOR_VERSION * 10000 + MINOR_VERSION * 100 + PATCH_VERSION
     const val VERSION_NAME = "$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
 }
