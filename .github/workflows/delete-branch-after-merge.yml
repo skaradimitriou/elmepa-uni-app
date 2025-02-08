@@ -1,0 +1,48 @@
+# Workflow name: Delete Branch After Merge
+name: Delete Branch After Merge To Migration Branch
+
+# Trigger this workflow when a pull request is closed
+on:
+  pull_request:
+    types:
+      - closed  # 'closed' event occurs when a PR is merged or simply closed without merging
+
+jobs:
+  delete_branch:
+    # Run this job only if the pull request is merged and the base branch is 'migration'
+    if: >
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.base.ref == 'migration'
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner for the job
+
+    steps:
+      # Step 1: Delete the branch
+      - name: Delete branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub-provided token for API authentication
+
+        # Get the branch name from the pull request's head reference
+        # Get the repository name from the GitHub context
+        # Log the branch name for debugging purposes
+        # Ensure critical branches like 'main', 'master', and 'migration' are not deleted
+        # Use the GitHub API to delete the branch
+        # echo "Branch $branch_name deleted successfully."
+        # Log a message if the branch is protected or not suitable for deletion
+        run: |
+          branch_name="${{ github.event.pull_request.head.ref }}"
+
+          repo="${{ github.repository }}"
+
+          echo "Branch to delete: $branch_name"
+
+          if [ "$branch_name" != "main" ] && [ "$branch_name" != "master" ] && [ "$branch_name" != "migration" ]; then
+            echo "Deleting branch: $branch_name"
+          
+            curl -X DELETE \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github.v3+json" \
+              https://api.github.com/repos/$repo/git/refs/heads/$branch_name
+
+          else
+            echo "Branch $branch_name is protected or not suitable for deletion."
+          fi
