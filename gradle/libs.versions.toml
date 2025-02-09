@@ -14,7 +14,7 @@ constraintlayout = "2.1.4"
 lifecycle = "2.8.7"
 navigation = "2.7.7"
 #Coroutines
-coroutines = "1.8.1"
+coroutines = "1.10.1"
 #Hilt
 hiltVersion = "2.55"
 #Timber
