@@ -39,7 +39,7 @@ firebaseStorage = "21.0.1"
 #Shimmer loading
 shimmer = "0.5.0"
 #Jsoup Web Scraping Library
-jsoup = "1.13.1"
+jsoup = "1.18.3"
 #Glide
 glide = "4.16.0"
 #Room Local SQLite db
