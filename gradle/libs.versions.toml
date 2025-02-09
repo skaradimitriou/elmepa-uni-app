@@ -16,7 +16,7 @@ navigation = "2.7.7"
 #Coroutines
 coroutines = "1.8.1"
 #Hilt
-hiltVersion = "2.49"
+hiltVersion = "2.55"
 #Timber
 timber = "5.0.1"
 #Swipe to refresh
