@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - master
+      - migration
 
   # pull_request event is required only for autolabeler
   pull_request:
