@@ -1,0 +1,22 @@
+feature:
+  - "feature/*"
+  - "enhancement/*"
+
+bug:
+  - "bugfix/*"
+  - "fix/*"
+  - "hotfix/*"
+
+release:
+  - "release/*"
+
+dependency-updates:
+  - "updates/*"
+  - "renovate/*"
+
+ci-cd:
+  - "automation/*"
+
+documentation:
+  - "documentation/*"
+  - "doc/*"
