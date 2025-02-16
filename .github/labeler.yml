@@ -16,6 +16,7 @@ dependency-updates:
 
 ci-cd:
   - "automation/*"
+  - "cicd/*"
 
 documentation:
   - "documentation/*"
