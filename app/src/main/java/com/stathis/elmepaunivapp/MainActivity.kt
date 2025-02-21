@@ -2,6 +2,7 @@ package com.stathis.elmepaunivapp
 
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.compose.ui.platform.ComposeView
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
