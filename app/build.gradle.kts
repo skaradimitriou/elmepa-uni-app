@@ -3,6 +3,7 @@ import Configurations.MIN_SDK_VERSION
 import Configurations.TARGET_SDK_VERSION
 import Configurations.VERSION_CODE
 import Configurations.VERSION_NAME
+import org.gradle.kotlin.dsl.test
 
 plugins {
     alias(libs.plugins.androidApplication)
@@ -37,6 +38,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -49,6 +51,14 @@ android {
         viewBinding.enable = true
         dataBinding.enable = true
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
+    }
 }
 
 dependencies {
@@ -57,6 +67,13 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
 
     implementation(project(":core:common"))
     implementation(project(":core:domain"))
@@ -94,4 +111,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
 }
