@@ -24,6 +24,7 @@ androidTools = "31.8.1"
 #Coroutines
 coroutines = "1.10.1"
 #Hilt
+androidxHiltNavigationCompose = "1.2.0"
 hiltVersion = "2.55"
 #Timber
 timber = "5.0.1"
@@ -73,9 +74,16 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 fragment-navigation = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 ui-navigation = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+
+#Delete after compose migration
 viewModelLifecycle = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 liveDataLifecycle = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
 lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "lifecycle" }
+
+#AndroidX
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-lifecycle-viewModel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
 
 #Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -128,7 +136,7 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
-jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
@@ -138,10 +146,12 @@ parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotli
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsGradle" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "perfPlugin" }
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServicesVersion" }
+room = { id = "androidx.room", version.ref = "room" }
 
 #Custom Elmepa Plugins
+elmepa-android-app = { id = "elmepa.android.application", version = "unspecified" }
 elmepa-android-library = { id = "elmepa.android.library", version = "unspecified" }
 elmepa-android-compose = { id = "elmepa.android.compose", version = "unspecified" }
 elmepa-android-hilt = { id = "elmepa.android.hilt", version = "unspecified" }
 elmepa-android-room = { id = "elmepa.android.room", version = "unspecified" }
-elmepa-android-feature-library = { id = "elmepa.android.feature", version = "unspecified" }
+elmepa-android-feature = { id = "elmepa.android.feature", version = "unspecified" }

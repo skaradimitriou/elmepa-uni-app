@@ -36,24 +36,24 @@ gradlePlugin {
     plugins {
         register("androidLibrary") {
             id = "elmepa.android.library"
-            implementationClass = "com.elmepaconvention.plugins.AndroidLibraryConventionPlugin"
+            implementationClass = "com.elmepa.convention.plugins.AndroidLibraryConventionPlugin"
         }
         register("androidHilt") {
-            id = "elmepa.android.koin"
-            implementationClass = "com.elmepaconvention.plugins.AndroidKoinConventionPlugin"
+            id = "elmepa.android.hilt"
+            implementationClass = "com.elmepa.convention.plugins.AndroidHiltConventionPlugin"
         }
         register("androidCompose") {
             id = "elmepa.android.compose"
-            implementationClass = "com.elmepaconvention.plugins.AndroidLibraryComposeConventionPlugin"
+            implementationClass = "com.elmepa.convention.plugins.AndroidLibraryComposeConventionPlugin"
         }
         register("androidFeature") {
             id = "elmepa.android.feature"
-            implementationClass = "com.elmepaconvention.plugins.AndroidFeatureConventionPlugin"
+            implementationClass = "com.elmepa.convention.plugins.AndroidFeatureConventionPlugin"
         }
-        
+
         register("androidRoom") {
-            id = "custom.android.room"
-            implementationClass = "com.elmepaconvention.plugins.AndroidRoomConventionPlugin"
+            id = "elmepa.android.room"
+            implementationClass = "com.elmepa.convention.plugins.AndroidRoomConventionPlugin"
         }
     }
 }
