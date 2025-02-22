@@ -19,6 +19,8 @@ composeBom = "2025.02.00"
 androidxComposeCompiler = "1.7.8"
 activityCompose = "1.10.0"
 
+androidTools = "31.8.1"
+
 #Coroutines
 coroutines = "1.10.1"
 #Hilt
@@ -98,22 +100,31 @@ shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shi
 jsoup = { group = "org.jsoup", name = "jsoup", version.ref = "jsoup" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 paging = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
+
+#Room
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
 firebase-crashlytics-gradle = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsGradle" }
 firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebasePerf" }
-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
 google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServicesVersion" }
 perf-plugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "perfPlugin" }
 circleImgView = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImgView" }
 dataStore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+# Dependencies of the included build-logic
+gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -127,3 +138,10 @@ parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotli
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsGradle" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "perfPlugin" }
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServicesVersion" }
+
+#Custom Elmepa Plugins
+elmepa-android-library = { id = "elmepa.android.library", version = "unspecified" }
+elmepa-android-compose = { id = "elmepa.android.compose", version = "unspecified" }
+elmepa-android-hilt = { id = "elmepa.android.hilt", version = "unspecified" }
+elmepa-android-room = { id = "elmepa.android.room", version = "unspecified" }
+elmepa-android-feature-library = { id = "elmepa.android.feature", version = "unspecified" }
