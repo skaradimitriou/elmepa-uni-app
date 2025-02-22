@@ -3,13 +3,12 @@ import Configurations.MIN_SDK_VERSION
 import Configurations.TARGET_SDK_VERSION
 import Configurations.VERSION_CODE
 import Configurations.VERSION_NAME
-import org.gradle.kotlin.dsl.test
 
 plugins {
     alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.elmepa.android.hilt)
     alias(libs.plugins.googleServices)
     alias(libs.plugins.firebase.crashlytics)
     alias(libs.plugins.firebase.perf)
@@ -94,9 +93,6 @@ dependencies {
 
     implementation(libs.fragment.navigation)
     implementation(libs.ui.navigation)
-
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
 
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.perf)
