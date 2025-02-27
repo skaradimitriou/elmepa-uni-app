@@ -17,7 +17,7 @@ navigation = "2.8.8"
 #Compose
 composeBom = "2025.02.00"
 androidxComposeCompiler = "1.7.8"
-activityCompose = "1.10.0"
+activityCompose = "1.10.1"
 
 androidTools = "31.8.2"
 
