@@ -11,39 +11,38 @@
     {
       "groupName": "Kotlin & Friends",
       "matchPackageNames": [
-        "org.jetbrains.kotlin",
-        "com.google.devtools.ksp",
-        "org.jetbrains.kotlin.plugin.compose"
+        "/org.jetbrains.kotlin:*/",
+        "/com.google.devtools.ksp/"
       ]
     },
     {
       "groupName": "AGP & Friends",
       "matchPackageNames": [
-        "com.android.application",
-        "com.android.library",
-        "com.android.tools.build"
+        "/com.android.application/",
+        "/com.android.library/",
+        "/com.android.tools.build/"
       ]
     },
     {
       "groupName": "AndroidX & Jetpack Compose",
       "matchPackageNames": [
-        "androidx.core",
-        "androidx.lifecycle",
-        "androidx.activity/activity-compose",
-        "androidx.compose",
-        "androidx.compose.ui",
-        "androidx.compose.material3",
-        "androidx.navigation/navigation-compose"
+        "/androidx.core/",
+        "/androidx.lifecycle/",
+        "/androidx.activity/activity-compose/",
+        "/androidx.compose/",
+        "/androidx.compose.ui/",
+        "/androidx.compose.material3/",
+        "/androidx.navigation/navigation-compose/"
       ]
     },
     {
       "groupName": "Testing",
       "matchPackageNames": [
-        "org.junit.jupiter",
-        "androidx.test.ext",
-        "androidx.test.espresso",
-        "org.jetbrains.kotlinx/kotlinx-coroutines-test",
-        "io.mockk"
+        "/org.junit.jupiter/",
+        "/androidx.test.ext/",
+        "/androidx.test.espresso/",
+        "/org.jetbrains.kotlinx/kotlinx-coroutines-test/",
+        "/io.mockk/"
       ]
     }
   ]
