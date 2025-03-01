@@ -78,7 +78,10 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:model"))
 
-    implementation(project(":feature:dashboard"))
+    implementation(project(":feature:home:data"))
+    implementation(project(":feature:home:domain"))
+    implementation(project(":feature:home:ui"))
+
     implementation(project(":feature:news"))
     implementation(project(":feature:personnel"))
     implementation(project(":feature:syllabus"))

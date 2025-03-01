@@ -30,11 +30,15 @@ include(":core:domain")
 include(":core:database")
 include(":core:model")
 
+//Home
+include(":feature:home:data")
+include(":feature:home:domain")
+include(":feature:home:ui")
+
 include(":feature:syllabus")
 include(":feature:personnel")
 include(":feature:news")
 include(":feature:support")
-include(":feature:dashboard")
 include(":feature:web")
 include(":feature:students")
 include(":feature:department")

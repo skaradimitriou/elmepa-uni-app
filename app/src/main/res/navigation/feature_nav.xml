@@ -7,9 +7,8 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.stathis.dashboard.home.HomeFragment"
-        android:label="DashboardFragment"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.elmepa.homeui.ui.HomeFragment"
+        android:label="DashboardFragment" />
 
     <fragment
         android:id="@+id/announcementsFragment"
