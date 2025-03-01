@@ -2,6 +2,7 @@ package com.elmepa.convention.plugins
 
 import com.android.build.gradle.LibraryExtension
 import com.elmepa.convention.ext.configureKotlinAndroid
+import com.elmepa.convention.ext.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -20,6 +21,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
 
             dependencies.apply {
+                add("implementation", (libs.findLibrary("timber").get()))
                 add("testImplementation", kotlin("test"))
             }
         }

@@ -4,12 +4,8 @@ import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.data.remote.datasource.DepartmentDataSource
 import com.stathis.data.remote.datasource.NewsDataSource
-import com.stathis.data.repository.DashboardRepository
-import com.stathis.data.repository.DashboardRepositoryImpl
 import com.stathis.data.repository.DepartmentRepository
 import com.stathis.data.repository.DepartmentRepositoryImpl
-import com.stathis.data.repository.SupportRepository
-import com.stathis.data.repository.SupportRepositoryImpl
 import com.stathis.data.repository.GeneralAppInfoRepository
 import com.stathis.data.repository.GeneralAppInfoRepositoryImpl
 import com.stathis.data.repository.NetworkRepository
@@ -22,6 +18,8 @@ import com.stathis.data.repository.ResearchRepository
 import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.data.repository.StudentsRepository
 import com.stathis.data.repository.StudentsRepositoryImpl
+import com.stathis.data.repository.SupportRepository
+import com.stathis.data.repository.SupportRepositoryImpl
 import com.stathis.data.repository.SyllabusRepository
 import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.database.local.news.NewsDatabase
@@ -43,12 +41,6 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideDashboardRepository(app: Application): DashboardRepository {
-        return DashboardRepositoryImpl(app)
-    }
-
-    @Provides
-    @Singleton
     fun provideAnnouncementsRepository(
         newsLocalDataSource: NewsDatabase,
         newsRemoteDataSource: NewsDataSource
@@ -62,7 +54,6 @@ class RepositoryModule {
     fun provideResearchRepository(
         fireStore: FirebaseFirestore
     ): ResearchRepository = ResearchRepositoryImpl(fireStore)
-
 
     @Provides
     @Singleton
