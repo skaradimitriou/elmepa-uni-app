@@ -29,12 +29,15 @@ android {
     }
 
     buildTypes {
+        android.buildFeatures.buildConfig = true
+
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 
@@ -81,6 +84,10 @@ dependencies {
     implementation(project(":feature:home:data"))
     implementation(project(":feature:home:domain"))
     implementation(project(":feature:home:ui"))
+
+    implementation(project(":feature:supportv2:support-data"))
+    implementation(project(":feature:supportv2:support-domain"))
+    implementation(project(":feature:supportv2:support-ui"))
 
     implementation(project(":feature:news"))
     implementation(project(":feature:personnel"))

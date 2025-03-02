@@ -90,9 +90,8 @@
 
     <fragment
         android:id="@+id/faqFragment"
-        android:name="com.stathis.support.ui.faq.FaqFragment"
-        android:label="FaqFragment"
-        tools:layout="@layout/fragment_faq" />
+        android:name="com.elmepa.supportv2.ui.faq.FaqFragment"
+        android:label="FaqFragment" />
 
     <fragment
         android:id="@+id/depDetailsFragment"
