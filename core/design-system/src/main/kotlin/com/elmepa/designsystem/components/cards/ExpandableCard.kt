@@ -51,8 +51,7 @@ fun ExpandableCard(
             Text(
                 modifier = Modifier.weight(1f),
                 text = text,
-                color = MaterialTheme.colorScheme.onSurface,
-                maxLines = 1
+                color = MaterialTheme.colorScheme.onSurface
             )
             IconButton(
                 onClick = { isExpanded = !isExpanded }

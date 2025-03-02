@@ -35,6 +35,12 @@ include(":feature:home:data")
 include(":feature:home:domain")
 include(":feature:home:ui")
 
+//Support
+include(":feature:supportv2:support-data")
+include(":feature:supportv2:support-database")
+include(":feature:supportv2:support-domain")
+include(":feature:supportv2:support-ui")
+
 include(":feature:syllabus")
 include(":feature:personnel")
 include(":feature:news")
