@@ -13,12 +13,12 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.elmepa.designsystem.theme.GreyBg
 import com.elmepa.homedomain.model.DashboardCard
 import com.elmepa.homeui.ui.components.DashboardOption
 import com.elmepa.homeui.ui.components.UniversityLogoCard
@@ -53,7 +53,7 @@ private fun ContentState(
     LazyVerticalGrid(
         modifier = Modifier
             .fillMaxHeight()
-            .background(GreyBg)
+            .background(MaterialTheme.colorScheme.background)
             .consumeWindowInsets(paddingValues),
         columns = GridCells.Fixed(2),
         contentPadding = PaddingValues(all = 8.dp),
