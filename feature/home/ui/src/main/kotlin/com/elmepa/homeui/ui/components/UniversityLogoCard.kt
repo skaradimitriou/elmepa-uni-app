@@ -21,7 +21,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.elmepa.designsystem.theme.White
 import com.stathis.common.R
 
 @Composable
@@ -33,7 +32,7 @@ internal fun UniversityLogoCard(
 ) {
     Card(
         modifier = modifier.clickable(enabled = false) {},
-        colors = CardDefaults.cardColors(containerColor = White),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
     ) {
         Column(
             modifier = Modifier
@@ -48,15 +47,17 @@ internal fun UniversityLogoCard(
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                fontSize = MaterialTheme.typography.titleLarge.fontSize,
                 text = title,
+                fontSize = MaterialTheme.typography.titleLarge.fontSize,
+                color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                fontSize = MaterialTheme.typography.bodyLarge.fontSize,
                 text = subtitle,
+                fontSize = MaterialTheme.typography.bodyLarge.fontSize,
+                color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center
             )
         }

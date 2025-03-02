@@ -20,7 +20,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.elmepa.designsystem.theme.White
 import com.stathis.common.R
 
 @Composable
@@ -33,7 +32,7 @@ internal fun DashboardOption(
         modifier = Modifier
             .height(180.dp)
             .clickable { onAction() },
-        colors = CardDefaults.cardColors(containerColor = White),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
     ) {
         Column(
             modifier = Modifier
@@ -48,8 +47,9 @@ internal fun DashboardOption(
                 contentDescription = title
             )
             Text(
-                fontSize = MaterialTheme.typography.titleMedium.fontSize,
                 text = title,
+                fontSize = MaterialTheme.typography.titleMedium.fontSize,
+                color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center
             )
         }
