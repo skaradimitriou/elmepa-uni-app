@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.core.text.HtmlCompat
 import com.elmepa.designsystem.components.cards.ExpandableCard
+import com.elmepa.supportv2.ui.faq.components.FaqShimmerLoading
 import com.stathis.model.support.Faq
 
 @Composable
@@ -25,7 +26,12 @@ fun FaqScreen(state: FaqView.State) {
         },
         content = { paddingValues ->
             when (state) {
-                is FaqView.State.Loading -> Unit
+                is FaqView.State.Loading -> FaqShimmerLoading(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .consumeWindowInsets(paddingValues)
+                )
+
                 is FaqView.State.Content -> FaqContent(
                     paddingValues = paddingValues,
                     faqs = state.faqs

@@ -31,9 +31,7 @@ internal class FaqViewModel @Inject constructor(
 
     private fun getFaqs() {
         fetchFaqUseCase()
-            .onEach { result ->
-                _state.update { result.toUiState() }
-            }
+            .onEach { result -> _state.update { result.toUiState() } }
             .flowOn(Dispatchers.IO)
             .launchIn(viewModelScope)
     }
