@@ -24,7 +24,6 @@ import com.stathis.data.repository.SyllabusRepository
 import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.database.local.news.NewsDatabase
 import com.stathis.database.local.personnel.PersonnelDatabase
-import com.stathis.datastore.datastore.FaqDataStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -87,13 +86,7 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideSupportRepository(
-        fireStore: FirebaseFirestore,
-        faqDataStore: FaqDataStore
-    ): SupportRepository = SupportRepositoryImpl(
-        fireStore = fireStore,
-        faqDataStore = faqDataStore
-    )
+    fun provideSupportRepository(): SupportRepository = SupportRepositoryImpl()
 
     @Provides
     @Singleton
