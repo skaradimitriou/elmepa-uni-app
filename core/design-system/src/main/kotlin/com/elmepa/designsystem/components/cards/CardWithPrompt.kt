@@ -38,6 +38,7 @@ fun CardWithPrompt(
             Text(
                 modifier = Modifier.weight(1f),
                 text = text,
+                style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface,
                 maxLines = 1
             )
