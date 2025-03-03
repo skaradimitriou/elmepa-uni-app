@@ -6,7 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface SupportRepository {
 
-    suspend fun fetchFaqs(): Flow<NetworkResult<List<UiModel>>>
-
     suspend fun fetchApplicationForms(): Flow<NetworkResult<List<UiModel>>>
 }
