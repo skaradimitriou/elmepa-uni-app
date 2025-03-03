@@ -53,6 +53,7 @@ fun CardWithImageAndTitle(
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = title,
+                style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center,
             )

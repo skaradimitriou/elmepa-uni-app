@@ -44,13 +44,14 @@ fun ExpandableCard(
         Row(
             modifier = Modifier
                 .padding(start = 16.dp, end = 4.dp)
-                .padding(vertical = 8.dp),
+                .padding(vertical = 12.dp),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 modifier = Modifier.weight(1f),
                 text = text,
+                style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurface
             )
             IconButton(
@@ -73,6 +74,7 @@ fun ExpandableCard(
             ) {
                 Text(
                     text = description,
+                    style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurface
                 )
             }
