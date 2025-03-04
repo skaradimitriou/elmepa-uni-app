@@ -1,4 +1,4 @@
-package com.elmepa.supportv2.mapper
+package com.elmepa.supportv2.remote.mapper
 
 import com.stathis.common.util.toListOf
 import com.stathis.common.util.toNotNull

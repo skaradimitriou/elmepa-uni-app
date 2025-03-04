@@ -11,4 +11,5 @@ android {
 
 dependencies {
     implementation(project(":core:model"))
+    implementation(project(":feature:supportv2:support-domain"))
 }
