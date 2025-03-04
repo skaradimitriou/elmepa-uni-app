@@ -20,4 +20,6 @@ dependencies {
     implementation(project(":feature:supportv2:support-domain"))
 
     implementation(libs.firebase.firestore)
+
+    implementation(libs.jsoup)
 }
