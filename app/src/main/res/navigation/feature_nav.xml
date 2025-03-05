@@ -100,9 +100,8 @@
 
     <fragment
         android:id="@+id/applicationFormsFragment"
-        android:name="com.stathis.support.ui.applicationforms.ApplicationFormsFragment"
-        android:label="ApplicationFormsFragment"
-        tools:layout="@layout/fragment_application_forms" />
+        android:name="com.elmepa.supportv2.ui.applicationforms.ApplicationFormsFragment"
+        android:label="ApplicationFormsFragment" />
     <fragment
         android:id="@+id/academicScheduleFragment"
         android:name="com.stathis.students.acadschedule.AcademicScheduleFragment"
