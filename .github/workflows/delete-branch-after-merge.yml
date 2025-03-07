@@ -12,7 +12,7 @@ jobs:
     # Run this job only if the pull request is merged and the base branch is 'migration'
     if: >
       github.event.pull_request.merged == true &&
-      github.event.pull_request.base.ref == 'migration'
+      github.event.pull_request.base.ref == 'develop'
     runs-on: ubuntu-latest  # Use the latest Ubuntu runner for the job
 
     steps:
@@ -35,7 +35,7 @@ jobs:
 
           echo "Branch to delete: $branch_name"
 
-          if [ "$branch_name" != "main" ] && [ "$branch_name" != "master" ] && [ "$branch_name" != "migration" ]; then
+          if [ "$branch_name" != "master" ] && [ "$branch_name" != "migration" ] && [ "$branch_name" != "develop" ]; then
             echo "Deleting branch: $branch_name"
           
             curl -X DELETE \
