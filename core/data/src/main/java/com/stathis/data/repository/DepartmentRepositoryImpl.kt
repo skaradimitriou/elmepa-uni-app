@@ -30,6 +30,7 @@ class DepartmentRepositoryImpl @Inject constructor(
                 }
             )
 
+
             emit(NetworkResult.Success(data))
         }
 
