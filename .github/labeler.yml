@@ -1,0 +1,11 @@
+enhancement:
+  - feature/**
+  - enhancement/**
+
+bugfix:
+  - fix/**
+  - bugfix/**
+  - bug/**
+
+platform:
+  - platform/**
