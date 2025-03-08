@@ -1,0 +1,37 @@
+name: Auto Label PR Based on Branch Name
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  label-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply labels based on branch name
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+            const branchName = pr.head.ref;  // Get the PR's branch name
+            const labelsToAdd = [];
+
+            // Apply labels based on branch name
+            if (branchName.startsWith("feature/") || branchName.startsWith("enhancement/")) {
+              labelsToAdd.push("enhancement");
+            } else if (branchName.startsWith("fix/") || branchName.startsWith("bugfix/") || branchName.startsWith("bug/")) {
+              labelsToAdd.push("bugfix");
+            } else if (branchName.startsWith("platform/")) {
+              labelsToAdd.push("platform");
+            }
+
+            // Apply labels if any are found
+            if (labelsToAdd.length > 0) {
+              github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                labels: labelsToAdd
+              });
+            }
