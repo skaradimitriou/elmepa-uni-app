@@ -2,16 +2,21 @@ package com.elmepa.supportv2.repository
 
 import com.elmepa.database.db.SupportLocalDatabase
 import com.elmepa.database.ext.toApplicationForm
+import com.elmepa.database.ext.toContactItem
 import com.elmepa.database.ext.toEntity
 import com.elmepa.database.ext.toFaq
 import com.elmepa.supportv2.model.ApplicationForm
+import com.elmepa.supportv2.model.ContactItem
 import com.elmepa.supportv2.remote.mapper.ApplicationFormMapper
+import com.elmepa.supportv2.remote.mapper.ContactMapper
 import com.elmepa.supportv2.remote.mapper.FaqMapper
 import com.elmepa.supportv2.remote.model.ApplicationFormDto
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.common.util.toListOf
+import com.stathis.data.remote.model.ContactItemDto
 import com.stathis.data.remote.model.support.FaqDto
 import com.stathis.data.util.APPLICATION_FORMS_URL
+import com.stathis.data.util.CONTACT_DB_PATH
 import com.stathis.data.util.DIV_CONTENT
 import com.stathis.data.util.FAQ_DB_PATH
 import com.stathis.data.util.FAQ_ORDER_BY_FIELD
@@ -28,7 +33,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.tasks.await
 import org.jsoup.Jsoup
-import java.lang.Exception
 import javax.inject.Inject
 
 internal class SupportRepositoryImpl @Inject constructor(
@@ -41,6 +45,7 @@ internal class SupportRepositoryImpl @Inject constructor(
 
         private const val FAQ_CACHE_KEY = "cache_faqs"
         private const val APPLICATION_FORMS_CACHE_KEY = "cache_application_forms"
+        private const val CONTACT_INFO_CACHE_KEY = "cache_contact_info"
     }
 
     override fun fetchFaqs(): Flow<DomainResult<List<Faq>>> = flow {
@@ -119,6 +124,58 @@ internal class SupportRepositoryImpl @Inject constructor(
             }
     }.flowOn(Dispatchers.IO)
 
+    override fun fetchContactInfo(): Flow<DomainResult<List<ContactItem>>> = flow {
+        emit(DomainResult.Loading<List<ContactItem>>())
+
+        val hasEmptyTimestamp = cacheManager.getCacheTimestamp(CONTACT_INFO_CACHE_KEY) == 0L
+        val shouldFetchFromRemote = hasEmptyTimestamp || cacheManager.shouldRefresh(CONTACT_INFO_CACHE_KEY)
+
+        if (shouldFetchFromRemote) {
+            fetchContactItemsFromRemote()
+        }
+
+        supportLocalDb.contactItemDao()
+            .getAllContactItems()
+            .catch { emit(DomainResult.Error<List<ContactItem>>(it)) }
+            .collect { data ->
+                if (data.isEmpty()) {
+                    fetchContactItemsFromRemote()
+                } else {
+                    val items = data.map { it.toContactItem() }
+                    emit(DomainResult.Success<List<ContactItem>>(items))
+                }
+            }
+    }
+
+    private suspend fun fetchContactItemsFromRemote(): DomainResult<List<ContactItem>> {
+        val queryResult = fireStore.collection(CONTACT_DB_PATH)
+            .get()
+            .await()
+
+        val result = try {
+            val dtoModels = queryResult.toListOf<ContactItemDto>()
+            val domainModels = ContactMapper.toDomainModel(dtoModels)
+
+            with(supportLocalDb.contactItemDao()) {
+                deleteAll()
+
+                val entities = domainModels.map { it.toEntity() }
+                insertAll(entities)
+
+                cacheManager.saveCacheTimestamp(
+                    key = CONTACT_INFO_CACHE_KEY,
+                    timestamp = System.currentTimeMillis()
+                )
+            }
+
+            DomainResult.Success(domainModels)
+        } catch (e: Exception) {
+            DomainResult.Error(e)
+        }
+
+        return result
+    }
+
     // Will be moved to :core:network module inside dedicated data source
     private suspend fun fetchApplicationFormsFromRemote(): DomainResult<List<ApplicationForm>> = try {
         val dtoModels = Jsoup.connect(APPLICATION_FORMS_URL).get()
@@ -143,7 +200,7 @@ internal class SupportRepositoryImpl @Inject constructor(
         }
 
         DomainResult.Success(domainModels)
-    } catch (e: kotlin.Exception) {
+    } catch (e: Exception) {
         DomainResult.Error(e)
     }
 }

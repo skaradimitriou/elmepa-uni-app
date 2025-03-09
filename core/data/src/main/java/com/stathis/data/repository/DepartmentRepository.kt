@@ -9,7 +9,5 @@ interface DepartmentRepository {
 
     suspend fun fetchDepartmentInformation(): Flow<NetworkResult<List<UiModel>>>
 
-    suspend fun fetchDepartmentContactDetails(): Flow<NetworkResult<List<UiModel>>>
-
     suspend fun fetchDepMembers(): Flow<NetworkResult<List<DepMember>>>
 }

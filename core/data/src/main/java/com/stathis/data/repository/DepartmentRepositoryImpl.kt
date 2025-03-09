@@ -2,11 +2,8 @@ package com.stathis.data.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.data.remote.datasource.DepartmentDataSource
-import com.stathis.data.remote.mapper.ContactMapper
 import com.stathis.data.remote.mapper.DepartmentResponseMapper
-import com.stathis.data.remote.model.ContactItemDto
 import com.stathis.data.remote.model.DepartmentResponseDto
-import com.stathis.data.util.CONTACT_DB_PATH
 import com.stathis.data.util.DEPT_DB_PATH
 import com.stathis.data.util.SCREEN_DATA
 import com.stathis.data.util.getAndMapResponse
@@ -28,16 +25,6 @@ class DepartmentRepositoryImpl @Inject constructor(
                 mapInto = { dtoModel ->
                     DepartmentResponseMapper.toDomainModel(dtoModel)
                 }
-            )
-
-            emit(NetworkResult.Success(data))
-        }
-
-    override suspend fun fetchDepartmentContactDetails(): Flow<NetworkResult<List<UiModel>>> =
-        flow {
-            val data = getAndMapResponse<ContactItemDto, List<UiModel>>(
-                query = fireStore.collection(CONTACT_DB_PATH),
-                mapInto = { dtoModel -> ContactMapper.toDomainModel(dtoModel) }
             )
 
             emit(NetworkResult.Success(data))

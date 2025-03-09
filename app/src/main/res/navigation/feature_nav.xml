@@ -72,9 +72,8 @@
 
     <fragment
         android:id="@+id/contactFragment"
-        android:name="com.stathis.support.ui.contact.ContactFragment"
-        android:label="ContactFragment"
-        tools:layout="@layout/fragment_contact" />
+        android:name="com.elmepa.supportv2.ui.contact.ContactFragment"
+        android:label="ContactFragment" />
 
     <fragment
         android:id="@+id/studentsFragment"

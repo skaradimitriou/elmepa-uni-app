@@ -1,9 +1,10 @@
-package com.stathis.data.remote.mapper
+package com.elmepa.supportv2.remote.mapper
 
+import com.elmepa.supportv2.model.ContactItem
+import com.elmepa.supportv2.model.ContactType
 import com.stathis.common.util.toNotNull
+import com.stathis.data.remote.mapper.BaseMapper
 import com.stathis.data.remote.model.ContactItemDto
-import com.stathis.model.contact.ContactItem
-import com.stathis.model.contact.ContactType
 
 object ContactMapper : BaseMapper<List<ContactItemDto>?, List<ContactItem>> {
 
