@@ -11,15 +11,15 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            android:theme="@style/AppToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/AppToolbar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/navHostFragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:name="androidx.navigation.fragment.compose.ComposableNavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"

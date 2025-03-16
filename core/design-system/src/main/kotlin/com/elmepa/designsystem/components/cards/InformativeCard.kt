@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Card
@@ -35,11 +36,12 @@ fun InformativeCard(
                 .padding(all = 16.dp)
         ) {
             Icon(
+                modifier = Modifier.size(24.dp),
                 imageVector = Icons.Default.Info,
                 contentDescription = null,
                 tint = Navy
             )
-            Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+            Column(modifier = Modifier.padding(start = 16.dp)) {
                 content()
             }
         }
