@@ -6,8 +6,6 @@ import com.stathis.data.remote.datasource.DepartmentDataSource
 import com.stathis.data.remote.datasource.NewsDataSource
 import com.stathis.data.repository.DepartmentRepository
 import com.stathis.data.repository.DepartmentRepositoryImpl
-import com.stathis.data.repository.GeneralAppInfoRepository
-import com.stathis.data.repository.GeneralAppInfoRepositoryImpl
 import com.stathis.data.repository.NetworkRepository
 import com.stathis.data.repository.NetworkRepositoryImpl
 import com.stathis.data.repository.NewsRepository
@@ -81,10 +79,4 @@ class RepositoryModule {
     fun provideStudentsRepository(
         fireStore: FirebaseFirestore
     ): StudentsRepository = StudentsRepositoryImpl(fireStore)
-
-    @Provides
-    @Singleton
-    fun provideGeneralRepository(
-        app: Application
-    ): GeneralAppInfoRepository = GeneralAppInfoRepositoryImpl(app)
 }

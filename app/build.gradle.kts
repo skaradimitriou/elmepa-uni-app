@@ -85,16 +85,15 @@ dependencies {
     implementation(project(":feature:home:domain"))
     implementation(project(":feature:home:ui"))
 
-    implementation(project(":feature:supportv2:support-data"))
-    implementation(project(":feature:supportv2:support-domain"))
-    implementation(project(":feature:supportv2:support-ui"))
+    implementation(project(":feature:support:support-data"))
+    implementation(project(":feature:support:support-domain"))
+    implementation(project(":feature:support:support-ui"))
 
     implementation(project(":feature:news"))
     implementation(project(":feature:personnel"))
     implementation(project(":feature:syllabus"))
     implementation(project(":feature:students"))
     implementation(project(":feature:department"))
-    implementation(project(":feature:support"))
     implementation(project(":feature:web"))
 
     implementation(libs.viewModelLifecycle)

@@ -66,11 +66,11 @@
 
     <composable
         android:id="@+id/aboutAppScreen"
-        android:name="com.elmepa.supportv2.ui.about.AboutAppScreenKt\$AboutAppScreen" />
+        android:name="com.elmepa.support.ui.about.AboutAppScreenKt\$AboutAppScreen" />
 
     <fragment
         android:id="@+id/contactFragment"
-        android:name="com.elmepa.supportv2.ui.contact.ContactFragment"
+        android:name="com.elmepa.support.ui.contact.ContactFragment"
         android:label="ContactFragment" />
 
     <fragment
@@ -87,7 +87,7 @@
 
     <fragment
         android:id="@+id/faqFragment"
-        android:name="com.elmepa.supportv2.ui.faq.FaqFragment"
+        android:name="com.elmepa.support.ui.faq.FaqFragment"
         android:label="FaqFragment" />
 
     <fragment
@@ -97,7 +97,7 @@
 
     <fragment
         android:id="@+id/applicationFormsFragment"
-        android:name="com.elmepa.supportv2.ui.applicationforms.ApplicationFormsFragment"
+        android:name="com.elmepa.support.ui.applicationforms.ApplicationFormsFragment"
         android:label="ApplicationFormsFragment" />
     <fragment
         android:id="@+id/academicScheduleFragment"
