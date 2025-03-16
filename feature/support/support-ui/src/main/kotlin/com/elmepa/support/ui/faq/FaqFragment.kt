@@ -36,6 +36,6 @@ class FaqFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setScreenTitle(getString(R.string.main_screen_title))
+        setScreenTitle(getString(R.string.faq_title))
     }
 }
