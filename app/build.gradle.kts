@@ -103,6 +103,7 @@ dependencies {
 
     implementation(libs.fragment.navigation)
     implementation(libs.ui.navigation)
+    implementation(libs.navigation.fragment.compose)
 
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.perf)

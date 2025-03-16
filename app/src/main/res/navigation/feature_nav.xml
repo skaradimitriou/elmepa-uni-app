@@ -64,11 +64,9 @@
         android:label="LessonDetailsFragment"
         tools:layout="@layout/fragment_lesson_details" />
 
-    <fragment
-        android:id="@+id/aboutAppFragment"
-        android:name="com.stathis.support.ui.about.AboutAppFragment"
-        android:label="AboutAppFragment"
-        tools:layout="@layout/fragment_about_app" />
+    <composable
+        android:id="@+id/aboutAppScreen"
+        android:name="com.elmepa.supportv2.ui.about.AboutAppScreenKt\$AboutAppScreen" />
 
     <fragment
         android:id="@+id/contactFragment"

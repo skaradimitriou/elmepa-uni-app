@@ -1,6 +1,7 @@
 package com.stathis.elmepaunivapp
 
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -36,9 +37,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         binding.bottomNavView.setupWithNavController(navController)
 
-        navController.addOnDestinationChangedListener { _, _, _ ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             val isAtHomeScreens = navigator.isAtHomeScreens()
             supportActionBar?.setDisplayHomeAsUpEnabled(!isAtHomeScreens)
+
+            val shouldHideToolbar = destination.id == R.id.aboutAppScreen
+            binding.toolbar.visibility = if (shouldHideToolbar) {
+                View.GONE
+            } else {
+                View.VISIBLE
+            }
         }
 
         val cameFromWidget = intent.getBooleanExtra(getString(R.string.open_personnel), false)

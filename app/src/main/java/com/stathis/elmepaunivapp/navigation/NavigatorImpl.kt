@@ -44,7 +44,7 @@ class NavigatorImpl @Inject constructor(
         NavigationAction.WEBVIEW -> navController.navigateSafe(R.id.webViewFragment, bundle)
         NavigationAction.CONTACT -> navController.navigateSafe(R.id.contactFragment)
         NavigationAction.FAQ -> navController.navigateSafe(R.id.faqFragment)
-        NavigationAction.ABOUT_APP -> navController.navigateSafe(R.id.aboutAppFragment)
+        NavigationAction.ABOUT_APP -> navController.navigateSafe(R.id.aboutAppScreen)
         else -> Unit
     }
 
