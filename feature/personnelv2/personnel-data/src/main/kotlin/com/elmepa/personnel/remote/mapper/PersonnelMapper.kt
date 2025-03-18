@@ -1,23 +1,22 @@
 package com.elmepa.personnel.remote.mapper
 
+import com.elmepa.personnel.model.Person
 import com.elmepa.personnel.remote.model.PersonnelDto
-import com.stathis.common.util.toNotNull
 import com.stathis.data.remote.mapper.BaseMapper
-import com.stathis.model.personnel.Person
 
-internal object PersonnelMapper : BaseMapper<List<PersonnelDto>?, List<Person>> {
+internal object PersonnelMapper : BaseMapper<List<PersonnelDto?>?, List<Person>> {
 
-    override fun toDomainModel(dtoModel: List<PersonnelDto>?) = dtoModel?.map {
+    override fun toDomainModel(dtoModel: List<PersonnelDto?>?) = dtoModel?.map {
         it.toDomainModel()
     } ?: listOf()
 
     private fun PersonnelDto?.toDomainModel() = Person(
-        fullName = this?.fullName.toNotNull(),
-        description = this?.description.toNotNull(),
-        image = this?.image.toNotNull(),
-        email = this?.email.toNotNull(),
-        gender = this?.gender.toNotNull(),
-        vocative = this?.vocative.toNotNull()
+        fullName = this?.fullName.orEmpty(),
+        description = this?.description.orEmpty(),
+        image = this?.image.orEmpty(),
+        email = this?.email.orEmpty(),
+        gender = this?.gender.orEmpty(),
+        vocative = this?.vocative.orEmpty()
     )
 }
 

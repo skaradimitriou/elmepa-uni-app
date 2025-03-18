@@ -10,7 +10,7 @@ private const val PEOPLE = "people"
 data class PersonEntity(
 
     @PrimaryKey(autoGenerate = false)
-    private val id: UUID = UUID.randomUUID(),
+    val id: UUID = UUID.randomUUID(),
 
     val fullName: String,
     val description: String,
