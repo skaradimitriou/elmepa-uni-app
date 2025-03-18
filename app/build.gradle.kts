@@ -89,8 +89,13 @@ dependencies {
     implementation(project(":feature:support:support-domain"))
     implementation(project(":feature:support:support-ui"))
 
-    implementation(project(":feature:news"))
     implementation(project(":feature:personnel"))
+    implementation(project(":feature:personnelv2:personnel-data"))
+    implementation(project(":feature:personnelv2:personnel-database"))
+    implementation(project(":feature:personnelv2:personnel-domain"))
+    implementation(project(":feature:personnelv2:personnel-ui"))
+
+    implementation(project(":feature:news"))
     implementation(project(":feature:syllabus"))
     implementation(project(":feature:students"))
     implementation(project(":feature:department"))

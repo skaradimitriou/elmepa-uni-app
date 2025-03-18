@@ -11,7 +11,7 @@ interface PersonnelDao {
     @Query("SELECT * FROM people")
     fun getAllPersonnel(): Flow<List<PersonEntity>>
 
-    @Query("SELECT * FROM Personnel WHERE fullName LIKE :fullName||'%'")
+    @Query("SELECT * FROM people WHERE fullName LIKE :fullName||'%'")
     fun getPersonnelByFullName(fullName: String): Flow<List<PersonEntity>>
 
     @Insert

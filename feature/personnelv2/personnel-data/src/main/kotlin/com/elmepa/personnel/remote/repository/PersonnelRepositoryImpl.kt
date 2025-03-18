@@ -1,12 +1,13 @@
 package com.elmepa.personnel.remote.repository
 
+import com.elmepa.personnel.model.Person
+import com.elmepa.personnel.remote.mapper.PersonnelMapper
+import com.elmepa.personnel.remote.model.PersonnelDto
+import com.elmepa.personnel.repository.PersonnelRepository
 import com.google.firebase.firestore.FirebaseFirestore
-import com.stathis.data.remote.mapper.personnel.PersonnelMapper
-import com.stathis.data.remote.model.personnel.PersonnelDto
 import com.stathis.data.util.FULLNAME
 import com.stathis.data.util.PERSONNEL_DB_PATH
 import com.stathis.domain.model.DomainResult
-import com.stathis.model.UiModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
@@ -14,9 +15,9 @@ import javax.inject.Inject
 
 internal class PersonnelRepositoryImpl @Inject constructor(
     private val fireStore: FirebaseFirestore
-) : com.elmepa.personnel.repository.PersonnelRepository {
+) : PersonnelRepository {
 
-    override fun fetchAllPersonnel(): Flow<DomainResult<List<UiModel>>> = flow {
+    override fun fetchAllPersonnel(): Flow<DomainResult<List<Person>>> = flow {
         val result = fireStore.collection(PERSONNEL_DB_PATH)
             .orderBy(FULLNAME)
             .get()
@@ -27,7 +28,7 @@ internal class PersonnelRepositoryImpl @Inject constructor(
         emit(DomainResult.Success(personnel))
     }
 
-    override fun searchPersonnelByName(name: String): Flow<DomainResult<List<UiModel>>> = flow {
+    override fun searchPersonnelByName(name: String): Flow<DomainResult<List<Person>>> = flow {
         emit(DomainResult.Success(listOf()))
     }
 }
