@@ -25,7 +25,7 @@ androidTools = "31.9.0"
 coroutines = "1.10.1"
 #Hilt
 androidxHiltNavigationCompose = "1.2.0"
-hiltVersion = "2.55"
+hiltVersion = "2.56"
 #Timber
 timber = "5.0.1"
 #Swipe to refresh
