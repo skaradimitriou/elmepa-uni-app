@@ -34,7 +34,7 @@ gradle = "8.9.0"
 #Google Services
 googleServicesVersion = "4.4.2"
 #Firebase Crashlytics
-firebaseCrashlytics = "19.4.1"
+firebaseCrashlytics = "19.4.2"
 firebaseCrashlyticsGradle = "3.0.3"
 #Firebase BoM
 firebaseBom = "33.11.0"
