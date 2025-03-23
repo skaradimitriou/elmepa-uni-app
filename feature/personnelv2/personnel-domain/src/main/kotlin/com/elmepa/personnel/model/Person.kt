@@ -9,7 +9,7 @@ class Person(
     val description: String,
     val image: String,
     val email: String,
-    val gender: String,
+    val gender: Gender,
     val vocative: String
 ) : UiModel {
 

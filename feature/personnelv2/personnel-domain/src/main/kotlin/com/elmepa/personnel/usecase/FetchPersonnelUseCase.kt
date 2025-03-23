@@ -8,9 +8,8 @@ import javax.inject.Inject
 
 class FetchPersonnelUseCase @Inject constructor(private val repository: PersonnelRepository) {
 
-    operator fun invoke(query: String? = null): Flow<DomainResult<List<Person>>> = query?.let { name ->
-        repository.searchPersonnelByName(name)
-    } ?: run {
-        repository.fetchAllPersonnel()
+    operator fun invoke(query: String? = null): Flow<DomainResult<List<Person>>> = when {
+        query.isNullOrEmpty() -> repository.fetchAllPersonnel()
+        else -> repository.searchPersonnelByName(query)
     }
 }

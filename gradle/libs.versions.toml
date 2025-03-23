@@ -51,6 +51,8 @@ shimmer = "0.5.0"
 jsoup = "1.19.1"
 #Glide
 glide = "4.16.0"
+#Coil
+coil = "3.1.0"
 #Room Local SQLite db
 room = "2.6.1"
 #Circle ImageView
@@ -108,6 +110,8 @@ swipeToRefresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshla
 shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
 jsoup = { group = "org.jsoup", name = "jsoup", version.ref = "jsoup" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+coil = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+coil-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 paging = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
 
 #Room

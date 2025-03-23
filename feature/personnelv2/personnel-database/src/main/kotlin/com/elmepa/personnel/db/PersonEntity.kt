@@ -2,6 +2,7 @@ package com.elmepa.personnel.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.elmepa.personnel.model.Gender
 import java.util.UUID
 
 private const val PEOPLE = "people"
@@ -16,6 +17,6 @@ data class PersonEntity(
     val description: String,
     val image: String,
     val email: String,
-    val gender: String,
+    val gender: Gender,
     val vocative: String
 )
