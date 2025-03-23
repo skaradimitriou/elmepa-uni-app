@@ -15,7 +15,6 @@ import com.google.android.material.tabs.TabLayout
 import com.stathis.common.adapters.CarouselAdapter
 import com.stathis.common.decorations.CustomItemDecoration
 
-
 /**
  * Helper Method to setup spaces between items inside a [RecyclerView].
  */
@@ -57,10 +56,13 @@ fun MenuItem.respondToQuery(queryHint: String, callback: (String) -> Unit) {
 
     searchView.setOnQueryTextListener(object :
         androidx.appcompat.widget.SearchView.OnQueryTextListener {
-        override fun onQueryTextSubmit(p0: String?): Boolean = false
+        override fun onQueryTextSubmit(query: String?): Boolean {
+            callback.invoke(query.toNotNull())
+            return false
+        }
+
         override fun onQueryTextChange(query: String?): Boolean {
             callback.invoke(query.toNotNull())
-
             return false
         }
     })

@@ -23,7 +23,10 @@ dependencies {
     implementation(libs.androidx.appcompat)
 
     implementation(libs.fragment.navigation)
+    implementation(libs.coil)
+    implementation(libs.coil.okhttp)
 
     implementation(libs.viewModelLifecycle)
     implementation(libs.lifecycle.common)
+    implementation(libs.material)
 }
