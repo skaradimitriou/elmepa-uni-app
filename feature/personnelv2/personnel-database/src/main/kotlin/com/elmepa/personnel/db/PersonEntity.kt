@@ -5,9 +5,9 @@ import androidx.room.PrimaryKey
 import com.elmepa.personnel.model.Gender
 import java.util.UUID
 
-private const val PEOPLE = "people"
+private const val PERSONNEL = "personnel"
 
-@Entity(tableName = PEOPLE)
+@Entity(tableName = PERSONNEL)
 data class PersonEntity(
 
     @PrimaryKey(autoGenerate = false)

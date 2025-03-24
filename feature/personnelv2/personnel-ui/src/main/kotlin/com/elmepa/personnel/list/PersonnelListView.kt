@@ -13,6 +13,7 @@ internal class PersonnelListView {
     sealed interface UIAction {
         data class SearchPersonByName(val query: String) : UIAction
         data class PersonTap(val person: Person) : UIAction
+        data object Retry : UIAction
     }
 
     sealed interface Effect {

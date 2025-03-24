@@ -2,7 +2,7 @@ package com.elmepa.personnel.di
 
 import android.app.Application
 import androidx.room.Room
-import com.elmepa.personnel.db.PersonnelLocalDatasource
+import com.elmepa.personnel.db.PersonnelDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +19,7 @@ class PersonnelDatabaseModule {
     @Singleton
     fun providePersonnelDatabase(application: Application) = Room.databaseBuilder(
         application.applicationContext,
-        PersonnelLocalDatasource::class.java,
+        PersonnelDatabase::class.java,
         PERSONNEL_DB_NAME
     ).fallbackToDestructiveMigration().build()
 }

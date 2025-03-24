@@ -13,6 +13,11 @@
     <string name="no_conn_title">Η σύνδεση χάθηκε.</string>
     <string name="no_conn_action">Επανασύνδεση</string>
 
+    <!-- Error Screen -->
+    <string name="something_went_wrong">Κάτι πήγε στραβά</string>
+    <string name="info_error_text">Οι πληροφορίες δεν φορτώθηκαν στην εφαρμογή.</string>
+    <string name="retry">Επαναφόρτωση</string>
+
     <!-- Dashboard -->
     <string name="main_screen_title">Αρχική</string>
     <string name="dashboard_elmepa">ΕΛΜΕΠΑ</string>

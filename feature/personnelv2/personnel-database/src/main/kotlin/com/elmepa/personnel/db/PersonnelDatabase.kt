@@ -5,10 +5,10 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [PersonEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
-abstract class PersonnelLocalDatasource : RoomDatabase() {
+abstract class PersonnelDatabase : RoomDatabase() {
 
     abstract fun personnelDao(): PersonnelDao
 }
