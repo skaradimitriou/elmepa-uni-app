@@ -3,7 +3,6 @@ package com.stathis.database.di
 import android.app.Application
 import androidx.room.Room
 import com.stathis.database.local.news.NewsDatabase
-import com.stathis.database.local.personnel.PersonnelDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,13 +19,5 @@ class DatabaseModule {
         application.applicationContext,
         NewsDatabase::class.java,
         "announcements_db"
-    ).fallbackToDestructiveMigration().build()
-
-    @Provides
-    @Singleton
-    fun providePersonnelRoomDatabase(application: Application) = Room.databaseBuilder(
-        application.applicationContext,
-        PersonnelDatabase::class.java,
-        "personnel_db"
     ).fallbackToDestructiveMigration().build()
 }

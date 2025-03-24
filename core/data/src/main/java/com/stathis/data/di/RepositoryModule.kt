@@ -10,8 +10,6 @@ import com.stathis.data.repository.NetworkRepository
 import com.stathis.data.repository.NetworkRepositoryImpl
 import com.stathis.data.repository.NewsRepository
 import com.stathis.data.repository.NewsRepositoryImpl
-import com.stathis.data.repository.PersonnelRepository
-import com.stathis.data.repository.PersonnelRepositoryImpl
 import com.stathis.data.repository.ResearchRepository
 import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.data.repository.StudentsRepository
@@ -19,7 +17,6 @@ import com.stathis.data.repository.StudentsRepositoryImpl
 import com.stathis.data.repository.SyllabusRepository
 import com.stathis.data.repository.SyllabusRepositoryImpl
 import com.stathis.database.local.news.NewsDatabase
-import com.stathis.database.local.personnel.PersonnelDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -49,13 +46,6 @@ class RepositoryModule {
     fun provideResearchRepository(
         fireStore: FirebaseFirestore
     ): ResearchRepository = ResearchRepositoryImpl(fireStore)
-
-    @Provides
-    @Singleton
-    fun providePersonnelRepository(
-        fireStore: FirebaseFirestore,
-        localDataSource: PersonnelDatabase
-    ): PersonnelRepository = PersonnelRepositoryImpl(fireStore, localDataSource)
 
     @Provides
     @Singleton
