@@ -1,6 +1,6 @@
 package com.elmepa.personnel.remote.repository
 
-import com.elmepa.personnel.db.PersonnelLocalDatasource
+import com.elmepa.personnel.db.PersonnelDatabase
 import com.elmepa.personnel.mapper.toEntity
 import com.elmepa.personnel.mapper.toPerson
 import com.elmepa.personnel.model.Person
@@ -26,7 +26,7 @@ import javax.inject.Inject
 
 internal class PersonnelRepositoryImpl @Inject constructor(
     private val fireStore: FirebaseFirestore,
-    private val localDb: PersonnelLocalDatasource,
+    private val localDb: PersonnelDatabase,
     private val cacheManager: CacheManager
 ) : PersonnelRepository {
 
@@ -91,8 +91,8 @@ internal class PersonnelRepositoryImpl @Inject constructor(
             .onEmpty {
                 emit(DomainResult.Success(listOf()))
             }
-            .onEach {
-                val people = it.map { it.toPerson() }
+            .onEach { data ->
+                val people = data.map { it.toPerson() }
                 emit(DomainResult.Success(people))
             }
             .firstOrNull()

@@ -39,7 +39,7 @@ class PersonnelFragment : Fragment() {
             setContent {
                 val state by viewModel.state.collectAsStateWithLifecycle()
                 ElmepaAppTheme {
-                    PersonnelScreen(state, onClick = {})
+                    PersonnelScreen(state, onClick = viewModel::onAction)
                 }
             }
         }

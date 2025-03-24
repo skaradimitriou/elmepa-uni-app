@@ -74,11 +74,15 @@ private fun RowScope.PersonDetails(fullName: String, jobTitle: String, email: St
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = jobTitle,
-            style = MaterialTheme.typography.bodyMedium
-        )
-        Spacer(modifier = Modifier.height(16.dp))
+
+        if (jobTitle.isNotEmpty()) {
+            Text(
+                text = jobTitle,
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+
         Text(
             text = email,
             style = MaterialTheme.typography.bodyMedium
