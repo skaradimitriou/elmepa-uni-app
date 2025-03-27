@@ -58,7 +58,7 @@ room = "2.6.1"
 #Circle ImageView
 circleImgView = "3.1.0"
 #DataStore local storage
-dataStore = "1.1.3"
+dataStore = "1.1.4"
 #Paging3
 paging = "3.3.6"
 #Gson
