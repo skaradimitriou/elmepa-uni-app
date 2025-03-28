@@ -1,6 +1,5 @@
 [versions]
 ksp = "2.1.20-1.0.32"
-kapt = "2.1.20"
 agp = "8.9.1"
 kotlin = "2.1.20"
 coreKtx = "1.15.0"
@@ -17,7 +16,6 @@ navigation = "2.8.9"
 #Compose
 composeBom = "2025.03.01"
 androidxComposeCompiler = "1.7.8"
-activityCompose = "1.10.1"
 
 androidTools = "31.9.1"
 
@@ -30,7 +28,6 @@ hiltVersion = "2.56.1"
 timber = "5.0.1"
 #Swipe to refresh
 swipeToRefresh = "1.1.0"
-gradle = "8.9.1"
 #Google Services
 googleServicesVersion = "4.4.2"
 #Firebase Crashlytics
@@ -91,7 +88,7 @@ androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navig
 #Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -134,7 +131,7 @@ dataStore = { group = "androidx.datastore", name = "datastore-preferences", vers
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
 # Dependencies of the included build-logic
-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
@@ -146,7 +143,7 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kapt" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsGradle" }
 firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "perfPlugin" }
