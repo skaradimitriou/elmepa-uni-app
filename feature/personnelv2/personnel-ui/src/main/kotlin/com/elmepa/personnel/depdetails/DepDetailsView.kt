@@ -7,7 +7,7 @@ internal sealed class DepDetailsView {
 
     sealed interface State {
         data object Loading : State
-        data class Content(val depMember: DepMember)
+        data class Content(val depMember: DepMember) : State
     }
 
     sealed interface UIAction {

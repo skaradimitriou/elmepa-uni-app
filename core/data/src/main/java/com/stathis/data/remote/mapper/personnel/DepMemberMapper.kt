@@ -10,7 +10,6 @@ import com.stathis.model.common.LinkType
 import com.stathis.model.department.DepMember
 import com.stathis.model.department.Skill
 
-
 object DepMemberMapper : BaseMapper<List<DepMemberDto>?, List<DepMember>> {
 
     override fun toDomainModel(dtoModel: List<DepMemberDto>?) = dtoModel.toListOf {
@@ -25,7 +24,7 @@ object DepMemberMapper : BaseMapper<List<DepMemberDto>?, List<DepMember>> {
         description = this?.description.toNotNull(),
         linkToResume = this?.linkToResume.toNotNull(),
         skills = this?.skills.toDomainModel(),
-        links = this?.links.toDomainModel()
+        links = this?.links.toDomainModel().plusResumeItem()
     )
 
     @JvmName("toSkillDomainModel")
@@ -44,7 +43,17 @@ object DepMemberMapper : BaseMapper<List<DepMemberDto>?, List<DepMember>> {
         )
     } ?: listOf()
 
-    private fun String?.toCleanUrl() = if (this?.contains("mail") == true) {
+    private fun List<Link>.plusResumeItem(linkToResume: String? = null) = linkToResume?.let { resumeUrl ->
+        this.plus(
+            Link(
+                title = "CV",
+                openUrl = resumeUrl,
+                type = LinkType.CV
+            )
+        )
+    } ?: run { this }
+
+    fun String?.toCleanUrl() = if (this?.contains("mail") == true) {
         substringAfter("mailto:")
     } else {
         this.toNotNull()
