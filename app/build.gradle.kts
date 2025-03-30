@@ -89,7 +89,6 @@ dependencies {
     implementation(project(":feature:support:support-domain"))
     implementation(project(":feature:support:support-ui"))
 
-    implementation(project(":feature:personnel"))
     implementation(project(":feature:personnelv2:personnel-data"))
     implementation(project(":feature:personnelv2:personnel-database"))
     implementation(project(":feature:personnelv2:personnel-domain"))
