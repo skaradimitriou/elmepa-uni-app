@@ -23,7 +23,7 @@ import coil3.compose.AsyncImage
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.personnel.model.Gender
 import com.elmepa.personnel.model.Person
-import com.elmepa.personnel.ui.R
+import com.elmepa.personnel.util.imageByGender
 
 @Composable
 internal fun PersonCard(person: Person, onClick: (Person) -> Unit) {
@@ -40,10 +40,7 @@ internal fun PersonCard(person: Person, onClick: (Person) -> Unit) {
                 .fillMaxWidth()
                 .padding(all = 16.dp)
         ) {
-            val placeholderImg = when (person.gender) {
-                Gender.MALE -> R.drawable.male
-                Gender.FEMALE -> R.drawable.female
-            }
+            val placeholderImg = person.imageByGender
             AsyncImage(
                 modifier = Modifier.size(85.dp),
                 model = person.image,
