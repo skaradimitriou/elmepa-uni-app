@@ -18,19 +18,19 @@ object DepMemberMapper : BaseMapper<List<DepMemberDto>?, List<DepMember>> {
 
     @JvmName("toDepMemberDomainModel")
     private fun DepMemberDto?.toDomainModel() = DepMember(
-        image = this?.image.toNotNull(),
-        fullName = this?.fullName.toNotNull(),
-        profession = this?.profession.toNotNull(),
-        description = this?.description.toNotNull(),
-        linkToResume = this?.linkToResume.toNotNull(),
+        image = this?.image.orEmpty(),
+        fullName = this?.fullName.orEmpty(),
+        profession = this?.profession.orEmpty().lowercase().uppercase(),
+        description = this?.description.orEmpty(),
+        linkToResume = this?.linkToResume.orEmpty(),
         skills = this?.skills.toDomainModel(),
-        links = this?.links.toDomainModel().plusResumeItem()
+        links = this?.links.toDomainModel().plusResumeItem(this?.linkToResume)
     )
 
     @JvmName("toSkillDomainModel")
     private fun List<SkillDto>?.toDomainModel() = toListOf {
         Skill(
-            title = it.title.toNotNull().lowercase().uppercase(),
+            title = it.title.orEmpty().lowercase().uppercase(),
             value = it.value?.toIntOrNull().toNotNull(),
         )
     }
@@ -38,15 +38,25 @@ object DepMemberMapper : BaseMapper<List<DepMemberDto>?, List<DepMember>> {
     @JvmName("toLinkDomainModel")
     private fun List<String?>?.toDomainModel() = this?.mapIndexed { position, url ->
         Link(
+            title = url.toLinkTitle(),
             openUrl = url.toCleanUrl(),
             type = position.toLinkType()
         )
     } ?: listOf()
 
+    private fun String?.toLinkTitle() = this?.let { value ->
+        when {
+            value.contains("linkedin") -> "Linkedin"
+            value.contains("researchgate") -> "ResearchGate"
+            value.contains("scholar.google") -> "Google Scholar"
+            else -> "E-mail"
+        }
+    } ?: run { this.orEmpty() }
+
     private fun List<Link>.plusResumeItem(linkToResume: String? = null) = linkToResume?.let { resumeUrl ->
         this.plus(
             Link(
-                title = "CV",
+                title = "Βιογραφικό",
                 openUrl = resumeUrl,
                 type = LinkType.CV
             )
@@ -56,7 +66,7 @@ object DepMemberMapper : BaseMapper<List<DepMemberDto>?, List<DepMember>> {
     fun String?.toCleanUrl() = if (this?.contains("mail") == true) {
         substringAfter("mailto:")
     } else {
-        this.toNotNull()
+        this.orEmpty()
     }
 
     private fun Int?.toLinkType() = when (this) {

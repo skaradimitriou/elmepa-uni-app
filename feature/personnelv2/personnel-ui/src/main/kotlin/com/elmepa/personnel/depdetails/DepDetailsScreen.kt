@@ -88,7 +88,7 @@ private fun DepDetailsContent(
         }
 
         header(title = R.string.links)
-        items(items = depMember.links, key = { it.title }) { link ->
+        items(items = depMember.links, key = { it.openUrl }) { link ->
             CardWithPrompt(
                 text = link.title,
                 onClick = { onAction(DepDetailsView.UIAction.OpenLink(link)) }

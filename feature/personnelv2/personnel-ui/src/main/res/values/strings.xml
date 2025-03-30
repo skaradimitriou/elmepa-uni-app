@@ -12,10 +12,5 @@
     <string name="dep_details_screen_title">Πληροφορίες Μέλους Δ.Ε.Π.</string>
     <string name="sectors">Τομείς</string>
     <string name="links">Σύνδεσμοι</string>
-    <string name="cv">Βιογραφικό</string>
-    <string name="linkedin">Linkedin</string>
-    <string name="research_gate">Research Gate</string>
-    <string name="google_scholar">Google Scholar</string>
-    <string name="mail">E-mail</string>
 
 </resources>

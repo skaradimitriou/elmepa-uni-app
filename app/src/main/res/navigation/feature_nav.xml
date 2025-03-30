@@ -92,7 +92,7 @@
 
     <fragment
         android:id="@+id/depDetailsFragment"
-        android:name="com.stathis.personnel.ui.depmemberdetails.DepDetailsFragment"
+        android:name="com.elmepa.personnel.depdetails.DepDetailsFragment"
         android:label="DepDetailsFragment" />
 
     <fragment
