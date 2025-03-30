@@ -11,5 +11,5 @@ android {
 
 dependencies {
     implementation(project(":core:model"))
-    implementation(project(":feature:personnelv2:personnel-domain"))
+    implementation(project(":feature:personnel:personnel-domain"))
 }

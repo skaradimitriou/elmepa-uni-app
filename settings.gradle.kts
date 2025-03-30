@@ -42,10 +42,10 @@ include(":feature:support:support-domain")
 include(":feature:support:support-ui")
 
 // Personnel
-include(":feature:personnelv2:personnel-data")
-include(":feature:personnelv2:personnel-database")
-include(":feature:personnelv2:personnel-domain")
-include(":feature:personnelv2:personnel-ui")
+include(":feature:personnel:personnel-data")
+include(":feature:personnel:personnel-database")
+include(":feature:personnel:personnel-domain")
+include(":feature:personnel:personnel-ui")
 
 
 include(":feature:syllabus")
