@@ -54,8 +54,12 @@ internal class PersonnelViewModel @Inject constructor(
         is PersonnelListView.UIAction.Retry -> getPersonnel()
         is PersonnelListView.UIAction.SearchPersonByName -> getPersonnel(query = action.query)
 
-        is PersonnelListView.UIAction.PersonTap -> viewModelScope.launch {
-            _effect.emit(Effect.OpenBottomSheet(action.person))
+        is PersonnelListView.UIAction.EmailOptionTap -> viewModelScope.launch {
+            _effect.emit(Effect.SendEmail(action.email))
+        }
+
+        is PersonnelListView.UIAction.ShareDetailsOptionTap -> viewModelScope.launch {
+            _effect.emit(Effect.ShareInfo(action.person.details))
         }
     }
 

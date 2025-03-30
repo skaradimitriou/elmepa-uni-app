@@ -15,11 +15,7 @@ import androidx.lifecycle.lifecycleScope
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.personnel.list.PersonnelListView.Effect
 import com.elmepa.personnel.list.PersonnelListView.UIAction.SearchPersonByName
-import com.elmepa.personnel.model.Person
 import com.elmepa.personnel.ui.R
-import com.stathis.common.bottomsheet.BottomSheetOption
-import com.stathis.common.bottomsheet.OptionAction
-import com.stathis.common.bottomsheet.OptionsBottomSheet
 import com.stathis.common.util.inflateCustomMenu
 import com.stathis.common.util.respondToQuery
 import com.stathis.common.util.setScreenTitle
@@ -39,7 +35,7 @@ class PersonnelFragment : Fragment() {
             setContent {
                 val state by viewModel.state.collectAsStateWithLifecycle()
                 ElmepaAppTheme {
-                    PersonnelScreen(state, onClick = viewModel::onAction)
+                    PersonnelScreen(state, onAction = viewModel::onAction)
                 }
             }
         }
@@ -61,44 +57,13 @@ class PersonnelFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.effect.flowWithLifecycle(lifecycle).collect { effect ->
                 when (effect) {
-                    is Effect.OpenBottomSheet -> openBottomSheet(effect.person)
+                    is Effect.SendEmail -> startEmailIntent(effect.email)
+                    is Effect.ShareInfo -> startShareIntent(
+                        subject = getString(R.string.share_personnel_data),
+                        body = effect.dataToShare
+                    )
                 }
             }
         }
-    }
-
-    private fun openBottomSheet(person: Person) {
-        val options = listOf(
-            BottomSheetOption(
-                getString(R.string.share_option),
-                showSeparator = true,
-                type = OptionAction.SHARE
-            ),
-            BottomSheetOption(
-                title = getString(R.string.email_option),
-                type = OptionAction.SEND_EMAIL
-            )
-        )
-
-        OptionsBottomSheet.Builder()
-            .setOptions(options)
-            .setListener { model ->
-                when (model.type) {
-                    OptionAction.SHARE -> {
-                        startShareIntent(
-                            subject = getString(R.string.share_personnel_data),
-                            body = getString(
-                                R.string.share_personnel_data_format,
-                                person.fullName,
-                                person.email
-                            )
-                        )
-                    }
-
-                    OptionAction.SEND_EMAIL -> startEmailIntent(person.email)
-                }
-            }
-            .build()
-            .show(parentFragmentManager, OptionsBottomSheet.GENERIC_BS_TAG)
     }
 }

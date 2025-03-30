@@ -12,11 +12,13 @@ internal class PersonnelListView {
 
     sealed interface UIAction {
         data class SearchPersonByName(val query: String) : UIAction
-        data class PersonTap(val person: Person) : UIAction
+        data class EmailOptionTap(val email: String) : UIAction
+        data class ShareDetailsOptionTap(val person: Person) : UIAction
         data object Retry : UIAction
     }
 
     sealed interface Effect {
-        data class OpenBottomSheet(val person: Person) : Effect
+        data class SendEmail(val email: String) : Effect
+        data class ShareInfo(val dataToShare: String) : Effect
     }
 }

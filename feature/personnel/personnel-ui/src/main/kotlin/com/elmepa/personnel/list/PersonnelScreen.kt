@@ -12,11 +12,19 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.BottomSheetDefaults.DragHandle
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -27,29 +35,63 @@ import com.elmepa.designsystem.components.shimmer.ShimmerEffect
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.personnel.list.PersonnelListView.State
 import com.elmepa.personnel.list.PersonnelListView.UIAction
+import com.elmepa.personnel.list.components.PersonBottomSheet
 import com.elmepa.personnel.list.components.PersonCard
 import com.elmepa.personnel.model.Gender
 import com.elmepa.personnel.model.Person
 import com.elmepa.personnel.ui.R
 import com.stathis.common.R as commonRes
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun PersonnelScreen(state: State, onClick: (UIAction) -> Unit) {
+internal fun PersonnelScreen(state: State, onAction: (UIAction) -> Unit) {
+    val sheetState = rememberModalBottomSheetState()
+    var showBottomSheet by remember { mutableStateOf(false) }
+    var selectedPerson: Person? by remember { mutableStateOf(null) }
+
     Scaffold(
         topBar = {
             //
         },
         content = { paddingValues ->
+            if (showBottomSheet) {
+                ModalBottomSheet(
+                    onDismissRequest = { showBottomSheet = false },
+                    sheetState = sheetState,
+                    dragHandle = {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(MaterialTheme.colorScheme.background),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            DragHandle()
+                        }
+                    }
+                ) {
+                    PersonBottomSheet(
+                        person = selectedPerson,
+                        onClick = { action ->
+                            showBottomSheet = false
+                            onAction(action)
+                        }
+                    )
+                }
+            }
+
             when (state) {
                 is State.Loading -> PersonnelLoadingScreen(paddingValues)
 
                 is State.Content -> PersonnelContent(
                     paddingValues = paddingValues,
                     personnel = state.personnel,
-                    onClick = onClick
+                    onClick = { person ->
+                        showBottomSheet = true
+                        selectedPerson = person
+                    }
                 )
 
-                is State.Error -> ErrorScreen(paddingValues, onClick)
+                is State.Error -> ErrorScreen(paddingValues, onAction)
             }
         }
     )
@@ -59,7 +101,7 @@ internal fun PersonnelScreen(state: State, onClick: (UIAction) -> Unit) {
 private fun PersonnelContent(
     paddingValues: PaddingValues,
     personnel: List<Person>,
-    onClick: (UIAction) -> Unit
+    onClick: (Person) -> Unit
 ) {
     if (personnel.isEmpty()) {
         EmptyPersonnelInfoBox(paddingValues)
@@ -72,7 +114,7 @@ private fun PersonnelContent(
 private fun PersonnelList(
     paddingValues: PaddingValues,
     personnel: List<Person>,
-    onClick: (UIAction) -> Unit
+    onClick: (Person) -> Unit
 ) {
     LazyColumn(
         modifier = Modifier
@@ -86,7 +128,7 @@ private fun PersonnelList(
             PersonCard(
                 person = person,
                 onClick = { person ->
-                    onClick(UIAction.PersonTap(person))
+                    onClick(person)
                 }
             )
         }
@@ -179,7 +221,7 @@ private fun PersonCardPreview() {
                     )
                 )
             ),
-            onClick = {}
+            onAction = {}
         )
     }
 }
