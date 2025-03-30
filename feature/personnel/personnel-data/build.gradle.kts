@@ -16,8 +16,8 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:datastore"))
 
-    implementation(project(":feature:personnelv2:personnel-database"))
-    implementation(project(":feature:personnelv2:personnel-domain"))
+    implementation(project(":feature:personnel:personnel-database"))
+    implementation(project(":feature:personnel:personnel-domain"))
 
     implementation(libs.firebase.firestore)
 
