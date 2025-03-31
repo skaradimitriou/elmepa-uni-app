@@ -13,8 +13,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.components.cards.CardWithTitleAndSubtitle
+import com.elmepa.designsystem.theme.spacing
 import com.elmepa.support.model.ContactItem
 import com.elmepa.support.model.ContactType
 import com.elmepa.support.ui.contact.components.ContactShimmerLoading
@@ -59,9 +59,9 @@ private fun ContactContent(
         modifier = Modifier
             .fillMaxSize()
             .consumeWindowInsets(paddingValues)
-            .padding(8.dp)
+            .padding(MaterialTheme.spacing.small)
             .background(MaterialTheme.colorScheme.background),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         items(contactItems, key = { it.contactType }) { item ->
             CardWithTitleAndSubtitle(

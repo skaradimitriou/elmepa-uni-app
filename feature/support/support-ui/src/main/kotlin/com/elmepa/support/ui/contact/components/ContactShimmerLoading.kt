@@ -6,20 +6,22 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.components.shimmer.ShimmerEffect
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 
 @Composable
 internal fun ContactShimmerLoading(modifier: Modifier = Modifier) {
     LazyColumn(
         modifier = modifier
-            .padding(top = 8.dp)
-            .padding(horizontal = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+            .padding(top = MaterialTheme.spacing.small)
+            .padding(horizontal = MaterialTheme.spacing.small),
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         items(count = 4) {
             ShimmerEffect(
@@ -39,6 +41,6 @@ internal fun ContactShimmerLoading(modifier: Modifier = Modifier) {
 @Composable
 private fun ContactShimmerLoadingPreview() {
     ElmepaAppTheme {
-        ContactShimmerLoading(modifier = Modifier.padding(all = 8.dp))
+        ContactShimmerLoading(modifier = Modifier.padding(MaterialTheme.spacing.small))
     }
 }

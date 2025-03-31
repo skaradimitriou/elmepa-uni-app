@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import com.elmepa.designsystem.theme.spacing
 
 @Composable
 fun TimelineCard(
@@ -45,22 +46,22 @@ fun TimelineCard(
     Row(modifier = modifier) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             VerticalDivider(
-                modifier = Modifier.height(16.dp),
+                modifier = Modifier.height(MaterialTheme.spacing.medium),
                 thickness = 3.dp,
                 color = Color.LightGray
             )
-            Canvas(modifier = Modifier.size(16.dp)) {
+            Canvas(modifier = Modifier.size(MaterialTheme.spacing.medium)) {
                 drawCircle(color = Color.LightGray)
             }
 
             VerticalDivider(
-                modifier = Modifier.height(cardHeight + 16.dp),
+                modifier = Modifier.height(cardHeight + MaterialTheme.spacing.medium),
                 thickness = 3.dp,
                 color = Color.LightGray
             )
         }
 
-        Spacer(modifier = Modifier.width(16.dp))
+        Spacer(modifier = Modifier.width(MaterialTheme.spacing.medium))
 
         Column {
             MainContent(
@@ -72,7 +73,7 @@ fun TimelineCard(
                     }
                 }
             )
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(MaterialTheme.spacing.medium))
         }
     }
 }
@@ -82,9 +83,9 @@ private fun MainContent(title: String, description: String, onGloballyPositioned
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
+            .clip(RoundedCornerShape(MaterialTheme.spacing.medium))
             .background(MaterialTheme.colorScheme.surface)
-            .padding(all = 16.dp)
+            .padding(MaterialTheme.spacing.medium)
             .onGloballyPositioned { coordinates ->
                 onGloballyPositioned(coordinates.size)
             }
@@ -95,7 +96,7 @@ private fun MainContent(title: String, description: String, onGloballyPositioned
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSurface
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(MaterialTheme.spacing.small))
         Text(
             text = description,
             style = MaterialTheme.typography.bodyMedium,

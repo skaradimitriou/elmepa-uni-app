@@ -12,9 +12,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.core.text.HtmlCompat
 import com.elmepa.designsystem.components.cards.ExpandableCard
+import com.elmepa.designsystem.theme.spacing
 import com.elmepa.support.ui.faq.components.FaqShimmerLoading
 import com.stathis.model.support.Faq
 
@@ -52,9 +52,9 @@ private fun FaqContent(
         modifier = Modifier
             .fillMaxSize()
             .consumeWindowInsets(paddingValues)
-            .padding(8.dp)
+            .padding(MaterialTheme.spacing.small)
             .background(MaterialTheme.colorScheme.background),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         items(faqs, key = { it.seq }) { faq ->
             val text = HtmlCompat.fromHtml(faq.answer, HtmlCompat.FROM_HTML_MODE_LEGACY)

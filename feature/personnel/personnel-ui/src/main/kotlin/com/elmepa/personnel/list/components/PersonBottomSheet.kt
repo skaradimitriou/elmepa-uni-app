@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.LightModeGray
+import com.elmepa.designsystem.theme.spacing
 import com.elmepa.personnel.list.PersonnelListView.UIAction
 import com.elmepa.personnel.model.Gender
 import com.elmepa.personnel.model.Person
@@ -45,13 +46,13 @@ internal fun PersonBottomSheet(person: Person?, onClick: (UIAction) -> Unit) {
     ) {
         person?.let {
             BasicInfo(person)
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.large))
             HorizontalDivider()
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.large))
             Button(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
+                    .padding(horizontal = MaterialTheme.spacing.medium),
                 colors = ButtonColors(
                     containerColor = LightModeGray,
                     contentColor = MaterialTheme.colorScheme.background,
@@ -63,16 +64,16 @@ internal fun PersonBottomSheet(person: Person?, onClick: (UIAction) -> Unit) {
                 },
             ) {
                 Text(
-                    modifier = Modifier.padding(vertical = 8.dp),
+                    modifier = Modifier.padding(vertical = MaterialTheme.spacing.small),
                     text = stringResource(R.string.email_option),
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(MaterialTheme.spacing.small))
             Button(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
+                    .padding(horizontal = MaterialTheme.spacing.medium),
                 colors = ButtonColors(
                     containerColor = LightModeGray,
                     contentColor = MaterialTheme.colorScheme.background,
@@ -84,12 +85,12 @@ internal fun PersonBottomSheet(person: Person?, onClick: (UIAction) -> Unit) {
                 },
             ) {
                 Text(
-                    modifier = Modifier.padding(vertical = 8.dp),
+                    modifier = Modifier.padding(vertical = MaterialTheme.spacing.small),
                     text = stringResource(R.string.share_option),
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(MaterialTheme.spacing.medium))
         }
     }
 }
@@ -107,14 +108,14 @@ private fun ColumnScope.BasicInfo(person: Person) {
         contentDescription = person.fullName,
         contentScale = ContentScale.FillBounds
     )
-    Spacer(Modifier.height(16.dp))
+    Spacer(Modifier.height(MaterialTheme.spacing.medium))
     Text(
         text = person.fullName,
         style = MaterialTheme.typography.titleMedium,
         fontWeight = FontWeight.Bold,
         color = MaterialTheme.colorScheme.onBackground
     )
-    Spacer(Modifier.height(8.dp))
+    Spacer(Modifier.height(MaterialTheme.spacing.small))
     Text(
         text = person.description,
         style = MaterialTheme.typography.bodyMedium,

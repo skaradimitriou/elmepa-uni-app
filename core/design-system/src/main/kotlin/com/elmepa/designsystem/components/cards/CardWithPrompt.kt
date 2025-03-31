@@ -16,8 +16,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
-import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 
 @Composable
 fun CardWithPrompt(
@@ -32,7 +32,7 @@ fun CardWithPrompt(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
     ) {
         Row(
-            modifier = Modifier.padding(all = 16.dp),
+            modifier = Modifier.padding(MaterialTheme.spacing.medium),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
             Text(

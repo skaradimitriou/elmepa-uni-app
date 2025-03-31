@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 import com.elmepa.personnel.model.Gender
 import com.elmepa.personnel.model.Person
 import com.elmepa.personnel.util.imageByGender
@@ -38,7 +39,7 @@ internal fun PersonCard(person: Person, onClick: (Person) -> Unit) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(all = 16.dp)
+                .padding(all = MaterialTheme.spacing.medium)
         ) {
             val placeholderImg = person.imageByGender
             AsyncImage(
@@ -63,21 +64,21 @@ private fun RowScope.PersonDetails(fullName: String, jobTitle: String, email: St
         modifier = Modifier
             .weight(1f)
             .fillMaxWidth()
-            .padding(start = 16.dp)
+            .padding(start = MaterialTheme.spacing.medium)
     ) {
         Text(
             text = fullName,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold
         )
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
 
         if (jobTitle.isNotEmpty()) {
             Text(
                 text = jobTitle,
                 style = MaterialTheme.typography.bodyMedium
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
         }
 
         Text(
