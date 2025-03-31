@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 import com.stathis.common.R as common
 
 @Composable
@@ -39,11 +40,11 @@ internal fun PersonalOverviewCard(
     ) {
         Column(
             modifier = Modifier
-                .padding(all = 16.dp),
+                .padding(MaterialTheme.spacing.medium),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
             AsyncImage(
                 modifier = Modifier
                     .size(150.dp)
@@ -53,21 +54,21 @@ internal fun PersonalOverviewCard(
                 error = painterResource(common.drawable.placeholder),
                 contentDescription = fullName
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
             Text(
                 text = fullName,
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
             Text(
                 text = jobTitle,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center,
             )
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.large))
             Text(
                 text = description,
                 style = MaterialTheme.typography.bodyMedium,

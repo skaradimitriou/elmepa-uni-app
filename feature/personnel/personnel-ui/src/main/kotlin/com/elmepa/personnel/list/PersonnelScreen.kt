@@ -33,6 +33,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.components.shimmer.ShimmerEffect
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 import com.elmepa.personnel.list.PersonnelListView.State
 import com.elmepa.personnel.list.PersonnelListView.UIAction
 import com.elmepa.personnel.list.components.PersonBottomSheet
@@ -121,8 +122,8 @@ private fun PersonnelList(
             .fillMaxSize()
             .consumeWindowInsets(paddingValues)
             .background(MaterialTheme.colorScheme.background),
-        contentPadding = PaddingValues(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        contentPadding = PaddingValues(MaterialTheme.spacing.small),
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         items(personnel, key = { it.id }) { person ->
             PersonCard(
@@ -141,7 +142,7 @@ private fun EmptyPersonnelInfoBox(paddingValues: PaddingValues) {
         modifier = Modifier
             .fillMaxSize()
             .consumeWindowInsets(paddingValues)
-            .padding(all = 16.dp)
+            .padding(all = MaterialTheme.spacing.medium)
             .background(MaterialTheme.colorScheme.background),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -164,12 +165,12 @@ private fun ErrorScreen(paddingValues: PaddingValues, onClick: (UIAction) -> Uni
             style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.Bold
         )
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
         Text(
             text = stringResource(commonRes.string.info_error_text),
             style = MaterialTheme.typography.bodySmall,
         )
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.large))
 
         Button(onClick = { onClick(UIAction.Retry) }) {
             Text(text = stringResource(commonRes.string.retry))
@@ -184,8 +185,8 @@ fun PersonnelLoadingScreen(paddingValues: PaddingValues) {
             .fillMaxSize()
             .consumeWindowInsets(paddingValues)
             .background(MaterialTheme.colorScheme.background),
-        contentPadding = PaddingValues(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        contentPadding = PaddingValues(MaterialTheme.spacing.small),
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         items(10) {
             ShimmerEffect(
@@ -230,7 +231,7 @@ private fun PersonCardPreview() {
 @Composable
 private fun EmptyQueryPreview() {
     ElmepaAppTheme {
-        EmptyPersonnelInfoBox(PaddingValues(8.dp))
+        EmptyPersonnelInfoBox(PaddingValues(MaterialTheme.spacing.small))
     }
 }
 
@@ -238,7 +239,7 @@ private fun EmptyQueryPreview() {
 @Composable
 private fun ErrorScreenPreview() {
     ElmepaAppTheme {
-        ErrorScreen(paddingValues = PaddingValues(8.dp), onClick = {})
+        ErrorScreen(paddingValues = PaddingValues(MaterialTheme.spacing.small), onClick = {})
     }
 }
 

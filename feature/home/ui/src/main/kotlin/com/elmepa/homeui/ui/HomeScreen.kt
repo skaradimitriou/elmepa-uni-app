@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.elmepa.designsystem.theme.spacing
 import com.elmepa.homedomain.model.DashboardCard
 import com.elmepa.homeui.ui.components.DashboardOption
 import com.elmepa.homeui.ui.components.UniversityLogoCard
@@ -56,9 +57,9 @@ private fun ContentState(
             .background(MaterialTheme.colorScheme.background)
             .consumeWindowInsets(paddingValues),
         columns = GridCells.Fixed(2),
-        contentPadding = PaddingValues(all = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
+        contentPadding = PaddingValues(MaterialTheme.spacing.small),
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small),
+        horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         item(span = { GridItemSpan(2) }) {
             UniversityLogoCard(
@@ -68,7 +69,7 @@ private fun ContentState(
                 subtitle = stringResource(R.string.dashboard_det)
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
         }
 
         items(data, key = { it.seq }) { item ->

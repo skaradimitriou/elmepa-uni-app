@@ -11,15 +11,16 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
-import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.LightBlue
 import com.elmepa.designsystem.theme.Navy
+import com.elmepa.designsystem.theme.spacing
 
 @Composable
 fun InformativeCard(
@@ -33,15 +34,15 @@ fun InformativeCard(
             Modifier
                 .fillMaxWidth()
                 .background(LightBlue)
-                .padding(all = 16.dp)
+                .padding(MaterialTheme.spacing.medium)
         ) {
             Icon(
-                modifier = Modifier.size(24.dp),
+                modifier = Modifier.size(MaterialTheme.spacing.large),
                 imageVector = Icons.Default.Info,
                 contentDescription = null,
                 tint = Navy
             )
-            Column(modifier = Modifier.padding(start = 16.dp)) {
+            Column(modifier = Modifier.padding(start = MaterialTheme.spacing.medium)) {
                 content()
             }
         }

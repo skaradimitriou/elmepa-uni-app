@@ -18,9 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.theme.ChampagneYellow
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 
 @Composable
 internal fun SkillCard(
@@ -32,7 +32,7 @@ internal fun SkillCard(
         modifier = modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
     ) {
-        Column(modifier = Modifier.padding(all = 16.dp)) {
+        Column(modifier = Modifier.padding(MaterialTheme.spacing.medium)) {
             Row(horizontalArrangement = Arrangement.SpaceAround) {
                 Text(
                     modifier = Modifier.weight(1f),
@@ -42,7 +42,7 @@ internal fun SkillCard(
                     color = MaterialTheme.colorScheme.onSurface,
                     maxLines = 1
                 )
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.width(MaterialTheme.spacing.medium))
                 Text(
                     text = "$percent%",
                     style = MaterialTheme.typography.bodyMedium,
@@ -50,11 +50,11 @@ internal fun SkillCard(
                     color = MaterialTheme.colorScheme.onSurface,
                 )
             }
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(MaterialTheme.spacing.medium))
             LinearProgressIndicator(
                 progress = { (percent.toFloat() / 100) },
                 modifier = Modifier
-                    .height(32.dp)
+                    .height(MaterialTheme.spacing.xLarge)
                     .fillMaxWidth(),
                 color = ChampagneYellow,
                 trackColor = MaterialTheme.colorScheme.background,

@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.components.cards.CardWithPrompt
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 import com.elmepa.personnel.depdetails.components.PersonalOverviewCard
 import com.elmepa.personnel.depdetails.components.SkillCard
 import com.elmepa.personnel.ui.R
@@ -68,7 +69,7 @@ private fun DepDetailsContent(
             end = 10.dp,
             bottom = 40.dp
         ),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         item {
             PersonalOverviewCard(
@@ -99,14 +100,14 @@ private fun DepDetailsContent(
 
 private fun LazyListScope.header(@StringRes title: Int) {
     item {
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(MaterialTheme.spacing.large))
         Text(
             modifier = Modifier.fillMaxWidth(),
             text = stringResource(title),
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(MaterialTheme.spacing.small))
     }
 }
 

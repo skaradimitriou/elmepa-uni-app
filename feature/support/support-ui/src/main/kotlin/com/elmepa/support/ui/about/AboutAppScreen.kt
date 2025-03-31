@@ -27,12 +27,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.findNavController
 import com.elmepa.designsystem.components.cards.InformativeCard
 import com.elmepa.designsystem.components.cards.TimelineCard
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.Petrol
+import com.elmepa.designsystem.theme.spacing
 import com.stathis.common.R
 import com.stathis.model.about.AboutAppCard
 
@@ -86,12 +86,12 @@ internal fun AboutAppContent(paddingValues: PaddingValues, info: List<AboutAppCa
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = 16.dp)
+            .padding(horizontal = MaterialTheme.spacing.medium)
             .background(MaterialTheme.colorScheme.background),
         contentPadding = paddingValues
     ) {
         item {
-            InformativeCard(modifier = Modifier.padding(vertical = 16.dp)) {
+            InformativeCard(modifier = Modifier.padding(vertical = MaterialTheme.spacing.medium)) {
                 InformativeCardContent(
                     infoText = stringResource(R.string.about_app_data),
                     newsPublisher = stringResource(R.string.news_publisher_header),
@@ -117,13 +117,13 @@ private fun InformativeCardContent(infoText: String, newsPublisher: String, cont
         textAlign = TextAlign.Justify,
         color = MaterialTheme.colorScheme.onSurface
     )
-    Spacer(Modifier.height(16.dp))
+    Spacer(Modifier.height(MaterialTheme.spacing.medium))
     Text(
         text = newsPublisher,
         color = MaterialTheme.colorScheme.onSurface,
         fontWeight = FontWeight.Bold
     )
-    Spacer(Modifier.height(4.dp))
+    Spacer(Modifier.height(MaterialTheme.spacing.xSmall))
     Text(
         text = contactInfo,
         color = MaterialTheme.colorScheme.onSurface,

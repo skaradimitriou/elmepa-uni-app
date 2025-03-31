@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 
 @Composable
 fun ExpandableCard(
@@ -43,7 +44,10 @@ fun ExpandableCard(
     ) {
         Row(
             modifier = Modifier
-                .padding(start = 16.dp, end = 4.dp)
+                .padding(
+                    start = MaterialTheme.spacing.medium,
+                    end = MaterialTheme.spacing.xSmall
+                )
                 .padding(vertical = 12.dp),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically
@@ -70,7 +74,7 @@ fun ExpandableCard(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(all = 16.dp)
+                    .padding(MaterialTheme.spacing.medium)
             ) {
                 Text(
                     text = description,

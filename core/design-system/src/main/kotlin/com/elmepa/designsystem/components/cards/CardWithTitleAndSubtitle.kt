@@ -14,8 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
-import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.theme.ElmepaAppTheme
+import com.elmepa.designsystem.theme.spacing
 
 @Composable
 fun CardWithTitleAndSubtitle(
@@ -32,7 +32,7 @@ fun CardWithTitleAndSubtitle(
     ) {
         Column(
             modifier = Modifier
-                .padding(all = 16.dp)
+                .padding(MaterialTheme.spacing.medium)
         ) {
             Text(
                 modifier = Modifier.fillMaxWidth(1f),
@@ -40,7 +40,7 @@ fun CardWithTitleAndSubtitle(
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onSurface
             )
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(MaterialTheme.spacing.medium))
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = subtitle,

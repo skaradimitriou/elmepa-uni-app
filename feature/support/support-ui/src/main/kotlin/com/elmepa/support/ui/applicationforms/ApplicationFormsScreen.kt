@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.components.cards.CardWithPrompt
 import com.elmepa.designsystem.components.shimmer.ShimmerEffect
+import com.elmepa.designsystem.theme.spacing
 import com.elmepa.support.model.ApplicationForm
 
 @Composable
@@ -59,9 +60,9 @@ private fun ApplicationFormsContent(
         modifier = Modifier
             .fillMaxSize()
             .consumeWindowInsets(paddingValues)
-            .padding(8.dp)
+            .padding(MaterialTheme.spacing.small)
             .background(MaterialTheme.colorScheme.background),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         items(forms, key = { it.title }) { form ->
             CardWithPrompt(
@@ -76,9 +77,9 @@ private fun ApplicationFormsContent(
 private fun ShimmerLoading(modifier: Modifier = Modifier) {
     LazyColumn(
         modifier = modifier
-            .padding(top = 8.dp)
-            .padding(horizontal = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+            .padding(top = MaterialTheme.spacing.small)
+            .padding(horizontal = MaterialTheme.spacing.small),
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         items(count = 15) {
             ShimmerEffect(

@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.elmepa.designsystem.theme.spacing
 import com.stathis.common.R
 
 @Composable
@@ -37,7 +38,7 @@ internal fun UniversityLogoCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(all = 16.dp),
+                .padding(MaterialTheme.spacing.medium),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
@@ -45,7 +46,7 @@ internal fun UniversityLogoCard(
                 painter = painterResource(imageRes),
                 contentDescription = title
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
             Text(
                 text = title,
                 fontSize = MaterialTheme.typography.titleLarge.fontSize,
@@ -53,7 +54,7 @@ internal fun UniversityLogoCard(
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
             Text(
                 text = subtitle,
                 fontSize = MaterialTheme.typography.bodyLarge.fontSize,
