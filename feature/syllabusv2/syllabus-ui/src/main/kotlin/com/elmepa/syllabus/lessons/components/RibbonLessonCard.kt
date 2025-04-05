@@ -71,10 +71,10 @@ internal fun RibbonLessonCard(
                 Text(
                     modifier = Modifier
                         .weight(1f)
-                        .padding(start = MaterialTheme.spacing.small)
-                        .padding(vertical = MaterialTheme.spacing.medium),
+                        .padding(horizontal = MaterialTheme.spacing.medium)
+                        .padding(vertical = MaterialTheme.spacing.large),
                     text = lessonName,
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onSurface
                 )
 
@@ -83,6 +83,7 @@ internal fun RibbonLessonCard(
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.onSurface
                 )
+                Spacer(Modifier.width(MaterialTheme.spacing.small))
             }
         }
     }

@@ -18,6 +18,8 @@ internal class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx-lifecycle-runtime.compose").get())
                 add("implementation", libs.findLibrary("androidx-lifecycle-viewModel.compose").get())
+
+                add("implementation", libs.findLibrary("kotlinx-collections-immutable").get())
             }
         }
     }
