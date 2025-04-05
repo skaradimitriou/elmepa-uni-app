@@ -60,6 +60,8 @@ dataStore = "1.1.4"
 paging = "3.3.6"
 #Gson
 gson = "2.12.1"
+#Kotlinx-Colle
+kotlinxCollectionsImmutable = "0.3.8"
 
 
 [libraries]
@@ -129,6 +131,7 @@ perf-plugin = { group = "com.google.firebase", name = "perf-plugin", version.ref
 circleImgView = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImgView" }
 dataStore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+kotlinx-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 
 # Dependencies of the included build-logic
 gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
