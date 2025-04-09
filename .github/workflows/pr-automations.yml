@@ -10,6 +10,7 @@ jobs:
     steps:
       # Add assignee to PR
       - name: Auto assign PR to PR creator
+        if: startsWith(github.head_ref, 'renovate/') == false
         run: gh pr edit "$PR_URL" --add-assignee "$GITHUB_ACTOR"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
