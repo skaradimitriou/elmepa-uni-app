@@ -60,9 +60,8 @@
 
     <fragment
         android:id="@+id/lessonDetailsFragment"
-        android:name="com.stathis.syllabus.ui.lessondetails.LessonDetailsFragment"
-        android:label="LessonDetailsFragment"
-        tools:layout="@layout/fragment_lesson_details" />
+        android:name="com.elmepa.syllabus.lessondetails.LessonDetailsFragment"
+        android:label="LessonDetailsFragment" />
 
     <composable
         android:id="@+id/aboutAppScreen"

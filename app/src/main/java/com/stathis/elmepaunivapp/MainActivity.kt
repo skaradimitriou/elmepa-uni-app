@@ -41,7 +41,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             val isAtHomeScreens = navigator.isAtHomeScreens()
             supportActionBar?.setDisplayHomeAsUpEnabled(!isAtHomeScreens)
 
-            val shouldHideToolbar = destination.id == R.id.aboutAppScreen
+            val shouldHideToolbar = listOf(
+                R.id.aboutAppScreen,
+                R.id.lessonDetailsFragment
+            ).contains(destination.id)
+
             binding.toolbar.visibility = if (shouldHideToolbar) {
                 View.GONE
             } else {
