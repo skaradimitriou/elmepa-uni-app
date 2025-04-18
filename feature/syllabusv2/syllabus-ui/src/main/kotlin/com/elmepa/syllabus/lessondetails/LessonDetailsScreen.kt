@@ -103,14 +103,15 @@ private fun LessonDetailsContent(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = paddingValues.calculateTopPadding())
-            .padding(top = MaterialTheme.spacing.small)
             .padding(horizontal = MaterialTheme.spacing.small)
             .background(MaterialTheme.colorScheme.background)
             .verticalScroll(scrollState),
     ) {
+        val verticalPadding = paddingValues.calculateTopPadding() + MaterialTheme.spacing.small
         Card(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(vertical = verticalPadding),
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
         ) {
             Column(modifier = Modifier.padding(all = MaterialTheme.spacing.medium)) {
