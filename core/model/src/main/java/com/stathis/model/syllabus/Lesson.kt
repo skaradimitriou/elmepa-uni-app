@@ -11,6 +11,7 @@ data class Lesson(
     val semester: String,
     val ects: String
 ) : UiModel {
+
     override fun equalsContent(obj: UiModel) = when (obj) {
         is Lesson -> name == obj.name && description == obj.description
         else -> false

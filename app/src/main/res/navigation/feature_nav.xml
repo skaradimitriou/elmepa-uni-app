@@ -54,9 +54,8 @@
 
     <fragment
         android:id="@+id/lessonsFragment"
-        android:name="com.stathis.syllabus.ui.lessons.LessonsFragment"
-        android:label="LessonsFragment"
-        tools:layout="@layout/fragment_lessons" />
+        android:name="com.elmepa.syllabus.lessons.LessonListFragment"
+        android:label="LessonsFragment" />
 
     <fragment
         android:id="@+id/lessonDetailsFragment"
