@@ -43,6 +43,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
             val shouldHideToolbar = listOf(
                 R.id.aboutAppScreen,
+                R.id.lessonsFragment,
                 R.id.lessonDetailsFragment
             ).contains(destination.id)
 
