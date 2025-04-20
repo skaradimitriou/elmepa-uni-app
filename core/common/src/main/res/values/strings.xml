@@ -57,8 +57,6 @@
 
     <!-- Lessons -->
     <string name="lesson_info_title">Info</string>
-    <string name="info_title">Επεξήγηση χρωμάτων</string>
-    <string name="info_body">Τα μαθήματα που είναι σημειωμένα με μπλέ χρώμα στα αριστερά είναι μαθήματα υποχρεωτικά. Αντίστοιχα, μαθήματα τα οποία είναι σημειωμένα με πορτοκαλί χρώμα είναι μαθήματα επιλογής.</string>
 
     <!-- LessonDetails Screen -->
     <string name="lesson_information">"Πληροφορίες Μαθήματος"</string>
