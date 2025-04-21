@@ -21,5 +21,5 @@ class PersonnelDatabaseModule {
         application.applicationContext,
         PersonnelDatabase::class.java,
         PERSONNEL_DB_NAME
-    ).fallbackToDestructiveMigration().build()
+    ).fallbackToDestructiveMigration(dropAllTables = true).build()
 }

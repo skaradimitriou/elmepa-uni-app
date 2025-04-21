@@ -19,5 +19,5 @@ class DatabaseModule {
         application.applicationContext,
         NewsDatabase::class.java,
         "announcements_db"
-    ).fallbackToDestructiveMigration().build()
+    ).fallbackToDestructiveMigration(dropAllTables = true).build()
 }
