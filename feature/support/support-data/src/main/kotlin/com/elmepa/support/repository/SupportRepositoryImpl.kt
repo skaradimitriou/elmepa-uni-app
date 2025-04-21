@@ -14,7 +14,7 @@ import com.elmepa.support.remote.model.ApplicationFormDto
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.common.util.toListOf
 import com.stathis.data.remote.model.ContactItemDto
-import com.stathis.data.remote.model.support.FaqDto
+import com.elmepa.support.remote.model.FaqDto
 import com.stathis.data.util.APPLICATION_FORMS_URL
 import com.stathis.data.util.CONTACT_DB_PATH
 import com.stathis.data.util.DIV_CONTENT
