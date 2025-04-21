@@ -21,5 +21,5 @@ internal class SupportDatabaseModule {
         application.applicationContext,
         SupportLocalDatabase::class.java,
         SUPPORT_DB_NAME
-    ).fallbackToDestructiveMigration().build()
+    ).fallbackToDestructiveMigration(dropAllTables = true).build()
 }
