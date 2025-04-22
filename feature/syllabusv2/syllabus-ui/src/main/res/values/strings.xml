@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Programmes Screen -->
+    <string name="undergraduate_syllabus">Προπτυχιακό Π.Σ</string>
+    <string name="postgraduate_syllabus">Μεταπτυχιακό Π.Σ</string>
+
     <!-- Lessons Screen-->
     <string name="modal_title">Επεξήγηση χρωμάτων</string>
     <string name="modal_body">Τα μαθήματα που είναι σημειωμένα με μπλέ χρώμα στα αριστερά είναι μαθήματα υποχρεωτικά. Αντίστοιχα, μαθήματα τα οποία είναι σημειωμένα με πορτοκαλί χρώμα είναι μαθήματα επιλογής.</string>
