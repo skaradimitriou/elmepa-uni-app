@@ -54,7 +54,7 @@ internal class LessonDetailsViewModel @Inject constructor(
                                     lessonName = lesson.name,
                                     commitment = lesson.hours,
                                     lessonDescription = lesson.description,
-                                    credits = 5
+                                    credits = lesson.credits
                                 )
                             } ?: LessonDetailsView.State.Error
                         }

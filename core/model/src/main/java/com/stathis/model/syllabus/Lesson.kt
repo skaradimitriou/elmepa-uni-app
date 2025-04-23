@@ -9,7 +9,7 @@ data class Lesson(
     val mandatory: Boolean,
     val orientation: List<OrientationType>,
     val semester: String,
-    val ects: String
+    val credits: String
 ) : UiModel {
 
     override fun equalsContent(obj: UiModel) = when (obj) {

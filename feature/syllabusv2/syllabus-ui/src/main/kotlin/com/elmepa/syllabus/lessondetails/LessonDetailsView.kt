@@ -13,7 +13,7 @@ internal sealed class LessonDetailsView {
             val lessonName: String,
             val commitment: String,
             val lessonDescription: String,
-            val credits: Int
+            val credits: String
         ) : State {
 
             val description: AnnotatedString = buildAnnotatedString {

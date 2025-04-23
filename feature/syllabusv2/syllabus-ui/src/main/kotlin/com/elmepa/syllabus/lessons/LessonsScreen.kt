@@ -201,7 +201,7 @@ private class LessonsScreenProvider : PreviewParameterProvider<LessonsView.State
                     mandatory = false,
                     orientation = listOf(),
                     semester = "A",
-                    ects = "5"
+                    credits = "5"
                 )
             )
         ),

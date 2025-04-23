@@ -95,7 +95,7 @@ private fun LessonDetailsContent(
     paddingValues: PaddingValues,
     lessonName: String,
     commitment: String,
-    credits: Int,
+    credits: String,
     lessonDescription: AnnotatedString
 ) {
     val scrollState = rememberScrollState()
@@ -132,7 +132,7 @@ private fun LessonDetailsContent(
 }
 
 @Composable
-private fun BasicLessonDetails(lessonName: String, commitment: String, credits: Int) {
+private fun BasicLessonDetails(lessonName: String, commitment: String, credits: String) {
     Row(modifier = Modifier.fillMaxWidth()) {
         Icon(
             modifier = Modifier
@@ -170,7 +170,7 @@ private fun LessonDetailsScreenPreview() {
         val state = LessonDetailsView.State.Content(
             lessonName = "Εισαγωγή στην Πληροφορική",
             commitment = "ΘΕΩΡΙΑ: 4 ώρες",
-            credits = 5,
+            credits = "5",
             lessonDescription = LoremIpsum(30).values.joinToString()
         )
 
