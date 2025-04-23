@@ -45,10 +45,11 @@ import com.elmepa.designsystem.theme.spacing
 internal fun ExpandableProgrammeCard(
     modifier: Modifier = Modifier,
     programme: String,
+    isExpanded: Boolean,
     semesters: List<String>,
     onSemesterClick: (String) -> Unit
 ) {
-    var isExpanded by rememberSaveable { mutableStateOf(false) }
+    var isExpanded by rememberSaveable { mutableStateOf(isExpanded) }
     val rotationAngle by animateFloatAsState(
         targetValue = if (isExpanded) 90f else 0f,
         label = "Rotation"
@@ -169,6 +170,7 @@ private fun ExpandableProgrammeCardPreview() {
         ExpandableProgrammeCard(
             programme = "Επιστήμη των Δεδομένων & Τεχνολογίες Πληροφορικής",
             semesters = semesters,
+            isExpanded = true,
             onSemesterClick = {}
         )
     }

@@ -43,14 +43,12 @@
     <fragment
         android:id="@+id/nav_personnel"
         android:name="com.elmepa.personnel.list.PersonnelFragment"
-        android:label="PersonnelFragment"
-        tools:layout="@layout/fragment_personnel" />
+        android:label="PersonnelFragment" />
 
     <fragment
         android:id="@+id/nav_syllabus"
-        android:name="com.stathis.syllabus.ui.syllabus.SyllabusFragment"
-        android:label="SyllabusFragment"
-        tools:layout="@layout/fragment_syllabus" />
+        android:name="com.elmepa.syllabus.programmes.ProgrammesFragment"
+        android:label="ProgrammesFragment" />
 
     <fragment
         android:id="@+id/lessonsFragment"
