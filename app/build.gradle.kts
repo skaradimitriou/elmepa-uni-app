@@ -94,7 +94,6 @@ dependencies {
     implementation(project(":feature:personnel:personnel-domain"))
     implementation(project(":feature:personnel:personnel-ui"))
 
-    implementation(project(":feature:syllabus"))
     implementation(project(":feature:syllabusv2:syllabus-ui"))
 
     implementation(project(":feature:news"))
