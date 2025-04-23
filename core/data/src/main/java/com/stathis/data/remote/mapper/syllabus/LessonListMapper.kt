@@ -25,8 +25,14 @@ object LessonListMapper : EnhancedBaseMapper<List<LessonDto>?, List<Lesson>> {
         orientation = this?.orientation.toListOfOrientations(),
         mandatory = this?.orientation.defineIfItsMandatory(orientation),
         semester = this?.semester.toNotNull(),
-        ects = this?.ects.toNotNull()
+        credits = this?.ects.toSafeCredit()
     )
+
+    fun String?.toSafeCredit(): String = try {
+        this ?: "-"
+    } catch (_: Exception) {
+        "-"
+    }
 
     private fun List<OrientationModelDto?>?.toListOfOrientations() = this?.map {
         OrientationType.valueOf(it?.type ?: OrientationType.UNDEFINED.name)
