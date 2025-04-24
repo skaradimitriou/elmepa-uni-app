@@ -59,7 +59,7 @@ dataStore = "1.1.4"
 #Paging3
 paging = "3.3.6"
 #Gson
-gson = "2.13.0"
+gson = "2.13.1"
 #Kotlinx-Colle
 kotlinxCollectionsImmutable = "0.3.8"
 
