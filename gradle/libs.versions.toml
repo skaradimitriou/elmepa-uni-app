@@ -14,8 +14,8 @@ lifecycle = "2.8.7"
 navigation = "2.8.9"
 
 #Compose
-composeBom = "2025.04.00"
-androidxComposeCompiler = "1.7.8"
+composeBom = "2025.04.01"
+androidxComposeCompiler = "1.8.0"
 
 androidTools = "31.9.2"
 
