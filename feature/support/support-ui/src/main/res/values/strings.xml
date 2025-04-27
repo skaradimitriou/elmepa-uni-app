@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Application Forms Screen-->
+    <string name="application_forms_title">Αιτήσεις - Έντυπα</string>
+    <string name="application_form_info_title">Οδηγίες</string>
+    <string name="application_form_info_body">Πατώντας πάνω στην εκάστοτε αίτηση/έντυπο που είναι διαθέσιμο απο το Τμήμα, δίνεται η δυνατότητα download του αρχείου.</string>
+    <string name="modal_btn_txt">Εντάξει</string>
+</resources>

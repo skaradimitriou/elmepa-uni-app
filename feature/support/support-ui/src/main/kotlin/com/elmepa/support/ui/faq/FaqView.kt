@@ -9,4 +9,12 @@ sealed class FaqView {
         data class Content(val faqs: List<Faq>) : State
         data class Error(val errorBody: String) : State
     }
+
+    sealed interface UIAction {
+        data object Back : UIAction
+    }
+
+    sealed interface Effect {
+        data object Back : Effect
+    }
 }

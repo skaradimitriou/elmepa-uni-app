@@ -12,14 +12,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.elmepa.designsystem.theme.ElmepaAppTheme
-import com.stathis.common.R
-import com.stathis.common.util.inflateCustomMenu
-import com.stathis.common.util.setScreenTitle
-import com.stathis.common.util.showDialog
+import com.elmepa.support.ui.applicationforms.ApplicationFormsView.Effect
 import com.stathis.common.util.startNativeBrowserIntent
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class ApplicationFormsFragment : Fragment() {
@@ -44,25 +43,12 @@ class ApplicationFormsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setScreenTitle(getString(R.string.application_forms_title))
-        inflateCustomMenu(
-            menuId = com.elmepa.support.ui.R.menu.application_forms_menu,
-            respondItemId = com.elmepa.support.ui.R.id.general_info,
-            callback = {
-                showDialog(
-                    title = getString(R.string.application_form_info_title),
-                    message = getString(R.string.application_form_info_body)
-                )
-            })
 
-        lifecycleScope.launch {
-            viewModel.effect.flowWithLifecycle(lifecycle).collect { effect ->
-                when (effect) {
-                    is ApplicationFormsView.Effect.OpenBrowser -> {
-                        startNativeBrowserIntent(effect.url)
-                    }
-                }
+        viewModel.effect.flowWithLifecycle(lifecycle).onEach { effect ->
+            when (effect) {
+                is Effect.Back -> findNavController().popBackStack()
+                is Effect.OpenBrowser -> startNativeBrowserIntent(effect.url)
             }
-        }
+        }.launchIn(lifecycleScope)
     }
 }

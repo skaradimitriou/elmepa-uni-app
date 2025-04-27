@@ -11,10 +11,12 @@ internal sealed class ApplicationFormsView {
     }
 
     sealed interface UIAction {
+        data object Back : UIAction
         data class OpenForm(val url: String) : UIAction
     }
 
     sealed interface Effect {
+        data object Back : Effect
         data class OpenBrowser(val url: String) : Effect
     }
 }

@@ -2,18 +2,24 @@ package com.elmepa.support.ui.faq
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.elmepa.support.ui.faq.FaqView.Effect
+import com.elmepa.support.ui.faq.FaqView.UIAction
 import com.elmepa.support.usecase.FetchFaqsUseCase
 import com.stathis.domain.model.DomainResult
 import com.stathis.model.support.Faq
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -22,8 +28,10 @@ internal class FaqViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _state: MutableStateFlow<FaqView.State> = MutableStateFlow(FaqView.State.Loading)
-
     val state: StateFlow<FaqView.State> = _state.asStateFlow()
+
+    private val _effect = MutableSharedFlow<Effect>()
+    val effect: SharedFlow<Effect> = _effect.asSharedFlow()
 
     init {
         getFaqs()
@@ -34,6 +42,16 @@ internal class FaqViewModel @Inject constructor(
             .onEach { result -> _state.update { result.toUiState() } }
             .flowOn(Dispatchers.IO)
             .launchIn(viewModelScope)
+    }
+
+    fun onAction(action: UIAction) {
+        val effect = when (action) {
+            is UIAction.Back -> Effect.Back
+        }
+
+        viewModelScope.launch {
+            _effect.emit(effect)
+        }
     }
 
     private fun DomainResult<List<Faq>>.toUiState() = when (this) {

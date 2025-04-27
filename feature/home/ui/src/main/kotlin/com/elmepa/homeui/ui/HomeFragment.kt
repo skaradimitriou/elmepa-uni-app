@@ -16,11 +16,9 @@ import androidx.lifecycle.lifecycleScope
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.homeui.ext.toNavigationAction
 import com.stathis.common.MainViewModel
-import com.stathis.common.R
-import com.stathis.common.util.setScreenTitle
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import kotlin.getValue
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -46,20 +44,14 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setScreenTitle(getString(R.string.main_screen_title))
-        initViewModel()
-    }
 
-    private fun initViewModel() {
-        lifecycleScope.launch {
-            viewModel.effect.flowWithLifecycle(lifecycle).collect { effect ->
-                when (effect) {
-                    is HomeView.Effect.OpenDashboardOption -> {
-                        val navAction = effect.option.type.toNavigationAction()
-                        activityVM.navigateWithAction(navAction)
-                    }
+        viewModel.effect.flowWithLifecycle(lifecycle).onEach { effect ->
+            when (effect) {
+                is HomeView.Effect.OpenDashboardOption -> {
+                    val navAction = effect.option.type.toNavigationAction()
+                    activityVM.navigateWithAction(navAction)
                 }
             }
-        }
+        }.launchIn(lifecycleScope)
     }
 }

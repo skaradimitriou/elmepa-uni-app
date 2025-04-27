@@ -12,14 +12,15 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.elmepa.designsystem.theme.ElmepaAppTheme
-import com.stathis.common.R
-import com.stathis.common.util.setScreenTitle
+import com.elmepa.support.ui.contact.ContactView.Effect
 import com.stathis.common.util.startDialIntent
 import com.stathis.common.util.startEmailIntent
 import com.stathis.common.util.startNativeBrowserIntent
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class ContactFragment : Fragment() {
@@ -31,7 +32,6 @@ class ContactFragment : Fragment() {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
                 val state by viewModel.state.collectAsStateWithLifecycle()
-
                 ElmepaAppTheme {
                     ContactScreen(
                         state = state,
@@ -44,16 +44,14 @@ class ContactFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setScreenTitle(getString(R.string.contact))
 
-        lifecycleScope.launch {
-            viewModel.effect.flowWithLifecycle(lifecycle).collect { effect ->
-                when (effect) {
-                    is ContactView.Effect.OpenDialer -> startDialIntent(numberToDial = effect.telephoneNumber)
-                    is ContactView.Effect.OpenEmailProvider -> startEmailIntent(emailAddress = effect.email)
-                    is ContactView.Effect.OpenUrl -> startNativeBrowserIntent(url = effect.url)
-                }
+        viewModel.effect.flowWithLifecycle(lifecycle).onEach { effect ->
+            when (effect) {
+                is Effect.Back -> findNavController().popBackStack()
+                is Effect.OpenDialer -> startDialIntent(numberToDial = effect.telephoneNumber)
+                is Effect.OpenEmailProvider -> startEmailIntent(emailAddress = effect.email)
+                is Effect.OpenUrl -> startNativeBrowserIntent(url = effect.url)
             }
-        }
+        }.launchIn(lifecycleScope)
     }
 }

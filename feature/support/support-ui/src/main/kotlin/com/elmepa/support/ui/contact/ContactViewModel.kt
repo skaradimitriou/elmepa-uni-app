@@ -3,6 +3,9 @@ package com.elmepa.support.ui.contact
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.elmepa.support.model.ContactItem
+import com.elmepa.support.ui.contact.ContactView.Effect
+import com.elmepa.support.ui.contact.ContactView.State
+import com.elmepa.support.ui.contact.ContactView.UIAction
 import com.elmepa.support.usecase.FetchContactInfoUseCase
 import com.stathis.domain.model.DomainResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,21 +27,22 @@ internal class ContactViewModel @Inject constructor(
     fetchContactInfoUseCase: FetchContactInfoUseCase
 ) : ViewModel() {
 
-    val state: StateFlow<ContactView.State> = fetchContactInfoUseCase()
+    val state: StateFlow<State> = fetchContactInfoUseCase()
         .map { result -> result.toUiState() }
-        .onStart { emit(ContactView.State.Loading) }
+        .onStart { emit(State.Loading) }
         .flowOn(Dispatchers.IO)
-        .stateIn(viewModelScope, SharingStarted.Lazily, ContactView.State.Loading)
+        .stateIn(viewModelScope, SharingStarted.Lazily, State.Loading)
 
-    private val _effect = MutableSharedFlow<ContactView.Effect>()
-    val effect: SharedFlow<ContactView.Effect> = _effect.asSharedFlow()
+    private val _effect = MutableSharedFlow<Effect>()
+    val effect: SharedFlow<Effect> = _effect.asSharedFlow()
 
-    fun onAction(action: ContactView.UIAction) {
+    fun onAction(action: UIAction) {
         viewModelScope.launch {
             val effect = when (action) {
-                is ContactView.UIAction.CallSecretary -> ContactView.Effect.OpenDialer(action.telephoneNumber)
-                is ContactView.UIAction.SendEmail -> ContactView.Effect.OpenEmailProvider(action.email)
-                is ContactView.UIAction.OpenUrl -> ContactView.Effect.OpenUrl(action.url)
+                is UIAction.Back -> Effect.Back
+                is UIAction.CallSecretary -> Effect.OpenDialer(action.telephoneNumber)
+                is UIAction.SendEmail -> Effect.OpenEmailProvider(action.email)
+                is UIAction.OpenUrl -> Effect.OpenUrl(action.url)
             }
 
             _effect.emit(effect)
@@ -46,8 +50,8 @@ internal class ContactViewModel @Inject constructor(
     }
 
     private fun DomainResult<List<ContactItem>>.toUiState() = when (this) {
-        is DomainResult.Loading -> ContactView.State.Loading
-        is DomainResult.Success<List<ContactItem>> -> ContactView.State.Content(data)
-        is DomainResult.Error -> ContactView.State.Error
+        is DomainResult.Loading -> State.Loading
+        is DomainResult.Success<List<ContactItem>> -> State.Content(data)
+        is DomainResult.Error -> State.Error
     }
 }
