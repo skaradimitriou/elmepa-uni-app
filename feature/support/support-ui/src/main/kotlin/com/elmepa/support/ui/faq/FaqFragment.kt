@@ -10,11 +10,14 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.elmepa.designsystem.theme.ElmepaAppTheme
-import com.stathis.common.R
-import com.stathis.common.util.setScreenTitle
+import com.elmepa.support.ui.faq.FaqView.Effect
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.getValue
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class FaqFragment : Fragment() {
@@ -26,9 +29,11 @@ class FaqFragment : Fragment() {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
                 val state by viewModel.state.collectAsStateWithLifecycle()
-
                 ElmepaAppTheme {
-                    FaqScreen(state)
+                    FaqScreen(
+                        state = state,
+                        onAction = viewModel::onAction
+                    )
                 }
             }
         }
@@ -36,6 +41,11 @@ class FaqFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setScreenTitle(getString(R.string.faq_title))
+
+        viewModel.effect.flowWithLifecycle(lifecycle).onEach { effect ->
+            when (effect) {
+                is Effect.Back -> findNavController().popBackStack()
+            }
+        }.launchIn(lifecycleScope)
     }
 }

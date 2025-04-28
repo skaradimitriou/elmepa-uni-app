@@ -3,6 +3,9 @@ package com.elmepa.support.ui.applicationforms
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.elmepa.support.model.ApplicationForm
+import com.elmepa.support.ui.applicationforms.ApplicationFormsView.Effect
+import com.elmepa.support.ui.applicationforms.ApplicationFormsView.State
+import com.elmepa.support.ui.applicationforms.ApplicationFormsView.UIAction
 import com.elmepa.support.usecase.FetchApplicationFormsUseCase
 import com.stathis.domain.model.DomainResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,11 +28,11 @@ internal class ApplicationFormsViewModel @Inject constructor(
     private val fetchApplicationFormsUseCase: FetchApplicationFormsUseCase
 ) : ViewModel() {
 
-    private val _state: MutableStateFlow<ApplicationFormsView.State> = MutableStateFlow(ApplicationFormsView.State.Loading)
-    val state: StateFlow<ApplicationFormsView.State> = _state.asStateFlow()
+    private val _state: MutableStateFlow<State> = MutableStateFlow(State.Loading)
+    val state: StateFlow<State> = _state.asStateFlow()
 
-    private val _effect = MutableSharedFlow<ApplicationFormsView.Effect>()
-    val effect: SharedFlow<ApplicationFormsView.Effect> = _effect.asSharedFlow()
+    private val _effect = MutableSharedFlow<Effect>()
+    val effect: SharedFlow<Effect> = _effect.asSharedFlow()
 
     init {
         getApplicationForms()
@@ -42,19 +45,19 @@ internal class ApplicationFormsViewModel @Inject constructor(
             .launchIn(viewModelScope)
     }
 
-    fun onAction(action: ApplicationFormsView.UIAction) {
+    fun onAction(action: UIAction) {
         viewModelScope.launch {
-            when (action) {
-                is ApplicationFormsView.UIAction.OpenForm -> {
-                    _effect.emit(ApplicationFormsView.Effect.OpenBrowser(action.url))
-                }
+            val effect = when (action) {
+                is UIAction.Back -> Effect.Back
+                is UIAction.OpenForm -> Effect.OpenBrowser(action.url)
             }
+            _effect.emit(effect)
         }
     }
 
     private fun DomainResult<List<ApplicationForm>>.toUiState() = when (this) {
-        is DomainResult.Loading -> ApplicationFormsView.State.Loading
-        is DomainResult.Success<List<ApplicationForm>> -> ApplicationFormsView.State.Content(data)
-        is DomainResult.Error -> ApplicationFormsView.State.Error
+        is DomainResult.Loading -> State.Loading
+        is DomainResult.Success<List<ApplicationForm>> -> State.Content(data)
+        is DomainResult.Error -> State.Error
     }
 }
