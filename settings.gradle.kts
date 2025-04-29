@@ -48,7 +48,7 @@ include(":feature:personnel:personnel-domain")
 include(":feature:personnel:personnel-ui")
 
 //Syllabus
-include(":feature:syllabusv2:syllabus-ui")
+include(":feature:syllabus:syllabus-ui")
 
 
 include(":feature:news")
