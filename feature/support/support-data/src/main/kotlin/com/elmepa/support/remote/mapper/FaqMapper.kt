@@ -1,10 +1,10 @@
 package com.elmepa.support.remote.mapper
 
+import com.elmepa.support.model.Faq
+import com.elmepa.support.remote.model.FaqDto
 import com.stathis.common.util.toListOf
 import com.stathis.common.util.toNotNull
 import com.stathis.data.remote.mapper.BaseMapper
-import com.elmepa.support.remote.model.FaqDto
-import com.stathis.model.support.Faq
 
 internal object FaqMapper : BaseMapper<List<FaqDto>?, List<Faq>> {
 

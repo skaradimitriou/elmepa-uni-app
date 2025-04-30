@@ -11,8 +11,6 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-
 
 /**
  * Helper fun to simplify setting a screen title in a [Fragment].
@@ -47,14 +45,6 @@ fun Fragment.inflateCustomMenu(menuId: Int, respondItemId: Int, callback: (MenuI
             }
         }
     }, viewLifecycleOwner, Lifecycle.State.RESUMED)
-}
-
-/**
- * Helper fun to show a default dialog with a simple title & message in a [Fragment].
- */
-
-fun Fragment.showDialog(title: String, message: String) {
-    MaterialAlertDialogBuilder(requireContext()).setTitle(title).setMessage(message).show()
 }
 
 /**

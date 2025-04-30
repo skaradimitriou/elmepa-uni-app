@@ -2,11 +2,11 @@ package com.elmepa.support.ui.faq
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.elmepa.support.model.Faq
 import com.elmepa.support.ui.faq.FaqView.Effect
 import com.elmepa.support.ui.faq.FaqView.UIAction
 import com.elmepa.support.usecase.FetchFaqsUseCase
 import com.stathis.domain.model.DomainResult
-import com.stathis.model.support.Faq
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow

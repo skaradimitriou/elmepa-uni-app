@@ -1,17 +1,13 @@
 package com.stathis.common.util
 
-import android.graphics.text.LineBreaker
-import android.os.Build
 import android.os.Handler
 import android.view.MenuItem
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
 import com.stathis.common.adapters.CarouselAdapter
 import com.stathis.common.decorations.CustomItemDecoration
 
@@ -68,12 +64,6 @@ fun MenuItem.respondToQuery(queryHint: String, callback: (String) -> Unit) {
     })
 }
 
-fun TextView.alignText() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-        justificationMode = LineBreaker.JUSTIFICATION_MODE_INTER_WORD
-    }
-}
-
 /*
  *  This is a temp solution to include a self sliding viewpager on top of Students/Dept Screen
  *  Will be refactored into a more secure implementation later on, because handler is deprecated.
@@ -104,22 +94,6 @@ fun setScrollableViewPager(viewPager: ViewPager2, adapter: CarouselAdapter) {
                 true -> sliderHandler.postDelayed(sliderRunnable, 2500)
                 else -> Unit
             }
-        }
-    })
-}
-
-fun TabLayout.onTabSelected(callback: (TabLayout.Tab) -> Unit) {
-    addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-        override fun onTabSelected(tab: TabLayout.Tab?) {
-            tab?.let { callback.invoke(it) }
-        }
-
-        override fun onTabUnselected(tab: TabLayout.Tab?) {
-            //
-        }
-
-        override fun onTabReselected(tab: TabLayout.Tab?) {
-            //
         }
     })
 }

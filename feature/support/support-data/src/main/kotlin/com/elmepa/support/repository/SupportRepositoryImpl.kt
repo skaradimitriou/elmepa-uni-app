@@ -7,14 +7,15 @@ import com.elmepa.database.ext.toEntity
 import com.elmepa.database.ext.toFaq
 import com.elmepa.support.model.ApplicationForm
 import com.elmepa.support.model.ContactItem
+import com.elmepa.support.model.Faq
 import com.elmepa.support.remote.mapper.ApplicationFormMapper
 import com.elmepa.support.remote.mapper.ContactMapper
 import com.elmepa.support.remote.mapper.FaqMapper
 import com.elmepa.support.remote.model.ApplicationFormDto
+import com.elmepa.support.remote.model.FaqDto
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.common.util.toListOf
 import com.stathis.data.remote.model.ContactItemDto
-import com.elmepa.support.remote.model.FaqDto
 import com.stathis.data.util.APPLICATION_FORMS_URL
 import com.stathis.data.util.CONTACT_DB_PATH
 import com.stathis.data.util.DIV_CONTENT
@@ -25,7 +26,6 @@ import com.stathis.data.util.UL
 import com.stathis.data.util.getUrlText
 import com.stathis.datastore.caching.CacheManager
 import com.stathis.domain.model.DomainResult
-import com.stathis.model.support.Faq
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

@@ -16,10 +16,10 @@ import androidx.core.text.HtmlCompat
 import com.elmepa.designsystem.components.cards.ExpandableCard
 import com.elmepa.designsystem.components.topbar.TopBarWithTitleAndBackAction
 import com.elmepa.designsystem.theme.spacing
+import com.elmepa.support.model.Faq
 import com.elmepa.support.ui.faq.FaqView.UIAction
 import com.elmepa.support.ui.faq.components.FaqShimmerLoading
 import com.stathis.common.R
-import com.stathis.model.support.Faq
 
 @Composable
 fun FaqScreen(state: FaqView.State, onAction: (UIAction) -> Unit) {
