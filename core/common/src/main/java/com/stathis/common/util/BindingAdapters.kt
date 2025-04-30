@@ -3,16 +3,13 @@ package com.stathis.common.util
 import android.content.Intent
 import android.content.res.Configuration
 import android.net.Uri
-import android.view.View
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.stathis.common.R
-
 
 @BindingAdapter("loadImageUrl")
 fun ImageView.loadImage(imageUrl: String? = null) {
@@ -20,39 +17,6 @@ fun ImageView.loadImage(imageUrl: String? = null) {
         .load(imageUrl)
         .placeholder(R.drawable.placeholder)
         .into(this)
-}
-
-@BindingAdapter("textAndVisibility")
-fun TextView.setTextAndVisibility(text: String) {
-    if (text.isEmpty()) {
-        visibility = View.GONE
-    } else {
-        visibility = View.VISIBLE
-        this.text = text
-    }
-}
-
-@BindingAdapter("animateArrow")
-fun ImageView.animateArrow(isExpanded: Boolean) {
-    if (isExpanded) {
-        animate().rotation(90f).start()
-    } else {
-        animate().rotation(0f).start()
-    }
-}
-
-@BindingAdapter("setHtmlText")
-fun TextView.setHtmlText(text: String) {
-    this.text = text.toNonHtmlText()
-}
-
-@BindingAdapter("setRibbonColor")
-fun View.setRibbonColor(isMandatory: Boolean) {
-    if (isMandatory) {
-        setBackgroundResource(R.color.lesson_blue)
-    } else {
-        setBackgroundResource(R.color.lesson_orange)
-    }
 }
 
 @BindingAdapter("loadHtmlContent")

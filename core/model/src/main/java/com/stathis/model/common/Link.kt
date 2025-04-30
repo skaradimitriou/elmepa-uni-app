@@ -10,6 +10,7 @@ data class Link(
     val openUrl: String = "",
     val type: LinkType = LinkType.UNKNOWN
 ) : UiModel, Parcelable {
+
     override fun equalsContent(obj: UiModel) = false
 }
 

@@ -1,6 +1,6 @@
 package com.elmepa.support.ui.faq
 
-import com.stathis.model.support.Faq
+import com.elmepa.support.model.Faq
 
 sealed class FaqView {
 

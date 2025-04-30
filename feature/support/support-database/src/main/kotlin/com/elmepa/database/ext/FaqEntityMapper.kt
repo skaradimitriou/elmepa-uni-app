@@ -1,7 +1,7 @@
 package com.elmepa.database.ext
 
 import com.elmepa.database.model.FaqEntity
-import com.stathis.model.support.Faq
+import com.elmepa.support.model.Faq
 
 fun Faq.toEntity() = FaqEntity(
     seq = seq,
