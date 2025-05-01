@@ -50,6 +50,11 @@ include(":feature:personnel:personnel-ui")
 //Syllabus
 include(":feature:syllabus:syllabus-ui")
 
+// News
+include(":feature:newsv2:news-data")
+include(":feature:newsv2:news-database")
+include(":feature:newsv2:news-domain")
+include(":feature:newsv2:news-ui")
 
 include(":feature:news")
 include(":feature:web")
