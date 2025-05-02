@@ -10,6 +10,9 @@ App Presentation 🎬  | Download App 📱 | Read More about the App 📖 | Rele
 ------------- | ------------- | ------------- | ------------- 
 [YouTube URL](https://youtu.be/S6V7wsez1-c)  | [Google Play](https://play.google.com/store/apps/details?id=com.stathis.elmepaunivapp)  |  [Elmepa URL](https://mst.hmu.gr/ypiresies/mobile-epharmogh-tmhmatos/) | [App Releases](https://github.com/skaradimitriou/elmepa-uni-app/releases)
 
+> [!NOTE]
+> The project is being migrated to Jetpack Compose 🚀
+
 ## Features 💡
 
 <details >
