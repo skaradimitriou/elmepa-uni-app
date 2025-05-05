@@ -12,17 +12,17 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.personnel.depdetails.DepDetailsView.Effect
-import com.elmepa.personnel.ui.R
 import com.stathis.common.util.DEP_MEMBER_INFO
 import com.stathis.common.util.getParcelableFromBundle
-import com.stathis.common.util.setScreenTitle
 import com.stathis.common.util.startEmailIntent
 import com.stathis.common.util.startNativeBrowserIntent
 import com.stathis.model.department.DepMember
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class DepDetailsFragment : Fragment() {
@@ -47,19 +47,17 @@ class DepDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setScreenTitle(getString(R.string.dep_details_screen_title))
 
         arguments?.getParcelableFromBundle<DepMember>(DEP_MEMBER_INFO)?.let { model ->
             viewModel.setCurrentDepMember(model)
         }
 
-        lifecycleScope.launch {
-            viewModel.effect.flowWithLifecycle(lifecycle).collect { effect ->
-                when (effect) {
-                    is Effect.SendEmail -> startEmailIntent(effect.email)
-                    is Effect.OpenBrowser -> startNativeBrowserIntent(effect.url)
-                }
+        viewModel.effect.flowWithLifecycle(lifecycle).onEach { effect ->
+            when (effect) {
+                is Effect.Back -> findNavController().popBackStack()
+                is Effect.SendEmail -> startEmailIntent(effect.email)
+                is Effect.OpenBrowser -> startNativeBrowserIntent(effect.url)
             }
-        }
+        }.launchIn(lifecycleScope)
     }
 }

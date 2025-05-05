@@ -11,10 +11,12 @@ internal sealed class DepDetailsView {
     }
 
     sealed interface UIAction {
+        data object Back : UIAction
         data class OpenLink(val link: Link) : UIAction
     }
 
     sealed interface Effect {
+        data object Back : Effect
         data class OpenBrowser(val url: String) : Effect
         data class SendEmail(val email: String) : Effect
     }
