@@ -14,15 +14,12 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.personnel.list.PersonnelListView.Effect
-import com.elmepa.personnel.list.PersonnelListView.UIAction.SearchPersonByName
 import com.elmepa.personnel.ui.R
-import com.stathis.common.util.inflateCustomMenu
-import com.stathis.common.util.respondToQuery
-import com.stathis.common.util.setScreenTitle
 import com.stathis.common.util.startEmailIntent
 import com.stathis.common.util.startShareIntent
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class PersonnelFragment : Fragment() {
@@ -43,27 +40,15 @@ class PersonnelFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setScreenTitle(getString(com.stathis.common.R.string.personnel))
-        inflateCustomMenu(
-            menuId = R.menu.personnel_menu,
-            respondItemId = R.id.action_search,
-            callback = { menuItem ->
-                menuItem.respondToQuery(
-                    queryHint = getString(com.stathis.common.R.string.search_in_personnel)
-                ) { query -> viewModel.onAction(SearchPersonByName(query)) }
-            }
-        )
 
-        lifecycleScope.launch {
-            viewModel.effect.flowWithLifecycle(lifecycle).collect { effect ->
-                when (effect) {
-                    is Effect.SendEmail -> startEmailIntent(effect.email)
-                    is Effect.ShareInfo -> startShareIntent(
-                        subject = getString(R.string.share_personnel_data),
-                        body = effect.dataToShare
-                    )
-                }
+        viewModel.effect.flowWithLifecycle(lifecycle).onEach { effect ->
+            when (effect) {
+                is Effect.SendEmail -> startEmailIntent(effect.email)
+                is Effect.ShareInfo -> startShareIntent(
+                    subject = getString(R.string.share_personnel_data),
+                    body = effect.dataToShare
+                )
             }
-        }
+        }.launchIn(lifecycleScope)
     }
 }

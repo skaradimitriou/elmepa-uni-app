@@ -38,7 +38,7 @@ private const val EMPTY: String = ""
 fun TopBarWithTitleAndSearchInput(
     title: String,
     hint: String,
-    onBackActionClick: () -> Unit
+    onSearchInputChanged: (String) -> Unit
 ) {
     var isSearching by remember { mutableStateOf(false) }
     var textState by remember { mutableStateOf(TextFieldValue(EMPTY)) }
@@ -50,7 +50,10 @@ fun TopBarWithTitleAndSearchInput(
                 hint = hint,
                 textState = textState,
                 isSearching = isSearching,
-                onValueChange = { textState = it }
+                onValueChange = {
+                    textState = it
+                    onSearchInputChanged(it.text)
+                }
             )
         },
         actions = {
@@ -71,19 +74,18 @@ fun TopBarWithTitleAndSearchInput(
             actionIconContentColor = Color.White
         ),
         navigationIcon = {
-            IconButton(
-                onClick = {
-                    if (isSearching) {
+            if (isSearching) {
+                IconButton(
+                    onClick = {
                         isSearching = false
-                    } else {
-                        onBackActionClick()
+                        onSearchInputChanged(EMPTY)
                     }
+                ) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Default.KeyboardArrowLeft,
+                        contentDescription = null
+                    )
                 }
-            ) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Default.KeyboardArrowLeft,
-                    contentDescription = null
-                )
             }
         }
     )
@@ -154,7 +156,7 @@ private fun TopBarWithTitleAndSearchInputPreview() {
         TopBarWithTitleAndSearchInput(
             title = LoremIpsum(3).values.joinToString(),
             hint = "Searching...",
-            onBackActionClick = {}
+            onSearchInputChanged = {}
         )
     }
 }

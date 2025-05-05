@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -32,10 +31,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.components.shimmer.ShimmerEffect
+import com.elmepa.designsystem.components.topbar.TopBarWithTitleAndSearchInput
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.spacing
 import com.elmepa.personnel.list.PersonnelListView.State
 import com.elmepa.personnel.list.PersonnelListView.UIAction
+import com.elmepa.personnel.list.PersonnelListView.UIAction.SearchPersonByName
 import com.elmepa.personnel.list.components.PersonBottomSheet
 import com.elmepa.personnel.list.components.PersonCard
 import com.elmepa.personnel.model.Gender
@@ -52,7 +53,11 @@ internal fun PersonnelScreen(state: State, onAction: (UIAction) -> Unit) {
 
     Scaffold(
         topBar = {
-            //
+            TopBarWithTitleAndSearchInput(
+                title = stringResource(commonRes.string.personnel),
+                hint = stringResource(commonRes.string.search_in_personnel),
+                onSearchInputChanged = { query -> onAction(SearchPersonByName(query)) }
+            )
         },
         content = { paddingValues ->
             if (showBottomSheet) {
@@ -120,7 +125,7 @@ private fun PersonnelList(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .consumeWindowInsets(paddingValues)
+            .padding(top = paddingValues.calculateTopPadding())
             .background(MaterialTheme.colorScheme.background),
         contentPadding = PaddingValues(MaterialTheme.spacing.small),
         verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
@@ -141,7 +146,7 @@ private fun EmptyPersonnelInfoBox(paddingValues: PaddingValues) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .consumeWindowInsets(paddingValues)
+            .padding(top = paddingValues.calculateTopPadding())
             .padding(all = MaterialTheme.spacing.medium)
             .background(MaterialTheme.colorScheme.background),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -155,7 +160,7 @@ private fun ErrorScreen(paddingValues: PaddingValues, onClick: (UIAction) -> Uni
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .consumeWindowInsets(paddingValues)
+            .padding(top = paddingValues.calculateTopPadding())
             .background(MaterialTheme.colorScheme.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
@@ -183,7 +188,7 @@ fun PersonnelLoadingScreen(paddingValues: PaddingValues) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .consumeWindowInsets(paddingValues)
+            .padding(top = paddingValues.calculateTopPadding())
             .background(MaterialTheme.colorScheme.background),
         contentPadding = PaddingValues(MaterialTheme.spacing.small),
         verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
