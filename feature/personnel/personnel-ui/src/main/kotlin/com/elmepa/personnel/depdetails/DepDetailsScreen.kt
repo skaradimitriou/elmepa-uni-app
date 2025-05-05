@@ -5,10 +5,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.components.cards.CardWithPrompt
+import com.elmepa.designsystem.components.topbar.TopBarWithTitleAndBackAction
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.spacing
 import com.elmepa.personnel.depdetails.components.PersonalOverviewCard
@@ -37,7 +38,12 @@ import com.stathis.model.department.Skill
 internal fun DepDetailsScreen(state: DepDetailsView.State, onAction: (DepDetailsView.UIAction) -> Unit) {
     Scaffold(
         topBar = {
-            //
+            TopBarWithTitleAndBackAction(
+                title = stringResource(R.string.dep_details_screen_title),
+                onBackActionClick = {
+
+                }
+            )
         },
         content = { paddingValues ->
             when (state) {
@@ -61,7 +67,7 @@ private fun DepDetailsContent(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .consumeWindowInsets(paddingValues)
+            .padding(top = paddingValues.calculateTopPadding())
             .background(MaterialTheme.colorScheme.background),
         contentPadding = PaddingValues(
             top = 10.dp,

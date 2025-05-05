@@ -5,7 +5,6 @@ import androidx.lifecycle.viewModelScope
 import com.elmepa.personnel.depdetails.DepDetailsView.Effect
 import com.elmepa.personnel.depdetails.DepDetailsView.State
 import com.elmepa.personnel.depdetails.DepDetailsView.UIAction
-import com.stathis.model.common.Link
 import com.stathis.model.common.LinkType
 import com.stathis.model.department.DepMember
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -33,16 +32,13 @@ internal class DepDetailsViewModel @Inject constructor() : ViewModel() {
     }
 
     fun onAction(action: UIAction) {
-        when (action) {
-            is UIAction.OpenLink -> handleLinkByType(action.link)
-        }
-    }
-
-    private fun handleLinkByType(link: Link) {
         viewModelScope.launch {
-            val effect = when (link.type) {
-                LinkType.MAIL -> Effect.SendEmail(link.openUrl)
-                else -> Effect.OpenBrowser(link.openUrl)
+            val effect = when (action) {
+                is UIAction.Back -> Effect.Back
+                is UIAction.OpenLink -> when (action.link.type) {
+                    LinkType.MAIL -> Effect.SendEmail(action.link.openUrl)
+                    else -> Effect.OpenBrowser(action.link.openUrl)
+                }
             }
             _effect.emit(effect)
         }
