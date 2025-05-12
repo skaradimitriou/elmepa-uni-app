@@ -81,7 +81,7 @@ jobs:
 
       # Set up Node.js (required for Firebase CLI)
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
 
