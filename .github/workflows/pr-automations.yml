@@ -74,3 +74,34 @@ jobs:
       ## Build
       - name: Build with Gradle
         run: ./gradlew build
+
+      # Android Build - Generate APK
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
+
+      # Set up Node.js (required for Firebase CLI)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Install Firebase CLI
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      # Decode and save Firebase service account JSON from GitHub secrets
+      - name: Decode Firebase service account
+        run: |
+          echo "${{ secrets.FIREBASE_GOOGLE_SERVICES_JSON}}" | base64 --decode > $HOME/firebase-service-account.json
+
+      # Set GOOGLE_APPLICATION_CREDENTIALS environment variable
+      - name: Set environment variable for Google credentials
+        run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/firebase-service-account.json" >> $GITHUB_ENV
+
+      # Distribute APK to Firebase App Distribution
+      - name: Distribute APK to Firebase
+        run: |
+          firebase appdistribution:distribute ./app/build/outputs/apk/debug/app-debug.apk \
+            --app ${{ secrets.FIREBASE_APP_ID }} \
+            --groups "admins" \
+            --release-notes "Release notes: Build from branch ${GITHUB_REF##*/}"
