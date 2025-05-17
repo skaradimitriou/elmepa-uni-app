@@ -28,4 +28,6 @@ dependencies {
 
     implementation(libs.viewModelLifecycle)
     implementation(libs.lifecycle.common)
+    implementation(libs.paging)
+    implementation(libs.paging.compose)
 }

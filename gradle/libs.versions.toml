@@ -17,7 +17,7 @@ navigation = "2.9.0"
 composeBom = "2025.05.00"
 androidxComposeCompiler = "1.8.1"
 
-androidTools = "31.10.0"
+androidTools = "31.9.2"
 
 #Coroutines
 coroutines = "1.10.2"
@@ -112,6 +112,7 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 coil = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
 coil-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 paging = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
+paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
 
 #Room
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }

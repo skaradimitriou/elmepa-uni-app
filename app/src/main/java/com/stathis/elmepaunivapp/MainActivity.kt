@@ -43,6 +43,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
             val shouldHideToolbar = listOf(
                 R.id.nav_home,
+                R.id.nav_personnel,
                 R.id.aboutAppScreen,
                 R.id.nav_syllabus,
                 R.id.lessonsFragment,
@@ -50,8 +51,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                 R.id.applicationFormsFragment,
                 R.id.faqFragment,
                 R.id.contactFragment,
-                R.id.depDetailsFragment,
-                R.id.nav_personnel
+                R.id.announcementsFragment,
             ).contains(destination.id)
 
             binding.toolbar.visibility = if (shouldHideToolbar) {
