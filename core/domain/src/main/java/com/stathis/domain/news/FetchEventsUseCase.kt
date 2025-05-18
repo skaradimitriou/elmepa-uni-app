@@ -7,5 +7,5 @@ class FetchEventsUseCase @Inject constructor(
     private val repo: NewsRepository
 ) {
 
-    fun invoke() = repo.fetchEventsFromRemote()
+    operator fun invoke() = repo.fetchEventsFromRemote()
 }

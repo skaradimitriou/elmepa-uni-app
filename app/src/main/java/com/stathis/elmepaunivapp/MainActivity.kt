@@ -52,6 +52,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                 R.id.faqFragment,
                 R.id.contactFragment,
                 R.id.announcementsFragment,
+                R.id.eventsFragment,
             ).contains(destination.id)
 
             binding.toolbar.visibility = if (shouldHideToolbar) {
