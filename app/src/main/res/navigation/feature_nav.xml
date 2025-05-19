@@ -17,9 +17,8 @@
 
     <fragment
         android:id="@+id/eventsFragment"
-        android:name="com.stathis.news.events.EventsFragment"
-        android:label="EventsFragment"
-        tools:layout="@layout/fragment_events" />
+        android:name="com.elmepa.news.events.EventsFragment"
+        android:label="EventsFragment" />
 
     <fragment
         android:id="@+id/postDetailsFragment"
