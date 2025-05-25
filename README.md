@@ -98,6 +98,7 @@ The :feature module encapsulates specific, self-contained functionality related 
 
 - [**Kotlin**](https://kotlinlang.org/): A modern programming language for building robust Android applications.
 - [**Android Jetpack**](https://developer.android.com/jetpack): Utilize the latest Android Jetpack components for efficient development.
+- [Jetpack Compose](https://developer.android.com/compose): Modern toolkit for building native UI in a declarative and reactive manner.
 - [**MVVM Clean Architecture**](https://developer.android.com/topic/architecture): Implement a clean separation of concerns with Model-View-ViewModel architecture following Clean Architecture principles.
 - [**Coroutines**](https://kotlinlang.org/docs/coroutines-overview.html): Leverage Kotlin Coroutines for asynchronous and non-blocking programming.
 - [**Kotlin Flows**](https://developer.android.com/kotlin/flow): Utilize Kotlin Flows for reactive programming, enabling seamless data stream processing.
