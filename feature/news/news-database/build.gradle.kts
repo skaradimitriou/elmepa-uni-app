@@ -11,5 +11,5 @@ android {
 
 dependencies {
     implementation(project(":core:model"))
-    implementation(project(":feature:newsv2:news-domain"))
+    implementation(project(":feature:news:news-domain"))
 }
