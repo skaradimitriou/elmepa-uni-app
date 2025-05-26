@@ -1,6 +1,5 @@
 package com.stathis.data.util
 
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import kotlinx.coroutines.tasks.await
 
@@ -15,18 +14,6 @@ suspend inline fun <reified DataModel, DomainModel> getAndMapResponse(
 ): DomainModel {
     return try {
         val result = query.get().await().toObject(DataModel::class.java)
-        mapInto.invoke(result)
-    } catch (e: Exception) {
-        mapInto.invoke(null)
-    }
-}
-
-suspend inline fun <reified DataModel, DomainModel> getAndMapResponse(
-    query: CollectionReference,
-    mapInto: (List<DataModel>?) -> DomainModel
-): DomainModel {
-    return try {
-        val result = query.get().await().toObjects(DataModel::class.java)
         mapInto.invoke(result)
     } catch (e: Exception) {
         mapInto.invoke(null)
