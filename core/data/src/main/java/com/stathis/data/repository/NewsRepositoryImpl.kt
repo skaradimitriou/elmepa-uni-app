@@ -4,13 +4,10 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import com.stathis.data.remote.datasource.NewsDataSource
-import com.stathis.data.remote.mapper.news.PostDetailsMapper
-import com.stathis.data.remote.model.announcements.PostDetailsResponseDto
 import com.stathis.data.remote.paging.AnnouncementsRemoteMediator
 import com.stathis.data.remote.paging.EventsRemoteMediator
 import com.stathis.data.util.DIV_CONTENT
 import com.stathis.database.local.news.NewsDatabase
-import com.stathis.model.announcements.details.PostDetailsRequest
 import com.stathis.model.network.NetworkResult
 import kotlinx.coroutines.flow.flow
 import org.jsoup.Jsoup
@@ -52,27 +49,16 @@ class NewsRepositoryImpl @Inject constructor(
         }
     )
 
-    override suspend fun fetchPostDetails(
-        request: PostDetailsRequest
-    ) = flow {
-        emit(NetworkResult.Loading())
-
+    override fun fetchPostDetails(urlToScrape: String) = flow {
         try {
-            val response = Jsoup.connect(request.scrapeUrl)
+            val postDetailsHtmlContentDto = Jsoup.connect(urlToScrape)
                 .get()
                 .select(DIV_CONTENT)
                 .joinToString { divs ->
                     divs.html()
                 }.trim()
 
-            val dtoModel = PostDetailsResponseDto(
-                title = request.title,
-                imageUrl = request.imageUrl,
-                pubDate = request.pubDate,
-                htmlContent = response
-            )
-            val domainModel = PostDetailsMapper.toDomainModel(dtoModel)
-            emit(NetworkResult.Success(domainModel))
+            emit(NetworkResult.Success(postDetailsHtmlContentDto))
         } catch (e: Exception) {
             emit(NetworkResult.Failure(e.localizedMessage?.toString()))
         }

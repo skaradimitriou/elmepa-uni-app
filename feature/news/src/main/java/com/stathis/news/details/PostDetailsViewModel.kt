@@ -35,9 +35,9 @@ class PostDetailsViewModel @Inject constructor(
     ) {
         viewModelScope.launch(dispatcher) {
             val request = PostDetailsRequest(title, imageUrl, pubDate, scrapeUrl)
-            postDetailsUseCase.invoke(request).collect { data ->
-                _data.emit(data)
-            }
+//            postDetailsUseCase.invoke(request).collect { data ->
+//                _data.emit(data)
+//            }
         }
     }
 }

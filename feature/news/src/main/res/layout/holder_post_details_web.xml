@@ -24,7 +24,7 @@
                 android:nestedScrollingEnabled="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:loadHtmlContent="@{model.content}" />
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

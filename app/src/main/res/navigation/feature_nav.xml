@@ -22,9 +22,8 @@
 
     <fragment
         android:id="@+id/postDetailsFragment"
-        android:name="com.stathis.news.details.PostDetailsFragment"
-        android:label="PostDetailsFragment"
-        tools:layout="@layout/fragment_post_details" />
+        android:name="com.elmepa.news.details.PostDetailsFragment"
+        android:label="PostDetailsFragment" />
 
     <fragment
         android:id="@+id/researchFragment"
