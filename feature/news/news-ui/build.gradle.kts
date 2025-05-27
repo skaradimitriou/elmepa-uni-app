@@ -17,7 +17,7 @@ dependencies {
     implementation(project(":core:design-system"))
 
     implementation(project(":core:domain"))
-    implementation(project(":feature:newsv2:news-domain"))
+    implementation(project(":feature:news:news-domain"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

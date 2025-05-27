@@ -16,8 +16,8 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:datastore"))
 
-    implementation(project(":feature:newsv2:news-database"))
-    implementation(project(":feature:newsv2:news-domain"))
+    implementation(project(":feature:news:news-database"))
+    implementation(project(":feature:news:news-domain"))
 
     implementation(libs.firebase.firestore)
 
