@@ -5,9 +5,9 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.elmepa.news.events.EventsView.Effect
 import com.elmepa.news.events.EventsView.UIAction
+import com.elmepa.news.news.FetchEventsUseCase
 import com.stathis.common.base.BaseViewModel
 import com.stathis.common.di.IoDispatcher
-import com.stathis.domain.news.FetchEventsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +26,6 @@ internal class EventsViewModel @Inject constructor(
 ) : BaseViewModel(app) {
 
     val events = eventsUseCase()
-        .flow
         .flowOn(dispatcher)
         .cachedIn(viewModelScope)
 

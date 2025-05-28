@@ -25,8 +25,8 @@ import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.spacing
 import com.elmepa.news.announcements.components.AnnouncementCard
 import com.elmepa.news.events.EventsView.UIAction
+import com.elmepa.news.model.Event
 import com.stathis.common.R
-import com.stathis.model.announcements.Event
 
 @Composable
 internal fun EventsScreen(
@@ -70,9 +70,9 @@ private fun EventsContent(
         items(events.itemCount) { index ->
             events[index]?.let { event ->
                 AnnouncementCard(
-                    imageUrl = event.imageResource,
+                    imageUrl = event.image,
                     datePublished = event.pubDate,
-                    title = event.name,
+                    title = event.title,
                     subtitle = event.description,
                     onClick = {
                         onAction(UIAction.OnEventTap(event))

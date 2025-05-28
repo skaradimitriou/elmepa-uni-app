@@ -53,8 +53,8 @@ class EventsFragment : Fragment() {
             when (effect) {
                 is Effect.NavigateToDetails -> {
                     val args = Bundle().apply {
-                        putString(TITLE, effect.event.name)
-                        putString(IMAGE, effect.event.imageResource)
+                        putString(TITLE, effect.event.title)
+                        putString(IMAGE, effect.event.image)
                         putString(URL, effect.event.url)
                         putString(PUB_DATE, effect.event.pubDate)
                     }

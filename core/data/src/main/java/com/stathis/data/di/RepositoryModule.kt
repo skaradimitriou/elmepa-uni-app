@@ -3,20 +3,16 @@ package com.stathis.data.di
 import android.app.Application
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.data.remote.datasource.DepartmentDataSource
-import com.stathis.data.remote.datasource.NewsDataSource
 import com.stathis.data.repository.DepartmentRepository
 import com.stathis.data.repository.DepartmentRepositoryImpl
 import com.stathis.data.repository.NetworkRepository
 import com.stathis.data.repository.NetworkRepositoryImpl
-import com.stathis.data.repository.NewsRepository
-import com.stathis.data.repository.NewsRepositoryImpl
 import com.stathis.data.repository.ResearchRepository
 import com.stathis.data.repository.ResearchRepositoryImpl
 import com.stathis.data.repository.StudentsRepository
 import com.stathis.data.repository.StudentsRepositoryImpl
 import com.stathis.data.repository.SyllabusRepository
 import com.stathis.data.repository.SyllabusRepositoryImpl
-import com.stathis.database.local.news.NewsDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,16 +26,6 @@ class RepositoryModule {
     @Provides
     @Singleton
     fun provideNetworkRepository(): NetworkRepository = NetworkRepositoryImpl()
-
-    @Provides
-    @Singleton
-    fun provideAnnouncementsRepository(
-        newsLocalDataSource: NewsDatabase,
-        newsRemoteDataSource: NewsDataSource
-    ): NewsRepository = NewsRepositoryImpl(
-        localDataSource = newsLocalDataSource,
-        remoteDataSource = newsRemoteDataSource
-    )
 
     @Provides
     @Singleton

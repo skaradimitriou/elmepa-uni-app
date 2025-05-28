@@ -1,6 +1,6 @@
 package com.elmepa.news.events
 
-import com.stathis.model.announcements.Event
+import com.elmepa.news.model.Event
 
 internal sealed class EventsView {
 

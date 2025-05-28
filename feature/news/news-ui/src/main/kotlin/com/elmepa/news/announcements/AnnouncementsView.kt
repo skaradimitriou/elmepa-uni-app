@@ -1,6 +1,6 @@
 package com.elmepa.news.announcements
 
-import com.stathis.model.announcements.Announcement
+import com.elmepa.news.model.Announcement
 
 internal sealed class AnnouncementsView {
 

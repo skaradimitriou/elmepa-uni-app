@@ -25,8 +25,8 @@ import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.spacing
 import com.elmepa.news.announcements.AnnouncementsView.UIAction
 import com.elmepa.news.announcements.components.AnnouncementCard
+import com.elmepa.news.model.Announcement
 import com.stathis.common.R
-import com.stathis.model.announcements.Announcement
 
 @Composable
 internal fun AnnouncementsScreen(
@@ -70,9 +70,9 @@ private fun AnnouncementsContent(
         items(announcements.itemCount) { index ->
             announcements[index]?.let { announcement ->
                 AnnouncementCard(
-                    imageUrl = announcement.imageResource,
+                    imageUrl = announcement.image,
                     datePublished = announcement.pubDate,
-                    title = announcement.name,
+                    title = announcement.title,
                     subtitle = announcement.description,
                     onClick = {
                         onAction(UIAction.OnAnnouncementTap(announcement))
