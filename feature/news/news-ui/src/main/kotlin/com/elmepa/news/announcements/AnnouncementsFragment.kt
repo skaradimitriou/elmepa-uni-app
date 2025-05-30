@@ -53,8 +53,8 @@ class AnnouncementsFragment : Fragment() {
             when (effect) {
                 is Effect.NavigateToDetails -> {
                     val args = Bundle().apply {
-                        putString(TITLE, effect.announcement.name)
-                        putString(IMAGE, effect.announcement.imageResource)
+                        putString(TITLE, effect.announcement.title)
+                        putString(IMAGE, effect.announcement.image)
                         putString(URL, effect.announcement.url)
                         putString(PUB_DATE, effect.announcement.pubDate)
                     }

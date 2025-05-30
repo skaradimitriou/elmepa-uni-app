@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.elmepa.news.announcements.AnnouncementsView.Effect
 import com.elmepa.news.announcements.AnnouncementsView.UIAction
-import com.stathis.domain.news.FetchAnnouncementsUseCase
+import com.elmepa.news.news.FetchAnnouncementsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -20,7 +20,7 @@ internal class AnnouncementsViewModel @Inject constructor(
     fetchAnnouncementsUseCase: FetchAnnouncementsUseCase
 ) : ViewModel() {
 
-    val announcements = fetchAnnouncementsUseCase().flow
+    val announcements = fetchAnnouncementsUseCase()
         .flowOn(Dispatchers.IO)
         .cachedIn(viewModelScope)
 

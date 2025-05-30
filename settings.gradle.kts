@@ -27,7 +27,6 @@ include(":core:common")
 include(":core:design-system")
 include(":core:data")
 include(":core:domain")
-include(":core:database")
 include(":core:model")
 
 //Home
