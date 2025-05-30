@@ -17,7 +17,7 @@ navigation = "2.9.0"
 composeBom = "2025.05.01"
 androidxComposeCompiler = "1.8.2"
 
-androidTools = "31.10.0"
+androidTools = "31.10.1"
 
 #Coroutines
 coroutines = "1.10.2"
