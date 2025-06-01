@@ -8,15 +8,16 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Icon
@@ -27,13 +28,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.net.toUri
 import coil3.compose.AsyncImage
 import com.elmepa.designsystem.components.shimmer.ShimmerEffect
 import com.elmepa.designsystem.components.topbar.TopBarWithTitleAndBackAndCustomAction
+import com.elmepa.designsystem.theme.Petrol
 import com.elmepa.designsystem.theme.spacing
 import com.elmepa.news.details.PostDetailsView.State
 import com.elmepa.news.details.PostDetailsView.UIAction
@@ -87,37 +92,41 @@ private fun PostDetailsLoading(paddingValues: PaddingValues) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(paddingValues)
+            .padding(top = paddingValues.calculateTopPadding())
             .padding(top = MaterialTheme.spacing.small)
             .padding(horizontal = MaterialTheme.spacing.small)
             .background(MaterialTheme.colorScheme.background)
     ) {
         ShimmerEffect(
             modifier = Modifier
-                .height(200.dp)
-                .fillMaxWidth()
+                .height(300.dp)
+                .fillMaxWidth(),
+            shimmerShape = RoundedCornerShape(MaterialTheme.spacing.large)
         )
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(MaterialTheme.spacing.medium))
         ShimmerEffect(
             modifier = Modifier
-                .height(50.dp)
-                .fillMaxWidth()
+                .height(MaterialTheme.spacing.xLarge)
+                .fillMaxWidth(),
+            shimmerShape = RoundedCornerShape(MaterialTheme.spacing.large)
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(MaterialTheme.spacing.small))
         ShimmerEffect(
             modifier = Modifier
-                .height(50.dp)
-                .fillMaxWidth()
+                .height(MaterialTheme.spacing.xLarge)
+                .fillMaxWidth(),
+            shimmerShape = RoundedCornerShape(MaterialTheme.spacing.large)
         )
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(MaterialTheme.spacing.medium))
 
-        repeat(10) {
+        repeat(15) {
             ShimmerEffect(
                 modifier = Modifier
-                    .height(20.dp)
-                    .fillMaxWidth()
+                    .height(MaterialTheme.spacing.medium)
+                    .fillMaxWidth(),
+                shimmerShape = RoundedCornerShape(MaterialTheme.spacing.large)
             )
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(MaterialTheme.spacing.small))
         }
     }
 }
@@ -130,38 +139,55 @@ private fun PostDetailsContent(
     pubDate: String,
     htmlToLoad: String
 ) {
-    Column(
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(paddingValues)
-            .padding(horizontal = MaterialTheme.spacing.small)
-            .background(MaterialTheme.colorScheme.background),
-        verticalArrangement = Arrangement.SpaceEvenly
+            .padding(top = paddingValues.calculateTopPadding())
     ) {
-        Column(
-            modifier = Modifier.weight(1f)
-        ) {
+        item {
             AsyncImage(
                 modifier = Modifier
-                    .height(200.dp)
+                    .height(300.dp)
                     .fillMaxWidth(),
                 model = image,
-                contentDescription = title
+                contentDescription = title,
+                contentScale = ContentScale.FillBounds
             )
-            Spacer(Modifier.height(16.dp))
-            Text(text = pubDate)
-            Spacer(Modifier.height(8.dp))
-            Text(text = title)
+            Column(
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .padding(horizontal = MaterialTheme.spacing.medium)
+            ) {
+                Spacer(Modifier.height(MaterialTheme.spacing.medium))
+                Text(
+                    text = pubDate,
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = Petrol
+                )
+                Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 3,
+                    overflow = TextOverflow.Ellipsis
+                )
+                Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
+            }
         }
-
-        WebView(htmlToLoad)
+        item {
+            WebView(htmlToLoad)
+        }
     }
 }
 
 @Composable
-private fun ColumnScope.WebView(htmlToLoad: String) {
+private fun WebView(htmlToLoad: String) {
     AndroidView(
-        modifier = Modifier.weight(1f),
+        modifier = Modifier
+            .padding(horizontal = MaterialTheme.spacing.xSmall),
         factory = {
             WebView(it).apply {
                 layoutParams = ViewGroup.LayoutParams(
