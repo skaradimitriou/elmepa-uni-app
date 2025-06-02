@@ -29,6 +29,7 @@ fun ShimmerEffect(
     widthOfShadowBrush: Int = 500,
     angleOfAxisY: Float = 270f,
     durationMillis: Int = 1000,
+    shimmerShape: RoundedCornerShape = RoundedCornerShape(16)
 ) {
 
     val shimmerColors = listOf(
@@ -62,7 +63,7 @@ fun ShimmerEffect(
 
     Box(
         modifier = modifier
-            .clip(RoundedCornerShape(16))
+            .clip(shimmerShape)
             .background(ShimmerGreyLighter)
     ) {
         Card(
