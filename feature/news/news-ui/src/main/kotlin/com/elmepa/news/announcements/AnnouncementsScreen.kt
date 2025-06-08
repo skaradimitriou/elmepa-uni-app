@@ -13,7 +13,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
@@ -89,8 +88,8 @@ private fun ShimmerLoading() {
         ShimmerEffect(
             modifier = Modifier
                 .height(200.dp)
-                .clip(RoundedCornerShape(8))
-                .fillMaxWidth()
+                .fillMaxWidth(),
+            shimmerShape = RoundedCornerShape(8)
         )
 
         Spacer(Modifier.height(MaterialTheme.spacing.small))
