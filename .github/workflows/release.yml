@@ -1,0 +1,130 @@
+name: Android Release
+
+on:
+  push:
+    branches:
+      - 'release/*'
+
+jobs:
+  release-new-version:
+    runs-on: ubuntu-latest
+    steps:
+      # Set up Java version
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'zulu'
+          cache: gradle
+
+      - name: Grant Gradle permissions
+        run: chmod +x gradlew
+
+      # Decode google services json file
+      - name: Decode google-services.json
+        run: |
+          mkdir -p app
+          echo "$GOOGLE_SERVICES_JSON" | base64 --decode > app/google-services.json
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+
+      # Decode keystore (.jks) file
+      - name: Decode Keystore
+        env:
+          ENCODED_KEYSTORE: ${{ secrets.APP_KEYSTORE_JKS_BASE_64 }}
+        run: |
+          echo "$ENCODED_KEYSTORE" | base64 -d > app/keystore.jks
+
+      # Bump versions in file
+      - name: Bump minor version in Configurations file
+        id: bump_version
+        run: |
+          #!/bin/bash
+          set -e
+          
+          FILE="buildSrc/src/main/kotlin/Configurations.kt"
+          
+          # Function to read version number from file or fallback default
+          get_version_value() {
+            local key=$1
+            local default=$2
+            local val
+            val=$(grep "const val $key" "$FILE" | sed -E 's/[^0-9]*([0-9]+).*/\1/')
+            if [[ -z "$val" ]]; then
+            echo "$default"
+            else
+            echo "$val"
+            fi
+          }
+          
+          MAJOR_VERSION=$(get_version_value "MAJOR_VERSION" 0)
+          MINOR_VERSION=$(get_version_value "MINOR_VERSION" 0)
+          PATCH_VERSION=$(get_version_value "PATCH_VERSION" 0)
+          
+          # Bump minor and reset patch
+          MINOR_VERSION=$((MINOR_VERSION + 1))
+          
+          # Update the file lines in-place (macOS sed syntax)
+          sed -i "s/^ *const val MAJOR_VERSION = .*/    const val MAJOR_VERSION = $MAJOR_VERSION/" "$FILE"
+          sed -i "s/^ *const val MINOR_VERSION = .*/    const val MINOR_VERSION = $MINOR_VERSION/" "$FILE"
+          sed -i "s/^ *const val PATCH_VERSION = .*/    const val PATCH_VERSION = $PATCH_VERSION/" "$FILE"
+          
+          VERSION="$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
+          
+          echo "✅ Bumped to $MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      # Commit & push changes
+      - name: Commit and push version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git add --all
+          git commit -m "[Release] Bump app version to ${{ steps.bump_version.outputs.version }}"
+          git push origin HEAD
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Create temp outputs folder
+      - name: Create temp outputs folder
+        run: mkdir -p temp-outputs
+
+      # Build .aab file
+      - name: Build AAB
+        run: ./gradlew bundleRelease
+
+      # Copy generated .aab to temp-outputs
+      - name: Move .aab generated to temp-outputs
+        run: |
+          cp app/build/outputs/bundle/release/app-release.aab temp-outputs
+
+      # Sign .aab with keystore (.jks) from github secrets
+      - name: Sign AAB manually
+        run: |
+          jarsigner -verbose \
+            -sigalg SHA256withRSA \
+            -digestalg SHA-256 \
+            -keystore app/keystore.jks \
+            -storepass "${{ secrets.APP_KEYSTORE_PASS }}" \
+            -keypass "${{ secrets.APP_KEYSTORE_PASS }}" \
+            temp-outputs/app-release.aab \
+            "${{ secrets.APP_KEYSTORE_ALIAS }}"
+
+      # Upload signed .aab to artifacts
+      - name: Upload .aab to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-aab-to-artifacts
+          path: temp-outputs/app-release.aab
+
+      # Upload signed .aab to Google Play
+      - name: Upload to Google Play
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_CONSOLE_JSON_SERVICE_ACCOUNT }}
+          packageName: com.stathis.elmepaunivapp
+          releaseFiles: temp-outputs/app-release.aab
+          track: beta
+
