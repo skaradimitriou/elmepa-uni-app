@@ -58,13 +58,16 @@ internal class PostDetailsViewModel @Inject constructor(
     fun onAction(action: UIAction) {
         val effect = when (action) {
             is UIAction.Back -> Effect.GoBack
-            is UIAction.Share -> with(state.value as State.Content) {
-                Effect.SharePost(title, openUrl)
+
+            is UIAction.Share -> (state.value as? State.Content)?.let {
+                Effect.SharePost(it.title, it.openUrl)
             }
         }
 
-        viewModelScope.launch(dispatcher) {
-            _effect.emit(effect)
+        effect?.let {
+            viewModelScope.launch(dispatcher) {
+                _effect.emit(effect)
+            }
         }
     }
 
