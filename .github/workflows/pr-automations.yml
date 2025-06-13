@@ -8,6 +8,8 @@ jobs:
   pr-automations:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       # Add assignee to PR
       - name: Auto assign PR to PR creator
         if: startsWith(github.head_ref, 'renovate/') == false
