@@ -49,6 +49,9 @@ include(":feature:personnel:personnel-ui")
 //Syllabus
 include(":feature:syllabus:syllabus-ui")
 
+//Students
+include(":feature:studentsv2:students-ui")
+
 // News
 include(":feature:news:news-data")
 include(":feature:news:news-database")
