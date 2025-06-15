@@ -47,7 +47,7 @@ class StudentsRepositoryImpl @Inject constructor(
         emit(NetworkResult.Success(result))
     }
 
-    override suspend fun fetchAcademicSchedule(): Flow<NetworkResult<List<UiModel>>> = flow {
+    override fun fetchAcademicSchedule(): Flow<NetworkResult<List<UiModel>>> = flow {
         try {
             emit(NetworkResult.Loading(ShimmerGenerator.list))
             val dtoModels = Jsoup.connect(ACADEMIC_SCHEDULE_URL).get()

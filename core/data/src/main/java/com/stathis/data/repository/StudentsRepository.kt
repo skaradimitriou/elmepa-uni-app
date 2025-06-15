@@ -8,5 +8,5 @@ interface StudentsRepository {
 
     suspend fun fetchStudentScreenData(): Flow<NetworkResult<List<UiModel>>>
 
-    suspend fun fetchAcademicSchedule(): Flow<NetworkResult<List<UiModel>>>
+    fun fetchAcademicSchedule(): Flow<NetworkResult<List<UiModel>>>
 }
