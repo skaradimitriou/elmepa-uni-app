@@ -126,5 +126,5 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.PLAY_CONSOLE_JSON_SERVICE_ACCOUNT }}
           packageName: com.stathis.elmepaunivapp
           releaseFiles: temp-outputs/app-release.aab
-          track: beta
+          track: production
 
