@@ -51,7 +51,7 @@ glide = "4.16.0"
 #Coil
 coil = "3.2.0"
 #Room Local SQLite db
-room = "2.7.1"
+room = "2.7.2"
 #Circle ImageView
 circleImgView = "3.1.0"
 #DataStore local storage
