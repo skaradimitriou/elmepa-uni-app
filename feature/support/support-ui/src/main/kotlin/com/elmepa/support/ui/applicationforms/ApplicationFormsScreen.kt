@@ -26,10 +26,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.elmepa.designsystem.components.cards.CardWithPrompt
 import com.elmepa.designsystem.components.shimmer.ShimmerEffect
 import com.elmepa.designsystem.components.topbar.TopBarWithTitleAndBackAndCustomAction
+import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.spacing
 import com.elmepa.support.model.ApplicationForm
 import com.elmepa.support.ui.R
@@ -118,6 +120,7 @@ private fun ApplicationFormsContent(
 private fun ShimmerLoading(modifier: Modifier = Modifier) {
     LazyColumn(
         modifier = modifier
+            .fillMaxSize()
             .padding(top = MaterialTheme.spacing.small)
             .padding(horizontal = MaterialTheme.spacing.small),
         verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
@@ -133,5 +136,42 @@ private fun ShimmerLoading(modifier: Modifier = Modifier) {
         item {
             Spacer(modifier = Modifier.height(40.dp))
         }
+    }
+}
+
+@Preview
+@Composable
+private fun ApplicationFormsScreenLoadingPreview() {
+    ElmepaAppTheme {
+        ApplicationFormsScreen(
+            state = ApplicationFormsView.State.Loading,
+            onClick = {}
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun ApplicationFormsScreenPreview() {
+    ElmepaAppTheme {
+        ApplicationFormsScreen(
+            state = ApplicationFormsView.State.Content(
+                forms = listOf(
+                    ApplicationForm(
+                        title = "Αίτηση 1",
+                        openUrl = "www.myUrl.com"
+                    ),
+                    ApplicationForm(
+                        title = "Αίτηση 2",
+                        openUrl = "www.myUrl.com"
+                    ),
+                    ApplicationForm(
+                        title = "Αίτηση 3",
+                        openUrl = "www.myUrl.com"
+                    )
+                ),
+            ),
+            onClick = {}
+        )
     }
 }
