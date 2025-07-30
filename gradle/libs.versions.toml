@@ -41,7 +41,7 @@ perfPlugin = "1.4.2"
 #Firebase Firestore
 firebaseFirestore = "25.1.4"
 #Firebase Storage
-firebaseStorage = "21.0.2"
+firebaseStorage = "22.0.0"
 #Shimmer loading
 shimmer = "0.5.0"
 #Jsoup Web Scraping Library
