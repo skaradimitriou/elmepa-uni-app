@@ -1,8 +1,8 @@
 object Configurations {
 
-    const val COMPILE_SDK_VERSION = 35
+    const val COMPILE_SDK_VERSION = 36
     const val MIN_SDK_VERSION = 27
-    const val TARGET_SDK_VERSION = 35
+    const val TARGET_SDK_VERSION = 36
 
     /**
      * For each release, update these values based on the type of changes:
