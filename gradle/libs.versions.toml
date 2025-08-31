@@ -31,7 +31,7 @@ swipeToRefresh = "1.1.0"
 #Google Services
 googleServicesVersion = "4.4.3"
 #Firebase Crashlytics
-firebaseCrashlytics = "20.0.0"
+firebaseCrashlytics = "20.0.1"
 firebaseCrashlyticsGradle = "3.0.6"
 #Firebase BoM
 firebaseBom = "34.2.0"
