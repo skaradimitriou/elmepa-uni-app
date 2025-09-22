@@ -47,7 +47,7 @@ shimmer = "0.5.0"
 #Jsoup Web Scraping Library
 jsoup = "1.21.2"
 #Glide
-glide = "5.0.4"
+glide = "5.0.5"
 #Coil
 coil = "3.3.0"
 #Room Local SQLite db
