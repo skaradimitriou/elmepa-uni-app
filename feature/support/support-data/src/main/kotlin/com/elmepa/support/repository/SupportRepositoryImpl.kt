@@ -49,7 +49,7 @@ internal class SupportRepositoryImpl @Inject constructor(
     }
 
     override fun fetchFaqs(): Flow<DomainResult<List<Faq>>> = flow {
-        emit(DomainResult.Loading<List<Faq>>())
+        emit(DomainResult.Loading())
 
         val hasEmptyTimestamp = cacheManager.getCacheTimestamp(FAQ_CACHE_KEY) == 0L
         val shouldFetchFromRemote = hasEmptyTimestamp || cacheManager.shouldRefresh(FAQ_CACHE_KEY)
@@ -60,13 +60,13 @@ internal class SupportRepositoryImpl @Inject constructor(
 
         supportLocalDb.faqDao()
             .getAllFaqs()
-            .catch { emit(DomainResult.Error<List<Faq>>(it)) }
+            .catch { emit(DomainResult.Error(it)) }
             .collect { data ->
                 if (data.isEmpty()) {
                     fetchFaqsFromRemote()
                 } else {
                     val faqs = data.map { it.toFaq() }
-                    emit(DomainResult.Success<List<Faq>>(faqs))
+                    emit(DomainResult.Success(faqs))
                 }
             }
     }.flowOn(Dispatchers.IO)

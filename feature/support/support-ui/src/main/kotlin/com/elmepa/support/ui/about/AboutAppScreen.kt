@@ -26,8 +26,8 @@ import com.elmepa.designsystem.components.cards.TimelineCard
 import com.elmepa.designsystem.components.topbar.TopBarWithTitleAndBackAction
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.spacing
+import com.elmepa.support.model.AboutAppCard
 import com.stathis.common.R
-import com.stathis.model.about.AboutAppCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
