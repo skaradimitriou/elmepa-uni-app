@@ -36,7 +36,7 @@ firebaseCrashlyticsGradle = "3.0.6"
 #Firebase BoM
 firebaseBom = "34.6.0"
 #Firebase Performance
-firebasePerf = "22.0.3"
+firebasePerf = "22.0.4"
 perfPlugin = "2.0.2"
 #Firebase Firestore
 firebaseFirestore = "26.0.2"
