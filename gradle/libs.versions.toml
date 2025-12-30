@@ -27,7 +27,7 @@ hiltVersion = "2.57.2"
 #Timber
 timber = "5.0.1"
 #Swipe to refresh
-swipeToRefresh = "1.1.0"
+swipeToRefresh = "1.2.0"
 #Google Services
 googleServicesVersion = "4.4.4"
 #Firebase Crashlytics
