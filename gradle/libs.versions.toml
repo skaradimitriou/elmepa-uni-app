@@ -49,7 +49,7 @@ jsoup = "1.22.1"
 #Glide
 glide = "5.0.5"
 #Coil
-coil = "3.3.0"
+coil = "3.4.0"
 #Room Local SQLite db
 room = "2.8.4"
 #Circle ImageView
