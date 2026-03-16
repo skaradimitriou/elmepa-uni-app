@@ -57,7 +57,7 @@ circleImgView = "3.1.0"
 #DataStore local storage
 dataStore = "1.2.1"
 #Paging3
-paging = "3.3.6"
+paging = "3.4.2"
 #Gson
 gson = "2.13.2"
 #Kotlinx-Colle
