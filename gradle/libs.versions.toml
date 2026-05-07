@@ -39,7 +39,7 @@ firebaseBom = "34.7.0"
 firebasePerf = "22.0.4"
 perfPlugin = "2.0.2"
 #Firebase Firestore
-firebaseFirestore = "26.0.2"
+firebaseFirestore = "26.3.0"
 #Firebase Storage
 firebaseStorage = "22.0.1"
 #Shimmer loading
