@@ -10,8 +10,11 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
+                withPlugin("com.android.library") {
+                    apply("com.google.dagger.hilt.android")
+                }
+
                 apply("com.google.devtools.ksp")
-                apply("dagger.hilt.android.plugin")
             }
 
             dependencies {

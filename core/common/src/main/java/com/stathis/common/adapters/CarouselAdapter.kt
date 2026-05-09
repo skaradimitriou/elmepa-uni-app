@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
-import com.stathis.common.BR
 import com.stathis.common.R
 import com.stathis.common.base.BaseDiffUtil
 import com.stathis.common.base.BaseViewHolder
@@ -54,13 +53,16 @@ class CarouselViewHolder(
     override fun bind(data: UiModel) {
         when (data) {
             is CarouselItem -> {
-                binding.setVariable(BR.model, data)
-                binding.setVariable(BR.callback, callback)
+                (binding as HolderCarouselItemBinding).apply {
+                    model = data
+                    callback = this@CarouselViewHolder.callback
+                }
             }
         }
     }
 }
 
 fun interface CarouselCallback {
+
     fun onCarouselItemTap(model: CarouselItem)
 }

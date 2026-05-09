@@ -1,6 +1,6 @@
 package com.elmepa.convention.plugins
 
-import com.android.build.gradle.LibraryExtension
+import com.android.build.api.dsl.LibraryExtension
 import com.elmepa.convention.ext.configureKotlinAndroid
 import com.elmepa.convention.ext.libs
 import org.gradle.api.Plugin

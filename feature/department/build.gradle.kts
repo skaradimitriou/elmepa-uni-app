@@ -1,8 +1,7 @@
 plugins {
     alias(libs.plugins.elmepa.android.feature)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.elmepa.android.hilt)
-    alias(libs.plugins.kapt)
+    alias(libs.plugins.ksp)
 }
 
 android {
