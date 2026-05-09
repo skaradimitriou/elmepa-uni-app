@@ -115,7 +115,7 @@ jobs:
 
       # Upload signed .aab to artifacts
       - name: Upload .aab to artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: upload-aab-to-artifacts
           path: temp-outputs/app-release.aab
