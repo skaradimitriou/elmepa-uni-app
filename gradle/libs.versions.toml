@@ -59,7 +59,7 @@ dataStore = "1.2.1"
 #Paging3
 paging = "3.4.2"
 #Gson
-gson = "2.13.2"
+gson = "2.14.0"
 #Kotlinx-Colle
 kotlinxCollectionsImmutable = "0.4.0"
 #Detekt - static analysis
