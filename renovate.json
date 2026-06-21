@@ -9,6 +9,27 @@
   ],
   "packageRules": [
     {
+      "description": "Wait 14 days before creating major update PRs",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "minimumReleaseAge": "14 days"
+    },
+    {
+      "description": "Wait 7 days before creating minor update PRs",
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "Wait 30 days before creating patch update PRs",
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "minimumReleaseAge": "30 days"
+    },
+    {
       "groupName": "Kotlin & Friends",
       "matchPackageNames": [
         "/org.jetbrains.kotlin:*/",
