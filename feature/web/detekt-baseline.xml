@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>EmptyFunctionBlock:WebViewFragment.kt$WebViewFragment${}</ID>
+    <ID>InvalidPackageDeclaration:ExampleUnitTest.kt$package com.stathis.common</ID>
+    <ID>NewLineAtEndOfFile:Consts.kt$com.stathis.web.util.Consts.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.stathis.common.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:WebViewFragment.kt$com.stathis.web.webview.WebViewFragment.kt</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

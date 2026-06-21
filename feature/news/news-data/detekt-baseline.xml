@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>SwallowedException:NewsDataSourceImpl.kt$NewsDataSourceImpl$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:AnnouncementsRemoteMediator.kt$AnnouncementsRemoteMediator$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:EventsRemoteMediator.kt$EventsRemoteMediator$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:NewsDataSourceImpl.kt$NewsDataSourceImpl$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:NewsRepositoryImpl.kt$NewsRepositoryImpl$e: Exception</ID>
+  </CurrentIssues>
+</SmellBaseline>

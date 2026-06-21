@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>MagicNumber:FetchDepartmentInfoUseCase.kt$FetchDepartmentInfoUseCase$3</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.stathis.domain.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:FetchDepartmentInfoUseCase.kt$com.stathis.domain.department.FetchDepartmentInfoUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:FetchLessonDetailsUseCase.kt$com.stathis.domain.FetchLessonDetailsUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:FetchLessonsUseCase.kt$com.stathis.domain.FetchLessonsUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:FetchResearchInDeptUseCase.kt$com.stathis.domain.FetchResearchInDeptUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:FetchStudentsScreenDataUseCase.kt$com.stathis.domain.students.FetchStudentsScreenDataUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:TryReconnectingUseCase.kt$com.stathis.domain.TryReconnectingUseCase.kt</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

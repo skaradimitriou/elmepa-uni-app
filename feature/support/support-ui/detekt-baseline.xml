@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>FunctionNaming:AboutAppScreen.kt$@Composable internal fun AboutAppContent(paddingValues: PaddingValues, info: List&lt;AboutAppCard&gt;)</ID>
+    <ID>FunctionNaming:AboutAppScreen.kt$@Composable private fun InformativeCardContent(infoText: String, newsPublisher: String, contactInfo: String)</ID>
+    <ID>FunctionNaming:AboutAppScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter") @Composable fun AboutAppScreen()</ID>
+    <ID>FunctionNaming:AboutAppScreen.kt$@Preview @Composable private fun AboutAppScreenPreview()</ID>
+    <ID>FunctionNaming:ApplicationFormsScreen.kt$@Composable internal fun ApplicationFormsScreen( state: ApplicationFormsView.State, onClick: (ApplicationFormsView.UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:ApplicationFormsScreen.kt$@Composable private fun ApplicationFormsContent( paddingValues: PaddingValues, forms: List&lt;ApplicationForm&gt;, onClick: (ApplicationFormsView.UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:ApplicationFormsScreen.kt$@Composable private fun ShimmerLoading(modifier: Modifier = Modifier)</ID>
+    <ID>FunctionNaming:ApplicationFormsScreen.kt$@Preview @Composable private fun ApplicationFormsScreenLoadingPreview()</ID>
+    <ID>FunctionNaming:ApplicationFormsScreen.kt$@Preview @Composable private fun ApplicationFormsScreenPreview()</ID>
+    <ID>FunctionNaming:ContactScreen.kt$@Composable private fun ContactContent( paddingValues: PaddingValues, contactItems: List&lt;ContactItem&gt;, onAction: (UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:ContactScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable internal fun ContactScreen( state: ContactView.State, onAction: (UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:ContactShimmerLoading.kt$@Composable internal fun ContactShimmerLoading(modifier: Modifier = Modifier)</ID>
+    <ID>FunctionNaming:ContactShimmerLoading.kt$@Preview(showBackground = true) @Composable private fun ContactShimmerLoadingPreview()</ID>
+    <ID>FunctionNaming:FaqScreen.kt$@Composable fun FaqScreen(state: FaqView.State, onAction: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:FaqScreen.kt$@Composable private fun FaqContent( paddingValues: PaddingValues, faqs: List&lt;Faq&gt; )</ID>
+    <ID>FunctionNaming:FaqShimmerLoading.kt$@Composable internal fun FaqShimmerLoading(modifier: Modifier = Modifier)</ID>
+    <ID>FunctionNaming:FaqShimmerLoading.kt$@Preview(showBackground = true) @Composable private fun FaqShimmerLoadingPreview()</ID>
+    <ID>UnusedPrivateMember:AboutAppScreen.kt$@Preview @Composable private fun AboutAppScreenPreview()</ID>
+    <ID>UnusedPrivateMember:ApplicationFormsScreen.kt$@Preview @Composable private fun ApplicationFormsScreenLoadingPreview()</ID>
+    <ID>UnusedPrivateMember:ApplicationFormsScreen.kt$@Preview @Composable private fun ApplicationFormsScreenPreview()</ID>
+    <ID>UnusedPrivateMember:ContactShimmerLoading.kt$@Preview(showBackground = true) @Composable private fun ContactShimmerLoadingPreview()</ID>
+    <ID>UnusedPrivateMember:FaqShimmerLoading.kt$@Preview(showBackground = true) @Composable private fun FaqShimmerLoadingPreview()</ID>
+  </CurrentIssues>
+</SmellBaseline>

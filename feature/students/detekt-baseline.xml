@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>EmptyFunctionBlock:StudentsFragment.kt$StudentsFragment${}</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.stathis.students.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:LinksAdapter.kt$com.stathis.students.main.adapters.LinksAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:StudentAdapter.kt$com.stathis.students.main.adapters.StudentAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:StudentsFragment.kt$com.stathis.students.main.StudentsFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:StudentsViewModel.kt$com.stathis.students.main.StudentsViewModel.kt</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

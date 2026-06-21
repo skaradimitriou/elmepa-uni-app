@@ -77,6 +77,10 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
+      ## Run Detekt linter
+      - name: Run Detekt
+        run: ./gradlew detekt
+
       # Android Build - Generate APK
       - name: Build Debug APK
         run: ./gradlew assembleDebug

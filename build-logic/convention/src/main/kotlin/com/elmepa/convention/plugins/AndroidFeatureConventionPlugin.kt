@@ -11,6 +11,7 @@ internal class AndroidFeatureConventionPlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply {
                 apply("elmepa.android.library")
+                apply("io.gitlab.arturbosch.detekt")
             }
 
             dependencies {

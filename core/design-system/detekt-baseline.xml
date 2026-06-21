@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>FunctionNaming:AppTopBar.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable internal fun AppTopBar( title: String, navigationIcon: @Composable () -&gt; Unit = {}, actions: @Composable RowScope.() -&gt; Unit = {} )</ID>
+    <ID>FunctionNaming:AppTopBar.kt$@PreviewLightDark @Composable private fun AppTopBarPreview()</ID>
+    <ID>FunctionNaming:CardWithImageAndTitle.kt$@Composable fun CardWithImageAndTitle( modifier: Modifier = Modifier, title: String, image: Int, onClick: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:CardWithImageAndTitle.kt$@Preview @Composable private fun CardWithImageAndTitlePreview()</ID>
+    <ID>FunctionNaming:CardWithPrompt.kt$@Composable fun CardWithPrompt( modifier: Modifier = Modifier, text: String, onClick: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:CardWithPrompt.kt$@Preview @Composable private fun CardWithPromptPreview()</ID>
+    <ID>FunctionNaming:CardWithTitleAndSubtitle.kt$@Composable fun CardWithTitleAndSubtitle( modifier: Modifier = Modifier, title: String, subtitle: String, onAction: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:CardWithTitleAndSubtitle.kt$@Preview @Composable private fun CardWithTitleAndSubtitlePreview()</ID>
+    <ID>FunctionNaming:ExpandableCard.kt$@Composable fun ExpandableCard( modifier: Modifier = Modifier, text: String, description: String )</ID>
+    <ID>FunctionNaming:ExpandableCard.kt$@Preview @Composable private fun ExpandableCardPreview()</ID>
+    <ID>FunctionNaming:InformativeCard.kt$@Composable fun InformativeCard( modifier: Modifier = Modifier, content: @Composable () -&gt; Unit )</ID>
+    <ID>FunctionNaming:InformativeCard.kt$@Preview @Composable private fun InformativeCardPreview()</ID>
+    <ID>FunctionNaming:ListItemWithImageTitleAndSubtitle.kt$@Composable fun ListItemWithImageTitleAndSubTitle( icon: ImageVector, title: String, subtitle: String, onClick: () -&gt; Unit, modifier: Modifier = Modifier )</ID>
+    <ID>FunctionNaming:ListItemWithImageTitleAndSubtitle.kt$@Composable private fun RowScope.Icon(icon: ImageVector, contentDescription: String)</ID>
+    <ID>FunctionNaming:ListItemWithImageTitleAndSubtitle.kt$@Composable private fun RowScope.TitleAndSubTitle(title: String, subtitle: String)</ID>
+    <ID>FunctionNaming:ListItemWithImageTitleAndSubtitle.kt$@Preview @Composable private fun ListItemWithImageTitleAndSubTitlePreview()</ID>
+    <ID>FunctionNaming:ShimmerEffect.kt$@Composable fun ShimmerEffect( modifier: Modifier, widthOfShadowBrush: Int = 500, angleOfAxisY: Float = 270f, durationMillis: Int = 1000, shimmerShape: RoundedCornerShape = RoundedCornerShape(16) )</ID>
+    <ID>FunctionNaming:Theme.kt$@Composable fun ElmepaAppTheme( darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -&gt; Unit )</ID>
+    <ID>FunctionNaming:TimelineCard.kt$@Composable fun TimelineCard( modifier: Modifier = Modifier, title: String, description: String, )</ID>
+    <ID>FunctionNaming:TimelineCard.kt$@Composable private fun MainContent(title: String, description: String, onGloballyPositioned: (IntSize) -&gt; Unit)</ID>
+    <ID>FunctionNaming:TimelineCard.kt$@Preview @Composable fun TimelineScreenPreview()</ID>
+    <ID>FunctionNaming:TopBarWithTitle.kt$@Composable fun TopBarWithTitle(title: String)</ID>
+    <ID>FunctionNaming:TopBarWithTitle.kt$@PreviewLightDark @Composable private fun TopBarWithTitlePreview()</ID>
+    <ID>FunctionNaming:TopBarWithTitleAndBackAction.kt$@Composable fun TopBarWithTitleAndBackAction( title: String, onBackActionClick: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:TopBarWithTitleAndBackAction.kt$@PreviewLightDark @Composable private fun TopBarWithTitleAndBackActionPreview()</ID>
+    <ID>FunctionNaming:TopBarWithTitleAndSearchInput.kt$@Composable private fun SearchBox( title: String, hint: String, textState: TextFieldValue, isSearching: Boolean, onValueChange: (TextFieldValue) -&gt; Unit )</ID>
+    <ID>FunctionNaming:TopBarWithTitleAndSearchInput.kt$@Composable private fun SearchEndIcon( isSearching: Boolean, onSearchCancelled: () -&gt; Unit, onClearText: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:TopBarWithTitleAndSearchInput.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun TopBarWithTitleAndSearchInput( title: String, hint: String, onSearchInputChanged: (String) -&gt; Unit )</ID>
+    <ID>FunctionNaming:TopBarWithTitleAndSearchInput.kt$@PreviewLightDark @Composable private fun TopBarWithTitleAndSearchInputPreview()</ID>
+    <ID>FunctionNaming:TopBarWithTitleBackAndCustomAction.kt$@Composable fun TopBarWithTitleAndBackAndCustomAction( title: String, onBackActionClick: () -&gt; Unit, actions: @Composable RowScope.() -&gt; Unit = {} )</ID>
+    <ID>FunctionNaming:TopBarWithTitleBackAndCustomAction.kt$@PreviewLightDark @Composable private fun TopBarWithTitleAndBackAndCustomActionPreview()</ID>
+    <ID>MagicNumber:AppTopBar.kt$3</ID>
+    <ID>MagicNumber:CardWithImageAndTitle.kt$3</ID>
+    <ID>MagicNumber:CardWithPrompt.kt$3</ID>
+    <ID>MagicNumber:CardWithTitleAndSubtitle.kt$15</ID>
+    <ID>MagicNumber:CardWithTitleAndSubtitle.kt$5</ID>
+    <ID>MagicNumber:Color.kt$0xFF000000</ID>
+    <ID>MagicNumber:Color.kt$0xFF121212</ID>
+    <ID>MagicNumber:Color.kt$0xFF15296F89</ID>
+    <ID>MagicNumber:Color.kt$0xFF1E1E1E</ID>
+    <ID>MagicNumber:Color.kt$0xFF222222</ID>
+    <ID>MagicNumber:Color.kt$0xFF222C54</ID>
+    <ID>MagicNumber:Color.kt$0xFF232F34</ID>
+    <ID>MagicNumber:Color.kt$0xFF296F89</ID>
+    <ID>MagicNumber:Color.kt$0xFF344955</ID>
+    <ID>MagicNumber:Color.kt$0xFF35296F89</ID>
+    <ID>MagicNumber:Color.kt$0xFF3D3F43</ID>
+    <ID>MagicNumber:Color.kt$0xFF417BA3</ID>
+    <ID>MagicNumber:Color.kt$0xFF625b71</ID>
+    <ID>MagicNumber:Color.kt$0xFF6650a4</ID>
+    <ID>MagicNumber:Color.kt$0xFF7D5260</ID>
+    <ID>MagicNumber:Color.kt$0xFF88888888</ID>
+    <ID>MagicNumber:Color.kt$0xFF8899A6</ID>
+    <ID>MagicNumber:Color.kt$0xFFAAAAAA</ID>
+    <ID>MagicNumber:Color.kt$0xFFB3B3B3</ID>
+    <ID>MagicNumber:Color.kt$0xFFC6D2F6</ID>
+    <ID>MagicNumber:Color.kt$0xFFCCC2DC</ID>
+    <ID>MagicNumber:Color.kt$0xFFD0BCFF</ID>
+    <ID>MagicNumber:Color.kt$0xFFD5D5D5</ID>
+    <ID>MagicNumber:Color.kt$0xFFE02B20</ID>
+    <ID>MagicNumber:Color.kt$0xFFEFB8C8</ID>
+    <ID>MagicNumber:Color.kt$0xFFF0F0F0</ID>
+    <ID>MagicNumber:Color.kt$0xFFFFDAA4</ID>
+    <ID>MagicNumber:Color.kt$0xFFFFFFFF</ID>
+    <ID>MagicNumber:ExpandableCard.kt$20</ID>
+    <ID>MagicNumber:ExpandableCard.kt$3</ID>
+    <ID>MagicNumber:InformativeCard.kt$8</ID>
+    <ID>MagicNumber:ListItemWithImageTitleAndSubtitle.kt$0.5f</ID>
+    <ID>MagicNumber:ListItemWithImageTitleAndSubtitle.kt$5</ID>
+    <ID>MagicNumber:ShimmerEffect.kt$16</ID>
+    <ID>MagicNumber:TimelineCard.kt$15</ID>
+    <ID>MagicNumber:TimelineCard.kt$3</ID>
+    <ID>MagicNumber:TopBarWithTitle.kt$3</ID>
+    <ID>MagicNumber:TopBarWithTitleAndBackAction.kt$3</ID>
+    <ID>MagicNumber:TopBarWithTitleAndSearchInput.kt$3</ID>
+    <ID>MagicNumber:TopBarWithTitleBackAndCustomAction.kt$3</ID>
+    <ID>UnusedPrivateMember:AppTopBar.kt$@PreviewLightDark @Composable private fun AppTopBarPreview()</ID>
+    <ID>UnusedPrivateMember:CardWithImageAndTitle.kt$@Preview @Composable private fun CardWithImageAndTitlePreview()</ID>
+    <ID>UnusedPrivateMember:CardWithPrompt.kt$@Preview @Composable private fun CardWithPromptPreview()</ID>
+    <ID>UnusedPrivateMember:CardWithTitleAndSubtitle.kt$@Preview @Composable private fun CardWithTitleAndSubtitlePreview()</ID>
+    <ID>UnusedPrivateMember:ExpandableCard.kt$@Preview @Composable private fun ExpandableCardPreview()</ID>
+    <ID>UnusedPrivateMember:InformativeCard.kt$@Preview @Composable private fun InformativeCardPreview()</ID>
+    <ID>UnusedPrivateMember:ListItemWithImageTitleAndSubtitle.kt$@Preview @Composable private fun ListItemWithImageTitleAndSubTitlePreview()</ID>
+    <ID>UnusedPrivateMember:TopBarWithTitle.kt$@PreviewLightDark @Composable private fun TopBarWithTitlePreview()</ID>
+    <ID>UnusedPrivateMember:TopBarWithTitleAndBackAction.kt$@PreviewLightDark @Composable private fun TopBarWithTitleAndBackActionPreview()</ID>
+    <ID>UnusedPrivateMember:TopBarWithTitleAndSearchInput.kt$@PreviewLightDark @Composable private fun TopBarWithTitleAndSearchInputPreview()</ID>
+    <ID>UnusedPrivateMember:TopBarWithTitleBackAndCustomAction.kt$@PreviewLightDark @Composable private fun TopBarWithTitleAndBackAndCustomActionPreview()</ID>
+  </CurrentIssues>
+</SmellBaseline>

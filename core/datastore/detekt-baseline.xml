@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>MagicNumber:CacheManagerImpl.kt$CacheManagerImpl$1000</ID>
+    <ID>MagicNumber:CacheManagerImpl.kt$CacheManagerImpl$5</ID>
+    <ID>MagicNumber:CacheManagerImpl.kt$CacheManagerImpl$60</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.stathis.datastore.ExampleUnitTest.kt</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

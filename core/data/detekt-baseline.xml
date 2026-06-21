@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>MagicNumber:DepMemberMapper.kt$DepMemberMapper$3</ID>
+    <ID>MagicNumber:SyllabusRepositoryImpl.kt$SyllabusRepositoryImpl$3</ID>
+    <ID>MatchingDeclarationName:AcademicScheduleItem.kt$AcademicScheduleItemDto</ID>
+    <ID>NewLineAtEndOfFile:AcademicScheduleItem.kt$com.stathis.data.remote.model.students.AcademicScheduleItem.kt</ID>
+    <ID>NewLineAtEndOfFile:AcademicScheduleMapper.kt$com.stathis.data.remote.mapper.students.AcademicScheduleMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseMapper.kt$com.stathis.data.remote.mapper.BaseMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:CarouselMapper.kt$com.stathis.data.remote.mapper.CarouselMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:Consts.kt$com.stathis.data.util.Consts.kt</ID>
+    <ID>NewLineAtEndOfFile:ContactItemDto.kt$com.stathis.data.remote.model.ContactItemDto.kt</ID>
+    <ID>NewLineAtEndOfFile:DataModule.kt$com.stathis.data.di.DataModule.kt</ID>
+    <ID>NewLineAtEndOfFile:DepMemberDto.kt$com.stathis.data.remote.model.personnel.DepMemberDto.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentDataSource.kt$com.stathis.data.remote.datasource.DepartmentDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentDataSourceImpl.kt$com.stathis.data.remote.datasource.DepartmentDataSourceImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentResponseDto.kt$com.stathis.data.remote.model.DepartmentResponseDto.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentResponseMapper.kt$com.stathis.data.remote.mapper.DepartmentResponseMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:EnhancedBaseMapper.kt$com.stathis.data.remote.mapper.EnhancedBaseMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.stathis.data.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:LessonDto.kt$com.stathis.data.remote.model.LessonDto.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkRepository.kt$com.stathis.data.repository.NetworkRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkRepositoryImpl.kt$com.stathis.data.repository.NetworkRepositoryImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:ResearchMapper.kt$com.stathis.data.remote.mapper.ResearchMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:ResearchRepository.kt$com.stathis.data.repository.ResearchRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:ResearchRepositoryImpl.kt$com.stathis.data.repository.ResearchRepositoryImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:ResearchResponseDto.kt$com.stathis.data.remote.model.ResearchResponseDto.kt</ID>
+    <ID>NewLineAtEndOfFile:ScrapeExt.kt$com.stathis.data.util.ScrapeExt.kt</ID>
+    <ID>NewLineAtEndOfFile:StudentsMapper.kt$com.stathis.data.remote.mapper.StudentsMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:StudentsResponseDto.kt$com.stathis.data.remote.model.students.StudentsResponseDto.kt</ID>
+    <ID>NewLineAtEndOfFile:SyllabusRepository.kt$com.stathis.data.repository.SyllabusRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:SyllabusRepositoryImpl.kt$com.stathis.data.repository.SyllabusRepositoryImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:SyllabusRuleResponseDto.kt$com.stathis.data.remote.model.syllabus.SyllabusRuleResponseDto.kt</ID>
+    <ID>NewLineAtEndOfFile:SyllabusRulesMapper.kt$com.stathis.data.remote.mapper.syllabus.SyllabusRulesMapper.kt</ID>
+    <ID>SwallowedException:NetworkExt.kt$e: Exception</ID>
+    <ID>SwallowedException:NetworkRepositoryImpl.kt$NetworkRepositoryImpl$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:DepartmentDataSourceImpl.kt$DepartmentDataSourceImpl$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:NetworkExt.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:NetworkRepositoryImpl.kt$NetworkRepositoryImpl$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:StudentsRepositoryImpl.kt$StudentsRepositoryImpl$e: Exception</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>
