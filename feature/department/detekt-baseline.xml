@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>EmptyFunctionBlock:DepartmentFragment.kt$DepartmentFragment${}</ID>
+    <ID>EmptyFunctionBlock:ResearchFragment.kt$ResearchFragment${}</ID>
+    <ID>MagicNumber:ResearchAdapter.kt$ResearchViewHolder$20</ID>
+    <ID>MagicNumber:ResearchAdapter.kt$ResearchViewHolder$30</ID>
+    <ID>NewLineAtEndOfFile:DepMembersAdapter.kt$com.stathis.department.department.adapter.DepMembersAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentAdapter.kt$com.stathis.department.department.adapter.DepartmentAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentFragment.kt$com.stathis.department.department.DepartmentFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentViewModel.kt$com.stathis.department.department.DepartmentViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.stathis.department.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:FieldOfStudyAdapter.kt$com.stathis.department.department.adapter.FieldOfStudyAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:ProgrammeAdapter.kt$com.stathis.department.department.adapter.ProgrammeAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:ResearchAdapter.kt$com.stathis.department.research.recycler.ResearchAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:ResearchChildAdapter.kt$com.stathis.department.research.recycler.ResearchChildAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:ResearchFragment.kt$com.stathis.department.research.ResearchFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:SocialItemAdapter.kt$com.stathis.department.department.adapter.SocialItemAdapter.kt</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

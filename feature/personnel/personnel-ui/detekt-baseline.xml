@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>FunctionNaming:DepDetailsScreen.kt$@Composable internal fun DepDetailsScreen(state: DepDetailsView.State, onAction: (DepDetailsView.UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:DepDetailsScreen.kt$@Composable private fun DepDetailsContent( paddingValues: PaddingValues, depMember: DepMember, onAction: (DepDetailsView.UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:DepDetailsScreen.kt$@PreviewLightDark @Composable private fun DepDetailsScreenPreview()</ID>
+    <ID>FunctionNaming:PersonBottomSheet.kt$@Composable internal fun PersonBottomSheet(person: Person?, onClick: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:PersonBottomSheet.kt$@Composable private fun ColumnScope.BasicInfo(person: Person)</ID>
+    <ID>FunctionNaming:PersonBottomSheet.kt$@PreviewLightDark @Composable private fun PersonBottomSheetPreview()</ID>
+    <ID>FunctionNaming:PersonCard.kt$@Composable internal fun PersonCard(person: Person, onClick: (Person) -&gt; Unit)</ID>
+    <ID>FunctionNaming:PersonCard.kt$@Composable private fun RowScope.PersonDetails(fullName: String, jobTitle: String, email: String)</ID>
+    <ID>FunctionNaming:PersonCard.kt$@Preview @Composable private fun PersonCardPreview()</ID>
+    <ID>FunctionNaming:PersonalOverviewCard.kt$@Composable internal fun PersonalOverviewCard( imageUrl: String, fullName: String, jobTitle: String, description: String )</ID>
+    <ID>FunctionNaming:PersonalOverviewCard.kt$@PreviewLightDark @Composable private fun PersonalOverviewCardPreview()</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@Composable fun PersonnelLoadingScreen(paddingValues: PaddingValues)</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@Composable private fun EmptyPersonnelInfoBox(paddingValues: PaddingValues)</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@Composable private fun ErrorScreen(paddingValues: PaddingValues, onClick: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@Composable private fun PersonnelContent( paddingValues: PaddingValues, personnel: List&lt;Person&gt;, onClick: (Person) -&gt; Unit )</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@Composable private fun PersonnelList( paddingValues: PaddingValues, personnel: List&lt;Person&gt;, onClick: (Person) -&gt; Unit )</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable internal fun PersonnelScreen(state: State, onAction: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@Preview @Composable private fun EmptyQueryPreview()</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@Preview @Composable private fun ErrorScreenPreview()</ID>
+    <ID>FunctionNaming:PersonnelScreen.kt$@Preview @Composable private fun PersonCardPreview()</ID>
+    <ID>FunctionNaming:SkillCard.kt$@Composable internal fun SkillCard( modifier: Modifier = Modifier, name: String, percent: Int )</ID>
+    <ID>FunctionNaming:SkillCard.kt$@PreviewLightDark @Composable private fun SkillCardPreview()</ID>
+    <ID>MagicNumber:DepDetailsScreen.kt$15</ID>
+    <ID>MagicNumber:DepDetailsScreen.kt$3</ID>
+    <ID>MagicNumber:PersonalOverviewCard.kt$15</ID>
+    <ID>MagicNumber:PersonnelScreen.kt$10</ID>
+    <ID>MaxLineLength:DepDetailsScreen.kt$image = "https://firebasestorage.googleapis.com/v0/b/elmepa-univ-app.appspot.com/o/professors%2Fgvasileiadis.png?alt=media&amp;token=b3518f7c-d952-4284-84f8-75d5f719e14f"</ID>
+    <ID>MaxLineLength:PersonBottomSheet.kt$image = "https://firebasestorage.googleapis.com/v0/b/elmepa-univ-app.appspot.com/o/professors%2Fgvasileiadis.png?alt=media&amp;token=b3518f7c-d952-4284-84f8-75d5f719e14f"</ID>
+    <ID>MaxLineLength:PersonCard.kt$image = "https://firebasestorage.googleapis.com/v0/b/elmepa-univ-app.appspot.com/o/professors%2Fgvasileiadis.png?alt=media&amp;token=b3518f7c-d952-4284-84f8-75d5f719e14f"</ID>
+    <ID>MaxLineLength:PersonalOverviewCard.kt$imageUrl = "https://firebasestorage.googleapis.com/v0/b/elmepa-univ-app.appspot.com/o/professors%2Fgvasileiadis.png?alt=media&amp;token=b3518f7c-d952-4284-84f8-75d5f719e14f"</ID>
+    <ID>MaxLineLength:PersonnelScreen.kt$image = "https://firebasestorage.googleapis.com/v0/b/elmepa-univ-app.appspot.com/o/professors%2Fgvasileiadis.png?alt=media&amp;token=b3518f7c-d952-4284-84f8-75d5f719e14f"</ID>
+    <ID>UnusedPrivateMember:DepDetailsScreen.kt$@PreviewLightDark @Composable private fun DepDetailsScreenPreview()</ID>
+    <ID>UnusedPrivateMember:PersonBottomSheet.kt$@PreviewLightDark @Composable private fun PersonBottomSheetPreview()</ID>
+    <ID>UnusedPrivateMember:PersonCard.kt$@Preview @Composable private fun PersonCardPreview()</ID>
+    <ID>UnusedPrivateMember:PersonalOverviewCard.kt$@PreviewLightDark @Composable private fun PersonalOverviewCardPreview()</ID>
+    <ID>UnusedPrivateMember:PersonnelScreen.kt$@Preview @Composable private fun EmptyQueryPreview()</ID>
+    <ID>UnusedPrivateMember:PersonnelScreen.kt$@Preview @Composable private fun ErrorScreenPreview()</ID>
+    <ID>UnusedPrivateMember:PersonnelScreen.kt$@Preview @Composable private fun PersonCardPreview()</ID>
+    <ID>UnusedPrivateMember:SkillCard.kt$@PreviewLightDark @Composable private fun SkillCardPreview()</ID>
+  </CurrentIssues>
+</SmellBaseline>

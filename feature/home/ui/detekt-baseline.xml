@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>FunctionNaming:DashboardOption.kt$@Composable internal fun DashboardOption( imageRes: Int, title: String, onAction: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:DashboardOption.kt$@Preview(showBackground = false) @Composable internal fun DashboardOptionPreview()</ID>
+    <ID>FunctionNaming:HomeScreen.kt$@Composable internal fun HomeScreen( state: HomeView.State, onAction: (HomeView.UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:HomeScreen.kt$@Composable private fun ContentState( paddingValues: PaddingValues, data: List&lt;DashboardCard&gt;, onAction: (HomeView.UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:UniversityLogoCard.kt$@Composable internal fun UniversityLogoCard( modifier: Modifier = Modifier, imageRes: Int, title: String, subtitle: String )</ID>
+    <ID>FunctionNaming:UniversityLogoCard.kt$@Preview @Composable private fun UniversityLogoCardPreview()</ID>
+    <ID>UnusedPrivateMember:UniversityLogoCard.kt$@Preview @Composable private fun UniversityLogoCardPreview()</ID>
+  </CurrentIssues>
+</SmellBaseline>

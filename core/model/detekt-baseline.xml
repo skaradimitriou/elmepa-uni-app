@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>NewLineAtEndOfFile:DepMember.kt$com.stathis.model.department.DepMember.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentPersonnelItem.kt$com.stathis.model.department.DepartmentPersonnelItem.kt</ID>
+    <ID>NewLineAtEndOfFile:DepartmentProgrammeItem.kt$com.stathis.model.department.DepartmentProgrammeItem.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.stathis.model.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:FieldOfStudyParent.kt$com.stathis.model.department.FieldOfStudyParent.kt</ID>
+    <ID>NewLineAtEndOfFile:LessonHeader.kt$com.stathis.model.syllabus.LessonHeader.kt</ID>
+    <ID>NewLineAtEndOfFile:NavigationAction.kt$com.stathis.model.navigation.NavigationAction.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkResult.kt$com.stathis.model.network.NetworkResult.kt</ID>
+    <ID>NewLineAtEndOfFile:OrientationType.kt$com.stathis.model.syllabus.OrientationType.kt</ID>
+    <ID>NewLineAtEndOfFile:Programme.kt$com.stathis.model.syllabus.Programme.kt</ID>
+    <ID>NewLineAtEndOfFile:ProgrammeType.kt$com.stathis.model.syllabus.ProgrammeType.kt</ID>
+    <ID>NewLineAtEndOfFile:Semester.kt$com.stathis.model.syllabus.Semester.kt</ID>
+    <ID>NewLineAtEndOfFile:ShimmerGenerator.kt$com.stathis.model.util.ShimmerGenerator.kt</ID>
+    <ID>NewLineAtEndOfFile:ShimmerItem.kt$com.stathis.model.general.ShimmerItem.kt</ID>
+    <ID>NewLineAtEndOfFile:StudentLink.kt$com.stathis.model.students.StudentLink.kt</ID>
+    <ID>NewLineAtEndOfFile:StudentLinkParent.kt$com.stathis.model.students.StudentLinkParent.kt</ID>
+    <ID>NewLineAtEndOfFile:SyllabusRule.kt$com.stathis.model.syllabus.SyllabusRule.kt</ID>
+    <ID>NewLineAtEndOfFile:UiModel.kt$com.stathis.model.UiModel.kt</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

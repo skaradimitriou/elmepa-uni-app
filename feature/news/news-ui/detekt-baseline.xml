@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>FunctionNaming:AnnouncementCard.kt$@Composable internal fun AnnouncementCard( modifier: Modifier = Modifier, imageUrl: String, datePublished: String, title: String, subtitle: String, onClick: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:AnnouncementCard.kt$@PreviewLightDark @Composable private fun AnnouncementCardPreview()</ID>
+    <ID>FunctionNaming:AnnouncementsScreen.kt$@Composable internal fun AnnouncementsScreen( announcements: LazyPagingItems&lt;Announcement&gt;, onAction: (UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:AnnouncementsScreen.kt$@Composable private fun AnnouncementsContent( paddingValues: PaddingValues, announcements: LazyPagingItems&lt;Announcement&gt;, onAction: (UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:AnnouncementsScreen.kt$@Composable private fun ShimmerLoading()</ID>
+    <ID>FunctionNaming:AnnouncementsScreen.kt$@PreviewLightDark @Composable private fun AnnouncementsScreenPreview()</ID>
+    <ID>FunctionNaming:EventsScreen.kt$@Composable internal fun EventsScreen( events: LazyPagingItems&lt;Event&gt;, onAction: (UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:EventsScreen.kt$@Composable private fun EventsContent( paddingValues: PaddingValues, events: LazyPagingItems&lt;Event&gt;, onAction: (UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:EventsScreen.kt$@Composable private fun ShimmerLoading()</ID>
+    <ID>FunctionNaming:EventsScreen.kt$@PreviewLightDark @Composable private fun EventsScreenPreview()</ID>
+    <ID>FunctionNaming:PostDetailsScreen.kt$@Composable internal fun PostDetailsScreen(state: State, onAction: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:PostDetailsScreen.kt$@Composable private fun PostDetailsContent( paddingValues: PaddingValues, title: String, image: String, pubDate: String, htmlToLoad: String )</ID>
+    <ID>FunctionNaming:PostDetailsScreen.kt$@Composable private fun PostDetailsLoading(paddingValues: PaddingValues)</ID>
+    <ID>FunctionNaming:PostDetailsScreen.kt$@Composable private fun PostDetailsToolbar(onAction: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:PostDetailsScreen.kt$@Composable private fun WebView(htmlToLoad: String)</ID>
+    <ID>LongParameterList:AnnouncementCard.kt$( modifier: Modifier = Modifier, imageUrl: String, datePublished: String, title: String, subtitle: String, onClick: () -&gt; Unit )</ID>
+    <ID>MagicNumber:AnnouncementCard.kt$15</ID>
+    <ID>MagicNumber:AnnouncementCard.kt$4</ID>
+    <ID>MagicNumber:AnnouncementsScreen.kt$10</ID>
+    <ID>MagicNumber:AnnouncementsScreen.kt$8</ID>
+    <ID>MagicNumber:EventsScreen.kt$10</ID>
+    <ID>MagicNumber:EventsScreen.kt$8</ID>
+    <ID>MagicNumber:PostDetailsScreen.kt$15</ID>
+    <ID>MaxLineLength:PostDetailsViewModel.kt$PostDetailsViewModel$private</ID>
+    <ID>UnusedPrivateMember:AnnouncementCard.kt$@PreviewLightDark @Composable private fun AnnouncementCardPreview()</ID>
+    <ID>UnusedPrivateMember:AnnouncementsScreen.kt$@PreviewLightDark @Composable private fun AnnouncementsScreenPreview()</ID>
+    <ID>UnusedPrivateMember:EventsScreen.kt$@PreviewLightDark @Composable private fun EventsScreenPreview()</ID>
+  </CurrentIssues>
+</SmellBaseline>

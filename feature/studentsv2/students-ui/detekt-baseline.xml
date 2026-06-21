@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>FunctionNaming:AcademicScheduleScreen.kt$@Composable internal fun AcademicScheduleScreen(state: State, onAction: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:AcademicScheduleScreen.kt$@Composable private fun AcademicScheduleContent( modifier: Modifier, data: List&lt;UiModel&gt; )</ID>
+    <ID>FunctionNaming:AcademicScheduleScreen.kt$@Composable private fun AcademicScheduleLoading(modifier: Modifier)</ID>
+  </CurrentIssues>
+</SmellBaseline>

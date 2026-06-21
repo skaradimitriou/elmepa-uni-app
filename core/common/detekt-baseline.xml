@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>MagicNumber:NetworkManagerImpl.kt$NetworkManagerImpl$300</ID>
+    <ID>MagicNumber:ViewExt.kt$30</ID>
+    <ID>MagicNumber:ViewExt.kt$&lt;no name provided&gt;$2500</ID>
+    <ID>NewLineAtEndOfFile:ActivityExt.kt$com.stathis.common.util.ActivityExt.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseActivity.kt$com.stathis.common.base.BaseActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseDiffUtil.kt$com.stathis.common.base.BaseDiffUtil.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseFragment.kt$com.stathis.common.base.BaseFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseUseCase.kt$com.stathis.common.base.BaseUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseViewHolder.kt$com.stathis.common.base.BaseViewHolder.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseViewModel.kt$com.stathis.common.base.BaseViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:BundleExt.kt$com.stathis.common.util.BundleExt.kt</ID>
+    <ID>NewLineAtEndOfFile:CarouselAdapter.kt$com.stathis.common.adapters.CarouselAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:Consts.kt$com.stathis.common.util.Consts.kt</ID>
+    <ID>NewLineAtEndOfFile:CoreModule.kt$com.stathis.common.di.CoreModule.kt</ID>
+    <ID>NewLineAtEndOfFile:CustomItemDecoration.kt$com.stathis.common.decorations.CustomItemDecoration.kt</ID>
+    <ID>NewLineAtEndOfFile:DispatchersModule.kt$com.stathis.common.di.DispatchersModule.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.stathis.common.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:MainSharedViewModel.kt$com.stathis.common.MainSharedViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:MainViewModel.kt$com.stathis.common.MainViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkManager.kt$com.stathis.common.util.networkmanager.NetworkManager.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkManagerImpl.kt$com.stathis.common.util.networkmanager.NetworkManagerImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkStatus.kt$com.stathis.common.util.networkmanager.NetworkStatus.kt</ID>
+    <ID>SwallowedException:FragmentExt.kt$ex: ActivityNotFoundException</ID>
+    <ID>SwallowedException:MapperExt.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:MapperExt.kt$e: Exception</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

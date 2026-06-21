@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>FunctionNaming:ExpandableProgrammeCard.kt$@Composable fun SemesterItem(modifier: Modifier, semester: String, onSemesterClick: (String) -&gt; Unit)</ID>
+    <ID>FunctionNaming:ExpandableProgrammeCard.kt$@Composable internal fun ExpandableProgrammeCard( modifier: Modifier = Modifier, programme: String, isExpanded: Boolean, semesters: List&lt;String&gt;, onSemesterClick: (String) -&gt; Unit )</ID>
+    <ID>FunctionNaming:ExpandableProgrammeCard.kt$@Composable private fun ProgrammeWithIcon(programme: String, onClick: () -&gt; Unit, rotationAngle: Float)</ID>
+    <ID>FunctionNaming:ExpandableProgrammeCard.kt$@Composable private fun SemesterList(semesters: List&lt;String&gt;, onSemesterClick: (String) -&gt; Unit)</ID>
+    <ID>FunctionNaming:ExpandableProgrammeCard.kt$@Preview @Composable private fun ExpandableProgrammeCardPreview()</ID>
+    <ID>FunctionNaming:LessonDetailsScreen.kt$@Composable private fun BasicLessonDetails(lessonName: String, commitment: String, credits: String)</ID>
+    <ID>FunctionNaming:LessonDetailsScreen.kt$@Composable private fun LessonDetailsContent( paddingValues: PaddingValues, lessonName: String, commitment: String, credits: String, lessonDescription: AnnotatedString )</ID>
+    <ID>FunctionNaming:LessonDetailsScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable internal fun LessonDetailsScreen(state: LessonDetailsView.State, onAction: (LessonDetailsView.UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:LessonDetailsScreen.kt$@PreviewLightDark @Composable private fun LessonDetailsScreenPreview()</ID>
+    <ID>FunctionNaming:LessonsScreen.kt$@Composable internal fun LessonsScreen(state: LessonsView.State, onAction: (LessonsView.UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:LessonsScreen.kt$@Composable private fun LessonScreenModal(onDismiss: () -&gt; Unit)</ID>
+    <ID>FunctionNaming:LessonsScreen.kt$@Composable private fun LessonsScreenContent( paddingValues: PaddingValues, informativeText: String, lessons: ImmutableList&lt;Lesson&gt;, onAction: (LessonsView.UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:LessonsScreen.kt$@Composable private fun LessonsToolbar( title: String, onBackActionClick: () -&gt; Unit, onInfoIconClick: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:LessonsScreen.kt$@Composable private fun ShimmerLoading(paddingValues: PaddingValues)</ID>
+    <ID>FunctionNaming:LessonsScreen.kt$@PreviewLightDark @Composable private fun UserProfilePreview(@PreviewParameter(LessonsScreenProvider::class) state: LessonsView.State)</ID>
+    <ID>FunctionNaming:ProgrammesScreen.kt$@Composable internal fun ProgrammesScreen(state: State, onAction: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:ProgrammesScreen.kt$@Composable private fun ProgrammesScreenContent( selectedTabPosition: Int? = null, programmes: List&lt;Programme&gt;, paddingValues: PaddingValues, onAction: (UIAction) -&gt; Unit )</ID>
+    <ID>FunctionNaming:ProgrammesScreen.kt$@Composable private fun TabRow(selectedTabPosition: Int? = null, onAction: (UIAction) -&gt; Unit)</ID>
+    <ID>FunctionNaming:ProgrammesScreen.kt$@PreviewLightDark @Composable private fun ProgrammesScreenPreview()</ID>
+    <ID>FunctionNaming:RibbonLessonCard.kt$@Composable internal fun RibbonLessonCard( modifier: Modifier = Modifier, lessonName: String, @ColorRes color: Color, onClick: () -&gt; Unit )</ID>
+    <ID>FunctionNaming:RibbonLessonCard.kt$@PreviewLightDark @Composable private fun RibbonLessonCardPreview()</ID>
+    <ID>MagicNumber:LessonDetailsScreen.kt$30</ID>
+    <ID>MagicNumber:LessonsScreen.kt$LessonsScreenProvider$5</ID>
+    <ID>MagicNumber:ProgrammesScreen.kt$3</ID>
+    <ID>MaxLineLength:LessonListFragment.kt$LessonListFragment$val orientation = arguments?.getSerializableFromBundle&lt;OrientationType&gt;(ORIENTATION) ?: OrientationType.UNDEFINED</ID>
+    <ID>UnusedPrivateMember:ExpandableProgrammeCard.kt$@Preview @Composable private fun ExpandableProgrammeCardPreview()</ID>
+    <ID>UnusedPrivateMember:LessonDetailsScreen.kt$@PreviewLightDark @Composable private fun LessonDetailsScreenPreview()</ID>
+    <ID>UnusedPrivateMember:LessonsScreen.kt$@PreviewLightDark @Composable private fun UserProfilePreview(@PreviewParameter(LessonsScreenProvider::class) state: LessonsView.State)</ID>
+    <ID>UnusedPrivateMember:ProgrammesScreen.kt$@PreviewLightDark @Composable private fun ProgrammesScreenPreview()</ID>
+    <ID>UnusedPrivateMember:RibbonLessonCard.kt$@PreviewLightDark @Composable private fun RibbonLessonCardPreview()</ID>
+  </CurrentIssues>
+</SmellBaseline>

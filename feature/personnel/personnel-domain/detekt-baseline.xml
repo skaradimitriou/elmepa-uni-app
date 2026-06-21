@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>LongParameterList:Person.kt$Person$( val id: UUID = UUID.randomUUID(), val fullName: String, val description: String, val image: String, val email: String, val gender: Gender, val vocative: String )</ID>
+  </CurrentIssues>
+</SmellBaseline>
