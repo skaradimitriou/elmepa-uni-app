@@ -29,7 +29,7 @@ timber = "5.0.1"
 #Swipe to refresh
 swipeToRefresh = "1.2.0"
 #Google Services
-googleServicesVersion = "4.4.4"
+googleServicesVersion = "4.5.0"
 #Firebase Crashlytics
 firebaseCrashlytics = "20.0.6"
 firebaseCrashlyticsGradle = "3.0.7"
