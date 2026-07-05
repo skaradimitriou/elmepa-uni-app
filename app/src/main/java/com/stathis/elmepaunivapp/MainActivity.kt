@@ -54,7 +54,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                 R.id.announcementsFragment,
                 R.id.eventsFragment,
                 R.id.postDetailsFragment,
-                R.id.academicScheduleFragment
+                R.id.academicScheduleFragment,
+                R.id.webViewFragment
             ).contains(destination.id)
 
             binding.toolbar.visibility = if (shouldHideToolbar) {

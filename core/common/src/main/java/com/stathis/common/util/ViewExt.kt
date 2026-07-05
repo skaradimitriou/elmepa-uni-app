@@ -1,9 +1,6 @@
 package com.stathis.common.util
 
 import android.os.Handler
-import android.view.MenuItem
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -36,39 +33,10 @@ fun RecyclerView.removeAllItemDecorations() {
     }
 }
 
-fun WebView.enableJS() = apply { settings.javaScriptEnabled = true }
-
-fun WebView.onPageLoaded(callback: () -> Unit) {
-    webViewClient = object : WebViewClient() {
-        override fun onPageCommitVisible(view: WebView?, url: String?) {
-            callback.invoke()
-        }
-    }
-}
-
-fun MenuItem.respondToQuery(queryHint: String, callback: (String) -> Unit) {
-    val searchView = actionView as androidx.appcompat.widget.SearchView
-    searchView.queryHint = queryHint
-
-    searchView.setOnQueryTextListener(object :
-        androidx.appcompat.widget.SearchView.OnQueryTextListener {
-        override fun onQueryTextSubmit(query: String?): Boolean {
-            callback.invoke(query.toNotNull())
-            return false
-        }
-
-        override fun onQueryTextChange(query: String?): Boolean {
-            callback.invoke(query.toNotNull())
-            return false
-        }
-    })
-}
-
 /*
  *  This is a temp solution to include a self sliding viewpager on top of Students/Dept Screen
  *  Will be refactored into a more secure implementation later on, because handler is deprecated.
  */
-
 @BindingAdapter("setScrollableViewPager")
 fun setScrollableViewPager(viewPager: ViewPager2, adapter: CarouselAdapter) {
     val sliderHandler = Handler()
