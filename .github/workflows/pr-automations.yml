@@ -20,7 +20,7 @@ jobs:
 
       ## Apply labels based on branch name
       - name: Apply labels based on branch name
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
