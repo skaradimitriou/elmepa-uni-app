@@ -27,6 +27,8 @@ import com.elmepa.designsystem.theme.Petrol
 import com.elmepa.designsystem.theme.Petrol35Opacity
 import com.elmepa.designsystem.theme.spacing
 
+private const val DUMMY_TITLE_WORDS: Int = 5
+private const val DUMMY_SUBTITLE_WORDS: Int = 5
 private const val MAX_DESCRIPTION_LINES: Int = 3
 
 @Composable
@@ -101,8 +103,8 @@ private fun ListItemWithIconTitleAndSubtitlePreview() {
     ElmepaAppTheme {
         ListItemWithIconTitleAndSubtitle(
             iconRes = com.stathis.common.R.drawable.application_forms,
-            title = LoremIpsum(5).values.joinToString(),
-            subtitle = LoremIpsum(16).values.joinToString(),
+            title = LoremIpsum(DUMMY_TITLE_WORDS).values.joinToString(),
+            subtitle = LoremIpsum(DUMMY_SUBTITLE_WORDS).values.joinToString(),
             onAction = {}
         )
     }
