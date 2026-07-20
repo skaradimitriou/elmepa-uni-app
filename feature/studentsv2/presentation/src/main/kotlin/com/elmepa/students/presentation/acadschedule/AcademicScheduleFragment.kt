@@ -1,4 +1,4 @@
-package com.elmepa.students.ui.acadschedule
+package com.elmepa.students.presentation.acadschedule
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.elmepa.designsystem.theme.ElmepaAppTheme
-import com.elmepa.students.ui.acadschedule.AcademicScheduleView.Effect
+import com.elmepa.students.presentation.acadschedule.AcademicScheduleView.Effect
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

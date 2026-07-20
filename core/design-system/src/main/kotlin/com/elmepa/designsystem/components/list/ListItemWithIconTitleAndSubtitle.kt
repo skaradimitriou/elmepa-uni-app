@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import com.elmepa.designsystem.theme.ElmepaAppTheme
@@ -97,10 +98,10 @@ private fun ListItemText(title: String, subtitle: String) {
     }
 }
 
-@PreviewLightDark
+@Preview
 @Composable
 private fun ListItemWithIconTitleAndSubtitlePreview() {
-    ElmepaAppTheme {
+    ElmepaAppTheme(darkTheme = true) {
         ListItemWithIconTitleAndSubtitle(
             iconRes = com.stathis.common.R.drawable.application_forms,
             title = LoremIpsum(DUMMY_TITLE_WORDS).values.joinToString(),

@@ -1,4 +1,4 @@
-package com.elmepa.students.ui.acadschedule
+package com.elmepa.students.presentation.acadschedule
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -21,8 +21,8 @@ import com.elmepa.designsystem.components.cards.CardWithTitleAndSubtitle
 import com.elmepa.designsystem.components.shimmer.ShimmerEffect
 import com.elmepa.designsystem.components.topbar.TopBarWithTitleAndBackAction
 import com.elmepa.designsystem.theme.spacing
-import com.elmepa.students.ui.acadschedule.AcademicScheduleView.State
-import com.elmepa.students.ui.acadschedule.AcademicScheduleView.UIAction
+import com.elmepa.students.presentation.acadschedule.AcademicScheduleView.State
+import com.elmepa.students.presentation.acadschedule.AcademicScheduleView.UIAction
 import com.stathis.common.R
 import com.stathis.model.UiModel
 import com.stathis.model.students.AcademicScheduleEntry

@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.elmepa.students.ui"
+    namespace = "com.elmepa.students.presentation"
 }
 
 dependencies {

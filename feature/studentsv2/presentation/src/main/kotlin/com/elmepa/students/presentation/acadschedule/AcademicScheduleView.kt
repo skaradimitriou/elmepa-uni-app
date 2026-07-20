@@ -1,4 +1,4 @@
-package com.elmepa.students.ui.acadschedule
+package com.elmepa.students.presentation.acadschedule
 
 import com.stathis.model.UiModel
 
