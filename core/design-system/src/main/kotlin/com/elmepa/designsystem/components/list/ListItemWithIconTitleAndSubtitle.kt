@@ -86,7 +86,7 @@ private fun ListItemText(title: String, subtitle: String) {
             style = MaterialTheme.typography.titleMedium,
             color = MaterialTheme.colorScheme.onSurface
         )
-        Spacer(Modifier.height(MaterialTheme.spacing.medium))
+        Spacer(Modifier.height(MaterialTheme.spacing.small))
         Text(
             modifier = Modifier.fillMaxWidth(),
             text = subtitle,
