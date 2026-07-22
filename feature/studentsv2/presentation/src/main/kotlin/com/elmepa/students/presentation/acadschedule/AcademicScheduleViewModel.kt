@@ -1,10 +1,10 @@
-package com.elmepa.students.ui.acadschedule
+package com.elmepa.students.presentation.acadschedule
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import com.elmepa.students.ui.acadschedule.AcademicScheduleView.Effect
-import com.elmepa.students.ui.acadschedule.AcademicScheduleView.State
-import com.elmepa.students.ui.acadschedule.AcademicScheduleView.UIAction
+import com.elmepa.students.presentation.acadschedule.AcademicScheduleView.Effect
+import com.elmepa.students.presentation.acadschedule.AcademicScheduleView.State
+import com.elmepa.students.presentation.acadschedule.AcademicScheduleView.UIAction
 import com.stathis.common.base.BaseViewModel
 import com.stathis.domain.students.FetchAcademicScheduleUseCase
 import com.stathis.model.UiModel

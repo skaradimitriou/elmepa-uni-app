@@ -50,7 +50,7 @@ include(":feature:personnel:personnel-ui")
 include(":feature:syllabus:syllabus-ui")
 
 //Students
-include(":feature:studentsv2:students-ui")
+include(":feature:studentsv2:presentation")
 
 // News
 include(":feature:news:news-data")

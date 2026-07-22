@@ -93,7 +93,7 @@
         android:label="ApplicationFormsFragment" />
     <fragment
         android:id="@+id/academicScheduleFragment"
-        android:name="com.elmepa.students.ui.acadschedule.AcademicScheduleFragment"
+        android:name="com.elmepa.students.presentation.acadschedule.AcademicScheduleFragment"
         android:label="AcademicScheduleFragment"
         tools:layout="@layout/fragment_academic_schedule" />
 
