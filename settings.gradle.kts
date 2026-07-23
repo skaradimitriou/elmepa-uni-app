@@ -51,6 +51,8 @@ include(":feature:syllabus:syllabus-ui")
 
 //Students
 include(":feature:studentsv2:presentation")
+include(":feature:studentsv2:data")
+include(":feature:studentsv2:domain")
 
 // News
 include(":feature:news:news-data")

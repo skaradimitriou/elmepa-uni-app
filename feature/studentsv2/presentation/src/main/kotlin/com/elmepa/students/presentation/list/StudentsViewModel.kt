@@ -5,8 +5,11 @@ import androidx.lifecycle.viewModelScope
 import com.elmepa.students.presentation.list.StudentsView.Effect
 import com.elmepa.students.presentation.list.StudentsView.State
 import com.elmepa.students.presentation.list.StudentsView.UIAction
+import com.stathis.domain.model.DomainResult
+import com.students.domain.model.StudentSection
+import com.students.domain.repository.StudentsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -14,51 +17,57 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-private const val FAKE_SCREEN_LOADING: Long = 1000L
-
 @HiltViewModel
 internal class StudentsViewModel @Inject constructor(
-    // will be populated later on
+    private val studentsRepository: StudentsRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow<State>(State.Loading)
 
     val state: StateFlow<State> = _state
         .asStateFlow()
-        .onStart { getDummyData() }
+        .onStart { getScreenInformation() }
         .stateIn(viewModelScope, SharingStarted.Lazily, State.Loading)
 
     private val _effect = MutableSharedFlow<Effect>()
     val effect: SharedFlow<Effect> = _effect.asSharedFlow()
 
-    private fun getDummyData() {
+    private fun getScreenInformation() {
         _state.update { State.Loading }
-        viewModelScope.launch {
-            delay(FAKE_SCREEN_LOADING)
-            _state.update {
-                State.Content(
-                    // to be populated later on
-                    items = listOf()
-                )
-            }
+        viewModelScope.launch(Dispatchers.IO) {
+            studentsRepository.getStudentScreenInfo()
+                .onEach { result ->
+                    val uiState = result.toUiState()
+                    _state.update { uiState }
+                }
+                .collect()
+
         }
     }
 
     fun onAction(action: UIAction) {
         when (action) {
             UIAction.Back -> {
-                viewModelScope.launch {
+                viewModelScope.launch(Dispatchers.Main) {
                     _effect.emit(Effect.Back)
                 }
             }
 
-            UIAction.Retry -> getDummyData()
+            UIAction.Retry -> getScreenInformation()
         }
+    }
+
+    private fun DomainResult<List<StudentSection>>.toUiState() = when (this) {
+        is DomainResult.Loading -> State.Loading
+        is DomainResult.Success -> State.Content(data)
+        is DomainResult.Error -> State.Error
     }
 }

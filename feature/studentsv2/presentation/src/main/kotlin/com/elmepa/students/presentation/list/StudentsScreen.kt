@@ -9,9 +9,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -37,6 +37,8 @@ import com.elmepa.students.presentation.R
 import com.elmepa.students.presentation.list.StudentsView.Effect
 import com.elmepa.students.presentation.list.StudentsView.State
 import com.elmepa.students.presentation.list.StudentsView.UIAction
+import com.students.domain.model.StudentDisplayItem
+import com.students.domain.model.StudentSection
 import com.stathis.common.R as commonRes
 
 private const val SHIMMER_COUNT: Int = 3
@@ -68,9 +70,9 @@ internal fun StudentsScreen() {
                 )
             },
             content = { paddingValues ->
-                when (state) {
+                when (val currentState = state) {
                     State.Loading -> StudentsLoadingScreen(paddingValues)
-                    is State.Content -> StudentsContentScreen(paddingValues)
+                    is State.Content -> StudentsContentScreen(paddingValues, currentState.sections)
                     State.Error -> StudentsErrorScreen(
                         paddingValues = paddingValues,
                         onClick = viewModel::onAction
@@ -114,30 +116,28 @@ private fun StudentsLoadingScreen(paddingValues: PaddingValues = PaddingValues()
 }
 
 @Composable
-private fun StudentsContentScreen(paddingValues: PaddingValues = PaddingValues()) {
-    val scrollState = rememberScrollState()
-
-    Column(
+private fun StudentsContentScreen(paddingValues: PaddingValues = PaddingValues(), sections: List<StudentSection>) {
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(paddingValues)
-            .verticalScroll(scrollState)
+            .padding(paddingValues),
+        contentPadding = PaddingValues(all = MaterialTheme.spacing.small)
     ) {
-        repeat(SHIMMER_COUNT) {
+        items(sections, key = { it.title }) { studentSection ->
             Text(
                 modifier = Modifier.padding(all = MaterialTheme.spacing.small),
-                text = "Header",
+                text = studentSection.title,
                 style = MaterialTheme.typography.titleLarge,
                 color = MaterialTheme.colorScheme.onSurface
             )
 
-            repeat(SHIMMER_COUNT) {
+            studentSection.elements.forEach { element ->
                 ListItemWithIconTitleAndSubtitle(
                     iconRes = commonRes.drawable.book,
-                    title = "Hey there",
-                    subtitle = "subtitle",
+                    title = element.title,
+                    subtitle = element.subtitle,
                     onAction = {
-                        // will be added later on
+                        //TODO will be added later on
                     }
                 )
             }
@@ -181,6 +181,29 @@ private fun StudentsErrorScreen(paddingValues: PaddingValues = PaddingValues(), 
 @Composable
 private fun StudentsScreenPreview() {
     ElmepaAppTheme {
-        StudentsContentScreen(paddingValues = PaddingValues())
+        val sections = listOf(
+            StudentSection(
+                title = "This is a title",
+                elements = listOf(
+                    StudentDisplayItem(
+                        title = "This is a title",
+                        subtitle = "This is a subtitle",
+                        action = "action"
+                    ),
+                    StudentDisplayItem(
+                        title = "This is a title",
+                        subtitle = "This is a subtitle",
+                        action = "action"
+                    ),
+                    StudentDisplayItem(
+                        title = "This is a title",
+                        subtitle = "This is a subtitle",
+                        action = "action"
+                    )
+                )
+            )
+        )
+
+        StudentsContentScreen(sections = sections)
     }
 }
