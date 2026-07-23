@@ -29,7 +29,7 @@ internal class StudentsRepositoryImpl @Inject constructor(
 
         val result = response?.let { dto ->
             DomainResult.Success(dto.toDomain())
-        } ?: DomainResult.Error(Throwable())
+        } ?: DomainResult.Error(Throwable(message = "Failed to get data from remote for students"))
 
         emit(result)
     }
