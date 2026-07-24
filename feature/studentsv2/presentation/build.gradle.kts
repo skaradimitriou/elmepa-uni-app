@@ -15,8 +15,9 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:common"))
     implementation(project(":core:design-system"))
-
     implementation(project(":core:domain"))
+
+    implementation(project(":feature:studentsv2:domain"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
