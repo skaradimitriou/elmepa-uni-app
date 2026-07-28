@@ -10,6 +10,7 @@ data class StudentSectionDto(
 )
 
 data class StudentDisplayItemDto(
+    val icon: String? = null,
     val title: String? = null,
     val subtitle: String? = null,
     val action: String? = null

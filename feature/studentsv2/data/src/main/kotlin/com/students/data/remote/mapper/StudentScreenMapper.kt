@@ -1,5 +1,6 @@
 package com.students.data.remote.mapper
 
+import com.stathis.common.R
 import com.stathis.common.util.toListOf
 import com.students.data.remote.dto.StudentsScreenResponseDto
 import com.students.domain.model.StudentDisplayItem
@@ -9,11 +10,19 @@ internal fun StudentsScreenResponseDto.toDomain(): List<StudentSection> = result
     StudentSection(
         title = it.title.orEmpty(),
         elements = it.options.toListOf { element ->
-            StudentDisplayItem(
-                title = element.title.orEmpty(),
-                subtitle = element.subtitle.orEmpty(),
-                action = element.action.orEmpty(),
-            )
+            with(element) {
+                StudentDisplayItem(
+                    icon = icon.toIconResourceId(),
+                    title = title.orEmpty(),
+                    subtitle = subtitle.orEmpty(),
+                    action = action.orEmpty(),
+                )
+            }
         }
     )
+}
+
+private fun String?.toIconResourceId(): Int = when (this) {
+    "calendar" -> R.drawable.ic_info
+    else -> R.drawable.ic_info
 }
