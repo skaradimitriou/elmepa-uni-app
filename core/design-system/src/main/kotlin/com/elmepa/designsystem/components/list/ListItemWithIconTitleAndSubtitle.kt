@@ -50,8 +50,7 @@ fun ListItemWithIconTitleAndSubtitle(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(all = MaterialTheme.spacing.small),
-            verticalAlignment = Alignment.CenterVertically
+                .padding(all = MaterialTheme.spacing.small)
         ) {
             ListItemIcon(iconRes = iconRes)
             ListItemText(title, subtitle)
@@ -66,6 +65,7 @@ fun ListItemIcon(
 ) {
     Column(
         modifier = Modifier
+            .padding(top = MaterialTheme.spacing.small)
             .size(MaterialTheme.spacing.xxLarge)
             .background(color = Petrol35Opacity, shape = CircleShape),
         horizontalAlignment = Alignment.CenterHorizontally,
