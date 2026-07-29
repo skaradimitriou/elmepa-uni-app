@@ -19,9 +19,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.Hyphens
+import androidx.compose.ui.text.style.LineBreak
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.elmepa.designsystem.theme.Petrol
@@ -45,7 +47,12 @@ fun ListItemWithIconTitleAndSubtitle(
             .fillMaxWidth()
             .clickable { onAction() },
     ) {
-        Row {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(all = MaterialTheme.spacing.small),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             ListItemIcon(iconRes = iconRes)
             ListItemText(title, subtitle)
         }
@@ -59,8 +66,6 @@ fun ListItemIcon(
 ) {
     Column(
         modifier = Modifier
-            .padding(top = MaterialTheme.spacing.small)
-            .padding(start = MaterialTheme.spacing.small)
             .size(MaterialTheme.spacing.xxLarge)
             .background(color = Petrol35Opacity, shape = CircleShape),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -78,20 +83,25 @@ fun ListItemIcon(
 @Composable
 private fun ListItemText(title: String, subtitle: String) {
     Column(
-        modifier = Modifier.padding(MaterialTheme.spacing.small)
+        modifier = Modifier.padding(MaterialTheme.spacing.small),
+        verticalArrangement = Arrangement.Center
     ) {
         Text(
             modifier = Modifier.fillMaxWidth(1f),
             text = title,
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.titleSmall,
             color = MaterialTheme.colorScheme.onSurface
         )
-        Spacer(Modifier.height(MaterialTheme.spacing.small))
+        Spacer(Modifier.height(MaterialTheme.spacing.xSmall))
         Text(
             modifier = Modifier.fillMaxWidth(),
             text = subtitle,
-            style = MaterialTheme.typography.bodyMedium,
+            style = MaterialTheme.typography.bodySmall.copy(
+                lineBreak = LineBreak.Paragraph,
+                hyphens = Hyphens.Auto
+            ),
             color = MaterialTheme.colorScheme.onSurface,
+            textAlign = TextAlign.Justify,
             maxLines = MAX_DESCRIPTION_LINES,
             overflow = TextOverflow.Ellipsis
         )
