@@ -65,11 +65,9 @@
         android:name="com.elmepa.support.ui.contact.ContactFragment"
         android:label="ContactFragment" />
 
-    <fragment
-        android:id="@+id/studentsFragment"
-        android:name="com.stathis.students.main.StudentsFragment"
-        android:label="StudentsFragment"
-        tools:layout="@layout/fragment_students" />
+    <composable
+        android:id="@+id/studentsScreen"
+        android:name="com.elmepa.students.presentation.list.StudentsScreenKt\$StudentsScreen" />
 
     <fragment
         android:id="@+id/departmentFragment"
@@ -94,7 +92,6 @@
     <fragment
         android:id="@+id/academicScheduleFragment"
         android:name="com.elmepa.students.presentation.acadschedule.AcademicScheduleFragment"
-        android:label="AcademicScheduleFragment"
-        tools:layout="@layout/fragment_academic_schedule" />
+        android:label="AcademicScheduleFragment" />
 
 </navigation>
