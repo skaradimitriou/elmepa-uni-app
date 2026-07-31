@@ -2,8 +2,11 @@ package com.students.data.remote.mapper
 
 import com.stathis.common.R
 import com.stathis.common.util.toListOf
+import com.students.data.remote.dto.StudentActionDto
 import com.students.data.remote.dto.StudentsScreenResponseDto
+import com.students.domain.model.StudentAction
 import com.students.domain.model.StudentDisplayItem
+import com.students.domain.model.StudentScreen
 import com.students.domain.model.StudentSection
 
 internal fun StudentsScreenResponseDto.toDomain(): List<StudentSection> = results.toListOf {
@@ -11,15 +14,34 @@ internal fun StudentsScreenResponseDto.toDomain(): List<StudentSection> = result
         title = it.title.orEmpty(),
         elements = it.options.toListOf { element ->
             with(element) {
+                val title = title.orEmpty()
                 StudentDisplayItem(
                     icon = icon.toIconResourceId(),
-                    title = title.orEmpty(),
+                    title = title,
                     subtitle = subtitle.orEmpty(),
-                    action = action.orEmpty(),
+                    action = action.toStudentAction(title)
                 )
             }
         }
     )
+}
+
+private fun StudentActionDto?.toStudentAction(title: String): StudentAction = when (this?.type) {
+    "webview" if url != null -> StudentAction.OpenInWebView(title, url)
+    "browser" if url != null -> StudentAction.OpenInBrowser(url)
+
+    "screen" if (screen != null) -> {
+        screen.toStudentScreen()
+            ?.let { type -> StudentAction.OpenInAppScreen(type) }
+            ?: StudentAction.None
+    }
+
+    else -> StudentAction.None
+}
+
+private fun String?.toStudentScreen(): StudentScreen? = when (this) {
+    "academic_schedule" -> StudentScreen.AcademicSchedule
+    else -> null
 }
 
 private fun String?.toIconResourceId(): Int = when (this) {
