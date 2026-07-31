@@ -1,5 +1,6 @@
 package com.students.data.providers
 
+import com.stathis.common.R
 import com.students.data.remote.dto.StudentDisplayItemDto
 import com.students.data.remote.dto.StudentSectionDto
 import com.students.data.remote.dto.StudentsScreenResponseDto
@@ -37,6 +38,7 @@ private fun provideStudentSection(): StudentSection = StudentSection(
         StudentDisplayItem(
             title = "title",
             subtitle = "subtitle",
+            icon = R.drawable.ic_info,
             action = "action"
         )
     )

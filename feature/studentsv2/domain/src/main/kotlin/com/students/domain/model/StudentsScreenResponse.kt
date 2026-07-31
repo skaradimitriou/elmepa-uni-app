@@ -6,6 +6,7 @@ data class StudentSection(
 )
 
 data class StudentDisplayItem(
+    val icon: Int,
     val title: String,
     val subtitle: String,
     val action: String

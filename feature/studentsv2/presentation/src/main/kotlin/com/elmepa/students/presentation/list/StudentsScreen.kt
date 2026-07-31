@@ -133,7 +133,7 @@ private fun StudentsContentScreen(paddingValues: PaddingValues = PaddingValues()
 
             studentSection.elements.forEach { element ->
                 ListItemWithIconTitleAndSubtitle(
-                    iconRes = commonRes.drawable.book,
+                    iconRes = element.icon,
                     title = element.title,
                     subtitle = element.subtitle,
                     onAction = {
@@ -186,16 +186,19 @@ private fun StudentsScreenPreview() {
                 title = "This is a title",
                 elements = listOf(
                     StudentDisplayItem(
+                        icon = commonRes.drawable.book,
                         title = "This is a title",
                         subtitle = "This is a subtitle",
                         action = "action"
                     ),
                     StudentDisplayItem(
+                        icon = commonRes.drawable.book,
                         title = "This is a title",
                         subtitle = "This is a subtitle",
                         action = "action"
                     ),
                     StudentDisplayItem(
+                        icon = commonRes.drawable.book,
                         title = "This is a title",
                         subtitle = "This is a subtitle",
                         action = "action"
