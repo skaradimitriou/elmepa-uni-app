@@ -651,6 +651,11 @@ style:
     excludeImportStatements: true
     excludeCommentStatements: false
     excludeRawStrings: true
+    excludes:
+      - '**/test/**'
+      - '**/androidTest/**'
+      - '**/*Test.kt'
+      - '**/*Spec.kt'
   MayBeConst:
     active: true
   ModifierOrder:
