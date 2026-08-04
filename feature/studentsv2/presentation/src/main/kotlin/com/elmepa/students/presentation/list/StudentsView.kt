@@ -1,6 +1,6 @@
 package com.elmepa.students.presentation.list
 
-import com.students.domain.model.StudentSection
+import com.elmepa.students.domain.model.StudentSection
 
 internal sealed class StudentsView {
 

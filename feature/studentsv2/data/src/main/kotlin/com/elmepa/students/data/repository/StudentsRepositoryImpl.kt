@@ -1,11 +1,11 @@
-package com.students.data.remote.repository
+package com.elmepa.students.data.repository
 
+import com.elmepa.students.data.remote.dto.StudentsScreenResponseDto
+import com.elmepa.students.data.remote.mapper.toDomain
 import com.google.firebase.firestore.FirebaseFirestore
 import com.stathis.domain.model.DomainResult
-import com.students.data.remote.dto.StudentsScreenResponseDto
-import com.students.data.remote.mapper.toDomain
-import com.students.domain.model.StudentSection
-import com.students.domain.repository.StudentsRepository
+import com.elmepa.students.domain.model.StudentSection
+import com.elmepa.students.domain.repository.StudentsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await

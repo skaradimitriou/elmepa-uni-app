@@ -6,8 +6,8 @@ import com.elmepa.students.presentation.list.StudentsView.Effect
 import com.elmepa.students.presentation.list.StudentsView.State
 import com.elmepa.students.presentation.list.StudentsView.UIAction
 import com.stathis.domain.model.DomainResult
-import com.students.domain.model.StudentSection
-import com.students.domain.repository.StudentsRepository
+import com.elmepa.students.domain.model.StudentSection
+import com.elmepa.students.domain.repository.StudentsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow

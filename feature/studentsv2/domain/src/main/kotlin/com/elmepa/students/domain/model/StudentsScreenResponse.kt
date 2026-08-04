@@ -1,4 +1,4 @@
-package com.students.domain.model
+package com.elmepa.students.domain.model
 
 data class StudentSection(
     val title: String,

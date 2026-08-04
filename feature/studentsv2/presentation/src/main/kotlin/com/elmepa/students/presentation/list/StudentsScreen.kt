@@ -46,9 +46,9 @@ import com.stathis.common.util.TITLE
 import com.stathis.common.util.URL
 import com.stathis.common.util.launchBrowser
 import com.stathis.model.navigation.NavigationAction
-import com.students.domain.model.StudentAction
-import com.students.domain.model.StudentDisplayItem
-import com.students.domain.model.StudentSection
+import com.elmepa.students.domain.model.StudentAction
+import com.elmepa.students.domain.model.StudentDisplayItem
+import com.elmepa.students.domain.model.StudentSection
 import com.stathis.common.R as commonRes
 
 private const val SHIMMER_COUNT: Int = 3

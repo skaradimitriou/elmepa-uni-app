@@ -1,4 +1,4 @@
-package com.students.data.remote.dto
+package com.elmepa.students.data.remote.dto
 
 internal data class StudentsScreenResponseDto(
     val results: List<StudentSectionDto>? = null

@@ -1,7 +1,7 @@
-package com.students.data.di
+package com.elmepa.students.data.di
 
-import com.students.data.remote.repository.StudentsRepositoryImpl
-import com.students.domain.repository.StudentsRepository
+import com.elmepa.students.data.repository.StudentsRepositoryImpl
+import com.elmepa.students.domain.repository.StudentsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

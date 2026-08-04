@@ -1,13 +1,13 @@
-package com.students.data.remote.mapper
+package com.elmepa.students.data.remote.mapper
 
 import com.stathis.common.R
 import com.stathis.common.util.toListOf
-import com.students.data.remote.dto.StudentActionDto
-import com.students.data.remote.dto.StudentsScreenResponseDto
-import com.students.domain.model.StudentAction
-import com.students.domain.model.StudentDisplayItem
-import com.students.domain.model.StudentScreen
-import com.students.domain.model.StudentSection
+import com.elmepa.students.data.remote.dto.StudentActionDto
+import com.elmepa.students.data.remote.dto.StudentsScreenResponseDto
+import com.elmepa.students.domain.model.StudentAction
+import com.elmepa.students.domain.model.StudentDisplayItem
+import com.elmepa.students.domain.model.StudentScreen
+import com.elmepa.students.domain.model.StudentSection
 
 internal fun StudentsScreenResponseDto.toDomain(): List<StudentSection> = results.toListOf {
     StudentSection(
