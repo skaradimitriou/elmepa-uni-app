@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.students.domain"
+    namespace = "com.elmepa.students.domain"
 }
 
 dependencies {

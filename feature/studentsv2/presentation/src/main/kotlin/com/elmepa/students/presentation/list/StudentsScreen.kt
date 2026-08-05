@@ -1,5 +1,7 @@
 package com.elmepa.students.presentation.list
 
+import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,6 +23,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -37,8 +40,15 @@ import com.elmepa.students.presentation.R
 import com.elmepa.students.presentation.list.StudentsView.Effect
 import com.elmepa.students.presentation.list.StudentsView.State
 import com.elmepa.students.presentation.list.StudentsView.UIAction
-import com.students.domain.model.StudentDisplayItem
-import com.students.domain.model.StudentSection
+import com.elmepa.students.presentation.list.mapper.toUiAction
+import com.stathis.common.MainViewModel
+import com.stathis.common.util.TITLE
+import com.stathis.common.util.URL
+import com.stathis.common.util.launchBrowser
+import com.stathis.model.navigation.NavigationAction
+import com.elmepa.students.domain.model.StudentAction
+import com.elmepa.students.domain.model.StudentDisplayItem
+import com.elmepa.students.domain.model.StudentSection
 import com.stathis.common.R as commonRes
 
 private const val SHIMMER_COUNT: Int = 3
@@ -49,6 +59,8 @@ internal fun StudentsScreen() {
     val viewModel: StudentsViewModel = hiltViewModel()
 
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val activity = LocalContext.current as ComponentActivity
+    val activityViewModel: MainViewModel = hiltViewModel(activity)
 
     //TODO navController will be removed once nav3 is introduced to project
     val navController = LocalView.current.findNavController()
@@ -57,6 +69,23 @@ internal fun StudentsScreen() {
         viewModel.effect.collect { effect ->
             when (effect) {
                 Effect.Back -> navController.popBackStack()
+
+                Effect.OpenAcademicSchedule -> {
+                    activityViewModel.navigateWithAction(NavigationAction.ACADEMIC_SCHEDULE)
+                }
+
+                is Effect.OpenUrlInWebView -> {
+                    val args = Bundle().apply {
+                        putString(TITLE, effect.title)
+                        putString(URL, effect.url)
+                    }
+
+                    activityViewModel.navigateWithAction(NavigationAction.WEBVIEW, args)
+                }
+
+                is Effect.OpenUrlInBrowser -> {
+                    activity.launchBrowser(effect.url)
+                }
             }
         }
     }
@@ -72,7 +101,14 @@ internal fun StudentsScreen() {
             content = { paddingValues ->
                 when (val currentState = state) {
                     State.Loading -> StudentsLoadingScreen(paddingValues)
-                    is State.Content -> StudentsContentScreen(paddingValues, currentState.sections)
+                    is State.Content -> StudentsContentScreen(
+                        paddingValues = paddingValues,
+                        sections = currentState.sections,
+                        onAction = { action ->
+                            action.toUiAction()?.let { uiAction -> viewModel.onAction(uiAction) }
+                        }
+                    )
+
                     State.Error -> StudentsErrorScreen(
                         paddingValues = paddingValues,
                         onClick = viewModel::onAction
@@ -116,7 +152,11 @@ private fun StudentsLoadingScreen(paddingValues: PaddingValues = PaddingValues()
 }
 
 @Composable
-private fun StudentsContentScreen(paddingValues: PaddingValues = PaddingValues(), sections: List<StudentSection>) {
+private fun StudentsContentScreen(
+    paddingValues: PaddingValues = PaddingValues(),
+    sections: List<StudentSection>,
+    onAction: (StudentAction) -> Unit
+) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -136,9 +176,7 @@ private fun StudentsContentScreen(paddingValues: PaddingValues = PaddingValues()
                     iconRes = element.icon,
                     title = element.title,
                     subtitle = element.subtitle,
-                    onAction = {
-                        //TODO will be added later on
-                    }
+                    onAction = { onAction(element.action) }
                 )
             }
 
@@ -189,24 +227,27 @@ private fun StudentsScreenPreview() {
                         icon = commonRes.drawable.book,
                         title = "This is a title",
                         subtitle = "This is a subtitle",
-                        action = "action"
+                        action = StudentAction.None
                     ),
                     StudentDisplayItem(
                         icon = commonRes.drawable.book,
                         title = "This is a title",
                         subtitle = "This is a subtitle",
-                        action = "action"
+                        action = StudentAction.None
                     ),
                     StudentDisplayItem(
                         icon = commonRes.drawable.book,
                         title = "This is a title",
                         subtitle = "This is a subtitle",
-                        action = "action"
+                        action = StudentAction.None
                     )
                 )
             )
         )
 
-        StudentsContentScreen(sections = sections)
+        StudentsContentScreen(
+            sections = sections,
+            onAction = {}
+        )
     }
 }
