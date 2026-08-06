@@ -45,7 +45,7 @@ firebaseStorage = "22.0.1"
 #Shimmer loading
 shimmer = "0.5.0"
 #Jsoup Web Scraping Library
-jsoup = "1.22.2"
+jsoup = "1.23.1"
 #Glide
 glide = "5.0.7"
 #Coil
