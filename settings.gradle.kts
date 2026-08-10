@@ -61,6 +61,5 @@ include(":feature:news:news-domain")
 include(":feature:news:news-ui")
 
 include(":feature:web")
-include(":feature:students")
 include(":feature:department")
 include(":core:datastore")

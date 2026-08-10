@@ -1,8 +1,8 @@
 package com.elmepa.students.presentation.list.mapper
 
-import com.elmepa.students.presentation.list.StudentsView.UIAction
 import com.elmepa.students.domain.model.StudentAction
 import com.elmepa.students.domain.model.StudentScreen
+import com.elmepa.students.presentation.list.StudentsView.UIAction
 
 internal fun StudentAction.toUiAction() = when (this) {
     is StudentAction.OpenInBrowser -> UIAction.OpenUrlInBrowser(url)

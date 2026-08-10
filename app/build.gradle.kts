@@ -104,7 +104,6 @@ dependencies {
     implementation(project(":feature:studentsv2:data"))
     implementation(project(":feature:studentsv2:domain"))
 
-    implementation(project(":feature:students"))
     implementation(project(":feature:department"))
     implementation(project(":feature:web"))
 
