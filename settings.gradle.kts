@@ -50,9 +50,9 @@ include(":feature:personnel:personnel-ui")
 include(":feature:syllabus:syllabus-ui")
 
 //Students
-include(":feature:studentsv2:presentation")
-include(":feature:studentsv2:data")
-include(":feature:studentsv2:domain")
+include(":feature:students:presentation")
+include(":feature:students:data")
+include(":feature:students:domain")
 
 // News
 include(":feature:news:news-data")
@@ -61,6 +61,5 @@ include(":feature:news:news-domain")
 include(":feature:news:news-ui")
 
 include(":feature:web")
-include(":feature:students")
 include(":feature:department")
 include(":core:datastore")

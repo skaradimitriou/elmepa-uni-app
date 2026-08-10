@@ -52,7 +52,5 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideStudentsRepository(
-        fireStore: FirebaseFirestore
-    ): StudentsRepository = StudentsRepositoryImpl(fireStore)
+    fun provideStudentsRepository(): StudentsRepository = StudentsRepositoryImpl()
 }
