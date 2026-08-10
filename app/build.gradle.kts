@@ -100,9 +100,9 @@ dependencies {
 
     implementation(project(":feature:syllabus:syllabus-ui"))
 
-    implementation(project(":feature:studentsv2:presentation"))
-    implementation(project(":feature:studentsv2:data"))
-    implementation(project(":feature:studentsv2:domain"))
+    implementation(project(":feature:students:presentation"))
+    implementation(project(":feature:students:data"))
+    implementation(project(":feature:students:domain"))
 
     implementation(project(":feature:department"))
     implementation(project(":feature:web"))

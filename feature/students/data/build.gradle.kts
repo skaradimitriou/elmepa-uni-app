@@ -13,7 +13,7 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:domain"))
 
-    implementation(project(":feature:studentsv2:domain"))
+    implementation(project(":feature:students:domain"))
 
     implementation(libs.firebase.firestore)
     implementation(libs.jsoup)
