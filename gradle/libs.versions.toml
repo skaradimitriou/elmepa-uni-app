@@ -34,7 +34,7 @@ googleServicesVersion = "4.5.0"
 firebaseCrashlytics = "20.1.0"
 firebaseCrashlyticsGradle = "3.0.7"
 #Firebase BoM
-firebaseBom = "34.16.0"
+firebaseBom = "34.17.0"
 #Firebase Performance
 firebasePerf = "22.0.5"
 perfPlugin = "2.0.2"
