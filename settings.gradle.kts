@@ -54,6 +54,11 @@ include(":feature:students:presentation")
 include(":feature:students:data")
 include(":feature:students:domain")
 
+//Department
+include(":feature:departmentv2:presentation")
+include(":feature:departmentv2:data")
+include(":feature:departmentv2:domain")
+
 // News
 include(":feature:news:news-data")
 include(":feature:news:news-database")

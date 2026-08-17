@@ -105,6 +105,10 @@ dependencies {
     implementation(project(":feature:students:domain"))
 
     implementation(project(":feature:department"))
+
+    implementation(project(":feature:departmentv2:data"))
+    implementation(project(":feature:departmentv2:domain"))
+    implementation(project(":feature:departmentv2:presentation"))
     implementation(project(":feature:web"))
 
     implementation(libs.viewModelLifecycle)
