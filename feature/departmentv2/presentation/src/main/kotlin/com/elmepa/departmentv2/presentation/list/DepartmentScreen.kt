@@ -17,6 +17,7 @@ import com.elmepa.designsystem.components.topbar.TopBarWithTitleAndBackAction
 import com.elmepa.designsystem.theme.ElmepaAppTheme
 import com.stathis.common.MainViewModel
 
+@SuppressWarnings("UnusedPrivateProperty", "UnusedMaterial3ScaffoldPaddingParameter", "UnusedPrivateProperty")
 @Composable
 fun DepartmentScreen() {
     //TODO VM will be moved to comp fun once the app is migrated fully to compose
