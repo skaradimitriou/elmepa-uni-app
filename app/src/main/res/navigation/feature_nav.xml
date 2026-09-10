@@ -69,6 +69,10 @@
         android:id="@+id/studentsScreen"
         android:name="com.elmepa.students.presentation.list.StudentsScreenKt\$StudentsScreen" />
 
+    <composable
+        android:id="@+id/departmentScreen"
+        android:name="com.elmepa.departmentv2.presentation.list.DepartmentScreenKt\$DepartmentScreen" />
+
     <fragment
         android:id="@+id/departmentFragment"
         android:name="com.stathis.department.department.DepartmentFragment"

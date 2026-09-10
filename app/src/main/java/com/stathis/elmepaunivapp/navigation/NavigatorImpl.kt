@@ -15,6 +15,12 @@ class NavigatorImpl @Inject constructor(
     private val navController: NavController
 ) : Navigator {
 
+    /**
+     * Helper property to determine department screen destination
+     * until a proper local flag mechanism is added to the codebase.
+     */
+    private val isDepartmentV2Available: Boolean = true
+
     override fun goToScreen(action: NavigationAction?, bundle: Bundle?) = when (action) {
         NavigationAction.DASHBOARD -> navController.navigateSafe(R.id.nav_home)
         NavigationAction.ANNOUNCEMENTS -> navController.navigateSafe(R.id.announcementsFragment)
@@ -26,7 +32,17 @@ class NavigatorImpl @Inject constructor(
 
         NavigationAction.STUDENTS -> navController.navigateSafe(R.id.studentsScreen)
         NavigationAction.ACADEMIC_SCHEDULE -> navController.navigateSafe(R.id.academicScheduleFragment)
-        NavigationAction.DEPARTMENT -> navController.navigateSafe(R.id.departmentFragment)
+
+        NavigationAction.DEPARTMENT -> {
+            val destination = if (isDepartmentV2Available) {
+                R.id.departmentScreen
+            } else {
+                R.id.departmentFragment
+            }
+
+            navController.navigateSafe(destination)
+        }
+
         NavigationAction.DEP_MEMBER_DETAILS -> navController.navigateSafe(
             R.id.depDetailsFragment,
             bundle
